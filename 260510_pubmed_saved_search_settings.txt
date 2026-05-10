@@ -1,0 +1,68 @@
+primary_care_review
+
+(child* OR pediatric*) AND ("primary care") AND (guideline[pt] OR review[pt] OR systematic review[pt]) AND ("last 30 days"[dp])
+
+
+Pediatric_Primary_Care_High_Impact
+
+(child* OR pediatric*) AND ("primary care" OR outpatient) AND (guideline[pt] OR practice guideline[pt] OR meta-analysis[pt] OR randomized controlled trial[pt]) AND ("last 30 days"[dp])
+
+
+ped_sleep_update
+
+(child* OR pediatric*) AND "sleep wake disorders" AND (guideline[Filter] OR "meta-analysis"[Filter])
+
+
+ped_psycho_update
+
+(child* OR pediatric*) AND (psychosomatic OR "internet addiction" OR "gaming disorder") AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])
+
+
+ped_trauma_update
+
+(child* OR pediatric*) AND ("febrile seizure" OR "head injury" OR "minor trauma") AND (guideline[Filter] OR "meta-analysis"[Filter])
+
+
+ped_vaccine_update
+
+(child* OR pediatric*) AND vaccine AND "adverse effects" AND (review[Filter] OR guideline[Filter])
+
+
+ped_nephrology_update
+
+(child* OR pediatric*) AND (nephrology OR "nephrotic syndrome" OR "IgA nephropathy") AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])
+
+
+ped_constipation_update
+
+(child* OR pediatric*) AND constipation AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])
+
+
+ped_enuresis_update
+
+enuresis AND (review[Filter] OR guideline[Filter])
+
+
+ped_infection_1w_update
+
+(child* OR pediatric* OR paediatric*) AND (pneumonia OR otitis media OR pharyngitis OR "urinary tract infection" OR influenza OR RSV OR "respiratory syncytial virus" OR "antimicrobial stewardship" OR "acute gastroenteritis" OR norovirus OR rotavirus) AND (guideline[pt] OR practice guideline[pt] OR systematic review[pt] OR meta-analysis[pt] OR randomized controlled trial[pt]) AND ("last 30 days"[dp])
+
+
+ped_food_update
+
+(child* OR pediatric*) AND "food allergy" AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])
+
+
+ped_atopic_update
+
+(child* OR pediatric*) AND "atopic dermatitis" AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])
+
+
+peds_asthma_update
+
+(child* OR pediatric*) AND asthma AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])
+
+
+ped_development_update
+
+(ADHD OR "autism spectrum disorder" OR "orthostatic dysregulation") AND (guideline[Filter] OR "meta-analysis"[Filter])
