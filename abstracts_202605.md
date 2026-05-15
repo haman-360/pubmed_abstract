@@ -1,5 +1,5 @@
 # PubMed Abstracts — 2026年05月
-取得日時: 2026-05-10 10:45
+取得日時: 2026-05-16 00:56
 
 ---
 
@@ -8,44 +8,44 @@
 処理したいテーマのセクションを指定して、以下のプロンプトをCoworkに貼り付けてください。
 各セクションの冒頭にコピー用プロンプトが用意されています。
 
-**Google Docのファイル名形式:** `YYYY-MM_テーマ名_abstract10本`
-（例: `2026-05_気管支喘息_abstract10本`）
+**Google Docs取り込み用HTMLのファイル名形式:** `YYYY-MM_テーマ名_PubMed抽出.html`
+（例: `2026-05_気管支喘息_PubMed抽出.html`）
 
-**Google Docの構成（2部構成）:**
-- 第1部: 日本語要約（①〜⑤の形式で10本）
-- 第2部: 英語 Abstract（同じ10本のfull abstractを番号順に掲載）
+**HTMLの構成:**
+- 冒頭: 重要論文10本の厳選・要約用プロンプト
+- 本文: PubMedから取得した英語Abstract一覧
 
 ---
 
 
 ## 目次
 
-- [プライマリケア（レビュー・ガイドライン）](#primary-care-review): 40件
-- [小児プライマリケア（高インパクト）](#pediatric-primary-care-high-impact): 27件
+- [プライマリケア（レビュー・ガイドライン）](#primary-care-review): 55件
+- [小児プライマリケア（高インパクト）](#pediatric-primary-care-high-impact): 30件
 - [小児睡眠](#ped-sleep-update): 0件
 - [小児心身症・ゲーム障害・ネット依存](#ped-psycho-update): 10件
 - [小児外傷・熱性けいれん・頭部外傷](#ped-trauma-update): 1件
-- [小児ワクチン（副反応）](#ped-vaccine-update): 9件
-- [小児腎臓（ネフローゼ・IgA腎症）](#ped-nephrology-update): 82件
-- [小児便秘](#ped-constipation-update): 10件
+- [小児ワクチン（副反応）](#ped-vaccine-update): 8件
+- [小児腎臓（ネフローゼ・IgA腎症）](#ped-nephrology-update): 85件
+- [小児便秘](#ped-constipation-update): 4件
 - [夜尿症](#ped-enuresis-update): 0件
-- [小児感染症（週次・直近30日）](#ped-infection-1w-update): 47件
-- [小児食物アレルギー](#ped-food-update): 17件
-- [小児アトピー性皮膚炎](#ped-atopic-update): 15件
-- [小児喘息](#peds-asthma-update): 56件
-- [小児発達（ADHD・ASD・起立性調節障害）](#ped-development-update): 12件
+- [小児感染症（週次）](#ped-infection-1w-update): 4件
+- [小児食物アレルギー](#ped-food-update): 16件
+- [小児アトピー性皮膚炎](#ped-atopic-update): 17件
+- [小児喘息](#peds-asthma-update): 57件
+- [小児発達（ADHD・ASD・起立性調節障害）](#ped-development-update): 11件
 
 ---
 
 
 ## primary_care_review
-### プライマリケア（レビュー・ガイドライン） — 40件
+### プライマリケア（レビュー・ガイドライン） — 55件
 
 **▼ Coworkへのプロンプト（コピーして貼り付け）:**
 
 > 以下は直近1ヶ月のプライマリケア（レビュー・ガイドライン）領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_プライマリケアレビュー_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_プライマリケアレビュー_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -65,28 +65,137 @@
 > Abstract: （英語のアブストラクト全文）
 
 
-### [1] Perinatal interventions for parents with exposure to adverse childhood experiences: A narrative review of suitability for implementation in primary care.
+### [1] Strengthening the quality and safety of community mental health care for children and young people: a critical review of innovations from low- and middle-income countries.
+**Author**: Chatburn Eleanor et al. | **Journal**: Frontiers in health services (2026)
+**PMID**: 42136936 | https://pubmed.ncbi.nlm.nih.gov/42136936/
+
+Improving the quality and safety of community mental health care for children and young people (CYP) is a global public health priority. Mental health problems affect 10%-20% of CYP globally. While many high and low- and middle-income countries (LMICs) face significant structural barriers to accessing safe, person-centred mental health services, there have been innovative developments in service delivery emerging from low resource settings that are pertinent to address quality and safety of CYP mental health services globally. In this paper, we critically review emerging evidence from these contexts to highlight best practices and innovations. We focus on six key domains: task-sharing with non-specialists including peer and near-peer approaches; socio-economic interventions; alternative models of access; advances in routine outcome measurement; developing quality standards; and digital interventions. Through three case studies from Malaysia, Rwanda, and South Africa and other contexts within Sub Saharan Africa and high-income countries (HICs), we demonstrate how locally responsive, contextually appropriate solutions can strengthen mental health services in community settings. We argue for reciprocal co-production in global mental health, positioning LMICs as sources of innovation rather than passive recipients of external expertise. We conclude by discussing how these innovations offer transferable lessons for all contexts and identifying pathways to support their sustainability and scalability.
+
+---
+### [2] Aging with Thalassemia and Sickle Cell Disease: A Gerontological Model of Accelerated Multimorbidity and Function-Centered Care Beyond Midlife.
+**Author**: Delicou Sophia et al. | **Journal**: Mediterranean journal of hematology and infectious diseases (2026)
+**PMID**: 42136895 | https://pubmed.ncbi.nlm.nih.gov/42136895/
+
+BACKGROUND: Thalassemia and sickle cell disease are now increasingly present as lifelong chronic conditions in high-income countries, with growing numbers of patients reaching their 50s and 60s. This demographic shift transforms hemoglobinopathies from childhood-threatening disorders into chronic, multisystem conditions with cumulative morbidity. However, data specifically focused on later-life hemoglobinopathy populations remain limited, fragmented, and often extrapolated from younger cohorts, leaving hematologists and internists relatively unprepared for the functional decline, vulnerability, and geriatric syndromes that can characterize later life in these populations.
+CONTENT: This expert opinion narrative review synthesizes available evidence on the intersection of disease-driven pathology (anemia, hemolysis, vasculopathy), long-term treatment burden (transfusion-related iron overload, chelation toxicities), and aging biology (declining physiologic reserve, sarcopenia, cognitive vulnerability) in adults beyond midlife. Given the historical survival patterns in hemoglobinopathies and the inconsistent definition of "older adult" across studies, particularly in sickle cell disease, we use a pragmatic age threshold of >=50 years for the main gerontological framing, while incorporating evidence from cohorts beginning at 40-49 years when that is how the literature defines older hemoglobinopathy populations. We distinguish disease-specific priorities: thalassemia faces myocardial and hepatic iron deposition and endocrine failure, while sickle cell disease confronts cerebrovascular disease, chronic pain, and cardiopulmonary complications. Critically, care targets in later life must extend beyond survival and organ-specific metrics to functional endpoints, disability prevention, cognitive health, and quality of life. A conceptual mapping links mechanisms of hemoglobinopathy to established gerontology constructs, including inflammaging, cellular senescence, and vascular aging, while acknowledging that direct mechanistic evidence in older hemoglobinopathy cohorts remains incomplete.
+CONCLUSIONS: Three adjustments are necessary in adults beyond midlife: monitoring should prioritize early detection of treatable complications and emerging functional impairment rather than only documenting cumulative organ damage; therapeutic decisions should weigh treatment benefit, treatment burden, comorbidity burden, and goals of care rather than defaulting to pediatric-era protocols; and care systems should embed shared decision-making, palliative principles, and multidisciplinary coordination within primary care networks, with specialist hemoglobinopathy centers functioning as disease-specific hubs rather than stand-alone primary care providers.
+
+---
+### [3] Epidemiology of Obesity During Pregnancy in Europe: A Systematic Review.
+**Author**: Naughton Peter et al. | **Journal**: Obesity reviews : an official journal of the International Association for the Study of Obesity (2026/May)
+**PMID**: 42134823 | https://pubmed.ncbi.nlm.nih.gov/42134823/
+
+INTRODUCTION: Maternal obesity represents an urgent public health challenge with serious maternal, neonatal, and health system implications. Characterizing levels of obesity during pregnancy is necessary to guide future research, policy, and practice. This review summarizes existing data on maternal obesity prevalence across Europe.
+METHODS: Studies published between 2009 and 2023 that reported the prevalence of obesity during pregnancy were included. The primary outcome was to measure the prevalence of obesity during pregnancy. Secondary outcomes were assessing the method and timing of BMI ascertainment.
+RESULTS: In total, 99 studies were included. Over three quarters of studies (N = 76, 76.7%) collected data from Swedish, United Kingdom, or Irish populations. Height was objectively assessed in 37 studies (37.4%) and weight in 53 studies (53.5%). The median obesity prevalence was 12.5% (IQR 4.4-20.6). In a subset of studies reporting prevalence by year, obesity ranged from 2.2% (1986) to 28.3% (2007) with a significant positive association of maternal obesity over time (τ = 0.64, p < 0.001).
+CONCLUSION: This review highlights consistent increases in obesity during pregnancy among European populations with significant implications for patients and health systems.
+
+---
+### [4] Central nervous system complications after allogeneic haematopoietic cell transplantation: best practice recommendations from the EBMT practice harmonisation and guidelines committee on epidemiology, outcome and neuroimaging.
+**Author**: Schmidt-Hieber Martin et al. | **Journal**: Bone marrow transplantation (2026/May)
+**PMID**: 42129311 | https://pubmed.ncbi.nlm.nih.gov/42129311/
+
+CNS complications (CNSC) may occur in a significant proportion of patients after allogeneic haematopoietic cell transplantation (allo-HCT). They can be differentiated into infectious and non-infectious CNSC, such as vascular pathologies (e.g., bleeding, stroke), drug-related abnormalities, and CNS relapse of the underlying malignancy. Initiation of prompt and adequate diagnostics - mainly neuroimaging and cerebrospinal fluid (CSF) analyses - and treatment are crucial to improve the prognosis. Here, we report on the epidemiology, outcome, and neuroimaging of CNSC after allo-HCT. We also provide an overview of the special considerations for children with these complications. These findings and recommendations were developed during a multidisciplinary EBMT harmonisation workshop. Novel diagnostics, such as CSF next-generation sequencing (NGS) and special MRI sequences, are emerging and may improve the accuracy of diagnosis for selected CNSC. The prognosis of post-transplant CNSC is heterogeneous, with drug-related CNSC mainly having a favourable prognosis, while the outcome of CNS bleeding, CNS leukaemia, and cerebral fungal disease is still frequently dismal. A high level of awareness is crucial in the clinical routine - especially in distinct subgroups such as paediatrics - besides the development of novel algorithms, diagnostics, and treatment approaches to improve the outcome.
+
+---
+### [5] A lifecycle governance and learning health system framework for trustworthy, generalizable, and sustainable human-ai partnership in clinical practice: Lessons from the asthma-guidance and prediction system (A-GPS).
+**Author**: Wi Chung-Il et al. | **Journal**: Journal of the National Medical Association (2026/May)
+**PMID**: 42128801 | https://pubmed.ncbi.nlm.nih.gov/42128801/
+
+The integration of artificial intelligence (AI) into clinical decision support (CDS) holds promise for proactive, personalized, and precision care. However, current understanding of how to establish trustworthy human-AI partnerships is in its infancy, despite its critical importance for implementing AI in healthcare. We present the Asthma-Guidance and Prediction System (A-GPS) as a case study of a practice-integrated AI platform that demonstrates how trustworthy, generalizable and sustainable AI can be developed, evaluated, and implemented in real-world asthma care. We describe major challenges and solutions based on our real-world experience during the process and offer the practical framework, approaches, tools and workflow for implementing trustworthy, generalizable and sustainable AI in frontline practices. While A-GPS is an asthma-specific AI tool, it was built on top of a disease-agnostic electronic health record (EHR)-integrated clinical decision support (CDS) platform based on an Application Programming Interface (API)‑first backbone of reusable services. It was designed to reduce chart-review/processing burden and enable proactive, guideline-concordant asthma management by synthesizing fragmented longitudinal multimodal data into a clinical decision-relevant summary at the point of care. A-GPS platform integrates multiple natural language processing (NLP) algorithms to leverage free texts info in EHRs, machine learning model to offer risk stratification, and remote patient monitoring (RPM) approaches to capture real-time data from patients, enabling remote asthma (chronic disease) care. The platform has been deployed via Substitutable Medical Applications and Reusable Technologies-on-Fast Healthcare Interoperability Resources (SMART-on-FHIR) to ensure in-workflow delivery and maintainable governance making it flexible and interoperable across different EHRs systems and different chronic diseases. The translational maturity of A-GPS as an AI-powered CDS tool for pediatric asthma was demonstrated and sustained through engagement and co-design with diverse community and care team partners, including adult and pediatric Community Advisory Board, pediatric patients and their parents, clinicians (primary care providers and specialists), nurses, schedulers, as well as bioethicists and regulatory experts. Moreover, the tool was evaluated in two randomized clinical trial (RCT)s. The first trial showed a 67% reduction in clinicians' EHR review time, high clinician satisfaction, potential healthcare cost savings, fairness in model performance, and no adverse events. Trustworthiness was further assessed and supported through fairness evaluation by participant socioeconomic status (SES) using the HOUsing-based SocioEconomic Status (HOUSES) index, human-centered user interface/user experience (UI/UX) analysis, clinician workflow optimization, transparent governance practices, and best practices for regulatory science. The A-GPS experience operationalizes a reproducible, lifecycle-governed framework for generating decision-grade evidence on safety, effectiveness, usability, fairness, and workflow integration, directly addressing the translational gap between AI model development and trustworthy, sustainable deployment in real-world clinical environments. These efforts led to national recognitions, including invitation to the inaugural American Medical Informatics Association (AMIA) AI Showcase, and AI evaluation use case for a national health AI coalition. The second RCT evaluated the feasibility of integrating a remote patient monitoring (RPM) device (home spirometry) into the A-GPS platform, with a published RCT protocol that serves as a framework for RCT for evaluating AI models under the Standard Protocol Items: Recommendations for Interventional Trials (SPIRIT) guidelines for RCTs that evaluate AI tools, offering the practical framework, approaches, tools, and workflow for trustworthy, generalizable and sustainable AI tools in asthma care. This work illustrates how team science, community engagement, implementation science, and learning health system principles can be operationalized to establish a human-AI partnership model to advance translational science and clinical care, with the goal of improving health for all.
+
+---
+### [6] Paediatric palliative care and paediatric euthanasia: clarifying a moral continuum.
+**Author**: Joren Chantal Y et al. | **Journal**: The Lancet. Child & adolescent health (2026/May)
+**PMID**: 42127958 | https://pubmed.ncbi.nlm.nih.gov/42127958/
+
+This Viewpoint explores the complex relationship between two approaches to end-of-life care for children-paediatric palliative care and paediatric euthanasia. Both approaches share the goal of alleviating suffering in children with life-limiting conditions. They differ about which interventions are permissible or forbidden in pursuit of that goal. Palliative care permits the withdrawal of life-sustaining treatments and even the administration of medications that might hasten death, as long as the goal of administering the medications is to relieve suffering and not to hasten death. With euthanasia, doctors and parents agree that palliative care interventions cannot relieve suffering, and so it is permissible to give medications with the goal of hastening death. Different countries take different approaches to these practices. In some countries, it is permissible to withdraw or withhold all life-sustaining treatments and to give sedating drugs that might suppress respiration, but it is impermissible to give lethal injections. The countries that permit withholding, withdrawing, and sedation typically rely on the doctrine of double effect: treatments intended to relieve suffering might be ethically permissible even if they foreseeably hasten death, provided that death is not the intended aim. In others, such lethal injections are permissible. In these countries, policies rely on considerations of the child's best interest and specifically on an abhorrence of pain and suffering. We argue that these frameworks express overlapping values of compassion, proportionality, and respect for the child's interests. Recognising this overlap allows paediatric palliative care and euthanasia to be understood not as moral opposites but as points along a continuum of ethically motivated responses to suffering at the end of life.
+
+---
+### [7] Diagnosis and Management of Eating Disorders in Adolescents and Young Adults.
+**Author**: Lot Lucy et al. | **Journal**: Primary care (2026/Jun)
+**PMID**: 42120165 | https://pubmed.ncbi.nlm.nih.gov/42120165/
+
+Eating disorders (EDs) are characterized by persistent disturbance of eating behavior that impairs health or psychosocial functioning. ED can persist for decades resulting in substantial burdens and psychosocial impairments. An increased prevalence of anorexia nervosa was noted during the COVID-19 pandemic. Despite a worsening trend in risky eating behavior among US college students, only 22% of colleges report offering year-round ED screening opportunities with 45% offering ED screenings once per year or semester. Furthermore, 20% or less of those who screened positive, received treatment.
+
+---
+### [8] Nonpharmacologic Management of Insomnia Disorder in Primary Care.
+**Author**: Stearns Melanie A et al. | **Journal**: Primary care (2026/Jun)
+**PMID**: 42120163 | https://pubmed.ncbi.nlm.nih.gov/42120163/
+
+Nonpharmacological treatments for insomnia disorder, particularly cognitive behavioral therapy for insomnia (CBT-I), are increasingly recognized as first-line interventions due to their long-term efficacy and safety. Unlike medications, CBT-I addresses the behavioral and cognitive patterns that perpetuate sleep disturbances, offering durable improvements without risk of dependence. Delivery formats include in-person, telehealth, and digital platforms, expanding access across diverse populations. Adaptations for children, older adults, and caregivers have shown promising results. Emerging innovations, such as AI-driven personalization and therapist-guided digital CBT-I, are shaping the future of sleep care, making evidence-based treatment more accessible, scalable, and integrated into routine health care.
+
+---
+### [9] Health-related quality of life instruments for older persons with osteoporosis: a WHO-BOHEG systematic review of measurement properties for use in clinical trials and routine practice.
+**Author**: Gamble Clair M et al. | **Journal**: Age and ageing (2026/May)
+**PMID**: 42117739 | https://pubmed.ncbi.nlm.nih.gov/42117739/
+
+BACKGROUND: Osteoporosis increases fracture risk in older adults and is associated with impaired health-related quality of life (HRQoL). Osteoporosis-specific HRQoL instruments are widely used, but their measurement performance in older populations has not been comprehensively synthesised.
+OBJECTIVE: To systematically identify and synthesise development and validation studies of osteoporosis-specific HRQoL instruments for older adults, and to appraise their measurement properties using COSMIN criteria and a modified GRADE approach to inform instrument selection for clinical trials, routine care, and research.
+DESIGN: Systematic review.
+SETTING: Community-dwelling; Long-term care facility; Primary care facility.
+SUBJECTS: Older persons aged 60 years or over.
+METHODS: We searched Medline (Ovid), Embase, PsycINFO (Ovid), and AMED (Ovid) from inception to August 2024. We extracted and appraised evidence for COSMIN-defined measurement properties: content validity, structural validity, internal consistency, cross-cultural validity or measurement invariance, reliability, measurement error, criterion validity, hypothesis testing for construct validity, and responsiveness. Methodological quality was assessed using the COSMIN Risk of Bias checklist, measurement properties were rated against COSMIN criteria for good measurement properties, and certainty of evidence was graded using a modified GRADE approach.
+RESULTS: Forty-three studies reported the development and/or validation of nine osteoporosis-specific HRQoL instruments; language and version adaptations resulted in 15 instrument variants. Content validity was the most prominent limitation: only OPTQoL and the English Mini-OQLQ demonstrated sufficient evidence for multiple content validity components, while most widely used instruments lacked adequate evidence on item relevance, comprehensiveness, or comprehensibility. Evidence for internal structure was limited, with structural validity sufficient for ECOS-16 and QoLOS-NVFX, insufficient for QUALEFFO-41, and indeterminate for most other instruments. Cross-cultural validity and measurement invariance were almost entirely unexamined. By contrast, reliability and hypothesis testing for construct validity were more consistently supported, often with moderate-to-high certainty. Measurement error, interpretability, and responsiveness were poorly reported across instruments.
+CONCLUSIONS: The evidence base supports purpose-driven selection of osteoporosis-specific HRQoL instruments rather than a single preferred instrument. Across included studies, ECOS-16 shows the most consistently supported measurement properties in older adults for longitudinal assessment, although important evidence gaps remain (notably measurement error and cross-cultural validity). When brevity is the primary feasibility constraint in routine care, the Mini-OQLQ may be considered; however, evidence for responsiveness is limited.
+
+---
+### [10] Mapping the evidence on stillbirth prevention across the reproductive continuum: an umbrella review.
+**Author**: Gadapani Pathak Barsha et al. | **Journal**: BMJ open (2026/May)
+**PMID**: 42114873 | https://pubmed.ncbi.nlm.nih.gov/42114873/
+
+OBJECTIVES: To collate and appraise evidence from existing systematic reviews and meta-analyses on interventions to prevent stillbirth and reduce perinatal mortality across the reproductive continuum, including preconception, antenatal, intrapartum and immediate newborn periods.
+DESIGN: Umbrella review synthesising evidence from systematic reviews, including meta-analyses where available.
+DATA SOURCES: A comprehensive search was conducted in CENTRAL (via Cochrane Register of Studies Online), PubMed, Embase and Web of Science, along with trial registries (WHO International Clinical Trials Registry Platform, ClinicalTrials.gov and ISRCTN Registry), from inception to 12 January 2026.
+ELIGIBILITY CRITERIA: Systematic reviews and meta-analyses synthesising randomised controlled trials or quasi-experimental studies that reported stillbirth, perinatal mortality, fetal loss or fetal death were included. Reviews focused exclusively on predefined high-risk populations were excluded.
+DATA EXTRACTION AND SYNTHESIS: Two reviewers independently extracted data and assessed methodological quality using A Measurement Tool to Assess Systematic Reviews 2 (AMSTAR 2). Grading of Recommendations, Assessment, Development and Evaluation (GRADE) certainty ratings were extracted as reported by the original review authors. Evidence synthesis followed a structured framework adapted from Ota et al, integrating direction of effect and certainty of evidence based on pooled estimates and GRADE assessments. Publication overlap was assessed using the Corrected Covered Area index where relevant.
+RESULTS: A total of 116 systematic reviews were included, synthesising evidence from randomised controlled and quasi-experimental studies across preconception, antenatal, intrapartum and immediate newborn periods. Evidence from individual reviews showed clear benefit for several interventions, including balanced energy-protein supplementation, home visits by community health workers, birth preparedness interventions, labour induction at or beyond 37 weeks of gestation and skilled or community-based intrapartum care, primarily for reducing perinatal mortality. Reduced antenatal visit schedules compared with standard care were associated with a possible increase in stillbirth or perinatal mortality, indicating potential harm. Many interventions-such as group antenatal care (ANC), nutritional education, case-note provision, routine ultrasound or Doppler monitoring, antibiotic treatment for bacterial vaginosis, antiretroviral therapy in pregnancy and several pharmacological or hormonal interventions-demonstrated unknown or inconclusive effects on stillbirth or perinatal mortality, largely due to imprecision and heterogeneity.
+CONCLUSIONS: This umbrella review identifies a range of interventions with evidence of effectiveness across the reproductive continuum, particularly those addressing maternal nutrition, continuity of ANC and quality intrapartum and newborn care. However, substantial evidence gaps remain, especially for interventions widely implemented without strong supporting evidence. These findings highlight the need for context-specific implementation research and prioritisation of proven strategies in low- and middle-income countries, where the burden of stillbirth remains highest.
+PROSPERO REGISTRATION NUMBER: CRD42024531100.
+
+---
+### [11] Perinatal outcomes following single intrauterine death in monochorionic twin pregnancies complicated by twin anemia polycythemia sequence: Systematic review and meta-analysis.
+**Author**: Piergianni Marina et al. | **Journal**: Acta obstetricia et gynecologica Scandinavica (2026/May)
+**PMID**: 42106586 | https://pubmed.ncbi.nlm.nih.gov/42106586/
+
+INTRODUCTION: Most of the studies reporting the outcome of the surviving twin after single intra-uterine fetal death (sIUFD) focused on uncomplicated pregnancies or those affected by twin-to-twin transfusion syndrome, while there is a paucity of data for those complicated by twin anemia polycythemia sequence (TAPS). The aim of this systematic review was to report perinatal outcomes in monochorionic diamniotic (MCDA) twin pregnancies complicated by TAPS after sIUFD, according to gestational age at fetal loss and the presence of pregnancy-related comorbidities.
+MATERIAL AND METHODS: MEDLINE, EMBASE, and The Cochrane Library were searched for studies reporting the outcome of monochorionic twin pregnancies complicated by TAPS experiencing single IUFD. The primary outcome was the occurrence of co-twin IUFD. Secondary outcomes were neonatal death (NND), preterm birth (PTB) <34, <32, and <28 weeks of gestation, cerebral abnormalities detected at follow-up prenatal ultrasound, fetal magnetic resonance imaging (MRI) or postnatal imaging (ultrasound or MRI), and adverse neurodevelopmental outcome. Random-effects meta-analysis of proportions was used to analyze the data, and results were reported as pooled proportions or odd ratios (OR) with 95% CI.
+RESULTS: Eleven studies (83 twin pregnancies affected by TAPS, either spontaneous or post-laser, and complicated by single IUFD) were included in the systematic review and 10 (78 pregnancies) in the meta-analysis. Co-twin IUFD occurred in 4.9% (95% CI 1.1-11.3) after a single IUFD in pregnancies affected by TAPS, while there was no case of NND. PTB, either spontaneous or iatrogenic, occurred in 80.4% (95% CI 44.3-99.5) <34 weeks, and 50.0% (95% CI 16.3-83.7) <28 weeks of cases. Intra-uterine transfusion was required in 8.0% (95% CI 0.9-38.3). Cerebral anomalies at follow-up ultrasound or fetal MRI were reported in 15.0% (95% CI 8.2-78.3) and 11.4% (95% CI 2.4-55.7) of cases, while anomalies at post-natal imaging in 9.4% (95% CI 5.6-57.6) of cases. It was not possible to perform a meaningful pooled data synthesis on the observed outcomes according to the type and staging of TAPS and according to the donor or recipient twin.
+CONCLUSIONS: The occurrence of co-twin death after single IUFD in pregnancies complicated by TAPS appears low, while cerebral abnormalities detected either pre- or post-natally occur in 10-15% of cases. Further evidence is needed to elucidate the long-term neurological and neurodevelopmental risk of these children.
+
+---
+### [12] Pneumococcal vaccination in Belgian adults: a practical translation of the 2025 Superior Health Council guidelines.
+**Author**: Callens Steven et al. | **Journal**: Acta clinica Belgica (2026/May)
+**PMID**: 42105330 | https://pubmed.ncbi.nlm.nih.gov/42105330/
+
+BACKGROUND: Pneumococcal disease remains a significant burden in Belgian adults, with 2,120 cases of invasive pneumococcal disease (IPD) reported in 2024, the highest in a decade. Despite clear indications, vaccination uptake remains unacceptably low (13-24% in risk groups). Complex sequential vaccination schedules involving pneumococcal conjugate vaccines followed by the 23-valent polysaccharide vaccine (PPV23), combined with limited awareness among healthcare providers and the public, and incomplete reimbursement policies, have contributed to implementation barriers and poor adherence.
+METHODS: This review provides a practice-oriented translation of the 2025 Superior Health Council of Belgium guidelines on adult pneumococcal vaccination. We analysed Belgian National Reference Centre 2024 serotype surveillance data to support age-stratified vaccine selection recommendations.
+KEY RECOMMENDATIONS: A single-dose conjugate vaccine approach now replaces all prior sequential regimens. Vaccine selection is age-stratified based on Belgian serotype epidemiology: PCV20 for adults 18-49 years with risk conditions (serotype 4 coverage critical); PCV20 or PCV21 for ages 50-84 years; and PCV21 preferred for adults ≥ 85 years (15% coverage advantage). PPV23 is eliminated from routine recommendations. Co-administration with influenza, RSV, and COVID-19 vaccines is supported, enabling maximal respiratory protection in a single visit.
+CONCLUSION: One conjugate vaccine dose, selected by age, provides maximal pneumococcal protection. The challenge is implementation to increase vaccination coverage: every clinical encounter with an at-risk adult is a vaccination opportunity.
+
+---
+### [13] Perinatal interventions for parents with exposure to adverse childhood experiences: A narrative review of suitability for implementation in primary care.
 **Author**: Chen Joann J et al. | **Journal**: Infant mental health journal (2026/Jul)
 **PMID**: 42102221 | https://pubmed.ncbi.nlm.nih.gov/42102221/
 
 Children of parents exposed to adverse childhood experiences (ACEs) face elevated risk of experiencing biopsychosocial challenges. Primary care screening for parental ACEs is increasing, and routine primary care touchpoints may reach parents with exposure to ACEs during the critical perinatal period. This review seeks to 1) evaluate existing perinatal interventions-including those not designed for primary care-for suitability for primary care implementation and 2) identify implementation factors missing from existing interventions that may enhance their implementation in primary care. The PubMed database was searched for articles in English reporting on randomized controlled trials of perinatal interventions among parents with exposure to ACEs. Fourteen articles detailing 14 unique interventions were included in the qualitative synthesis. Data were extracted on intervention characteristics identified by implementation research as relevant to primary care: evidence of benefit, applicability and relevance, complexity, clarity, practicality and utility, costs, and adaptability. Ten interventions were found to be effective for parents with greater exposure to ACEs; however, the variability within the interventions and relevant settings suggests nuanced decision-making is required to match interventions to settings. The current review offers primary care providers a framework for matching and adapting such interventions.
 
 ---
-### [2] Symptom-guided approach to central nervous system complications in allogeneic hematopoietic cell transplant recipients: Best practice recommendations from the EBMT Practice Harmonisation and Guidelines committee.
+### [14] Symptom-guided approach to central nervous system complications in allogeneic hematopoietic cell transplant recipients: Best practice recommendations from the EBMT Practice Harmonisation and Guidelines committee.
 **Author**: Velasco Roser et al. | **Journal**: Bone marrow transplantation (2026/May)
 **PMID**: 42098382 | https://pubmed.ncbi.nlm.nih.gov/42098382/
 
 Central nervous system complications (CNSC) after allogeneic hematopoietic cell transplantation (allo-HCT) are relatively common and may have a major impact on patients´ outcomes. Neurological symptoms may occur at any point during the post-transplant course, although they are more common early after HCT, with a wide range of possible presentations. As many of CNSC symptoms are non-specific, the initial assessment is often difficult, and early decisions regarding the diagnostic work-up can influence the identification of the underlying cause. Blood tests, neuroimaging and cerebrospinal fluid (CSF) analyses are particularly important, as they frequently provide the first clues that help narrow the very wide differential diagnoses. In view of these challenges, an international EBMT working group composed of haematologists, infectious disease specialists, neurologists, a neuroradiologist, and a microbiologist developed symptom-based recommendations for the early evaluation of CNSC after allo-HCT. The work summarizes key aspects of the clinical presentation and outlines practical steps for the initial diagnostic approach. These recommendations are intended to support haematologists, who are usually the first to assess these patients, in promptly recognizing CNSC so to start timely appropriate management.
 
 ---
-### [3] The influence of existing interventions on sleep of youth with attention-deficit/hyperactivity disorder: A meta-analysis of randomized controlled trials.
+### [15] The influence of existing interventions on sleep of youth with attention-deficit/hyperactivity disorder: A meta-analysis of randomized controlled trials.
 **Author**: Fang Yuan et al. | **Journal**: Sleep medicine reviews (2026/May)
 **PMID**: 42096966 | https://pubmed.ncbi.nlm.nih.gov/42096966/
 
 Sleep problems are commonly observed among children and adolescents with attention-deficit/hyperactivity disorders (ADHD). We completed a literature search by 2025-6-9 on EBSCOhost, PubMed, Web of Science, and Scopus to quantify the effects of any existing interventions on sleep outcomes among children/adolescents with ADHD. From a pool of 4081 studies, 40 randomized controlled trials (RCTs; 75% with low-risk-of-bias, 4361 participants and 65.2% attended interventions) were eligible for a pairwise meta-analysis (PWMA). Of these, 28 RCTs were included in a Bayesian network meta-analysis (NMA). Results were yielded from both mean change and post-test measurement of the outcomes if available. In PWMA (moderate-to-high certainty), the examined interventions had small and significant effects on sleep disturbance (standardized mean difference [SMD] by mean change [95% CI]: overall [k = 29]: -0.30 [-0.42, -0.17], p < 0.001; sleeping pills [k = 7]: -0.10 [-0.41, 0.22], p > 0.05; ADHD drugs [k = 6]: -0.25 [-0.52, 0.01], p > 0.05; behavioral sleep [BS] interventions [k = 10]: -0.48 [-0.70, -0.27], p < 0.001) and sleep onset latency (overall [k = 12]: -0.41 [-0.67, -0.14], p < 0.01; sleeping pills [k = 3]: -0.68 [-1.08, -0.27], p < 0.01; ADHD drug [k = 1]: -0.39 [-0.96, 0.18], p > 0.05; BS interventions [k = 5]: -0.36 [-0.88, 0.16], p > 0.05). The examined interventions did not have significant effects on sleep efficacy, sleep duration, latency to persistent sleep or daytime sleepiness. Results of NMA showed that sleeping pills had the best performance in shortening SOL, while BS interventions may be the best choice for reducing sleep disturbance. However, more rigorous evidence is warranted. This review indicates that a multi-component and tailored-designed intervention represents important personalized strategies for improving sleep in youths with ADHD.
 
 ---
-### [4] Type 2 Diabetes and the Lung - Cause and Consequence.
+### [16] Type 2 Diabetes and the Lung - Cause and Consequence.
 **Author**: Foer Dinah et al. | **Journal**: Current diabetes reports (2026/May)
 **PMID**: 42095998 | https://pubmed.ncbi.nlm.nih.gov/42095998/
 
@@ -94,7 +203,7 @@ PURPOSE OF REVIEW: The purpose of this review is to synthesize literature invest
 RECENT FINDINGS: Type 2 diabetes is a common and challenging comorbidity in patients with asthma and chronic obstructive pulmonary disease (COPD). Basic, translational and clinical studies support a bidirectional association between T2D and the lung. In animal models and human studies, insulin resistance and hyperglycemia are associated with pulmonary inflammation, respiratory exacerbation risk and disease severity. Corticosteroids are a mainstay for respiratory disease control and exacerbation treatment but promote ongoing metabolic dysregulation. Randomized, placebo-controlled trials of glucose-lowering medications for asthma are actively ongoing. Additional studies addressing clinical pathways to co-manage respiratory and metabolic risk are needed. Patients with comorbid T2D and asthma or COPD are at risk for worse outcomes. There are opportunities to improve cross-disciplinary care, potentially reducing risk and multimorbidity associated with both conditions.
 
 ---
-### [5] Leadership in Obesity Care: Strategies to Support Healthcare Professionals in Effective Decisions, Communication, and Solutions - A Scoping Review.
+### [17] Leadership in Obesity Care: Strategies to Support Healthcare Professionals in Effective Decisions, Communication, and Solutions - A Scoping Review.
 **Author**: Moorhead Anne et al. | **Journal**: Journal of healthcare leadership (2026)
 **PMID**: 42088261 | https://pubmed.ncbi.nlm.nih.gov/42088261/
 
@@ -102,7 +211,7 @@ Obesity care is central to addressing the global prevalence of obesity, yet pati
 Obesity care is an important part of helping people to improve their health and quality of life, yet many people around the world living with obesity still struggle to access the right support and services. This review brought together findings from 28 studies published from 2014 to 2025 that describe what helps healthcare professionals provide better care and support for people living with obesity. These studies reported strategies that demonstrate leadership approaches that can support healthcare professionals in making improved decisions, communicating effectively, and providing high-quality care interventions. These were grouped into three main areas: Structural strategies – such as improving policies, research, and funding for obesity care at government or system level.General strategies – such as teamwork and collaboration between different healthcare professionals in services that provide obesity care and support.Population-specific strategies – such as care for women during and after pregnancy, or the different needs that children can have. The review found that healthcare professionals are calling for improved leadership and support beyond primary care and at political and organizational levels. This includes developing better policies, reducing weight stigma in society and in healthcare, and ensuring that obesity services are properly funded and based on the best available evidence. Overall, the findings highlighted that effective obesity support and care need leadership for a joined-up approach across systems and the involvement of different professionals. People living with obesity should have access to services that are evidence-based, respectful, well-resourced, and free from stigma.
 
 ---
-### [6] Climate change and child health in Europe: a scoping review of emerging impacts.
+### [18] Climate change and child health in Europe: a scoping review of emerging impacts.
 **Author**: van den Berg Sarah et al. | **Journal**: European journal of pediatrics (2026/May)
 **PMID**: 42084793 | https://pubmed.ncbi.nlm.nih.gov/42084793/
 
@@ -112,21 +221,21 @@ WHAT IS KNOWN: • Children are biologically vulnerable to environmental hazards
 WHAT IS NEW: • This scoping review confirms climate change may lead to increased pediatric morbidity in Europe, linking air pollution, heat stress, and wildfires to perinatal, respiratory, metabolic, and neurological risks. • European studies regarding climate change and children's health have mainly focused on the impact of air pollution, but hardly focused on the impact of heat stress, highlighting the need for broader research and a coordinated pan-European change in political interventions tackling climate change.
 
 ---
-### [7] Guidelines for the management of acute porphyria: recommendations from the International Porphyria Network.
+### [19] Guidelines for the management of acute porphyria: recommendations from the International Porphyria Network.
 **Author**: Edel Yonatan et al. | **Journal**: The Lancet. Haematology (2026/May)
 **PMID**: 42069412 | https://pubmed.ncbi.nlm.nih.gov/42069412/
 
 Autosomal dominant acute porphyrias are rare inherited disorders of haem biosynthesis characterised by accumulation of potentially neurotoxic porphyrin precursors and attacks of severe abdominal pain with autonomic and neuropsychiatric features. Disease severity ranges from asymptomatic individuals to those with recurrent, life-threatening attacks. The International Porphyria Network invited 34 acute porphyria specialists from 17 countries to form an expert panel. The invited group included clinicians from diverse specialities (ie, internal medicine, haematology, endocrinology, gastroenterology, hepatology, neurology, and biochemistry), together with laboratory scientists and patient representatives. The panel met online (in 2023-25) to develop 15 evidence-based recommendations with the use of the Grading of Recommendations, Assessment, Development, and Evaluations framework addressing attack prevention, management of sporadic and recurrent attacks, long-term follow-up, surveillance for primary liver cancer, and family screening. The guidelines support safe, consistent clinical care and improved outcomes, recognising global variation in resources and access to high-cost drugs, and highlighting priorities for future research.
 
 ---
-### [8] Effectiveness of Influenza Vaccines in Italy in the 2024/2025 Season: A Nationwide, Test-Negative Design Study Based on Surveillance Records.
+### [20] Effectiveness of Influenza Vaccines in Italy in the 2024/2025 Season: A Nationwide, Test-Negative Design Study Based on Surveillance Records.
 **Author**: Cifo Daniel et al. | **Journal**: Influenza and other respiratory viruses (2026/May)
 **PMID**: 42059245 | https://pubmed.ncbi.nlm.nih.gov/42059245/
 
 The 2024/2025 influenza season in Italy was characterised by cocirculation of influenza A and B viruses. Monitoring influenza vaccine effectiveness (IVE) remains essential to guide public health policy due to antigenic shifts and varying strain circulation. In this study, we aimed to estimate IVE in primary care and hospital settings during the 2024/2025 season in Italy. A nationwide test-negative control design was used. Data were collected from the RespiVirNet surveillance system, encompassing both primary care and hospital settings. A total of 8842 participants were included in the primary care analysis and 2492 in the hospital analysis. Adjusted vaccine effectiveness (aVE) against any influenza virus was 69.0% (95% CI: 60.4%-75.9%) in primary care and 62.3% (95% CI: 45.9%-74.2%) in hospital settings. Effectiveness was highest among individuals under 18 years and decreased with age. Influenza B showed the highest aVE (83.6% in primary care; 95.0% in hospital settings), particularly among younger individuals. aVE for influenza A subtypes was lower, with A H1N1pdm09 (54.0% in primary care; 63.8% in hospital) and A H3N2 (60.1% in primary care; 45.5% in hospital) showing moderate effectiveness. The results suggest that influenza vaccines were effective in preventing medically attended influenza disease, both in primary care and hospital settings. These findings provide valuable insights for public health planning and vaccine policy in Italy.
 
 ---
-### [9] Management of Pediatric Hand Injuries in the Acute Setting Part 1: Principles of Pediatric Hand Surgery Management.
+### [21] Management of Pediatric Hand Injuries in the Acute Setting Part 1: Principles of Pediatric Hand Surgery Management.
 **Author**: Sinclair Micah K et al. | **Journal**: Journal of the Pediatric Orthopaedic Society of North America (2026/May)
 **PMID**: 42058390 | https://pubmed.ncbi.nlm.nih.gov/42058390/
 
@@ -134,21 +243,21 @@ UNLABELLED: Injury to the pediatric hand is common, yet acute management techniq
 KEY CONCEPTS: (1)Pediatric-specific anatomy and physiology require different management strategies for hand injuries compared to adults.(2)Not all pediatric hand injuries will be okay without active management; early detection and referral can be crucial.(3)System-wide coordination among primary care, the emergency department, on-call orthopaedic surgeons, and hand specialists is essential for optimal management of pediatric hand trauma.
 
 ---
-### [10] Inter-society consensus on the management of acute bloody diarrhea and shiga toxin-producing Escherichia Coli infection in the molecular microbiology era.
+### [22] Inter-society consensus on the management of acute bloody diarrhea and shiga toxin-producing Escherichia Coli infection in the molecular microbiology era.
 **Author**: Ardissino Gianluigi et al. | **Journal**: Italian journal of pediatrics (2026/Apr)
 **PMID**: 42050676 | https://pubmed.ncbi.nlm.nih.gov/42050676/
 
 (abstract not available)
 
 ---
-### [11] The 2026 Europe report of the Lancet Countdown on health and climate change: narrowing window for decisive health action.
+### [23] The 2026 Europe report of the Lancet Countdown on health and climate change: narrowing window for decisive health action.
 **Author**: Kriit Hedi K et al. | **Journal**: The Lancet. Public health (2026/Apr)
 **PMID**: 42030967 | https://pubmed.ncbi.nlm.nih.gov/42030967/
 
 (abstract not available)
 
 ---
-### [12] Mentalization-Based Therapy for Children and Families: A Systematic Review and Meta-Analysis of the Recent Literature.
+### [24] Mentalization-Based Therapy for Children and Families: A Systematic Review and Meta-Analysis of the Recent Literature.
 **Author**: Spollen Tricia et al. | **Journal**: Clinical child psychology and psychiatry (2026/Apr)
 **PMID**: 42029892 | https://pubmed.ncbi.nlm.nih.gov/42029892/
 
@@ -156,7 +265,18 @@ This systematic review evaluated the impact of Mentalization-Based Therapy (MBT)
 • Mentalization-Based Therapies (MBT) for parenting are increasingly used in clinical practice.• The current review provides inconsistent results in terms of whether MBT therapies actually increase parental reflective functioning (parents’ ability to understand their child’s behavior in terms of underlying mental states).• Programs that adopt MBT principles may help with child regulation and parental stress.
 
 ---
-### [13] Correlation Between Insecure Attachment Style and Symptomatology in Patients With Bipolar Disorder: A Systematic Review.
+### [25] Prevalence estimates of sickle cell disease among children and adolescents in sub-Saharan Africa: a systematic review and modelling analysis.
+**Author**: Adeloye Davies et al. | **Journal**: The Lancet. Child & adolescent health (2026/Jun)
+**PMID**: 42026011 | https://pubmed.ncbi.nlm.nih.gov/42026011/
+
+BACKGROUND: There is a scarcity of data reporting on the burden of sickle cell disease across many African settings, particularly among children, who have the highest risk of preventable morbidity and mortality in the absence of early diagnosis and care. We aimed to estimate the prevalence of sickle cell disease and the absolute number of paediatric cases in sub-Saharan Africa to inform policy and service responses.
+METHODS: For this systematic review and modelling analysis, we searched MEDLINE, Embase, Global Health (CABI), and African Journals Online (AJOL) for studies published from Jan 1, 2000, to Sept 10, 2025, that reported the prevalence of sickle cell disease among children and adolescents younger than 15 years in sub-Saharan Africa. We pooled crude prevalence using random-effects meta-analysis. We then fitted a mixed-effects meta-regression for age band (infants [aged 0 to <12 months], children aged <5 years, children and adolescents aged <15 years), sickle cell disease phenotype (total sickle cell diseases, haemoglobin SS [HbSS], haemoglobin SC [HbSC], and other compound heterozygous variants), Socio-demographic Index (SDI), World Bank income group, and geographical coordinates (latitude, longitude, interaction), plus a country random intercept. Absolute cases for 2023 were derived with the UN World Population Prospects.
+FINDINGS: 40 studies contributed 71 prevalence datapoints from 22 countries across all four subregions of sub-Saharan Africa. Estimated prevalence for all sickle cell diseases was 1·54% (95% CI 0·34-7·49) in infants, 1·51% (0·35-6·72) in children younger than 5 years, and 1·78% (0·21-12·09) in children and adolescents younger than 15 years. By haemoglobin phenotype, the prevalence of HbSS was 0·70% (0·15-3·44) in infants, 0·69% (0·17-2·80) in children younger than 5 years, and 0·80% (0·09-5·11) in children and adolescents younger than 15 years, while that of HbSC was 0·29% (0·06-1·46), 0·28% (0·05-1·50), and 0·33% (0·04-2·43) across the same age groups, respectively. Using UN 2023 population denominators, we estimated 1 165 800 (95% CI 260 600-5 662 100) cases in infants, 2 752 200 (632 700-12 253 200) cases in children younger than 5 years, and 8 854 800 (1 068 900-60 148 700) cases in children and adolescents younger than 15 years living with sickle cell disease in sub-Saharan Africa in 2023. Regional prevalence (children aged <5 years, all sickle cell diseases) was highest in central Africa (2·07% [95% CI 0·30-12·76]), followed by west, southern, and east Africa. The burden was concentrated in populous countries, particularly Nigeria, Ethiopia, and the Democratic Republic of the Congo. Study quality was moderate overall and heterogeneity was substantial.
+INTERPRETATION: Despite data gaps in many countries, the burden of sickle cell disease, especially in west and central Africa, underscores the urgent need to scale up newborn and early childhood screening, prophylaxis, vaccination, and comprehensive care within child health platforms, alongside strengthened surveillance to close evidence gaps and guide sustainable policy reforms.
+FUNDING: None.
+
+---
+### [26] Correlation Between Insecure Attachment Style and Symptomatology in Patients With Bipolar Disorder: A Systematic Review.
 **Author**: Suárez Lorena et al. | **Journal**: Actas espanolas de psiquiatria (2026/Apr)
 **PMID**: 42023460 | https://pubmed.ncbi.nlm.nih.gov/42023460/
 
@@ -166,21 +286,21 @@ RESULTS: A total of six articles were included, five of which were cross-section
 CONCLUSIONS: In patients with BD, insecure attachment is associated with greater symptom severity. Future research should investigate the explanatory mechanisms underlying the relationship between insecure attachment and the symptomatology of these patients.
 
 ---
-### [14] Public Health Achievements in Rwanda: A 21st Century Transformation.
+### [27] Public Health Achievements in Rwanda: A 21st Century Transformation.
 **Author**: Julius Niyibizi et al. | **Journal**: Public health challenges (2026/Jun)
 **PMID**: 42022434 | https://pubmed.ncbi.nlm.nih.gov/42022434/
 
 This narrative review documents how Rwanda has transformed in public health extraordinarily post the 1994 Genocide against the Tutsi, placing it as an exemplary model for health care systems resilience in low-income countries. The review is based on the World Health Organization building blocks to look at the strategic changes that have led to measurable gains in the health of Rwandan people. Good centralized leadership and control have been key to this accomplishment. This made it possible to decentralize service delivery, build excellent health information systems, and invest money in the health workforce. A key part of the transformation is universal health coverage (UHC), especially mutuelle de santé, which increased coverage from 27% in 2004 to more than 85%, hence cutting down out of pocket costs, which improved equity. Integration and use of community health workers (CHWs) have been instrumental in expansion of primary care to the population mostly in rural settings, improving maternal and child life, tuberculosis (TB) treatment through direct observed therapy (DOT), and disease surveillance. These coordinated actions have resulted in substantial reductions in mortality from infectious diseases (HIV/AIDS, TB, and malaria), maternal and child health indicators, and the gradual integration of services for noncommunicable diseases and mental health. Rwanda's health system was stress tested and proved its effectiveness in the COVID-19 and Marburg outbreaks, proving exceptional planning and rapid response capacities. Despite Rwanda's achievement, obstacles still persist, such as reliance on foreign funds, limited human resources lowering the quality-of-service delivery, and mental health challenges still in existence. Rwanda's experience illustrates that a proactive government, citizen participation, and research-based innovation may produce rapid and significant overall health gains, providing a valuable model for similar situations to other countries.
 
 ---
-### [15] Perspectives from a multi-stakeholder workshop for implementing a risk-stratified breast cancer screening program in Canada.
+### [28] Perspectives from a multi-stakeholder workshop for implementing a risk-stratified breast cancer screening program in Canada.
 **Author**: Safieh-Garabedian Nareh et al. | **Journal**: Communications medicine (2026/Apr)
 **PMID**: 42014777 | https://pubmed.ncbi.nlm.nih.gov/42014777/
 
 Implementing population-wide risk-stratified breast screening (RSBS) requires coordinated planning across diverse stakeholders and adaptation within complex healthcare systems. We convened a multi-stakeholder workshop with 34 policymakers, breast screening program leaders and healthcare professionals across Canada. Participants co-envisioned an RSBS program and focused on defining care pathways, the implementation roadmap, stakeholder engagement, and workforce training. A national, flexible RSBS strategy was proposed with multiple entry points and timings for risk assessment, interoperable information technology systems, phased roll-out, and an embedded learning healthcare system. The resulting actionable plans support RSBS implementation in Canada and offer transferable insights for planning RSBS in varied international settings.
 
 ---
-### [16] Understanding equity-oriented maternity care for women of refugee background in high-income countries: a qualitative systematic review.
+### [29] Understanding equity-oriented maternity care for women of refugee background in high-income countries: a qualitative systematic review.
 **Author**: Jameel Aishah et al. | **Journal**: International journal for equity in health (2026/Apr)
 **PMID**: 42010559 | https://pubmed.ncbi.nlm.nih.gov/42010559/
 
@@ -192,14 +312,14 @@ CONCLUSION: Addressing the persistent health inequities faced by women of refuge
 SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1186/s12939-026-02848-5.
 
 ---
-### [17] Medical-Legal Partnership as Value-Based Primary Care: Interprofessional Teamwork for Health-Related Social Needs.
+### [30] Medical-Legal Partnership as Value-Based Primary Care: Interprofessional Teamwork for Health-Related Social Needs.
 **Author**: Park Jin K et al. | **Journal**: Journal of general internal medicine (2026/Apr)
 **PMID**: 42010098 | https://pubmed.ncbi.nlm.nih.gov/42010098/
 
 Today's primary care physicians are being asked to address patients' health-related social needs (HRSN) as part of their routine care practices. An aging population, with a growing complement of intersecting medical and social needs, increases this burden on primary care. Medical-legal partnerships (MLP) are interprofessional collaborations that combine clinical and legal expertise to address HRSN involving housing, public benefits, employment, and other domains remediable by civil legal assistance. A value-based approach to integrating MLP into the health system may help primary care practices more effectively address HRSN and, in turn, better balance revenue and expenses. At the practice and healthcare system levels, a key operational component is data coordination between medical and legal partners, which will enable MLP to define patient populations whose needs are amenable to legal intervention. At the state and federal levels, policy coordination will play a similar role, assessing existing authorities under Medicaid and other federal programs and advocating for data-justified enhancements. Health systems, hospitals, clinics, and primary care practices should recognize the potential for MLP to improve the value of clinical care delivery for patients with HRSN, their families, and communities.
 
 ---
-### [18] Burden and Health System Challenges in MASLD Across East and Southeast Asia: A Narrative Review.
+### [31] Burden and Health System Challenges in MASLD Across East and Southeast Asia: A Narrative Review.
 **Author**: Guerrero Jonathan Jaime G et al. | **Journal**: Health science reports (2026/Apr)
 **PMID**: 42005636 | https://pubmed.ncbi.nlm.nih.gov/42005636/
 
@@ -209,7 +329,7 @@ RESULTS: MASLD prevalence varies widely across East and Southeast Asia, with hig
 CONCLUSION: MASLD represents a growing yet underrecognized public health issue in East and Southeast Asia. Addressing diagnostic gaps, enhancing primary care capacity, and integrating MASLD within existing metabolic disease programs are essential for improving early detection and long-term outcomes. Region-specific strategies and strengthened health systems are critical to mitigating the future burden of MASLD across diverse Asian populations.
 
 ---
-### [19] Social determinants of health screening and interventions in neonatal care pathways (NICU to follow-up): a scoping review.
+### [32] Social determinants of health screening and interventions in neonatal care pathways (NICU to follow-up): a scoping review.
 **Author**: Nezafat Maldonado Behrouz et al. | **Journal**: European journal of pediatrics (2026/Apr)
 **PMID**: 42002682 | https://pubmed.ncbi.nlm.nih.gov/42002682/
 
@@ -219,14 +339,14 @@ WHAT IS KNOWN:  • Studies mainly report screening/referral processes; neonata
 WHAT IS NEW:  • We propose a minimum reporting set to improve how future neonatal SDOH screening/intervention studies are reported and evaluated.
 
 ---
-### [20] Preparation for Pediatric Emergencies in the Office: Policy Statement.
+### [33] Preparation for Pediatric Emergencies in the Office: Policy Statement.
 **Author**: Cantrell Patricia et al. | **Journal**: Pediatrics (2026/May)
 **PMID**: 42002280 | https://pubmed.ncbi.nlm.nih.gov/42002280/
 
 Although not common, pediatric emergencies present in the medical office setting, and offices that care for children and adolescents can prepare for these emergencies. Offices vary depending on their location and office setting, patient population, and distance to an emergency department or hospital. Consequently, these factors should be taken into account in the planning process. This statement updates the recommendations from the 2007 American Academy of Pediatrics (AAP) practice guideline "Preparation for Emergencies in the Offices of Pediatricians and Pediatric Primary Care Providers." An accompanying technical report contains explanations and evidence for these recommendations and can be found at https://doi.org/10.1542/peds.2026-076622. This policy statement and companion technical report can be used as a guide to help create an individualized approach to emergencies that occur in offices that care for children, including both primary care and subspecialty practices. An accompanying checklist summarizes steps that medical offices can take to assess their readiness for pediatric emergencies.
 
 ---
-### [21] Gender equality and equity in intensive care: an international Delphi consensus study.
+### [34] Gender equality and equity in intensive care: an international Delphi consensus study.
 **Author**: Myatra Sheila Nainan et al. | **Journal**: Intensive care medicine (2026/Apr)
 **PMID**: 41984151 | https://pubmed.ncbi.nlm.nih.gov/41984151/
 
@@ -236,21 +356,31 @@ RESULTS: Six Delphi rounds were conducted between May and July 2025. A 100% resp
 CONCLUSION: Using a Delphi method, international experts reached consensus to generate 37 professional practice guidance statements. The consensus statements provide needed guidance for professional engagement and highlight areas for policy development to advance gender equity and equality for healthcare workers in intensive care. The discordant statements highlight areas for future research.
 
 ---
-### [22] Are There Any Effective Behavior Change Strategies for Communicating Genetic Risk in Obesity Prevention and Body Weight Reduction Interventions?
-**Author**: Szczuka Zofia et al. | **Journal**: Obesity reviews : an official journal of the International Association for the Study of Obesity (2026/Apr)
-**PMID**: 41980754 | https://pubmed.ncbi.nlm.nih.gov/41980754/
+### [35] Chronic widespread pain and the risk of cardiovascular disease-a systematic review and meta-analysis.
+**Author**: Rönnegård Ann-Sofie et al. | **Journal**: Pain (2026/Jun)
+**PMID**: 41972388 | https://pubmed.ncbi.nlm.nih.gov/41972388/
 
-This systematic review examined how differences in intervention components may contribute to inconsistent findings in genetic risk communication studies, addressing obesity-related outcomes (e.g., weight reduction, nutrition behavior, exercise). The review was preregistered (PROSPERO #CRD42024524026) and followed PRISMA guidelines. Searches across eight databases identified 23 randomized controlled trials, covering 18 intervention trials. Risk of bias was assessed using the Risk of Bias 2 tool. A narrative synthesis was used to cluster studies by the content of intervention and control groups. Genetic risk communication alone (no behavioral counseling, addressing nutrition and exercise) or combined with phenotype-based risk was ineffective and sometimes counterproductive among low-risk individuals. When combined with personalized behavioral counseling, effectiveness improved, but only when compared to waitlist control groups or non-personalized behavioral counseling. Significant effects emerged in high-genetic risk subgroups within personalized behavioral counseling, using behavior change techniques such as problem-solving, feedback on behavior, self-monitoring, and environmental changes. The most promising results emerged from complex interventions integrating genetic risk communication into multiple sessions and combining numerous additional behavioral change techniques, such as social reward, cues/prompts, self-reward. Complex personalized interventions combining multiple behavior change techniques and prompting experiential genetic risk awareness show promise for improving weight, nutrition, and exercise-related outcomes.
+Previous research indicates that individuals with chronic widespread pain (CWP) have an excess risk of cardiovascular disease. Given the high global prevalence of CWP, this association may have substantial public health implications. Our objective was to summarise the current evidence on the association between CWP and incident cardiovascular disease in a systematic review and meta-analysis. We searched major databases (MEDLINE, Embase, Web of Science, and Cochrane) and included studies based on predefined eligibility criteria. We identified 18 studies reporting associations between CWP (n = 80,021) and atherosclerotic diseases or cardiovascular mortality (n events = 33,799). In the meta-analysis, we removed studies that analysed identical outcomes in the same population. Individuals with CWP had an almost doubled risk of atherosclerotic diseases, RR 1.94 (95% confidence interval [CI]: 1.56-2.41), and for cardiovascular mortality, the RR was 1.61 (95% CI: 1.24-2.08) in the minimally adjusted models. In the maximally adjusted model, the RR for atherosclerotic diseases was 1.53 (95% CI: 1.27-1.86) vs RR 1.12 (95% CI: 0.93-1.34) for cardiovascular mortality. The heterogeneity was high and potential publication bias was indicated for the mortality analysis. This meta-analysis, although based on relatively few studies with high heterogeneity, shows that CWP is consistently associated with incident atherosclerotic disease. Evidence for an association with cardiovascular mortality is less conclusive. Individuals with CWP may represent an underrecognized high-risk group for atherosclerotic diseases that could benefit from proactive cardiovascular risk assessment and intensified prevention. Further high-quality studies are warranted to confirm the strength and causality of the association.
 
 ---
-### [23] Electroencephalography during acute painful procedures in neonates: a scoping review.
+### [36] Electroencephalography during acute painful procedures in neonates: a scoping review.
 **Author**: Gunawan Patricia Y et al. | **Journal**: Pain reports (2026/Jun)
 **PMID**: 41972211 | https://pubmed.ncbi.nlm.nih.gov/41972211/
 
 Although electroencephalography (EEG) is used to assess neonatal pain in research settings, EEG assessments have not been sufficiently characterized for use as end points to assess the efficacy of analgesics in regulatory-endorsed, industry-sponsored trials. We aimed to identify all studies conducted in neonates with EEG recordings during acute somatic nociceptive skin-breaking procedures, and to create a network of authors who will be invited to contribute their individual participant data (IPD) to an IPD meta-analysis to establish the validity, reliability, and clinical interpretability of an EEG-based neonatal pain measure. To identify literature, we searched MEDLINE, Embase, CINAHL, Web of Science, Scopus, Google Scholar, ClinicalTrials.gov, and the WHO ICTRP from database inception to July 2, 2025. Eligible studies were primary empirical studies that included neonates with EEG recordings during acute skin-breaking procedures. We identified 55 studies across 11 countries. Heel lance was the most common painful procedure; others included venipuncture, immunization, and lumbar puncture. The impact of 12 analgesic interventions has been studied to date, mostly nonpharmacological interventions. Individual-electrode EEG is more common than EEG caps. We noted relatively high data loss due to EEG data-quality concerns. A wide range of non-EEG pain-relevant measures have been recorded alongside EEG (eg, behavior, vital signs). Coauthorship network analysis highlighted that authors commonly work within discrete authorship hubs, with limited coauthorship across hubs. The predominance of studies was from European and American institutions, which limits generalizability. We conclude that sufficient data are available to undertake an IPD meta-analysis.
 
 ---
-### [24] Prediction of Developmental Outcomes in Preterm Infants: A Systematic Review.
+### [37] Prevalence of stressful life events in young people with functional seizures: A systematic review and narrative synthesis.
+**Author**: Harris Clare et al. | **Journal**: Seizure (2026/May)
+**PMID**: 41962320 | https://pubmed.ncbi.nlm.nih.gov/41962320/
+
+BACKGROUND: Functional seizures are episodes resembling epileptic seizures without abnormal electrical activity. Stressful life events (SLEs) may act as contextual or vulnerability factors in adults, but their relevance in children is unclear. This review summarises the types and prevalence of SLEs in young people with functional seizures and, where possible, compares findings with healthy peers and those with epilepsy.
+METHODS: PsycINFO, MEDLINE, and Web of Science were searched to October 2024. Studies were included if participants were under 18, had a v-EEG-confirmed or ILAE-defined diagnosis of functional seizures, and reported SLEs with extractable child-specific data. Twenty-one studies met inclusion criteria. SLEs were grouped into six inductively derived categories. Study quality and risk of bias were assessed using the Joanna Briggs Institute framework. Findings were synthesised narratively due to heterogeneity.
+RESULTS: A variety of SLEs were reported, but measurement approaches and sample characteristics varied. Some studies suggested higher SLE rates in functional seizure populations compared to healthy or epilepsy controls, and several reported greater exposures among adolescents than younger children. Few studies controlled for confounders.
+CONCLUSIONS: SLEs may represent one of several contextual or vulnerability factors for some young people with functional seizures, rather than a defining or causal feature. Evidence is limited by inconsistent measurement and study design. Future research using standardised SLE assessments, diverse samples, and controlled or longitudinal designs is needed to clarify the role of life stress within biopsychosocial formulations and clinical care.
+
+---
+### [38] Prediction of Developmental Outcomes in Preterm Infants: A Systematic Review.
 **Author**: Meijer Julia S et al. | **Journal**: Pediatrics (2026/May)
 **PMID**: 41921987 | https://pubmed.ncbi.nlm.nih.gov/41921987/
 
@@ -264,15 +394,7 @@ LIMITATIONS: Because of a high RoB among all included studies, no recommendation
 CONCLUSIONS: Although many prediction models for developmental outcomes after preterm birth exist, external validation is rare, and RoB is high. Future research is needed to validate and, if needed, update existing models to support perinatal decision-making.
 
 ---
-### [25] [Annual advances in clinical applications of pulmonary function testing 2025].
-**Author**: Chen B X et al. | **Journal**: Zhonghua jie he he hu xi za zhi = Zhonghua jiehe he huxi zazhi = Chinese journal of tuberculosis and respiratory diseases (2026/Apr)
-**PMID**: 41912392 | https://pubmed.ncbi.nlm.nih.gov/41912392/
-
-This review systematically synthesizes and critically appraises domestic and international advances in pulmonary function tests (PFT) research and clinical applications between October 2024 and September 2025. Three major Chinese guidelines or expert consensuses on PFT were published, including the Chinese expert consensus on the testing process and clinical application of fractional exhaled nitric oxide detector (2025), Expert consensus on pediatric lung diffusing capacity tests, and the Chinese guideline for routine pulmonary function tests in primary care (2024). The Global Initiative for Chronic Obstructive Lung Disease (GOLD) 2025 report was published, alongside its Chinese version of teaching slides and pocket guideline. Key recommendations reviewed and interpreted include the workflow for pre-and post-bronchodilator spirometry recommended by GOLD science committee, PFT criteria for defining airflow obstruction, guidance on interpreting reference values, the classification of airflow obstruction severity, and a life-course trajectory chart illustrating lifespan changes in pulmonary function. This trajectory illustrates that forced expiratory volume in one second (FEV1) and forced vital capacity (FVC) increase rapidly initially, then more slowly to a peak, followed by a progressive decline without a plateau phase. In contrast, the FEV1/FVC ratio trajectory demonstrates a gradual decline starting from the age of 4. Regarding reference equations, researchers conducted more in-depth verification and reflection, and numerous studies have found that applying the Global Lung Initiative (GLI) Global equation may lead to overestimation or underestimation of pulmonary function in diverse ethnic populations. Significant progress has been made in China with the establishment of spirometric reference equations tailored for children and populations residing in high-altitude regions, providing an important tool for precise assessment of these groups. In terms of technological integration, PFT is becoming deeply integrated with various advanced technologies. Electrical Impedance Tomography shows promise for early detection of lung function abnormalities. Chest CT imaging is increasingly being utilized to predict functional parameters. Furthermore, strong correlations have been identified between PFT results and findings from lung ultrasound as well as specific laboratory markers, including albumin, non-high-density lipoprotein cholesterol, and serum β-catenin. Advances in artificial intelligence are particularly noteworthy in the field of pulmonary function. Researchers have developed sophisticated AI models capable of not only predicting lung function outcomes but also utilizing pulmonary function testing parameters to forecast the likelihood of various diseases. These tools significantly enhance clinicians' diagnostic accuracy and efficiency. Regarding technical equipment, several domestically produced devices have been successfully developed and introduced to the market in China. These include forced oscillation technique instruments, fractional exhaled nitric oxide analyzers employing chemiluminescence and electrochemical detection methods, and oscillatory resistance bronchial provocation test systems. The widespread adoption of these devices has lowered the technological threshold and enhanced the accessibility of services. Collectively, these research outcomes and technological innovations provide clinicians and researchers with up-to-date scientific and practical guidance, significantly propelling the advancement and clinical application of PFT.
-对2024年10月至2025年9月期间国际及国内肺功能检查的研究进展及临床应用进行回顾综述与评价。主要内容包括新发布或更新的肺功能检查指南、共识或规范，在高原地区及儿童等不同人群的通气功能等正常预计值，全球慢性阻塞肺疾病创议（GOLD）的全生命周期肺功能变化轨迹，临床研究相关的肺功能检查结果判读，肺功能在慢阻肺病社区筛查、肺动脉高压等呼吸疾病以及糖尿病等其他呼吸相关共病的评估、预测、管理等方面的应用，肺功能结合胸部影像学、实验室检查等其他诊治技术结合的多维分析；国产肺功能仪研发新进展；以及人工智能技术在模型建立、质量控制、结果评价及病情变化预测等的应用进展。.
-
----
-### [26] Global, regional, and national burden of meningitis, its risk factors, and aetiologies, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.
+### [39] Global, regional, and national burden of meningitis, its risk factors, and aetiologies, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.
 **Author**: ? et al. | **Journal**: The Lancet. Neurology (2026/May)
 **PMID**: 41911930 | https://pubmed.ncbi.nlm.nih.gov/41911930/
 
@@ -283,28 +405,28 @@ INTERPRETATION: Although mortality and incidence have declined significantly sin
 FUNDING: Gates Foundation, Wellcome Trust, and UK Department of Health and Social Care.
 
 ---
-### [27] Setting research priorities to understand and address the impact of climate change on the health of women and children in low-income and middle-income countries using the Child Health and Nutrition Research Initiative method.
+### [40] Setting research priorities to understand and address the impact of climate change on the health of women and children in low-income and middle-income countries using the Child Health and Nutrition Research Initiative method.
 **Author**: Syal Ruby et al. | **Journal**: The Lancet. Global health (2026/May)
 **PMID**: 41903554 | https://pubmed.ncbi.nlm.nih.gov/41903554/
 
 Climate change is a substantial global health threat in the 21st century, disproportionately affecting low-income and middle-income countries (LMICs), which face significant climate risks, pre-existing vulnerabilities, and have relatively few interventions in place. With a scarcity of research in LMICs, and diminishing development assistance, setting priorities to address climate change-related health impacts on women and children is both urgent and prudent. We consulted 88 climate and health researchers between 2022 and 2024 to generate relevant questions regarding climate change impacts on women and children's health and potential solutions. A diverse group of 52 experts prioritised a shortlist of 70 questions using the Child Health and Nutrition Research Initiative method. The top three priorities included vulnerability mapping, integrating climate metrics into surveillance, and long-term heat exposure effects. This Health Policy underscores key knowledge gaps in climate-related health outcomes affecting women and children in LMICs, and suggests a focused research agenda for guiding global investments in resilience and adaptation.
 
 ---
-### [28] Expert perspectives on Myalgic encephalomyelitis/chronic fatigue syndrome - Insights from the 3rd International Conference of the Charité Fatigue Center.
+### [41] Expert perspectives on Myalgic encephalomyelitis/chronic fatigue syndrome - Insights from the 3rd International Conference of the Charité Fatigue Center.
 **Author**: Fehrer Annick et al. | **Journal**: Autoimmunity reviews (2026/May)
 **PMID**: 41895458 | https://pubmed.ncbi.nlm.nih.gov/41895458/
 
 Myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS) is a complex, multisystemic disorder mostly triggered by viral infections, with core symptoms including post-exertional malaise (PEM), fatigue, pain, and cognitive dysfunction. Its prevalence has increased significantly in the context of the coronavirus disease 2019 (COVID-19) pandemic. Despite its severity and impact on patients' quality of life, ME/CFS remains poorly understood. On May 12 and 13, 2025, the 3rd International Conference hosted by the Charité Fatigue Center brought together nearly 200 researchers from various disciplines on-site, and around 3,700 participants online to discuss recent advances in ME/CFS research, diagnostics, clinical care, and therapeutic trials. The program featured 33 lectures by international experts on key topics such as post-COVID syndrome (PCS), care structures, and pathophysiological mechanisms including cardiovascular dysregulation, immune dysregulation, autoimmune mechanisms, and metabolic dysfunction. In addition, results from clinical trials addressing disease mechanisms, including those specifically targeting autoantibodies, were presented. While public awareness and funding opportunities have increased in the wake of the pandemic and the emergence of PCS, ME/CFS remains severely underresearched. Sustained and adequately funded research efforts are urgently required to advance understanding, identify diagnostic markers, and develop targeted therapeutic interventions.
 
 ---
-### [29] An evidence-based, multidimensional definition of the Mediterranean Diet within the Italian National Guidelines "La Dieta Mediterranea".
+### [42] An evidence-based, multidimensional definition of the Mediterranean Diet within the Italian National Guidelines "La Dieta Mediterranea".
 **Author**: Casirati Amanda et al. | **Journal**: Nutrition (Burbank, Los Angeles County, Calif.) (2026/Jul)
 **PMID**: 41819766 | https://pubmed.ncbi.nlm.nih.gov/41819766/
 
 The Mediterranean Diet (MD), first conceptualized by Ancel Keys in the 1950s, is widely acknowledged as a dietary pattern associated with significant health benefits. It is also a cultural heritage, recognized by UNESCO in 2010. Despite its relevance, the MD has been variably defined through descriptive models, food pyramids, and adherence scoring systems. This heterogeneity limits comparability across research and practice. This paper describes the development of a standardized, evidence-based, and multidimensional definition of the MD within the Italian National Guidelines "La Dieta Mediterranea." Importantly, the proposed definition integrates both nutritional components and sociocultural dimensions, including lifestyle practices, conviviality, and sustainability. The guideline development process followed internationally recognized standards, involving a multidisciplinary panel and systematic evidence synthesis. The MD was defined conceptually through an operational approach based on the analysis of existing adherence scores available in the literature. Thirty-three eligible studies and fifteen Mediterranean Diet Scoring Systems were analyzed to identify common food groups, nutrients, and lifestyle components. The proposed definition emphasizes high consumption of plant-based foods, olive oil as the primary fat source, moderate intake of fish, dairy, and white meat, and limited consumption of red meat and processed products. Beyond nutrition, the MD is conceptualized as a multidimensional lifestyle encompassing physical activity, conviviality, and sustainability principles. This integrated approach aligns with contemporary evidence on chronic disease prevention and health promotion. The resulting definition provides a conceptual framework for healthcare professionals, researchers, and policymakers, supporting harmonized interventions and policy strategies that extend "beyond the plate."
 
 ---
-### [30] The screening accuracy of the PROMIS® Anxiety measures in adults - A systematic review and multiple-thresholds meta-analysis.
+### [43] The screening accuracy of the PROMIS® Anxiety measures in adults - A systematic review and multiple-thresholds meta-analysis.
 **Author**: Fomenko Alexey et al. | **Journal**: Journal of psychosomatic research (2026/Jun)
 **PMID**: 41812543 | https://pubmed.ncbi.nlm.nih.gov/41812543/
 
@@ -313,14 +435,14 @@ METHODS: We searched the electronic databases from inception until 15 July 2025 
 CONCLUSIONS: The PROMIS®-SF-A-8a results were homogeneous, showing good screening accuracy. However, the limited number of studies - especially for other PROMIS® Anxiety measures - and the lack of replication in settings like primary care highlight the need for further research.
 
 ---
-### [31] Oral Lamivudine for Extended HIV Postnatal Prophylaxis.
+### [44] Oral Lamivudine for Extended HIV Postnatal Prophylaxis.
 **Author**: Van de Perre Philippe et al. | **Journal**: Paediatric drugs (2026/May)
 **PMID**: 41774412 | https://pubmed.ncbi.nlm.nih.gov/41774412/
 
 Despite considerable progress in preventing mother-to-child transmission (PMTCT) of human immunodeficiency virus (HIV), eliminating paediatric HIV has not been achieved. Extended postnatal prophylaxis (ePNP), defined as prophylaxis administered to an HIV-exposed child after PMTCT perinatal prophylaxis ends, has been evaluated and is now proposed as an improved approach towards elimination. This approach should be urgently incorporated into international PMTCT recommendations. The antiretroviral drugs most commonly studied as ePNP, either alone or in combination, are lamivudine, nevirapine, lopinavir/ritonavir and zidovudine. In this study, we examined the efficacy, safety, pharmacology, genetic barrier to resistance and practicality of various ePNP regimens. Regimens combining multiple antiretroviral drugs are no more effective than single-drug regimens in terms of protective efficacy but they are associated with increased toxicity. On the basis of these criteria, we recommend lamivudine as the preferred ePNP drug or nevirapine as an alternative. Guided by maternal HIV viral load, ePNP may be particularly indicated, as it could ensure that the prophylaxis provides the greatest benefit/risk to children at highest risk. Long-acting injectable antiretroviral drugs and broadly neutralising antibodies (bNAbs) have yet to be fully evaluated in neonates, infants and children; however, they may offer new alternatives in the future.
 
 ---
-### [32] Barriers and facilitators to pediatric pain assessment and management in sub-Saharan Africa: A scoping review.
+### [45] Barriers and facilitators to pediatric pain assessment and management in sub-Saharan Africa: A scoping review.
 **Author**: Noorbhai Raabiah et al. | **Journal**: Journal of pediatric nursing (2026)
 **PMID**: 41759235 | https://pubmed.ncbi.nlm.nih.gov/41759235/
 
@@ -332,28 +454,28 @@ CONCLUSION: Pediatric pain care in SSA is shaped by systemic challenges as well 
 IMPLICATIONS FOR PRACTICE: Region-specific, multidisciplinary interventions aligned with WHO and Sustainable Development Goal 3 should integrate pediatric pain education into training programs, adopt appropriate assessment tools, ensure medication availability, strengthen supply chains, and involve caregivers. Tailored interventions, grounded in SSA-specific evidence, are essential for equitable and effective pediatric pain care.
 
 ---
-### [33] Assessment and Treatment of Bipolar Disorder in the Community.
+### [46] Assessment and Treatment of Bipolar Disorder in the Community.
 **Author**: Youngstrom Eric A et al. | **Journal**: Annual review of clinical psychology (2026/May)
 **PMID**: 41758922 | https://pubmed.ncbi.nlm.nih.gov/41758922/
 
 Bipolar disorder is a recurrent, heterogeneous condition that often begins in adolescence and typically requires lifelong, multimodal management. Advances in evidence-based assessment (EBA) offer structured frameworks for prediction, prescription, and progress monitoring, and pharmacological and psychosocial interventions supported by recent reviews and the Canadian Network for Mood and Anxiety Treatments (CANMAT)/International Society for Bipolar Disorders (ISBD) guidelines provide effective options across phases of illness. Despite these advances, the impact of evidence-based approaches remains blunted in practice: Diagnosis is often delayed, pharmacotherapy is inconsistently prescribed or monitored, psychosocial interventions are underused, and relapse prevention strategies are rarely sustained. Therefore, the field must embed prediction, treatment, and monitoring within community treatment settings-primary care, schools, digital platforms, and family systems-where risk can be identified early, preventive strategies can be delivered, and long-term maintenance can be supported. Framing EBA as a dynamic, community-anchored cycle offers the best chance of translating evidence into improved outcomes, bridging the gap between research efficacy and real-world effectiveness in the care of bipolar disorder.
 
 ---
-### [34] Practitioner Review: Clinical insights from attachment theory and research for professionals working with young children and their families.
+### [47] Practitioner Review: Clinical insights from attachment theory and research for professionals working with young children and their families.
 **Author**: Opie Jessica E et al. | **Journal**: Journal of child psychology and psychiatry, and allied disciplines (2026/May)
 **PMID**: 41736561 | https://pubmed.ncbi.nlm.nih.gov/41736561/
 
 Attachment theory, with its core concepts, perspectives, and insights developed over the past five decades, is influential for professionals working with young children. However, practitioners face challenges translating attachment theory and research into practical applications. This manifests in attachment myths, theoretical misinterpretations, and inconsistency of application. This state-of-the-art review is authored by 47 attachment researchers and practitioners and examines key insights from attachment theory to facilitate attachment-aware practice for professionals working with children and their caregivers. Following the ongoing debate on practical relevance in attachment theory, we present both 'strict' and 'expansive' translational perspectives on applications for addressing preventative or clinical attachment concerns. We first review core attachment propositions, based on replicated research of attachment and caregiving. We next address common misconceptions that hinder adequate practical applications. We present measures of attachment and sensitive parenting that might be helpful for practitioners. We also review evidence-based and promising attachment interventions, discussing core components of (preventative) support for parents or caregivers and the children in their care. We emphasize that attachment theory's clinical value lies not in assigning attachment classifications, but rather in understanding crucial insights into caregiving and early socioemotional development (e.g., secure base phenomena; the value of safe, stable, and shared good-enough care), developed in attachment research over the past 50 years, that may inform policy and clinical reasoning and areas for prevention and intervention.
 
 ---
-### [35] Accelerating Generic Long-Acting Antiretrovirals for Global HIV Treatment: Workshop Findings and a Roadmap to Access.
+### [48] Accelerating Generic Long-Acting Antiretrovirals for Global HIV Treatment: Workshop Findings and a Roadmap to Access.
 **Author**: Arshad Usman et al. | **Journal**: Clinical pharmacology and therapeutics (2026/May)
 **PMID**: 41704016 | https://pubmed.ncbi.nlm.nih.gov/41704016/
 
 The global HIV response aims for widespread availability of affordable, quality-assured long-acting antiretroviral (LA ARV) drugs to achieve sustained epidemic control, particularly in low- and middle-income countries. This report summarizes key discussion points, findings, and outcomes from an international workshop on generic LA ARVs, held in Liverpool, United Kingdom, and co-organized by the Long-Acting/Extended-Release Antiretroviral Resource Program (LEAP) and the Centre of Excellence for Long-acting Therapeutics (CELT). The workshop brought together experts from across disciplines to evaluate the multifaceted challenges and opportunities for faster development and regulatory approval of affordable and accessible generic LA ARVs. Key topics included the application of novel pharmacokinetic end points to reduce study duration, the integration of community preferences into practice-based research in resource-limited settings, intellectual property considerations, formulation and manufacturing complexities that affect cost, scalability and implementation, and the growing role of model-integrated evidence in streamlining bioequivalence assessments. To reach the goal of timely and equitable global access to long-acting medicines, this workshop emphasized the need for strategic public-private engagement to promote data sharing, enhance regulatory efficiencies, and develop robust in vitro-in vivo correlation strategies that meet regulatory guidance for LAI products.
 
 ---
-### [36] YouTube as a source of (mis)information for morning sickness self-help - A content analysis and literature review of recommendations for nausea and vomiting in pregnancy.
+### [49] YouTube as a source of (mis)information for morning sickness self-help - A content analysis and literature review of recommendations for nausea and vomiting in pregnancy.
 **Author**: Geusens Femke et al. | **Journal**: Midwifery (2026/May)
 **PMID**: 41690170 | https://pubmed.ncbi.nlm.nih.gov/41690170/
 
@@ -364,14 +486,14 @@ RESULTS: We identified 85 unique recommendations, which could be sorted in 6 cat
 CONCLUSION: Women who seek NVP relief on YouTube are exposed to a wide variety of recommendations to reduce their symptoms. However, only few of these are evidence-based, and some may even be dangerous. Overall, there is a lack of research on effective non-pharmacological interventions for NVP relief. This highlights the need for improved guidance and dissemination of evidence-based interventions for NVP online.
 
 ---
-### [37] Evaluating amino acid fortification in low-dairy ready-to-use therapeutic food formulations: Insights from a meta-analysis re-evaluation.
+### [50] Evaluating amino acid fortification in low-dairy ready-to-use therapeutic food formulations: Insights from a meta-analysis re-evaluation.
 **Author**: Berhane Melkamu et al. | **Journal**: Food chemistry (2026/Apr)
 **PMID**: 41672015 | https://pubmed.ncbi.nlm.nih.gov/41672015/
 
 Severe wasting is treated with ready-to-use therapeutic food (RUTF), wherein the protein content primarily comes from milk and peanuts. As these ingredients are the main drivers of RUTF's cost, global initiatives seek alternatives using locally available, sustainable ingredients to reduce cost and increase coverage. To compensate for reduced/removed dairy protein, current practice is to add amino acids to meet Codex protein quality requirements. In this meta-analysis re-evaluation, we compared RUTF formulations with <50% dairy protein, with or without amino acid fortification, against standard milk-peanut RUTF for the outcome of weight gain. Growth outcomes were similar between fortified and unfortified RUTFs when compared to standard RUTF. These findings suggest that elevating protein quality scores by adding amino acids may be insufficient to ensure clinical efficacy in novel RUTF formulations. Additionally, the findings suggest that Protein Digestibility Corrected Amino Acid Score (PDCAAS) compliance alone may not guarantee clinical efficacy. Future formulation efforts should address digestibility, antinutritional factors, and increasing total protein content to achieve effective, sustainable novel RUTF formulations.
 
 ---
-### [38] Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
+### [51] Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
 **Author**: Islam Nazmul et al. | **Journal**: JAMA pediatrics (2026/May)
 **PMID**: 41661638 | https://pubmed.ncbi.nlm.nih.gov/41661638/
 
@@ -385,29 +507,49 @@ RESULTS: A total of 190 studies involving 2.8 million participants across 40 cou
 CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
 
 ---
-### [39] Role of the perinatal experience on the risk of acute leukemia in childhood or adolescence: Systematic review and meta-analysis.
+### [52] Adverse outcomes among pregnant women with COVID-19 according to hospitalization status: A prospective individual participant data meta-analysis in Europe and North America.
+**Author**: de Bruin Odette et al. | **Journal**: International journal of gynaecology and obstetrics: the official organ of the International Federation of Gynaecology and Obstetrics (2026/Jun)
+**PMID**: 41392882 | https://pubmed.ncbi.nlm.nih.gov/41392882/
+
+BACKGROUND: Understanding the varied impact of COVID-19 severity on pregnancy outcomes is crucial for informed clinical management and targeted interventions.
+OBJECTIVE: To evaluate the impact of COVID-19 on pregnancy outcomes, distinguishing between pregnant women managed in primary care and those requiring hospitalization.
+SEARCH STRATEGY: Regulatory authorities actively promoted global cooperation on COVID-19's impact during pregnancy. Data were obtained through these regulatory bodies and direct researcher communication rather than through systematic searches.
+SELECTION CRITERIA: Data sources required secondary population-based data to identify pregnancies with COVID-19, along with hospitalization, diagnostic and medication codes. Eligibility for the meta-analysis was determined through protocol evaluation and researcher consultations.
+DATA COLLECTION AND ANALYSIS: PRISMA-IPD and Cochrane guidelines for prospective meta-analysis were followed. Protocols and definitions were standardized across sources, and a common R script was developed. Initially, crude and adjusted relative risks (aRR) with 95% confidence intervals (CI) were calculated to assess adverse outcomes in pregnant women with and without COVID-19 in each data source. Estimates were stratified by trimester at infection and hospitalization status. Subsequently, data were pooled using a random-effects meta-analysis.
+MAIN RESULTS: Data from 10 sources across seven countries contributed to the meta-analysis, including 86 210 pregnant women diagnosed with COVID-19, of whom 4.4% were hospitalized. Non-hospitalized pregnant women with COVID-19 had no increased risks of adverse outcomes compared to pregnant women without COVID-19. However, hospitalized women with COVID-19 in each trimester had higher risks of cesarean section, preterm birth, and LBW compared to pregnant women without COVID-19. Hospitalization due to COVID-19 in the third trimester was associated with increased risk of stillbirth (aRR 5.90, 95% CI: 2.22-15.71, I2 = 0%). First-trimester hospitalizations due to COVID-19 did not show heightened risks of GDM (aRR 2.08, 95% CI: 0.93-4.64, I2 = 65%), pre-eclampsia (aRR 1.79, 95% CI: 0.48-6.66, I2 = 71%), or major congenital anomalies (aRR 1.30, 95% CI: 0.55-3.06, I2 = 0%).
+CONCLUSIONS AND RELEVANCE: COVID-19 requiring hospitalization is associated with adverse pregnancy outcomes, emphasizing the need to prevent severe illness during pregnancy. This study also highlights the importance of international collaboration for gathering pregnancy data and shows that building global research networks is essential for responding to future health crises.
+
+---
+### [53] Role of the perinatal experience on the risk of acute leukemia in childhood or adolescence: Systematic review and meta-analysis.
 **Author**: Blanco-Lopez Jessica et al. | **Journal**: International journal of cancer (2026/May)
 **PMID**: 41277016 | https://pubmed.ncbi.nlm.nih.gov/41277016/
 
 Acute leukemia is the most common type of cancer in children; however, the etiology is poorly understood. The objective of this review was to summarize the current evidence of the role of perinatal factors in the development of acute leukemia. All epidemiological studies published up to October 2023 that evaluated perinatal risk factors for childhood acute leukemia were identified using a multi-tiered approach in two electronic databases (PubMed and Web of Science), without restriction on publication year or language. A total of 85 studies (13 prospective cohort studies, 62 case-control studies, and 10 pooled analyses) were included. We combined the published risk estimates in a meta-analysis, using the Generic Inverse Variance method. An increased risk of acute leukemia and the lymphoblastic subtype (ALL) was associated with high birth weight (>4000 g) (odds ratio [OR] = 1.35; 95% confidence interval [95% CI] 1.20-1.53 and OR = 1.21; 95% CI 1.08-1.34, respectively), maternal history of abortion (OR = 1.27; 95% CI 1.12-1.43 and OR = 1.24; 95% CI 1.08-1.43, respectively), and maternal diabetes (OR = 1.30; 95% CI 1.14-1.48 and OR = 1.32; 95% CI 1.16-1.50, respectively). In addition, an increased risk for ALL was also associated with maternal hypertension (OR = 1.21; 95% CI 1.06-1.38) and cesarean section (OR = 1.10; 95% CI 1.05-1.16). Our review suggests a potential role for perinatal factors in the development of acute leukemia in children. These findings indicate potential avenues for developing cost-effective prevention strategies applicable at the population level, while the mechanism of action is investigated.
 
 ---
-### [40] A Systematic Review of Adverse Childhood Experiences and Epigenetic Age Acceleration in Later Adult Life Measured With Second and Third-Generation Epigenetic Clocks.
+### [54] A Systematic Review of Adverse Childhood Experiences and Epigenetic Age Acceleration in Later Adult Life Measured With Second and Third-Generation Epigenetic Clocks.
 **Author**: Green Matthew et al. | **Journal**: American journal of medical genetics. Part B, Neuropsychiatric genetics : the official publication of the International Society of Psychiatric Genetics (2026/Jun)
 **PMID**: 41047940 | https://pubmed.ncbi.nlm.nih.gov/41047940/
 
 We examined the relationship between adverse childhood experiences (ACEs) and epigenetic age acceleration (EAA) in adulthood as measured by second and third generation epigenetic clocks by performing a systematic review of the literature. The electronic databases MEDLINE and EMBASE were searched on 17 July 2023. All studies measuring epigenetic age using the second and third-generation clocks in adults who experienced ACEs when under the age of 18 were included. Papers from before 1 January 2018, papers where the full text was not available in the English language, and animal studies were excluded. Two independent reviewers extracted the data and screened the studies against the defined eligibility criteria, and any discrepancies were resolved by referral to an independent third reviewer. The Crowe Critical Appraisal Tool was used to assess bias. The outcome of interest was epigenetic age acceleration measured by second and third generation epigenetic clocks. Eight hundred thirty-six studies were identified by the search strategy. Ten studies were ultimately included in the review, nine of which were either high quality or very high quality. A consistent positive association between ACEs and EAA was seen across the studies with evidence of a dose-response effect. This study suggests that previously reported observations of childhood trauma leading to poorer adult health could be mediated by epigenetic changes to DNA among European populations. Further studies are needed to see if these findings are replicated in other ethnic groups.
 
 ---
+### [55] Effects of Combined Lipid-Based Nutrient Supplements and Malaria Preventive Treatment during Pregnancy on Malaria, Maternal Nutrition, and Birth Outcomes: A Scoping Review.
+**Author**: Parikh Panam et al. | **Journal**: Nutrition reviews (2026/Jun)
+**PMID**: 40720671 | https://pubmed.ncbi.nlm.nih.gov/40720671/
+
+Malaria and malnutrition adversely affect maternal and neonatal health in Sub-Saharan Africa. While intermittent preventive treatment of malaria in pregnancy (IPTp) is widely used to reduce malaria incidence, the potential additional benefits of combining it with lipid-based nutrient supplements (LNS) remain unclear. The objective of this review was to systematically summarize the evidence on the effects of LNS in combination with IPTp on malaria incidence, maternal nutritional status, and birth outcomes. A comprehensive search of 4 databases-MEDLINE, EMBASE, Scopus, and CENTRAL-and the gray literature via GOOGLE Scholar-was conducted in January 2024, and updated in July 2024. The review followed PRISMA-ScR guidelines and included studies assessing LNS and IPTp for outcomes related to malaria, nutritional status, or birth outcomes. The review identified 17 studies, focused on 5 main trials: 2 with small-quantity LNS (SQ-LNS), 2 with balanced energy-protein (BEP), and 1 trial with large-quantity LNS (LQ-LNS). LNS supplementation did not significantly affect malaria incidence, anemia, or nutritional status. However, some studies reported improvements in birth outcomes, particularly among specific subgroups and those with baseline undernutrition. Variability in study methodologies and supplementation protocols influenced these findings. While LNS and IPTp show potential for improving selected birth outcomes, the evidence for their effect on malaria incidence or maternal anemia remains inconclusive. Further research is needed to assess the effectiveness of LNS and IPTp among vulnerable groups of women in malaria-endemic regions.
+
+---
 
 ## Pediatric_Primary_Care_High_Impact
-### 小児プライマリケア（高インパクト） — 27件
+### 小児プライマリケア（高インパクト） — 30件
 
 **▼ Coworkへのプロンプト（コピーして貼り付け）:**
 
 > 以下は直近1ヶ月の小児プライマリケア（高インパクト）領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_小児プライマリケア_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_小児プライマリケア_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -512,7 +654,18 @@ RESULTS: Forty-two participants in the ISRT group and 20 participants in the CBT
 CONCLUSION: Our findings suggest that ISRT is a safe and effective treatment option for PTSD.
 
 ---
-### [8] Oral Nirmatrelvir-Ritonavir for Covid-19 in Higher-Risk Outpatients.
+### [8] Prevalence estimates of sickle cell disease among children and adolescents in sub-Saharan Africa: a systematic review and modelling analysis.
+**Author**: Adeloye Davies et al. | **Journal**: The Lancet. Child & adolescent health (2026/Jun)
+**PMID**: 42026011 | https://pubmed.ncbi.nlm.nih.gov/42026011/
+
+BACKGROUND: There is a scarcity of data reporting on the burden of sickle cell disease across many African settings, particularly among children, who have the highest risk of preventable morbidity and mortality in the absence of early diagnosis and care. We aimed to estimate the prevalence of sickle cell disease and the absolute number of paediatric cases in sub-Saharan Africa to inform policy and service responses.
+METHODS: For this systematic review and modelling analysis, we searched MEDLINE, Embase, Global Health (CABI), and African Journals Online (AJOL) for studies published from Jan 1, 2000, to Sept 10, 2025, that reported the prevalence of sickle cell disease among children and adolescents younger than 15 years in sub-Saharan Africa. We pooled crude prevalence using random-effects meta-analysis. We then fitted a mixed-effects meta-regression for age band (infants [aged 0 to <12 months], children aged <5 years, children and adolescents aged <15 years), sickle cell disease phenotype (total sickle cell diseases, haemoglobin SS [HbSS], haemoglobin SC [HbSC], and other compound heterozygous variants), Socio-demographic Index (SDI), World Bank income group, and geographical coordinates (latitude, longitude, interaction), plus a country random intercept. Absolute cases for 2023 were derived with the UN World Population Prospects.
+FINDINGS: 40 studies contributed 71 prevalence datapoints from 22 countries across all four subregions of sub-Saharan Africa. Estimated prevalence for all sickle cell diseases was 1·54% (95% CI 0·34-7·49) in infants, 1·51% (0·35-6·72) in children younger than 5 years, and 1·78% (0·21-12·09) in children and adolescents younger than 15 years. By haemoglobin phenotype, the prevalence of HbSS was 0·70% (0·15-3·44) in infants, 0·69% (0·17-2·80) in children younger than 5 years, and 0·80% (0·09-5·11) in children and adolescents younger than 15 years, while that of HbSC was 0·29% (0·06-1·46), 0·28% (0·05-1·50), and 0·33% (0·04-2·43) across the same age groups, respectively. Using UN 2023 population denominators, we estimated 1 165 800 (95% CI 260 600-5 662 100) cases in infants, 2 752 200 (632 700-12 253 200) cases in children younger than 5 years, and 8 854 800 (1 068 900-60 148 700) cases in children and adolescents younger than 15 years living with sickle cell disease in sub-Saharan Africa in 2023. Regional prevalence (children aged <5 years, all sickle cell diseases) was highest in central Africa (2·07% [95% CI 0·30-12·76]), followed by west, southern, and east Africa. The burden was concentrated in populous countries, particularly Nigeria, Ethiopia, and the Democratic Republic of the Congo. Study quality was moderate overall and heterogeneity was substantial.
+INTERPRETATION: Despite data gaps in many countries, the burden of sickle cell disease, especially in west and central Africa, underscores the urgent need to scale up newborn and early childhood screening, prophylaxis, vaccination, and comprehensive care within child health platforms, alongside strengthened surveillance to close evidence gaps and guide sustainable policy reforms.
+FUNDING: None.
+
+---
+### [9] Oral Nirmatrelvir-Ritonavir for Covid-19 in Higher-Risk Outpatients.
 **Author**: Butler Christopher C et al. | **Journal**: The New England journal of medicine (2026/Apr)
 **PMID**: 42019019 | https://pubmed.ncbi.nlm.nih.gov/42019019/
 
@@ -522,7 +675,7 @@ RESULTS: From December 8, 2021, to September 30, 2024, a total of 3516 participa
 CONCLUSIONS: In two open-label trials, nirmatrelvir-ritonavir did not reduce the incidence of hospitalization or death among vaccinated higher-risk participants with SARS-CoV-2 infection. (Funded by the National Institute for Health and Care Research, and others; PANORAMIC ISRCTN number, 2021-005748-31; CanTreatCOVID ClinicalTrials.gov number, NCT05614349.).
 
 ---
-### [9] Safety and efficacy of individualised exercise and NAD+ precursor supplementation in patients with Friedreich's ataxia in the USA: a single-centre, 2 × 2 factorial, randomised controlled trial.
+### [10] Safety and efficacy of individualised exercise and NAD+ precursor supplementation in patients with Friedreich's ataxia in the USA: a single-centre, 2 × 2 factorial, randomised controlled trial.
 **Author**: Lin Kimberly Y et al. | **Journal**: The Lancet. Neurology (2026/May)
 **PMID**: 42009009 | https://pubmed.ncbi.nlm.nih.gov/42009009/
 
@@ -533,14 +686,14 @@ INTERPRETATION: The combination of nicotinamide riboside plus exercise for 12 we
 FUNDING: US National Institutes of Health and Friedreich's Ataxia Research Alliance.
 
 ---
-### [10] Preparation for Pediatric Emergencies in the Office: Policy Statement.
+### [11] Preparation for Pediatric Emergencies in the Office: Policy Statement.
 **Author**: Cantrell Patricia et al. | **Journal**: Pediatrics (2026/May)
 **PMID**: 42002280 | https://pubmed.ncbi.nlm.nih.gov/42002280/
 
 Although not common, pediatric emergencies present in the medical office setting, and offices that care for children and adolescents can prepare for these emergencies. Offices vary depending on their location and office setting, patient population, and distance to an emergency department or hospital. Consequently, these factors should be taken into account in the planning process. This statement updates the recommendations from the 2007 American Academy of Pediatrics (AAP) practice guideline "Preparation for Emergencies in the Offices of Pediatricians and Pediatric Primary Care Providers." An accompanying technical report contains explanations and evidence for these recommendations and can be found at https://doi.org/10.1542/peds.2026-076622. This policy statement and companion technical report can be used as a guide to help create an individualized approach to emergencies that occur in offices that care for children, including both primary care and subspecialty practices. An accompanying checklist summarizes steps that medical offices can take to assess their readiness for pediatric emergencies.
 
 ---
-### [11] Insulin-like growth factor-1 for the prevention or treatment of retinopathy of prematurity.
+### [12] Insulin-like growth factor-1 for the prevention or treatment of retinopathy of prematurity.
 **Author**: Trzaski Jennifer M et al. | **Journal**: The Cochrane database of systematic reviews (2026/Apr)
 **PMID**: 41983451 | https://pubmed.ncbi.nlm.nih.gov/41983451/
 
@@ -557,7 +710,14 @@ FUNDING: This Cochrane review had no dedicated funding.
 REGISTRATION: Protocol available via DOI: 10.1002/14651858.CD013216.
 
 ---
-### [12] Treatment outcomes of preformed metal crowns placed with the conventional versus hall techniques: One-year randomized controlled trial results.
+### [13] Chronic widespread pain and the risk of cardiovascular disease-a systematic review and meta-analysis.
+**Author**: Rönnegård Ann-Sofie et al. | **Journal**: Pain (2026/Jun)
+**PMID**: 41972388 | https://pubmed.ncbi.nlm.nih.gov/41972388/
+
+Previous research indicates that individuals with chronic widespread pain (CWP) have an excess risk of cardiovascular disease. Given the high global prevalence of CWP, this association may have substantial public health implications. Our objective was to summarise the current evidence on the association between CWP and incident cardiovascular disease in a systematic review and meta-analysis. We searched major databases (MEDLINE, Embase, Web of Science, and Cochrane) and included studies based on predefined eligibility criteria. We identified 18 studies reporting associations between CWP (n = 80,021) and atherosclerotic diseases or cardiovascular mortality (n events = 33,799). In the meta-analysis, we removed studies that analysed identical outcomes in the same population. Individuals with CWP had an almost doubled risk of atherosclerotic diseases, RR 1.94 (95% confidence interval [CI]: 1.56-2.41), and for cardiovascular mortality, the RR was 1.61 (95% CI: 1.24-2.08) in the minimally adjusted models. In the maximally adjusted model, the RR for atherosclerotic diseases was 1.53 (95% CI: 1.27-1.86) vs RR 1.12 (95% CI: 0.93-1.34) for cardiovascular mortality. The heterogeneity was high and potential publication bias was indicated for the mortality analysis. This meta-analysis, although based on relatively few studies with high heterogeneity, shows that CWP is consistently associated with incident atherosclerotic disease. Evidence for an association with cardiovascular mortality is less conclusive. Individuals with CWP may represent an underrecognized high-risk group for atherosclerotic diseases that could benefit from proactive cardiovascular risk assessment and intensified prevention. Further high-quality studies are warranted to confirm the strength and causality of the association.
+
+---
+### [14] Treatment outcomes of preformed metal crowns placed with the conventional versus hall techniques: One-year randomized controlled trial results.
 **Author**: Mohamed Hanan et al. | **Journal**: Journal of dentistry (2026/Jul)
 **PMID**: 41966250 | https://pubmed.ncbi.nlm.nih.gov/41966250/
 
@@ -568,7 +728,7 @@ CONCLUSIONS: Clinical success outcomes and restoration survival rates were simil
 CLINICAL SIGNIFICANCE: The non-invasive HT of placing PMCs to restore carious primary molars is a viable alternative to the traditional CT.
 
 ---
-### [13] The influence of different immersive virtual reality devices on children's pain during needle-based procedures: A network meta-analysis and systematic review.
+### [15] The influence of different immersive virtual reality devices on children's pain during needle-based procedures: A network meta-analysis and systematic review.
 **Author**: Shi Changwen et al. | **Journal**: Journal of pediatric nursing (2026)
 **PMID**: 41894995 | https://pubmed.ncbi.nlm.nih.gov/41894995/
 
@@ -579,7 +739,7 @@ CONCLUSIONS: Semi-immersive VR showed the best overall therapeutic effect. We re
 PRACTICE IMPLICATIONS: These findings provide evidence-based guidance for clinical technology selection. Semi-immersive VR offers a practical, cost-effective, non-pharmacological intervention for outpatient and inpatient settings. Implementation should incorporate standardized operator training, 5-7 min immersion duration, and scenario activation 30 s pre-procedure.
 
 ---
-### [14] Intravenous ferric carboxymaltose versus oral ferrous sulphate for the treatment of moderate-to-severe postpartum anaemia in Nigerian women (IVON-PP): an open-label, randomised controlled trial.
+### [16] Intravenous ferric carboxymaltose versus oral ferrous sulphate for the treatment of moderate-to-severe postpartum anaemia in Nigerian women (IVON-PP): an open-label, randomised controlled trial.
 **Author**: Afolabi Bosede B et al. | **Journal**: The Lancet. Global health (2026/May)
 **PMID**: 41865415 | https://pubmed.ncbi.nlm.nih.gov/41865415/
 
@@ -590,7 +750,7 @@ INTERPRETATION: In treating postpartum moderate-to-severe anaemia, ferric carbox
 FUNDING: Bill & Melinda Gates Foundation.
 
 ---
-### [15] Effect of Therapeutic Touch Based on Watson's Human Care Theory Applied to Infants With Infantile Colic for Different Durations on Colic Symptoms: A Randomized Controlled Study.
+### [17] Effect of Therapeutic Touch Based on Watson's Human Care Theory Applied to Infants With Infantile Colic for Different Durations on Colic Symptoms: A Randomized Controlled Study.
 **Author**: Ates Besirik Selda et al. | **Journal**: Western journal of nursing research (2026/May)
 **PMID**: 41845859 | https://pubmed.ncbi.nlm.nih.gov/41845859/
 
@@ -601,7 +761,7 @@ CONCLUSIONS: Therapeutic touch based on Watson's Human Care Theory effectively r
 TRIAL REGISTRATION: clinicaltrials.gov, NCT05244291.
 
 ---
-### [16] Diabetes Testing Immediately Postpartum After Gestational Diabetes Mellitus: A Randomized Controlled Trial.
+### [18] Diabetes Testing Immediately Postpartum After Gestational Diabetes Mellitus: A Randomized Controlled Trial.
 **Author**: Field Christine et al. | **Journal**: Obstetrics and gynecology (2026/May)
 **PMID**: 41842598 | https://pubmed.ncbi.nlm.nih.gov/41842598/
 
@@ -612,7 +772,7 @@ CONCLUSION: Diabetes testing before delivery discharge for individuals with GDM 
 CLINICAL TRIALS REGISTRATION: ClinicalTrials.gov , NCT05909046.
 
 ---
-### [17] Implementation of a clinical decision support tool for hypertension in a rural health system.
+### [19] Implementation of a clinical decision support tool for hypertension in a rural health system.
 **Author**: Kharbanda Elyse O et al. | **Journal**: Journal of the American Medical Informatics Association : JAMIA (2026/May)
 **PMID**: 41841357 | https://pubmed.ncbi.nlm.nih.gov/41841357/
 
@@ -622,7 +782,7 @@ RESULTS: Of 9155 patients with an elevated BP, remeasurement during the visit oc
 CONCLUSIONS: CDS improved pediatric BP care in a primarily rural health system while effectiveness varied by implementation approach.
 
 ---
-### [18] Extended-Release vs Sublingual Buprenorphine in Pregnancy Through 12 Months Post Partum: A Randomized Clinical Trial.
+### [20] Extended-Release vs Sublingual Buprenorphine in Pregnancy Through 12 Months Post Partum: A Randomized Clinical Trial.
 **Author**: Winhusen T John et al. | **Journal**: JAMA internal medicine (2026/May)
 **PMID**: 41837971 | https://pubmed.ncbi.nlm.nih.gov/41837971/
 
@@ -636,7 +796,7 @@ CONCLUSIONS AND RELEVANCE: The findings of this randomized clinical trial suppor
 TRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT03918850.
 
 ---
-### [19] The screening accuracy of the PROMIS® Anxiety measures in adults - A systematic review and multiple-thresholds meta-analysis.
+### [21] The screening accuracy of the PROMIS® Anxiety measures in adults - A systematic review and multiple-thresholds meta-analysis.
 **Author**: Fomenko Alexey et al. | **Journal**: Journal of psychosomatic research (2026/Jun)
 **PMID**: 41812543 | https://pubmed.ncbi.nlm.nih.gov/41812543/
 
@@ -645,7 +805,7 @@ METHODS: We searched the electronic databases from inception until 15 July 2025 
 CONCLUSIONS: The PROMIS®-SF-A-8a results were homogeneous, showing good screening accuracy. However, the limited number of studies - especially for other PROMIS® Anxiety measures - and the lack of replication in settings like primary care highlight the need for further research.
 
 ---
-### [20] The effect of an information-motivation-behavioral skills model-based education program on disease management in adolescents with epilepsy: A randomized controlled trial.
+### [22] The effect of an information-motivation-behavioral skills model-based education program on disease management in adolescents with epilepsy: A randomized controlled trial.
 **Author**: Guzel Polat Ozlem et al. | **Journal**: Journal of pediatric nursing (2026)
 **PMID**: 41780372 | https://pubmed.ncbi.nlm.nih.gov/41780372/
 
@@ -656,35 +816,21 @@ CONCLUSION: The training provided using the IMB model effectively increased adol
 IMPLICATIONS FOR PRACTICE: These findings show that the IMB is a strong, practical model. It is advised to assess adolescents' knowledge, motivation, and behavioral skills to help manage their illness effectively, and to favor IMB-based training programs.
 
 ---
-### [21] A Decision-Support System to Personalize Antidepressant Treatment in Major Depressive Disorder: A Randomized Clinical Trial.
-**Author**: Cipriani Andrea et al. | **Journal**: JAMA (2026/Apr)
-**PMID**: 41779422 | https://pubmed.ncbi.nlm.nih.gov/41779422/
-
-IMPORTANCE: Antidepressants for moderate to severe major depressive disorder may be discontinued prematurely because the prescribed antidepressant is not always the most appropriate medication for an individual. Guidelines have recommended more precise targeting of antidepressant treatment.
-OBJECTIVE: To evaluate the efficacy of a web-based tool to personalize antidepressant treatment.
-DESIGN, SETTING, AND PARTICIPANTS: This multicenter, randomized clinical trial included persons between the ages of 18 and 74 years with major depressive disorder. The trial was conducted at 47 sites in 3 countries (Brazil, Canada, and the UK). The first participant was screened on November 29, 2022, and the last follow-up visit occurred on January 15, 2025.
-INTERVENTION: A total of 540 participants were randomized (1:1) to an evidence-based clinical decision-support system (PETRUSHKA tool; n = 271) or usual care (n = 269).
-MAIN OUTCOMES AND MEASURES: The primary outcome was treatment discontinuation due to any cause at 8 weeks. The secondary outcomes included treatment discontinuation up to 24 weeks due to adverse events and changes in depressive symptoms (measured with the 9-item Patient Health Questionnaire [PHQ-9]; range, 0-27; higher scores indicate more severe depression) and anxiety symptoms (measured with the 7-item Generalized Anxiety Disorder [GAD-7] questionnaire; range, 0-21; higher scores indicate more severe symptoms).
-RESULTS: Of the 520 eligible participants, 493 were included in the primary analysis (median age, 35 [IQR, 25 to 48] years; 58% female; PHQ-9 mean score, 16.6 [SD, 5.1]; GAD-7 mean score, 11.5 [SD, 4.1]). At 8 weeks, 41 of 241 participants (17%) in the PETRUSHKA group discontinued the prescribed antidepressant due to any cause vs 69 of 252 (27%) in the usual care group (adjusted relative risk, 0.62 [95% CI, 0.44 to 0.88]; P = .007). At 8 weeks, 22 of 241 participants (9%) in the PETRUSHKA group discontinued the prescribed antidepressant due to adverse events vs 39 of 252 (16%) in the usual care group (adjusted relative risk, 0.59 [95% CI, 0.36 to 0.97]; P = .04). For the assessment of depressive symptoms at 24 weeks, the mean PHQ-9 score was 7.1 (SD, 5.4) in the PETRUSHKA group vs 9.2 (SD, 6.5) in the usual care group (n = 129 in each group; adjusted between-group mean difference, -1.92 [95% CI, -3.06 to -0.78]; P < .001). For the assessment of anxiety symptoms at 24 weeks, the mean GAD-7 score was 4.6 (SD, 4.1) in the PETRUSHKA group (n = 133) vs 5.8 (SD, 4.9) in the usual care group (n = 126) (adjusted between-group mean difference, -1.39 [95% CI, -2.26 to -0.52]; P = .002).
-CONCLUSIONS AND RELEVANCE: Compared with usual care, use of the PETRUSHKA tool increased the number of patients still taking their antidepressant at 8 weeks and improved depressive and anxiety symptoms at 24 weeks. However, lack of a double-blind design and the large amount of missing data limit the validity of these results.
-TRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT05608330.
-
----
-### [22] ACR Appropriateness Criteria® Chest Pain-Child.
+### [23] ACR Appropriateness Criteria® Chest Pain-Child.
 **Author**: ? et al. | **Journal**: Journal of the American College of Radiology : JACR (2026/May)
 **PMID**: 41729147 | https://pubmed.ncbi.nlm.nih.gov/41729147/
 
 Chest pain is a common complaint in children and adolescents. The causes of chest pain are varied and include musculoskeletal, pulmonary or pleural, gastrointestinal, psychogenic, and cardiac etiologies. The etiology of pediatric chest pain is often benign but typically generates evaluation in the emergency room, urgent care, or outpatient setting. Diagnostic imaging is often used in the evaluation of pediatric chest pain. This document will discuss various clinical scenarios for children presenting with chest pain and will highlight initial imaging that is usually or may be appropriate, based on the best available evidence or expert consensus. Chest pain limited to the chest wall, from suspected pneumothorax or pneumomediastinum, secondary to suspected pulmonary embolism, from known or suspected cardiac disease, in the setting of sickle cell disease, and from suspected psychogenic causes, will be reviewed. The American College of Radiology Appropriateness Criteria are evidence-based guidelines for specific clinical conditions that are reviewed annually by a multidisciplinary expert panel. The guideline development and revision process support the systematic analysis of the medical literature from peer reviewed journals. Established methodology principles such as Grading of Recommendations Assessment, Development, and Evaluation or GRADE are adapted to evaluate the evidence. The RAND/UCLA Appropriateness Method User Manual provides the methodology to determine the appropriateness of imaging and treatment procedures for specific clinical scenarios. In those instances where peer reviewed literature is lacking or equivocal, experts may be the primary evidentiary source available to formulate a recommendation.
 
 ---
-### [23] Evaluating amino acid fortification in low-dairy ready-to-use therapeutic food formulations: Insights from a meta-analysis re-evaluation.
+### [24] Evaluating amino acid fortification in low-dairy ready-to-use therapeutic food formulations: Insights from a meta-analysis re-evaluation.
 **Author**: Berhane Melkamu et al. | **Journal**: Food chemistry (2026/Apr)
 **PMID**: 41672015 | https://pubmed.ncbi.nlm.nih.gov/41672015/
 
 Severe wasting is treated with ready-to-use therapeutic food (RUTF), wherein the protein content primarily comes from milk and peanuts. As these ingredients are the main drivers of RUTF's cost, global initiatives seek alternatives using locally available, sustainable ingredients to reduce cost and increase coverage. To compensate for reduced/removed dairy protein, current practice is to add amino acids to meet Codex protein quality requirements. In this meta-analysis re-evaluation, we compared RUTF formulations with <50% dairy protein, with or without amino acid fortification, against standard milk-peanut RUTF for the outcome of weight gain. Growth outcomes were similar between fortified and unfortified RUTFs when compared to standard RUTF. These findings suggest that elevating protein quality scores by adding amino acids may be insufficient to ensure clinical efficacy in novel RUTF formulations. Additionally, the findings suggest that Protein Digestibility Corrected Amino Acid Score (PDCAAS) compliance alone may not guarantee clinical efficacy. Future formulation efforts should address digestibility, antinutritional factors, and increasing total protein content to achieve effective, sustainable novel RUTF formulations.
 
 ---
-### [24] Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
+### [25] Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
 **Author**: Islam Nazmul et al. | **Journal**: JAMA pediatrics (2026/May)
 **PMID**: 41661638 | https://pubmed.ncbi.nlm.nih.gov/41661638/
 
@@ -698,14 +844,27 @@ RESULTS: A total of 190 studies involving 2.8 million participants across 40 cou
 CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
 
 ---
-### [25] Role of the perinatal experience on the risk of acute leukemia in childhood or adolescence: Systematic review and meta-analysis.
+### [26] Adverse outcomes among pregnant women with COVID-19 according to hospitalization status: A prospective individual participant data meta-analysis in Europe and North America.
+**Author**: de Bruin Odette et al. | **Journal**: International journal of gynaecology and obstetrics: the official organ of the International Federation of Gynaecology and Obstetrics (2026/Jun)
+**PMID**: 41392882 | https://pubmed.ncbi.nlm.nih.gov/41392882/
+
+BACKGROUND: Understanding the varied impact of COVID-19 severity on pregnancy outcomes is crucial for informed clinical management and targeted interventions.
+OBJECTIVE: To evaluate the impact of COVID-19 on pregnancy outcomes, distinguishing between pregnant women managed in primary care and those requiring hospitalization.
+SEARCH STRATEGY: Regulatory authorities actively promoted global cooperation on COVID-19's impact during pregnancy. Data were obtained through these regulatory bodies and direct researcher communication rather than through systematic searches.
+SELECTION CRITERIA: Data sources required secondary population-based data to identify pregnancies with COVID-19, along with hospitalization, diagnostic and medication codes. Eligibility for the meta-analysis was determined through protocol evaluation and researcher consultations.
+DATA COLLECTION AND ANALYSIS: PRISMA-IPD and Cochrane guidelines for prospective meta-analysis were followed. Protocols and definitions were standardized across sources, and a common R script was developed. Initially, crude and adjusted relative risks (aRR) with 95% confidence intervals (CI) were calculated to assess adverse outcomes in pregnant women with and without COVID-19 in each data source. Estimates were stratified by trimester at infection and hospitalization status. Subsequently, data were pooled using a random-effects meta-analysis.
+MAIN RESULTS: Data from 10 sources across seven countries contributed to the meta-analysis, including 86 210 pregnant women diagnosed with COVID-19, of whom 4.4% were hospitalized. Non-hospitalized pregnant women with COVID-19 had no increased risks of adverse outcomes compared to pregnant women without COVID-19. However, hospitalized women with COVID-19 in each trimester had higher risks of cesarean section, preterm birth, and LBW compared to pregnant women without COVID-19. Hospitalization due to COVID-19 in the third trimester was associated with increased risk of stillbirth (aRR 5.90, 95% CI: 2.22-15.71, I2 = 0%). First-trimester hospitalizations due to COVID-19 did not show heightened risks of GDM (aRR 2.08, 95% CI: 0.93-4.64, I2 = 65%), pre-eclampsia (aRR 1.79, 95% CI: 0.48-6.66, I2 = 71%), or major congenital anomalies (aRR 1.30, 95% CI: 0.55-3.06, I2 = 0%).
+CONCLUSIONS AND RELEVANCE: COVID-19 requiring hospitalization is associated with adverse pregnancy outcomes, emphasizing the need to prevent severe illness during pregnancy. This study also highlights the importance of international collaboration for gathering pregnancy data and shows that building global research networks is essential for responding to future health crises.
+
+---
+### [27] Role of the perinatal experience on the risk of acute leukemia in childhood or adolescence: Systematic review and meta-analysis.
 **Author**: Blanco-Lopez Jessica et al. | **Journal**: International journal of cancer (2026/May)
 **PMID**: 41277016 | https://pubmed.ncbi.nlm.nih.gov/41277016/
 
 Acute leukemia is the most common type of cancer in children; however, the etiology is poorly understood. The objective of this review was to summarize the current evidence of the role of perinatal factors in the development of acute leukemia. All epidemiological studies published up to October 2023 that evaluated perinatal risk factors for childhood acute leukemia were identified using a multi-tiered approach in two electronic databases (PubMed and Web of Science), without restriction on publication year or language. A total of 85 studies (13 prospective cohort studies, 62 case-control studies, and 10 pooled analyses) were included. We combined the published risk estimates in a meta-analysis, using the Generic Inverse Variance method. An increased risk of acute leukemia and the lymphoblastic subtype (ALL) was associated with high birth weight (>4000 g) (odds ratio [OR] = 1.35; 95% confidence interval [95% CI] 1.20-1.53 and OR = 1.21; 95% CI 1.08-1.34, respectively), maternal history of abortion (OR = 1.27; 95% CI 1.12-1.43 and OR = 1.24; 95% CI 1.08-1.43, respectively), and maternal diabetes (OR = 1.30; 95% CI 1.14-1.48 and OR = 1.32; 95% CI 1.16-1.50, respectively). In addition, an increased risk for ALL was also associated with maternal hypertension (OR = 1.21; 95% CI 1.06-1.38) and cesarean section (OR = 1.10; 95% CI 1.05-1.16). Our review suggests a potential role for perinatal factors in the development of acute leukemia in children. These findings indicate potential avenues for developing cost-effective prevention strategies applicable at the population level, while the mechanism of action is investigated.
 
 ---
-### [26] Cost-effectiveness of a faecal calprotectin-guided referral strategy for children with chronic abdominal symptoms: a cluster randomised controlled trial.
+### [28] Cost-effectiveness of a faecal calprotectin-guided referral strategy for children with chronic abdominal symptoms: a cluster randomised controlled trial.
 **Author**: Ansems Sophie M et al. | **Journal**: The British journal of general practice : the journal of the Royal College of General Practitioners (2026/May)
 **PMID**: 41218993 | https://pubmed.ncbi.nlm.nih.gov/41218993/
 
@@ -717,7 +876,17 @@ RESULTS: Adherence to the FCal strategy was 59%. Alarm symptoms for inflammatory
 CONCLUSION: The results do not justify recommending FCal testing in children in primary care without proper implementation. Additional research should focus on improving adherence to the FCal strategy.
 
 ---
-### [27] Improved diagnostic management of children with acute infections following the introduction of point-of-care C-reactive protein testing and general practitioner education in Latvia: a post hoc analyses of a randomised controlled intervention study.
+### [29] A pilot trial investigating the effectiveness of online Triple P plus acceptance and commitment therapy (ACT) in addressing parental stress and child behavioural difficulties in a primary care level service.
+**Author**: Byrne Gary et al. | **Journal**: The British journal of clinical psychology (2026/Jun)
+**PMID**: 41208510 | https://pubmed.ncbi.nlm.nih.gov/41208510/
+
+OBJECTIVE: This study aimed to assess the effectiveness of a therapist-led, online Level 4 Triple P + ACT behavioural management programme (intervention arm) relative to Level 4 Triple P (treatment as usual arm). The intervention comprised 2 specific ACT sessions and Triple P that aimed to provide additive effects for parents of children with behavioural difficulties in a primary care setting.
+METHOD: Fifty-five parents were randomized to receive either Level 4 Triple P + ACT or standard Triple P.
+RESULTS: Parents randomized to Triple P + ACT did not evidence decreases in parental stress relative to those in the standard Triple P. Both groups demonstrated reductions in terms of daily hassles. Findings favoured standard Triple P in terms of reductions in child behavioural difficulties although there was evidence of differing rates of externalizing diagnoses among the two groups.
+CONCLUSION: Findings from this study suggest minimal additive benefit of adding an ACT treatment component to standard Level 4 Triple P for parents of children presenting with behavioural difficulties in a primary care setting in relation to parental stress. The research suggests that standard behavioural management programmes may provide what parents require in primary care. However, ACT components may be effective for certain cohorts of parents who struggle to flexibly adapt behavioural management strategies in helping develop the parent-child relationship. Further research is required to identify which parents may benefit from the addition of ACT treatment components.
+
+---
+### [30] Improved diagnostic management of children with acute infections following the introduction of point-of-care C-reactive protein testing and general practitioner education in Latvia: a post hoc analyses of a randomised controlled intervention study.
 **Author**: Likopa Zane et al. | **Journal**: Scandinavian journal of primary health care (2026/Dec)
 **PMID**: 41162196 | https://pubmed.ncbi.nlm.nih.gov/41162196/
 
@@ -748,7 +917,7 @@ UNLABELLED: Trial registration: ISRCTN registry - ISRCTN34931655.
 
 > 以下は直近1ヶ月の小児心身症・ゲーム障害・ネット依存領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_小児心身症_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_小児心身症_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -806,22 +975,15 @@ CONCLUSIONS: Approximately one in ten children and adolescents worldwide meet cr
 Both the nervous system and cancer-intrinsic neural features can govern cancer initiation, growth, progression, metastasis, and treatment resistance, while cancer can likewise influence the nervous system, promoting neural reprogramming and neuropsychiatric symptoms that worsen patient outcomes. The field of cancer neuroscience seeks to unravel this complex neuro-cancer crosstalk and holds the promise to develop neuroscience-instructed cancer therapies that improve disease control and quality of life. Here, we summarize the key discoveries of neuro-cancer crosstalk to date, including neuron-to-cancer synapses and paracrine and neuro-immuno-oncological interactions, and then explore emerging topics such as downstream effects on cancer cell pathophysiology, circadian influences, brain-body-cancer communication, and neural regulation of the metastatic cascade and the tumor microenvironment. Finally, we distill overarching principles, highlight relevant ongoing research, and outline conclusions to guide the development of cancer neuroscience, proposing hypotheses for future experimental validation.
 
 ---
-### [6] Common practice elements of cognitive behavioral therapy for gaming disorder: A systematic review and expert panel evaluation.
-**Author**: Radunz Marcela et al. | **Journal**: Clinical psychology review (2026/Apr)
-**PMID**: 41990707 | https://pubmed.ncbi.nlm.nih.gov/41990707/
-
-Gaming disorder (GD) is an addictive disorder with health and social impacts recognized by the World Health Organization. Although the GD treatment evidence base appear to favor cognitive behavioral therapy (CBT), knowledge of its common practice elements is limited. This systematic review critically evaluates CBT interventions for GD, encompassing individual, group, and mixed approaches, to identify and synthesize common practice elements. Employing a systematic review protocol following PRISMA guidelines and guided by an international expert panel, this review identified CBT studies and then critically reviewed their associated treatment manuals, guidelines, handouts, and related resources. A database search yielding 8479 results identified 28 studies from 12 countries reporting on 22 CBT interventions (n = 7 individual; n = 7 group; n = 8 mixed). Study authors were invited to share intervention materials, which were then independently coded and synthesized. Overall, 14 common practice elements were identified. The most frequent element was emotion regulation skills training (n = 21; 95.5%), followed by psychoeducation (n = 20; 90.9%) and cognitive restructuring (n = 19; 86.4%). Exposure techniques, and strength identification and self-compassion were the least frequent (n = 6; 27.3%). All individual CBT interventions used behavioral activation, psychoeducation, and relapse prevention, whereas emotion regulation skills training was the most frequently used element in group CBT. These findings reveal commonly reported CBT practice elements in the GD evidence base and provide expert summaries of established and less utilized therapeutic techniques. Improving the field's shared understanding of CBT is foundational to advancing GD clinical research and a model of best practice.
-
----
-### [7] [Autism spectrum disorders-Transition from adolescence into adulthood].
-**Author**: Freitag Christine M et al. | **Journal**: Der Nervenarzt (2026/Apr)
+### [6] [Autism spectrum disorders-Transition from adolescence into adulthood].
+**Author**: Freitag Christine M et al. | **Journal**: Der Nervenarzt (2026/May)
 **PMID**: 41975088 | https://pubmed.ncbi.nlm.nih.gov/41975088/
 
 Autism spectrum disorders (ASD) are neurodevelopmental disorders with a prevalence of approximately 0.7%. People with ASD show characteristic social interaction, verbal and nonverbal communication, routine-like and inflexible behavior, special interests and altered perception. ASD manifest in the first decade of life and usually persist throughout life. Like most other neurodevelopmental disorders, they are therefore inevitably not only a topic of child and adolescent psychiatry, psychosomatics and psychotherapy (CAPPP) but also of adult psychiatry, psychosomatics and psychotherapy (APPP); however, the transition from adolescence into adulthood poses a particular challenge for affected individuals, their caregivers, as well as for professionals in the healthcare and social welfare systems. Key aspects of the transition period include the treatment of comorbid mental, cognitive and language disorders as well as social legislation and healthcare aspects. This article depicts these aspects from the perspective of CAPPP and APPP.
 Autismusspektrumstörungen gehören mit einer Prävalenz von ca. 0,7 % zu den neuromentalen Entwicklungsstörungen. Sie sind charakterisiert durch Besonderheiten der sozialen Interaktion, der verbalen und nonverbalen Kommunikation, routineartigen und unflexiblen Verhaltensweisen, Sonderinteressen und veränderter Wahrnehmung. Sie manifestieren sich in der ersten Lebensdekade und persistieren in der Regel lebenslang. Damit sind sie wie die meisten anderen neuromentalen Entwicklungsstörungen zwangsläufig nicht nur ein Thema der Kinder- und Jugendpsychiatrie, -psychosomatik und -psychotherapie (KJPPP), sondern auch der Erwachsenenpsychiatrie, -psychosomatik und -psychotherapie (EPPP). Die Transition vom Jugend- in das Erwachsenenalter stellt für viele Betroffenen und ihre Angehörigen, aber auch für Professionelle des Versorgungssystems eine besondere Herausforderung dar. Zentrale Aspekte für die Transition sind einerseits die Behandlung komorbider psychischer, kognitiver und sprachlicher Störungen, zum anderen sozialrechtliche und Versorgungsaspekte. In diesem Beitrag werden diese aus der Perspektive der KJPPP und EPPP beleuchtet.
 
 ---
-### [8] Climate-Related and Nature-Based Interventions for Mental Health: An Umbrella Review and Meta-Analysis.
+### [7] Climate-Related and Nature-Based Interventions for Mental Health: An Umbrella Review and Meta-Analysis.
 **Author**: Brandt Lasse et al. | **Journal**: JAMA psychiatry (2026/May)
 **PMID**: 41779404 | https://pubmed.ncbi.nlm.nih.gov/41779404/
 
@@ -835,18 +997,32 @@ RESULTS: Twenty-eight SRMAs were included that examined 344 studies and 91 assoc
 CONCLUSIONS AND RELEVANCE: There is limited evidence for mental health interventions to reduce adverse mental health impacts of climatic impact drivers, but there is promising potential for future research in this field based on evidence from contexts other than climate change. Currently, strategies for mental health interventions in the context of climate change, such as those for implementing and scaling interventions, need to rely largely on global evidence from contexts other than climate change.
 
 ---
-### [9] Psychotropic medications and their interactions with subcortical brain volume in bipolar disorder: An ENIGMA mega-analysis.
+### [8] Psychotropic medications and their interactions with subcortical brain volume in bipolar disorder: An ENIGMA mega-analysis.
 **Author**: King Sinead et al. | **Journal**: Molecular psychiatry (2026/May)
 **PMID**: 41540091 | https://pubmed.ncbi.nlm.nih.gov/41540091/
 
 MRI studies in bipolar disorder (BD) have yielded inconsistent findings, partly due to the varied use of psychotropic medications. This study utilised a mega-analysis approach, accounting for concurrent medication status (syndrome-based and Neuroscience-based Nomenclature (NbN) classifications), in order to assess the association of medication status with subcortical brain volumes in BD. Data from 2,664 BD patients and 4,065 controls (CN) were pooled from 34 research groups as part of the ENIGMA Bipolar Disorder Working Group. Standardized ENIGMA protocols were used to measure subcortical brain volumes. Linear-mixed-effects regression evaluated the association between psychotropic medications and subcortical volumes, and moderation analyses explored interactions. Medication-free patients (n = 410) showed mild ventricular enlargement (d = 0.07) and increased putamen volume (d = 0.06) compared to CN. Patients taking psychotropic medications exhibited smaller subcortical volumes (d = -0.06 to -0.11) and larger ventricles (d = 0.11 to 0.19). Use of antiepileptic and antipsychotic medications was associated with smaller hippocampal and thalamic volumes (d = -0.07 to -0.14), while NbN classification indicated that the categories of 'valproate' and 'dopamine and other monoamine receptor antagonists' are key variables when considering volume differences between BD and CN. Concurrent lithium use weakened the negative association between antiepileptic use and hippocampal volume (β = 0.19, q = 0.038) in patients. Medication status is associated with altered subcortical brain volumes in BD. The NbN classification provides a useful framework for future studies, emphasizing the need for comprehensive longitudinal research to further unravel complex clinical-pharmacological-neurobiological interactions in BD.
 
 ---
-### [10] Emotion-Related Treatments in Patients With Binge Eating Episodes-a Systematic Review and Meta-Analysis.
+### [9] Emotion-Related Treatments in Patients With Binge Eating Episodes-a Systematic Review and Meta-Analysis.
 **Author**: Schag Kathrin et al. | **Journal**: Obesity reviews : an official journal of the International Association for the Study of Obesity (2026/May)
 **PMID**: 41386725 | https://pubmed.ncbi.nlm.nih.gov/41386725/
 
 Emotions represent potential triggers for binge eating, and binge eating can serve as a dysfunctional emotion regulation strategy. Therefore, we investigated emotion-related treatments in patients with binge eating in a systematic review. Change in binge eating were the primary outcome; eating disorder pathology and emotion-related outcomes were secondary outcomes. A meta-analysis was computed regarding pre-changes and post-changes in binge eating frequency within groups, and potential influencing factors were investigated, namely, BMI, eating disorder diagnosis, treatment type, aspects of BE outcome, age, and sex. Thirty-eight articles were included and 31 within the meta-analysis. Data quality was rated as moderate. The sample size varied strongly with a high proportion of women. Only five studies examined adolescents. Binge eating disorder (n = 18) and dialectical behavioral treatment (n = 16) were most frequently examined. Results show significant reductions in binge eating after treatment. Additionally, the systematic review indicates the superiority of emotion-related treatments compared with waitlist control groups and comparability with active control groups in terms of improvements in binge eating, eating disorder pathology, and emotion regulation. The effects appear to be stable at follow-up analyses from 1 to 12 months. Potential influencing factors did not affect the efficacy of emotion-related treatments. Overall, though meta-analytic results have to be interpreted with caution, emotion-related treatments hold promise in treating binge eating, and emotion regulation might represent a potential mechanism of change.
+
+---
+### [10] [Youth mental health: early detection and early intervention of mental disorders].
+**Author**: Uhlhaas Peter J et al. | **Journal**: Der Nervenarzt (2026/May)
+**PMID**: 40560390 | https://pubmed.ncbi.nlm.nih.gov/40560390/
+
+BACKGROUND: Mental diseases occur particularly frequently between the ages of 12 and 25 years, with important implications for the pathogenesis, diagnosis and treatment.
+OBJECTIVE: Against this background this article outlines a youth mental health paradigm which prioritizes the early detection, early intervention and prevention of mental disorders, e.g., psychoses, bipolar disorders and personality disorders in adolescence.
+MATERIAL AND METHODS: The first part of the article summarizes the findings for sensitive phases during brain development, which indicate the elevated plasticity of neural circuits during youth that can be used for preventive interventions. The interactions between risk and resilience factors and ongoing brain development are an essential reason for the frequent occurrence of mental disorders between 12-25 years. Furthermore, innovative diagnostic approaches, such as clinical staging models, are proposed that are a prerequisite for early detection and early intervention. In this context, low-threshold service modelss and age-appropriate interventions, such as digital approaches, are necessary to improve access to care in youths.
+DISCUSSION: Taken together, a "youth mental health" paradigm could significantly enhance mental health in young people and initiate a shift towards the prevention of severe mental disorders.
+ZUSAMMENFASSUNG: HINTERGRUND: Psychische Erkrankungen treten besonders häufig zwischen dem 12. und 25. Lebensjahr auf, mit wichtigen Implikationen für die Pathogenese, Diagnose und Behandlung.
+ZIEL DER ARBEIT: Vor diesem Hintergrund skizzieren wir in diesem Artikel ein „Youth-Mental-Health“-Paradigma, in dem die Früherkennung, Frühintervention und Prävention psychischer Erkrankungen, wie z. B. Psychosen, bipolare Störungen und Persönlichkeitsstörungen, im Jugendalter im Mittelpunkt steht.
+MATERIAL UND METHODEN: Im ersten Teil des Artikels fassen wir Befunde zu „sensitiven Phasen“ in der Gehirnentwicklung im Jugendalter zusammen, die auf die besondere Plastizität neuronaler Schaltkreise hindeuten, die für präventive Interventionen genutzt werden können. Die Wechselwirkungen mit Risiko- und Resilienzfaktoren im Jugendalter sind ein wesentlicher Grund für das häufige Auftreten psychischer Erkrankungen. Des Weiteren werden innovative diagnostische Ansätze, wie z. B. „klinische Stadienmodelle“, vorgeschlagen, die eine Voraussetzung für Früherkennung und Frühintervention im Jugendalter sind. Hier sind niedrigschwellige Versorgungsstrukturen sowie altersgerechte Interventionen, z. B. durch digitale Ansätze, erforderlich, um Jugendlichen einen besseren Zugang zu klinischen Angeboten zu ermöglichen.
+DISKUSSION: Die Früherkennung und Frühintervention bei psychischen Erkrankungen stellen möglicherweise einen wichtigen Ansatz für die Forschung und Klinik dar, um langfristig die psychische Gesundheit bei Jugendlichen und jungen Erwachsenen zu verbessern.
 
 ---
 
@@ -857,7 +1033,7 @@ Emotions represent potential triggers for binge eating, and binge eating can ser
 
 > 以下は直近1ヶ月の小児外傷・熱性けいれん・頭部外傷領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_小児外傷_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_小児外傷_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -886,13 +1062,13 @@ Children's cycle helmets are certified using the same impact conditions as adult
 ---
 
 ## ped_vaccine_update
-### 小児ワクチン（副反応） — 7件
+### 小児ワクチン（副反応） — 8件
 
 **▼ Coworkへのプロンプト（コピーして貼り付け）:**
 
 > 以下は直近1ヶ月の小児ワクチン（副反応）領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_小児ワクチン_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_小児ワクチン_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -912,7 +1088,21 @@ Children's cycle helmets are certified using the same impact conditions as adult
 > Abstract: （英語のアブストラクト全文）
 
 
-### [1] Aluminium adjuvants in vaccines and potential health effects: systematic review.
+### [1] Paracetamol in Pregnancy: Uncertain Evidence, Certain Consequences.
+**Author**: Tunnicliffe David J et al. | **Journal**: The Medical journal of Australia (2026/May)
+**PMID**: 42135262 | https://pubmed.ncbi.nlm.nih.gov/42135262/
+
+Autism diagnoses have increased over the past decade, prompting debate on potential causes. In September 2025, US President Donald Trump claimed that paracetamol is a 'big factor' in autism, citing a systematic review based solely on observational studies. The review's selective reporting, methodological flaws (including applying an environmental health rather than evidence-based medicine framework) and lack of causal evidence provided weak justifications for its conclusions and have fuelled public confusion about paracetamol safety in pregnancy. This article critically appraises the review and examines how scientific uncertainty can be manipulated and amplified within broader public health domains.
+
+---
+### [2] Treatments for Molluscum contagiosum: A systematic review.
+**Author**: Wang Ou Jia Emilie et al. | **Journal**: Journal der Deutschen Dermatologischen Gesellschaft = Journal of the German Society of Dermatology : JDDG (2026/May)
+**PMID**: 42108718 | https://pubmed.ncbi.nlm.nih.gov/42108718/
+
+Molluscum contagiosum (MC) is a viral skin infection that poses significant physical and psychosocial burdens, particularly in pediatric and immunocompromised populations. Despite the availability of various treatment options, comparative efficacy and safety data remain limited. This systematic review, conducted in accordance with PRISMA guidelines, evaluates and compares the efficacy, safety, recurrence, and adverse effects of MC treatments. A total of 89 studies encompassing 12,955 participants were analyzed. Curettage, potassium hydroxide (KOH), autoinoculation, and podophyllotoxin demonstrated high clearance rates (97.8%, 73.8%, 79.4%, and 75.0%, respectively) with minimal local side effects. Cryotherapy and laser therapies offered rapid lesion resolution though laser treatment was associated with more discomfort and higher cost. Emerging therapies such as berdazimer gel demonstrated favorable safety profiles, particularly for pediatric patients, while intralesional immunotherapies like Candida and MMR vaccine showed encouraging results in patients with persistent or recurring lesions. The management of MC requires an individualized approach, balancing efficacy, safety, and patient-specific factors such as age, lesion severity, and immune status. Cantharidin, KOH, cryotherapy, autoinoculation, and podophyllotoxin offer high clearance rates, with immunotherapies and lasers offering additional options for resistant cases. Further standardized trials are needed to optimize treatment strategies and long-term recurrence.
+
+---
+### [3] Aluminium adjuvants in vaccines and potential health effects: systematic review.
 **Author**: Doyon-Plourde Pamela et al. | **Journal**: BMJ (Clinical research ed.) (2026/May)
 **PMID**: 42091164 | https://pubmed.ncbi.nlm.nih.gov/42091164/
 
@@ -926,21 +1116,21 @@ CONCLUSIONS: Current evidence does not support causal associations between alumi
 SYSTEMATIC REVIEW REGISTRATION: PROSPERO CRD42023462831.
 
 ---
-### [2] Incidence of Bacille Calmette-Guérin associated lymphadenitis in healthy children: A systematic review and meta-analysis.
+### [4] Incidence of Bacille Calmette-Guérin associated lymphadenitis in healthy children: A systematic review and meta-analysis.
 **Author**: Choi BongKyoo et al. | **Journal**: Human vaccines & immunotherapeutics (2026/Dec)
 **PMID**: 42081288 | https://pubmed.ncbi.nlm.nih.gov/42081288/
 
 Few systematic reviews or meta-analyses have addressed on the incidence of Bacille Calmette-Guérin (BCG) lymphadenitis in healthy children. A systematic literature search was independently conducted by two researchers using four English and Korean databases (PubMed, Scopus, KMbase, RISS). The risk of bias was assessed. A total of 52 peer-reviewed journal articles (about 1.8 million children) were included in meta-analyses. The incidence proportion of BCG lymphadenitis ranged from 0.0% to 25.6%. The pooled incidence proportion was 2.5% (95% CI, 1.6-3.6; I2 = 99%). Studies employing active (vs. passive) surveillance reported a significantly higher incidence proportion of lymphadenitis, as did randomized controlled trials (vs. prospective and retrospective cohort studies). Also, the incidence significantly differed according to study quality, publication period, and BCG strain. This study highlights substantial variability in the incidence of BCG lymphadenitis among diverse studies and underscores the influence of surveillance methods, study design, and vaccine strain on reported outcomes.
 
 ---
-### [3] Different Immune Cells Modified With Chimeric Antigen Receptors Are Being Applied to Ovarian Cancer: Which Is the Most Effective?
+### [5] Different Immune Cells Modified With Chimeric Antigen Receptors Are Being Applied to Ovarian Cancer: Which Is the Most Effective?
 **Author**: Wang Liying et al. | **Journal**: Cancer medicine (2026/May)
 **PMID**: 42068103 | https://pubmed.ncbi.nlm.nih.gov/42068103/
 
 Ovarian Cancer (OC), the deadliest gynecological malignancy, poses a major therapeutic challenge in advanced stages owing to its high recurrence rate and metastatic potential. In this regard, it is noteworthy that immunotherapy has recently gained significant attention in OC treatment, a phenomenon attributable to notable advances in over-the-counter Chimeric Antigen Receptor (CAR)-based cell therapy. At the heart of CAR-T Cell (CAR-T) immunotherapy is genetically modified CAR molecules that enable immune cells to target and recognize tumor antigens. Based on such strategies, CAR-T therapies have developed rapidly in hematological oncology and are gradually being extended to solid tumors. Despite their potential in OC treatment, several factors, including off-target effects attributable to the lack of Tumor-Specific Antigens (TSAs), as well as severe side effects such as tumor immune barriers, Cytokine Release Syndrome (CRS), and neurotoxicity, have been established to limit the clinical use of CAR-T therapies. Moreover, compared to CAR-T, CAR-Natural Killer (NK) and CAR-Macrophage (M) therapies have distinct advantages. The killing mechanism of NK cells integrates both CAR-dependent and non-dependent pathways, avoiding severe CRS and neurotoxicity. Furthermore, besides directly phagocytosing tumors due to its strong ability to infiltrate tumors, CAR-M therapy could also effectively improve the Immunosuppressive Microenvironment (IME) via immunomodulatory factor secretion to remodel M2-type Tumor-Associated Macrophages (TAMs) into the M1 phenotype with anti-tumor function. In this review, we systematically describe the research progress in CAR-T therapy for OC and compare the similarities and differences of three types of cellular therapies (CAR-T, CAR-NK, and CAR-M) regarding their mechanisms of action, clinical advantages, and technological bottlenecks. We hope that our findings will provide a theoretical basis for optimizing immunotherapeutic strategies for OC. Trial Registration: ClinicalTrials.gov identifier: NCT03585764.
 
 ---
-### [4] Bacillus Calmette-Guérin scar reactivation (BCGitis) in Kawasaki disease: a scoping review.
+### [6] Bacillus Calmette-Guérin scar reactivation (BCGitis) in Kawasaki disease: a scoping review.
 **Author**: Narchi Hassib et al. | **Journal**: European journal of pediatrics (2026/Apr)
 **PMID**: 42020814 | https://pubmed.ncbi.nlm.nih.gov/42020814/
 
@@ -951,21 +1141,14 @@ WHAT IS NEW: • The unweighted study-level prevalence (MU-SLP) of BCGitis among
 TRIAL REGISTRATION:  Hassib Narchi and Alyson Skinner. Bacillus Calmette-Guérin scar reactivation (BCGitis) in Kawasaki disease. A Scoping Review. MedRxiv [preprint]. October 5, 2025. doi:  https://doi.org/10.1101/2025.10.03.25337219.
 
 ---
-### [5] Mumps disease and vaccination in Africa: A scoping review.
+### [7] Mumps disease and vaccination in Africa: A scoping review.
 **Author**: Gobe Irene et al. | **Journal**: Human vaccines & immunotherapeutics (2026/Dec)
 **PMID**: 41992566 | https://pubmed.ncbi.nlm.nih.gov/41992566/
 
 Mumps, though often self-limiting, can cause serious complications such as meningitis, orchitis, infertility, deafness, and seizures. Despite rising cases in Africa, most countries do not vaccinate against mumps. This review compiled available evidence on mumps in Africa, focusing on morbidity, mortality, vaccine safety, transmission, and molecular characterization. A systematic search across major databases identified 22 relevant studies published between 1994 and 2024. Nearly half of the studies (45%; n = 10/22) were published in the most recent period (2018-2024), indicating increased research interest in recent years. Of the 22 included articles, 37% examined seroprevalence and incidence, 21% transmission and seroprevalence factors, 17% vaccine safety, 17% vaccination in HIV-positive individuals, and 8% molecular data. Reported seroprevalence ranged from 5 to 88.8% in children and exceeded 90% in adults. The MMR vaccine is generally safe but should be used cautiously in those immunocompromised or have allergic reactions to gelatin. Evidence of antibody loss after HAART in HIV-positive children supports re-vaccination. High seroprevalence without immunization suggests widespread natural infection. It is possible that mumps complications are underreported and under-investigated because of the presumed self-limiting nature of mumps infection. This underscores the need to include mumps vaccination in African immunization programs.
 
 ---
-### [6] Immunisation against vaccine-preventable diseases in individuals receiving immunosuppressive targeted therapies.
-**Author**: Wang Xia et al. | **Journal**: Vaccine (2026/Apr)
-**PMID**: 41780104 | https://pubmed.ncbi.nlm.nih.gov/41780104/
-
-The availability and clinical use of biological and small molecule targeted therapies is rapidly expanding. The intricate nature of their mechanisms and the impact of the underlying condition make it challenging for clinicians to anticipate the infectious risks and vaccination outcomes for individuals prescribed these therapies. We aimed to summarise the current evidence focusing on the risk of infections, vaccine efficacy and vaccine safety in patients receiving targeted therapies. Our review revealed variable infection risks and vaccine responses in patients on targeted therapies, ranging from dramatic (e.g., alemtuzumab, rituximab) to negligible (e.g., mepolizumab, imatinib). Higher risks of serious infection were associated with receipt of concomitant immunosuppressive medications. Vaccine immunogenicity data were predominantly restricted to COVID-19, influenza, and pneumococcal vaccines, with fewer studies on herpes zoster and hepatitis B vaccines. Vaccine responses were often impaired by many targeted therapies, but rarely eliminated. Therapies with lymphocyte-depleting effects, however, can result in inadequate vaccine responses, and were often affected by underlying conditions and concomitant immunosuppressants. Live vaccine safety remains a prominent concern for patients prescribed targeted therapies, though serious adverse events are rare. Current evidence is largely based on non-randomised trials and observational studies, which limits the strength of conclusions that can be drawn. To address this gap and ensure accurate evaluation of vaccine immunogenicity, clinical efficacy and safety, it is essential that future trials include immunocompromised individuals. Better prediction models or biomarkers for stratifying risk and predicting vaccine efficacy are also important further steps.
-
----
-### [7] Hepatitis B Vaccination at Birth: Safety, Effectiveness, and Public Health Benefit.
+### [8] Hepatitis B Vaccination at Birth: Safety, Effectiveness, and Public Health Benefit.
 **Author**: Ulrich Angela K et al. | **Journal**: Pediatrics (2026/May)
 **PMID**: 41639943 | https://pubmed.ncbi.nlm.nih.gov/41639943/
 
@@ -974,13 +1157,13 @@ Since 1991, the CDC has recommended screening for hepatitis B virus (HBV) infect
 ---
 
 ## ped_nephrology_update
-### 小児腎臓（ネフローゼ・IgA腎症） — 81件
+### 小児腎臓（ネフローゼ・IgA腎症） — 85件
 
 **▼ Coworkへのプロンプト（コピーして貼り付け）:**
 
 > 以下は直近1ヶ月の小児腎臓（ネフローゼ・IgA腎症）領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_小児腎臓_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_小児腎臓_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -1000,14 +1183,167 @@ Since 1991, the CDC has recommended screening for hepatitis B virus (HBV) infect
 > Abstract: （英語のアブストラクト全文）
 
 
-### [1] Review of the clinical, humanistic, and economic burden of focal segmental glomerulosclerosis.
+### [1] A new perspective on the pathophysiology of kidney diseases: the intracellular complement system- "complosome".
+**Author**: Leventoğlu Emre et al. | **Journal**: Frontiers in nephrology (2026)
+**PMID**: 42136966 | https://pubmed.ncbi.nlm.nih.gov/42136966/
+
+The complement cascade is a vital component of the innate immune system. It consists of around 50 proteins, including circulating complement proteins and membrane-bound receptors. It operates through three main activation pathways: classical, lectin, and alternative. Dysregulation of the complement system is implicated in several kidney diseases, such as complement-mediated thrombotic microangiopathy, lupus nephritis (LN), C3 glomerulopathy and kidney transplantation. The complement system also extends beyond immune responses, influencing cellular processes through the "complosome" - an intracellular system that regulates metabolism, autophagy, and gene expression. This intracellular complement activity has been linked to kidney diseases, including glomerular and tubular injuries and renal cancer. As research progresses, targeting both extracellular and intracellular complement components holds promise for more effective treatments in complement -driven diseases. In this mini review, the role of the complement system in immune defense, the impact of the alternative pathway in kidney diseases, and the relationship between intracellular complement activity -complosome- and cellular functions have been discussed. Additionally, new approaches for the treatment of complement dysregulation have been explored.
+
+---
+### [2] Aging with Thalassemia and Sickle Cell Disease: A Gerontological Model of Accelerated Multimorbidity and Function-Centered Care Beyond Midlife.
+**Author**: Delicou Sophia et al. | **Journal**: Mediterranean journal of hematology and infectious diseases (2026)
+**PMID**: 42136895 | https://pubmed.ncbi.nlm.nih.gov/42136895/
+
+BACKGROUND: Thalassemia and sickle cell disease are now increasingly present as lifelong chronic conditions in high-income countries, with growing numbers of patients reaching their 50s and 60s. This demographic shift transforms hemoglobinopathies from childhood-threatening disorders into chronic, multisystem conditions with cumulative morbidity. However, data specifically focused on later-life hemoglobinopathy populations remain limited, fragmented, and often extrapolated from younger cohorts, leaving hematologists and internists relatively unprepared for the functional decline, vulnerability, and geriatric syndromes that can characterize later life in these populations.
+CONTENT: This expert opinion narrative review synthesizes available evidence on the intersection of disease-driven pathology (anemia, hemolysis, vasculopathy), long-term treatment burden (transfusion-related iron overload, chelation toxicities), and aging biology (declining physiologic reserve, sarcopenia, cognitive vulnerability) in adults beyond midlife. Given the historical survival patterns in hemoglobinopathies and the inconsistent definition of "older adult" across studies, particularly in sickle cell disease, we use a pragmatic age threshold of >=50 years for the main gerontological framing, while incorporating evidence from cohorts beginning at 40-49 years when that is how the literature defines older hemoglobinopathy populations. We distinguish disease-specific priorities: thalassemia faces myocardial and hepatic iron deposition and endocrine failure, while sickle cell disease confronts cerebrovascular disease, chronic pain, and cardiopulmonary complications. Critically, care targets in later life must extend beyond survival and organ-specific metrics to functional endpoints, disability prevention, cognitive health, and quality of life. A conceptual mapping links mechanisms of hemoglobinopathy to established gerontology constructs, including inflammaging, cellular senescence, and vascular aging, while acknowledging that direct mechanistic evidence in older hemoglobinopathy cohorts remains incomplete.
+CONCLUSIONS: Three adjustments are necessary in adults beyond midlife: monitoring should prioritize early detection of treatable complications and emerging functional impairment rather than only documenting cumulative organ damage; therapeutic decisions should weigh treatment benefit, treatment burden, comorbidity burden, and goals of care rather than defaulting to pediatric-era protocols; and care systems should embed shared decision-making, palliative principles, and multidisciplinary coordination within primary care networks, with specialist hemoglobinopathy centers functioning as disease-specific hubs rather than stand-alone primary care providers.
+
+---
+### [3] A Narrative Review of C3 Glomerulopathy: From Pathogenesis to Targeted Therapy.
+**Author**: Jauhal Arenn et al. | **Journal**: Canadian journal of kidney health and disease (2026)
+**PMID**: 42131278 | https://pubmed.ncbi.nlm.nih.gov/42131278/
+
+PURPOSE OF THE REVIEW: Complement factor 3 (C3) glomerulopathy (C3G) is an ultra-rare, progressive, complement-mediated kidney disease. Despite many advances in the understanding of its underlying pathophysiology, C3G remains a clinical challenge due to the overall burden of disease, diagnostic complexity, poor prognosis, lack of approved therapies, and limited access to drugs for kidney diseases in Canada. This narrative review explores the diagnosis and management of individuals with C3G, including novel complement-mediated therapies and their potential impact on patients and outcomes.
+SOURCES OF INFORMATION: This narrative review is based on the best available data, current treatment guidelines, and the authors' clinical experiences. Information for the patient perspective section was collected through discussions with two individuals with C3G.
+METHODS: A panel of Canadian nephrologists who actively care for individuals with C3G was assembled. A rare disease advocate and two individuals with C3G were invited to share their lived experiences. The authors conducted a comprehensive review of the literature to explore the state of the science and future directions in C3G, highlighting current limitations and unmet needs.
+KEY FINDINGS: C3 glomerulopathy is caused by dysregulation of the alternative complement pathway, leading to the deposition of complement proteins and their cleavage products in kidney glomeruli. The consequence of deposition of C3 is glomerular inflammation and tissue damage, which lead to proliferative glomerulonephritis and remodeling of the glomerular capillary walls. Individuals diagnosed with C3G experience significant symptoms that adversely impact their quality of life. Nearly half of patients develop kidney failure within 10 years of diagnosis. C3 glomerulopathy recurrence after kidney transplant occurs in more than half of patients. Severity of proteinuria and reduced estimated glomerular filtration rate (eGFR) are among the most important clinical predictors of kidney failure with further research required for the utility of biomarkers to guide prognosis. There is no established standard of care and no therapies specifically approved for individuals with C3G in Canada. Complement-directed therapies, iptacopan and pegcetacoplan, have demonstrated significant reductions in proteinuria and stabilization in kidney function, offering hope for individuals with C3G, including post-transplant. This review offers an up-to-date synthesis of current knowledge on C3G for Canadian nephrologists at a juncture where targeted therapies are becoming available.
+LIMITATIONS: A systematic review of the literature was not undertaken. Key takeaways are based on currently available evidence, of which head-to-head clinical trials are lacking. The possibility for bias based on the authors' clinical experiences may have occurred.
+JUSTIFICATION: La glomérulopathie à dépôts de C3 (GC3) est une maladie rénale très rare et progressive, médiée par le système du complément. En dépit des progrès dans la compréhension de sa physiopathologie, la GC3 demeure un enjeu clinique majeur en raison de son fardeau, de la complexité du diagnostic, du pronostic défavorable, de l’absence de traitements approuvés et de l’accès limité aux médicaments pour traiter les néphropathies au Canada. Cette revue narrative examine le diagnostic et la prise en charge de la GC3, notamment les nouvelles approches thérapeutiques ciblant le complément, ainsi que leurs effets potentiels sur les résultats cliniques.
+SOURCES DE L’INFORMATION: Cette revue narrative s’appuie sur les meilleures données disponibles, les recommandations actuelles de prise en charge et l’expérience clinique des auteurs. Le point de vue des patients a été recueilli au moyen de discussions itératives avec deux personnes atteintes de GC3.
+MÉTHODOLOGIE: Un groupe de néphrologues canadiens engagés dans la prise en charge active de personne atteinte de GC3 a été constitué. Une personne représentant les patients atteints de maladies rares et deux individus atteints de GC3 ont été invités à partager leurs expériences vécues. Les auteurs ont examiné la documentation existante afin d’explorer l’état des connaissances et les orientations futures sur la GC3, en soulignant les limites actuelles et les besoins non couverts.
+PRINCIPALES CONCLUSIONS: La C3G est causée par un dérèglement de la voie alternative du complément, menant au dépôt de protéines du complément et de leurs produits de clivage dans les glomérules rénaux. Ce dépôt de C3 provoque une inflammation des glomérules et des lésions tissulaires, entraînant une glomérulonéphrite proliférative et un remodelage des parois capillaires glomérulaires. Les personnes qui reçoivent un diagnostic de GC3 présentent des symptômes importants qui affectent négativement leur qualité de vie. Près de la moitié des patients développent une insuffisance rénale dans les dix ans suivant ce diagnostic. Après la transplantation rénale, la GC3 récidive chez plus de la moitié des patients. La gravité de la protéinurie et la réduction du DFGe figurent parmi les plus importants prédicteurs cliniques de l’insuffisance rénale. Des recherches supplémentaires sont nécessaires pour préciser le rôle des biomarqueurs dans l’évaluation pronostique. Au Canada, il n’existe aucune norme de soins établie ni traitement spécifiquement approuvé pour la prise en charge de la GC3. Des thérapies ciblant le système du complément (iptacopan et pegcetacoplan) ont démontré une réduction significative de la protéinurie et une stabilisation de la fonction rénale, offrant un espoir aux personnes atteintes de GC3, y compris après une transplantation. Cette revue narrative présente une synthèse actualisée des connaissances sur la C3G pour les néphrologues canadiens, à un moment charnière marqué par l’arrivée des thérapies ciblées.
+LIMITES: Aucune revue systématique de la littérature n’a été réalisée. Les principales conclusions de cette étude reposent sur les données probantes actuellement disponibles, en l’absence d’essais cliniques comparatifs directs. La possibilité d’un biais fondé sur les expériences cliniques des auteurs est envisageable.
+
+---
+### [4] [Semaphorin 3B membranous nephropathy after hematopoietic stem cell transplantation in a child: a case report and literature review].
+**Author**: Cao Lu et al. | **Journal**: Zhongguo dang dai er ke za zhi = Chinese journal of contemporary pediatrics (2026/May)
+**PMID**: 42130362 | https://pubmed.ncbi.nlm.nih.gov/42130362/
+
+A 10-year-old boy was admitted with facial edema and proteinuria for two months, occurring nine months after hematopoietic stem cell transplantation. He was clinically diagnosed with nephrotic syndrome and showed no remission after four weeks of standard glucocorticoid therapy, suggesting steroid-resistant disease. Renal biopsy was consistent with membranous nephropathy. Mass spectrometry identified granular co-deposition of IgG and semaphorin 3B (Sema3B) along the glomerular basement membrane, establishing the diagnosis of Sema3B-associated membranous nephropathy. Treatment with glucocorticoids combined with tacrolimus led to a marked reduction in proteinuria, resolution of edema, and clinical stabilization over a three-month follow-up, with no recurrence. This case highlights that Sema3B-associated membranous nephropathy may occur after hematopoietic stem cell transplantation in children and underscores the importance of precise diagnostics in pediatric nephropathies. Future multicenter studies are needed to clarify disease course and genetic susceptibility, develop specific biomarkers and therapies, promote individualized treatment, and improve prognosis.
+患儿，男，10岁，因造血干细胞移植后9个月，出现颜面水肿、蛋白尿2个月入院。临床诊断肾病综合征，经规范糖皮质激素治疗4周，尿蛋白未转阴，考虑激素耐药。行肾穿刺活检术，肾脏病理提示膜性肾病，质谱分析肾小球基底膜颗粒状IgG和信号蛋白 3B（semaphorin 3B, Sema 3B）共沉积，诊断为Sema 3B膜性肾病。给予糖皮质激素联合他克莫司治疗后，随访3个月，患儿尿蛋白明显减少，水肿消退，病情稳定，未出现复发。该病例提示儿童造血干细胞移植后可能出现Sema 3B膜性肾病，提示精准诊断在儿科肾病中的重要性，未来需多中心研究明确其病程和遗传易感性，开发特异性标志物和疗法，推动个体化治疗，改善患儿预后。.
+
+---
+### [5] Metabolic complications of citrate anticoagulation in continuous renal replacement therapy (crrt): a delphi consensus on indications, monitoring and management.
+**Author**: Jacobs Rita et al. | **Journal**: Critical care (London, England) (2026/May)
+**PMID**: 42129846 | https://pubmed.ncbi.nlm.nih.gov/42129846/
+
+BACKGROUND: Regional citrate anticoagulation (RCA) is recommended by guidelines over systemic heparinization for continuous renal replacement therapy (CRRT). However, its use in patients with impaired citrate metabolism poses specific challenges and standardized guidance for managing RCA-related metabolic complications remains lacking.
+METHODS: A modified Delphi study was conducted according to a predefined protocol and reported in adherence with the CREDES (Conducting and REporting of DElphi Studies) checklist. The international expert panel comprised 29 clinicians and researchers from Europe, United States and Canada, with recognized expertise in RCA for CRRT in critically ill patients. Three iterative survey rounds were conducted to obtain agreement with proposed statements.
+RESULTS: Twenty-three experts completed all Delphi rounds, achieving consensus on twenty-two statements. RCA was considered feasible in patients with liver dysfunction, severe shock, or hyperlactatemia, with close monitoring and citrate dosing adjustment. Citrate accumulation can be prevented and managed using a stepwise approach, focused on reducing citrate delivery and discontinuing RCA in cases of overt accumulation. Metabolic alkalosis and electrolyte disturbances were identified as relevant but manageable complications, underscoring the need for individualizing CRRT settings.
+CONCLUSION: These consensus statements support the use of RCA during CRRT in critically ill patients with impaired citrate metabolism and provide practical guidance for monitoring and management of metabolic complications. However they reflect expert opinion, especially for questions with limited data and low-level evidence.
+
+---
+### [6] Central nervous system complications after allogeneic haematopoietic cell transplantation: best practice recommendations from the EBMT practice harmonisation and guidelines committee on epidemiology, outcome and neuroimaging.
+**Author**: Schmidt-Hieber Martin et al. | **Journal**: Bone marrow transplantation (2026/May)
+**PMID**: 42129311 | https://pubmed.ncbi.nlm.nih.gov/42129311/
+
+CNS complications (CNSC) may occur in a significant proportion of patients after allogeneic haematopoietic cell transplantation (allo-HCT). They can be differentiated into infectious and non-infectious CNSC, such as vascular pathologies (e.g., bleeding, stroke), drug-related abnormalities, and CNS relapse of the underlying malignancy. Initiation of prompt and adequate diagnostics - mainly neuroimaging and cerebrospinal fluid (CSF) analyses - and treatment are crucial to improve the prognosis. Here, we report on the epidemiology, outcome, and neuroimaging of CNSC after allo-HCT. We also provide an overview of the special considerations for children with these complications. These findings and recommendations were developed during a multidisciplinary EBMT harmonisation workshop. Novel diagnostics, such as CSF next-generation sequencing (NGS) and special MRI sequences, are emerging and may improve the accuracy of diagnosis for selected CNSC. The prognosis of post-transplant CNSC is heterogeneous, with drug-related CNSC mainly having a favourable prognosis, while the outcome of CNS bleeding, CNS leukaemia, and cerebral fungal disease is still frequently dismal. A high level of awareness is crucial in the clinical routine - especially in distinct subgroups such as paediatrics - besides the development of novel algorithms, diagnostics, and treatment approaches to improve the outcome.
+
+---
+### [7] A lifecycle governance and learning health system framework for trustworthy, generalizable, and sustainable human-ai partnership in clinical practice: Lessons from the asthma-guidance and prediction system (A-GPS).
+**Author**: Wi Chung-Il et al. | **Journal**: Journal of the National Medical Association (2026/May)
+**PMID**: 42128801 | https://pubmed.ncbi.nlm.nih.gov/42128801/
+
+The integration of artificial intelligence (AI) into clinical decision support (CDS) holds promise for proactive, personalized, and precision care. However, current understanding of how to establish trustworthy human-AI partnerships is in its infancy, despite its critical importance for implementing AI in healthcare. We present the Asthma-Guidance and Prediction System (A-GPS) as a case study of a practice-integrated AI platform that demonstrates how trustworthy, generalizable and sustainable AI can be developed, evaluated, and implemented in real-world asthma care. We describe major challenges and solutions based on our real-world experience during the process and offer the practical framework, approaches, tools and workflow for implementing trustworthy, generalizable and sustainable AI in frontline practices. While A-GPS is an asthma-specific AI tool, it was built on top of a disease-agnostic electronic health record (EHR)-integrated clinical decision support (CDS) platform based on an Application Programming Interface (API)‑first backbone of reusable services. It was designed to reduce chart-review/processing burden and enable proactive, guideline-concordant asthma management by synthesizing fragmented longitudinal multimodal data into a clinical decision-relevant summary at the point of care. A-GPS platform integrates multiple natural language processing (NLP) algorithms to leverage free texts info in EHRs, machine learning model to offer risk stratification, and remote patient monitoring (RPM) approaches to capture real-time data from patients, enabling remote asthma (chronic disease) care. The platform has been deployed via Substitutable Medical Applications and Reusable Technologies-on-Fast Healthcare Interoperability Resources (SMART-on-FHIR) to ensure in-workflow delivery and maintainable governance making it flexible and interoperable across different EHRs systems and different chronic diseases. The translational maturity of A-GPS as an AI-powered CDS tool for pediatric asthma was demonstrated and sustained through engagement and co-design with diverse community and care team partners, including adult and pediatric Community Advisory Board, pediatric patients and their parents, clinicians (primary care providers and specialists), nurses, schedulers, as well as bioethicists and regulatory experts. Moreover, the tool was evaluated in two randomized clinical trial (RCT)s. The first trial showed a 67% reduction in clinicians' EHR review time, high clinician satisfaction, potential healthcare cost savings, fairness in model performance, and no adverse events. Trustworthiness was further assessed and supported through fairness evaluation by participant socioeconomic status (SES) using the HOUsing-based SocioEconomic Status (HOUSES) index, human-centered user interface/user experience (UI/UX) analysis, clinician workflow optimization, transparent governance practices, and best practices for regulatory science. The A-GPS experience operationalizes a reproducible, lifecycle-governed framework for generating decision-grade evidence on safety, effectiveness, usability, fairness, and workflow integration, directly addressing the translational gap between AI model development and trustworthy, sustainable deployment in real-world clinical environments. These efforts led to national recognitions, including invitation to the inaugural American Medical Informatics Association (AMIA) AI Showcase, and AI evaluation use case for a national health AI coalition. The second RCT evaluated the feasibility of integrating a remote patient monitoring (RPM) device (home spirometry) into the A-GPS platform, with a published RCT protocol that serves as a framework for RCT for evaluating AI models under the Standard Protocol Items: Recommendations for Interventional Trials (SPIRIT) guidelines for RCTs that evaluate AI tools, offering the practical framework, approaches, tools, and workflow for trustworthy, generalizable and sustainable AI tools in asthma care. This work illustrates how team science, community engagement, implementation science, and learning health system principles can be operationalized to establish a human-AI partnership model to advance translational science and clinical care, with the goal of improving health for all.
+
+---
+### [8] Suprapubic versus transurethral diversion after hypospadias repair: A systematic review and meta-analysis.
+**Author**: Deameh Mohammad Ghassab et al. | **Journal**: Journal of pediatric urology (2026/May)
+**PMID**: 42128736 | https://pubmed.ncbi.nlm.nih.gov/42128736/
+
+INTRODUCTION: Hypospadias repair is a common pediatric urological procedure often requiring urinary diversion to minimize postoperative complications. The optimal diversion technique-transurethral versus suprapubic diversion -remains debated. The aim of this study is to systematically review and compare outcomes of transurethral versus suprapubic diversion following hypospadias repair in pediatric patients.
+METHODS: A systematic review and meta-analysis were performed in accordance with PRISMA guidelines. PubMed, Scopus, Web of Science, and Cochrane Library were searched through December 2024. Eligible studies included randomized controlled trials and comparative observational studies reporting outcomes of transurethral versus suprapubic diversion. Main outcomes included urethrocutaneous fistula, meatal stenosis, and bladder spasms.
+RESULTS: Five studies including 680 patients were analyzed. Initial pooled analysis showed no significant difference between transurethral and suprapubic diversion in fistula incidence (RR 1.21, 95% CI 0.75-1.96; p = 0.42). Sensitivity analysis excluding one study suggested a potential reduction in fistula risk with suprapubic diversion (RR 0.35, 95% CI 0.16-0.78; p = 0.01). Meatal stenosis rates were comparable between groups (RR 1.25, 95% CI 0.60-2.59; p = 0.55). For bladder spasms, pooled analysis showed no difference (RR 0.81, 95% CI 0.55-1.20; p = 0.29), but sensitivity analysis favored suprapubic diversion (RR 0.08, 95% CI 0.02-0.32; p = 0.0003).
+CONCLUSION: Both methods yield comparable outcomes with some potential advantages of suprapubic diversion in some outcomes only after sensitivity analysis. While SPT may offer a viable alternative to traditional urinary catheterization in select cases of hypospadias repair, the current evidence base does not support definitive conclusions about its superiority or inferiority. Given the variability in study quality, small sample sizes, and heterogeneity in reported outcomes, no definitive recommendation can yet be made. Future RCTs are essential to guide practice.
+
+---
+### [9] Blood Pressure Assessment Across the Lifespan: Improving Clinical Research and Clinical Practice: A National Heart, Lung, and Blood Institute Workshop Report.
+**Author**: Abdalla Marwah et al. | **Journal**: Journal of the American College of Cardiology (2026/May)
+**PMID**: 42126153 | https://pubmed.ncbi.nlm.nih.gov/42126153/
+
+Hypertension is a modifiable risk factor for cardiovascular disease (CVD) and its prevalence is high in the United States and worldwide. Adequate characterization of blood pressure (BP) is essential for the diagnosis and management of hypertension. However, BP assessment can be challenging because of the unique influences across the lifespan, disease conditions, and physical environmental context. Moreover, complex uncertainties in BP assessment may contribute to underdiagnosis, undertreatment, and preventable morbidity and mortality. Recent advances in BP measurement devices have enabled comprehensive characterization of BP that could dramatically change how hypertension is managed to optimize CVD risk reduction, avoid complications of low BP, and improve hypertension control rates. To address the rapidly evolving landscape in BP assessment, the National Heart, Lung, and Blood Institute of the U.S. National Institutes of Health convened a 2-day workshop of clinicians and researchers in December 2024. The present report summarizes the topics presented and discussed during the meeting, which focused on the latest evidence on BP assessment as well as obstacles and knowledge gaps to be addressed to advance BP assessment in clinical practice and research.
+
+---
+### [10] Circulating Short-Chain Fatty Acid Levels in Chronic Kidney Disease: A Systematic Review and Meta-Analysis.
+**Author**: Thakur Devika et al. | **Journal**: Nutrients (2026/Apr)
+**PMID**: 42124048 | https://pubmed.ncbi.nlm.nih.gov/42124048/
+
+BACKGROUND: Chronic kidney disease (CKD) is characterised by a disrupted gut-kidney axis, wherein intestinal dysbiosis is associated with the accumulation of uraemic toxins and the potential depletion of beneficial short-chain fatty acids (SCFAs). Whilst acetate, propionate, and butyrate are known to modulate systemic inflammation and blood pressure, their precise circulating concentrations across different CKD stages and age groups remain poorly defined. This systematic review and meta-analysis aimed to quantify blood SCFA concentrations in CKD patients compared to healthy controls.
+METHODS: We conducted a systematic search of Medline, EMBASE, and the Cochrane Library for clinical studies reporting blood SCFA concentrations in humans with CKD. Methodological quality was assessed using the NIH tool. Standardised mean differences (SMDs) were calculated for the quantitative meta-analysis, with subgroup analyses performed for age, CKD stage, and treatment modality (dialysis vs. transplantation).
+RESULTS: Twenty-one studies encompassing 9661 participants were included. Quantitative synthesis revealed a significant and consistent systemic depletion of circulating acetate and propionate in adult CKD patients compared to healthy controls (p < 0.05). This depletion followed a stage-dependent trajectory, worsening alongside declining glomerular filtration rates. Notably, a "butyrate paradox" was identified in paediatric cohorts; whilst adults showed progressive butyrate depletion, children with CKD often maintained or exhibited elevated levels, particularly in the context of hypertension. Furthermore, whilst haemodialysis patients exhibited the most profound SCFA deficiencies, kidney transplantation appeared to partially restore these metabolites toward healthy baseline levels.
+CONCLUSIONS: CKD is associated with a profound systemic reduction in acetate and propionate, supporting the model of a compromised gut-kidney axis based on converging evidence. The divergent results for butyrate in paediatric versus adult populations suggest that SCFA metabolism is influenced by age-related factors or compensatory mechanisms. These findings highlight the potential for SCFA monitoring as a candidate or emerging markers for detecting early renal damage and stratifying risk.
+
+---
+### [11] Machine learning model predicts acute kidney injury in pediatric patients after cardiac surgery: a systematic review and meta-analysis.
+**Author**: Fan Xuanhao et al. | **Journal**: BMC nephrology (2026/May)
+**PMID**: 42121090 | https://pubmed.ncbi.nlm.nih.gov/42121090/
+
+BACKGROUND: Acute kidney injury (AKI) is a common complication following pediatric cardiac surgery, frequently leading to poor outcomes and even death in severe cases. Early prevention remains the primary intervention strategy. Studies have developed prediction models to identify at-risk children at an early stage. This study systematically evaluate existing AKI prediction models to support their clinical utility and future refinement.
+METHODS: PubMed, Embase, Web of Science, Cochrane Library, China National Knowledge Infrastructure, Wanfang and SinoMed were searched from inception to 31 December, 2024. The search of references from included studies, as well as the manual search, extended until November 30, 2025. Literature searching, screening, and data extraction were done by two authors. Quality evaluation according to prediction model risk of bias assessment tool (PROBAST). Area under the receiver operating characteristic curve (AUROC) was pooled using a random-effects model to summarize the overall performance of existing models, exploring sources of heterogeneity of performance through subgroup analysis and meta-regression. Sensitivity analysis and Egger's method were used to analyze the stability of the included studies and to identify publication bias. This study was registered with PROSPERO (CRD42024593112) and reported following the Transparent Reporting of Multivariable Prediction Models for Individual Prognosis or Diagnosis: Checklist for Systematic Reviews and Meta-Analysis (TRIPOD-SRMA).
+RESULTS: A total of 2189 studies were screened which represented the total number of studies retrieved from the database search, the search of references from included studies, and the manual search. Nineteen studies were included in this review. Included studies differed in study design, AKI definition, predictor screening, model development and validation and model performance. The overall pooled AUROC was 0.850 (95% CI, 0.810-0.890), but all studies were evaluated as high risk of bias using the PROBAST. Heterogeneity in model performance was high, and study design and development methods were identified as possible sources of heterogeneity in pooled AUROC. Included studies were stable and free of publication bias.
+CONCLUSIONS: This systematic review suggested that machine learning models for predicting postoperative AKI in pediatric cardiac surgery indicated good discriminative ability. However, the high risk of bias across all included studies and the significant heterogeneity in model performance indicated that the reported performance may be overestimated. The high heterogeneity observed highlights the substantial variability in model performance, which is likely driven by differences in study design and development methods. The clinical utility of these models was currently limited due to the lack of external validation in most studies and the methodological limitations identified. Future research must incorporate rigorous study design, transparent reporting based on the TRIPOD guidelines, and external validation to develop prediction models with clinical utility.
+
+---
+### [12] Research Trends in HIV-Associated Nephropathy (HIVAN) from 2015 to 2025: A Bibliometric Analysis Using CiteSpace.
+**Author**: Huang Shaowei et al. | **Journal**: HIV/AIDS (Auckland, N.Z.) (2026)
+**PMID**: 42117106 | https://pubmed.ncbi.nlm.nih.gov/42117106/
+
+BACKGROUND: In recent years, HIV-associated nephropathy (HIVAN) has significantly impacted the compliance, quality of life, and treatment outcomes for patients with AIDS. This study employs CiteSpace bibliometric analysis to predict emerging topics and research trends, thereby offering clear scientific navigation and strategic recommendations for HIVAN research.
+METHODS: We retrieved publications related to HIVAN from the Web of Science Core Collection covering the period from 2015 to 2025. Utilizing CiteSpace, we analyzed the co-occurrence network, clustering,and timeline of research trends in this field to illustrate the knowledge evolution surrounding HIVAN.
+RESULTS: A total of 1,470 publications were included from 2015 to 2025. The United States maintained its dominant position in medical research, while countries such as the United Kingdom, South Africa, France, and China emerged as key contributors in the field. Prominent institutions, including the University of California system, Johns Hopkins University, and University of the London, were central to HIVAN research. Scholars such as Estrella, Michelle M. Shlipak, Michael G. and Kopp, Jeffrey B exhibited substantial academic output and garnered considerable citation attention. Leading journals, including "Clinical Infectious Diseases", "PLOS ONE" and "AIDS" served as premier venues for review articles, providing essential platforms and establishing foundations for ongoing research. The research activity and academic impact of HIVAN within the sub-discipline of nephrology currently represent prominent areas of inquiry.
+CONCLUSION: This study examined the knowledge network structure of HIVAN from 2015 to 2025 examined bibliometric analysis. Future research should focus on enhancing international collaboration, particularly in resource limited regions, to investigate various intervention strategies aimed at improving compliance, quality of life, and treatment outcomes for HIVAN patients.
+
+---
+### [13] Red Blood Cell Exchange in Sickle Cell Disease Care: A Comprehensive Review.
+**Author**: Mashayekhi Mahtab et al. | **Journal**: Therapeutic apheresis and dialysis : official peer-reviewed journal of the International Society for Apheresis, the Japanese Society for Apheresis, the Japanese Society for Dialysis Therapy (2026/May)
+**PMID**: 42116603 | https://pubmed.ncbi.nlm.nih.gov/42116603/
+
+Erythrocytaphoresis or RBC exchange (RBCX) is a key intervention in the management of sickle cell anemia for both chronic prophylaxis and emergent clinical care during sickle cell disease (SCD) emergencies. RBCX removes sickled RBCs while replacing them with donor RBCs and reducing hemoglobin S (HbS) levels. Unlike simple transfusion, it minimizes iron overload and avoids fluid overload, making it a mainstay for the management of acute stroke, acute chest syndrome, and other settings where fluid overload can complicate disease morbidity. Chronic RBCX has shown benefit in not only improving oxygenation and reducing hospitalization rates but also improving overall quality of life in SCD patients. Advances in apheresis technology and personalized transfusion have brought new opportunities for enhancement in safety, efficacy, and feasibility of this therapeutic modality. In this review, we explore the clinical efficacy and role of chronic RBC exchange and its long-term outcomes in managing complications of SCD.
+
+---
+### [14] Challenges and knowledge gaps in sex differences in cardio-kidney-metabolic syndrome across the lifespan.
+**Author**: de Souza Aline M A et al. | **Journal**: Biology of sex differences (2026/May)
+**PMID**: 42116222 | https://pubmed.ncbi.nlm.nih.gov/42116222/
+
+Cardiovascular-kidney-metabolic (CKM) syndrome represents a continuum of interrelated adiposity, insulin resistance, cardiovascular disease, kidney dysfunction, and metabolic disturbances that evolve across the lifespan. Emerging evidence demonstrates that both biological sex and sociocultural gender significantly shape CKM risk, progression, and clinical expression. CKM syndrome pathogenesis reflects complex multisystem interactions involving adipose tissue dysfunction, neurohormonal activation, inflammatory signaling, and vascular impairment, all of which exhibit important sex-specific patterns. This review examines CKM syndrome from a sex- and gender-informed perspective, highlighting how endogenous and exogenous sex hormones, reproductive transitions, pregnancy-related complications, and dietary exposures shape the long-term CKM syndrome risk. Particular attention is given to the roles of estrogen and testosterone in modulating adipose biology, vascular function, and metabolic regulation. Polycystic ovary syndrome is discussed as a model of androgen excess and multisystem metabolic vulnerability that accelerates CKM features. Finally, we address brain vulnerability within CKM syndrome, emphasizing shared inflammatory, vascular, and neuroendocrine mechanisms linking metabolic dysfunction to cognitive decline and neuropsychiatric disorders. Recognizing these interconnected and sex-specific influences is critical for advancing precision prevention and treatment strategies across the CKM syndrome spectrum.
+
+---
+### [15] Clinical Prediction Models for Acute Kidney Injury in Neonatology-A Systematic Review and Modelling Analysis.
+**Author**: Wildes Dermot et al. | **Journal**: Journal of paediatrics and child health (2026/May)
+**PMID**: 42108540 | https://pubmed.ncbi.nlm.nih.gov/42108540/
+
+AIMS: Acute kidney injury (AKI) affects up to one-third of neonates admitted to neonatal intensive care units (NICUs). NICUs are highly data-rich environments, offering opportunities to develop clinical prediction rules (CPRs) that use clinical and demographic data to estimate AKI risk. We sought to identify and critically appraise existing CPRs for predicting neonatal AKI.
+METHODS: A systematic search of PubMed and OVID-MEDLINE was conducted for literature published from 1946 to Q2-2025. Eligible studies reported the development or validation of CPRs for neonatal AKI in NICU populations. The review followed PRISMA guidelines and was prospectively registered with PROSPERO (CRD420250653606). Data extraction followed the CHARMS checklist, and risk of bias was assessed using the PROBAST tool.
+RESULTS: From 685 identified articles, 11 underwent full-text review and three met inclusion criteria. Sample sizes ranged from 276 to 706 participants. One CPR was derived from multi-centre data; two used prospectively collected datasets. The number of predictor variables ranged between 4 and 10. Internal validation methods varied, with those who reported commenting on apparent performance only and none performing external validation. Hosmer-Lemeshow testing and calibration plots were the most commonly used forms of analysis.
+CONCLUSIONS: Current CPRs for neonatal AKI show potential but remain underdeveloped and poorly validated. Rigorous research, including external validation prior to integration into clinical workflows, is essential to enable effective early detection of neonatal AKI.
+
+---
+### [16] Efficacy and safety of automated insulin delivery system in very young children with type 1 diabetes: A systematic review and meta-analysis of randomized controlled trials.
+**Author**: Lin Qiongyan et al. | **Journal**: Diabetic medicine : a journal of the British Diabetic Association (2026/May)
+**PMID**: 42108409 | https://pubmed.ncbi.nlm.nih.gov/42108409/
+
+AIM: To evaluate the efficacy and safety of automated insulin delivery (AID) systems in very young children with type 1 diabetes (T1D).
+METHODS: PubMed, Embase, Scopus, and Web of Science were searched until 10 October 2025. Inclusion criteria were randomized controlled trials (RCTs); T1D populations under 7 years old; comparing AID systems with standard care (SC). Primary efficacy endpoint was the percentage of time-in-range of 70-180 mg/dL (TIR) derived from continuous glucose monitoring (CGM), secondary outcomes included glycated haemoglobin (HbA1c), other CGM metrics, and insulin dose. Safety endpoints included severe hypoglycaemia (SH) and diabetic ketoacidosis (DKA).
+RESULTS: Four RCTs involving 292 participants were included. The mean age was 4.70 years, with a mean T1D duration of 1.96 years. The study duration ranged from 8 to 16 weeks. Compared with SC, AID significantly improved TIR by mean difference (MD) +9.29% (95% confidence interval [CI]: 7.27-11.30, I2 = 70%, p < 0.001) accompanied by a favourable effect on HbA1c by MD -4 mmol/mol (-0.39%) (95% CI [-6 to -2] (-0.57 to -0.21), I2 = 82%, p < 0.001). A favourable decrease in time-above-range (TAR, >180 mg/dL; >250 mg/dL) and mean blood glucose were also observed in AID over SC (all p < 0.05). No significant differences were observed between AID and SC groups in time in hypoglycaemia, insulin dose, and risk of SH and DKA (all p > 0.05).
+CONCLUSION: AID systems may outperform SC in improving short-term glycaemic control (TIR, HbA1c, TAR) in very young children with T1D, without increasing time in hypoglycaemia, insulin dose, or risk of SH and DKA. These preliminary findings support the clinical potential of AID systems and highlight the need for longer term studies.
+
+---
+### [17] Exosome-based strategies to enhance CAR-T cell therapy for systemic lupus erythematosus: A promising new frontier.
+**Author**: Li Binbin et al. | **Journal**: International reviews of immunology (2026/May)
+**PMID**: 42105262 | https://pubmed.ncbi.nlm.nih.gov/42105262/
+
+Dysregulated B lymphocyte activation plays a pivotal role in the pathogenesis of systemic lupus erythematosus (SLE), making it a promising target for therapeutic intervention. Chimeric antigen receptor T cell (CAR-T) therapy, specifically targeting CD19-positive B cells, has shown potential in selectively eliminating aberrant B cells, offering a path toward sustained remission and even complete eradication of SLE. However, the broad immunosuppressive effects and cytotoxicity associated with CAR-T therapy pose significant challenges to its application in autoimmune disease treatment. Recent advances in extracellular vesicle biology, particularly exosomes, have highlighted their potential as a cell-free therapeutic platform due to their superior biocompatibility, plasticity, and ability to modulate immune responses. CAR-T-derived or engineered exosomes represent a potential cell-free alternative to reduce cellular dose and toxicity while preserving efficacy in SLE. This review provides a comprehensive analysis of the current landscape of CAR-T cell therapy in autoimmune diseases, with a focus on its safety, effectiveness, and potential in treating SLE. Furthermore, it explores the emerging role of exosomes as a promising adjunct to traditional CAR-T therapy, offering novel perspectives and therapeutic strategies for SLE management.
+Systemic lupus erythematosus (SLE) is a chronic autoimmune disease that causes widespread inflammation and organ damage. Current treatments often rely on long-term use of steroids or immunosuppressive drugs, which can have serious side effects and may not achieve lasting remission. A new therapy called chimeric antigen receptor T cell (CAR-T) therapy is showing promise. CAR-T cells are specially engineered immune cells designed to recognize and destroy harmful B cells that drive SLE. Early studies suggest that this approach can lead to rapid and sustained remission in some patients. However, CAR-T therapy also has limitations. It may cause strong immune reactions, such as cytokine release syndrome, and its manufacturing process is complex and expensive. To address these challenges, researchers are exploring the use of exosomes—tiny particles naturally released by cells. Exosomes can carry signals and therapeutic molecules, and those derived from CAR-T cells may retain their ability to target harmful B cells while reducing toxicity. Because they are cell-free, exosomes may also be safer, easier to produce, and potentially more affordable. This review discusses the current evidence on CAR-T therapy for autoimmune diseases, especially SLE, and introduces exosomes as an exciting new partner strategy. Combining CAR-T cells with exosomes may help improve safety, effectiveness, and long-term disease control. If these approaches can be successfully developed, they may transform the treatment of SLE and offer new hope to patients who have limited options today.
+
+---
+### [18] Review of the clinical, humanistic, and economic burden of focal segmental glomerulosclerosis.
 **Author**: Bensink Mark E et al. | **Journal**: The American journal of managed care (2026/May)
 **PMID**: 42101820 | https://pubmed.ncbi.nlm.nih.gov/42101820/
 
 Focal segmental glomerulosclerosis (FSGS) is a progressive glomerular disease characterized by podocyte injury, proteinuria, and risk of kidney failure. Until recently, no medicines had been approved by the FDA or European Medicines Agency, with management focused on supportive care and proteinuria reduction. This supplement explores the burden of FSGS from a clinical, humanistic, and economic perspective, informed by the results of 3 systematic literature reviews. FSGS is associated with poorer quality of life and high health care costs, and these outcomes are correlated with disease severity. Kidney Disease: Improving Global Outcomes guidelines recommend monitoring estimated glomerular filtration rate (eGFR) for kidney function; however, it is acknowledged that given the variable decline in FSGS, eGFR is not an ideal trial end point. Consequently, proteinuria reduction has become the preferred surrogate efficacy end point, as supported by the International Society of Glomerular Disease's global Proteinuria and Other Biomarkers as Endpoints for Clinical Trials in Kidney Disease initiative and subsequent FDA endorsement. Available treatments, such as glucocorticoids or calcineurin inhibitors, are limited in efficacy and safety. Among emerging medicines, sparsentan, a dual endothelin and angiotensin receptor antagonist (DEARA), has demonstrated consistent and significant reductions in proteinuria among patients with primary and genetic FSGS resulting in its approval by the FDA to reduce proteinuria in adult and pediatric patients aged 8 years and older with FSGS without nephrotic syndrome. In the phase 2 DUET clinical trial (NCT01613118), those treated with sparsentan showed a urine protein-creatinine ratio reduction of -35.6% (95% CI, -46.3% to -24.6%) vs baseline at 240 weeks. Sparsentan also showed greater reductions in proteinuria vs irbesartan, a standard renin-angiotensin system agent, along with a comparable safety profile in the phase 3 DUPLEX trial (NCT03493685). In model-based projections among real-world registry cohorts, sustained reductions in proteinuria are associated with lower long-term risk of kidney failure. These findings align with the PARASOL-FSGS initiative, supporting the role of proteinuria reduction as a key end point, facilitating pragmatic trial designs to address the persistent treatment gap in FSGS.
 
 ---
-### [2] A systematic review of short-term outcomes in patients with anti-factor H associated atypical HUS managed with plasma exchanges versus eculizumab.
+### [19] A systematic review of short-term outcomes in patients with anti-factor H associated atypical HUS managed with plasma exchanges versus eculizumab.
 **Author**: Sinha Aditi et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/May)
 **PMID**: 42101481 | https://pubmed.ncbi.nlm.nih.gov/42101481/
 
@@ -1023,7 +1359,7 @@ CONCLUSIONS AND IMPLICATIONS OF KEY FINDINGS: Patients managed with PEX achieved
 SYSTEMATIC REVIEW REGISTRATION NUMBER: PROSPERO ID: CRD420251033150.
 
 ---
-### [3] Bioelectrical Impedance in Pediatric Dialysis: Clinical Applications, Limitations, and Opportunities.
+### [20] Bioelectrical Impedance in Pediatric Dialysis: Clinical Applications, Limitations, and Opportunities.
 **Author**: Juarez-Calderon Marisa et al. | **Journal**: Hemodialysis international. International Symposium on Home Hemodialysis (2026/May)
 **PMID**: 42101376 | https://pubmed.ncbi.nlm.nih.gov/42101376/
 
@@ -1035,21 +1371,21 @@ DISCUSSION: BIA may enhance individualized fluid and nutritional management when
 CONCLUSION: BIA is a practical adjunct for pediatric dialysis care with potential to improve fluid management and nutritional monitoring. Pediatric-specific validation studies, standardized protocols, and integration with clinical outcomes is needed to optimize its utility.
 
 ---
-### [4] Ten tips for ordering, interpreting, and communicating genetic test results in nephrology.
+### [21] Ten tips for ordering, interpreting, and communicating genetic test results in nephrology.
 **Author**: Selvathesan Nithiakishna et al. | **Journal**: Clinical kidney journal (2026/May)
 **PMID**: 42100715 | https://pubmed.ncbi.nlm.nih.gov/42100715/
 
 Genetic testing is becoming a routine-and increasingly time-sensitive-tool in nephrology, with implications for diagnosis, prognosis, targeted therapy, transplant planning, and family counselling. However, many nephrologists remain uncomfortable with genetic concepts in general, and variant interpretation specifically. This gap will increasingly limit their ability to fully leverage genetic testing in routine nephrology care-and to translate results into management decisions that improve patient outcomes. In this review, we provide 10 practical tips to help nephrologists integrate genetic testing safely and confidently into everyday practice. We emphasize early testing when a molecular diagnosis could plausibly change management, and the primacy of careful phenotyping (including extra-renal features) to guide efficient test selection (single-gene testing, targeted panels, exome, or genome). We outline a pragmatic approach to informed consent that addresses the family impact, secondary findings, and the possibility of misattributed parentage. We then walk through how to read genetic reports, recognize common technical 'blind spots' (e.g. copy number variants), and classify results in a clinically meaningful way (diagnostic, suggestive, or uninformative). We highlight how to handle variants of uncertain significance as hypotheses rather than diagnoses, and why periodic reanalysis is essential as gene-disease assertions and variant classifications evolve. Finally, we encourage clinicians to work within multidisciplinary pathways and to contribute to data-sharing efforts that advance nephrogenetics. Each tip concludes with a brief 'nephrogenetics nugget'-a practical takeaway, a useful metaphor, or a simple script-to help clinicians translate core concepts into real-world conversations and decisions at the point of care. Overall, these tips provide a practical framework for ordering, interpreting, and disclosing genetic test results in routine nephrology care.
 
 ---
-### [5] Reversible Rituximab-Induced Bronchiectasis: A Pediatric Case Report and Literature Review.
+### [22] Reversible Rituximab-Induced Bronchiectasis: A Pediatric Case Report and Literature Review.
 **Author**: AlHarbi Nasser et al. | **Journal**: The American journal of case reports (2026/May)
 **PMID**: 42098995 | https://pubmed.ncbi.nlm.nih.gov/42098995/
 
 BACKGROUND Rituximab (RTX) is a chimeric IgG monoclonal antibody directed against the CD20 antigen expressed on normal and malignant B cells. It is used for treating a variety of neoplastic, autoinflammatory, and autoimmune pathologies, including disorders occurring in the pediatric population. It has been proven that rituximab can induce pulmonary complications including interstitial lung disease, bronchiectasis and pulmonary toxicities, predominantly in adults. By describing this case, we aim to raise awareness among pediatricians given the limited literature on rituximab-induced bronchiectasis in pediatrics, aiding in early recognition for better outcomes. CASE REPORT We present the case of a 12-year-old girl with relapsing steroid-dependent nephrotic syndrome who was diagnosed at age 6 years. When rituximab was introduced, remission was achieved. A year later, she developed a persistent wet cough. Initial imaging suggested pneumonia, and subsequent admissions revealed recurrent respiratory infections. Workup showed hypogammaglobulinemia, attributed to rituximab-induced humoral immunosuppression. High-resolution computed tomography (HRCT) revealed segmental atelectasis and bronchiectatic changes. Pulmonology testing diagnosed chronic suppurative lung disease, likely secondary to immunosuppression. Rituximab was discontinued, and the patient was started on azithromycin and airway clearance therapy. Intravenous immunoglobulin (IVIG) was initiated due to persistent hypogammaglobulinemia. Repeated HRCT showed complete resolution of bronchiectasis, with minimal residual scarring. CONCLUSIONS While it is a more common complication in adults, it is important to recognize rituximab as a culprit in pediatric patients with respiratory symptoms after prolonged use for various indications. Prompt recognition and intervention are crucial for mitigating further lung damage and perhaps full recovery. Pediatricians are encouraged to monitor for rituximab-induced pulmonary complications, particularly in naive lungs.
 
 ---
-### [6] Efficacy and safety of non-pharmacological interventions for gastroesophageal reflux and gastroesophageal reflux disease in children: a systematic review.
+### [23] Efficacy and safety of non-pharmacological interventions for gastroesophageal reflux and gastroesophageal reflux disease in children: a systematic review.
 **Author**: Banderali Giuseppe et al. | **Journal**: Italian journal of pediatrics (2026/May)
 **PMID**: 42098776 | https://pubmed.ncbi.nlm.nih.gov/42098776/
 
@@ -1059,14 +1395,14 @@ RESULTS: We included 40 studies: 39 RCTs (15 crossover) and one systematic revie
 CONCLUSIONS: Thickened formulas and alginates showed the most consistent symptom improvement in infants with GER or GERD, though overall evidence quality was low to moderate. Other interventions yielded mixed results. Non-pharmacological strategies appear generally safe, but further high-quality research is needed to support clinical decision-making.
 
 ---
-### [7] Symptom-guided approach to central nervous system complications in allogeneic hematopoietic cell transplant recipients: Best practice recommendations from the EBMT Practice Harmonisation and Guidelines committee.
+### [24] Symptom-guided approach to central nervous system complications in allogeneic hematopoietic cell transplant recipients: Best practice recommendations from the EBMT Practice Harmonisation and Guidelines committee.
 **Author**: Velasco Roser et al. | **Journal**: Bone marrow transplantation (2026/May)
 **PMID**: 42098382 | https://pubmed.ncbi.nlm.nih.gov/42098382/
 
 Central nervous system complications (CNSC) after allogeneic hematopoietic cell transplantation (allo-HCT) are relatively common and may have a major impact on patients´ outcomes. Neurological symptoms may occur at any point during the post-transplant course, although they are more common early after HCT, with a wide range of possible presentations. As many of CNSC symptoms are non-specific, the initial assessment is often difficult, and early decisions regarding the diagnostic work-up can influence the identification of the underlying cause. Blood tests, neuroimaging and cerebrospinal fluid (CSF) analyses are particularly important, as they frequently provide the first clues that help narrow the very wide differential diagnoses. In view of these challenges, an international EBMT working group composed of haematologists, infectious disease specialists, neurologists, a neuroradiologist, and a microbiologist developed symptom-based recommendations for the early evaluation of CNSC after allo-HCT. The work summarizes key aspects of the clinical presentation and outlines practical steps for the initial diagnostic approach. These recommendations are intended to support haematologists, who are usually the first to assess these patients, in promptly recognizing CNSC so to start timely appropriate management.
 
 ---
-### [8] Post-asphyxia acute kidney injury in neonates: a systematic review.
+### [25] Post-asphyxia acute kidney injury in neonates: a systematic review.
 **Author**: Aderounmu Temilade et al. | **Journal**: European journal of pediatrics (2026/May)
 **PMID**: 42096066 | https://pubmed.ncbi.nlm.nih.gov/42096066/
 
@@ -1076,7 +1412,7 @@ WHAT IS KNOWN: • The newborn kidneys are susceptible to the hemodynamic change
 WHAT IS NEW: • The emergence of novel biomarkers in the identification and diagnosis of neonatal AKI, and the uptake and application of standard definitions (modified neonatal KDIGO) in the identification of neonatal AKI. • The availabiltiy of specialized kidney support therapy (continuous kidney replacement therapy; the carpadiem) in the management of neonatal AKI.
 
 ---
-### [9] Key performance indicators for acute kidney replacement therapy in critically ill children: a systematic review.
+### [26] Key performance indicators for acute kidney replacement therapy in critically ill children: a systematic review.
 **Author**: Kusirisin Prit et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/May)
 **PMID**: 42095908 | https://pubmed.ncbi.nlm.nih.gov/42095908/
 
@@ -1091,7 +1427,7 @@ LIMITATIONS: This systematic review is limited by heterogeneity in study quality
 SYSTEMATIC REVIEW REGISTRATION NUMBER: PROSPERO CRD42023474374 (October 30, 2023).
 
 ---
-### [10] Impact of Intraoperative Doppler Ultrasound on Outcomes of Microsurgical Subinguinal Varicocelectomy: A Systematic Review and Meta-Analysis.
+### [27] Impact of Intraoperative Doppler Ultrasound on Outcomes of Microsurgical Subinguinal Varicocelectomy: A Systematic Review and Meta-Analysis.
 **Author**: Ryzhkov Aleksei et al. | **Journal**: The world journal of men's health (2026/Apr)
 **PMID**: 42093256 | https://pubmed.ncbi.nlm.nih.gov/42093256/
 
@@ -1101,7 +1437,7 @@ RESULTS: Seven studies involving 1,044 patients were included. While no differen
 CONCLUSIONS: IDU enhances surgical precision by improving arterial identification and vein ligation, while reducing operative time in unilateral varicocelectomy. It significantly enhances sperm motility but shows no effect on pregnancy or complication rates.
 
 ---
-### [11] GPIHBP1 Autoantibody-Related Hypertriglyceridemia in Children: A Report of Two Cases and a Review of Pediatric Cases From the Literature.
+### [28] GPIHBP1 Autoantibody-Related Hypertriglyceridemia in Children: A Report of Two Cases and a Review of Pediatric Cases From the Literature.
 **Author**: Hsu Rai-Hseng et al. | **Journal**: Molecular genetics & genomic medicine (2026/May)
 **PMID**: 42093112 | https://pubmed.ncbi.nlm.nih.gov/42093112/
 
@@ -1111,21 +1447,21 @@ RESULTS: No pathogenic variants were identified by whole-exome sequencing. Both 
 CONCLUSION: GPIHBP1 autoantibody-related HTG is important and potentially treatable severe pediatric HTG, representing an early manifestation of autoimmune dysregulation that requires an accurate diagnosis and longitudinal surveillance.
 
 ---
-### [12] Hypertension management in pediatric peritoneal dialysis: A scoping review.
+### [29] Hypertension management in pediatric peritoneal dialysis: A scoping review.
 **Author**: Parashar Sameer et al. | **Journal**: Peritoneal dialysis international : journal of the International Society for Peritoneal Dialysis (2026/May)
 **PMID**: 42089756 | https://pubmed.ncbi.nlm.nih.gov/42089756/
 
 BackgroundPeritoneal dialysis (PD) is a prominent treatment option for children with kidney failure. However, cardiovascular disease remains the leading cause of both morbidity and early mortality in this pediatric population, with 50-70% of patients experiencing hypertension. This scoping review aims to assess pediatric hypertension management among those receiving PD, along with exploring new potential techniques to optimize care.MethodsPubMed and Web of Science were used to conduct a literature search using PRISMA-ScR guidelines. The topic was hypertension management in PD in the pediatric population. Studies within the last 10 years that were written in English were included to capture the latest advancements in the literature. Six articles were included in the review.ResultsThe included articles illustrated 3 main management strategies, which were diet, fluid volume, and antihypertensive drugs. More specifically, an inverse relationship between vitamin D and cholesterol levels and a lack of correlation between simple salt balance and hypertension have been described. Bioimpedance spectroscopy and B-type natriuretic peptide were found to be useful in the estimation of fluid volume. Additionally, the persistence of hypertension was found despite the use of antihypertensive drugs.ConclusionsThe presenting studies reflect the uncertainty of the current evidence available on hypertensive treatments in this population. Thus, our findings may help guide further research until the evidence is sufficient for clinical recommendations.
 
 ---
-### [13] Renal osteodystrophy in pediatric patients. A systematic review and meta-analysis.
+### [30] Renal osteodystrophy in pediatric patients. A systematic review and meta-analysis.
 **Author**: Bedram Leonardo Gonçalves et al. | **Journal**: Bone (2026/May)
 **PMID**: 42081926 | https://pubmed.ncbi.nlm.nih.gov/42081926/
 
 Chronic kidney disease (CKD) in children is associated with significant comorbidities, including mineral and bone disorder (CKD-MBD). A key manifestation of CKD-MBD is renal osteodystrophy (ROD), diagnosed by bone biopsy followed by histomorphometric analysis. In pediatric patients, ROD can lead to bone deformities and impaired growth. However, the limited use of bone biopsy in this population hampers the understanding of ROD patterns and severity. This systematic review and meta-analysis aimed to evaluate histomorphometric findings in children with CKD. We screened 5082 abstracts published up to 2024 and included 28 eligible studies, encompassing 980 bone biopsies from children in different stages of CKD. Significant heterogeneity in nomenclature, abbreviations, and reference units of histomorphometric parameters was observed, despite the ASBMR recommendations. Osteitis fibrosa was the most prevalent type of ROD. Notably, 36% of the studies did not report dynamic parameters. Meta-analyses revealed substantial variability in both histomorphometric and biochemical measures. Meta-regression identified study design, age, sex, and CKD treatment modality as key contributors to heterogeneity in bone structure, formation, and resorption parameters. In conclusion, most children with CKD exhibit some form of ROD. Standardized biopsy protocols and normative histomorphometric references stratified by age and sex are needed to enhance result interpretation and comparability across future studies.
 
 ---
-### [14] Late Outcomes Following Acute Kidney Injury in Children: A Systematic Review and Meta-Analysis.
+### [31] Late Outcomes Following Acute Kidney Injury in Children: A Systematic Review and Meta-Analysis.
 **Author**: Meena Jitendra et al. | **Journal**: JAMA pediatrics (2026/May)
 **PMID**: 42081220 | https://pubmed.ncbi.nlm.nih.gov/42081220/
 
@@ -1139,14 +1475,14 @@ RESULTS: Of 17 068 screened records, 39 studies comprising 16 151 participan
 CONCLUSIONS AND RELEVANCE: The findings in this systematic review and meta-analysis demonstrate that, similar to adults, children experienced increased risk of late adverse outcomes following AKI, particularly CKD and mortality, supporting the need for structured post-AKI follow up.
 
 ---
-### [15] From 10-Valent to 21-Valent Pneumococcal Conjugate Vaccines: Divergent Global Pathways and Future Directions for India.
+### [32] From 10-Valent to 21-Valent Pneumococcal Conjugate Vaccines: Divergent Global Pathways and Future Directions for India.
 **Author**: Kompithra Rajeev Zachariah et al. | **Journal**: Indian pediatrics (2026/May)
 **PMID**: 42081063 | https://pubmed.ncbi.nlm.nih.gov/42081063/
 
 Pneumococcal conjugate vaccines (PCVs) have greatly reduced invasive pneumococcal disease worldwide, though outcomes vary with the serotype formulation and regional context. India's introduction of indigenous 10-valent PCV into its Universal Immunization Program (UIP) was a major milestone, differing from the earlier globally available PCV10 by including serotypes 19A and 6A-both of which have been linked to antimicrobial resistance (AMR) in countries such as Belgium and Brazil. This review synthesizes global vaccine experiences, explores serotype biology, cross-protection, and the emergence of non-vaccine types, and considers the spectrum of higher-valency options (PCV14, PCV20, and PCV21). India's pediatric PCV coverage has expanded rapidly, though unevenly, while adult uptake remains limited. While indigenous PCV10 introduction and scale-up, followed by indigenous PCV14 introduction seems a pragmatic policy for India's UIP today, sustained genomic and AMR surveillance, plus eventual transitions to broader PCVs, will be essential for long-term, adaptable immunization strategies.
 
 ---
-### [16] Isolated Kidney Transplant in Primary Hyperoxaluria-1 Enabled by Small Interfering RNA (siRNA) Therapy. Is It Time for Change? Case Report and Review of the Literature.
+### [33] Isolated Kidney Transplant in Primary Hyperoxaluria-1 Enabled by Small Interfering RNA (siRNA) Therapy. Is It Time for Change? Case Report and Review of the Literature.
 **Author**: Habeeb Shameer M et al. | **Journal**: Pediatric transplantation (2026/May)
 **PMID**: 42080407 | https://pubmed.ncbi.nlm.nih.gov/42080407/
 
@@ -1156,7 +1492,7 @@ CASE PRESENTATION: A patient with PH1 due to a homozygous, pathogenic variant in
 CONCLUSIONS: This report enriches the limited experience of RNAi-enabled kidney-only transplantation in PH1. RNA interference therapy has the potential to challenge the current standard of dual liver and kidney transplantation in children and young adults with this devastating disease but requires uninterrupted access to the drug with individualized, eGFR and oxalate level adjusted dosing, continued vigilance, and reporting of long-term outcomes.
 
 ---
-### [17] Artificial intelligence for predicting paediatric acute kidney injury: a systematic review and meta-analysis.
+### [34] Artificial intelligence for predicting paediatric acute kidney injury: a systematic review and meta-analysis.
 **Author**: Raina Rupesh et al. | **Journal**: Clinical kidney journal (2026/May)
 **PMID**: 42079462 | https://pubmed.ncbi.nlm.nih.gov/42079462/
 
@@ -1166,35 +1502,21 @@ RESULTS: Among 470 records identified, 11 studies met the inclusion criteria, wi
 CONCLUSION: Gradient boosting, random forest, and logistic regression demonstrated reasonable predictive performance for paediatric AKI prediction within specific clinical contexts. However, small sample size, heterogeneity, lack of testing/validation cohorts, insufficient data, and inconsistent patient populations and AKI diagnostic criteria restrict generalisability.
 
 ---
-### [18] Enteral Feeds: Benefits and Drawbacks Associated with Blenderized Feeds and Commercial Formulas-A Narrative Review.
-**Author**: Migdanis Athanasios et al. | **Journal**: Medicina (Kaunas, Lithuania) (2026/Apr)
-**PMID**: 42075617 | https://pubmed.ncbi.nlm.nih.gov/42075617/
-
-Enteral feeds can be classified as two major types: commercial enteral formulas and blenderized enteral feeds. When deciding the most appropriate type of feed for a patient, several parameters need to be taken into consideration. Benefits associated with the use of blenderized tube feeds include giving a sense of normalcy to patients, having a positive impact on anthropometric indices, allowing for careful control over known food allergens, being associated with improved gastrointestinal tolerance and improved gut microbial composition (mainly in pediatric populations) and being generally less costly compared with commercial formulas. On the other hand, commercial enteral formulas have the advantages of being generally sterile, less likely to cause tube clogging and having a known and consistent nutrition composition. Further studies, specifically well-designed randomized controlled trials including adult populations, that will emphasize the impact of blenderized enteral feeds on various clinical outcomes are warranted. Clinicians need to be conscientious and educated regarding safe food practices for blended food preparation, as well as the characteristics of commercial formula options available to help assist patients in selecting the proper feed for their nutritional needs and clinical condition.
-
----
-### [19] Molecular and Genetic Determinants of Nephrocalcinosis: Mechanisms, Genotype-Phenotype Correlations, and Precision Medicine.
+### [35] Molecular and Genetic Determinants of Nephrocalcinosis: Mechanisms, Genotype-Phenotype Correlations, and Precision Medicine.
 **Author**: Popa Setalia et al. | **Journal**: International journal of molecular sciences (2026/Apr)
 **PMID**: 42074253 | https://pubmed.ncbi.nlm.nih.gov/42074253/
 
 Nephrocalcinosis, defined as the deposition of calcium salts within the renal parenchyma, represents a radiologic and pathologic endpoint shared by a broad spectrum of metabolic and monogenic disorders. Advances in genomic medicine have identified more than 30 genes involved in tubular transport, mineral and acid-base homeostasis, oxalate metabolism, mitochondrial function, ciliary signaling, and nephron development, reframing nephrocalcinosis as a heterogeneous manifestation of discrete molecular defects rather than a single disease entity. Despite this diversity, these conditions converge on common physicochemical pathways of tubular supersaturation, crystal nucleation, growth, and intrarenal retention. These processes are amplified by the intrinsic vulnerability of the renal medulla-characterized by hyperosmolality, hypoxia, and slow tubular flow-and by epithelial injury, loss of crystallization inhibitors, and impaired ciliary signaling. Distinct genotype-phenotype signatures, including age at onset, biochemical profiles, and extrarenal manifestations, provide important diagnostic clues and help differentiate major monogenic entities. The increasing availability of targeted gene panels, whole-exome sequencing, and whole-genome sequencing has substantially improved diagnostic yield, particularly in pediatric populations. Molecular diagnosis now directly informs therapeutic decision-making and long-term management, enabling a shift toward precision nephrology. This narrative review integrates genetic, mechanistic, and clinical perspectives to illustrate how molecular diagnosis reshapes the evaluation, prognosis, and treatment of nephrocalcinosis.
 
 ---
-### [20] Microbial Genomic Consortia in Prostate Cancer: Mechanistic Signaling, the Gut-Prostate Axis, and Translational Perspectives.
-**Author**: Pérez-Campos Mayoral Eduardo et al. | **Journal**: Cancers (2026/Apr)
-**PMID**: 42073547 | https://pubmed.ncbi.nlm.nih.gov/42073547/
-
-Background: Prostate cancer (PCa) arises from complex interactions among host genetics, androgen signaling, and microbial communities. Emerging genomic evidence supports the presence of microbial consortia within prostate tissue, suggesting that microbial genes, metabolites, and host-microbe interactions may contribute to chronic inflammation, oncogenic signaling, and therapeutic resistance. Methods: We conducted a narrative review using targeted searches of PubMed and Google Scholar for studies published between 2020 and 2025, complemented by selected mechanistic reports published in March 2026. Human studies and experimental research providing mechanistic insights into prostate models were prioritized. Due to the heterogeneous methodologies, evidence was synthesized qualitatively, with an emphasis on genomic and signaling perspectives. Results: Low-biomass microbial DNA is consistently detected in prostate tissue. Proteomic analyses of Corpora amylacea suggest a "fossil record" of past infections through sequestered microbial DNA and antimicrobial proteins, potentially priming tissue for long-term carcinogenic processes, although contamination remains a key limitation. Recurrent bacterial and viral signals, including Cutibacterium acnes, Escherichia coli, Pseudomonas, Acinetobacter, human papillomavirus, Epstein-Barr virus, and cytomegalovirus, appear to converge on a restricted set of tumor-relevant pathways, including TLR-NF-κB, MAPK, PI3K/AKT/mTOR, cGAS-STING, and p53/pRb disruption. These interactions may promote cytokine production, oxidative stress, DNA damage, epithelial-mesenchymal transition, extracellular matrix remodeling, immune evasion, and resistance to therapy. The gut-prostate axis further links intestinal dysbiosis and microbial metabolites with systemic IGF-1 signaling and castration resistance. Conclusions: Microbial genomic consortia in the prostate and gut may shape inflammatory, metabolic, and immune networks that influence PCa initiation and progression. However, most available data remain correlative and are limited by low-biomass sampling, contamination risk, and heterogeneous study designs. Future research should prioritize rigorous contamination control, longitudinal and prostate-specific mechanistic studies, and integrated multi-omic approaches to clarify causality and identify actionable microbial targets for prevention, diagnosis, and therapy.
-
----
-### [21] Guidelines for the management of acute porphyria: recommendations from the International Porphyria Network.
+### [36] Guidelines for the management of acute porphyria: recommendations from the International Porphyria Network.
 **Author**: Edel Yonatan et al. | **Journal**: The Lancet. Haematology (2026/May)
 **PMID**: 42069412 | https://pubmed.ncbi.nlm.nih.gov/42069412/
 
 Autosomal dominant acute porphyrias are rare inherited disorders of haem biosynthesis characterised by accumulation of potentially neurotoxic porphyrin precursors and attacks of severe abdominal pain with autonomic and neuropsychiatric features. Disease severity ranges from asymptomatic individuals to those with recurrent, life-threatening attacks. The International Porphyria Network invited 34 acute porphyria specialists from 17 countries to form an expert panel. The invited group included clinicians from diverse specialities (ie, internal medicine, haematology, endocrinology, gastroenterology, hepatology, neurology, and biochemistry), together with laboratory scientists and patient representatives. The panel met online (in 2023-25) to develop 15 evidence-based recommendations with the use of the Grading of Recommendations, Assessment, Development, and Evaluations framework addressing attack prevention, management of sporadic and recurrent attacks, long-term follow-up, surveillance for primary liver cancer, and family screening. The guidelines support safe, consistent clinical care and improved outcomes, recognising global variation in resources and access to high-cost drugs, and highlighting priorities for future research.
 
 ---
-### [22] Rational use of expensive medicines in the Netherlands: strategies to improve effectiveness and reduce burden on patients and society - a narrative review.
+### [37] Rational use of expensive medicines in the Netherlands: strategies to improve effectiveness and reduce burden on patients and society - a narrative review.
 **Author**: Penninx Bart M F et al. | **Journal**: BMC medicine (2026/Apr)
 **PMID**: 42062879 | https://pubmed.ncbi.nlm.nih.gov/42062879/
 
@@ -1203,31 +1525,14 @@ MAIN BODY: Rational use initiatives, driven by clinicians and pharmacists, and f
 CONCLUSIONS: Rational use of expensive medications is essential as part of a drug's life cycle and can benefit patients as well as society. The framework and strategies described in this overview provide guidance for the future rational use of expensive medicines, both for those already in use and for those newly introduced.
 
 ---
-### [23] Clinical characteristics, diagnosis, treatment, and prognosis of rituximab-induced serum sickness: a retrospective analysis of 39 reported cases.
-**Author**: Huang Yi et al. | **Journal**: Frontiers in immunology (2026)
-**PMID**: 42051532 | https://pubmed.ncbi.nlm.nih.gov/42051532/
-
-BACKGROUND: Rituximab-induced serum sickness (RISS) is an uncommon delayed hypersensitivity reaction with incompletely characterized clinical features and management. We aimed to synthesize published case reports/series to delineate clinical patterns, therapeutic strategies, and outcomes.
-METHODS: PubMed, EMBASE, Web of Science, WanFang Data, and China National Knowledge Infrastructure (CNKI) were searched for rituximab-induced serum sickness reports published up to Nov 31, 2025, using keywords and free-text terms (e.g., "Rituximab," "Serum Sickness," "Serum Sickness-Like Reaction," "Hypersensitivity," "Adverse Drug Reaction," "RISS," and "anti-CD20") with Boolean operators. Eligible case reports/series were screened and data were extracted with a standardized form. Study quality was evaluated using the JBI Critical Appraisal Checklist for Case Reports.
-RESULTS: 30 eligible articles identified 39 patients. The median age was 33 years (range 6, 86), with a female predominance (71.8%). The median symptom onset time was 7 days (range 1, 18) after last rituximab exposure. The most common indications were multiple sclerosis (23.1%), nephrotic syndrome (20.5%), and immune thrombocytopenia (20.5%). Clinically, arthralgia/arthritis (92.3%), fever (82.1%), and rash (66.7%) predominated. Anti-rituximab antibodies were positive in 90.9% of tested cases. Inflammatory markers were frequently elevated, with 93.3% of patients showing elevated erythrocyte sedimentation rate (ESR) and 91.3% showing elevated C-reactive protein (CRP). Complement consumption were frequent, with decreased C3 and C4 levels observed in 76.5% and 78.6% of tested patients, respectively. Corticosteroids were commonly used as the treatment for RISS, while switching to another anti-CD20 agent was primarily a strategy for managing the underlying disease. Overall, 82.1% achieved complete recovery and 15.4% improved, with a median recovery time of 3.0 days. Rechallenge was reported in 10 patients, with recurrence in 60.0%.
-CONCLUSION: RISS is a delayed reaction occurring after a free interval of several days, but it may clinically present shortly after a subsequent infusion in repeated dosing regimens. Its main features include the classic triad of fever, rash, and arthralgia or arthritis, commonly accompanied by elevated inflammatory markers and hypocomplementemia. Most patients improve rapidly after drug withdrawal, supportive care, and short-course corticosteroid therapy; however, rechallenge carries a substantial risk of recurrence and should be approached cautiously.
-
----
-### [24] Gut microbiome dysbiosis in PCOS: from pathogenesis to microbiome-targeted therapies.
-**Author**: Du Xinyun et al. | **Journal**: Frontiers in endocrinology (2026)
-**PMID**: 42051455 | https://pubmed.ncbi.nlm.nih.gov/42051455/
-
-(PCOS), one of the most common endocrine and metabolic disorders in women of reproductive age, has a complex pathogenesis that continues to be unraveled by ongoing research. The condition is defined by three key features: hyperandrogenemia, ovulatory dysfunction, and insulin resistance. Recent studies have highlighted the gut microbiome and its metabolites as crucial regulators in PCOS development. Evidence suggests that gut dysbiosis and intestinal barrier dysfunction play a pivotal role in the onset and progression of PCOS. This review comprehensively examines the central role of gut microbiota in PCOS pathogenesis, including shifts in microbial communities such as bacteria, fungi, and viruses, and their impact on critical metabolites like short-chain fatty acids, bile acids, and tryptophan metabolites, which modulate host metabolism and reproductive function. Furthermore, based on mechanistic insights, the review explores targeted gut microbiota interventions, systematically evaluating clinical evidence for dietary modifications, probiotic/prebiotic supplementation and fecal microbiota transplantation. These approaches provide novel perspectives for precision medicine in PCOS treatment. The findings not only deepen our understanding of PCOS pathogenesis but also establish a strong theoretical foundation for innovative microbiome-based therapeutics.
-
----
-### [25] Inter-society consensus on the management of acute bloody diarrhea and shiga toxin-producing Escherichia Coli infection in the molecular microbiology era.
+### [38] Inter-society consensus on the management of acute bloody diarrhea and shiga toxin-producing Escherichia Coli infection in the molecular microbiology era.
 **Author**: Ardissino Gianluigi et al. | **Journal**: Italian journal of pediatrics (2026/Apr)
 **PMID**: 42050676 | https://pubmed.ncbi.nlm.nih.gov/42050676/
 
 (abstract not available)
 
 ---
-### [26] Placebo in Paediatric Clinical Trials: Systematic Literature Review and Framework-Based Synthesis.
+### [39] Placebo in Paediatric Clinical Trials: Systematic Literature Review and Framework-Based Synthesis.
 **Author**: Parry Georgia et al. | **Journal**: Journal of paediatrics and child health (2026/Apr)
 **PMID**: 42046265 | https://pubmed.ncbi.nlm.nih.gov/42046265/
 
@@ -1238,7 +1543,7 @@ RESULTS: We included 51 sources spanning neonatal research, disease-specific pae
 CONCLUSION: Placebo use in paediatric trials is acceptable only under constrained conditions centred on scientific necessity, minimising harm from withholding therapy, robust safeguards and appropriate permission/assent processes. Further work should translate these conditions into disease-specific, operational guidance.
 
 ---
-### [27] How outcomes are defined in randomized controlled trials of acute kidney injury: a scoping review.
+### [40] How outcomes are defined in randomized controlled trials of acute kidney injury: a scoping review.
 **Author**: Mavignier Nathalia et al. | **Journal**: Intensive care medicine (2026/Apr)
 **PMID**: 42043560 | https://pubmed.ncbi.nlm.nih.gov/42043560/
 
@@ -1248,7 +1553,7 @@ RESULTS: Among 3921 abstracts screened, 251 RCTs were included. Prevention trial
 CONCLUSION: Outcome reporting is heterogeneous, highlighting the need for a standardized core outcome set.
 
 ---
-### [28] Obesity-Related Coagulation Activation in Adolescents and Children: A Systematic Review and Meta-Analysis.
+### [41] Obesity-Related Coagulation Activation in Adolescents and Children: A Systematic Review and Meta-Analysis.
 **Author**: Buchold Julia et al. | **Journal**: Obesity reviews : an official journal of the International Association for the Study of Obesity (2026/Apr)
 **PMID**: 42036302 | https://pubmed.ncbi.nlm.nih.gov/42036302/
 
@@ -1258,7 +1563,7 @@ RESULTS: D-dimer was significantly elevated in adults with obesity (SMD 1.36, 95
 CONCLUSION: Obesity is associated with increased coagulation activation, suggesting a pro-thrombotic shift. These findings support the need for age- and gender-specific research into obesity-related hemostatic alterations.
 
 ---
-### [29] Positive Psychology Intervention Effects on Emotions and Well-Being in Depression: A Systematic Review and Meta-Analysis.
+### [42] Positive Psychology Intervention Effects on Emotions and Well-Being in Depression: A Systematic Review and Meta-Analysis.
 **Author**: Swamy D S Veerabhadra et al. | **Journal**: Journal of psychosocial nursing and mental health services (2026/Apr)
 **PMID**: 42030477 | https://pubmed.ncbi.nlm.nih.gov/42030477/
 
@@ -1268,21 +1573,21 @@ RESULTS: PPI significantly improved happiness (SMD = 0.25; 95% CI [0.06, 0.43]),
 CONCLUSION: PPI enhances positive mental health indicators, including happiness, positive affect, and well-being, but has limited effect on depression severity. PPI may serve as a complementary tool alongside standard treatment.
 
 ---
-### [30] Fasting safely during Ramadan with diabetes: clinical practice recommendations for Arab populations from the Arab Diabetes Forum (FSR-ADF).
+### [43] Fasting safely during Ramadan with diabetes: clinical practice recommendations for Arab populations from the Arab Diabetes Forum (FSR-ADF).
 **Author**: Orabi Abbass et al. | **Journal**: Hormones (Athens, Greece) (2026/Apr)
 **PMID**: 42026416 | https://pubmed.ncbi.nlm.nih.gov/42026416/
 
 (abstract not available)
 
 ---
-### [31] Anti-nephrin antibodies in pediatric nephrotic syndrome: a new paradigm.
+### [44] Anti-nephrin antibodies in pediatric nephrotic syndrome: a new paradigm.
 **Author**: Mühlig Anne K et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/Apr)
 **PMID**: 42026266 | https://pubmed.ncbi.nlm.nih.gov/42026266/
 
 Circulating anti-nephrin antibodies have recently been identified as mediators in many cases of childhood nephrotic syndrome. After binding of the antibody to nephrin, a key component of the slit diaphragm, different intracellular signaling mechanisms lead to foot process effacement. These new insights into the pathophysiology of nephrotic syndrome may have the potential to influence clinical treatment strategies. First, the measurement provides a pathomechanism-specific serological biomarker of a previously clinically diagnosed renal disease. Second, it may have additional value for diagnosis and prognostication, as anti-nephrin antibodies are more common in steroid-sensitive forms and less frequently associated with multidrug-resistant forms. Furthermore, anti-nephrin autoantibodies have the potential to be used as biomarkers for disease activity and to estimate the risk of relapse before kidney transplantation, after conduction of appropriate clinical trials. Additionally, the detection of autoantibodies strengthens the role of B-cell targeting therapies and provides a potential rationale for further multicenter, prospective, randomized clinical trials using B-cell depletion to potentially reduce corticosteroid use and relapse rates in children. In the future, more targeted therapies such as the interference with downstream effects of antibody binding or the depletion of autoantigen-specific antibody producing cells might become possible. Finally, the detection of anti-nephrin autoantibodies provides an explanation for patients and their families with a previously elusive "idiopathic" disease in antibody positive patients. In summary, the identification of anti-nephrin antibodies in nephrotic syndrome now opens up new questions and paves the way for further experimental and clinical studies to improve diagnostic and therapeutic approaches.
 
 ---
-### [32] Patient-reported measures in children and adolescents with chronic kidney disease and their validation: A scoping review.
+### [45] Patient-reported measures in children and adolescents with chronic kidney disease and their validation: A scoping review.
 **Author**: Rejuso Angela et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/Apr)
 **PMID**: 42024155 | https://pubmed.ncbi.nlm.nih.gov/42024155/
 
@@ -1295,7 +1600,7 @@ RESULTS: One hundred seventy-five studies involving 21,423 children from 39 coun
 CONCLUSIONS: There is firm reliance on using generic PRMs in children with CKD; however, most lack robust external validation in this population. Co-development and comprehensive validation of disease-specific instruments that reflect outcomes valued by patients and families are required to enhance the relevance of outcome assessment in pediatric CKD care.
 
 ---
-### [33] MDA5-associated juvenile dermatomyositis and interstitial lung disease from rapidly progressive to silent: a report of three cases in South African children and a review of the literature.
+### [46] MDA5-associated juvenile dermatomyositis and interstitial lung disease from rapidly progressive to silent: a report of three cases in South African children and a review of the literature.
 **Author**: Lepage Maurane et al. | **Journal**: Clinical rheumatology (2026/Apr)
 **PMID**: 42018270 | https://pubmed.ncbi.nlm.nih.gov/42018270/
 
@@ -1305,21 +1610,21 @@ METHODS: A review of the literature was performed to evaluate the prevalence, cl
 CONCLUSION: These cases highlight the wide heterogeneity of clinical phenotypes associated with anti-MDA5 autoantibodies in JDM. Given this variability, individualized monitoring and management strategies are essential to optimize outcomes.
 
 ---
-### [34] Clinical practice guideline for pediatric IgA vasculitis in Japan 2023: a digest-secondary publication.
+### [47] Clinical practice guideline for pediatric IgA vasculitis in Japan 2023: a digest-secondary publication.
 **Author**: Shimizu Masaki et al. | **Journal**: Clinical and experimental nephrology (2026/Apr)
 **PMID**: 42018240 | https://pubmed.ncbi.nlm.nih.gov/42018240/
 
 (abstract not available)
 
 ---
-### [35] Virus-Like Nanoparticles for Vaccine Development and Drug Delivery.
+### [48] Virus-Like Nanoparticles for Vaccine Development and Drug Delivery.
 **Author**: Li De-Feng et al. | **Journal**: Reviews in medical virology (2026/May)
 **PMID**: 42017442 | https://pubmed.ncbi.nlm.nih.gov/42017442/
 
 Virus-like nanoparticles (VLPs) are naturally occurring polymeric nanomaterials formed by the self-assembly of one or more viral capsid proteins (CPs). VLPs have garnered significant attention in a wide range of nanotechnology-based diagnostics and therapies, including immunotherapy and drug delivery. VLPs are Exhibiting high biocompatibility and biodegradability, alone with uniform structure and controlled assembly, VLPs represent a complex and versatile therapeutic platform. This review provides an overview of the fundamental aspects of VLPs, including their types, structures, immune mechanisms, as well as expression and purification method. Recent advances in the development and application of engineered VLPs for drug delivery, gene therapy, immunology studies and multifunctional therapeutics are discussed. This paper also summarised research advances in the use of virus-like particles as chimaeric vectors and highlights their potential as efficient delivery vehicles. Finally, we present several successful examples of VLPs-based drug delivery system and provide a comprehensive analysis of VLPs that takes advantage of both viral and non-viral delivery methods for efficient theranostic application.
 
 ---
-### [36] Efficacy, safety, and biomarker changes of B-cell activating factor and A proliferation-inducing ligand-targeted therapies in IgA nephropathy: a systematic review and meta-analysis of randomized controlled trials.
+### [49] Efficacy, safety, and biomarker changes of B-cell activating factor and A proliferation-inducing ligand-targeted therapies in IgA nephropathy: a systematic review and meta-analysis of randomized controlled trials.
 **Author**: Dos Santos Borges Rafael et al. | **Journal**: Journal of nephrology (2026/Apr)
 **PMID**: 42014363 | https://pubmed.ncbi.nlm.nih.gov/42014363/
 
@@ -1330,7 +1635,7 @@ CONCLUSION: BAFF- or APRIL-targeted therapies appear to be effective and safe in
 PROSPERO REGISTRATION ID: CRD42024598157.
 
 ---
-### [37] Implementation of a kidney protection strategy to prevent acute kidney injury after major surgery in high-risk patients identified by biomarkers: a systematic review and individual participant data meta-analysis of randomized controlled trials.
+### [50] Implementation of a kidney protection strategy to prevent acute kidney injury after major surgery in high-risk patients identified by biomarkers: a systematic review and individual participant data meta-analysis of randomized controlled trials.
 **Author**: von Groote Thilo et al. | **Journal**: Intensive care medicine (2026/Apr)
 **PMID**: 42007986 | https://pubmed.ncbi.nlm.nih.gov/42007986/
 
@@ -1341,7 +1646,7 @@ CONCLUSION: The implementation of a kidney protection strategy reduces the rates
 REGISTRATION: The study was registered at the international, prospective register of systematic reviews PROSPERO. Identifier: PROSPERO 2025 CRD420251138328.
 
 ---
-### [38] Systematic Review of Trial Design and End Points in Lupus Nephritis.
+### [51] Systematic Review of Trial Design and End Points in Lupus Nephritis.
 **Author**: Giang Sophia et al. | **Journal**: Kidney international reports (2026/May)
 **PMID**: 42006208 | https://pubmed.ncbi.nlm.nih.gov/42006208/
 
@@ -1351,7 +1656,7 @@ RESULTS: Emerging themes comprise the inclusion of participants with high median
 CONCLUSION: Based on the findings of this review, we suggest a set of expert-posited guidelines to help in standardizing future studies in LN.
 
 ---
-### [39] International consensus on adolescent metabolic health: prevention of obesity and type 2 diabetes.
+### [52] International consensus on adolescent metabolic health: prevention of obesity and type 2 diabetes.
 **Author**: Shaltout Inass et al. | **Journal**: Diabetology & metabolic syndrome (2026/Apr)
 **PMID**: 42001194 | https://pubmed.ncbi.nlm.nih.gov/42001194/
 
@@ -1362,7 +1667,7 @@ CONCLUSION: This consensus provides a practical, multisectoral framework for the
 SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1186/s13098-026-02142-y.
 
 ---
-### [40] Efficacy and safety of mirabegron versus solifenacin in the treatment of overactive bladder in children: a systematic review and meta-analysis.
+### [53] Efficacy and safety of mirabegron versus solifenacin in the treatment of overactive bladder in children: a systematic review and meta-analysis.
 **Author**: Shaheen Mostafa et al. | **Journal**: BMC urology (2026/Apr)
 **PMID**: 42001046 | https://pubmed.ncbi.nlm.nih.gov/42001046/
 
@@ -1374,21 +1679,14 @@ CLINICAL TRIAL REGISTRATION: Not applicable.
 SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1186/s12894-026-02155-9.
 
 ---
-### [41] B-cell-targeting therapies in podocytopathies.
+### [54] B-cell-targeting therapies in podocytopathies.
 **Author**: Bigatti Carolina et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/Apr)
 **PMID**: 42000953 | https://pubmed.ncbi.nlm.nih.gov/42000953/
 
 Podocytopathies, including minimal change disease and focal segmental glomerulosclerosis, represent the leading causes of nephrotic syndrome in children and adolescents. Although traditionally considered T-cell-mediated disorders, growing evidence over the last decade has reshaped this paradigm, highlighting a central role for B-cells, plasma cells, and humoral immune mechanisms in podocyte injury. The identification of pathogenic autoantibodies, particularly anti-nephrin IgG, and the involvement of complement activation have provided a strong mechanistic rationale for B-cell-targeted therapies. Rituximab, an anti-CD20 monoclonal antibody, has become an established steroid-sparing agent in steroid-dependent and frequently relapsing nephrotic syndrome, significantly reducing relapse rates and cumulative steroid exposure in pediatric patients. However, its efficacy is limited in steroid-resistant disease and in settings characterized by persistent autoantibody production or post-transplant recurrence. These limitations have prompted the exploration of next-generation anti-CD20 agents, such as obinutuzumab, which achieve deeper and more sustained B-cell depletion, as well as therapies targeting long-lived plasma cells, including anti-CD38 monoclonal antibodies. Emerging clinical data suggest that combined B-cell and plasma cell targeting may induce durable remission in refractory podocytopathies and recurrent post-transplant focal segmental glomerulosclerosis, while maintaining an acceptable safety profile. In parallel, novel strategies targeting the BAFF/APRIL axis and cellular therapies such as CAR-T cells are under investigation. This review summarizes current evidence on B-cell-directed therapies in podocytopathies, mostly in pediatrics, discusses unmet clinical needs, and outlines future perspectives toward precision, mechanism-based immunotherapy.
 
 ---
-### [42] Global environmental change and the gut-kidney-brain axis: a review and framework of vulnerability and resilience.
-**Author**: Adalat Shazia et al. | **Journal**: The Lancet. Planetary health (2026/Apr)
-**PMID**: 41990757 | https://pubmed.ncbi.nlm.nih.gov/41990757/
-
-Climate-health research often examines organ systems in isolation, which limits our understanding of how environmental stressors shape multiorgan disease patterns. We propose an integrative framework that explores how perturbations in the gut-kidney-brain axis might contribute to differential climate and environmental vulnerability. Climatic and environmental stressors might influence intestinal and blood-brain barrier integrity alongside established haemodynamic, toxicological, endocrine, and neurovascular pathways. Experimental and mechanistic evidence indicates that some environmental exposures can alter epithelial tight junction function and promote translocation of microbial products. Such translocation can drive systemic inflammation, altered metabolic signalling, and neural dysfunction implicated in chronic kidney disease progression and neurological impairment. In the proposed framework, barrier integrity is positioned as a biologically plausible interface within a multipathway model linking the gut, kidney, and brain. The framework highlights how climate and environmental exposures interact with pre-existing physiological and social vulnerabilities, adaptive capacity, and cumulative exposure burden to shape susceptibility to adverse health outcomes across the life course. Because current evidence relies heavily on experimental models and associative data, these mechanisms require validation under real-world, multifactorial climatic and environmental conditions. We also identify crucial research priorities, including prospective studies in climate-exposed populations, biomarker validation of barrier integrity, and targeted interventions to help preserve gut-kidney-brain axis function alongside exposure-reducing efforts. If empirical evidence supports this framework, the suggested systems-based approach could inform prevention, surveillance, and equity-centred resilience strategies.
-
----
-### [43] Hughes-Stovin syndrome (HSS) preliminary diagnostic criteria: a report by the HSS International Study Group (HSSISG).
+### [55] Hughes-Stovin syndrome (HSS) preliminary diagnostic criteria: a report by the HSS International Study Group (HSSISG).
 **Author**: Emad Yasser et al. | **Journal**: Clinical rheumatology (2026/Apr)
 **PMID**: 41984348 | https://pubmed.ncbi.nlm.nih.gov/41984348/
 
@@ -1398,90 +1696,7 @@ RESULTS: Following consensus agreement, one mandatory entry criterion was select
 CONCLUSION: Preliminary HSS diagnostic criteria were proposed after a comprehensive and critical literature review by the HSSISG to offer support for early diagnosis and optimal management.
 
 ---
-### [44] European Reference Networks - a flagship activity of the EU in the field of rare and complex diseases: from 2017 to 2025.
-**Author**: Graessner Holm et al. | **Journal**: Orphanet journal of rare diseases (2026/Apr)
-**PMID**: 41981625 | https://pubmed.ncbi.nlm.nih.gov/41981625/
-
-BACKGROUND: Although individual rare and complex diseases (RDs) affect small patient populations, together they impact an estimated 27–36 million people across the European Union. Addressing this major public health challenge has been a long-term priority for the European Union, leading to the establishment of the European Reference Networks (ERNs) in 2017.
-MAIN BODY: ERNs are cross-border networks connecting clinical expert centres to share knowledge, improve and harmonise diagnosis and care for patients with rare and complex diseases. Since their inception, 24 ERNs have united 1,606 expert centres across 375 hospitals in all EU Member States and Norway. Their activities span multidisciplinary clinical collaboration, patient-centred governance, education and training, and the development of clinical guidelines. Over 4900 extremely rare or difficult cases have been discussed among experts without requiring the patients to travel abroad when expertise was not available in their own countries. A key factor for this success is the cross-border IT platform - known as the Clinical Patient Management System 2.0 - provided by the European Commission for medical discussions, which enables experts to share patient data, including medical images and lab results, in a secure and protected environment that is fully compliant with all relevant security and data privacy requirements. ERNs have demonstrated resilience in crises such as the COVID-19 pandemic and the war in Ukraine, providing rapid, coordinated responses to sustain care for vulnerable patient groups. The first formal evaluation in 2023 confirmed that more than 95% of member centres met quality standards, underscoring the networks’ maturity and effectiveness. Moving into the next phase, the Joint Action JARDIN (2024–2027) aims to integrate ERNs into national healthcare systems to ensure sustainability and equitable access to high-quality RD care.
-CONCLUSIONS: ERNs exemplify European solidarity and innovation in healthcare, transforming how rare disease expertise is shared and applied across borders. Their continued integration into national systems will be pivotal to achieving a truly cohesive European Health Union that delivers improved outcomes for all patients with rare and complex diseases.
-
----
-### [45] Ferritin and transferrin predict common carotid intima-media thickness in females: a machine-learning informed individual participant data meta-analysis.
-**Author**: Ruban Agarvas Anand et al. | **Journal**: BMC cardiovascular disorders (2026/Apr)
-**PMID**: 41981480 | https://pubmed.ncbi.nlm.nih.gov/41981480/
-
-BACKGROUND: Iron overload promotes atherosclerosis in mice and causes vascular dysfunction in humans with Hemochromatosis. However, data are controversial on whether systemic iron availability within physiological limits affects the pathogenesis of atherosclerosis. We, therefore, performed an individual participant data (IPD) meta-analysis and studied the association between serum iron biomarkers with common carotid intima-media thickness (CC-IMT); in addition, since sex influences iron metabolism and vascular diseases, we studied if there are sex-specific differences.
-METHODS: We pooled the IPD and analysed the data on adults (age≥18y) by orthogonal approaches: machine learning (ML) and a single-stage meta-analysis. For ML, we tuned a gradient-boosted tree regression model (XGBoost) and subsequently, we interpreted the features using variable importance. For the single-stage metaanalysis, we examined the association between iron biomarkers and CC-IMT using spline-based linear mixed models, accounting for sex interactions and study-specific effects. To confirm robustness, we repeated analyses on imputed data using multivariable regression adjusted for key covariates identified through machine learning. Further, subgroup analyses were performed in children and adolescents (age<18y). In addition, to evaluate causality, we used UK Biobank data to examine associations between the hemochromatosis (HFE) genotypes (C282Y/H63D) and mean CC-IMT in ~ 42,500 participants with carotid ultrasound data, using sex-stratified linear regression (adjusted for age, assessment centre, and genetic principal components).
-RESULTS: We included IPD from 21 studies (N = 10,807). The application of the ML model showed moderate predictive performance and identified iron biomarkers (transferrin, ferritin, transferrin saturation, and iron) as key features for IMT prediction. Multivariable analyses showed non-linear sex-specific relationships for ferritin and transferrin with CC-IMT, both only among females at specific ranges. Ferritin showed a significant positive association [Ferritin > 233 ng/mL: β = 0.04, 95% CI (0.002, 0.08), p = 0.037], while transferrin showed negative associations at specific ranges [ Transferrrin 231–263 mg/dL: β=-0.21, 95% CI (-0.43, 0.003), p = 0.054; Transferrrin > 263 mg/dL: β=-0.73, 95% CI (-1.48, 0.01), p = 0.05]; No significant associations were found between CC-IMT in those with HFE genotypes in either sex in the UK Biobank.
-CONCLUSION: Our observational data show that iron biomarkers - ferritin and transferrin are non-linearly associated with CC-IMT specifically in females, while a significant causal association between the HFE genotype and CC-IMT could not be demonstrated in the UK Biobank data. We conclude that our observational findings may reflect residual confounding, reverse causation, or other non-causal mechanisms rather than a direct causal relationship.
-OTHER: No financial support was received for this meta-analysis. The protocol for this study is registered in the PROSPERO database ( CRD42020155429; https://www.crd.york.ac.uk/).
-SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1186/s12872-026-05796-8.
-
----
-### [46] Therapeutic and mechanistic insights on mitochondrial transplantation in kidney disease.
-**Author**: McCully James D et al. | **Journal**: Nature reviews. Nephrology (2026/Apr)
-**PMID**: 41981250 | https://pubmed.ncbi.nlm.nih.gov/41981250/
-
-Acute kidney injury (AKI) and chronic kidney disease (CKD) are major contributors to global morbidity and mortality, with limited treatment options beyond supportive care. Mitochondrial dysfunction is a shared feature of both conditions, driving impaired energy production, oxidative stress and cell death. Owing to its reliance on oxidative phosphorylation, the kidney is especially vulnerable to ischaemia-reperfusion injury, a leading cause of AKI and a risk factor for long-term loss of kidney function. Persistent mitochondrial damage contributes to the transition from AKI to CKD, and strategies aimed at restoring mitochondrial health, therefore, have therapeutic potential. Here, we focus on mitochondrial transplantation, a therapeutic approach that delivers viable, respiratory-competent mitochondria to injured tissue to support recovery. Mitochondria for transplantation can be isolated from a variety of sources (autologous or allogeneic) without triggering an immune, autoimmune or inflammatory response, or a reaction to damage-associated molecular patterns. Isolated mitochondria can be delivered by intra-arterial injection, and, once in the target organ, they are rapidly integrated into the cells through endocytosis. Mitochondrial transplantation supports the restoration of mitochondrial function and associated signalling pathways, promoting enhanced organ function and cellular viability. Several preclinical studies have demonstrated improved kidney function, reduced inflammation and preserved mitochondrial structure following mitochondrial therapy in models of ischaemia.
-
----
-### [47] Green Dialysis: A Framework for Environmentally Sustainable Renal Replacement Therapy.
-**Author**: Sivaram Pranav et al. | **Journal**: Seminars in dialysis (2026/Apr)
-**PMID**: 41980901 | https://pubmed.ncbi.nlm.nih.gov/41980901/
-
-BACKGROUND: Dialysis is a life-sustaining therapy for patients with end-stage renal disease, yet it is among the most resource-intensive treatments in modern healthcare. Hemodialysis requires large volumes of treated water, substantial energy input, and extensive single-use consumables, resulting in significant greenhouse gas emissions and clinical waste when scaled to millions of treatments performed annually. Climate change further threatens kidney health through heat stress, dehydration, and climate-related disruptions, creating a bidirectional relationship in which kidney care both contributes to and is adversely affected by environmental degradation.
-METHODS: This white paper synthesizes current evidence surrounding environmentally sustainable dialysis practices, collectively termed "green dialysis," reviewing technical and system-level interventions across water stewardship, energy management, waste reduction, and clinical practice innovation.
-RESULTS: Green dialysis strategies, including dialysate flow optimization, improved reverse-osmosis efficiency and water reuse, energy-efficient infrastructure, renewable energy integration, waste segregation, central concentrate delivery systems, and incremental dialysis, have been shown to reduce water consumption, energy use, waste generation, and operational costs while maintaining dialysis adequacy and clinical outcomes. Adoption remains uneven due to operational complexity, regulatory gaps, and financial constraints, particularly in low- and middle-income countries.
-CONCLUSIONS: Context-sensitive implementation, staff education, standardized monitoring, and transparent reporting are essential for overcoming these barriers. Broader integration of sustainability into routine dialysis care represents a critical opportunity to reduce the environmental footprint of kidney replacement therapy without compromising patient safety or treatment efficacy.
-
----
-### [48] Tandem extracorporeal blood purification therapies for sepsis and acute kidney injury in critically ill children: a state-of-the-art review.
-**Author**: Shirode Parth et al. | **Journal**: Renal failure (2026/Dec)
-**PMID**: 41978481 | https://pubmed.ncbi.nlm.nih.gov/41978481/
-
-Tandem extracorporeal blood purification and support therapies integrate established therapies such as continuous renal replacement therapies (CRRT), extracorporeal membrane oxygenation (ECMO), intermittent or prolonged renal replacement therapies with emerging adsorptive, immunomodulatory, and organ-support technologies. These approaches are increasingly applied in critically ill children with complex multi-organ dysfunction, particularly in the settings of severe sepsis, hyperinflammatory syndromes, acute kidney injury, liver failure, and refractory cardiorespiratory compromise. Despite growing clinical adoption, most tandem applications remain off-label in pediatrics, with evidence largely limited to case reports, single-center experiences, and small observational cohorts, and with few standardized protocols to guide practice.This state-of-the-art review synthesizes available pediatric and relevant adult literature to examine the mechanistic rationale, technical integration, clinical indications, and reported outcomes of tandem extracorporeal strategies beyond conventional CRRT-ECMO-therapeutic plasma exchange combinations. We focus on under-reported and emerging modalities, including hemoperfusion and adsorptive hemofilters integrated with CRRT or ECMO, leukapheresis combined with renal replacement or extracorporeal life support, selective cytopheretic and immunomodulatory devices, extracorporeal liver support platforms, and novel miniaturized and translational technologies. Practical considerations related to circuit configuration, anticoagulation strategies, and extracorporeal volume are discussed, alongside safety considerations unique to pediatric populations. While early experiences suggest feasibility and potential benefit, current evidence is insufficient to establish definitive efficacy or survival benefit. This review highlights critical knowledge gaps, implementation barriers, and research priorities, and aims to support the development of standardized, evidence-based guidelines to promote safe, effective, and reproducible use of tandem extracorporeal therapies in pediatric critical care.
-
----
-### [49] Biological tissue engineering for Fontan failure using decellularized extracellular matrix: a systematic review.
-**Author**: Polyakova Elizaveta et al. | **Journal**: Journal of translational medicine (2026/Apr)
-**PMID**: 41975418 | https://pubmed.ncbi.nlm.nih.gov/41975418/
-
-BACKGROUND: Functional univentricular heart disease is the most severe congenital condition, managed by Fontan surgery, which is life-sustaining by creating a non-contractile conduit yet limited by long-term complications. Decellularized ECM (dECM) scaffolds reseeded with contractile human cells offer a promising solution, but key factors for such a biological tube remain undefined.
-AIM: To evaluate the potential of cardiac dECM as a scaffold for recellularization in the development of a contractile Fontan conduit.
-METHODS: A systematic review was performed of studies identified in PubMed, Embase, Web of Science, and the Cochrane Library on human or porcine cardiac tissue engineering. Decellularization outcome parameters included efficiency of DNA removal, ECM preservation, and cytocompatibility; recellularization parameters focused on cell viability, co-culture strategies, maturation, and contractility.
-RESULTS: Fifty-eight studies on decellularization of porcine or human cardiac tissue were included; 13 also investigated recellularization. Most studies reported more than 90% reduced DNA content and preserved ECM architecture, though quantitative ECM analyses and toxicity assessments were not often reported. Recellularization with cardiomyocyte (like) cells showed high viability, especially in slice monocultures. Co-culture with other cell types improved organization and sarcomere maturation. Functionality assessment in most studies showed spontaneous and synchronized contractions however remaining under normal physiological values.
-CONCLUSION: Cardiac dECM scaffolds hold promise for contractile Fontan conduits; however, standardized decellularization protocols, enhanced recellularization strategies, and integration of vascular and supportive cells are needed to advance clinical translation.
-GRAPHICAL ABSTRACT: [Image: see text]
-SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1186/s12967-026-08085-2.
-
----
-### [50] Chronic kidney disease progression in glomerular diseases: is hematuria a key risk factor?
-**Author**: Gutiérrez Eduardo et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/Apr)
-**PMID**: 41975046 | https://pubmed.ncbi.nlm.nih.gov/41975046/
-
-Hematuria has traditionally been considered a benign sign of glomerular injury, as reported in autosomal dominant type IV collagen-related nephropathy. However, growing clinical and experimental evidence suggests that it may be an active driver of kidney dysfunction. Persistent microscopic hematuria is associated with an increased risk of progression to kidney failure. Likewise, episodes of macroscopic hematuria, particularly in Immunoglobulin A nephropathy, can precipitate acute kidney injury and contribute to chronic impairment of kidney function. Glomerular bleeding may be associated with alterations in the glomerular filtration barrier, allowing erythrocyte leakage into the urinary space. At the molecular level, erythrocyte breakdown products, such as free hemoglobin and heme, induce oxidative stress and inflammation, exerting direct cytotoxic effects on kidney parenchymal cells. In this comprehensive review, we describe the prevalence of hematuria in pediatric patients, elucidate the cellular and molecular mechanisms by which hemoglobin and its heme derivatives promote kidney injury, evaluate the impact of hematuria on long-term kidney outcomes, and discuss emerging therapies against hematuria-induced nephrotoxicity.
-
----
-### [51] Diagnosis and management of mineral and bone disorders in paediatric kidney transplant recipients: a position statement from the European Society for Paediatric Nephrology.
-**Author**: Prytuła Agnieszka et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/Apr)
-**PMID**: 41975045 | https://pubmed.ncbi.nlm.nih.gov/41975045/
-
-Children after kidney transplantation (KTx) are prone to mineral and bone disease (MBD) including growth restriction, bone pain, skeletal deformities, fractures, and vascular calcifications. We present a position paper on the diagnosis and management of post-transplant MBD in this population based on the available evidence and the opinion of experts from the European Society for Paediatric Nephrology (ESPN) CKD-MBD, Dialysis and Transplantation Working Groups. PICO (Patient, Intervention, Comparator, Outcomes) questions were generated, and structured literature searches were conducted for a population of children under 18 years of age who were kidney transplant recipients with a functioning allograft. Patients with a failing allograft (i.e., with an eGFR less than 30 mL/min per 1.73 m2) are not discussed here. Clinical practice points (CPPs) were developed and graded using the American Academy of Pediatrics grading matrix. A Delphi consensus method was followed. We present 46 CPPs for the diagnosis and management of MBD in paediatric KTx, including assessment and management before and after KTx, highlighting the specifics of monitoring post-transplant MBD between 0 and 3 months after KTx, and including the impact of steroid minimization and withdrawal. As there are few high-quality studies in this field, the strength of most statements is weak to moderate and may need to be adapted to individual patient needs by the treating physician. Research recommendations to study key outcome measures in this unique population are suggested.
-
----
-### [52] Pediatric ureteral stenting: state-of-the-art review.
-**Author**: Altunhan Abdullah et al. | **Journal**: World journal of urology (2026/Apr)
-**PMID**: 41954662 | https://pubmed.ncbi.nlm.nih.gov/41954662/
-
-PURPOSE: In this scoping review, we mapped the available clinical evidence on the use of double-J (DJ) ureteral stents in pediatric patients across reconstructive, stone-related, and other endourological indications, synthesizing contemporary data on techniques, sizing, dwell time, removal strategies, outcomes, and emerging technologies.
-METHODS: A scoping review was conducted in accordance with the PRISMA Extension for Scoping Reviews (PRISMA-ScR). The review protocol was prospectively registered in PROSPERO (CRD420251147003). PubMed, Scopus, Cochrane Library, and Web of Science were searched without date limits to 9 September 2025. Original clinical studies on double-J (DJ) ureteral stents in children were screened, data were extracted into a harmonized database, and risk of bias was appraised using RoB 2, ROBINS-I, or the Joanna Briggs Institute checklist as appropriate.
-RESULTS: Fifty studies (2003–2025) were included. In reconstruction, internal DJ and externalized stents achieved similar success after pyeloplasty; externalized options commonly enabled office removal without general anesthesia (GA) but often increased length of stay and/or operating time. During ureteroneocystostomy for vesicoureteral reflux, routine stenting was associated with worse adjusted short-term outcomes; these findings are consistent with selective use. In stone disease, routine pre-stenting before ureteroscopy or extracorporeal shock-wave lithotripsy did not improve stone-free rates and increased infectious morbidity; when performed, a short dwell time (~ 2 weeks) was adequate. Across indications, modifiable drivers of morbidity included prolonged dwell, bilateral placement, and multiple lifetime stents. Practical aids included the “Age + 10 cm” length rule and strategies that reduce GA exposure (e.g., stent-on-string with disciplined protocols). Magnetic DJ systems showed high outpatient retrieval success with familiar complication profiles, while anti-biofilm/anti-encrustation coatings remain promising but require pediatric clinical validation.
-CONCLUSION: Pediatric ureteral stenting practices vary widely across indications. The mapped literature suggests broadly comparable success between internal and externalized stents in reconstruction, while highlighting the importance of dwell time, anesthesia exposure, and individualized decision-making. In stone disease, routine pre-stenting does not appear to confer consistent benefit. Overall, careful patient selection, planned dwell duration, and structured follow-up remain central to optimizing outcomes, while prospective multicenter studies are needed to strengthen the evidence base.
-SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1007/s00345-026-06347-8.
-
----
-### [53] [Research progress on the application of telitacicept in rheumatism and autoimmune diseases].
+### [56] [Research progress on the application of telitacicept in rheumatism and autoimmune diseases].
 **Author**: Wang Xue et al. | **Journal**: Zhejiang da xue xue bao. Yi xue ban = Journal of Zhejiang University. Medical sciences (2026/Apr)
 **PMID**: 41922188 | https://pubmed.ncbi.nlm.nih.gov/41922188/
 
@@ -1489,7 +1704,7 @@ Traditional treatment regimens for rheumatism and autoimmune diseases are associ
 风湿病和自身免疫病传统治疗方案副作用明显，部分患者疗效有限，预后不佳。生物制剂泰它西普（telitacicept）作为靶向B细胞活化因子（BAFF）和增殖诱导配体（APRIL）的融合蛋白，为难治性风湿病和自身免疫病治疗提供了新策略，部分临床试验已展现出较好的临床效果及安全性。在系统性红斑狼疮中，泰它西普可降低患者疾病活动度并有助于减少糖皮质激素使用，在儿童患者中也显示较好的疗效。在干燥综合征中，泰它西普可持续改善患者临床症状及疾病活动度。在类风湿关节炎中，泰它西普能提高美国风湿病学会20%改善标准（ACR20）、美国风湿病学会50%改善标准（ACR50）应答率且显著减少激素使用量。在IgA血管炎中，研究主要集中于肾脏受累的患者，在减少成人及儿童蛋白尿方面均有较好疗效。在重症肌无力中，泰它西普可降低疾病严重程度并改善患者生活质量。此外，泰它西普在IgG4相关疾病及肉芽肿性多血管炎等疾病中也初步显示出治疗潜力，仍需进一步探索。现有临床数据表明，泰它西普整体安全性良好，但仍需关注长期应用的感染风险、免疫球蛋白水平下降、潜在耐药机制及其在特殊人群中的疗效及安全性等问题。本文综述了泰它西普在风湿病和自身免疫病中的应用研究进展，以期为泰它西普的临床应用提供参考。.
 
 ---
-### [54] Global, regional, and national burden of meningitis, its risk factors, and aetiologies, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.
+### [57] Global, regional, and national burden of meningitis, its risk factors, and aetiologies, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.
 **Author**: ? et al. | **Journal**: The Lancet. Neurology (2026/May)
 **PMID**: 41911930 | https://pubmed.ncbi.nlm.nih.gov/41911930/
 
@@ -1500,49 +1715,49 @@ INTERPRETATION: Although mortality and incidence have declined significantly sin
 FUNDING: Gates Foundation, Wellcome Trust, and UK Department of Health and Social Care.
 
 ---
-### [55] Nephrotic Syndrome: Current Management.
+### [58] Nephrotic Syndrome: Current Management.
 **Author**: Vasudevan Anil et al. | **Journal**: Indian journal of pediatrics (2026/May)
 **PMID**: 41910850 | https://pubmed.ncbi.nlm.nih.gov/41910850/
 
 (abstract not available)
 
 ---
-### [56] Japanese clinical practice guidelines for vascular tumors, vascular malformations, lymphatic malformations, and lymphangiomatosis 2022.
+### [59] Japanese clinical practice guidelines for vascular tumors, vascular malformations, lymphatic malformations, and lymphangiomatosis 2022.
 **Author**: Kinoshita Yoshiaki et al. | **Journal**: Surgery today (2026/May)
 **PMID**: 41893920 | https://pubmed.ncbi.nlm.nih.gov/41893920/
 
 The objective was to prepare guidelines to perform the current optimum treatment by organizing effective and efficient treatments of hemangiomas and vascular malformations, confirming the safety, and systematizing treatment, employing evidence-based medicine techniques and aimed at improvement of the outcomes. Clinical questions (CQs) were decided based on the important clinical issues. For document retrieval, key words for literature searches were set for each CQ and literature published from 1980 to the end of December 2020 was searched in PubMed, and Japana Centra Revuo Medicina (JCRM). The strengths of evidence and recommendations acquired by systematic reviews were determined following the Medical Information Network Distribution Service (Minds) technique. A total of 38 CQs were used to compile recommendations and the subjects included efficacy of resection, sclerotherapy/embolization, drug therapy, laser therapy, radiotherapy, and other conservative treatment, differences in appropriate treatment due to the location of lesions and among symptoms, appropriate timing of treatment and tests, pathological diagnosis deciding the diagnosis, and causal genes of vascular anomalies. Thus, the Japanese clinical practice guidelines for vascular tumors, vascular malformations, lymphatic malformations, and lymphangiomatosis 2022 have been prepared as the evidence-based guidelines for the management of vascular anomalies.
 
 ---
-### [57] Cellular senescence in skeletal muscle: myogenic and nonmyogenic cell populations, mechanisms, and therapeutic opportunities.
+### [60] Cellular senescence in skeletal muscle: myogenic and nonmyogenic cell populations, mechanisms, and therapeutic opportunities.
 **Author**: Papanikolaou Konstantinos et al. | **Journal**: American journal of physiology. Cell physiology (2026/May)
 **PMID**: 41886266 | https://pubmed.ncbi.nlm.nih.gov/41886266/
 
 Skeletal muscle plays a central role in systemic metabolism, physical function, and overall health. Aging and disease diminish the ability of myogenic and nonmyogenic skeletal muscle cells to coordinate adaptation and repair, but the mechanisms underlying this decline are not fully understood. Growing evidence implicates cellular senescence, a stress response marked by irreversible cell cycle arrest and proinflammatory signaling, as a key contributor to muscle pathology. In this review, we synthesize current insights into the molecular mechanisms that govern cellular senescence in skeletal muscle, its effects on myogenic and nonmyogenic cell populations, and recent technologies that have clarified key aspects of senescence biology. We further explore emerging therapeutic strategies aimed at targeting senescent cells and discuss key knowledge gaps that must be addressed to advance our understanding of senescent myogenic and nonmyogenic cells in skeletal muscle.
 
 ---
-### [58] Kidney Support Therapy: Recent Advances.
+### [61] Kidney Support Therapy: Recent Advances.
 **Author**: Yadav Menka et al. | **Journal**: Indian journal of pediatrics (2026/May)
 **PMID**: 41886184 | https://pubmed.ncbi.nlm.nih.gov/41886184/
 
 (abstract not available)
 
 ---
-### [59] Japanese Clinical Practice Guidelines for Vascular Tumors, Vascular Malformations, Lymphatic Malformations, and Lymphangiomatosis 2022.
+### [62] Japanese Clinical Practice Guidelines for Vascular Tumors, Vascular Malformations, Lymphatic Malformations, and Lymphangiomatosis 2022.
 **Author**: Kinoshita Yoshiaki et al. | **Journal**: The Journal of dermatology (2026/May)
 **PMID**: 41881506 | https://pubmed.ncbi.nlm.nih.gov/41881506/
 
 The objective was to prepare guidelines to perform the current optimum treatment by organizing effective and efficient treatments of hemangiomas and vascular malformations, confirming the safety, and systematizing treatment, employing evidence-based medicine techniques and aimed at improvement of the outcomes. Clinical questions (CQs) were decided based on the important clinical issues. For document retrieval, key words for literature searches were set for each CQ and literature published from 1980 to the end of December 2020 was searched in PubMed, and Japana Centra Revuo Medicina (JCRM). The strengths of evidence and recommendations acquired by systematic reviews were determined following the Medical Information Network Distribution Service (Minds) technique. A total of 38 CQs were used to compile recommendations and the subjects included efficacy of resection, sclerotherapy/embolization, drug therapy, laser therapy, radiotherapy, and other conservative treatment, differences in appropriate treatment due to the location of lesions and among symptoms, appropriate timing of treatment and tests, pathological diagnosis deciding the diagnosis, and causal genes of vascular anomalies. Thus, the Japanese Clinical Practice Guidelines for Vascular Tumors, Vascular Malformations, Lymphatic Malformations, and Lymphangiomatosis 2022 have been prepared as the evidence-based guidelines for the management of vascular anomalies.
 
 ---
-### [60] Japanese clinical practice guidelines for vascular tumors, vascular malformations, lymphatic malformations, and lymphangiomatosis 2022.
+### [63] Japanese clinical practice guidelines for vascular tumors, vascular malformations, lymphatic malformations, and lymphangiomatosis 2022.
 **Author**: Kinoshita Yoshiaki et al. | **Journal**: Japanese journal of radiology (2026/May)
 **PMID**: 41880126 | https://pubmed.ncbi.nlm.nih.gov/41880126/
 
 The objective was to prepare guidelines to perform the current optimum treatment by organizing effective and efficient treatments of hemangiomas and vascular malformations, confirming the safety, and systematizing treatment, employing evidence-based medicine techniques and aimed at improvement of the outcomes. Clinical questions (CQs) were decided based on the important clinical issues. For document retrieval, key words for literature searches were set for each CQ and literature published from 1980 to the end of December 2020 was searched in PubMed, and Japana Centra Revuo Medicina (JCRM). The strengths of evidence and recommendations acquired by systematic reviews were determined following the Medical Information Network Distribution Service (Minds) technique. A total of 38 CQs were used to compile recommendations and the subjects included efficacy of resection, sclerotherapy/embolization, drug therapy, laser therapy, radiotherapy, and other conservative treatment, differences in appropriate treatment due to the location of lesions and among symptoms, appropriate timing of treatment and tests, pathological diagnosis deciding the diagnosis, and causal genes of vascular anomalies. Thus, the Japanese Clinical Practice Guidelines for Vascular Tumors, Vascular Malformations, Lymphatic Malformations, and Lymphangiomatosis 2022 have been prepared as the evidence-based guidelines for the management of vascular anomalies.
 
 ---
-### [61] Prevalence of post-COVID symptoms across variants of concern and follow-up periods: A systematic review and meta-analysis.
+### [64] Prevalence of post-COVID symptoms across variants of concern and follow-up periods: A systematic review and meta-analysis.
 **Author**: Lugtu Eiron John et al. | **Journal**: International journal of infectious diseases : IJID : official publication of the International Society for Infectious Diseases (2026/May)
 **PMID**: 41819160 | https://pubmed.ncbi.nlm.nih.gov/41819160/
 
@@ -1552,7 +1767,7 @@ RESULTS: Pooled prevalence across 35 studies (n = 159,000) was 28.5% (95% CI: 21
 CONCLUSION: Post-COVID condition remains a burden despite vaccination. Distinct symptomatology patterns across VoC and timelines highlight the need for tailored management strategies to mitigate long-term global impacts.
 
 ---
-### [62] Evaluating Infections in Solid Organ Donors Before Transplantation: A Systematic Review of Clinical Practice Guidelines.
+### [65] Evaluating Infections in Solid Organ Donors Before Transplantation: A Systematic Review of Clinical Practice Guidelines.
 **Author**: Chong Chanel H et al. | **Journal**: Transplantation (2026/May)
 **PMID**: 41805905 | https://pubmed.ncbi.nlm.nih.gov/41805905/
 
@@ -1562,28 +1777,28 @@ RESULTS: We included 19 clinical practice guidelines and 19 consensus statements
 CONCLUSIONS: Recommendations for common infections were mostly consistent. Where uncertainties exist, transparency in evidence synthesis and translation into recommendations is needed. Real-world evaluation of guideline implementation and its clinical impact is crucial for maximizing donor organ use while minimizing donor-derived infections.
 
 ---
-### [63] Kidney and Cardiovascular Protection in Diabetes: Beyond Diabetes Typology.
+### [66] Kidney and Cardiovascular Protection in Diabetes: Beyond Diabetes Typology.
 **Author**: Mottl Amy K et al. | **Journal**: American journal of kidney diseases : the official journal of the National Kidney Foundation (2026/May)
 **PMID**: 41791642 | https://pubmed.ncbi.nlm.nih.gov/41791642/
 
 Despite the abundance of new therapies designed to delay or prevent kidney and cardiovascular events in people with type 2 diabetes mellitus (T2DM), a stark gap remains in the evidence supporting their efficacy and safety for other types of diabetes. Individuals without T2DM are frequently excluded from clinical trials based on the assumptions that their event risk, pathogenesis, and potential for adverse events differ significantly. It is anticipated that treatments will eventually be expanded to include this population, yet the uptake of new therapies even with clear evidence is often disappointingly low. In this perspective, we critically examine the characteristics of diabetes types other than T2DM and evaluate the available evidence for novel therapies in these underrepresented populations. Future small trials of surrogate end points and real-world studies, including individuals without T2DM, will be essential to understand and use recent advancements in treatments for preventing kidney failure and cardiovascular events and death.
 
 ---
-### [64] Anti-nephrin autoantibodies in post-transplant recurrent focal segmental glomerulosclerosis: diagnostic advances and future directions.
+### [67] Anti-nephrin autoantibodies in post-transplant recurrent focal segmental glomerulosclerosis: diagnostic advances and future directions.
 **Author**: Shirai Yoko et al. | **Journal**: Clinical and experimental nephrology (2026/May)
 **PMID**: 41746488 | https://pubmed.ncbi.nlm.nih.gov/41746488/
 
 Nephrotic syndrome is a common kidney disease during childhood that is characterized by alterations in the glomerular filtration barrier and leads to protein loss in the urine. Approximately 90% of cases are classified as idiopathic nephrotic syndrome, most of which are histologically diagnosed as minimal change disease (MCD). Although the majority of patients achieve remission with steroid therapy, a subset develops steroid resistance and progresses to focal segmental glomerulosclerosis (FSGS) and kidney failure. Increasing evidence suggests that MCD and idiopathic FSGS represent a disease continuum, with FSGS reflecting a more advanced stage. Although several candidates have been proposed as circulating factors, none fully explains the disease pathogenesis. This landscape changed in 2022 with the discovery of anti-nephrin autoantibodies in MCD. Subsequently, we reported that circulating anti-nephrin autoantibodies were identified by ELISA in patients with post-transplant recurrent FSGS, and punctate IgG deposition colocalizing with nephrin was consistently detected in allograft biopsy specimens obtained during recurrence. Notably, these IgG deposits resolved following remission. Collectively, these findings suggest diffuse podocytopathies as autoantibody-mediated disorders and support a shift toward autoantibody-based disease classification. Experimental and clinical studies demonstrate that anti-nephrin autoantibodies induce nephrin phosphorylation. This process may be associated with nephrin endocytosis and subsequent cytoskeletal alterations. Additionally, autoantibodies targeting slit diaphragm molecules other than nephrin have been identified. However, the pathogenic roles of these autoantibodies remain to be clarified. Collectively, these findings highlight a complex, autoantibody-driven mechanism in diffuse podocytopathies and underscore the need for standardized assays and biomarker-driven classification strategies.
 
 ---
-### [65] Timing Matters: Leveraging Positron Emission Tomography Imaging and Hormonal Cycles for Precision Psychiatry in Female Mental Health.
+### [68] Timing Matters: Leveraging Positron Emission Tomography Imaging and Hormonal Cycles for Precision Psychiatry in Female Mental Health.
 **Author**: May Emily et al. | **Journal**: Biological psychiatry (2026/May)
 **PMID**: 41740642 | https://pubmed.ncbi.nlm.nih.gov/41740642/
 
 Fluctuations in behavior across the menstrual cycle have been observed in several psychiatric disorders, particularly those affecting mood. Cycle-specific conditions, such as premenstrual dysphoric disorder (PMDD), and cycle-responsive conditions, in which changes in symptoms are tied to the menstrual cycle, including attention-deficit/hyperactivity disorder (ADHD), exemplify this pattern with an increase in symptoms during the luteal phase. Growing evidence indicates that within-cycle ovarian hormone fluctuations and withdrawal, along with associated neurotransmitter changes, shape symptom trajectories. In PMDD, serotonergic tone is associated with mood changes, providing direct evidence of a link between hormonal fluctuations and psychiatric symptoms. Advanced quantitative neuroimaging techniques, such as positron emission tomography (PET), offer a unique opportunity to investigate how neurotransmitter systems, particularly serotonin, GABA (gamma-aminobutyric acid), dopamine, and norepinephrine, interact with hormonal shifts to influence psychiatric symptoms. In this review, we explore the potential of PET neuroreceptor imaging to elucidate the neurobiological mechanisms underlying hormone-related mood changes. With PMDD as a model, we provide a conceptual framework and highlight directions of mechanistic understanding for ADHD and other psychiatric conditions across the relatively brief, yet consistently cyclical intervals, thereby identifying windows for targeted, menstrual phase-informed interventions. By integrating hormonal and cycle variability into psychiatric research and treatment, we aim to advance precision medicine approaches for mood disorders.
 
 ---
-### [66] The podocyte slit-diaphragm: target of anti-nephrin antibodies.
+### [69] The podocyte slit-diaphragm: target of anti-nephrin antibodies.
 **Author**: Beck Laurence H et al. | **Journal**: Current opinion in nephrology and hypertension (2026/May)
 **PMID**: 41733080 | https://pubmed.ncbi.nlm.nih.gov/41733080/
 
@@ -1592,7 +1807,7 @@ RECENT FINDINGS: New methodologies including multi-epitope affinity purification
 SUMMARY: These findings raise several questions to be answered experimentally, including the nephrin epitopes targeted by the antibodies and the way in which they alter the slit-diaphragm and podocyte architecture and induce nephrin endocytosis. They also highlight the need for a reliable and widely available assay for anti-nephrin antibodies, which would have diagnostic and therapeutic impact on diagnosis, prognosis and therapy.
 
 ---
-### [67] Eosinophilic granulomatosis with polyangiitis: recent therapeutic advances.
+### [70] Eosinophilic granulomatosis with polyangiitis: recent therapeutic advances.
 **Author**: Chiara Emanuele et al. | **Journal**: Current opinion in rheumatology (2026/May)
 **PMID**: 41717826 | https://pubmed.ncbi.nlm.nih.gov/41717826/
 
@@ -1601,35 +1816,35 @@ RECENT FINDINGS: The therapeutic scenario in EGPA has been recently broadened by
 SUMMARY: Biological drug therapy targeting IL-5 consolidated its role in the management of EGPA, becoming the cornerstone of the treatment of this rare disease. Future guidelines should consider these recent findings to improve the management of EPGA. Notably, while selective IL-5 targeting is highly effective for remission maintenance, its role in inducing remission in EGPA remains to be fully established. Rituximab was non-superior to standard therapy in induction of remission in patients with EGPA, demonstrating a similar rate of response. The role of other targeted therapies, albeit promising in some cases, remains a matter of debate.
 
 ---
-### [68] Use of kidney-preserving medications in breastfeeding.
+### [71] Use of kidney-preserving medications in breastfeeding.
 **Author**: Parnizari Paula et al. | **Journal**: Kidney international (2026/May)
 **PMID**: 41692344 | https://pubmed.ncbi.nlm.nih.gov/41692344/
 
 Breastfeeding has recognized health benefits for all mother-infant dyads, which are particularly important for women with chronic kidney disease (CKD) and their children. There is growing evidence to suggest breastfeeding positively impacts maternal vascular health by lowering blood pressure, assisting with weight loss, improving lipid profiles, and preventing type 2 diabetes. Similarly, breastfed infants have demonstrated decreased risks of developing obesity, hypertension, and diabetes, improving their long-term vascular health. Postpartum women with CKD often require different therapies to manage their disease and improve long-term outcomes, but there is a lack of robust lactation safety data for many drugs used in the treatment of CKD. As a result, postpartum women with CKD may be deprived of nephroprotective therapies that impact long-term renal survival or the vascular protective effects associated with breastfeeding for themselves and their children. In this review, we summarize the importance of breastfeeding for women with CKD and their children, and existing data on the safety of drugs used for the treatment of CKD in lactation. We also review available methods for assessing drug safety and describe emerging pharmacometric modeling techniques that may be particularly useful for informing safety in lactation for drugs with little human data, helping to overcome some of the ethical and practical issues associated with conducting research on postpartum women and their infants.
 
 ---
-### [69] Mental health and kidney disease.
+### [72] Mental health and kidney disease.
 **Author**: Chilcot Joseph et al. | **Journal**: Nature reviews. Nephrology (2026/May)
 **PMID**: 41606193 | https://pubmed.ncbi.nlm.nih.gov/41606193/
 
 Multiple long-term conditions, and particularly mental health conditions, are common in adults with chronic kidney disease (CKD). Some mental health conditions increase the risk of developing CKD, contribute to faster disease progression, and complicate care experiences and outcomes. Depression and anxiety are particularly prevalent and are associated with reduced quality of life, unplanned service use and poorer clinical outcomes. The manner in which depression and anxiety are detected and managed as part of routine kidney care can vary widely. Evidence for effective and acceptable treatments is mixed overall, although meta-analyses highlight the benefits of physical activity and cognitive behavioural therapy. Data on the use of antidepressants in people with CKD are also variable, limited by the lack of robust clinical trials. People with particularly complex needs, such as those with severe mental illness and CKD, have markedly shorter lifespans and higher rates of emergency hospitalizations than those without severe mental illness and are also less likely to access specialist nephrology care and to receive a transplantation. Health inequalities are amplified for those contending with wider disadvantages related to social and structural determinants of health. Reducing the burden of mental health in people with CKD is an urgent priority to alleviate personal and health system impacts. Here, we examine current evidence on mental health and CKD to inform policy and research and to support advances in prevention and management approaches.
 
 ---
-### [70] Combined Inhaled Pulmonary Vasodilators in Cardiac Surgery: A Scoping Review.
+### [73] Combined Inhaled Pulmonary Vasodilators in Cardiac Surgery: A Scoping Review.
 **Author**: Soto Leah et al. | **Journal**: Journal of cardiothoracic and vascular anesthesia (2026/May)
 **PMID**: 41521132 | https://pubmed.ncbi.nlm.nih.gov/41521132/
 
 Pulmonary hypertension is a risk factor for increased morbidity and mortality in cardiac surgery. The use of a combination of inhaled vasodilator agents could have an improved effect on pulmonary vascular resistance in the perioperative cardiac surgery setting without causing the systemic side effect of hypotension observed with intravenous agents. There is currently limited evidence regarding the use of combination therapy for pulmonary hypertension in the context of cardiac surgery. A scoping review was conducted to retrieve relevant literature on the use of a combination of inhaled vasodilator agents in the treatment of pulmonary hypertension and/or right ventricular dysfunction in adults and children undergoing cardiac surgery. The authors searched MEDLINE, Embase, and the Cochrane Central Register of Controlled Trials from inception to April 2025 for relevant articles. They identified 23 studies including 432 patients. The combined inhaled therapies reported in the literature are nitric oxide or milrinone combined with prostacyclin analogues. Of the 23 studies, 18 reported a hemodynamic benefit of the drugs in decreasing pulmonary hypertension and improving right ventricular function. Decreased intraoperative and postoperative vasopressor and/or inotropic use also was observed. Moreover, the impact on clinical outcomes, such as difficulty in weaning from cardiopulmonary bypass and length of intensive care unit stay, showed conflicting results. No study has reported an impact on mortality, length of hospital stay, or other intraoperative or postoperative complications. Combined therapies are promising therapeutic alternatives for the management of pulmonary hypertension and/or right ventricular dysfunction in cardiac surgery, but more studies are required to determine their systemic effects and impact on clinical outcomes.
 
 ---
-### [71] Medical device regulation and dialysis practice-impact on patients, doctors and manufacturers.
+### [74] Medical device regulation and dialysis practice-impact on patients, doctors and manufacturers.
 **Author**: Meijers Björn et al. | **Journal**: Nephrology, dialysis, transplantation : official publication of the European Dialysis and Transplant Association - European Renal Association (2026/Apr)
 **PMID**: 41459722 | https://pubmed.ncbi.nlm.nih.gov/41459722/
 
 The Medical Device Regulation (MDR) was adopted in 2017 to replace the Medical Device Directive. Key changes included more rigorous clinical evidence requirements, increased scrutiny of notified bodies and improved traceability of medical devices, with the overarching aim to improve their safety and quality. For chronic haemodialysis, the impact of the MDR on devices has been substantial, resulting in niche devices being no longer available, and critical shortages, especially in paediatric nephrology. The EuDial board discussed these developments and concluded that the MDR has had a clear negative impact on innovation. In conjunction with other emerging economic macro-trends, this development heightens the potential for disruptions within critical supply chains. We offer actionable recommendations to optimize the benefits of the MDR and to minimize unintended consequences.
 
 ---
-### [72] Current Landscape of Mobile Health Applications for Hypertension Management in the United States: A Scoping Application Review.
+### [75] Current Landscape of Mobile Health Applications for Hypertension Management in the United States: A Scoping Application Review.
 **Author**: Joshee Shreeya R et al. | **Journal**: American journal of hypertension (2026/May)
 **PMID**: 41400851 | https://pubmed.ncbi.nlm.nih.gov/41400851/
 
@@ -1639,7 +1854,7 @@ RESULTS: Clinician interfaces were largely absent, with limited EMR integration 
 CONCLUSIONS: Current mHealth applications lack several features for optimal hypertension monitoring and management. Based on the range of qualitative application features assessed, we formulate a framework for developing an ideal mHealth application for optimal hypertension management.
 
 ---
-### [73] Androgen deprivation therapy with apalutamide in the treatment of metastatic castration-sensitive prostate cancer: the systematic review of its effectiveness and applicability for Asian men in the targeted investigational treatment analysis of novel anti-androgen (TITAN) trial.
+### [76] Androgen deprivation therapy with apalutamide in the treatment of metastatic castration-sensitive prostate cancer: the systematic review of its effectiveness and applicability for Asian men in the targeted investigational treatment analysis of novel anti-androgen (TITAN) trial.
 **Author**: Yang Fan et al. | **Journal**: International urology and nephrology (2026/May)
 **PMID**: 41353294 | https://pubmed.ncbi.nlm.nih.gov/41353294/
 
@@ -1650,28 +1865,35 @@ CONCLUSION: Asian subpopulation efficacy with apalutamide + ADT is direction
 TRIAL REGISTRATION: PROSPERO number CRD420251054772.
 
 ---
-### [74] The dietary management of sodium in children with kidney diseases-clinical practice recommendations from the Pediatric Renal Nutrition Taskforce.
+### [77] The dietary management of sodium in children with kidney diseases-clinical practice recommendations from the Pediatric Renal Nutrition Taskforce.
 **Author**: Renken-Terhaerdt José et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/May)
 **PMID**: 41251793 | https://pubmed.ncbi.nlm.nih.gov/41251793/
 
 Sodium imbalance is a common concern in children with kidney diseases, presenting as either sodium excess or sodium deficit, each with significant clinical implications. Sodium excess contributes to fluid overload and hypertension, while increased sodium losses, particularly via urine or peritoneal fluid, can predispose patients to hypotension and growth failure. Effective sodium management is thus a critical component of care in pediatric kidney diseases, with dietary sodium intake playing a pivotal role in maintaining homeostasis. The Pediatric Renal Nutrition Taskforce (PRNT) has developed clinical practice recommendations (CPRs) for dietary sodium management in children with kidney diseases, addressing key aspects of sodium balance, including primary dietary sources, nutritional assessment of sodium intake, non-dietary factors influencing sodium balance, and recommended intakes. Strategies for reducing sodium intake in cases of sodium excess and augmenting intake in patients with increased sodium losses are also provided. The consensus of international experts was assessed through a Delphi process. These CPRs will be regularly updated by the PRNT.
 
 ---
-### [75] Complications of paediatric kidney transplantation: a paediatrician's review.
+### [78] Complications of paediatric kidney transplantation: a paediatrician's review.
 **Author**: Alessa Abeer et al. | **Journal**: Archives of disease in childhood (2026/Apr)
 **PMID**: 41249013 | https://pubmed.ncbi.nlm.nih.gov/41249013/
 
 Kidney transplantation is the preferred treatment for children with end-stage kidney disease, offering notable improvements in long-term survival and overall quality of life. Nonetheless, paediatric transplant recipients are susceptible to a spectrum of complications that compromise allograft function and overall health. This review highlights key post-transplant complications to aid general paediatricians in recognising and managing these challenges in concert with nephrologists. Early post-transplant complications include surgical issues and electrolyte abnormalities. Infectious complications are most frequent during the first year post-transplant and include viruses such as cytomegalovirus, Epstein-Barr virus and BK virus, as well as urinary tract infections and Pneumocystis jirovecii pneumonia. These infections are largely related to the degree of immunosuppression and require close monitoring. Cardiovascular and metabolic conditions, including hypertension, hyperlipidaemia and post-transplant diabetes mellitus, are also prevalent and contribute to long-term morbidity. These issues often stem from pre-existing kidney disease and ongoing immunosuppressive therapy. Allograft rejection, whether antibody-mediated or T cell-mediated, continues to be a major threat to graft survival. Early detection through donor-specific antibody screening and timely biopsy is essential for prompt intervention. Additional challenges include increased cancer risk, particularly post-transplant lymphoproliferative disorder, and recurrence of primary kidney disease. By recognising these complications early, general paediatricians play a crucial role in multidisciplinary care, improving graft survival and patient outcomes.
 
 ---
-### [76] Improving Blood Pressure Management and Control With Out-of-Office Blood Pressure Monitoring.
+### [79] Improving Blood Pressure Management and Control With Out-of-Office Blood Pressure Monitoring.
 **Author**: Nugent James et al. | **Journal**: American journal of hypertension (2026/May)
 **PMID**: 41206527 | https://pubmed.ncbi.nlm.nih.gov/41206527/
 
 Out-of-office blood pressure (BP) monitoring is a critical component of modern hypertension diagnosis and management. Measuring BP outside of clinic reduces the stress response that contributes to white coat hypertension and also allows for the identification of masked hypertension, yielding more accurate cardiovascular disease (CVD) risk assessment and improved CVD prevention. Home BP monitoring and 24-hour ambulatory BP monitoring outperform office BP in predicting CVD outcomes and are cost-effective aspects to cardiovascular health promotion by preventing unnecessary treatment, reducing clinic visits, and lowering event-related costs. Despite these advantages, routine implementation remains limited due to patient, provider, and system-level barriers, including validated device access, workflow integration, patient-provider communication tools, and adherence. Efforts to minimize or eliminate these barriers are crucial to CVD prevention. Evidence is also needed to support alternative out-of-office BP measurement strategies, including community-based strategies, such as BP assessment by school nurses, pharmacists, or community health workers. The utility of these modalities in diagnosing and managing children with hypertension is greatly needed as the long-term prognostic data in this population are sparse. Expanding adoption and evidence for out-of-office monitoring is essential to optimize hypertension care and CVD risk reduction.
 
 ---
-### [77] Pediatric kidney health outcomes in communities impacted by chronic kidney disease of unknown etiology (CKDu): a systematic review.
+### [80] Pregnancy in women on home dialysis: Your questions answered.
+**Author**: Bajpai Divya et al. | **Journal**: Peritoneal dialysis international : journal of the International Society for Peritoneal Dialysis (2026/May)
+**PMID**: 41148202 | https://pubmed.ncbi.nlm.nih.gov/41148202/
+
+Women with kidney failure have impaired fertility challenges due to disruption of the hypothalamic gonadal axis and hormonal dysregulation, with pregnancy rates on home dialysis being much lower than those with normal kidney function. Pregnant women on dialysis are at high risk of hypertensive disorders, preterm birth, and fetal growth restriction, but intensified dialysis can mitigate these risks. Home dialysis offers advantages like flexibility, better hemodynamic stability, and improved fetal outcomes, but logistical and training challenges remain. Hybrid approaches combining hemodialysis and peritoneal dialysis may benefit select women during pregnancy. Effective management of pregnancy on dialysis requires treatment of anemia, optimized nutrition, close obstetric monitoring, and multi-disciplinary care. Postpartum care should focus on breastfeeding support, home dialysis prescription adjustment, and contraception counseling. Systematic capacity-building in home dialysis can lead to better pregnancy outcomes while alleviating in-center dialysis burdens.
+
+---
+### [81] Pediatric kidney health outcomes in communities impacted by chronic kidney disease of unknown etiology (CKDu): a systematic review.
 **Author**: Strasma Anna et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/May)
 **PMID**: 41117970 | https://pubmed.ncbi.nlm.nih.gov/41117970/
 
@@ -1685,28 +1907,28 @@ LIMITATIONS: The limitations of our review include the heterogeneous nomenclatur
 SYSTEMATIC REVIEW REGISTRATION NUMBER: PROSPERO ID CRD42023394987.
 
 ---
-### [78] AI-powered insights in pediatric nephrology: current applications and future opportunities.
+### [82] AI-powered insights in pediatric nephrology: current applications and future opportunities.
 **Author**: Nada Arwa et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/May)
 **PMID**: 40957986 | https://pubmed.ncbi.nlm.nih.gov/40957986/
 
 Artificial intelligence (AI) is rapidly emerging as a transformative force in pediatric nephrology, enabling improvements in diagnostic accuracy, therapeutic precision, and operational workflows. By integrating diverse datasets-including patient histories, genomics, imaging, and longitudinal clinical records-AI-driven tools can detect subtle kidney anomalies, predict acute kidney injury, and forecast disease progression. Deep learning models, for instance, have demonstrated the potential to enhance ultrasound interpretations, refine kidney biopsy assessments, and streamline pathology evaluations. Coupled with robust decision support systems, these innovations also optimize medication dosing and dialysis regimens, ultimately improving patient outcomes. AI-powered chatbots hold promise for improving patient engagement and adherence, while AI-assisted documentation solutions offer relief from administrative burdens, mitigating physician burnout. However, ethical and practical challenges remain. Healthcare professionals must receive adequate training to harness AI's capabilities, ensuring that such technologies bolster rather than erode the vital doctor-patient relationship. Safeguarding data privacy, minimizing algorithmic bias, and establishing standardized regulatory frameworks are critical for safe deployment. Beyond clinical care, AI can accelerate pediatric nephrology research by identifying biomarkers, enabling more precise patient recruitment, and uncovering novel therapeutic targets. As these tools evolve, interdisciplinary collaborations and ongoing oversight will be key to integrating AI responsibly. Harnessing AI's vast potential could revolutionize pediatric nephrology, championing a future of individualized, proactive, and empathetic care for children with kidney diseases. Through strategic collaboration and transparent development, these advanced technologies promise to minimize disparities, foster innovation, and sustain compassionate patient-centered care, shaping a new horizon in pediatric nephrology research and practice.
 
 ---
-### [79] Copeptin in the diagnosis and management of renal tubular disorders.
+### [83] Copeptin in the diagnosis and management of renal tubular disorders.
 **Author**: Madariaga Leire et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/May)
 **PMID**: 40924182 | https://pubmed.ncbi.nlm.nih.gov/40924182/
 
 Copeptin, a stable glycopeptide derived from the precursor of arginine vasopressin (AVP), has emerged as a valuable surrogate biomarker for AVP due to its stability and ease of measurement. This narrative review explores the physiological role of copeptin, its utility as a diagnostic and prognostic biomarker in different kidney diseases, and its clinical relevance in renal tubular disorders. The clinical application of copeptin as a diagnostic biomarker is best established in the differential diagnosis of polyuria-polydipsia syndrome (PPS), distinguishing nephrogenic diabetes insipidus (NDI) from central diabetes insipidus (CDI) and primary polydipsia (PP). Baseline and stimulated copeptin levels demonstrate high diagnostic accuracy, although methodological and population-specific limitations exist, especially in pediatrics. Copeptin has also proved to be a marker of disease severity in a wide range of acute pathologies. In chronic kidney disease (CKD), it correlates negatively with kidney function, and it has been shown to be a marker of kidney function decline in kidney transplant patients and in autosomal dominant polycystic kidney disease (ADPKD). Regarding renal tubular disorders, CKD has increasingly been recognized in these patients, potentially driven by persistent volume depletion and activation of the renin-angiotensin-aldosterone system. Copeptin may offer an objective assessment of volume status and disease severity, particularly in infants and young children. However, further studies are needed to define standardized reference values, clarify its mechanistic role, and validate its prognostic utility in tubulopathies. Copeptin holds potential as both a diagnostic and prognostic biomarker in renal tubular disease, with implications for clinical practice and patient management.
 
 ---
-### [80] SGLT2 inhibitors for kidney protection in children: expanding horizons beyond endocrinology.
+### [84] SGLT2 inhibitors for kidney protection in children: expanding horizons beyond endocrinology.
 **Author**: Pucci Costanza et al. | **Journal**: Pediatric nephrology (Berlin, Germany) (2026/May)
 **PMID**: 40624155 | https://pubmed.ncbi.nlm.nih.gov/40624155/
 
 For over two decades, kidney protection in children has relied on angiotensin-converting enzyme inhibitors (ACEi) and angiotensin receptor blockers (ARBs), which present significant limitations. Sodium-glucose cotransporter 2 inhibitors (SGLT2i), initially developed as antidiabetic agents, have demonstrated significant benefits in preserving kidney function in adults with chronic kidney disease (CKD), regardless of diabetes status. The pathophysiology of paediatric CKD differs from adult CKD, with congenital anomalies of the kidney and urinary tract (CAKUT) as the predominant cause. Extrapolating adult data to paediatric patients is challenging, though preliminary studies suggest SGLT2i may mitigate hyperfiltration-related damage, reduce proteinuria, and slow CKD progression, on top of RAS-blockers. Recent paediatric case series and small clinical trials have shown promising results, though larger controlled studies are needed to confirm efficacy and safety. The ongoing DOUBLE PRO-TECT Alport trial represents a significant step toward evaluating SGLT2i kidney protection in children. While current data suggest potential benefits, careful assessment of adverse effects such as euglycaemic ketoacidosis (EuDKA) and calcium phosphorus imbalances is crucial. This review aims to explore the mechanism of action, clinical evidence, and future perspectives of SGLT2i in paediatric CKD, highlighting their potential as a novel therapeutic strategy beyond diabetes management.
 
 ---
-### [81] The Role of Zinc in the Evolutionary Pattern of Pediatric Nephrotic Syndrome: A Meta-Analysis.
+### [85] The Role of Zinc in the Evolutionary Pattern of Pediatric Nephrotic Syndrome: A Meta-Analysis.
 **Author**: Lupu Ancuta et al. | **Journal**: Nutrition reviews (2026/May)
 **PMID**: 40587383 | https://pubmed.ncbi.nlm.nih.gov/40587383/
 
@@ -1721,13 +1943,13 @@ SYSTEMATIC REVIEW REGISTRATION: PROSPERO registration No. [CRD42024527895].
 ---
 
 ## ped_constipation_update
-### 小児便秘 — 7件
+### 小児便秘 — 4件
 
 **▼ Coworkへのプロンプト（コピーして貼り付け）:**
 
 > 以下は直近1ヶ月の小児便秘領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_便秘_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_便秘_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -1763,44 +1985,14 @@ AREAS COVERED: This review provides an overview of the mechanism of action, phar
 EXPERT OPINION: Linaclotide may represent a mechanism-based therapeutic option for pediatric patients with functional constipation who remain symptomatic despite optimized conventional therapy. By targeting guanylate cyclase-C-mediated epithelial secretion, linaclotide is associated with improvements in bowel habits and a predominantly gastrointestinal safety profile. However, the pediatric evidence base remains relatively limited, and further studies are needed to define long-term outcomes, predictors of response, and its role within treatment algorithms.
 
 ---
-### [3] Efficacy of physiotherapeutic interventions in the management of functional constipation in pediatric and adolescent populations: a systematic review and meta-analysis.
-**Author**: Medrano-Sánchez Esther M et al. | **Journal**: European journal of pediatrics (2026/Apr)
-**PMID**: 41961325 | https://pubmed.ncbi.nlm.nih.gov/41961325/
-
-UNLABELLED: To evaluate the efficacy of physiotherapeutic interventions in the management of functional constipation (FC) in pediatric and adolescent populations, and to analyze the methodological quality of the available evidence. A systematic review of randomized controlled trials (RCTs) published in PubMed, Cochrane Library, Embase, and Web of Science was conducted (February-March 2025). Studies including participants aged 18 years diagnosed with FC, treated with pelvic floor physiotherapy versus conventional medical treatment, were included. Methodological quality was assessed using the PEDro scale (Physiotherapy Evidence Database). Seven clinical trials were included in the meta-analysis with sample sizes ranging from 45 to 400 participants (total n = 775). The interventions covered pelvic floor exercises, biofeedback, telerehabilitation, visceral mobilization, and electrostimulation. The majority showed improvements in painful defecation, fecal consistency, and quality of life, with less consistent results in defecatory frequency (MD = 1.00; 95% CI: 0.35 to 1.65). However, the marked heterogeneity in protocols (type, intensity, duration), variability in assessment instruments, and frequent co-intervention with polyethylene glycol (PEG) hinder comparison between studies and limit external validity. Follow-ups shorter than 12 months and the absence of blinding of participants and therapists constitute additional risks of bias.
-CONCLUSIONS: Pelvic floor physiotherapy appears to be a promising adjuvant intervention in the treatment of pediatric FC, with positive effects on symptoms and quality of life. Nevertheless, multicenter trials with standardized protocols, large samples, and prolonged follow-up are required to confirm its efficacy and long-term sustainability.
-WHAT IS KNOWN: •Despite the clinical use of physiotherapy, there was no quantitative synthesis integrating its efficacy against standard medical treatment, nor had its specific effect size on defecatory pain and quality of life been established in the pediatric population.
-WHAT IS NEW: •This meta-analysis confi rms that pelvic fl oor physiotherapy is an eff ective adjuvant with a large effect size, demonstrating consistent improvements in reducing painful defecation and enhancing the biopsychosocial dimensions of quality of life.
-
----
-### [4] Global Prevalence of Functional Constipation Across All Age Groups According to Rome II-IV Criteria, 1999-2025: A Systematic Review and Meta-Analysis.
-**Author**: Youn Ji Won et al. | **Journal**: Clinical and translational gastroenterology (2026/May)
-**PMID**: 41919745 | https://pubmed.ncbi.nlm.nih.gov/41919745/
-
-INTRODUCTION: The most recent global estimates of functional constipation (FC) were reported in 2020 for adults and in 2017 for children; however, no comprehensive update encompassing all age groups has been published since then. Thus, we aimed to provide an updated, standardized global estimate of FC prevalence across all age groups using the Rome criteria.
-METHODS: We systematically searched PubMed/MEDLINE, Embase, CINAHL, and Cochrane Library, from inception to March 28, 2025, for population-based observational studies reporting FC prevalence according to Rome II, III, or IV criteria. Eligible studies included cross-sectional or prospective designs involving children, adults, or older population. Studies without Rome-based definitions, extractable prevalence data, or population-based sampling were excluded. The primary outcome was pooled prevalence of FC. Subgroup analyses were performed by Rome version, diagnostic method, geographic region, age, sex, and behavioral factors.
-RESULTS: From 12,574 identified records, a total of 128 studies from 44 countries comprising 459,061 participants met inclusion criteria. The global pooled prevalence of FC was 12.14% (95% CI, 11.14-13.23; I 2 = 98.99%). Prevalence was higher in female patients (14.60% [12.50-17.04]; I 2 = 99.01%) than male patients (10.62% [8.84-12.75]; I 2 = 98.74%). By age, prevalence was highest in older population (19.89% [95% CI, 14.67-26.97]; I 2 = 98.77%), followed by children (12.06% [11.05-13.16]; I 2 = 97.85%) and adults (9.50% [8.11-11.14]; I 2 = 99.12%). The pooled prevalence was highest with Rome II (12.68% [95% CI, 8.02-20.04]; I 2 = 99.31%) and lowest with Rome IV (10.34% [9.11-11.75]; I 2 = 98.79%).
-DISCUSSION: FC is a highly prevalent global disorder, with substantial variation by age, sex, diagnostic criteria, country, and region. Standardized population-based assessments using validated Rome criteria are essential to inform clinical practice and public health strategies.
-
----
-### [5] Prevention of pediatric functional constipation: a narrative review.
-**Author**: de Morais Mauro Batista et al. | **Journal**: Jornal de pediatria (2026/Apr)
-**PMID**: 41862171 | https://pubmed.ncbi.nlm.nih.gov/41862171/
-
-OBJECTIVE: To conduct a narrative review of strategies and actions that can contribute to the prevention of functional constipation in children and adolescents.
-SOURCE: This narrative review used articles indexed predominantly in the PubMed database and compiled by the author over the past 30 years.
-SUMMARY OF THE FINDINGS: No specific prospective population-based studies have evaluated the effectiveness of preventive measures against constipation. However, some measures can contribute to the prevention of functional constipation, such as training healthcare professionals and educating the general population about the importance of breastfeeding, providing proper toilet training guidance, and encouraging actions to avoid postponing bowel movements. Nutrition is important at all life stages. When breastfeeding is prematurely discontinued, infant formulas are more effective than cow's milk. Dietary fiber and water intake are frequently below recommended levels. Therefore, after introducing complementary feeding throughout life, the adoption of healthy eating habits, including adequate dietary fiber and fluid intake, should be recommended.
-CONCLUSIONS: Preventive measures for functional constipation have rarely been discussed in the literature. Training healthcare professionals and educating the general population are important for understanding the physiology of defecation from newborns to adulthood and avoiding unnecessary dietary changes or therapeutic measures. After introducing complementary feeding throughout life, the adoption of healthy eating habits, including adequate dietary fiber and fluid intake, should be recommended.
-
----
-### [6] Lower and Biliary Disorders of Gut-Brain Interaction: Child and Adolescent.
+### [3] Lower and Biliary Disorders of Gut-Brain Interaction: Child and Adolescent.
 **Author**: Di Lorenzo Carlo et al. | **Journal**: Gastroenterology (2026/May)
 **PMID**: 41713707 | https://pubmed.ncbi.nlm.nih.gov/41713707/
 
 Rome V provides updated criteria for pediatric disorders of gut-brain interaction, replacing age-based subdivisions with a classification based on the following regions and symptom patterns: abdominal pain disorders, defecation and anorectal disorders, and discomfort disorders. New entities were introduced, including biliary pain syndrome, centrally mediated abdominal pain syndrome, functional abdominal bloating, and proctalgia fugax. The term "infantile colic" has been replaced with "infant distress syndrome." Existing criteria for irritable bowel syndrome, functional constipation, and nonretentive fecal incontinence were revised to improve diagnostic clarity and reflect current clinical understanding. Rome V also acknowledges that disorders of gut-brain interaction may coexist with other conditions producing gastrointestinal symptoms. These updates are intended to support a more consistent diagnostic framework and guide appropriate management strategies for children and adolescents.
 
 ---
-### [7] An update on probiotics in paediatrics.
+### [4] An update on probiotics in paediatrics.
 **Author**: Zemła Maria et al. | **Journal**: Current opinion in clinical nutrition and metabolic care (2026/May)
 **PMID**: 41334956 | https://pubmed.ncbi.nlm.nih.gov/41334956/
 
@@ -1819,13 +2011,13 @@ SUMMARY: Recent trials have not provided sufficient evidence to justify changes 
 
 
 ## ped_infection_1w_update
-### 小児感染症（週次・直近30日） — 47件
+### 小児感染症（週次） — 4件
 
 **▼ Coworkへのプロンプト（コピーして貼り付け）:**
 
-> 以下は直近1ヶ月の小児感染症（週次・直近30日）領域の論文一覧です。
+> 以下は直近1週間の小児感染症（週次）領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_小児感染症_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_小児感染症_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -1845,470 +2037,49 @@ SUMMARY: Recent trials have not provided sufficient evidence to justify changes 
 > Abstract: （英語のアブストラクト全文）
 
 
-### [1] Women's experiences of maternity care in high-income countries during the pandemic health system shock: a follow-up systematic review and qualitative evidence synthesis.
-**Author**: Carbajal Camila et al. | **Journal**: Frontiers in public health (2026)
-**PMID**: 42100531 | https://pubmed.ncbi.nlm.nih.gov/42100531/
+### [1] Epidemiology and genetic variation of acute viral gastroenteritis in children under five years in the Middle East (2020-2025): a systematic review and meta-analysis.
+**Author**: Zakaria Amira M et al. | **Journal**: BMC infectious diseases (2026/May)
+**PMID**: 42106620 | https://pubmed.ncbi.nlm.nih.gov/42106620/
 
-INTRODUCTION: COVID-19 disrupted healthcare systems globally, particularly challenging maternity services which continued to be operated as an essential service. Reconfigurations were implemented to continue providing care in a safe manner and in line with infection control restrictions. This systematic review of women's experiences of maternity care during the COVID-19 pandemic in high-income countries (HICs), aimed to synthesize published literature and inform future responses to global disasters.
-MATERIAL AND METHODS: Electronic database of Scopus, MEDLINE, EMBASE, CINAHL PsychINFO, and the Cochrane COVID Study Register, were searched from June 2021- June 2024 to identify eligible records. Thematic synthesis was used to synthesise the data.
-RESULTS: 79 studies were included with data from over 20,000 perinatal women, most were of moderate to high methodological quality. Data synthesis showed 11 themes across five main concepts related to maternity service reconfigurations, namely: (1) Care-seeking and care experience, (2) Virtual care, (3) Self-monitoring, (4) Vaccination, and (5) Ethical future of maternity care.
-CONCLUSIONS: Women predominantly viewed changes to maternity care negatively. Future strategies to ensure safeguarding of mothers and infants during crises should include enhancing service accessibility, emphasizing women-centered care, and prioritizing support systems for mothers and infants.
-SYSTEMATIC REVIEW REGISTRATION: https://www.crd.york.ac.uk/PROSPERO/view/CRD42022355948, identifier: CRD42022355948.
-
----
-### [2] Cellular immune responses 12 months after fractional or standard dose BNT162b2 booster vaccination in Mongolian adults.
-**Author**: Mazarakis Nadia et al. | **Journal**: Frontiers in immunology (2026)
-**PMID**: 42099605 | https://pubmed.ncbi.nlm.nih.gov/42099605/
-
-Despite the role of booster doses in sustaining protection against emerging SARS-CoV-2 variants, global uptake remains low, highlighting the need for dose-sparing strategies that maintain durable immunity. We conducted a randomized controlled trial in Mongolian adults to examine long-term cellular immune responses to standard and fractional doses of BNT162b2 given as a third dose. A total of 601 participants, primed with ChAdOx1-S, BBIBP-CorV, or Gam-COVID-Vac, were randomized (1:1) to receive 15 μg (fractional dose) or 30 μg (standard dose) of BNT162b2. A subset of participants (N = 256) were enrolled for cell-mediated immunity analysis (n = 101 ChAdOx1-S primed, n = 117 BBIBP-CorV primed, n = 38 Gam-COVID-Vac primed). Antibodies were measured for binding anti-Spike IgG and neutralizing antibodies, and T-cell responses were measured using activation-induced marker (AIM), intracellular cytokine staining (ICS), and IFN-γ against SARS-CoV-2 Spike-specific wild-type and JN.1, and followed-up for 12 months. At 12 months post-vaccination, wild-type and JN.1 IgG levels were sustained and remained approximately 1.7-2.7-fold higher than baseline levels, and neutralizing antibodies were maintained (89% inhibition) for each priming stratum and standard and fractional dose groups. Across all study visits, total AIM CD4mem (expressing CD69+, OX40+, or CD137+) and CD8mem (CD69+CD137+), total ICS CD4mem and CD8mem (IL-2+, TNF-α+, or IFN-γ+), and ELISpot IFN-γ remained similar by study arm and priming strata for wild-type and JN.1 responses. CD4mem AIM responses peaked 6 months post-vaccination; by 12 months, responses to wild-type were maintained, whereas JN.1 responses had declined to day 28 levels or lower. For memory T-cell ICS responses, durability was maintained over 12 months post-vaccination for both wild-type and JN.1 responses. Overall, fractional booster dosing produced comparable and robust long-term humoral and cellular immune responses to a standard dose, including against the JN.1 variant.
+BACKGROUND: Acute viral gastroenteritis remains a major cause of morbidity and hospitalization among children under five years worldwide. In the Middle East, epidemiological and molecular evidence remains fragmented, particularly in the post-COVID-19 period. This systematic review and meta-analysis aimed to synthesize recent data (2020-2025) on the prevalence, genetic diversity, and co-infection patterns of enteric viruses among children aged 0-59 months in the region.
+METHODS: A comprehensive search of PubMed/MEDLINE, Scopus, Web of Science, ScienceDirect, and the WHO Global Index Medicus identified eligible observational and molecular studies published between 1 January 2020 and 31 May 2025. Study selection, data extraction, and risk-of-bias assessment were independently conducted by two reviewers according to PRISMA 2020 guidelines. The protocol was prospectively registered in PROSPERO (CRD420251064184). Pooled prevalence estimates were calculated using a random-effects model with Freeman-Tukey double arcsine transformation.
+RESULTS: Forty-three studies, including 22,021 children tested for acute gastroenteritis (AGE) from nine Middle Eastern countries, met the inclusion criteria. Rotavirus (28 studies) was the most prevalent pathogen, with a pooled prevalence of 30.4% (95% CI: 24.3-35.8; I² = 96%, p < 0.001), followed by norovirus (12 studies) at 23.5% (95% CI: 11.4-29), adenovirus (13 studies) at 11.3% (95% CI: 8.6-17.6), and astrovirus (10 studies) at 6.0% (95% CI: 1.3-12.7). Predominant rotavirus genotypes included G1, G2, G3, and G9, commonly combined with P[8], P[4], and P[6], with G3P[8] and G1P[8] as dominant constellations. Norovirus GII.4 and recombinant GII.4[P16] strains were frequently detected. Viral co-infections were also reported, particularly involving rotavirus and other enteric viruses.
+CONCLUSION: Rotavirus and norovirus remain the principal viral causes of pediatric acute gastroenteritis in the Middle East and exhibit substantial genetic diversity with frequent co-infection patterns. However, marked inter-study heterogeneity and uneven geographic representation limit regional generalizability. Strengthened molecular surveillance, standardized diagnostic approaches, and continuous genotype monitoring are essential to optimize prevention strategies and vaccination policies across the region.
 
 ---
-### [3] Effectiveness of amoxicillin and amoxicillin-clavulanate for the treatment of community-acquired pneumonia in adults and children: a systematic review and meta-analysis.
-**Author**: Potter-Schwartz Lilia et al. | **Journal**: BMJ open (2026/May)
-**PMID**: 42097647 | https://pubmed.ncbi.nlm.nih.gov/42097647/
-
-OBJECTIVES: The aim of this study is to evaluate existing evidence on the effectiveness of amoxicillin and amoxicillin-clavulanate for community-acquired pneumonia in children and adults.
-DESIGN: Systematic review and meta-analysis.
-DATA SOURCES: PubMed, Cochrane Library, Web of Science and Ovid-MEDLINER were searched with no language restrictions through 16 July 2024.
-ELIGIBILITY CRITERIA: We included studies comparing the effectiveness of amoxicillin or amoxicillin-clavulanate versus other antibiotics or placebo.
-DATA EXTRACTION AND SYNTHESIS: Only randomised controlled trials comparing amoxicillin or amoxicillin-clavulanate with another antibiotic or placebo with a primary outcome of clinical resolution or clinical failure were eligible for our review. We used random-effects and fixed-effects logistic regression models to estimate the pooled treatment effect size. Heterogeneity of the studies was evaluated using the τ statistic. We performed an unplanned frequentist random-effects network meta-analysis for the indirect comparison between amoxicillin and amoxicillin-clavulanate. The revised Cochrane risk of bias tool for randomised trials was used to assess and categorise studies into low risk of bias, some concerns or high risk of bias.
-RESULTS: We extracted data from 44 studies including 45 400 patients. We found no evidence of a differential effect on clinical resolution when comparing amoxicillin with other antibiotics (n=15 trials; pooled OR 0.88; 95% CI 0.56 to 1.38, where >1 favours amoxicillin) or amoxicillin-clavulanate with other antibiotics (n=17; OR 0.89; 95% CI 0.76 to 1.04). Similarly, evidence of difference in clinical failure between amoxicillin and other antibiotics was unclear and unable to rule out clinically important benefits or harms (n=8; OR 0.76; 95% CI 0.55 to 1.06, where <1 favours amoxicillin). We found no evidence of a differential effect on clinical resolution between adults treated with amoxicillin and amoxicillin-clavulanate (n=28; OR 1.04; 95% CI 0.64 to 1.70, where >1 favours amoxicillin-clavulanate). Sixty-three per cent and 29% of amoxicillin and amoxicillin-clavulanate studies, respectively, had low risk of bias according to the Cochrane risk of bias tool for randomised trials.
-CONCLUSIONS: Current evidence is unclear as to whether amoxicillin or amoxicillin-clavulanate differs from other antibiotics, or from each other, in the treatment of community-acquired pneumonia, owing to the small number of trials and substantial heterogeneity in comparators used across study settings.
-PROSPERO REGISTRATION NUMBER: CRD42024568554.
-
----
-### [4] Point-of-Care Nucleic Acid Amplification Tests for Respiratory Syncytial Virus Detection in Children and Adults: A Systematic Literature Review.
-**Author**: Date Kashmira et al. | **Journal**: Infectious diseases and therapy (2026/May)
-**PMID**: 42096165 | https://pubmed.ncbi.nlm.nih.gov/42096165/
-
-INTRODUCTION: Rapid point-of-care (PoC) nucleic acid amplification tests (NAATs), including reverse-transcriptase polymerase chain reaction (RT-PCR), provide timely detection of respiratory syncytial virus (RSV) closer to patient care. We conducted a systematic review to summarize the characteristics and performance of PoC NAATs for RSV in comparison to standard laboratory RT-PCR diagnostics.
-METHODS: We systematically searched Embase, MEDLINE, and gray literature (2018-2024) for studies evaluating PoC RT-PCR and other NAATs for RSV, without language restrictions. Eligible studies were identified, and data on test characteristics and performance were extracted (PROSPERO-CRD42024611164).
-RESULTS: Of 3939 articles identified, 74 studies were included, evaluating 39 distinct PoC assays, comprising 18 RT-PCR-based platforms and 21 other NAAT methods (e.g., loop-mediated isothermal amplification). Only 8% of studies were conducted exclusively in adults and 18% in children, while 37% included both age groups; age was not specified in the rest. Most studies originated from the Western Pacific region (n = 29, 39%), Europe (n = 22, 30%), and the Americas (n = 19, 26%). Compared to laboratory-based RT-PCR, PoC NAATs had high specificity (median 100% in all age groups) but variable sensitivity. Median sensitivities were 96% (range 73-100%) in children, 91% (63-100%) in adults, and 99% (67-100%) in mixed-age groups.
-CONCLUSIONS: PoC RSV NAATs offer high specificity, with a modest sensitivity reduction compared with laboratory RT-PCR (notably in adult populations). Wider availability of reliable, affordable PoC testing could facilitate rapid and accurate RSV diagnosis, improve disease surveillance and patient management, and guide public health interventions such as vaccination.
-
----
-### [5] Prognosis of neonates receiving invasive mechanical ventilation in low-resource settings: a systematic review and prognostic meta-analysis.
-**Author**: Krishnegowda Vijay Kumar et al. | **Journal**: European journal of pediatrics (2026/May)
-**PMID**: 42096067 | https://pubmed.ncbi.nlm.nih.gov/42096067/
-
-Provision of invasive mechanical ventilation (IMV) in the neonatal intensive care has seen a steady rise in low-esource settings (LRS). However, outcomes among those exposed to IMV remain under-reported, with the current evidence base being restricted to single-centre observational studies, thus limiting comparative analyses and effective healthcare planning. This study aims to estimate the pooled proportion of mortality and morbidity among neonates exposed to IMV in low-resource settings. Medline, Embase, and CENTRAL were searched until 22 August 2025. Randomised and non-randomised studies were included. Two reviewers, blinded to each other, extracted data independently. Proportion-based meta-analyses using random-effects model were performed. Risk of bias was assessed using ROBINS-E, and evidence-certainty was evaluated using the GRADE approach. One hundred of 117 studies were included, with most conducted in South Asia. In-hospital mortality was reported in 68 studies (7193 neonates), with a pooled estimate of 45% (39%-50%), evidence-certainty being very low. Among the secondary outcomes, the pooled rates were as follows: bronchopulmonary dysplasia, 10% (5%-18%); intraventricular haemorrhage (any grade), 10% (5%-19%); necrotising enterocolitis (any stage), 14% (6%-31%); retinopathy of prematurity (any stage), 33% (22%-46%); ventilator-associated pneumonia, 21% (14%-29%); sepsis, 32% (25%-40%) and pulmonary haemorrhage, 9% (6%-14%). Evidence-certainty for all the secondary outcomes was also very low. Subgroup analysis comparing two distinct time epochs revealed a significant difference in mortality, 43% (36%-50%) (I2 = 93.5%) in the post-2010 epoch compared to 55% (48%-63%) (I2 = 82.9%) in the pre-2010 epoch (p = 0.004). Heterogeneous outcome definitions and predominance of unadjusted analyses across studies limit the existing evidence.Conclusions: In LRS, the mortality and morbidity rates among neonates receiving IMV remain substantially high with a modest improvement in survival in the past decade. Improving outcomes mandates moving beyond access to the provision of IMV to investing in comprehensive training and scaling up critical auxiliary resources. Future research must adopt standardised outcome definitions and adjusted analyses to precisely quantify the impact of IMV in LRS.
-
----
-### [6] Persistent Vomiting Among Children With Acute Gastroenteritis: A Secondary Analysis of a Randomized Clinical Trial.
-**Author**: Sumner Madeleine et al. | **Journal**: JAMA network open (2026/May)
-**PMID**: 42090154 | https://pubmed.ncbi.nlm.nih.gov/42090154/
-
-IMPORTANCE: Children with acute gastroenteritis-associated vomiting discharged from emergency departments (EDs) have improved outcomes when provided with ondansetron for home use. However, only one-third of children who present with significant vomiting experience ongoing vomiting after discharge.
-OBJECTIVE: To identify characteristics associated with 3 or more vomiting episodes among pediatric patients within 24 hours of ED discharge.
-DESIGN, SETTING, AND PARTICIPANTS: This nonprespecified secondary analysis of a randomized clinical trial of children aged 6 months to less than 18 years presenting to EDs between September 14, 2019, and June 27, 2024, with acute gastroenteritis-associated vomiting and who were followed up for 7 days. A prognostic score was derived using generalized linear mixed models across 10 imputed datasets. Data analysis was performed between May 9, 2025, and February 13, 2026.
-MAIN OUTCOMES AND MEASURES: The primary outcome was 3 or more episodes of vomiting within 24 hours of ED discharge. Secondary outcomes included unscheduled health care revisits, intravenous fluid administration, and hospitalization within 7 days after the ED visit.
-RESULTS: Of 1030 children enrolled, 977 had follow-up data available and were included in this analysis (median age, 47.0 months [IQR, 22.1-80.1 months]; 493 [50.5%] girls; 925 [89.8%] with complete follow-up data). Eighty of 927 children (8.6%) had 3 or more episodes of vomiting in the 24 hours after ED discharge. In unadjusted analysis, only age 6 months to less than 2 years was associated with ongoing vomiting after discharge (odds ratio [OR], 2.17; 95% CI, 1.37-3.43). In multivariable regression analysis, variables associated with postdischarge vomiting included age 6 months to less than 2 years, symptom duration of 24 to 48 hours, or 10 or more vomiting episodes in the 24 hours preceding the ED visit. In a predictive model, a score of 4 points or more was associated with a 13.6% (95% CI, 9.9%-18.1%) probability of 3 or more vomiting episodes within 24 hours of ED discharge, with a sensitivity of 0.50 (95% CI, 0.39-0.61) and specificity of 0.70 (95% CI, 0.67-0.73). Children with 3 or more vomiting episodes within 24 hours of discharge, compared with those without, were more likely to have an unscheduled health care visit (33 of 80 [41.3%] vs 65 of 846 [7.7%]; difference, 33.6%; 95% CI, 22.6%-44.5%), receive intravenous fluids (9 of 80 [11.3%] vs 15 of 846 [1.8%]; difference, 9.5%; 95% CI, 2.5%-16.5%), and be hospitalized (5 of 80 [6.2%] vs 9 of 846 [1.1%]; difference, 5.2%; 95% CI, -0.2% to 10.5%) within 7 days of discharge.
-CONCLUSIONS AND RELEVANCE: In this analysis of children presenting for ED care with vomiting, younger children and those unwell for 24 to 48 hours with 10 or more episodes of vomiting at presentation were more likely to have persistent vomiting after discharge. Based on these findings, these children are most likely to benefit from being provided ondansetron for home administration.
-TRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT03851835.
-
----
-### [7] Experiences of families participating in a 10-week family-focused e-Health healthy lifestyle programme for school-aged children with overweight or obesity: a qualitative study.
-**Author**: Zhu Diana et al. | **Journal**: BMJ open (2026/May)
-**PMID**: 42086257 | https://pubmed.ncbi.nlm.nih.gov/42086257/
-
-OBJECTIVE: To explore families' experiences participating in a 10-week web-based lifestyle programme for school-aged children with overweight or obesity.
-DESIGN: A qualitative study using inductive analysis of semi-structured interview data.
-SETTING: Victoria, Australia.
-PARTICIPANTS: Families (children aged 7-13 years with overweight or obesity-body mass index ≥85th percentile-and accompanying parent) recruited for a randomised controlled trial that evaluated the effectiveness of the web-based programme and who received the programme (n=102 children/85 families) were invited to participate in a semi-structured interview at 3 months post-programme.
-INTERVENTION: Families received a 10-week family-focused electronic health (e-Health; web-based) lifestyle programme with health coaching sessions-an evidence-based programme adapted from its in-person, group-based counterpart.
-RESULTS: A total of 28 families, including 34 children (eight siblings) and mostly mothers, shared their experiences. 10 themes were identified on family members' experiences and aligned with the socioecological model: intrapersonal-knowledge development on healthy living; experiences and stigma related to overweight, obesity or weight; engaging with structural features of the web-based programme, interpersonal-family dynamic; connections with others (non-healthcare professionals) outside of home; relationship with healthcare professionals, environmental/institutional-impact of COVID-19 lockdowns; health-promoting environments; promotion of and access to overweight or obesity management programmes; web-based programme as part of a larger or established system. Each theme highlighted factors that influenced programme uptake and engagement.
-CONCLUSIONS: Valuable insights were gained on ways to better adapt e-Health (web-based) lifestyle programmes for children with overweight or obesity. Families perceived advantages in a web-based lifestyle programme and highly regarded humanised features and elements comparable to conventional in-person programmes. Further research is needed to explore the perspectives of families from diverse populations, fathers and families who decline participation in the follow-up period. Web-based lifestyle programmes that incorporate contemporary e-Health technologies, including responsive AI, also warrant further investigation to maximise programme benefits.
-TRIAL REGISTRATION NUMBER: ACTRN12621001762842.
-
----
-### [8] Media Exposure and Its Association With Vaccine Attitudes, Intentions, and Hesitancy: Systematic Review.
-**Author**: Leonforte Francesco et al. | **Journal**: Journal of medical Internet research (2026/Apr)
-**PMID**: 42061834 | https://pubmed.ncbi.nlm.nih.gov/42061834/
-
-BACKGROUND: Vaccine hesitancy, amplified by the COVID-19 "infodemic," has emerged as a pressing public health challenge. Communication strategies are pivotal for enhancing vaccine literacy, countering misinformation, and sustaining immunization programs.
-OBJECTIVE: This systematic review evaluates the association between communication channels and vaccine hesitancy and adherence, while examining the moderating role of sociodemographic factors.
-METHODS: A PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)-compliant search was conducted across PubMed, Scopus, and Web of Science, yielding 17,407 records screened according to predefined eligibility criteria (peer-reviewed studies with N>1000 adults assessing communication media targeting vaccine hesitancy and adherence, excluding pediatric, health care-specific, and non-English research). After full-text assessment, studies were appraised using the Modified Medical Education Research Study Quality Instrument for methodological quality and the Joanna Briggs Institute Critical Appraisal Checklist, ROBIN-I (Risk of Bias in Nonrandomized Studies of Interventions), or RoB 2.0 (Risk-of-Bias 2.0 tool for randomized trials) tools for risk of bias.
-RESULTS: Thirty-six studies were included (26 cross-sectional, 4 quasi-experimental, 4 randomized controlled trials, 1 cohort, and 1 global analysis). Randomized and nonrandomized experimental studies demonstrated that tailored communication strategies delivered via radio, web platforms, and social media significantly improved vaccine acceptance. Adaptive public health campaigns achieved up to an 8% weekly increase in uptake in Madagascar (relative risk 1.08; 95% CI 1.01-1.15) and a 7.8% higher vaccination rate among Nigerian adults at first follow-up compared with controls. Digital and social media campaigns effectively reduced hesitancy and enhanced trust among hesitant pregnant women in the United States. Sociodemographic factors significantly moderated communication outcomes: a COVID-19 chatbot proved most effective among individuals with lower education and minority backgrounds, while religiosity (b=0.17; 95% CI 0.05-0.30; t810=2.80; P=.005) and cultural congruence (odds ratio 1.89; P<.01) influenced message credibility and engagement, respectively. The persuasive effect of online memes on COVID-19 vaccine intentions was not significantly influenced by gender (P=.83), age (P=.60), or political orientation (P=.44). Age-specific effects were observed, with greater responsiveness to a social media campaign among adults aged 25-34 years and reduced hesitancy among older groups. Multiple cross-sectional studies indicated higher adherence among audiences exposed to traditional media (television, radio, newspapers) and lower trust among social media users. Other studies suggested significant influences of gender, age, socioeconomic status, education level, and political orientation.
-CONCLUSIONS: By synthesizing fragmented evidence, this review provides a systematic examination of the interplay between multichannel media and vaccine acceptance. It diverges from existing literature by integrating both traditional and digital media perspectives through the lens of sociodemographic moderation. This work offers a critical framework for public health interventions, advocating for rigorous longitudinal research to establish definitive causal links between communication and behavior. Consequently, these findings support a "precision" communication model, enabling the development of culturally congruent strategies tailored to specific recipient profiles to bolster vaccine adherence.
-TRIAL REGISTRATION: PROSPERO CRD42025637441; https://tinyurl.com/4r9w83kw.
-
----
-### [9] Pathophysiological mechanisms of post-exertional malaise: an integrative analysis based on the metabolism-immune-neuro interaction model.
-**Author**: Jin Hongjiao et al. | **Journal**: Frontiers in immunology (2026)
-**PMID**: 42051540 | https://pubmed.ncbi.nlm.nih.gov/42051540/
-
-Post-exertional malaise (PEM) is a common core symptom in various chronic debilitating conditions, such as Post COVID-19 Condition (PCC, also known as Long COVID) and Chronic Fatigue Syndrome (CFS). It is characterized by the delayed and persistent exacerbation of symptoms following even mild physical or cognitive activities. This review presents a systematic review of the pathophysiological mechanisms involved in PEM, proposing a dynamic framework of multi-system interactions that may lead to homeostatic imbalance. The etiology of PEM is multifactorial, potentially involving factors such as the persistent presence of pathogens, exposure to environmental toxins, and genetic predisposition. Collectively, these factors may establish a vulnerable baseline that heightens the body's physiological response to stressors, such as exercise, potentially triggering a pathological reaction. First, mitochondrial dysfunction and metabolic abnormalities may act as potential initiating factors in PEM, manifesting as impaired ATP synthesis, overproduction of reactive oxygen species (ROS), and the accumulation of metabolic byproducts. It is crucial to emphasize that exercise itself induces a 'toxic excitatory effect,' whereby healthy individuals enhance mitochondrial function and antioxidant defenses through physical activity. However, in individuals predisposed to PEM, due to underlying pathological conditions (e.g., sequelae of viral infections), this adaptive process is disrupted, preventing effective restoration of mitochondrial homeostasis and may initiate a potential vicious cycle of dysfunction. Second, ROS and mitochondrial DNA (mtDNA), as damage-associated molecular patterns (DAMPs), along with pathogen-associated molecular patterns (PAMPs), may activate the NLRP3 inflammasome and induce the release of pro-inflammatory cytokines such as IL-1β, IL-6, and TNF-α, potentially transforming localized metabolic stress into a systemic inflammatory response. Subsequently, peripheral inflammation may be transmitted to the central nervous system through disruption of the blood-brain barrier and vagal nerve pathways, activating glial cells and initiating neuroinflammation. This process may ultimately affect the brain's interoceptive network, particularly the insular cortex, resulting in altered perception and processing of signals related to fatigue and pain. Furthermore, mitochondrial dysfunction in neurons may contribute to central energy depletion, which may impair synaptic plasticity and induce cognitive deficits and brain fatigue. Ultimately, this review proposes that PEM may arise from a complex interplay among mitochondrial dysfunction, immune activation, and neuroinflammation, which together form a self-perpetuating loop of "energy exhaustion - inflammation amplification," potentially contributing to the chronic and multi-system nature of PEM symptoms. The integrated "metabolism-immune-neuro" interaction model presented in this article may provide a potential comprehensive framework for understanding PEM and highlights the need for a multi-target, collaborative intervention approach that may help disrupt the pathological cycle.
-
----
-### [10] Time-Threshold Dose-Response Relationship Between Duration of Premature Rupture of Membranes and Maternal, Neonatal, and Laboratory Evidence of Infection: A Systematic Review and Meta-Analysis.
-**Author**: Hassan Iman Shawky et al. | **Journal**: La Clinica terapeutica (2026)
-**PMID**: 42047155 | https://pubmed.ncbi.nlm.nih.gov/42047155/
-
-OBJECTIVE: To identify the continuous dose-response relationship between the duration of premature rupture of membranes (PROM) and the probability of neonatal and maternal infectious morbidity.
-METHODS: This meta-analysis and systematic review synthesise data from 15 studies worldwide involving more than 70,000 mother-neonate pairs. A two-step random-effects model of PROM duration as a continuous dose, using restricted cubic splines, was used to estimate specific risk thresholds.
-RESULTS: The analysis established a progressive, non-linear escalation of risk. The onset of statistical risks at 16 hours is the early-onset pneumonia (Adjusted OR 1.86, 95% CI: 1.152.99). At the age of 18 hours, the incidence of culture-proven sepsis in neonates was 4.0%, and the odds ratio for maternal fever was significantly higher (AOR 36.6). The analysis of the ROC curves revealed a critical mathematical pivot point at 37 hours, after which complications escalate exponentially. Latency greater than 48 hours was the most significant independent predictor of culture-proven sepsis, with an increased risk of 8.2 (p < 0.001). Histologic chorioamnionitis was detected in 39% of mothers, and in many cases, they are clinically silent. Considerable heterogeneity (I2 > 60%) was mainly caused by gestational age disparities in cohorts of extremely preterm and term babies.
-CONCLUSION: PROM latency risk is not a threat but accelerates with time. Although 18 hours will be an acceptable early warning level, the range of 37 to 48 hours is a high-risk period that needs aggressive treatment. International guidelines need to be reviewed to reflect this non-linear trend, especially regarding pregnancy, where the risks of delivery are low compared to the rising risk of latency.
-
----
-### [11] Oral Nirmatrelvir-Ritonavir for Covid-19 in Higher-Risk Outpatients.
-**Author**: Butler Christopher C et al. | **Journal**: The New England journal of medicine (2026/Apr)
-**PMID**: 42019019 | https://pubmed.ncbi.nlm.nih.gov/42019019/
-
-BACKGROUND: Nirmatrelvir-ritonavir has been shown to reduce progression to severe illness from severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) in unvaccinated high-risk outpatients. The effectiveness of nirmatrelvir-ritonavir in persons who have been vaccinated, infected naturally, or both is unclear.
-METHODS: In two open-label platform trials (PANORAMIC in the United Kingdom and CanTreatCOVID in Canada), we enrolled higher-risk adults (≥50 years of age or ≥18 years of age with coexisting conditions) in the community who tested positive for SARS-CoV-2 and had been unwell for 5 days or less. The participants were randomly assigned to receive usual care plus nirmatrelvir (300 mg)-ritonavir (100 mg) twice a day for 5 days or to receive usual care alone. The primary outcome was hospitalization or death from any cause within 28 days after randomization.
-RESULTS: From December 8, 2021, to September 30, 2024, a total of 3516 participants in the PANORAMIC trial and 716 participants in the CanTreatCOVID trial underwent randomization. In the PANORAMIC trial, 14 of 1698 participants (0.8%) in the nirmatrelvir-ritonavir group and 11 of 1673 participants (0.7%) in the usual-care group were hospitalized or died (adjusted odds ratio, 1.18; 95% Bayesian credible interval, 0.55 to 2.62; probability of superiority, 0.334). In the CanTreatCOVID trial, 2 of 343 participants (0.6%) in the nirmatrelvir-ritonavir group and 4 of 324 participants (1.2%) in the usual-care group were hospitalized or died (adjusted odds ratio, 0.48; 95% Bayesian credible interval, 0.08 to 2.23; probability of superiority, 0.830). In a substudy involving 634 participants, viral load was reduced by the end of treatment with nirmatrelvir-ritonavir. Serious adverse events with nirmatrelvir-ritonavir were reported in 9 participants in the PANORAMIC trial and in 4 participants in the CanTreatCOVID trial.
-CONCLUSIONS: In two open-label trials, nirmatrelvir-ritonavir did not reduce the incidence of hospitalization or death among vaccinated higher-risk participants with SARS-CoV-2 infection. (Funded by the National Institute for Health and Care Research, and others; PANORAMIC ISRCTN number, 2021-005748-31; CanTreatCOVID ClinicalTrials.gov number, NCT05614349.).
-
----
-### [12] Different doses of vitamin A supplementation as adjuvant treatment for pneumonia in children: a network meta-analysis of randomized controlled trials.
-**Author**: Zhou Cong-Jun et al. | **Journal**: European journal of pediatrics (2026/Apr)
-**PMID**: 42008030 | https://pubmed.ncbi.nlm.nih.gov/42008030/
-
-UNLABELLED: While previous meta-analyses have established a link between vitamin A supplementation and outcomes in children with pneumonia, the efficacy and safety of different dosing regimens remain unclear. Existing evidence is predominantly based on single-dose trials, creating a critical knowledge gap. We systematically searched PubMed, Embase, Cochrane Library, Chinese National Knowledge Infrastructure, Wanfang and VIP databases from their inception to December 2025. Study searches were independently carried out in December 2025 by two reviewers. Two researchers used the Cochrane risk of bias tool to independently assess the quality of the included studies. Data analysis was conducted through the "netmeta" package in R software (version 4.3.3). Twenty-five trials involving 3116 patients were included. Network meta-analysis revealed that medium-dose vitamin A supplementation was most effective in reducing the duration of fever and cough. Low-to-medium doses were consistently associated with better clinical outcomes than high-dose regimens. However, evidence regarding safety outcomes remained limited and inconclusive.
-CONCLUSION:  Low-to-medium dose vitamin A supplementation appears superior to high-dose regimens for alleviating clinical symptoms in children with pneumonia. However, the evidence is limited by high heterogeneity, indirect comparisons between dose groups, and poor reporting of adverse events. Future trials should prioritize direct dose-comparisons and rigorous safety monitoring to refine dosing guidelines.
-WHAT IS KNOWN: • Pneumonia poses a significant threat to the health and lives of children. Vitamin A supplementation plays an adjuvant role in the treatment of pneumonia in children. • There are currently divergent conclusions in the research regarding the optimal dosage of vitamin A, particularly with regard to the safety of high-dose supplementation and the effectiveness of low-dose supplementation.
-WHAT IS NEW: • This study revealed that medium-to-low-dose vitamin A supplementation appears to be more effective than high-dose therapy in alleviating the primary symptoms of childhood pneumonia. • This study also suggests that children in developed regions have higher baseline serum retinol levels, which may diminish the marginal benefits of high-dose supplementation and may even predispose them to its immunosuppressive effects.
-
----
-### [13] The Impact of Integrated Nursing Interventions on Rehabilitation Outcomes for Children With Severe Pneumonia in the Paediatric Intensive Care Unit: A Meta-Analysis.
-**Author**: Zhang Huifen et al. | **Journal**: Nursing in critical care (2026/May)
-**PMID**: 42003289 | https://pubmed.ncbi.nlm.nih.gov/42003289/
-
-BACKGROUND: Paediatric severe pneumonia is a major cause of Paediatric Intensive Care Unit admissions. This review evaluates the extent that integrated nursing care, a comprehensive strategy that combines family-centred, psychosocial and routine interventions, benefits children with severe pneumonia. Integrated nursing care may enhance recovery by reducing fever, cough and hospital stay while improving lung function and quality of life.
-AIM: To evaluate the effectiveness of integrated nursing interventions in improving rehabilitation outcomes in paediatric severe pneumonia patients admitted to paediatric intensive care units.
-STUDY DESIGN: Systematic searches of PubMed, Scopus and Web of Science were used to find relevant research studies, which were then evaluated based on predetermined inclusion criteria. Then, meta-analysis assessing nursing interventions for paediatric severe pneumonia was conducted. Key outcomes included fever reduction, cough alleviation, shorter hospital stays and improvements in lung function and quality of life. The impact of interdisciplinary collaboration and family-centred care was also examined.
-RESULTS: Six studies involving paediatric patients with severe pneumonia were included. With a pooled mean difference of -1.764 (95% CI: -2.126 to -1.402; p < 0.001), a meta-analysis revealed that integrated nursing care significantly improved clinical outcomes and expedited symptom resolution. When compared to standard care, integrated nursing interventions considerably reduced hospital stays, cough relief times and fever duration.
-CONCLUSION: Integrated nursing care improves recovery in paediatric severe pneumonia patients in PICUs. However, further research is needed to standardise nursing intervention protocols and optimise implementation across diverse healthcare settings.
-RELEVANCE TO CLINICAL PRACTICE: This review highlights the importance of structured nursing interventions, interdisciplinary teamwork and family-centred care in paediatric severe pneumonia management. Continuous nursing education is crucial for sustaining high-quality care and improving patient outcomes.
-
----
-### [14] Immunogenicity and safety of recombinant influenza vaccine versus standard inactivated influenza vaccine in children aged 3 to 8 years: results from a phase III randomised study.
-**Author**: Folegatti Pedro M et al. | **Journal**: Vaccine (2026/May)
-**PMID**: 42000149 | https://pubmed.ncbi.nlm.nih.gov/42000149/
-
-Influenza vaccines for those aged <9 years old are limited to the standard-dose inactivated influenza vaccine (IIV) and live-attenuated intranasal influenza vaccine. In this Phase III, modified double-blind, active-controlled trial, participants aged 3-8 years were randomised in a 1:1 ratio to receive the quadrivalent recombinant influenza vaccine (RIV4) or quadrivalent inactivated influenza vaccine (IIV4). The non-inferiority of immune responses was assessed using geometric mean titre ratios (GMTRs) 28 days after the last vaccine administration and seroconversion rates (NCT05513391). A futility analysis was conducted after approximately 25% of the overall sample size was enrolled. Of the 1412 participants planned, 366 participants were enrolled in the United States, Poland, and Spain, resulting in a lower overall study power. The RIV4 induced non-inferior immune responses to those for IIV4 for the A/H1N1, A/H3N2, and B/Yamagata strains but not for the B/Victoria strain. Both vaccines were well tolerated with no safety concerns.
-
----
-### [15] Impact of prophylactic oral azithromycin during labor on Azithromycin Resistance (AMR) in nasal Staphylococcus aureus and Streptococcus pneumoniae in women and infants in the multi-country Azithromycin Prevention in Labor Use Study (A-PLUS).
-**Author**: Hibberd Patricia L et al. | **Journal**: PloS one (2026)
-**PMID**: 41996390 | https://pubmed.ncbi.nlm.nih.gov/41996390/
-
-BACKGROUND: Prophylactic oral azithromycin vs. placebo reduced maternal, but not neonatal, mortality/sepsis in the A-PLUS Randomized Trial. While prophylactic intrapartum azithromycin reduces maternal mortality/sepsis, it may promote antimicrobial resistance (AMR) in commensal bacteria,.
-METHODS: Randomly selected women and their infants participating in A-PLUS were enrolled in a longitudinal cross-sectional sub-study to assess the presence of azithromycin resistance in selected bacteria in nasal cultures. Staphylococcus aureus and Streptococcus pneumoniae were cultured on selective agar, then azithromycin-containing agar to select for azithromycin resistant bacteria, identified biochemically. Azithromycin susceptibility was assessed by E-test. Nasal cultures were collected from women and infants between August 11, 2021 and September 18, 2023 during labor/day 1, day 7, 6 weeks, and 3, 6 and 12 months after delivery.
-RESULTS: The study enrolled 911 women and 915 liveborn infants at 8 sites in 7 countries. Azithromycin resistance in S aureus was higher and azithromycin susceptibility was lower in women receiving azithromycin compared with those receiving placebo on day 7 (P < 0.001), 6 weeks (P < 0.001) and 3 months (P = 0.009) after delivery. Azithromycin resistance in S aureus was also higher and azithromycin susceptibility was lower 6 weeks after delivery (P < 0.001) in infants born to women receiving azithromycin, Azithromycin resistance in S. pneumoniae was too sparse to interpret.
-CONCLUSIONS: There was an increase in prevalence of azithromycin resistance (or reduction in azithromycin susceptibility) in commensal nasal S. aureus between day 7, 6 weeks and 3 months in women exposed to azithromycin vs. placebo and only at 6 weeks in infants exposed to azithromycin vs. placebo. These differences between the azithromycin and placebo groups were no longer detected at 6 and 12 months post-partum in the women and after 6 weeks through 12 months in the infants.
-
----
-### [16] Effectiveness of interventions to increase vaccine uptake: component network meta-analysis.
-**Author**: Davies Sarah R et al. | **Journal**: BMJ (Clinical research ed.) (2026/Apr)
-**PMID**: 41985976 | https://pubmed.ncbi.nlm.nih.gov/41985976/
-
-OBJECTIVES: To identify the effective components of interventions to increase vaccine uptake and to explore variations in effectiveness by population group and in relation to the covid-19 pandemic.
-DESIGN: Component network meta-analysis.
-SETTING: Systematic review of randomised controlled trials in high and upper middle income countries.
-PARTICIPANTS: 237 studies with 570 intervention arms and 4 361 717 participants.
-INTERVENTIONS: Any intervention targeting vaccine recipients or their caregivers aiming to increase demand for, or access to, vaccinations on the UK immunisation schedule. Key content and delivery features of interventions were identified using a bespoke coding framework co-developed with stakeholders.
-MAIN OUTCOME MEASURES: The outcome of interest was vaccine uptake. Bayesian component level meta-regression estimated relative effects of intervention components as ratios of odds ratios with 95% credible intervals (CrIs).
-RESULTS: Of the included studies, 110 were at low risk of bias, 96 had some concerns, and 31 were at high risk. 40% (n=1 744 686) of the participants were male. For children, there was evidence of beneficial effects for payments to cover costs (ratio of odds ratios 3.01, 95% CrI 1.49 to 6.06) and decision aids (2.73, 1.14 to 7.06), and some evidence for extended opportunities (1.37, 0.98 to 1.95) and social factors (1.27, 0.99 to 1.65). For adolescents and young adults, there were beneficial effects for personal delivery formats (2.13, 1.09 to 4.40), delivery by community members alongside healthcare professionals (6.42, 1.94 to 25.62), and social factors (2.62, 1.45 to 5.04), and negative effects for decision aids (0.43, 0.18 to 0.98) and human versus non-human interaction (0.47, 0.21 to 1.02). For adults, beneficial effects were shown for human interaction (1.86, 1.42 to 2.45), extended opportunities (1.63, 1.35 to 2.00), help with appointment scheduling (1.38, 1.06 to 1.78), payments to cover costs (1.47, 1.03 to 2.16), and motivational interviewing (1.79, 1.21 to 2.64), and there was some evidence for financial incentives (1.15, 0.99 to 1.35) and information on vaccine safety and/or efficacy (1.15, 0.99 to 1.32). For adults, evidence also showed a negative effect of non-human interaction versus no interaction (0.72, 0.57 to 0.92). Subgroup analyses showed variation for underserved populations and in relation to the covid-19 pandemic (before 2020 and 2020 onwards).
-CONCLUSION: Overall, extended opportunities, appointment scheduling help, financial incentives, payments to cover costs, and motivational interviewing were effective content components of interventions to increase vaccine uptake. Effective delivery components overall were human interaction and delivery by community members alongside healthcare professionals. However, effective components varied by age group, for underserved populations, and in analyses investigating the impact of the covid-19 pandemic. These findings have important implications for designing, optimising, and implementing targeted interventions, highlighting which components are effective across different populations and contexts. Consideration of the economic data on interventions should further support resource informed decision making.
-
----
-### [17] Cross-protection against highly pathogenic avian influenza H5N1 virus from seasonal influenza vaccines: a systematic review and meta-analysis of ferret studies.
-**Author**: Tseng IShin et al. | **Journal**: Emerging microbes & infections (2026/Dec)
-**PMID**: 41985094 | https://pubmed.ncbi.nlm.nih.gov/41985094/
-
-The recent surge in spillover events of highly pathogenic avian influenza A(H5N1) clade 2.3.4.4b to humans and mammals in North America has raised urgent pandemic concerns. Human H5N1 vaccines are unavailable in most countries. We synthesized data from ferret challenge trials to evaluate whether widely available seasonal influenza vaccines confer cross-protection against lethal H5N1 infection. We systematically searched PubMed, Embase, and Web of Science for ferret studies of lethal H5N1 challenge published up to 5 July 2025 (PROSPERO #CRD42024520346). Random-effects meta-analyses were conducted to compare vaccine efficacy (VE) of seasonal influenza vaccines and H5N1 vaccines against H5N1-related mortality. Seroprotection was defined as a neutralizing antibody titre of ≥1:40. We identified 35 studies (157 trials). Seasonal influenza vaccines without N1 did not confer significant cross-protection (five trials; VE 14.8%, 95% CI -3.6 to 30.0). In contrast, VE was 73% for N1-containing seasonal influenza vaccines (19 trials; 95% CI 54-84) and 77% for H5N1 vaccines overall (133 trials; 95% CI 72-82) (p = 0.52). The VE of N1-containing seasonal influenza vaccines was modestly lower than that of H5N1 vaccines with seroprotection (88%; 66 trials; 95% CI 84-91; p = 0.009), but comparable to H5N1 vaccines that did not achieve seroprotection (63%; 67 trials; 95% CI 52-71; p = 0.29). The VE of seasonal influenza vaccines against H5N1 was robust across sensitivity analyses, with no evidence of publication bias (p = 0.99). Seasonal influenza vaccines significantly reduce H5N1-associated mortality in ferret trials, suggesting the cross-protection potential of currently available vaccines. Human studies are warranted.
-
----
-### [18] 7-days versus 14-days antibiotic therapy in uncomplicated culture proven neonatal sepsis: a randomized control assessor-blinded trial.
-**Author**: Jain Ayushie et al. | **Journal**: European journal of pediatrics (2026/Apr)
-**PMID**: 41984236 | https://pubmed.ncbi.nlm.nih.gov/41984236/
-
-UNLABELLED: The trial aimed to establish the non-inferiority of a 7-day antibiotic therapy for uncomplicated neonatal sepsis when compared to the standard 14-day therapy. This study was a parallel-group, randomized non-inferiority assessor-blinded trial conducted in a tertiary Neonatal Intensive Care Unit in Central India. Neonates weighing ≥ 1000 g with suspected sepsis were screened and those meeting criteria were enrolled. Exclusions included babies with CNS (central nervous system) infections, septic arthritis, and life-threatening congenital malformations. Participants were observed for 7 days on antibiotics and re-evaluated; those with positive blood cultures were then randomized to receive either 7 or 14 days of antibiotics. The primary outcome was the relapse of sepsis, and a sample size of 70 in each arm was calculated based on a non-inferiority margin. Follow-ups were conducted for 48 h post-antibiotic treatment and weekly for 35 days to monitor any recurrence of illness. During the study, 917 babies with suspected sepsis were admitted, of which 256 had culture-positive sepsis. After excluding those with meningitis, staphylococcus, and fungal infections, 140 babies showed improvement at day 5 and were randomized into two groups: one receiving antibiotics for 7 days and the other for 14 days, each consisting of 70 babies. Klebsiella pneumoniae was the prevalent organism. The 7-day group had a shorter hospital stay (p < 0.05) and less respiratory support (p < 0.05). Outcomes revealed a low incidence of probable relapse in both groups, with no fatalities or definitive relapses recorded.
-CONCLUSIONS: A 7-day antibiotic regimen for uncomplicated neonatal sepsis is not inferior to a 14-day regimen.
-WHAT IS KNOWN: • Unregulated use of antibiotics can lead to a myriad of problems, especially in neonates. • There is some evidence that uncomplicated neonatal sepsis can be treated with short-course antibiotics.
-WHAT IS NEW: • Data is lacking-especially from Central India. • This trial checks if it is possible to reduce the duration of antibiotic therapy in uncomplicated neonatal sepsis.
-
----
-### [19] Epidemiological Changes in Mycoplasma pneumoniae Infections in Children and Adolescents Before and After COVID-19: A Systematic Review and Meta-Analysis.
-**Author**: Gou Hao et al. | **Journal**: Reviews in medical virology (2026/May)
-**PMID**: 41981982 | https://pubmed.ncbi.nlm.nih.gov/41981982/
-
-Mycoplasma pneumoniae (M. pneumoniae) is a major cause of respiratory tract infections in children and adolescents, yet its epidemiological burden before, during, and after the COVID-19 pandemic remains unclear. This meta-analysis, which searched Web of Science, Embase, PubMed, and Cochrane Library for reports published up to December 25, 2025, aimed to evaluate trends in the prevalence of M. pneumoniae infections across these three periods to guide clinical practice and public health responses. A total of 70 studies were included, and methodological quality was assessed using the Joanna Briggs Institute criteria. The pooled prevalence of M. pneumoniae infections before, during, and after COVID-19 was calculated in R 4.5.0, with Freeman-Tukey double arcsine transformation for extreme proportions. The prevalence of M. pneumoniae infections before COVID-19, during COVID-19, and after COVID-19 was 21.72% (95% CI: 17.09, 26.73), 10.73% (95% CI: 7.57, 14.35), and 28.64% (95% CI: 22.74, 34.93), respectively. Age-stratified analysis revealed the highest prevalence consistently in children > 6 years (pre-pandemic: 46.35%; during-pandemic: 27.32%; post-pandemic: 41.36%) and the lowest in infants < 1 year (8.21%, 4.87%, and 7.81%, respectively). Seasonally, pre-pandemic prevalence peaked in summer (33.34%) and autumn (31.00%). During the pandemic, overall rates declined but remained highest in autumn (15.51%). Post-pandemic, prevalence rebounded broadly, peaking in autumn (37.97%). In conclusion, this study summarises M. pneumoniae trends in children and adolescents before and after COVID-19, indicating a delayed resurgence following the pandemic, and highlights the need for further research to explain these patterns and improve future pandemic preparedness.
-
----
-### [20] Effect of time-of-day vaccination on the antibody response to mRNA and protein COVID-19 vaccine in adults.
+### [2] Effect of time-of-day vaccination on the antibody response to mRNA and protein COVID-19 vaccine in adults.
 **Author**: Higgins Rachel Ann et al. | **Journal**: Vaccine (2026/May)
 **PMID**: 41967187 | https://pubmed.ncbi.nlm.nih.gov/41967187/
 
 Time-of-day vaccination has been suggested as a feasible method to boost COVID-19 vaccine immunogenicity particularly in high-risk groups. However, several studies report inconsistent findings. We explored if time-of-day vaccination influences antibody responses to a fourth dose of mRNA (Moderna bivalent vaccine; mRNA-1273.214/mRNA-1273.222) or protein (Novavax; NVX-CoV-2373) COVID-19 vaccine as part of a randomised controlled trial (RCT) in Melbourne, Australia. Furthermore, we assessed if time-of-day vaccination effects differed by vaccine type or sex. At day 28 post-vaccination, antibody responses to all SARS-CoV-2 variants tested were higher for morning compared to afternoon vaccination in the Moderna group. Males in the Moderna group responded with higher antibodies to all SARS-CoV-2 variants tested after morning vaccination while responses in females were unaffected by time-of-day vaccination. Time-of-day vaccination had no effect on the response to Novavax, regardless of sex. Larger randomised trials are needed to confirm these findings to optimise vaccine timing strategies.
 
 ---
-### [21] Efficacy, immunogenicity, and safety of a cell culture-derived quadrivalent influenza vaccine compared with a non-influenza vaccine in infants and children across five influenza seasons: a phase 3, multinational, observer-blind, randomised controlled trial.
-**Author**: Põder Airi et al. | **Journal**: The Lancet. Child & adolescent health (2026/May)
-**PMID**: 41962984 | https://pubmed.ncbi.nlm.nih.gov/41962984/
+### [3] The Effect of a 5-Day Course of Azithromycin on Streptococcus Pneumoniae Carriage and Antimicrobial Resistance Among Kenyan Children Discharged From Hospital.
+**Author**: Libby Tanya E et al. | **Journal**: The Journal of infectious diseases (2026/May)
+**PMID**: 41542944 | https://pubmed.ncbi.nlm.nih.gov/41542944/
 
-BACKGROUND: The burden of influenza is high in children younger than 5 years, and vaccination is an effective strategy to reduce disease. We aimed to evaluate the efficacy and immunogenicity of a cell culture-derived quadrivalent inactivated influenza vaccine (QIVc), as well as its safety and tolerability, in infants and young children.
-METHODS: This phase 3, multinational, observer-blind, randomised controlled trial was conducted at 75 sites across 15 countries. Enrolled infants and children aged 6-47 months were randomly assigned (1:1) to receive QIVc containing 15 μg haemagglutinin from the A/H1N1, A/H3N2, B/Yamagata, and B/Victoria strains or comparator MenC containing 10 μg of meningococcal group C polysaccharide conjugated to tetanus toxoid. Randomisation was done centrally by an interactive response technology system. Study staff administering vaccine were unmasked because the vaccines differed in physical appearance, whereas study participants, their parents or legally authorised representatives, and the study personnel responsible for efficacy, safety, and immunogenicity assessments were masked to the group assignment. QIVc and MenC groups followed the same vaccination schedule. Participants with an influenza vaccination history received one dose of QIVc or MenC on day 1. Participants in the QIVc group with no influenza vaccination history received a second QIVc dose on day 29 whereas participants in the MenC group with no influenza vaccination history received a placebo vaccine (saline) on day 29. To monitor for protocol-defined influenza-like illness and safety, participants were followed up via weekly telephone calls or scheduled clinic visits for at least 180 days after last vaccination. The primary efficacy endpoint was absolute vaccine efficacy against first-occurrence influenza more than 14 days after the last vaccination and until the end of the influenza season. Absolute vaccine efficacy was defined as the relative reduction in influenza infection rate in the QIVc group relative to the MenC group and based on first-occurrence RT-PCR-confirmed or culture-confirmed influenza antigenically similar to seasonal vaccine strain. Time-to-event methodology based on a proportional hazard model was used for efficacy analyses that included all participants who received at least one dose of study vaccine. The primary objective of efficacy was demonstrated if the lower limit of the two-sided (interim analysis-adjusted) 97·5% CI of vaccine efficacy was greater than 0%. Safety was evaluated in all participants randomly assigned and vaccinated and who provided at least one post-vaccination safety observation. Safety endpoints included the percentage of participants with solicited local and systemic AEs. The study is registered at ClinicalTrials.gov (NCT03932682) and EudraCT (2018-001857-29), and the study is complete.
-FINDINGS: Between May 13, 2019, and June 2, 2023, 5723 infants and children (2751 [48·1%] female; 2972 [51·9%] male; mean age 25·9 months [SD 11·9]) were randomly assigned to the QIVc group (n=2860) and MenC group (n=2863). 26 participants did not receive any vaccine, and six participants withdrew before the start of the surveillance period. First occurrence of RT-PCR-confirmed influenza occurred in 104 (3·6%) of 2856 participants in the QIVc group and 173 (6·1%) of 2835 participants in the MenC group; absolute vaccine efficacy was 41·3% (97·98% CI 21·6-56·0). First occurrence of culture-confirmed antigenically similar influenza occurred in 44 (1·5%) of 2856 participants in the QIVc group and 82 (2·9%) of 2835 participants in the MenC group; absolute vaccine efficacy was 46·9% (97·5% CI 19·2-65·1). No serious adverse events were deemed related to QIVc, and one serious adverse event of community-acquired pneumonia was deemed possibly related to the MenC vaccine by the investigator. Most solicited adverse reactions were mild or moderate in severity. Three deaths were reported during the study, none of which were deemed related to study vaccines.
-INTERPRETATION: The primary objective of efficacy was demonstrated for both first-occurrence RT-PCR-confirmed and first-occurrence culture-confirmed, antigenically similar influenza following an influenza-like illness more than 14 days after last vaccination. QIVc thus provided protection against influenza and had a clinically acceptable safety profile, supporting the benefit of QIVc in this paediatric population.
-FUNDING: Seqirus UK.
-
----
-### [22] Indian Academy of Pediatrics (IAP) Advisory Committee on Vaccines and Immunization Practices (ACVIP): Recommended Immunization Schedule (2025) and Update on Immunization for Children Aged 0 Through 18 Years.
-**Author**: Shastri Digant D et al. | **Journal**: Indian pediatrics (2026/May)
-**PMID**: 41954836 | https://pubmed.ncbi.nlm.nih.gov/41954836/
-
-JUSTIFICATION: Recent advancements in vaccinology and the introduction of new vaccines warrant a revision of the existing immunization guidelines.
-OBJECTIVES: To review and revise the IAP recommendations (2023) on immunization of children aged 0 to 18 years and issue recommendations on existing and new vaccines.
-PROCESS: The Advisory Committee on Vaccines and Immunization Practices (ACVIP) of the Indian Academy of Pediatrics (IAP) discussed the updates and drafted evidence-based consensus recommendations after several rounds of meetings convened both in-person and virtually. The contents were finalized during the meeting held at the IAP Office, Navi Mumbai, on November 23, 2025.
-RECOMMENDATIONS: The major changes include recommendation of replacing the quadrivalent (A/H1N1, A/H3N2, B/Victoria, B/Yamagata) influenza vaccines with trivalent (A/H1N1, A/H3N2, B/Victoria) influenza vaccines. The use of nirsevimab for respiratory syncytial virus is recommended for high-risk cases, after consultation with the parents. Immunocompetent girls aged 9 to 15 years may receive a single dose of the human papilloma virus (HPV) vaccine. A 5-dose intramuscular rabies vaccination schedule administered on days 0, 3, 7, 14, and 28 is recommended for post-exposure prophylaxis (PEP), along with rabies immunoglobulin (RIG) or rabies monoclonal antibody (RMAb) based on the category of exposure.
+BACKGROUND: Mass azithromycin distribution reduces child mortality in some settings, potentially through reductions in nasopharyngeal carriage of Streptococcus pneumoniae, but has been associated with increased antimicrobial resistance. Individual-level data are lacking on the impact of azithromycin on antimicrobial resistance over time.
+METHODS: We analyzed data from a double-blind, randomized placebo-controlled trial (ClinicalTrials.gov; NCT02414399) which followed 1398 hospitalized Kenyan children to evaluate the impact of a 5-day course of oral azithromycin at discharge from hospital on pneumococcal carriage and the proportion of isolates (among a random sample) resistant to azithromycin. Randomization to azithromycin or placebo (1:1) was stratified by enrollment county (Kisii or Homa Bay). Using generalized estimating equations, we calculated prevalence ratios (PRs) and 95% CIs for the intervention, adjusting for enrollment site.
+RESULTS: Overall, 1253/1398 (89.6%) enrolled children received antibiotics during their hospitalization. Pneumococcal carriage at discharge was similar among children randomized to the azithromycin group (158/702 [22.5%]) compared with the placebo group (171/696 [24.6%]; P = .4) and did not differ at month 3 (65.6% versus 67.0%; PR: 0.98 [0.90, 1.06]) or month 6 (66.7% versus 66.5%; PR: 1.00 [0.92, 1.08]). At discharge, 15.7% of isolates were resistant to azithromycin and there was no difference between azithromycin-treated and placebo groups at month 3 (35/266 [13.2%] versus 32/256 [12.5%]; PR: 1.06 [0.86, 1.66]) or month 6 (41/245 [16.7%] versus 43/243 [17.6%]; PR: 1.01 [0.69, 1.49]).
+CONCLUSIONS: Azithromycin treatment did not effect pneumococcal carriage or antimicrobial resistance 3- or 6-months post-randomization. High inpatient antibiotic use in this recently discharged population may have reduced any further impact of azithromycin.
 
 ---
-### [23] Rhabdomyosarcoma of the temporal bone in children - a systematic review.
-**Author**: Gierlotka Agata et al. | **Journal**: International journal of pediatric otorhinolaryngology (2026/May)
-**PMID**: 41946032 | https://pubmed.ncbi.nlm.nih.gov/41946032/
-
-BACKGROUND: Rhabdomyosarcoma of the temporal bone and middle ear is a rare but aggressive pediatric malignancy that often mimics chronic otitis media, resulting in delayed diagnosis and advanced disease at presentation.
-OBJECTIVE: To summarize the epidemiology, clinical presentation, imaging characteristics, staging, management strategies, and outcomes of pediatric temporal bone rhabdomyosarcoma.
-METHODS: A review was conducted using Embase (Ovid), MEDLINE (PubMed), Cochrane Library, and ScienceDirect databases. Articles published between 2000 and 2025 were screened. Inclusion criteria comprised histopathologically confirmed rhabdomyosarcoma involving the temporal bone or middle ear in patients aged 0-18 years, with documented imaging and clinical data.
-RESULTS: Thirty-five studies, including 68 pediatric patients, were analyzed. The most common presenting symptoms were persistent otorrhea (73%), otalgia (42%), hearing loss, and aural polyps. Facial nerve palsy occurred in 69% of cases. Imaging demonstrated an osteolytic soft-tissue mass involving the middle ear and mastoid, often with skull base or intracranial extension. Chemotherapy combined with radiotherapy was the standard treatment approach.
-CONCLUSION: Temporal bone rhabdomyosarcoma in children should be considered in the differential diagnosis of persistent otologic symptoms, particularly when associated with facial nerve palsy or a poor response to standard therapy. Early imaging and biopsy are essential for early diagnosis and improved outcomes.
-
----
-### [24] Paternal vaccine hesitancy and its impact on childhood immunization coverage in Saudi Arabia: A systematic review.
-**Author**: Alanazi Yousef Abud et al. | **Journal**: Journal of infection and public health (2026/May)
-**PMID**: 41935439 | https://pubmed.ncbi.nlm.nih.gov/41935439/
-
-Vaccine hesitancy remains a challenge to achieving optimal childhood immunization coverage. This systematic review examined parental vaccine hesitancy in Saudi Arabia, with emphasis on paternal determinants and their association with vaccination uptake. Following PRISMA 2020 guidelines, databases were searched between January 2000 and January 2025. Hesitancy toward routine childhood vaccines was generally low (3%-20%), whereas hesitancy toward newer or non-mandatory vaccines, including COVID-19, influenza, and HPV, exceeded 50% in some settings. Studies reporting father-specific data indicated higher hesitancy among fathers, particularly regarding safety, novelty, and possible long-term effects. Common determinants included safety concerns, misinformation, social media influence, and low confidence in vaccine effectiveness. Hesitancy was associated with delayed schedules, incomplete immunization, and reduced uptake of optional vaccines. Vaccine hesitancy in Saudi Arabia appears vaccine-specific and influenced by sociocultural factors, with paternal attitudes playing a measurable role in immunization decision-making.
-
----
-### [25] Effectiveness of Telehealth-Based Speech Therapy in Improving Articulation, Resonance, Nasal Emission, and Intelligibility in Children With Repaired Cleft lip and Palate: A Systematic Review.
-**Author**: Sharma Vidhi et al. | **Journal**: International journal of language & communication disorders (2026)
-**PMID**: 41923421 | https://pubmed.ncbi.nlm.nih.gov/41923421/
-
-BACKGROUND: Cleft lip and palate (CLP) is a prevalent congenital anomaly associated with persistent speech disorders, including articulation errors, resonance imbalances, and nasal emission, despite surgical repair. Access to specialized speech-language pathologist care remains limited, particularly in remote and underserved regions. Telehealth has emerged as a scalable solution, yet systematic evidence on its efficacy, technological reliability, and implementation in CLP-specific speech therapy is lacking.
-AIMS: This systematic review critically evaluates the effectiveness of telehealth-based speech interventions in improving articulation, resonance, nasal emission, and intelligibility in children with repaired CLP, while examining technological modalities, feasibility, data security, and barriers to adoption.
-METHODS: Following PRISMA 2020 guidelines, we searched PubMed, Scopus, Web of Science, Cochrane Library, and Google Scholar from inception to 30 December 2025 using structured Boolean terms combining CLP, speech therapy, and telepractice. Interventional studies in English reporting paediatric speech outcomes were included. Data were extracted on study design, sample characteristics, intervention delivery, outcomes, and risk of bias using RoB 2.0, ROBINS-I, and SCED tools. Narrative synthesis was applied due to heterogeneity.
-MAIN CONTRIBUTION: Eleven studies demonstrated consistent improvements in articulation accuracy (e.g., PCC increases of 15%-30%), resonance, and intelligibility via synchronous (Zoom, WhatsApp) and hybrid platforms. AI-assisted feedback and acoustic optimization enhanced fidelity. High caregiver satisfaction, reduced costs, and continuity during restrictions were key resilience factors. Connectivity issues, audio distortion, and small sample sizes were common limitations. Risk of bias was moderate overall.
-CONCLUSIONS: Telehealth is a clinically effective, feasible, and secure modality for CLP speech rehabilitation, comparable to in-person therapy when technologically optimized. Hybrid models and caregiver integration are recommended. Large-scale RCTs are needed to confirm long-term efficacy and cost-effectiveness WHAT THIS PAPER ADDS: What is already known on this subject Telehealth has been used for speech therapy in various paediatric populations, with evidence of comparable outcomes to in-person care during the COVID-19 pandemic. However, prior to this review, no systematic synthesis existed specifically evaluating telepractice for speech disorders in children with repaired cleft lip and/or palate, despite their unique needs for targeted articulation and resonance intervention. What this paper adds to existing knowledge This review demonstrates that telehealth-based speech therapy consistently improves articulation accuracy, resonance, and intelligibility in children with repaired cleft lip and palate, with gains equivalent to in-person therapy across synchronous and hybrid models. It identifies platform-specific acoustic fidelity (e.g., Google Meet, optimized hardware) and caregiver engagement as critical enablers, while highlighting connectivity and audio distortion as manageable barriers. These findings establish telepractice as a viable, scalable standard for cleft-related speech rehabilitation. What are the potential or actual clinical implications of this study? Clinicians can confidently implement hybrid telepractice models with encrypted platforms and external microphones to maintain treatment continuity, especially in underserved areas. Routine integration of caregiver training and AI-assisted feedback is recommended to enhance adherence and outcomes. Health systems should prioritize low-bandwidth protocols and standardized acoustic calibration to ensure equitable access.
-
----
-### [26] Global, regional, and national burden of meningitis, its risk factors, and aetiologies, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.
-**Author**: ? et al. | **Journal**: The Lancet. Neurology (2026/May)
-**PMID**: 41911930 | https://pubmed.ncbi.nlm.nih.gov/41911930/
-
-BACKGROUND: Meningitis remains the leading infectious cause of neurological disabilities globally, disproportionately affecting children younger than 5 years and populations in the African meningitis belt. Whereas previous global estimates focused on ten pathogen categories, this study presents the most comprehensive analysis to date, assessing the meningitis burden attributable to 17 causative pathogens based on the Global Burden of Diseases, Injuries, and Risk Factors Study (GBD) 2023 framework.
-METHODS: GBD is a systematic, scientific effort aimed at quantifying the comparative magnitude of health loss caused by diseases, injuries, and risk factors across age groups, sexes, and geographical locations over time. We estimated meningitis mortality using the Cause of Death Ensemble model (CODEm) and morbidity using DisMod-MR 2.1, incorporating data from vital registration, verbal autopsy, surveillance, hospital data, and systematic reviews. Aetiology-specific estimates were generated with pathogen-linked case-fatality ratios and splined binomial regression models. Risk factor attribution was based on established risk-outcome pairs and population attributable fractions.
-FINDINGS: In 2023, there were 259 000 (95% uncertainty interval 202 000-335 000) global deaths and 2·54 million (2·20-2·93) incident cases of meningitis. Children younger than 5 years accounted for more than a third of deaths (86 600 [53 300-149 000]). Streptococcus pneumoniae, Neisseria meningitidis, non-polio enteroviruses, and other viruses were the leading causes of death, while non-polio enteroviruses caused the most cases. The four WHO-defined preventable meningitis pathogens of interest (S pneumoniae, N meningitidis, Haemophilus influenzae, and Group B streptococcus) contributed to 98 700 deaths (77 000-127 000) and 594 000 cases (514 000-686 000). Low birthweight, short gestation, and household air pollution were the top risk factors for meningitis-related mortality.
-INTERPRETATION: Although mortality and incidence have declined significantly since 1990, progress is insufficient to meet WHO 2030 targets. Despite marked progress in reducing bacterial meningitis via global vaccination campaigns, a substantial meningitis burden persists, attributable both to common pathogens such as S pneumoniae and N meningitidis and to emerging non-bacterial pathogens such as Candida spp and drug-resistant fungi. Achieving WHO goals will require sustained investment in surveillance, vaccination, maternal screening, and health-system strengthening, especially in high-burden settings.
-FUNDING: Gates Foundation, Wellcome Trust, and UK Department of Health and Social Care.
-
----
-### [27] Immunogenicity and safety of MF59-adjuvanted H5N1 pandemic influenza vaccine in healthy infants and children: a phase 2 randomized, observer-blind, multicenter study.
-**Author**: Põder Airi et al. | **Journal**: Vaccine (2026/Apr)
-**PMID**: 41895156 | https://pubmed.ncbi.nlm.nih.gov/41895156/
-
-Zoonotic influenza pandemics can cause substantial morbidity and mortality, especially in children. The present study evaluated the immunogenicity and safety of six formulations of an MF59-adjuvanted H5N1 vaccine (aH5N1). In this phase 2, dose-ranging study, children aged 6 months to <9 years were stratified by age and randomized to one of six aH5N1 formulations containing 1.875, 3.75, or 7.5 μg HA combined with 0.25 mL MF59 (standard adjuvant content) or 0.125 mL MF59 (half adjuvant content). Vaccines were administered twice, 3 weeks apart. Immunogenicity was evaluated using hemagglutination inhibition (HI) and microneutralization (MN) assays. A total of 420 children from Europe and Asia participated in the study. Three weeks after the second vaccination, HI geometric mean ratios ranged from 13.8 to 25.0 and HI titers ≥1:40 ranged from 74.6% to 90.0% of subjects across vaccine groups. MN titers ≥1:40 were observed in all subjects, and MN titers ≥1:160 in 89.6% to 97.1% of subjects across vaccine groups. At 3 weeks and at 6 months after the second vaccination, higher titers were consistently observed in groups receiving standard MF59 content. Adverse event rates were similar across vaccine groups regardless of antigen or adjuvant content, and no safety signals were observed. Higher MF59 content was associated with a greater magnitude and persistence of immune responses but was not associated with increased reactogenicity. These data confirm that aH5N1 containing 7.5 μg HA plus 0.25 mL MF59 is immunogenic with an acceptable safety and reactogenicity profile in children.
-
----
-### [28] Effects of Neuromuscular Electrical Stimulation on Swallowing Function for Post-Stroke Dysphagia: A Systematic Review and Meta-Analysis.
-**Author**: Xu Juan et al. | **Journal**: International journal of language & communication disorders (2026)
-**PMID**: 41888972 | https://pubmed.ncbi.nlm.nih.gov/41888972/
-
-OBJECTIVE: In this study, our aim is to compare the effects of neuromuscular electrical stimulation (NMES) and other treatment methods for treating dysphagia after a stroke.
-METHODS: A systematic search in Web of Science, PubMed, Scopus, Clinical Trials was conducted from their earliest record to 5 September 2024. The study included a randomised controlled trial design. The experimental group received NMES alone, while the control group received NMES and/or conventional dysphagia therapy. The Physiotherapy Evidence Database rating scale was utilized to evaluate the quality of the studies that were included in this analysis. We obtained the post-treatment mean differences (MD) and standard deviations (SD) for the selected outcomes recorded in both the experimental and control groups to facilitate subsequent meta-analyses.
-RESULTS: A total of sixteen studies were identified. In the comparison of swallow treatment that incorporates NMES versus swallow treatment that does not include neuromuscular electrical stimulation, the meta-analysis found a significant MD of -7.23, with a 95% confidence interval (CI) ranging from -13.62 to -0.84 (P = 0.03) in the functional dysphagia scale (FDS). In Functional Oral Intake Scale, the MD = 0.66, 95%CI ranging from -0.31 to 1.62 (P = 0.18). In Penetration Aspiration Scale, the MD = -1.05, 95%CI ranging from -1.50 to -0.60 (P < 0.00001).
-CONCLUSION: The application of NMES in swallow therapy appears to demonstrate greater efficacy in the management of post-stroke dysphagia compared to approaches that do not incorporate such stimulation, albeit the existing body of research is limited. Furthermore, the evidence currently available is inadequate to substantiate the assertion that NMES, when employed in isolation, surpasses swallow therapy.
-WHAT THIS PAPER ADDS: What is already known on this subject Post-stroke dysphagia is a common and debilitating condition, significantly impairing the quality of life for stroke survivors. Neuromuscular electrical stimulation (NMES) has gained attention as an adjunct to conventional dysphagia therapy, with prior studies indicating potential benefits. However, the clinical efficacy of NMES for improving swallowing functions specifically in stroke-induced dysphagia remains unclear due to inconsistent findings and methodological limitations in existing research. What this study adds to existing knowledge This study provides a comprehensive meta-analysis, confirming that NMES significantly improves functional swallowing outcomes, particularly on the Functional Oral Intake Scale (FOIS). Additionally, it highlights that NMES may enhance neuroplasticity and muscle coordination when used alongside traditional therapies. The study identifies specific benefits, such as improved oral intake and reduced aspiration risks, offering new evidence to guide therapeutic approaches. What are the potential or actual clinical implications of this work? NMES can be an effective component of dysphagia rehabilitation protocols, improving swallowing safety and efficiency for post-stroke patients. The findings support the integration of NMES into clinical practice, emphasizing its role in enhancing swallowing function and reducing the risks of complications like aspiration pneumonia. Future research should focus on optimising stimulation parameters and evaluating long-term effects to maximize patient outcomes.
-
----
-### [29] Endotracheal surfactant for infants with life-threatening bronchiolitis (BESS): a randomised, blinded, sham-controlled, phase 2 trial.
-**Author**: Semple Malcolm G et al. | **Journal**: The Lancet. Respiratory medicine (2026/May)
-**PMID**: 41875912 | https://pubmed.ncbi.nlm.nih.gov/41875912/
-
-BACKGROUND: Bronchiolitis is a common viral respiratory disease of infants, with severity ranging from mild symptoms, such as coryza and feeding difficulties, to fulminant respiratory failure. Endotracheal administration of exogenous surfactant has been shown in small studies to improve gas exchange in critically ill infants with bronchiolitis. We aimed to investigate the safety and efficacy of endotracheal poractant alfa for treating critical bronchiolitis compared with a sham procedure.
-METHODS: BESS was a multicentre, blinded, randomised, sham-controlled, parallel-group, phase 2, superiority trial with exploratory mechanism evaluation studies. The trial was done in 15 paediatric intensive care units in the devolved National Health Service (NHS) of England, Scotland, and Northern Ireland. Preterm and term-born infants younger than 26 weeks of gestationally corrected age admitted to hospitals with bronchiolitis requiring invasive mechanical ventilation (IMV) were randomly assigned (1:1) to receive up to three doses of endotracheal poractant alfa (Curosurf) or sham intervention, allocated through web-based randomisation. Randomisation was stratified by duration of IMV before randomisation (<24 h and ≥24 h) and by site. The infants and their families, clinical care staff, Liverpool Clinical Trial Centre staff, and members of the site research teams were masked to treatment allocations. Endotracheal poractant alfa was given initially at 200 mg/kg, followed by 100 mg/kg at 12 h intervals. The primary endpoint was the duration of IMV from randomisation to final successful extubation. All infants who were successfully extubated were included in the intention-to-treat analysis. Safety outcomes were analysed in infants who had received at least one trial intervention. This trial was registered prospectively with ISRCTN (ISRCTN11746266) and EudraCT (2018-001169-18), and is completed.
-FINDINGS: The trial was completed after six recruitment seasons. Between Dec 18, 2018, to March 31, 2024, 1009 infants were assessed for eligibility, 232 of whom were randomly assigned to receive either endotracheal poractant alfa (n=115) or a sham intervention (n=117). 130 (56%) of 232 infants were male and 102 (44%) were female. Three infants were withdrawn from the study. None were lost to follow-up. The median duration of IMV was 64·9 h (IQR 43·2-92·1) in the endotracheal poractant alfa group and 62·0 h (39·3-95·1) in the sham intervention group. The geometric mean ratio was 1·02 (95% CI 0·84-1·24; t-test p=0·86). No clinically significant safety issues were associated with endotracheal poractant alfa and there were no deaths.
-INTERPRETATION: Poractant alfa, administered endotracheally to infants with early critical bronchiolitis, although safe, did not reduce the duration of IMV compared with the sham intervention. Therefore, our findings suggest that it should not be used for this indication at this dose and administration method.
-FUNDING: UK National Institute for Health and Care Research, UK Research and Innovation Medical Research Council, Chief Scientist Office Scotland, Health and Social Care Research and Development Division Northern Ireland, and Chiesi Farmaceutici, Italy.
-
----
-### [30] Relative efficacy, safety, and immunogenicity analysis of two doses versus one dose of recombinant coronavirus vaccine (adenovirus type 5 vector) in adults 18 years and older: an international, multicentre, randomized, double blinded phase 3 trial.
-**Author**: Rooyakkers Adora et al. | **Journal**: Vaccine (2026/Apr)
-**PMID**: 41863180 | https://pubmed.ncbi.nlm.nih.gov/41863180/
-
-BACKGROUND: An international, double-blind, placebo-controlled phase 3 study in healthy adults previously showed one dose of the Ad5-nCoV vaccine was efficacious (57.5%) against symptomatic COVID-19 infection, especially severe disease, was safe, and immunogenic (ClinicalTrials.gov, NCT04526990). The current study extends that report to assess relative vaccine efficacy (rVE), safety, and immunogenicity of two doses versus one dose of Ad5-nCoV vaccine.
-METHODS: Participants from the prior (part-one) study who continued to the follow-up study (part-two) herein were provided an Ad5-nCoV dose at study sites in Argentina, Chile, Mexico, Pakistan, and Russia, starting June 8th 2021 (median = 6 months post-first-injection). This injection led to two doses and one dose received by the prior vaccine and placebo recipients, respectively. Participants were monitored for COVID-19 disease, safety, and antibody responses up to 24 weeks post-vaccination.
-RESULTS: The endpoint of 83 cases occurred August 9, 2021, triggering primary efficacy analysis which evaluated rVE ≥10% (two versus one dose) of Ad5-nCoV in preventing PCR-confirmed COVID-19 disease at least 28 days post-vaccination. rVE (34.12%) was non-significant (95% CI -1.31 to 57.15, n = 8266), indicating similar efficacy of dose groups. End-of-study analysis (cutoff January 28, 2022) showed rVE was 6.3% (95% CI -8.7 to 19.2, starting 28 days), and for severe disease was 79.5% (95% CI 28.1% to 94.2%, starting 28 days). Serious adverse events (SAEs, ≥grade 4) were more frequent after one dose (12 [0.12%]) than two doses (4 [0.04%], p = 0.043), as were medically attended adverse events (9 [0.090%] and 1 [0.009%], p = 0.009). One SAE (myocarditis) was related to the study-product. Spike-RBD IgG and neutralization antibody titers were elevated for two-dose versus one-dose recipients (1.7- and 4.4-fold) at 28-days post-vaccination. Antibody responses waned by 24 weeks.
-CONCLUSION: Two doses and one dose of Ad5-nCoV vaccine are efficacious, safe and immunogenic. A second dose improves protection against severe disease and immunogenicity.
-TRIAL REGISTRATION: The trial is registered at ClinicalTrials.gov (NCT04526990).
-
----
-### [31] Association Between Maternal Infection During Pregnancy and the Risk of Childhood Acute Lymphoblastic Leukemia in Offspring: A Systematic Review and Meta-Analysis.
-**Author**: Chen Xi et al. | **Journal**: Pediatric blood & cancer (2026/May)
-**PMID**: 41834321 | https://pubmed.ncbi.nlm.nih.gov/41834321/
-
-OBJECTIVE: To systematically evaluate the association between maternal infection during pregnancy and the risk of childhood acute lymphoblastic leukemia (ALL) in offspring through a comprehensive meta-analysis of adjusted and pathogen-specific data.
-METHODS: We systematically searched PubMed, Web of Science, Embase, and Cochrane Library from inception to January 7, 2025. Two reviewers performed data extraction and assessed study quality using the Joanna Briggs Institute (JBI) checklist. Pooled odds ratios (ORs) were calculated for any infection, specific pathogen infection, and anatomical sites of infection. Sensitivity analyses and the GRADE approach were employed to evaluate the robustness and certainty of the evidence.
-RESULTS: A total of 26 studies were included. The pooled adjusted OR for "any infection" was 1.18 (95% confidence interval [CI]: 1.03-1.35) after sensitivity analysis. Influenza demonstrated the most robust association (adjusted odds ratio [OR] 1.90; 95% CI: 1.27-2.83). In contrast, Epstein-Barr virus (adjusted OR 1.45; 95% CI: 1.00-2.09) and respiratory tract infections (adjusted OR 1.18; 95% CI: 1.00-1.39) showed only borderline significance. Analysis by anatomical site revealed a significant but likely artifactual signal for combined genitourinary infections (OR 1.44; 95% CI: 1.03-2.01), which was not replicated in more populous, tract-specific syntheses.
-CONCLUSIONS: Maternal infections during pregnancy, particularly influenza, are associated with an increased risk of childhood ALL, and borderline associations were observed for EBV and respiratory infections. The observed risk from genitourinary infections may have come from confounding. These findings emphasize the clinical importance of influenza prevention and the timely management of prenatal infections.
-
----
-### [32] Influence of Singular First Foods on the Infant Gut Microbiome: A Randomized Controlled Trial.
-**Author**: Ferro Lynn E et al. | **Journal**: The Journal of nutrition (2026/May)
-**PMID**: 41825736 | https://pubmed.ncbi.nlm.nih.gov/41825736/
-
-BACKGROUND: The gastrointestinal microbiome, integral to immune function, inflammation, and metabolism, becomes less malleable with age, making early dietary exposures, particularly first complementary foods (CFs), important in its development.
-OBJECTIVES: This study aimed to evaluate the effect of different first CFs on the infant gut microbiome in a pilot, randomized, controlled trial.
-METHODS: Vaginally delivered, exclusively human milk (HM) fed infants (n = 43) with no prior CF exposure were randomized to 1 of 4 groups (oatmeal cereal, beef, carrot, or prune) (NCT05492253). Infants were fed the randomized food (with HM) for 1 wk (phase 1), followed by oatmeal cereal for another week (phase 2). Daily stool samples were collected and sequenced (full-length V1-V9 16S rRNA gene amplicons).
-RESULTS: In phase 1, oatmeal cereal increased observed amplicon sequence variants compared with beef (P = 0.024). Prune increased Bacteroides ovatus (P = 0.001) and Klebsiella pneumoniae (P = 0.011), whereas oatmeal cereal increased Enterococcus spp. (P = 0.030) relative to beef. In phase 2, oatmeal cereal following beef resulted in increased Shannon diversity (P = 0.0497) and following prune increased Faith's phylogenetic diversity (P = 0.015). Unweighted UniFrac distances differed when oatmeal cereal followed prune compared with continuing oatmeal cereal (P = 0.042). Veillonella infantium increased with continued oatmeal cereal consumption compared with beef (P = 0.002) or carrot (P = 0.002), followed by oatmeal cereal. After prune, oatmeal cereal increased Lactobacillus rhamnosus and Enterococcus faecalis, and decreased K. pneumoniae and Clostridium neonatale (all P < 0.05).
-CONCLUSIONS: Beef as a CF is nutritionally desirable as it contains important minerals lacking in HM, yet resulted in a less diverse microbial profile. Because fruit and vegetables yielded comparable diversity to cereals, future research should investigate whether introducing meat alongside fruits and vegetables offers a balanced alternative to early reliance on cereals and further evaluate how first foods influence taxa abundance at the genus and species level and the resulting immune-related and metabolic pathways. This trial was registered in clincaltrials.gov as NCT05492253.
-
----
-### [33] Prevalence of post-COVID symptoms across variants of concern and follow-up periods: A systematic review and meta-analysis.
-**Author**: Lugtu Eiron John et al. | **Journal**: International journal of infectious diseases : IJID : official publication of the International Society for Infectious Diseases (2026/May)
-**PMID**: 41819160 | https://pubmed.ncbi.nlm.nih.gov/41819160/
-
-OBJECTIVES: The interaction between SARS-CoV-2 variants of concern (VoC) and post-COVID symptom duration remains unexplored. This is the first study to evaluate post-COVID prevalence stratified by VoC and follow-up periods.
-METHODS: Six databases were searched (12/2019-12/2024) for studies of adults with laboratory-confirmed SARS-CoV-2 and symptoms lasting ≥3 months. Data were stratified by VoC (Alpha through Omicron) and follow-up (<6 vs ≥6 months) to estimate pooled prevalence using random-effects models.
-RESULTS: Pooled prevalence across 35 studies (n = 159,000) was 28.5% (95% CI: 21.6-36.0), higher in pre-Omicron (35.5%) than Omicron (22.8%) eras (P = 0.04). Symptoms persisted beyond 6 months in 29.9% of cases. Fatigue was the most prevalent symptom across all VoCs and follow-ups followed by brain fog, dyspnea, and sleep impairment. Pre-Omicron variants were linked to dyspnea and anosmia, while Omicron was associated with brain fog and paresthesia. Most symptoms showed no significant reduction beyond 6 months. Sleep problems were higher in early pre-Omicron cohorts but improved over time; conversely, palpitations and ocular manifestations increased in later pre-Omicron follow-ups.
-CONCLUSION: Post-COVID condition remains a burden despite vaccination. Distinct symptomatology patterns across VoC and timelines highlight the need for tailored management strategies to mitigate long-term global impacts.
-
----
-### [34] Management of long COVID-19 in children and adolescents: from diagnosis to therapeutically approaches.
-**Author**: Caliman-Sturdza Olga Adriana et al. | **Journal**: Annals of medicine (2026/Dec)
-**PMID**: 41814585 | https://pubmed.ncbi.nlm.nih.gov/41814585/
-
-INTRODUCTION: Long Coronavirus disease 2019 (COVID-19), also termed post-acute sequelae of severe acute respiratory syndrome coronavirus 2 infection (PASC), has emerged as a complex multisystem condition in children and adolescents worldwide. It can occur even after mild or asymptomatic acute infections, with symptoms that may persist, fluctuate, or relapse over time. This review aims to comprehensively explore the characteristic manifestations, management and current therapeutic possibilities of pediatric Long COVID-19 (L-C19).
-METHODS: A systematic search was conducted in multiple databases such as PubMed, Scopus, Web of Science, and Google Scholar, for literature published between January 2020 and October 2025.
-RESULTS: Diagnosing pediatric L-C19 is challenging due to the heterogeneity of symptoms and lack of specific diagnostic biomarkers. Most young patients experience gradual improvement over months, but a significant subset remains symptomatic for >1 year with substantial disability, underscoring the need for timely diagnosis and intervention. Current clinical consensus emphasizes an individualized, multidisciplinary management approach focused on symptom relief and functional rehabilitation. No definitive cure exists for L-C19; thus, care is tailored to each patient's predominant issues. Therapeutic strategies combine supportive self-management (e.g. energy conservation and pacing) with both non-pharmacological and pharmacological interventions. Multimodal rehabilitation programs - including graded exercise therapy and cognitive behavioral therapy - have shown promise in improving fatigue, mental health, and overall quality of life. Targeted treatments for specific sequelae (such as autonomic dysfunction or chronic pain) are applied on a case-by-case basis, although high-quality evidence for medications remains limited. Globally, interdisciplinary collaborations have been established to provide harmonized diagnostic and treatment protocols, and major research initiatives are underway to evaluate novel therapies and include children in L-C19 clinical trials.
-CONCLUSION: Ongoing international efforts to develop standardized diagnostic tools, outcome measures, and evidence-based interventions are crucial to optimize care and long-term outcomes for children and adolescents affected by L-C19.
-
----
-### [35] Exploring the experiences and perceptions of co-administration of routine vaccines in adults: Findings from an embedded qualitative study with participants and research delivery staff in the ZosterFluCov randomized controlled trial.
-**Author**: Williams Victoria et al. | **Journal**: Human vaccines & immunotherapeutics (2026/Dec)
-**PMID**: 41734040 | https://pubmed.ncbi.nlm.nih.gov/41734040/
-
-Vaccine co-administration is common in childhood immunization programmes and helps facilitate the uptake of and adherence to the immunization schedule. There are limited data on the role of co-administration in the adult vaccine schedule and attitudes toward this approach. We aimed to understand the experiences and perceptions of vaccine co-administration of trial participants and study staff members. The study was an integrated qualitative study that formed part of ZosterFluCov, a randomized controlled trial which assessed the immunogenicity of seasonal influenza and COVID-19 vaccines when given with a recombinant zoster vaccine (shingles vaccine). Using semi-structured interviews, we explored the perceptions and experiences of participants and study staff members around vaccine co-administration, and concerns and information needs. We interviewed 20 trial participants and 24 research delivery staff. We found that the co-administration of routine vaccines was highly acceptable amongst the trial participants. Staff viewed vaccine co-administration as within their scope of practice and many had experience of it prior to the trial. Participants from both groups felt that vaccine co-administration could be a time efficient way to administer vaccines, for both health professionals and patients. Vaccine co-administration was regarded as an acceptable method of delivery with the potential to save resources whilst simplifying the process for individuals. The importance of personal preference regarding the number of vaccines was emphasized, whilst staff noted that practical adjustments would be needed for real world delivery. Vaccination co-administration offers the opportunity to optimize vaccine coverage amongst those eligible for routine and seasonal vaccinations.
-
----
-### [36] ESCMID clinical guidelines on the evaluation and management of a reported antibiotic allergy.
-**Author**: Joean Oana et al. | **Journal**: Clinical microbiology and infection : the official publication of the European Society of Clinical Microbiology and Infectious Diseases (2026/May)
-**PMID**: 41707748 | https://pubmed.ncbi.nlm.nih.gov/41707748/
-
-SCOPE: Antibiotic allergies remain one of the most frequently documented drug allergies in clinical records. It is well established that only a small proportion-estimated at 5% to 10%-represents true immune-mediated hypersensitivity. Mislabelling can contribute to the development of antimicrobial resistance via prescription of suboptimal antimicrobial therapy (i.e. unnecessary avoidance of first-line antibiotics), increased use of broad-spectrum agents, and complications such as drug toxicity. This guideline, developed by the European Society of Clinical Microbiology and Infectious Diseases, provides evidence-based recommendations for the clinical evaluation and management of patients with reported antibiotic allergies. It is aimed at nonallergist clinicians and seeks to harmonize practice across healthcare settings in Europe and beyond.
-METHODS: The guideline was developed by a multidisciplinary panel of 16 experts in infectious diseases, allergy, pharmacy, paediatrics and clinical microbiology, following a modified GRADE-ADOLOPMENT process. Systematic searches were conducted in PubMed and the Trip Database (2015-2023) to identify relevant guidelines, complemented by an additional systematic search for primary studies (2021-2024). The included guidelines were assessed using the AGREE Global Rating Scale. Four existing guidelines, from 2022 and 2023, met methodological quality criteria and were included. Key questions were identified and prioritized by the panel, and relevant data were extracted using piloted Evidence to Decision framework sheets. The panel developed recommendations by adopting, adapting or formulating new recommendations, through an iterative work-up and consensus process. All recommendations were finalized through panel discussion and formal voting, with consensus defined as agreement by ≥ 80% of members.
-RECOMMENDATIONS: The guideline recommends a structured clinical assessment to evaluate a reported antibiotic allergy, taking into consideration the characteristics of the index reaction. Where the clinical history suggests a very low or low likelihood of true allergy, direct delabelling or performing a controlled drug challenge test is appropriate. By supporting allergy evaluation and prudent prescribing practices, the recommendations aim to improve individual patient outcomes and reinforce antimicrobial stewardship goals.
-
----
-### [37] Global, regional and national patterns in ROP research up to the pre-COVID-19 era: A systematic bibliometric review between 1950 to 2020.
-**Author**: Palacio Varona Juliana et al. | **Journal**: European journal of ophthalmology (2026/May)
-**PMID**: 41604358 | https://pubmed.ncbi.nlm.nih.gov/41604358/
-
-Retinopathy of prematurity (ROP) is a leading cause of preventable childhood blindness, predominantly affecting preterm infants. Global disparities in neonatal care and research capacity influence the volume and visibility of scientific production devoted to ROP across regions. This systematic bibliometric review aimed to characterize global, regional, and national patterns of ROP research published between 1950 and 2020, including temporal trends, geographic distribution, thematic focus, and citation impact. A systematic search of PubMed, Scopus, Web of Science, and SciELO identified 4,932 eligible articles. Most publications originated from the Region of the Americas (Pan American Health Organization, PAHO; 44.2%), the European Region (EURO; 28.0%), and the Western Pacific Region (WPRO; 16.0%). High-income countries accounted for 73.4% of the total output, whereas lower-middle- and low-income countries were markedly underrepresented. The most frequent research themes were risk/protective factors (25.0%) and treatment and outcomes (23.5%), while studies addressing surveillance and public health policies were scarce (6.3%). Scientific output increased markedly after the 1980s, with particularly rapid growth in recent decades in the Western Pacific and South-East Asia Regions. Citation analysis revealed substantial regional inequalities, with publications from high-income regions accounting for the majority of global citations and higher per-article impact. Overall, ROP research remains highly concentrated in high-income settings, reflecting persistent global disparities in scientific production and visibility. Strengthening research capacity and output in underrepresented regions is essential to promote more equitable evidence generation and to support informed decision-making in global eye health.
-
----
-### [38] Clinical effectiveness and impact of 13-valent pneumococcal conjugate vaccines in preventing invasive pneumococcal disease among children with risk conditions: A systematic literature review.
-**Author**: Hayford Kyla et al. | **Journal**: Human vaccines & immunotherapeutics (2026/Dec)
-**PMID**: 41560367 | https://pubmed.ncbi.nlm.nih.gov/41560367/
-
-Few studies have reported vaccine effectiveness (VE) and population-level impact of the 13-valent pneumococcal conjugate vaccination (PCV13) among children with immunocompromising or chronic medical conditions putting them at risk of developing pneumococcal disease. The objective of this systematic literature review (SLR) was to summarize the efficacy, effectiveness, and impact of PCV13 in the prevention of invasive pneumococcal disease (IPD) and all-cause pneumonia among children with risk conditions. Peer-reviewed studies published between January 2000 and July 2024 were identified in MEDLINE, Embase, CENTRAL, and CDSR. Of 3008 records identified, full texts of 189 studies (6.3%) were reviewed and 11 (0.4%) studies evaluating PCV13 alone or in combination with PCV7 were included. Vaccine effectiveness or impact of PCV13 was reported in children with sickle cell disease (SCD; n = 2), HIV (n = 4), post-transplant conditions (n = 1), cancer (n = 1), combined immunocompromising conditions (n = 1), combined chronic medical and immunocompromising conditions (n = 1), and congenital heart disease (n = 1). In children with immunocompromising conditions, VE against PCV13-type IPD ranged between 83.8% and 91%. Compared to the pre-PCV era, the introduction of PCV13 in pediatric immunization programs was associated with a relative reduction of IPD due to any serotype between 86% and 100% in children SCD and 55% to 80% in children with cancer. PCV impact, as measured by incidence rate reductions, among children with HIV varied by comparison period, age group and outcome and ranged from 9.1% to 81% for any IPD. These findings support PCV vaccination for children with risk conditions although evidence was limited and heterogeneous.
-
----
-### [39] Global molecular epidemiology of Mycoplasma pneumoniae and its association with macrolide resistance and disease severity: a systematic review and meta-analysis.
-**Author**: Zhu Xinyue et al. | **Journal**: Emerging microbes & infections (2026/Dec)
-**PMID**: 41544187 | https://pubmed.ncbi.nlm.nih.gov/41544187/
-
-The global molecular epidemiology of Mycoplasma pneumoniae (MP) and its associations with macrolide resistance and disease severity remain unclear. Studies reporting MP genotypes distribution by P1 typing, multiple locus variable number tandem repeat analysis (MLVA), or multilocus sequence typing analysis (MLST) among MP-infected patients were included. Data quality was assessed using the Joanna Briggs Institute tool and the Newcastle-Ottawa scale. Random-effects models were used to calculate pooled proportions of each MP genotype, with subgroup analyses by geographic region, age group, sex, time period, specimen type, and test assay. The proportions of macrolide-resistant MP and severe MP pneumonia cases were also evaluated. A total of 116 studies met the criteria. Predominant genotypes were P1-1 by P1 typing and 4572 by MLVA in the Western Pacific region and European region, and ST3 by MLST in the Western Pacific region. The proportions of P1-1 and 4572 were higher in the Western Pacific region than in other regions, and in children than in adults, whereas P1-2 and 3562 were opposite. Genotype dominance cycled between P1-1 and P1-2, and between 4572 and 3662. Macrolide resistance rates were highest in P1-1, 4572, and ST3 genotypes. Based on the currently available data, no association was detected between P1 genotypes and disease severity, although the limited sample size restricted the statistical power of this analysis. This comprehensive analysis elucidates the global molecular epidemiology of MP, highlights its clinical implications, and underscores the need for ongoing molecular surveillance to guide management and control strategies.
-
----
-### [40] Epidemiological characteristics of rotavirus gastroenteritis in China: A systematic review of studies published from 2014 to 2023.
-**Author**: Wu Yanwei et al. | **Journal**: Human vaccines & immunotherapeutics (2026/Dec)
-**PMID**: 41504330 | https://pubmed.ncbi.nlm.nih.gov/41504330/
-
-Rotavirus gastroenteritis (RVGE) is a major public health concern, particularly amongst children below five-years-old. In China, the disease burden remains high owing to the absence of a comprehensive detection system. This study analyses RVGE incidence, population distribution, and pathogenic genotypes reported in studies published between 2014 and 2023, providing evidence to support vaccine and drug development. A systematic review of studies on RVGE published between 2014 and 2023 was conducted. Articles were screened using a standardized algorithm. A random-effects model was employed to analyze rotavirus positive rates and genotype variation trends. Among 320 studies, the highest rotavirus positive rates in children (≤5 y) were in Jilin (48.59%), Shanxi (40.89%), and Xinjiang (37.65%), while the highest number of infections were in Yunnan (89,128), Jiangsu (82,869), and Guangxi (36,524). Among adults (≥15 y), Shaanxi (27.73%), Inner Mongolia (22.95%), and Heilongjiang (17.82%) had the highest rotavirus positive rates, whereas Shanghai (3,170), Beijing (2,019), and Fujian (1,044) recorded the most infections. The rotavirus positive rates were 26.46% and 32.85% for children visiting the outpatient/emergency department and the inpatient department, respectively. Before 2018, the dominant G genotypes were G9 (children: 42.89%; adults: 56.13%) and G3 (children: 20.17%; adults: 14.71%), whereas the dominant P genotype was P[8] (children: 76.30%; adults: 80.78%). After 2018, G9 (children: 66.73%; adults: 67.43%) and P[8] (children: 88.62%; adults: 88.57%) became predominant in both groups, with an increase in G8 (before: 0.89%; after: 5.08%) among children. RVGE remains a significant burden in China, with evolving distributions. Continuous surveillance is essential to guide vaccine strain selection and development.
-
----
-### [41] Systemic Corticosteroids in Children With Pneumonia: Α Systematic Review and Meta-analysis.
-**Author**: Geropeppa Maria et al. | **Journal**: The Pediatric infectious disease journal (2026/Jun)
-**PMID**: 41403017 | https://pubmed.ncbi.nlm.nih.gov/41403017/
-
-BACKGROUND: Corticosteroids are effective adjunct treatment for certain infectious diseases. However, their role in children with community-acquired pneumonia (CAP) remains unclear. We aim to assess the efficacy and safety of adjunct corticosteroid therapy in pediatric CAP.
-MATERIALS AND METHODS: A systematic literature search was conducted on MEDLINE to retrieve studies assessing systemic corticosteroid therapy, given alongside antimicrobial regimens, in pediatric CAP (last search date December 31, 2024). Literature screening, quality assessment, and data extraction were conducted by 2 independent reviewers. Heterogeneity and publication bias were detected by I2 and Egger's tests. The data were pooled using the random-effects model for the conduction of meta-analysis.
-RESULTS: Twenty-two articles (N = 75.353) of 3799 screened studies were included in the systematic review; 7 of 22 studies providing data on length of hospital stay (LOS) and duration of fever for corticosteroid-treated versus control patients were included in the meta-analysis. Significant heterogeneity was observed regarding the regimen, dosage and duration of corticosteroid therapy. Regarding meta-analysis, LOS and time to defervescence were significantly decreased in patients receiving corticosteroids compared to controls in randomized clinical trials (Cohen's d value = -0.59, 95% confidence interval: -0.96 to -0.23, P = 0.001 , I2 = 52.6%; Cohen's d value =-0.54, 95% confidence interval: -0.83 to -0.26, P < 0.001 , I2 = 26.1%, respectively), but not in observational studies. Corticosteroid administration was associated with a shorter radiologic and clinical recovery time especially for Mycoplasma pneumoniae and viral pneumonia with wheezing. Corticosteroid-related adverse events were infrequent and manageable.
-CONCLUSIONS: Our analysis suggests a possible advantage for corticosteroid therapy in selected pediatric patients with CAP. Further studies are needed to clarify how, when, and where corticosteroids should be added to the treatment plan of pediatric CAP.
-
----
-### [42] Immunogenicity and safety of a group B Streptococcus vaccine (GBS-AlpN) in pregnant women and their infants: a phase 2, multicentre, observer-blind, randomised, placebo-controlled study.
-**Author**: Heath Paul T et al. | **Journal**: The Lancet. Infectious diseases (2026/May)
-**PMID**: 41386262 | https://pubmed.ncbi.nlm.nih.gov/41386262/
-
-BACKGROUND: GBS-AlpN is a novel group B streptococcus maternal vaccine, based on the N-terminal domains of the alpha-like proteins AlphaCN, RibN, Alp1N, and Alp2/3N, which are responsible for 99% of invasive group B streptococcus strains. We aimed to assess the safety and immunogenicity of GBS-AlpN in pregnant women receiving vaccination or placebo.
-METHODS: This phase 2, observer-blind, randomised, placebo-controlled study was done in ten health-care facilities in South Africa, Denmark, and the UK. Eligible participants were healthy women carrying a singleton pregnancy without detectable congenital abnormalities at 21 weeks and 0 days to 23 weeks and 6 days of gestation at first vaccination. Participants were randomly assigned (2:2:2:2:1) via an electronic case report to receive two GBS-AlpN vaccine doses and one placebo dose (groups 1, 2, and 3), one GBS-AlpN vaccine dose and two placebo doses (group 4), or no vaccine doses and three placebo doses (group 5). Randomisation was stratified by site and within site using blocks of nine. Participants received 0·5 mL GBS-AlpN or placebo (saline) intramuscularly at 22 (placebo), 26 (vaccine), and 30 (vaccine) weeks' gestational age (group 1); 22 (vaccine), 26 (vaccine), and 30 (placebo) weeks' gestational age (group 2); 22 (vaccine), 26 (placebo), and 30 (vaccine) weeks' gestational age (group 3); 22 (placebo), 26 (vaccine), and 30 (placebo) weeks' gestational age (group 4); and 22 (placebo), 26 (placebo), and 30 (placebo) weeks' gestational age (group 5). All individuals (study staff and participants) were masked to group allocation, except those administering vaccines. The primary endpoint was the concentration of AlphaCN, RibN, Alp1N, and Alp2/3N protein-specific IgG in umbilical cord blood or blood obtained from infants within 72 h of birth and the proportion of infants with AlpN-specific IgG concentrations above a range of prespecified descriptive thresholds (0·1, 0·2, 0·5, 1·0, 2·0, 4·0, and 8·0 μg/mL). Safety endpoints were evaluated in participants who received at least one vaccination, and their infants. Immunogenicity analyses included participants in the safety population who provided an evaluable sample following first GBS-AlpN or placebo. This trial is registered with ClinicalTrials.gov, NCT05154578, and is closed to enrolment.
-FINDINGS: Between Feb 17 and Nov 22, 2022, 400 participants were screened for eligibility, of whom 272 were randomly assigned (group 1 n=61; group 2 n=60; group 3 n=59; group 4 n=62; group 5 n=30). 269 participants received at least one dose of GBS-AlpN or placebo (group 1 n=61; group 2 n=59; group 3 n=59; group 4 n=60; and group 5 n=30). The highest serum IgG concentrations at birth were observed in group 1, followed by the other two dose vaccine groups (groups 2 and 3). Lower IgG concentrations were observed in group 4, although these were at least 21-fold higher than in group 5 (placebo only). The proportion of infants with IgG concentrations greater than 1·0 μg/mL in umbilical cord blood ranged from 33 (87%) of 38 to 34 (94%) of 36 in group 1, 30 (67%) of 45 to 43 (91%) of 47 in group 2, 37 (82%) of 45 to 38 (93%) of 41 in group 3, and 22 (61%) of 36 to 28 (80%) of 35 in group 4. No infants in the placebo group had antibody concentrations greater than 1·0 μg/mL for any of the AlpN proteins. Treatment-emergent adverse events were reported by 56 (92%) of 61 maternal participants in group 1, 54 (92%) of 59 in group 2, 57 (97%) of 59 in group 3, 56 (93%) of 60 in group 4, and 26 (87%) of 30 in group 5; most events were mild-moderate. Nine infant fatalities were reported; none were considered related to vaccination.
-INTERPRETATION: GBS-AlpN had an acceptable safety profile and was immunogenic when administered to pregnant women, supporting its progression to phase 3 trials, with a flexible two-dose schedule allowing dosing intervals of 4-8 weeks.
-FUNDING: MinervaX.
-
----
-### [43] The silent spread of resistance: Global patterns of CRE colonization across health care and community settings.
-**Author**: Zhong Ying et al. | **Journal**: American journal of infection control (2026/Jun)
-**PMID**: 41371301 | https://pubmed.ncbi.nlm.nih.gov/41371301/
-
-BACKGROUND: To estimate the global prevalence of carbapenem-resistant Enterobacteriaceae (CRE) colonization and identify study-level factors associated with variation in reported rates.
-METHODS: We conducted a systematic review and meta-analysis. Data were extracted on study characteristics, diagnostic methods, CRE species, carbapenemase genes, and risk factor analysis. Pooled prevalence was calculated using a random-effects model. Subgroup analyses and meta-regression were conducted to explore sources of heterogeneity.
-RESULTS: Across 89 studies (116,743 participants), pooled CRE colonization prevalence was 14% (95% CI: 11%-18%; I² = 99.96%), peaking at 33% in 2017 and declining to 8% in 2023. Vietnam had the highest (43%), US had the lowest (5%). Hospital-based (18%) and universal screening (20%) yielded higher prevalence than community-based (3%) and targeted/systematic sampling (3%-15%). Hospital setting was the only significant predictor of higher prevalence (coefficient = 0.14; P = .009). Klebsiella pneumoniae (52.8%) and Escherichia coli (44.9%) were the most common organisms; NDM (45.6%) and OXA-type (36.3%) were predominant carbapenemase genes.
-CONCLUSIONS: CRE colonization remains a global concern, particularly in health care settings with screening protocols. Geographic and methodological variability underscores the need for standardized surveillance and targeted control strategies. Molecular surveillance is essential to monitor resistance determinants evolution.
-
----
-### [44] ESR Essentials: renal imaging in children-practice recommendations by the European Society of Paediatric Radiology.
-**Author**: Woźniak Magdalena Maria et al. | **Journal**: European radiology (2026/May)
-**PMID**: 41348211 | https://pubmed.ncbi.nlm.nih.gov/41348211/
-
-Renal pathology is common in childhood. Imaging plays a critical role in the diagnosis of kidney diseases and encompasses a range of modalities. Advanced imaging is typically performed in specialised paediatric hospitals, where experienced paediatric radiologists are familiar with the relevant techniques, protocols, indications, and limitations. However, children are often first admitted to general hospitals, where radiologists may have more limited experience in paediatric imaging. Renal cysts in children differ from those in adults, most commonly presenting as cystic kidney diseases. In the majority of cases, ultrasound (US) is the sole diagnostic modality required. Imaging is not necessary for the diagnosis of urinary tract infection (UTI), but it is essential for detecting underlying anomalies and potential complications. Urinary tract dilatation is a common finding in children; however, only up to 30% of cases require further evaluation to diagnose urinary tract obstruction or vesicourinary reflux. Urolithiasis is relatively uncommon in children and is primarily diagnosed with US, although computed tomography (CT) may occasionally be necessary. Solid renal lesions identified on US should be further evaluated in highly specialised paediatric centres. Mild to moderate renal trauma can be diagnosed and monitored using US, whereas CT remains the modality of choice for assessing severe trauma. CLINICAL RELEVANCE STATEMENT: This review provides general radiologists with a comprehensive overview of the normal renal appearance across paediatric age groups, including normal variants and imaging pathways for the most common renal pathologies in children. It also highlights scenarios where referral to specialised paediatric centres is necessary. KEY POINTS: US is the first-line imaging modality for diagnosing most renal pathologies in children. MRI is used in a variety of situations (e.g. complex congenital anomalies of the kidney and urinary tract, or focal lesions) when US is not sufficient. CT is reserved for emergencies and in selected cases of urolithiasis. Knowledge of normal renal features, including normal anatomical and morphological variants across different age groups, is essential.
-
----
-### [45] Impact of COVID-19 on Parental Barriers to Childhood Vaccination: A Systematic Review.
-**Author**: Regmi Sanjaya et al. | **Journal**: Journal of pediatric health care : official publication of National Association of Pediatric Nurse Associates & Practitioners (2026)
-**PMID**: 41335077 | https://pubmed.ncbi.nlm.nih.gov/41335077/
-
-INTRODUCTION: This systematic review examined how the COVID-19 pandemic influenced parental barriers to routine childhood vaccination in the United States, with attention to changes in vaccine access, concern, and perceived importance.
-METHODS: Guided by Preferred Reporting Items for Systematic Reviews and Meta-Analyses, we searched PubMed, CINAHL, PsycINFO, Scopus, and Web of Science for United States-based studies published January 2015 through May 2024. Eligible studies were conducted before March 2020 (prepandemic) or after (pandemic era). Two reviewers independently screened, extracted data, and assessed quality using the Mixed Methods Appraisal Tool.
-RESULTS: Of 4,813 records screened, 21 met inclusion criteria (14 prepandemic, seven pandemic era). Access barriers, especially among low-income, immigrant, and underrepresented racial/ethnic groups, persisted across timeframes. Pandemic-era studies reported heightened parental anxiety, misinformation, and reduced prioritization of vaccination.
-CONCLUSIONS: The pandemic intensified existing barriers. Public health strategies should address misinformation, rebuild trust, and reduce structural inequities to improve postpandemic childhood vaccination coverage.
-
----
-### [46] Pneumonia in Ghana: prevalence, mortality and antimicrobial resistance-a systematic review and meta-analysis.
+### [4] Pneumonia in Ghana: prevalence, mortality and antimicrobial resistance-a systematic review and meta-analysis.
 **Author**: Kungu Frederick et al. | **Journal**: International health (2026/May)
 **PMID**: 41220370 | https://pubmed.ncbi.nlm.nih.gov/41220370/
 
 Pneumonia is a major cause of morbidity and mortality in Ghana, especially among children <5 y of age and the elderly. However, comprehensive data on its prevalence and distribution remain limited. This systematic review addresses this gap by analysing the prevalence, regional variations, risk factors, antimicrobial resistance and mortality rates of pneumonia in Ghana. We searched PubMed, ScienceDirect, Web of Science and African Journals Online databases, including 21 studies with a total of 124 582 participants. A random-effects meta-analysis estimated pooled prevalence and subgroup differences based on age, region and participant type. Heterogeneity was assessed using the I2 test and meta-regression, with sensitivity analysis also conducted. Study quality was evaluated using standardized Joana Briggs Institute checklists for prevalence studies. The pooled prevalence of pneumonia in Ghana was 22.01%, with significant regional variations. The highest prevalence was observed in a study conducted in the Greater Accra and Northern regions (32.31%), while the lowest was in the Upper West (4.83%). The prevalence in children <5 y of age was 17.79%. Hospitalized patients had a higher prevalence (22.14%) than community children (21.49%). Streptococcus pneumoniae was the most common pathogen, with high resistance (>70%) to co-trimoxazole, gentamicin and tetracycline. Key risk factors included indoor air pollution and seasonal changes. The mortality rate for pneumonia was found to be 3.07%. This systematic review highlighted significant regional disparities, pathogen resistance patterns and environmental risk factors that shape the burden of pneumonia in Ghana, providing critical evidence for targeted public health strategies. The findings highlight avenues for future research, including environmental drivers of transmission, focusing on underreported regions and surveillance of antibiotic resistance of pathogens isolated from pneumonia patients.
 
 ---
-### [47] Improved diagnostic management of children with acute infections following the introduction of point-of-care C-reactive protein testing and general practitioner education in Latvia: a post hoc analyses of a randomised controlled intervention study.
-**Author**: Likopa Zane et al. | **Journal**: Scandinavian journal of primary health care (2026/Dec)
-**PMID**: 41162196 | https://pubmed.ncbi.nlm.nih.gov/41162196/
-
-OBJECTIVE: In order to reduce unnecessary antibiotic prescribing, diagnostic processes require improvement for children in primary care.
-DESIGN: Post hoc analyses of randomised controlled intervention study.
-SETTING: Eighty general practitioner (GP) practices throughout Latvia.
-INTERVENTION: In the first study period, one GP group received combined interventions (access to CRP POCT and GP education), while the second GP group continued usual care (control group). In the second study period, the GP groups were switched - previous control group received combined intervention, but previous intervention group re-established usual care, but the long-term education effect was evaluated in this group.
-SUBJECTS: Children with acute infections consulted by a GP.
-MAIN OUTCOME: Impact of combined intervention and long-term education on testing level (CRP, full blood count, Strep A test, influenza test, urinalysis and X-ray) before antibiotic prescribing. Patient- and GPs- related predictors (including practice location and access to laboratory services) of diagnostic testing were also analysed. Secondary outcome was antibiotic prescribing according to the test results.
-RESULTS: Diagnostic testing was significantly increased in the combined intervention group versus the usual care group (aOR 11.1, 95% CI 8.0-15.3); however, it was decreased in the long-term education group (26.4%) (aOR 0.5, 95% CI 0.3-0.8). Rural practices and a longer expected time of laboratory results were associated with a more pronounced increase in diagnostic testing in the combined intervention group (aOR 37.6, 95% CI 17.9-79.0; aOR 23.2, 95% CI 14.1-38.0, respectively). It was found that a low CRP value, negative Strep A test or normal X-ray often did not convince GPs to withhold antibiotics.
-CONCLUSION: The availability of CRP POCT and GP education results in a much higher level of diagnostic testing prior to antibiotic prescribing, especially in rural regions. Further improvements in more rational testing and the interpretation of results to guide appropriate antibiotic prescribing are essential.
-UNLABELLED: Trial registration: ISRCTN registry - ISRCTN34931655.
-
----
 
 ## ped_food_update
-### 小児食物アレルギー — 17件
+### 小児食物アレルギー — 16件
 
 **▼ Coworkへのプロンプト（コピーして貼り付け）:**
 
 > 以下は直近1ヶ月の小児食物アレルギー領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_食物アレルギー_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_食物アレルギー_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -2328,14 +2099,28 @@ UNLABELLED: Trial registration: ISRCTN registry - ISRCTN34931655.
 > Abstract: （英語のアブストラクト全文）
 
 
-### [1] Trace Elements in Allergy: Narrative Review.
+### [1] Precision medicine in eosinophilic esophagitis.
+**Author**: Burk Caitlin M et al. | **Journal**: Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/May)
+**PMID**: 42134747 | https://pubmed.ncbi.nlm.nih.gov/42134747/
+
+Eosinophilic esophagitis (EoE) is a common, chronic, immune-mediated disease of the esophagus, affecting approximately 1 in 700 individuals in the United States. Despite rising prevalence, clinical management remains largely empiric and invasive: diagnosis and monitoring rely on endoscopy with biopsies, and treatment selection is guided by population-level response rates, patient preference, and access rather than individualized disease biology. Patients often experience diagnostic delays, repeated procedures, and cycles of trial-and-error therapy before achieving remission, while prolonged inflammation increases risk of fibrostenotic complications. Recent advances in epidemiology, genetics, molecular profiling, and immunology increasingly support EoE as a heterogeneous disease with distinct biological drivers. Emerging tools-including polygenic risk scores, molecular endotyping frameworks, and minimally invasive biomarkers-may improve risk stratification, reduce reliance on endoscopy, and better align therapy with underlying mechanisms. In this review, we describe the current EoE patient journey and examine opportunities to integrate precision medicine strategies across the disease continuum, from risk identification and diagnosis to treatment selection, food trigger identification, and noninvasive monitoring. We also discuss future directions aimed at defining antigen-specific immune pathways and how these insights may enable next-generation diagnostics, targeted therapies, and disease modification in EoE.
+
+---
+### [2] Epigenetic insights into food allergy: The potential role of DNA methylation in diagnosis and management.
+**Author**: Kim So Lim et al. | **Journal**: The World Allergy Organization journal (2026/May)
+**PMID**: 42112503 | https://pubmed.ncbi.nlm.nih.gov/42112503/
+
+Advances in epigenetics have provided critical insights into mechanisms underlying complex immune-mediated diseases. DNA methylation, a key epigenetic modification found across eukaryotes, serves as a crucial regulator linking genetic predisposition with environmental exposures. This review provides an overview of current methods for detecting 5-methylcytosine and summarizes studies investigating the role of DNA methylation in food allergy. Specifically, studies have examined DNA methylation as a potential biomarker of clinical reactivity, tolerance, and disease severity, and as a regulator of pathways influencing allergic susceptibility. Interpretation across studies remains limited by several factors including methodological variability, small sample sizes, and inconsistent validation. Large-scale, standardized investigations are needed to confirm early findings and facilitate translation into clinical practice.
+
+---
+### [3] Trace Elements in Allergy: Narrative Review.
 **Author**: Ordak Michal et al. | **Journal**: Allergy (2026/May)
 **PMID**: 42083298 | https://pubmed.ncbi.nlm.nih.gov/42083298/
 
 Allergic diseases are increasing worldwide and reflect a complex interplay between genetic susceptibility and environmental exposures. Among environmental determinants, trace elements contribute to epithelial barrier dysfunction, tissue remodeling, redox homeostasis, and immune regulation and may influence the development and severity of allergic diseases. This narrative review summarizes current mechanistic, epidemiological, and clinical evidence on the role of essential and non-essential trace elements in allergy. We discuss essential elements, including iron, zinc, selenium, copper, manganese, iodine, molybdenum, and boron, which support antioxidant defense, epithelial integrity, and immune homeostasis. We also review sensitizing and potentially toxic elements such as nickel, chromium, cobalt, silicon, and fluoride, which may promote allergic sensitization and inflammation through hapten-driven immune responses, oxidative stress, and adjuvant-like effects. Evidence across asthma, allergic rhinitis, atopic dermatitis, and food allergy indicates that trace elements may contribute to the development and heterogeneity of allergic disease. However, reported associations between elemental status and allergic diseases remain heterogeneous across studies. This variability likely reflects both underlying biological differences and methodological heterogeneity, including variation in study design, biological matrices, exposure assessment, and analytical techniques. Better methodological harmonization will be essential to elucidate the roles of trace elements in allergy development and to strengthen future translational and preventive research efforts. At present, available evidence does not support routine assessment of trace element status or generalized supplementation in the prevention or management of allergic diseases, except in cases of documented deficiency or clearly defined clinical indications.
 
 ---
-### [2] Real-life lessons on omalizumab and food allergy: The potential for unexplored outcomes.
+### [4] Real-life lessons on omalizumab and food allergy: The potential for unexplored outcomes.
 **Author**: Lo Scalzo Lucia et al. | **Journal**: The World Allergy Organization journal (2026/May)
 **PMID**: 42079786 | https://pubmed.ncbi.nlm.nih.gov/42079786/
 
@@ -2345,21 +2130,21 @@ DISCUSSION: Real-world data demonstrate that omalizumab can prevent severe react
 CONCLUSIONS: Real-world evidence complements RCTs findings by highlighting the multidimensional benefits of omalizumab in FA, encompassing clinical protection, dietary freedom, and psychosocial well-being as well as dose fine-tuning and off-label scenarios. These data support its broader clinical value and inform future research, dosing strategies, and personalized application in routine care.
 
 ---
-### [3] Prenatal and Early-Life Exposure to Microbiome-Modulating Medications and the Risk of Childhood Food Allergy: A Systematic Review and Meta-Analysis.
+### [5] Prenatal and Early-Life Exposure to Microbiome-Modulating Medications and the Risk of Childhood Food Allergy: A Systematic Review and Meta-Analysis.
 **Author**: Bodó Diána et al. | **Journal**: Journal of clinical medicine (2026/Apr)
 **PMID**: 42074887 | https://pubmed.ncbi.nlm.nih.gov/42074887/
 
 Background/Objectives: Several recent human studies have associated the use of certain medicines, such as antibiotics and antacids, with allergic conditions, potentially through microbiome disruption. In contrast, probiotics which may prevent dysbiosis, could have protective effects. Our meta-analysis aimed to evaluate the impact of these drugs (consumed during pregnancy or early life) on the risk of childhood food allergy, based on the available literature. Methods: Literature searches were conducted in the EMBASE, PubMed, Cochrane, and Web of Science databases using predefined PICO criteria. Overall, our meta-analysis included 25 studies involving 1,662,861 mothers and 5,164,280 children. Results: Using the random-effects model, we found that prenatal and early life antibiotic use (up to 2 years of age) was associated with higher odds of food allergy in childhood (OR: 1.34; 95% CI [1.10, 1.63], OR: 1.53; 95% CI [1.18, 1.98], respectively). Proton pump inhibitors were also associated with a risk of food allergies (OR: 2.65; 95% CI [1.22-5.77]), whereas the impact of H2-receptor antagonists was non-significant (OR: 2.07; 95% CI [0.96-4.45]). Probiotic use during the first two years of life was not associated with decreased risk for food allergy in children (OR: 1.25; 95% CI [0.46, 3.38]). Conclusions: These findings suggest an association between microbiome-disrupting medications during pregnancy and early childhood and an increased risk of childhood food allergy, especially those with a family history of food allergy. However, due to the predominantly observational design of the included studies, causality cannot be established. These results highlight the need for cautious and judicious use of such medications in these populations.
 
 ---
-### [4] Clinical remission in allergy and clinical immunology practice: State of the art and World Allergy Organization (WAO) call to action.
+### [6] Clinical remission in allergy and clinical immunology practice: State of the art and World Allergy Organization (WAO) call to action.
 **Author**: Morais-Almeida Mário et al. | **Journal**: The World Allergy Organization journal (2026/May)
 **PMID**: 42058161 | https://pubmed.ncbi.nlm.nih.gov/42058161/
 
 Recent advances in biological therapies, small molecules and allergen-specific immunotherapy are reshaping the management of immunoallergic diseases, progressively shifting therapeutic goals from short-term disease control toward the possibility of achieving sustained clinical remission. Despite increasing evidence across multiple conditions, a universally accepted and disease-transversal definition of clinical remission (CR) remains lacking. In this review we propose a comprehensive framework for defining clinical remission across a broad spectrum of immune-mediated diseases traditionally managed in Allergy and Clinical Immunology practice, including asthma, allergic rhinitis, chronic rhinosinusitis with nasal polyps, chronic urticaria, atopic dermatitis, mastocytosis, food allergy, and eosinophilic esophagitis. Clinical remission is defined as a sustained state of absence of clinically relevant disease manifestations, independently of underlying biological activity; suppression of inflammatory pathways and normalization of biomarkers define biological remission, which may coexist with, but is not required for, clinical remission. We introduce the 3D-CR model, a pragmatic, disease-adaptable framework integrating 3 complementary domains - clinical, biological, and functional - to characterize remission states as complete, partial, or absent. Building on this model, we propose the Allergic Disease Remission Score (ADReS) as a modular tool designed to support standardized assessment, longitudinal follow-up, and cross-disease comparison in clinical trials and real-world settings. These tools are intended as conceptual and research instruments rather than prescriptive algorithms for individual therapeutic decision-making. Finally, we outline a World Allergy Organization call to action advocating for a harmonized global approach to defining, measuring, and implementing clinical remission as a meaningful treatment target. Establishing standardized remission endpoints has the potential to improve patient outcomes, facilitate precision medicine strategies, enhance comparability across studies, and reduce heterogeneity in clinical research and practice worldwide.
 
 ---
-### [5] Cow's Milk Protein Allergy, a Systematic Review of Clinical Characteristics, Diagnosis, Management, and Economic Impact.
+### [7] Cow's Milk Protein Allergy, a Systematic Review of Clinical Characteristics, Diagnosis, Management, and Economic Impact.
 **Author**: Menco Contreras Fabiola et al. | **Journal**: Diseases (Basel, Switzerland) (2026/Apr)
 **PMID**: 42041638 | https://pubmed.ncbi.nlm.nih.gov/42041638/
 
@@ -2370,21 +2155,14 @@ RESULTS: The reviewed evidence confirms that CMPA is a heterogeneous condition w
 CONCLUSIONS: CMPA requires early recognition, careful clinical evaluation, individualized nutritional management, and improved access to effective and affordable treatment strategies.
 
 ---
-### [6] Closing the Evidence-to-Practice Gap in Early Allergen Introduction: Policy Strategies to Prevent Food Allergy in the United States.
+### [8] Early Allergen Introduction: Policy Strategies to Prevent Food Allergy in the United States.
 **Author**: King Claire et al. | **Journal**: The journal of allergy and clinical immunology. In practice (2026/Apr)
 **PMID**: 41999914 | https://pubmed.ncbi.nlm.nih.gov/41999914/
 
-Food allergies affect millions of children and adults in the United States and globally. Early introduction of allergenic foods, especially peanut and egg, reduces allergy risk, as shown by the Learning Early About Peanut (LEAP), LEAP-On, Enquiring About Tolerance (EAT), and Beating Egg Allergy Trial (BEAT) studies. Despite strong evidence, adherence to early introduction guidelines is low due to changing guidelines, limited clinic time, caregiver concerns, and structural barriers. At the Center for Food Allergy and Asthma Research (CFAAR) annual Food Allergy Summit in July 2025, clinicians, researchers, and advocates discussed strategies to improve implementation. Six policy levers were highlighted: Bright Futures, the U.S. Preventive Services Task Force (USPSTF), insurance coverage, the Special Supplemental Nutrition Program for Women, Infants, and Children (WIC), medical society guideline alignment, and public education campaigns. Across these levers, a three-pronged approach is recommended to increase early introduction of allergens that focuses on (1) standardizing published guidelines, (2) increasing access through insurance, and (3) educating clinicians and caregivers. This strategy could improve guideline adherence and reduce the burden of food allergies.
+Food allergies affect millions of children and adults in the United States and globally. Early introduction of allergenic foods, especially peanut and egg, reduces allergy risk, as shown by the Learning Early About Peanut, LEAP-On, Enquiring About Tolerance, and Beating Egg Allergy Trial studies. Despite strong evidence, adherence to early introduction guidelines is low due to changing guidelines, limited clinic time, caregiver concerns, and structural barriers. At the Center for Food Allergy and Asthma Research annual Food Allergy Summit in July 2025, clinicians, researchers, and advocates discussed strategies to improve implementation. Six policy levers were highlighted: Bright Futures, the U.S. Preventive Services Task Force, insurance coverage, the Special Supplemental Nutrition Program for Women, Infants, and Children, medical society guideline alignment, and public education campaigns. Across these levers, a 3-pronged approach is recommended to increase early introduction of allergens that focuses on (1) standardizing published guidelines, (2) increasing access through insurance, and (3) educating clinicians and caregivers. This strategy could improve guideline adherence and reduce the burden of food allergies.
 
 ---
-### [7] From bench to bedside: advances in standardized oral immunotherapy and early predictors of persistent cow's milk allergy in children.
-**Author**: Sefer Asena Pinar et al. | **Journal**: Allergologia et immunopathologia (2026)
-**PMID**: 41991203 | https://pubmed.ncbi.nlm.nih.gov/41991203/
-
-Immunoglobulin E (IgE)-mediated cow's milk allergy (CMA) remains the most prevalent pediatric food allergy and a major cause of early-life anaphylaxis, with a substantial proportion of children developing persistent disease despite traditional avoidance-based management. Oral immunotherapy (OIT) has emerged as a proactive strategy that modulates the allergic immune response through controlled and sustained allergen exposure, shifting immunity from T-helper (Th) 2-dominant pathways toward a more regulatory and tolerogenic profile. Current evidence from randomized trials and real-world cohorts demonstrates that cow's milk oral immunotherapy (CM-OIT) achieves desensitization in most treated children, reduces accidental reaction risk, and improves quality of life, although sustained unresponsiveness remains variable and protocol-dependent. Marked heterogeneity exists across protocols regarding dosing, antigen formulation, maintenance targets, and escalation speed, reflecting differing therapeutic philosophies rather than standardized practice. Safety concerns, including dose-related reactions and rare cases of eosinophilic esophagitis, underscore the need for careful patient selection, optimization of comorbid atopic diseases, and shared decision-making. Advances in precision immunology, including component-resolved diagnostics, epitope mapping, basophil activation testing, and emerging transcriptomic and microbiome signatures, now enable the earlier identification of children at high risk of persistent CMA who may benefit most from OIT, while low-risk phenotypes can be safely observed. Adjunctive biologic therapy, particularly anti-IgE agents, has improved tolerability and expanded eligibility in high-risk patients. This review synthesizes current evidence on efficacy, safety, biomarkers, protocols, and adjunctive strategies, emphasizing a personalized, risk-adapted approach to CM-OIT and outlining future directions toward standardized formulations, biomarker-guided stratification, and integrated biologic-assisted immunomodulation.
-
----
-### [8] 'What' and 'How' to Measure in Allergy and Clinical Immunology: A Systematic Review of Core Outcome Sets and Outcome Harmonisation Processes.
+### [9] 'What' and 'How' to Measure in Allergy and Clinical Immunology: A Systematic Review of Core Outcome Sets and Outcome Harmonisation Processes.
 **Author**: Demidova Anastasia et al. | **Journal**: Clinical and experimental allergy : journal of the British Society for Allergy and Clinical Immunology (2026/May)
 **PMID**: 41974646 | https://pubmed.ncbi.nlm.nih.gov/41974646/
 
@@ -2394,218 +2172,39 @@ RESULTS: A total of 15,612 records were identified, with 44 studies (representin
 CONCLUSION: This review highlights growing efforts to harmonise outcome assessment in allergy and clinical immunology. Major gaps remain in coverage and methodological rigour. Quality of life and patient-reported symptoms are frequently recommended outcomes, yet definitions and measurement tools are inconsistent. Strengthening methodological consistency and expanding COS development to neglected areas are critical next steps to improve outcome reliability and comparability in the field.
 
 ---
-### [9] Stepwise oral food challenge test.
-**Author**: Yanagida Noriyuki et al. | **Journal**: Current opinion in allergy and clinical immunology (2026/Jun)
-**PMID**: 41967109 | https://pubmed.ncbi.nlm.nih.gov/41967109/
-
-PURPOSE OF REVIEW: The oral food challenge (OFC) remains the cornerstone procedure for diagnosing food allergies and guiding patient management. Recently, stepwise OFC, a new management strategy starting with very-low-dose (VLD) or low-dose OFC, has been reported. This review critically examines the clinical utility and safety profile of stepwise OFC approaches.
-RECENT FINDINGS: The stepwise OFC typically begins with a VLD or low-dose OFC, which is the most critical step in this approach. VLD and low-dose OFCs have been demonstrated to be useful strategies for avoiding complete elimination of causative foods and improving prognosis. Regarding safety considerations, a time interval of 30 min between doses may be insufficient, whereas an interval of at least 1 h is considered appropriate for stepwise OFC.
-SUMMARY: Stepwise OFCs starting with VLD or low-dose appear to be effective approaches. VLD and low-dose OFCs are well tolerated and effective for avoiding complete elimination of allergenic foods. VLD and low-dose OFCs, as part of stepwise OFC, represent useful strategies for improving the prognosis of children with food allergies.
-
----
-### [10] Sexual Dimorphism in Allergic and Mast Cell-Associated Diseases.
-**Author**: Kotha Aditya et al. | **Journal**: Clinical reviews in allergy & immunology (2026/Apr)
-**PMID**: 41963721 | https://pubmed.ncbi.nlm.nih.gov/41963721/
-
-Allergic diseases are common, affecting more than one-third of the global population and varying widely in severity. A consistent theme in asthma, food allergy, atopic dermatitis, and chronic urticaria is a female-dominant prevalence in adulthood. Some of these begin with male predominance in childhood and shift with puberty. A smaller subset of allergic diseases, including eosinophilic esophagitis and vernal keratoconjunctivitis, has a clear male prevalence. In fact, nearly all allergic diseases exhibit sexual dimorphism in either prevalence or severity. These striking disparities are being unraveled to reveal mechanisms that might be clinically targeted. In this review, we discuss the current state of knowledge about sexual dimorphism for these important inflammatory disorders. These insights are foundational for optimizing personalized medicine.
-
----
-### [11] Hereditary Alpha-Tryptasemia (HαT) as a Risk Modifier for Severe Anaphylaxis.
+### [10] Hereditary Alpha-Tryptasemia (HαT) as a Risk Modifier for Severe Anaphylaxis.
 **Author**: Lang Abigail et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
 **PMID**: 41932753 | https://pubmed.ncbi.nlm.nih.gov/41932753/
 
 Hereditary alpha-tryptasemia (HαT) is a common autosomal dominant genetic trait that results from increased copy numbers of the TPSAB1 gene encoding α-tryptase. Studies have shown that increased relative α-tryptase expression can modify mast-cell-mediated reactions and contribute to increased severity of anaphylaxis. HαT is an independent risk modifier for reaction severity in patients with Hymenoptera venom allergy and systemic mastocytosis. Additionally, there is emerging evidence that HαT and α-tryptase expression more generally are also associated with increased risk of severe reactions to other allergens. Tryptase genotyping may be a promising biomarker for risk stratification of IgE-mediated allergic reaction severity in the future.
 
 ---
-### [12] Preventing Food Anaphylaxis.
+### [11] Preventing Food Anaphylaxis.
 **Author**: Alkotob Shifaa et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
 **PMID**: 41932746 | https://pubmed.ncbi.nlm.nih.gov/41932746/
 
 Food-induced anaphylaxis incidence rates in 0 to 19 year-olds and 0 to 4 year-olds are reported as 0.2 and 7.0 per 100 person years respectively, with increased hospitalizations reported in the United States. Avoidance has been our traditional approach to prevent food-induced anaphylaxis and it involves reading nutrition labels, understanding forms of allergen exposure, food allergy policies outside the home, and communicating effectively about personal risk. Active approaches have also emerged including oral immunotherapy and omalizumab, which are both Food and Drug Administaration-approved. Many other options are currently in development, for example, epicutaneous immunotherapy, sublingual immunotherapy, and a variety of biologic drugs.
 
 ---
-### [13] Equity and Anaphylaxis.
+### [12] Equity and Anaphylaxis.
 **Author**: Abrams Elissa M et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
 **PMID**: 41932744 | https://pubmed.ncbi.nlm.nih.gov/41932744/
 
 Health equity is achieved when all individuals can reach their full health potential. In food-induced anaphylaxis, this goal remains unmet. Disparities in prevalence, diagnosis, and care are influenced by race, income, and environmental determinants. This article reviews emerging evidence on inequities in food allergy, emphasizing the need to understand who is most affected and why, and outlining strategies to promote equitable prevention and treatment.
 
 ---
-### [14] Anaphylaxis: Clinical Criteria, Severity, and Clinical Courses.
+### [13] Anaphylaxis: Clinical Criteria, Severity, and Clinical Courses.
 **Author**: Dribin Timothy E et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
 **PMID**: 41932742 | https://pubmed.ncbi.nlm.nih.gov/41932742/
 
 Anaphylaxis is a potentially life-threatening allergic reaction that is increasing worldwide. While it is often straightforward to diagnose, at times the diagnosis remains uncertain, especially if there is no clear trigger, symptoms overlap with other conditions, or patients mainly report subjective symptoms without confirmatory physical findings. Unfortunately, there is no gold-standard test for diagnosing anaphylaxis, so clinicians must rely on clinical criteria to assess its likelihood. The first widely accepted clinical criteria were published in 2006 by the National Institute of Allergy and Infectious Diseases and the Food Allergy and Anaphylaxis Network, and in 2020, the World Allergy Organization proposed updates to these criteria. The new 2024 Anaphylaxis Clinical Support Tool addresses discrepanices between previous criteria.
 
 ---
-### [15] Anaphylaxis Epidemiology and Risk Factors.
+### [14] Anaphylaxis Epidemiology and Risk Factors.
 **Author**: Patel Neil R et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
 **PMID**: 41932741 | https://pubmed.ncbi.nlm.nih.gov/41932741/
 
 Anaphylaxis is a life-threatening allergic condition that affects all ages, and research suggests that prevalence is increasing worldwide. The changing epidemiology of anaphylaxis is attributable to factors such as improved diagnosis, new drug therapies, climate change, and changes in national and international guidelines. Risk factors for severe and fatal anaphylaxis include older age, lung disease, beta-blockers, angiotensin-converting enzyme inhibitors, cardiovascular disease, and mast cell disorders. Furthermore, epidemiology of anaphylaxis is variable depending on the trigger. Understanding anaphylaxis epidemiology is important to support identification of patients at higher risk and candidates for therapies that can reduce future anaphylaxis risk.
-
----
-### [16] Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
-**Author**: Islam Nazmul et al. | **Journal**: JAMA pediatrics (2026/May)
-**PMID**: 41661638 | https://pubmed.ncbi.nlm.nih.gov/41661638/
-
-IMPORTANCE: The incidence and risk (predictive) factors for early life food allergy development remain uncertain.
-OBJECTIVE: To estimate the incidence and quantify risk factors for food allergy development.
-DATA SOURCES: MEDLINE and Embase were systematically searched to January 1, 2025. Data were analyzed from June 1, 2025, to November 25, 2025.
-STUDY SELECTION: Incidence estimates included studies confirming food allergy via food challenge. Risk factor analyses included cohort, case-control, and cross-sectional studies in any language assessing children younger than 6 years using multivariable analyses.
-DATA EXTRACTION AND SYNTHESIS: Paired reviewers independently extracted data. Random-effects meta-analyses pooled incidence and adjusted odds ratios (ORs). Risk of bias was assessed using the QUIPS tool, and certainty of evidence assessed using GRADE.
-MAIN OUTCOME AND MEASURE: The primary outcome was food allergy to age 6 years.
-RESULTS: A total of 190 studies involving 2.8 million participants across 40 countries were analyzed. Among studies using food challenge, overall food allergy incidence was likely 4.7% (moderate certainty). Among 176 studies identifying 342 risk factors with varying certainty, the strongest and most certain factors included prior allergic conditions (eg, atopic dermatitis [eczema] within the first year of life [OR, 3.88; risk difference [RD], 12.0%; 95% CI, 8.8%-15.7%], allergic rhinitis [OR, 3.39; RD, 10.1%; 95% CI, 6.7%-14.4%], and wheeze [OR, 2.11; RD, 5.0%; 95% CI, 2.1%-8.8%]), severity of atopic dermatitis (OR, 1.22; RD, 1.0%; 95% CI, 0.6%-1.6%), increased skin transepidermal water loss (OR, 3.36; RD, 10.0%; 95% CI, 6.3%-14.8%), filaggrin gene sequence variations (OR, 1.93; RD, 4.2%; 95% CI, 2.4%-6.4%), delayed solid food introduction (eg, peanut after age 12 months [OR, 2.55; RD, 6.8%; 95% CI, 1.9%-14.6%]), infant antibiotic use (first month [OR, 4.11; RD, 12.8%; 95% CI, 0.4%-40%], first year [OR, 1.39; RD, 1.8%; 95% CI, 0.8%-3.1%], during pregnancy [OR, 1.32; RD, 1.5%; 95% CI, 0.6%-2.5%]), male sex (OR, 1.24; RD, 1.1%; 95% CI, 0.7%-1.6%), firstborn child (OR, 1.13; RD, 0.6%; 95% CI, 0.3%-1.0%), family history of food allergy (eg, mother [OR, 1.98; RD, 4.4%; 95% CI, 2.5%-6.8%], father [OR, 1.69; RD, 3.2%; 95% CI, 1.3%-5.5%], both parents [OR, 2.07; RD, 4.8%; 95% CI, 1.3%-5.5%], siblings [OR, 2.36; RD, 6.0%; 95% CI, 4.4%-8.0%]), parental migration (OR, 3.28; RD, 9.7%; 95% CI, 4.9%-16.3%), self-identification as Black (vs White [OR, 3.93; RD, 12.1%; 95% CI, 5.2%-22.5%], vs non-Hispanic White [OR, 2.23; RD, 5.5%; 95% CI, 3.0%-8.7%]), and cesarean delivery (OR, 1.16; RD, 1.0%; 95% CI, 0.3%-1.2%). Factors like low birth weight, postterm birth, maternal diet, and stress during pregnancy showed no significant risk difference.
-CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
-
----
-### [17] When Medically Required Food Avoidance Goes Awry: A Conceptual Framework of ARFID as an Underrecognized Clinical Complication of Food Allergy.
-**Author**: Proctor Kaitlin B et al. | **Journal**: The International journal of eating disorders (2026/May)
-**PMID**: 41649377 | https://pubmed.ncbi.nlm.nih.gov/41649377/
-
-Pediatric patients with medical/developmental conditions face increased risk for avoidant/restrictive food intake disorder (ARFID). Diet-managed chronic illnesses may heighten risk for disordered eating, with emerging research finding medical symptoms predating disordered eating behaviors. Pediatric-onset immunoglobulin E-mediated food allergy ("food allergy") is on the rise, affecting an astonishing 8% of US children. The relationship between food allergy and ARFID is puzzlingly understudied despite food allergy clearly altering the individual's relationship with food, posing continuous danger, and requiring persistent, fundamental eating changes to maintain safety. Food allergy is managed through strict dietary avoidance of allergen(s) and confers well-documented risk to psychosocial functioning. Dietary restriction exceeding medically required avoidance (as observed in ARFID) further compounds risk for adverse health and psychosocial impacts. In this Spotlight, our team of clinical researchers working at the intersection of ARFID and food allergy proposes a model identifying three areas of food allergy-specific impact that may drive the higher prevalence of ARFID within this population. Failure to successfully regulate these universal drivers to preserve daily functioning may precipitate the development of ARFID. We propose (1) unique characteristics of allergic reactions and medical treatment, (2) the impacts of chronic vigilance and avoidance, and (3) response to learning paradigms and physiological upregulation disrupt the development of feeding/eating for both patients and caregivers. Patients with food allergy + ARFID may also be especially vulnerable to iatrogenic harm from the imprecision of current allergy testing modalities. We outline the sparse literature on food allergy + ARFID comorbidity and call for ARFID-focused research in this area.
-
----
-
-## ped_atopic_update
-### 小児アトピー性皮膚炎 — 15件
-
-**▼ Coworkへのプロンプト（コピーして貼り付け）:**
-
-> 以下は直近1ヶ月の小児アトピー性皮膚炎領域の論文一覧です。
-> 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_アトピー性皮膚炎_abstract10本」** というタイトルのGoogle Docを作成してください。
->
-> Google Docは以下の2部構成にしてください:
->
-> **【第1部: 日本語要約】**
-> 厳選した論文を 1, 2, 3... の番号順に並べ、各論文を「---」で区切って以下の形式で記載:
-> ① タイトル（英語）
-> ② PMID（入力データのものを正確に転記）
-> ③ なぜ重要か（1〜2文）
-> ④ 臨床への影響（1〜2文）
-> ⑤ 診療変更の必要性（Yes/No + 一言）
->
-> **【第2部: 英語 Abstract】**
-> 同じ10本を同じ番号順で並べ、各論文を「---」で区切って以下の形式で記載:
-> 番号. タイトル
-> PMID: （番号）
-> Journal: （雑誌名）（発行年）
-> Abstract: （英語のアブストラクト全文）
-
-
-### [1] Prenatal maternal antibiotic use increases the risk of childhood eczema: a systematic review and meta-analysis.
-**Author**: Petrás Szilárd et al. | **Journal**: Scientific reports (2026/May)
-**PMID**: 42103814 | https://pubmed.ncbi.nlm.nih.gov/42103814/
-
-Early-life disruption of microbiome development is known to impair health; however, the long-term effects of pregnancy-related pharmacological alterations to the maternal gut microbiota on offspring health remain unclear. This meta-analysis aimed to evaluate the impact of maternal antibiotic use (either prenatal or intrapartum) on the risk of childhood atopic dermatitis, based on cohort and case-control studies. Literature searches were conducted in EMBASE, PubMed, Cochrane, and Web of Science databases using predefined PICO (patients, intervention, comparison, outcome) criteria. Overall, our meta-analysis included 30 studies with a total of 4,125,143 mothers and 4,346,050 children. Using the random effects model, our study found that prenatal antibiotic use was associated with higher odds of atopic dermatitis in childhood (aOR: 1.32; 95% CI: 1.12; 1.56). This result remained significant after adjusting publication bias by the trim-and-fill method (aOR: 1.22; 95% CI: 1.03; 1.44), highlighting the potential relevance of antibiotic prescribing practices during pregnancy in relation to childhood atopic disease risk. Intrapartum antibiotic use was not associated with elevated risk for atopic dermatitis in the children (OR: 1.64; 95% CI: 0.84; 3.17). Prenatal antibiotic use appears to have a modest effect on atopic dermatitis in offspring.
-
----
-### [2] Lebrikizumab ADvocate1 and 2 Monotherapy and ADjoin (Long-Term) Trials: Use of Topicals Therapies.
-**Author**: Stein-Gold Linda et al. | **Journal**: Dermatology and therapy (2026/May)
-**PMID**: 42101561 | https://pubmed.ncbi.nlm.nih.gov/42101561/
-
-Atopic dermatitis (AD) is a chronically relapsing, complex skin disease characterized mainly by skin lesions and itch. The first-line treatment for patients with AD includes topical therapy, such as topical corticosteroids (TCS) and topical calcineurin inhibitors (TCI). Long-term use of topical medications can be burdensome for patients, and despite these burdens, topicals remain a frequent treatment option, not only in patients with mild-to-moderate disease, but also as concomitant therapy in patients with moderate-to-severe disease. Lebrikizumab is a novel monoclonal antibody that binds with high affinity and slow off-rate to interleukin (IL)-13, thereby blocking the downstream effects of IL-13 with high potency. This review focuses on the use of topical medications in the lebrikizumab ADvocate1&2 monotherapy trials and ADjoin long-term extension study in the context of similar trials for interleukin (IL)-13/IL-4 inhibitors. In the first 16 weeks of the ADvocate1 and ADvocate2 monotherapy clinical trials, topical therapy was not permitted, and patients receiving topicals were considered nonresponders in the primary analysis. In the subsequent 36-week maintenance period, concomitant therapy was permitted at investigator discretion; however, most patients did not use TCS (TCS use: 11.9% and 9.7% for lebrikizumab treatment every 4 weeks [Q4W] and 2 weeks [Q2W], respectively). Likewise, in the ADjoin long-term extension study, concomitant therapy was permitted at investigator's discretion; however, the majority of patients did not use TCS up to 2 years of treatment (TCS use: 12.1% and 8.5% for lebrikizumab Q4W and Q2W in patients from ADvocate1&2, respectively). Treatment with lebrikizumab monotherapy improved clinical signs and symptoms of AD, and demonstrated stable long-lasting disease control with less frequent dosing (Q4W), with no or minimal use of topicals. Topical use across clinical trials for approved monotherapy biologics (dupilumab, lebrikizumab, and tralokinumab) was reported, and topical therapy was permitted in the maintenance period. For nemolizumab, there is no monotherapy data available in AD.
-Atopic dermatitis is a chronic skin disease that causes a range of skin manifestations, including erythematous and scaling lesions, and itch and related sleep disturbance. The main treatment options for atopic dermatitis are represented by topical treatments such as corticosteroids and calcineurin inhibitors in creams and ointment formulations. Using these topical therapies for a long time can be difficult and bothersome for patients with moderate-to-severe cases, but they are still commonly used even for severe cases. Lebrikizumab is a new type of medicine that targets a protein called interleukin-13 (IL)-13, which plays a role in atopic dermatitis. This review looks at how topical treatments were used in lebrikizumab trials. In the first 16 weeks of the ADvocate1 and ADvocate2 trials, patients were not allowed to use topical treatments, and those who did were considered nonresponders. During the next 36 weeks, patients could use topical treatments if needed, but most did not use corticosteroids. Similarly, in the ADjoin long-term study, most patients did not use corticosteroids over 2 years. Lebrikizumab treatment improved atopic dermatitis symptoms and maintained the response with little or no use of topical treatments.
-
----
-### [3] Dupilumab for the treatment of eczema molluscatum: A pediatric case report and systematic literature review.
-**Author**: Obermeier Patrick E et al. | **Journal**: Journal der Deutschen Dermatologischen Gesellschaft = Journal of the German Society of Dermatology : JDDG (2026/May)
-**PMID**: 42101337 | https://pubmed.ncbi.nlm.nih.gov/42101337/
-
-Atopic dermatitis (AD) may be complicated by disseminated molluscum contagiosum virus (MOCV) infection, known as eczema molluscatum (EM), particularly in children. Topical treatments are not always effective, and although modern systemic immunomodulatory therapies for AD, including use in early childhood, are available, their impact on co-occurring MCV infection is not well documented. We present a 4-year-old child with severe EM that was refractory to conventional topical therapy. She was treated with dupilumab (300 mg subcutaneously every four weeks), which led to a rapid resolution of symptoms and clinical clearance of MOCV-1 infection without adverse events. To contextualize our findings, we performed a systematic literature review, including PubMed, ScienceDirect, Scopus, and Google Scholar, to identify published case descriptions of dupilumab use with co-occurring MOCV infection (PROSPERO ID CRD420251106639). We identified a total of six publications reporting on nine adult patients (mean age: 40 years, range: 21-58 years, 8/9 male). In five of these patients, EM temporarily flared up before resolution. The present report is the first of a child. Our findings, along with existing reports, suggest that dupilumab may be a safe and effective treatment option for AD patients with MOCV infection. Prospective evaluation using standardized outcome measures is warranted.
-
----
-### [4] Association of Meteorological Factors and Air Pollutants With Atopic Dermatitis in Children: A Systematic Review and Meta-Analysis.
-**Author**: Feng Huike et al. | **Journal**: Dermatitis : contact, atopic, occupational, drug (2026/May)
-**PMID**: 42095287 | https://pubmed.ncbi.nlm.nih.gov/42095287/
-
-There is no consensus on the impact of meteorological factors and air pollutants on childhood atopic dermatitis (AD). Literature was searched in 3 databases (PubMed, Web of Science, and Embase) up to May 1, 2025, and evaluated by 2 independent reviewers. Cross-sectional studies, cohort studies, or time-series analyses were included, reporting outcomes of meteorological factors, air pollutants, and childhood AD. The Newcastle-Ottawa Scale and Agency for Healthcare Research and Quality scale were used to assess study quality. A random-effects model was applied to estimate pooled risk ratios. From 132 identified literature, 49 studies involving nearly 7,091,746 participants were included. Air pollutants were positively correlated with the risk of childhood AD (odds ratio [OR] [95% confidence interval or CI] = 1.030 [1.005, 1.056] for carbon monoxide [CO]; 1.116 [1.075, 1.264] for nitrogen dioxide [NO2]; 1.059 [1.013, 1.108] for ozone; 1.114 [1.039, 1.260] for particulate matter [PM] with diameter of 10 µm [PM10]; 1.041 [1.009, 1.074] for PM with diameter of 2.5 µm [PM2.5]). No clear associations were observed between sulfur dioxide, temperature, humidity, and ultraviolet radiation (UVR) and the risk of childhood AD. Subgroup analysis showed that higher temperature and UVR might reduce the risk of AD, increased concentrations of CO, NO2 in developed countries, and PM10, PM2.5, and NO2 might increase the incidence risk in developing countries. Air pollutants represented significant risk factors for childhood AD, underscoring the imperative to prioritize environmental quality improvement for AD prevention.
-
----
-### [5] Trace Elements in Allergy: Narrative Review.
-**Author**: Ordak Michal et al. | **Journal**: Allergy (2026/May)
-**PMID**: 42083298 | https://pubmed.ncbi.nlm.nih.gov/42083298/
-
-Allergic diseases are increasing worldwide and reflect a complex interplay between genetic susceptibility and environmental exposures. Among environmental determinants, trace elements contribute to epithelial barrier dysfunction, tissue remodeling, redox homeostasis, and immune regulation and may influence the development and severity of allergic diseases. This narrative review summarizes current mechanistic, epidemiological, and clinical evidence on the role of essential and non-essential trace elements in allergy. We discuss essential elements, including iron, zinc, selenium, copper, manganese, iodine, molybdenum, and boron, which support antioxidant defense, epithelial integrity, and immune homeostasis. We also review sensitizing and potentially toxic elements such as nickel, chromium, cobalt, silicon, and fluoride, which may promote allergic sensitization and inflammation through hapten-driven immune responses, oxidative stress, and adjuvant-like effects. Evidence across asthma, allergic rhinitis, atopic dermatitis, and food allergy indicates that trace elements may contribute to the development and heterogeneity of allergic disease. However, reported associations between elemental status and allergic diseases remain heterogeneous across studies. This variability likely reflects both underlying biological differences and methodological heterogeneity, including variation in study design, biological matrices, exposure assessment, and analytical techniques. Better methodological harmonization will be essential to elucidate the roles of trace elements in allergy development and to strengthen future translational and preventive research efforts. At present, available evidence does not support routine assessment of trace element status or generalized supplementation in the prevention or management of allergic diseases, except in cases of documented deficiency or clearly defined clinical indications.
-
----
-### [6] Clinical remission in allergy and clinical immunology practice: State of the art and World Allergy Organization (WAO) call to action.
-**Author**: Morais-Almeida Mário et al. | **Journal**: The World Allergy Organization journal (2026/May)
-**PMID**: 42058161 | https://pubmed.ncbi.nlm.nih.gov/42058161/
-
-Recent advances in biological therapies, small molecules and allergen-specific immunotherapy are reshaping the management of immunoallergic diseases, progressively shifting therapeutic goals from short-term disease control toward the possibility of achieving sustained clinical remission. Despite increasing evidence across multiple conditions, a universally accepted and disease-transversal definition of clinical remission (CR) remains lacking. In this review we propose a comprehensive framework for defining clinical remission across a broad spectrum of immune-mediated diseases traditionally managed in Allergy and Clinical Immunology practice, including asthma, allergic rhinitis, chronic rhinosinusitis with nasal polyps, chronic urticaria, atopic dermatitis, mastocytosis, food allergy, and eosinophilic esophagitis. Clinical remission is defined as a sustained state of absence of clinically relevant disease manifestations, independently of underlying biological activity; suppression of inflammatory pathways and normalization of biomarkers define biological remission, which may coexist with, but is not required for, clinical remission. We introduce the 3D-CR model, a pragmatic, disease-adaptable framework integrating 3 complementary domains - clinical, biological, and functional - to characterize remission states as complete, partial, or absent. Building on this model, we propose the Allergic Disease Remission Score (ADReS) as a modular tool designed to support standardized assessment, longitudinal follow-up, and cross-disease comparison in clinical trials and real-world settings. These tools are intended as conceptual and research instruments rather than prescriptive algorithms for individual therapeutic decision-making. Finally, we outline a World Allergy Organization call to action advocating for a harmonized global approach to defining, measuring, and implementing clinical remission as a meaningful treatment target. Establishing standardized remission endpoints has the potential to improve patient outcomes, facilitate precision medicine strategies, enhance comparability across studies, and reduce heterogeneity in clinical research and practice worldwide.
-
----
-### [7] [Hand eczema and occupational counseling in adolescents].
-**Author**: Molin Sonja et al. | **Journal**: Dermatologie (Heidelberg, Germany) (2026/Apr)
-**PMID**: 42043525 | https://pubmed.ncbi.nlm.nih.gov/42043525/
-
-BACKGROUND: Many adult patients with hand eczema report having noticed the first signs of their skin condition at a young age. The pathogenesis of hand eczema is multifactorial. In children or teenagers, atopic predisposition as well as skin irritation or contact sensitization play a major role in hand eczema development. To provide effective counseling to adolescents with hand eczema who are about to choose a career, it is helpful to know the current state of knowledge regarding hand eczema in this special group of patients.
-OBJECTIVES: Overview on the factors that are important for hand eczema in teenage patients, as well as possible approaches to career counseling.
-MATERIALS AND METHODS: Evaluation of the current literature on hand eczema in childhood and adolescence and the recommendations for career counseling.
-RESULTS: The average age of onset for hand eczema is about 12 years. The 1‑year and lifetime prevalence in childhood are described as 5.2-10% and 6.5-13.3%, respectively, and 12.1% and 18.3% in adolescents and young adults. Trigger factors differ within the young patient groups: while among children they are often found in the context of leisure activities and hobbies, in adolescents they sometimes relate to an occupational context. The choice of profession does not necessarily have to be restricted even in the context of a previous history of eczema or an atopic preposition. It is crucial to counsel the young patients in detail, educating them about the special needs of their skin as well as on consistent moisturizing and skin protection.
-CONCLUSION: Early identification of trigger factors as well as good counseling and treatment optimization are essential for adolescent hand eczema patients in order to keep the influence of hand eczema on their development, thriving, and career choices as low as possible.
-ZUSAMMENFASSUNG: HINTERGRUND: Viele erwachsene Patienten mit Handekzem berichten, dass sie bereits in jungen Jahren erste Anzeichen ihrer Hauterkrankung bemerkt haben. Die Pathogenese des Handekzems ist multifaktoriell. Im Kindes- bzw. Teenageralter können eine atopische Diathese sowie Hautirritation oder Kontaktsensibilisierung eine Rolle spielen. Um Jugendliche mit Handekzem, die vor der Berufswahl stehen, gut zu beraten, ist es hilfreich, den bisherigen Kenntnisstand zum Handekzem in dieser besonderen Patientengruppe zu kennen.
-ZIEL DER ARBEIT (FRAGESTELLUNG): Übersicht über die beim Handekzem im Teenageralter bedeutsamen Faktoren und mögliche Ansätze zur Berufsberatung.
-MATERIAL UND METHODEN: Auswertung der aktuellen Literatur zu Handekzem im Kindes- und Jugendalter und den Empfehlungen zur Berufsberatung.
-ERGEBNISSE: Das durchschnittliche Erkrankungsalter liegt bei etwa 12 Jahren, Einjahres- und Lebenszeitprävalenz werden mit 5,2–10 % bzw. 6,5–13,3 % im Kindesalter, 12,1 % und 18,3 % bei Jugendlichen und jungen Erwachsenen beschrieben. Triggerfaktoren unterscheiden sich innerhalb der jungen Patientengruppen: Bei Kindern sind diese oft im Rahmen von Freizeitbeschäftigungen und Hobbies zu finden, bei älteren Jugendlichen teils schon im beruflichen Umfeld. Bei Ekzemen in der Vorgeschichte oder einer atopischen Prädisposition muss die Berufswahl nicht zwingend eingeschränkt sein. Hier ist es wichtig, die Jugendlichen ausführlich zu beraten und auf die besonderen Bedürfnisse der eigenen Haut und die Notwendigkeit von konsequenter Rückfettung und Hautschutz hinzuweisen.
-SCHLUSSFOLGERUNGEN: Frühzeitige Identifizierung von Triggerfaktoren sowie gute Beratung und Therapieoptimierung sind bei jugendlichen Handekzempatienten essenziell, um den Einfluss des Handekzems auf Entwicklung, Gedeihen und Berufswahl so gering wie möglich zu halten.
-
----
-### [8] Early-life mercury exposure and allergic diseases in childhood: systematic review and meta-analysis.
-**Author**: Liang Qiming et al. | **Journal**: Frontiers in pediatrics (2026)
-**PMID**: 42038240 | https://pubmed.ncbi.nlm.nih.gov/42038240/
-
-BACKGROUND: Mercury is a persistent environmental contaminant that can cross the placenta and accumulate in fetal tissues. While its neurotoxic effects are well established, its potential association with allergic diseases in children remains unclear. Understanding how early-life mercury exposure relates to the burden of allergic conditions is important for child health and environmental risk assessment.
-METHODS: We conducted a systematic review and meta-analysis of observational studies reporting allergic outcomes in children with measured mercury exposure. PubMed and Embase were searched from inception to October 2025. Studies were eligible if they assessed prenatal or postnatal mercury exposure and reported at least one allergic outcome. Random-effects meta-analysis was used to estimate pooled prevalence of allergic outcomes reported in studies.
-RESULTS: Sixteen studies were included. The pooled prevalence among mercury-exposed children was 6.2% (95% CI, 1.8-18.8%) for asthma, 18.6% (95% CI, 9.0-34.5%) for atopic dermatitis, 14.4% (95% CI, 3.2-46.2%) for eczema, 15.8% (95% CI, 3.3-50.9%) for allergic rhinitis, and 22.3% (95% CI, 13.2-35.2%) for wheezing. Heterogeneity was high (I² > 90%). Studies from East Asia, which reported higher mercury exposure and fish intake, showed greater allergic disease proportions than European cohorts.
-CONCLUSIONS: Allergic diseases were frequent among populations in which mercury exposure was assessed, with regional and exposure-timing differences contributing to heterogeneity. The findings highlight the need for harmonised, prospective studies to clarify the role of mercury exposure in childhood allergic disease development.
-
----
-### [9] The Prevalence of Contact Allergy to Formaldehyde and Formaldehyde Releasers: A Systematic Review and Meta-Analysis.
-**Author**: Karimian Kian et al. | **Journal**: Contact dermatitis (2026/Apr)
-**PMID**: 42035787 | https://pubmed.ncbi.nlm.nih.gov/42035787/
-
-Formaldehyde and its releasers are common preservatives and potent sensitizers. This meta-analysis aimed to estimate the prevalence of formaldehyde contact allergy and allergy to its five most common releasers among dermatitis patients. Two authors independently searched PubMed, Embase, and Web of Science from inception to 30th September 2025. A proportion meta-analysis was conducted using a random-effects model. A total of 158 studies involving 1 347 638 dermatitis patients were included. The pooled prevalence of formaldehyde contact allergy was 2.88% (95% CI 2.55-3.24) with clinical relevance at 41.57%. The pooled prevalence for releasers was 2.76% for 2-bromo-2-nitropropane-1,3-diol, 1.89% for quaternium-15, 1.42% for diazolidinyl urea, 1.37% for DMDM hydantoin, and 1.20% for imidazolidinyl urea. Quaternium-15 showed the highest clinical relevance at 55.67%. Significant sensitization rates were observed in different geographic regions, with the highest prevalence found in North America (6.8%). The prevalence rate was 2.96% among children and 2.61% among adults, with no significant difference. The prevalence rate was 2.65% among patients with atopic dermatitis (AD) and 2.85% among patients without AD, with no significant difference. The profound geographic disparities suggest that regulatory interventions, such as the EU's prohibition of formaldehyde and quaternium-15 in cosmetics, are highly effective public health measures.
-
----
-### [10] Inborn Errors of Immunity with overlap of Allergy and Autoimmune disease.
-**Author**: Heimall Jennifer et al. | **Journal**: Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/Apr)
-**PMID**: 42031065 | https://pubmed.ncbi.nlm.nih.gov/42031065/
-
-Inborn errors of immunity (IEI) are increasingly recognized to present clinically with not just infection, but also symptoms of immune dysregulation including autoimmunity and severe atopy. IEI with atopy and autoimmunity can be grouped into 3 broad categories: 1) Cytoskeletal Impairments, 2) Cytokine Signaling Impairments, and 3) TCR Signaling Impairments. Additionally, Primary Immune Regulatory Disorders (PIRDS) are a subset of IEI that have been described with increasing frequency over the last 5 years to present predominantly with symptoms of immune dysregulation rather than severe or opportunistic infections. These PIRDs can present with overlaps of both atopy, most commonly atopic dermatitis and severe autoimmunity. In the latest IUIS genotypic categorization of IEI's, PIRDs were the group with largest expansion of newly identified monogenic etiologies, suggesting that these patients in our clinic waiting to be identified, and with the hope that identification of a monogenic cause can drive effective use of pathway specific, precision therapy. In this review we will provide an overview of the mechanisms behind T cell development or deficiency that can contribute to development of atopy and autoimmunity, review selected monogenic forms of PIRDs that present with an overlap of atopy and autoimmunity, and provide an overview of approaches to diagnostic testing for and management of these conditions in the allergy and immunology clinical setting.
-
----
-### [11] The Impact of Atopic Dermatitis on Growth in Children: A Systematic Review.
-**Author**: Shenouda Christopher et al. | **Journal**: Journal of cutaneous medicine and surgery (2026/Apr)
-**PMID**: 41988838 | https://pubmed.ncbi.nlm.nih.gov/41988838/
-
-(abstract not available)
-
----
-### [12] 'What' and 'How' to Measure in Allergy and Clinical Immunology: A Systematic Review of Core Outcome Sets and Outcome Harmonisation Processes.
-**Author**: Demidova Anastasia et al. | **Journal**: Clinical and experimental allergy : journal of the British Society for Allergy and Clinical Immunology (2026/May)
-**PMID**: 41974646 | https://pubmed.ncbi.nlm.nih.gov/41974646/
-
-BACKGROUND: Heterogeneity in outcome reporting and inconsistent use of outcome measurement instruments in allergy and clinical immunology research affects the comparability, synthesis, and clinical applicability of study findings. Harmonisation efforts, particularly Core Outcome Set (COS) development, aim to address these challenges by establishing standardised, evidence-based and consensus-driven outcome recommendations. This systematic review aims to map available COS and other harmonisation processes (HP) in allergy and clinical immunology, evaluate their methodological approaches, and assess their alignment with established development standards.
-METHODS: We systematically searched MEDLINE, EMBASE, and the COMET Initiative database until June 7, 2024 to identify COS and HP. We included studies if they provided recommendations on 'core' outcomes and/or outcome measurement instruments. Data extraction included disease focus, methodological approach, stakeholder involvement, and adherence to the Core Outcome Set-STAndards for Development criteria. We synthesised the data at the initiative (process) level rather than the publication level because harmonisation initiatives are frequently iterative and reported across multiple papers (e.g., protocol, Delphi rounds, consensus statement, and subsequent instrument-selection outputs).
-RESULTS: A total of 15,612 records were identified, with 44 studies (representing 22 initiatives both finished and in development) meeting inclusion criteria. The majority of initiatives focused on asthma (n = 9), followed by eczema (atopic dermatitis n = 2; hand eczema = 1; eczema = 1), urticaria (n = 2), allergic rhinitis (n = 2), chronic rhinosinusitis (n = 1), celiac disease (n = 1), Immunoglobulin E (IgE)-mediated food allergy (n = 1), eosinophilic esophagitis (n = 1), and hereditary angioedema (n = 1). No COS or HP addressed drug allergy, anaphylaxis, or other immune-mediated allergic conditions. 'Quality of life' was consistently included in all COS with 'signs and symptoms', 'exacerbations' and 'disease control' frequently selected as well. Methodological approaches to COS development varied widely, with most employing Delphi surveys, consensus meetings, and stakeholder involvement, though levels of engagement differed. COS developers inconsistently adhered to Core Outcome Set-STAndards for Development criteria, with some initiatives demonstrating rigorous methodology while others lacked transparency in key developmental steps.
-CONCLUSION: This review highlights growing efforts to harmonise outcome assessment in allergy and clinical immunology. Major gaps remain in coverage and methodological rigour. Quality of life and patient-reported symptoms are frequently recommended outcomes, yet definitions and measurement tools are inconsistent. Strengthening methodological consistency and expanding COS development to neglected areas are critical next steps to improve outcome reliability and comparability in the field.
-
----
-### [13] Sexual Dimorphism in Allergic and Mast Cell-Associated Diseases.
-**Author**: Kotha Aditya et al. | **Journal**: Clinical reviews in allergy & immunology (2026/Apr)
-**PMID**: 41963721 | https://pubmed.ncbi.nlm.nih.gov/41963721/
-
-Allergic diseases are common, affecting more than one-third of the global population and varying widely in severity. A consistent theme in asthma, food allergy, atopic dermatitis, and chronic urticaria is a female-dominant prevalence in adulthood. Some of these begin with male predominance in childhood and shift with puberty. A smaller subset of allergic diseases, including eosinophilic esophagitis and vernal keratoconjunctivitis, has a clear male prevalence. In fact, nearly all allergic diseases exhibit sexual dimorphism in either prevalence or severity. These striking disparities are being unraveled to reveal mechanisms that might be clinically targeted. In this review, we discuss the current state of knowledge about sexual dimorphism for these important inflammatory disorders. These insights are foundational for optimizing personalized medicine.
-
----
-### [14] Association between swimming pool attendance and allergic diseases: An updated systematic review and meta-analysis.
-**Author**: Wu Qingqing et al. | **Journal**: Regulatory toxicology and pharmacology : RTP (2026/May)
-**PMID**: 41708045 | https://pubmed.ncbi.nlm.nih.gov/41708045/
-
-Recently, increasing epidemiological studies have suggested a potential association between swimming pool attendance and allergic outcomes with inconsistent findings. This systematic review and meta-analysis aims to elucidate the association between swimming pool attendance and the risk of allergic diseases. We systematically searched PubMed, Web of Science, Scopus, and Embase to identify relevant studies published up to August 8, 2025, and performed a meta-analysis of the extracted data. Furthermore, subgroup analyses, sensitivity analyses, and assessments of publication bias were also conducted. A total of 23 studies involving 54,153 participants were included. The combined data showed a positive correlation between swimming pool attendance and asthma [OR = 1.14, 95% CI: (1.08-1.21)], but no significant link with allergic rhinitis, atopic dermatitis, hay fever, or wheezing. Subgroup analyses indicated stronger associations in children [asthma: OR = 1.14, 95% CI: (1.08-1.21)] and among those with early-life exposure [asthma: OR = 1.13, 95% CI: (1.06-1.20)]. Interestingly, early swimming pool attendance was negatively associated with allergic rhinitis in children [OR = 0.78, 95% CI: (0.63-0.97)]. In conclusion, swimming pool attendance was significantly associated with asthma, highlighting potential public health implications and the need for further research into relevant environmental exposures.
 
 ---
 ### [15] Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
@@ -2622,15 +2221,22 @@ RESULTS: A total of 190 studies involving 2.8 million participants across 40 cou
 CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
 
 ---
+### [16] When Medically Required Food Avoidance Goes Awry: A Conceptual Framework of ARFID as an Underrecognized Clinical Complication of Food Allergy.
+**Author**: Proctor Kaitlin B et al. | **Journal**: The International journal of eating disorders (2026/May)
+**PMID**: 41649377 | https://pubmed.ncbi.nlm.nih.gov/41649377/
 
-## peds_asthma_update
-### 小児喘息 — 55件
+Pediatric patients with medical/developmental conditions face increased risk for avoidant/restrictive food intake disorder (ARFID). Diet-managed chronic illnesses may heighten risk for disordered eating, with emerging research finding medical symptoms predating disordered eating behaviors. Pediatric-onset immunoglobulin E-mediated food allergy ("food allergy") is on the rise, affecting an astonishing 8% of US children. The relationship between food allergy and ARFID is puzzlingly understudied despite food allergy clearly altering the individual's relationship with food, posing continuous danger, and requiring persistent, fundamental eating changes to maintain safety. Food allergy is managed through strict dietary avoidance of allergen(s) and confers well-documented risk to psychosocial functioning. Dietary restriction exceeding medically required avoidance (as observed in ARFID) further compounds risk for adverse health and psychosocial impacts. In this Spotlight, our team of clinical researchers working at the intersection of ARFID and food allergy proposes a model identifying three areas of food allergy-specific impact that may drive the higher prevalence of ARFID within this population. Failure to successfully regulate these universal drivers to preserve daily functioning may precipitate the development of ARFID. We propose (1) unique characteristics of allergic reactions and medical treatment, (2) the impacts of chronic vigilance and avoidance, and (3) response to learning paradigms and physiological upregulation disrupt the development of feeding/eating for both patients and caregivers. Patients with food allergy + ARFID may also be especially vulnerable to iatrogenic harm from the imprecision of current allergy testing modalities. We outline the sparse literature on food allergy + ARFID comorbidity and call for ARFID-focused research in this area.
+
+---
+
+## ped_atopic_update
+### 小児アトピー性皮膚炎 — 17件
 
 **▼ Coworkへのプロンプト（コピーして貼り付け）:**
 
-> 以下は直近1ヶ月の小児喘息領域の論文一覧です。
+> 以下は直近1ヶ月の小児アトピー性皮膚炎領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_気管支喘息_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_アトピー性皮膚炎_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -2650,73 +2256,62 @@ CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors
 > Abstract: （英語のアブストラクト全文）
 
 
-### [1] Recent Studies Concerning Adverse Childhood Experiences and Physical Activity in Adolescents.
-**Author**: Nagata Jason M et al. | **Journal**: Academic pediatrics (2026/May)
-**PMID**: 42103149 | https://pubmed.ncbi.nlm.nih.gov/42103149/
+### [1] [The application of Janus kinase inhibitors for the common pediatric dermatological disorders].
+**Author**: He R et al. | **Journal**: Zhonghua yu fang yi xue za zhi [Chinese journal of preventive medicine] (2026/May)
+**PMID**: 42128688 | https://pubmed.ncbi.nlm.nih.gov/42128688/
 
-(abstract not available)
-
----
-### [2] The formaldehyde dispute - Part B: scientific critique of EPA's formaldehyde occupational exposure values (OEVs) and proposed alternative occupational exposure limits (OELs).
-**Author**: Perry Quincy et al. | **Journal**: Critical reviews in toxicology (2026/May)
-**PMID**: 42101930 | https://pubmed.ncbi.nlm.nih.gov/42101930/
-
-In 2024, the U.S. Environmental Protection Agency (EPA) finalized its Integrated Risk Information System (IRIS) Toxicological Review and Toxic Substances Control Act (TSCA) Risk Evaluation for formaldehyde. After analyzing all the data that they deemed relevant, TSCA relied on IRIS's proposed inhalation reference values to establish an 8-hour occupational exposure value (OEV) of 0.11 ppm derived from epidemiological evidence of nasopharyngeal cancer. They also developed a 15-minute OEV of 0.17 ppm based on the goal of preventing sensory irritation. In an earlier draft of EPA's TSCA Risk Evaluation, they initially proposed an 8-hour OEV of 0.011 ppm derived from residential exposure studies of children, but this was withdrawn. This review examined EPA's methodology, the nearly 40 years of scientific literature underlying the EPA's conclusions, and the more than 300 public comments, which were submitted to the draft IRIS Toxicological Review (Docket ID: [EPA-HQ-ORD-2010-0396]) and draft TSCA Risk Evaluation (Docket ID: [EPA-HQ-OPPT-2023-0613]). A minimum of five significant flaws were identified and discussed: (1) heavy reliance on epidemiological studies which had serious confounding factors and design limitations; (2) application of default uncertainty factors which were too high given the robust human data; (3) use of exclusion criteria which dismissed high-quality studies from being considered; (4) the use of a linear no-threshold (LNT) model despite decades of substantial evidence for a threshold-driven mode of action (MOA); and (5) neglect for a validated biologically based dose-response (BBDR) model which may have been the most robust ever developed. Based on our weight-of-evidence evaluation of toxicological, mechanistic, and epidemiological data, we propose occupational exposure limits (OELs) of 0.3 ppm (8-hour TWA) and 1 ppm (15-min STEL). These values are grounded in controlled human exposure studies of asthmatics and non-asthmatics and supported by an internationally accepted BBDR model estimating an approximately 1 in 940,000 increased cancer risk for workers. As such, these OELs protect against sensory irritation, asthma, and other adverse effects, as well as carcinogenicity. They are also aligned with limits adopted by other domestic and international regulatory bodies. Immediately before this paper was accepted, EPA released their Updated Draft Risk Calculation Memorandum: Formaldehyde for public comment, which proposed to drop their promulgated OEVs (0.11 ppm and 0.17 ppm) and adopt an 8-hour OEV of 0.3 ppm to protect against sensory irritation and cancer, similarly to what was recommended in this paper.
+Janus kinase(JAK) inhibitors can effectively regulate excessive immune and inflammatory responses by targeting and blocking the JAK-signal transducers and activators of transcription pathway. This provides an important direction for breaking through the traditional limitations in the treatment of immune-related skin diseases in children. This article reviews the mechanism of action of JAK inhibitors and the approved indications, and systematically summarizes the current application status of these inhibitors in the treatment of pediatric dermatological disorders. In common pediatric skin diseases such as atopic dermatitis, alopecia areata, vitiligo, and psoriasis, JAK inhibitors, both topical and oral formulations, have been preliminarily verified for their effectiveness through basic research and clinical trials. Some drugs have received approval for specific pediatric populations, providing new options for clinical treatment. Currently, the application of JAK inhibitors in the pediatric field still faces challenges, such as widespread off-label use, insufficient high-quality clinical research evidence, and potential safety risks that need to be addressed. Future studies should focus on comprehensive and rigorous investigations to define optimized therapeutic strategies for this intervention in pediatric populations, advance its standardization in clinical practice, support the precise prevention and management of pediatric dermatological disorders, and ultimately address unmet needs in both clinical care and public health protection.
+Janus激酶（JAK）抑制剂通过靶向阻断JAK信号转导和转录激活因子信号通路，可有效调控过度激活的免疫与炎症反应，为儿童免疫相关性皮肤疾病的治疗提供了新的突破方向。本文围绕JAK抑制剂的作用机制、获批适应证展开梳理，系统阐述了其在特应性皮炎、斑秃、白癜风、银屑病等儿童常见皮肤疾病的应用现状，JAK抑制剂无论是外用还是口服制剂，均通过基础研究与临床试验初步验证了其有效性，部分药物已获批用于儿童人群，为临床治疗提供了新选择。当前，JAK抑制剂在儿童领域的应用仍面临挑战，如超适应证用药、缺少高质量临床研究证据、存在潜在安全性风险等问题亟待解决。未来需通过更深入的研究明确其在儿童群体中的优化应用方案，推动其规范化发展，为儿童皮肤疾病的精准防控提供支撑，从而更好地满足儿童皮肤疾病的临床治疗与公共卫生保障需求。.
 
 ---
-### [3] The gut-lung axis in childhood asthma: from early-life programming to microbiome-informed precision medicine-a narrative review.
-**Author**: Mo Miaojun et al. | **Journal**: Frontiers in immunology (2026)
-**PMID**: 42099620 | https://pubmed.ncbi.nlm.nih.gov/42099620/
+### [2] Drug-induced sarcoidosis-like reaction following IL-4/IL-13 receptor blockade by dupilumab.
+**Author**: Yasui Kozo et al. | **Journal**: European journal of pediatrics (2026/May)
+**PMID**: 42126659 | https://pubmed.ncbi.nlm.nih.gov/42126659/
 
-The gut-lung axis links early-life microbial programming to long-term respiratory health, offering a pivotal framework for understanding childhood asthma pathogenesis. This review synthesizes current evidence on how disruptions in microbial-immune crosstalk during critical developmental windows shape asthma susceptibility. Perinatal determinants-including maternal diet, delivery mode, antibiotic exposure, and breastfeeding-establish gut microbial communities that educate the developing immune system. Distinguishing itself from recent reviews, this review offers three novel contributions: (i) an integrated multi-omics framework linking early-life microbial maturation trajectories to specific asthma endotypes; (ii) a systematic synthesis of the molecular mechanisms by which microbial metabolites-including short-chain fatty acids, tryptophan derivatives, and bile acids-orchestrate gut-lung immune crosstalk; and (iii) a clinically actionable precision medicine algorithm that translates multi-omics profiling into personalized risk prediction, endotype-driven therapy selection, and targeted preventive strategies. Dysbiosis, characterized by delayed microbial maturation and depletion of short-chain fatty acid-producing taxa, compromises epithelial barrier integrity and skews immune homeostasis toward pro-allergic type-2 responses. Microbial metabolites, particularly short-chain fatty acids (acetate, propionate, butyrate) and tryptophan derivatives (indole-3-lactic acid, indole-3-propionic acid), serve as key molecular mediators that regulate regulatory T cells differentiation, reinforce mucosal barriers, and modulate distal airway inflammation. Microbial signatures correlate with specific asthma endotypes, offering opportunities for patient stratification. We critically evaluate emerging microbiome-targeted interventions-including strain-specific probiotics, prebiotics, postbiotics, and fecal microbiota transplantation-highlighting both therapeutic promise and the need for rigorous, well-powered clinical trials. Integrating multi-omics microbial profiling with host genetics and clinical phenotyping holds potential for microbiome-informed precision medicine, enabling personalized risk prediction, endotype-driven therapy selection, and novel preventive strategies targeting the gut-lung axis from the earliest stages of life.
-
----
-### [4] Type 2 Diabetes and the Lung - Cause and Consequence.
-**Author**: Foer Dinah et al. | **Journal**: Current diabetes reports (2026/May)
-**PMID**: 42095998 | https://pubmed.ncbi.nlm.nih.gov/42095998/
-
-PURPOSE OF REVIEW: The purpose of this review is to synthesize literature investigating the relationship between type 2 diabetes (T2D) and obstructive airway diseases and to identify implications for clinical care.
-RECENT FINDINGS: Type 2 diabetes is a common and challenging comorbidity in patients with asthma and chronic obstructive pulmonary disease (COPD). Basic, translational and clinical studies support a bidirectional association between T2D and the lung. In animal models and human studies, insulin resistance and hyperglycemia are associated with pulmonary inflammation, respiratory exacerbation risk and disease severity. Corticosteroids are a mainstay for respiratory disease control and exacerbation treatment but promote ongoing metabolic dysregulation. Randomized, placebo-controlled trials of glucose-lowering medications for asthma are actively ongoing. Additional studies addressing clinical pathways to co-manage respiratory and metabolic risk are needed. Patients with comorbid T2D and asthma or COPD are at risk for worse outcomes. There are opportunities to improve cross-disciplinary care, potentially reducing risk and multimorbidity associated with both conditions.
+The purpose of the study is to review reported cases of dupilumab-associated drug-induced sarcoidosis-like reaction (DISR) and consider possible immunologic mechanisms. This short review aims to raise awareness of dupilumab-associated DISR and discuss safety considerations in pediatric patients.Conclusion: Dupilumab is a human monoclonal antibody that reduces inflammation driven by T helper 2 (Th2) cells and is used to treat type 2 inflammatory disorders, including atopic dermatitis. The most common adverse reactions during the first year of treatment are local reactions at the injection site, conjunctivitis, and headache. Although DISR is rare, it has been documented in dupilumab-treated patients. We hypothesized that dupilumab shifts the Th1/Th2 equilibrium toward Th1 and granulomatous inflammation, which may present as DISR. We identified and reviewed 10 recently reported DISR cases and observed that reported features of DISR-including uveitis, optic neuritis and meningoencephalitis, bilateral hilar lymphadenopathy, and histopathologically noncaseating granulomas-can mimic systemic sarcoidosis. Discontinuation of dupilumab resulted in favorable outcomes in most reported DISR cases; however, symptoms worsened in some cases and sequelae became a concern. Case reports of DISR have so far been limited to adults or adolescents, but awareness of potential adverse effects of dupilumab remains important in pediatric patients.
 
 ---
-### [5] Cost-Effectiveness of Allergen Immunotherapy for Allergic Rhinitis: A Systematic Review.
-**Author**: Jacob Joshua et al. | **Journal**: Allergy (2026/May)
-**PMID**: 42093212 | https://pubmed.ncbi.nlm.nih.gov/42093212/
+### [3] Sulforaphane in Cutaneous Disorders and Skin Injury: Mechanisms, Evidence, and Clinical Perspectives.
+**Author**: Liu Hua et al. | **Journal**: Nutrients (2026/Apr)
+**PMID**: 42124049 | https://pubmed.ncbi.nlm.nih.gov/42124049/
 
-Allergic rhinitis imposes a substantial clinical and socioeconomic burden globally. While symptomatic pharmacotherapy such as oral antihistamines and intranasal corticosteroids offers temporary relief, allergen immunotherapy provides disease-modifying benefits but requires higher upfront costs. This systematic review synthesises cost-effectiveness evaluations of subcutaneous (SCIT) and sublingual immunotherapy (SLIT) compared to symptomatic pharmacotherapy (SP). A systematic search of electronic databases was undertaken, identifying 35 eligible economic evaluations. Due to methodological heterogeneity, a narrative synthesis was performed. Thirty-two evaluations (91%) concluded that allergen immunotherapy represents a cost-effective intervention, with incremental cost-effectiveness ratios predominantly falling below jurisdictional willingness-to-pay thresholds. Both SCIT and SLIT demonstrated economic value, particularly in patients with co-morbid asthma and when models incorporated sustained post-treatment benefits. Future clinical research should prioritise endpoints that facilitate direct estimation of health utility. Despite diverse healthcare settings and modelling approaches, the evidence supports allergen immunotherapy (AIT) as an economically rational investment. Policymakers should utilise these findings to inform reimbursement decisions. Trial Registration: PROSPERO registration number: CRD42024530911.
-
----
-### [6] Aluminium adjuvants in vaccines and potential health effects: systematic review.
-**Author**: Doyon-Plourde Pamela et al. | **Journal**: BMJ (Clinical research ed.) (2026/May)
-**PMID**: 42091164 | https://pubmed.ncbi.nlm.nih.gov/42091164/
-
-OBJECTIVE: To systematically review and critically appraise human evidence on potential health effects of aluminium adjuvanted vaccines.
-DESIGN: Systematic review following PRISMA (preferred reporting items for systematic review and meta-analysis) 2020 guidelines.
-DATA SOURCES: Six databases and trial registries were searched from inception to 3 March 2023 then updated to 27 November 2025. Reference lists of eligible studies were also screened.
-ELIGIBILITY CRITERIA FOR SELECTING STUDIES: Human studies assessing health outcomes after aluminium adjuvanted vaccination, including randomised controlled trials, cohort studies, case series, and ecological studies. Investigational vaccines, case reports, and review articles were excluded.
-DATA EXTRACTION AND SYNTHESIS: Two reviewers screened studies (with AI assistance for the 2023-25 update), extracted data, and assessed risk of bias (using RoB 2.0, ROBINS-I, or an adapted tool for case series). Certainty of evidence was rated using GRADE (Grading of Recommendations Assessment, Development, and Evaluation).
-RESULTS: The review included 59 studies (37 case series, 11 randomised controlled trials, nine cohort studies, two ecological studies). High quality evidence from randomised controlled trials and large cohorts consistently showed no association between aluminium adjuvanted vaccines and serious or long term health outcomes, such as asthma, autism spectrum disorders, or other chronic conditions. Studies on macrophagic myofasciitis were generally small and methodologically limited, and did not provide credible evidence of a causal association (very low certainty). Localised persistent nodules or granulomas were observed infrequently after diphtheria-tetanus-pertussis vaccines, consistent with delayed type hypersensitivity (<1%, self-limited; moderate to low certainty). For common adverse events (eg, headache, myalgia), high certainty randomised controlled trials found no consistent increase in risk with aluminium adjuvanted formulations. When differences were observed, they were small and predominantly mild to moderate in severity. Evidence was dominated by methodologically limited studies, with most case series and ecological studies at serious or critical risk of bias. Conclusions are primarily supported by higher quality randomised controlled trials and cohort evidence.
-CONCLUSIONS: Current evidence does not support causal associations between aluminium adjuvanted vaccines and serious or long term health outcomes. The most consistently documented reactions were persistent nodules or granulomas that are uncommon, local, and self-limited hypersensitivity reactions. These findings are broadly consistent with post-licensure surveillance findings. The predominance of methodologically limited studies for some outcomes highlights the need for higher quality research.
-SYSTEMATIC REVIEW REGISTRATION: PROSPERO CRD42023462831.
+Cutaneous disorders such as atopic dermatitis, psoriasis, acne vulgaris, and rosacea, together with UV-induced skin injury and photoaging, are highly prevalent conditions that involve varying contributions from dysregulated immune responses, cutaneous inflammation, oxidative stress, barrier dysfunction, microbiome alteration, and exogenous injury. However, these conditions are biologically heterogeneous and should not be regarded as a single mechanistic class. Sulforaphane, a naturally occurring isothiocyanate found primarily in broccoli and other cruciferous vegetables, has attracted interest in dermatology because of its antioxidant, cytoprotective, and context-dependent anti-inflammatory properties. Sulforaphane exerts its biological effects by modulating key signaling pathways, particularly the Keap1/Nrf2 pathway and, in some settings, NF-κB-related signaling, thereby reducing oxidative stress and inflammation, regulating immune responses, enhancing skin barrier function, and potentially influencing the cutaneous microbiome. Preclinical studies and limited human data suggest that sulforaphane may reduce erythema, edema, and other markers of cutaneous damage in selected settings. This comprehensive review explores the role of sulforaphane across heterogeneous cutaneous conditions, with emphasis on molecular mechanisms, disease-specific differences, current evidence, and discusses key translational constraints including formulation, delivery, lack of standardized dosing, and the limitations of cell culture and animal models for predicting human efficacy. Overall, sulforaphane should presently be regarded as a promising but still early-stage translational candidate in dermatology. Robust human efficacy data remain lacking for chronic inflammatory dermatoses such as psoriasis, atopic dermatitis, acne, and rosacea, whereas the strongest current human evidence relates to UV-associated skin outcomes and photoprotection.
 
 ---
-### [7] Challenges to Assessing the Prevalence of Cystic Fibrosis in the Caribbean.
-**Author**: Rivera-Figueroa Krystal L et al. | **Journal**: Pediatric pulmonology (2026/May)
-**PMID**: 42087576 | https://pubmed.ncbi.nlm.nih.gov/42087576/
+### [4] Clinical and Mechanistic Evidence for Comano Thermal Water: A Narrative Review.
+**Author**: Baldo Ermanno et al. | **Journal**: International journal of molecular sciences (2026/Apr)
+**PMID**: 42123477 | https://pubmed.ncbi.nlm.nih.gov/42123477/
 
-UNLABELLED:  : Cystic fibrosis (CF) is likely underdiagnosed in Caribbean populations due to non-representative cystic fibrosis transmembrane conductance regulator (CFTR) variant screening panels, limited newborn screening programs, and structural healthcare barriers. Data from 2022 indicate substantial populations with European ancestry in Puerto Rico (1.4 M, 42.7%) and the Dominican Republic (1.4 M, 57.9%), yet the true burden of CF in the broader Caribbean remains largely undocumented.
-WORKING HYPOTHESIS: Current diagnostic frameworks, largely based on European-derived CFTR variant distributions, fail to capture the true burden of CF in Caribbean populations, leading to underestimated prevalence and delayed or missed diagnoses.
-OBJECTIVES: To synthesize registry, clinical, and published data to identify barriers to accurately assessing CF prevalence in Caribbean populations.
-STUDY DESIGN AND METHODS: This narrative literature review integrates CF registries, published data on CFTR variant distribution, population ancestry data, and clinical observations from CF centers in Puerto Rico and the Dominican Republic. Clinical insights were derived from pediatric patients evaluated at the Pediatric Rare Lung and Asthma Institute in Puerto Rico and the CF Clinic at Robert Reid Cabral Children's Hospital in the Dominican Republic.
-RESULTS: CFTR variant patterns differ from those in the United States, with higher frequencies of rare variants such as p.Ala559Thr. Standard screening panels may miss these variants, contributing to underdiagnosis. Limited newborn screening, misdiagnosis, and restricted access to CFTR modulator therapies further exacerbate disparities.
-CONCLUSIONS: Structural, diagnostic, and genetic factors hinder accurate CF prevalence estimates in the Caribbean, highlighting the need for region-specific research, improved screening, and expanded access to therapies.
+Comano thermal water (CTW) is a hypotonic, bicarbonate-calcium-magnesium mineral water traditionally used to manage chronic inflammatory and relapsing skin diseases. This review summarises and discusses the available clinical, experimental, and translational evidence on CTW, with a particular focus on dermatological indications. The physicochemical properties of CTW, along with the presence of a stable, non-pathogenic microbial community, are examined in relation to their potential biological activity. Clinical studies indicate that CTW-based balneotherapy, alone or in combination with narrowband Ultraviolet B (UVB) phototherapy, is associated with improvements in disease severity, symptom burden, and quality of life in patients with psoriasis and atopic dermatitis, and has a favourable safety and tolerability profile. Experimental data further suggest that CTW may exert anti-inflammatory and immunomodulatory effects, modulate keratinocyte function, support skin barrier restoration, and influence the cutaneous microenvironment, including microbiome-related pathways. The review also outlines emerging evidence for CTW in skin regeneration and in upper airway inflammatory conditions treated via inhalation-based approaches. Overall, this review suggests that CTW may serve as a biologically active therapeutic resource, warranting further investigation as a complementary approach within integrative management strategies for inflammatory and barrier-related conditions.
 
 ---
-### [8] Acute and Chronic Cough in Children.
-**Author**: Kempthorne Douglas et al. | **Journal**: Otolaryngologic clinics of North America (2026/May)
-**PMID**: 42086429 | https://pubmed.ncbi.nlm.nih.gov/42086429/
+### [5] Prenatal maternal antibiotic use increases the risk of childhood eczema: a systematic review and meta-analysis.
+**Author**: Petrás Szilárd et al. | **Journal**: Scientific reports (2026/May)
+**PMID**: 42103814 | https://pubmed.ncbi.nlm.nih.gov/42103814/
 
-Cough is one of the most common symptoms among children. While most acute cough episodes are viral and resolve within 4 weeks, chronic cough persisting beyond 4 weeks warrants further evaluation. Pediatric-specific cough guidelines emphasizing algorithmic evaluation assist in early and accurate diagnosis for preventing long-term pulmonary complications. This article reviews evidence-based approaches to evaluating and managing acute and chronic cough in children, highlighting key diagnostic strategies and targeted treatment options.
+Early-life disruption of microbiome development is known to impair health; however, the long-term effects of pregnancy-related pharmacological alterations to the maternal gut microbiota on offspring health remain unclear. This meta-analysis aimed to evaluate the impact of maternal antibiotic use (either prenatal or intrapartum) on the risk of childhood atopic dermatitis, based on cohort and case-control studies. Literature searches were conducted in EMBASE, PubMed, Cochrane, and Web of Science databases using predefined PICO (patients, intervention, comparison, outcome) criteria. Overall, our meta-analysis included 30 studies with a total of 4,125,143 mothers and 4,346,050 children. Using the random effects model, our study found that prenatal antibiotic use was associated with higher odds of atopic dermatitis in childhood (aOR: 1.32; 95% CI: 1.12; 1.56). This result remained significant after adjusting publication bias by the trim-and-fill method (aOR: 1.22; 95% CI: 1.03; 1.44), highlighting the potential relevance of antibiotic prescribing practices during pregnancy in relation to childhood atopic disease risk. Intrapartum antibiotic use was not associated with elevated risk for atopic dermatitis in the children (OR: 1.64; 95% CI: 0.84; 3.17). Prenatal antibiotic use appears to have a modest effect on atopic dermatitis in offspring.
+
+---
+### [6] Lebrikizumab ADvocate1 and 2 Monotherapy and ADjoin (Long-Term) Trials: Use of Topicals Therapies.
+**Author**: Stein-Gold Linda et al. | **Journal**: Dermatology and therapy (2026/May)
+**PMID**: 42101561 | https://pubmed.ncbi.nlm.nih.gov/42101561/
+
+Atopic dermatitis (AD) is a chronically relapsing, complex skin disease characterized mainly by skin lesions and itch. The first-line treatment for patients with AD includes topical therapy, such as topical corticosteroids (TCS) and topical calcineurin inhibitors (TCI). Long-term use of topical medications can be burdensome for patients, and despite these burdens, topicals remain a frequent treatment option, not only in patients with mild-to-moderate disease, but also as concomitant therapy in patients with moderate-to-severe disease. Lebrikizumab is a novel monoclonal antibody that binds with high affinity and slow off-rate to interleukin (IL)-13, thereby blocking the downstream effects of IL-13 with high potency. This review focuses on the use of topical medications in the lebrikizumab ADvocate1&2 monotherapy trials and ADjoin long-term extension study in the context of similar trials for interleukin (IL)-13/IL-4 inhibitors. In the first 16 weeks of the ADvocate1 and ADvocate2 monotherapy clinical trials, topical therapy was not permitted, and patients receiving topicals were considered nonresponders in the primary analysis. In the subsequent 36-week maintenance period, concomitant therapy was permitted at investigator discretion; however, most patients did not use TCS (TCS use: 11.9% and 9.7% for lebrikizumab treatment every 4 weeks [Q4W] and 2 weeks [Q2W], respectively). Likewise, in the ADjoin long-term extension study, concomitant therapy was permitted at investigator's discretion; however, the majority of patients did not use TCS up to 2 years of treatment (TCS use: 12.1% and 8.5% for lebrikizumab Q4W and Q2W in patients from ADvocate1&2, respectively). Treatment with lebrikizumab monotherapy improved clinical signs and symptoms of AD, and demonstrated stable long-lasting disease control with less frequent dosing (Q4W), with no or minimal use of topicals. Topical use across clinical trials for approved monotherapy biologics (dupilumab, lebrikizumab, and tralokinumab) was reported, and topical therapy was permitted in the maintenance period. For nemolizumab, there is no monotherapy data available in AD.
+Atopic dermatitis is a chronic skin disease that causes a range of skin manifestations, including erythematous and scaling lesions, and itch and related sleep disturbance. The main treatment options for atopic dermatitis are represented by topical treatments such as corticosteroids and calcineurin inhibitors in creams and ointment formulations. Using these topical therapies for a long time can be difficult and bothersome for patients with moderate-to-severe cases, but they are still commonly used even for severe cases. Lebrikizumab is a new type of medicine that targets a protein called interleukin-13 (IL)-13, which plays a role in atopic dermatitis. This review looks at how topical treatments were used in lebrikizumab trials. In the first 16 weeks of the ADvocate1 and ADvocate2 trials, patients were not allowed to use topical treatments, and those who did were considered nonresponders. During the next 36 weeks, patients could use topical treatments if needed, but most did not use corticosteroids. Similarly, in the ADjoin long-term study, most patients did not use corticosteroids over 2 years. Lebrikizumab treatment improved atopic dermatitis symptoms and maintained the response with little or no use of topical treatments.
+
+---
+### [7] Dupilumab for the treatment of eczema molluscatum: A pediatric case report and systematic literature review.
+**Author**: Obermeier Patrick E et al. | **Journal**: Journal der Deutschen Dermatologischen Gesellschaft = Journal of the German Society of Dermatology : JDDG (2026/May)
+**PMID**: 42101337 | https://pubmed.ncbi.nlm.nih.gov/42101337/
+
+Atopic dermatitis (AD) may be complicated by disseminated molluscum contagiosum virus (MOCV) infection, known as eczema molluscatum (EM), particularly in children. Topical treatments are not always effective, and although modern systemic immunomodulatory therapies for AD, including use in early childhood, are available, their impact on co-occurring MCV infection is not well documented. We present a 4-year-old child with severe EM that was refractory to conventional topical therapy. She was treated with dupilumab (300 mg subcutaneously every four weeks), which led to a rapid resolution of symptoms and clinical clearance of MOCV-1 infection without adverse events. To contextualize our findings, we performed a systematic literature review, including PubMed, ScienceDirect, Scopus, and Google Scholar, to identify published case descriptions of dupilumab use with co-occurring MOCV infection (PROSPERO ID CRD420251106639). We identified a total of six publications reporting on nine adult patients (mean age: 40 years, range: 21-58 years, 8/9 male). In five of these patients, EM temporarily flared up before resolution. The present report is the first of a child. Our findings, along with existing reports, suggest that dupilumab may be a safe and effective treatment option for AD patients with MOCV infection. Prospective evaluation using standardized outcome measures is warranted.
+
+---
+### [8] Association of Meteorological Factors and Air Pollutants With Atopic Dermatitis in Children: A Systematic Review and Meta-Analysis.
+**Author**: Feng Huike et al. | **Journal**: Dermatitis : contact, atopic, occupational, drug (2026/May)
+**PMID**: 42095287 | https://pubmed.ncbi.nlm.nih.gov/42095287/
+
+There is no consensus on the impact of meteorological factors and air pollutants on childhood atopic dermatitis (AD). Literature was searched in 3 databases (PubMed, Web of Science, and Embase) up to May 1, 2025, and evaluated by 2 independent reviewers. Cross-sectional studies, cohort studies, or time-series analyses were included, reporting outcomes of meteorological factors, air pollutants, and childhood AD. The Newcastle-Ottawa Scale and Agency for Healthcare Research and Quality scale were used to assess study quality. A random-effects model was applied to estimate pooled risk ratios. From 132 identified literature, 49 studies involving nearly 7,091,746 participants were included. Air pollutants were positively correlated with the risk of childhood AD (odds ratio [OR] [95% confidence interval or CI] = 1.030 [1.005, 1.056] for carbon monoxide [CO]; 1.116 [1.075, 1.264] for nitrogen dioxide [NO2]; 1.059 [1.013, 1.108] for ozone; 1.114 [1.039, 1.260] for particulate matter [PM] with diameter of 10 µm [PM10]; 1.041 [1.009, 1.074] for PM with diameter of 2.5 µm [PM2.5]). No clear associations were observed between sulfur dioxide, temperature, humidity, and ultraviolet radiation (UVR) and the risk of childhood AD. Subgroup analysis showed that higher temperature and UVR might reduce the risk of AD, increased concentrations of CO, NO2 in developed countries, and PM10, PM2.5, and NO2 might increase the incidence risk in developing countries. Air pollutants represented significant risk factors for childhood AD, underscoring the imperative to prioritize environmental quality improvement for AD prevention.
 
 ---
 ### [9] Trace Elements in Allergy: Narrative Review.
@@ -2726,229 +2321,51 @@ Cough is one of the most common symptoms among children. While most acute cough 
 Allergic diseases are increasing worldwide and reflect a complex interplay between genetic susceptibility and environmental exposures. Among environmental determinants, trace elements contribute to epithelial barrier dysfunction, tissue remodeling, redox homeostasis, and immune regulation and may influence the development and severity of allergic diseases. This narrative review summarizes current mechanistic, epidemiological, and clinical evidence on the role of essential and non-essential trace elements in allergy. We discuss essential elements, including iron, zinc, selenium, copper, manganese, iodine, molybdenum, and boron, which support antioxidant defense, epithelial integrity, and immune homeostasis. We also review sensitizing and potentially toxic elements such as nickel, chromium, cobalt, silicon, and fluoride, which may promote allergic sensitization and inflammation through hapten-driven immune responses, oxidative stress, and adjuvant-like effects. Evidence across asthma, allergic rhinitis, atopic dermatitis, and food allergy indicates that trace elements may contribute to the development and heterogeneity of allergic disease. However, reported associations between elemental status and allergic diseases remain heterogeneous across studies. This variability likely reflects both underlying biological differences and methodological heterogeneity, including variation in study design, biological matrices, exposure assessment, and analytical techniques. Better methodological harmonization will be essential to elucidate the roles of trace elements in allergy development and to strengthen future translational and preventive research efforts. At present, available evidence does not support routine assessment of trace element status or generalized supplementation in the prevention or management of allergic diseases, except in cases of documented deficiency or clearly defined clinical indications.
 
 ---
-### [10] Real-life lessons on omalizumab and food allergy: The potential for unexplored outcomes.
-**Author**: Lo Scalzo Lucia et al. | **Journal**: The World Allergy Organization journal (2026/May)
-**PMID**: 42079786 | https://pubmed.ncbi.nlm.nih.gov/42079786/
-
-INTRODUCTION: IgE-mediated food allergy (FA) represents an increasing global health burden, with rising prevalence and limited therapeutic options beyond allergen avoidance and emergency management. The approval of omalizumab as the first biologic to reduce reactions after accidental food exposure marks a turning point in FA care. While randomized controlled trials (RCTs) have demonstrated its efficacy in raising reaction thresholds and reducing allergic responses, real-world studies provide complementary evidence capturing outcomes relevant to everyday life.
-METHODS: This review integrates evidence from sources of observational studies, including cohort, case series, and case reports evaluating omalizumab in patients with FA, including complex phenotypes and populations typically excluded from RCTs.
-DISCUSSION: Real-world data demonstrate that omalizumab can prevent severe reactions in atypical and non-ingestive FA phenotypes, increase reaction thresholds as monotherapy, and enable dietary liberalization in a substantial proportion of patients. Observational cohorts consistently report improvements in food allergy-related quality of life, reduced anxiety, and enhanced confidence in food management. Omalizumab appears effective and well tolerated across complex populations, including patients with multiple comorbidities and very high total IgE levels, even beyond currently approved dosing limits. Emerging evidence also suggests that FA may require disease-specific dosing paradigms distinct from those used in asthma.
-CONCLUSIONS: Real-world evidence complements RCTs findings by highlighting the multidimensional benefits of omalizumab in FA, encompassing clinical protection, dietary freedom, and psychosocial well-being as well as dose fine-tuning and off-label scenarios. These data support its broader clinical value and inform future research, dosing strategies, and personalized application in routine care.
-
----
-### [11] Metabolomic Approaches to Lung Function in Pediatric Asthma: A Narrative Review.
-**Author**: Moldovan Orlanda et al. | **Journal**: Children (Basel, Switzerland) (2026/Apr)
-**PMID**: 42073122 | https://pubmed.ncbi.nlm.nih.gov/42073122/
-
-Introduction: Asthma is one of the most common chronic diseases in childhood and represents a major global public health concern due to its high prevalence, healthcare burden, and impact on quality of life. Pediatric asthma is characterized by clinical and biological heterogeneity, reflected in variable airflow limitations and distinct inflammatory endotypes. Conventional diagnostic tools do not fully capture the metabolic mechanisms underlying lung function impairment and disease variability. Aim: This narrative review aims to synthesize evidence published linking metabolomic and breathomic signatures to lung function parameters in children with asthma. Methods: We searched PubMed, Scopus, and Google Scholar using predefined keywords including pediatric asthma, metabolomics, breathomics, volatile organic compounds, exhaled breath condensate, and lung function. The search covered publications from January 2015 to January 2026. Earlier studies were included when necessary for the conceptual or methodological context. We included human studies evaluating metabolomic or breathomic profiles in children (≤18 years) and reporting associations with lung function, severity, endotypes, or exacerbations. Duplicate records, adult-only studies, animal models, non-English publications, and conference abstracts without full data were excluded. Results: Alterations in lipid and sphingolipid metabolism, oxidative stress pathways, and purine metabolism were associated with airflow limitation and reduced FEV1. Breathomic analyses revealed associations between volatile profiles, small airway dysfunction, and inflammatory patterns. However, findings remain heterogeneous across biological matrices and analytical platforms. Conclusions: Metabolomic and breathomic profiling may complement conventional lung function assessment by providing additional mechanistic insight into pediatric asthma heterogeneity. Standardized methodologies, longitudinal validation, and integration within multi-omics approaches are required before routine clinical implementation.
-
----
-### [12] Nutrition as a Modifiable Factor in Optimizing Respiratory Health: Evidence from Pulmonary Function Tests.
-**Author**: Chereches-Panta Paraschiva et al. | **Journal**: Children (Basel, Switzerland) (2026/Apr)
-**PMID**: 42073121 | https://pubmed.ncbi.nlm.nih.gov/42073121/
-
-Introduction: Pediatric asthma is the inflammatory condition with the highest burden of chronic disease in children. Awareness of the undesirable effects of modern lifestyles, including sedentary behavior and eating habits associated with Western diets, has led to novel approaches in clinical practice. Current concerns focus on the possibility of non-pharmacological intervention to achieve better disease control and normal lung function in these children. Method: In this narrative review, we analyzed current information on the influence of dietary patterns on lung function. The aim was to clarify the extent to which current knowledge provides arguments for applying certain dietary measures to asthma patients in order to optimize lung function. We conducted research in the literature to evaluate the impact of Western diet, Mediterranean diet, and micronutrients status on lung function. We also focused on how maternal diet during pregnancy can influence lung function in offspring. Results: We found a positive impact on lung function in children who adhere to the Mediterranean diet, in contrast to the Western diet which is related to low asthma control. Deficits of micronutrients like selenium, zinc, iron, and vitamin D are linked to impaired lung function. Maternal intake of fiber, vitamin A, vitamin E, zinc, and selenium during pregnancy is correlated with better FEV1 and FVC. However, current information on this topic is controversial, and there is no clear data on intervention measures in clinical practice. Conclusions: Evaluation and clear recommendations of diet could contribute to a better management of children with asthma.
-
----
-### [13] Treatment Dose Increase Versus Co-Medication in Allergic Rhinitis: Systematic Review With Dose-Response Network Meta-Analysis.
-**Author**: Sousa-Pinto Bernardo et al. | **Journal**: Allergy (2026/May)
-**PMID**: 42068093 | https://pubmed.ncbi.nlm.nih.gov/42068093/
-
-BACKGROUND: To achieve adequate symptom control, patients with allergic rhinitis (AR) often need to increase their medication dose or add other treatments (co-medication). We aimed to perform a systematic review to compare the efficacy and safety of AR medications for increased dose versus co-medication.
-METHODS: We searched four bibliographic databases and three trial databases for randomised controlled trials assessing the effect of intranasal and/or oral medications in patients of all ages with seasonal or perennial AR. We performed pairwise meta-analysis based on direct evidence to compare (i) non-standard versus standard treatment doses, and (ii) co-medication strategies versus monotherapy using standard doses. Furthermore, we fitted dose-response network meta-analysis (NMA) to obtain projected estimates for comparisons involving two times the standard dose of AR medications in monotherapy versus co-medication with the standard dose of the same medications. We assessed the certainty of evidence using GRADE for NMA.
-RESULTS: We included 262 studies. Co-medication schemes involving oral antihistamines (OAH) + intranasal corticosteroids (INCS) resulted in higher improvements of nasal symptoms and quality of life than doubling the dose of OAH. However, doubling the dose of intranasal medications led to better results than having intranasal medications + OAH. Doubling the dose of INCS was associated with higher efficacy than adding intranasal antihistamines (INAH). No relevant safety differences were found between treatment strategies.
-CONCLUSIONS: Results favoured (i) doubling the dose of intranasal medications versus adding OAH, and (ii) adding INCS to OAH over doubling the dose of OAH. This study will inform the ARIA-EAACI 2024-2025 guidelines.
-
----
-### [14] Recent advances in pediatric pulmonology and allergy: Articles of interest to fellows. Subclinical small airway dysfunction, anti-inflammatory reliever therapy, and biologic treatment in pediatric asthma.
-**Author**: Alvarado-Amador Irlanda et al. | **Journal**: Paediatric respiratory reviews (2026/Apr)
-**PMID**: 42067424 | https://pubmed.ncbi.nlm.nih.gov/42067424/
-
-Recent advances in pediatric asthma continue to refine the understanding of disease mechanisms and to reshape therapeutic strategies. In this brief review, we discuss three recent articles of particular interest to fellows and early-career clinicians. First, we examine evidence showing that subclinical small airway dysfunction may be present in children with well-controlled asthma despite normal FEV1, highlighting the potential role of oscillometry as a complementary tool in functional assessment. Second, we review the CARE trial, which demonstrated that as-needed budesonide-formoterol was superior to SABA-only reliever therapy in reducing asthma attacks in children with mild asthma. Third, we summarize recent data on dupilumab in children with uncontrolled moderate-to-severe type 2 asthma, showing sustained benefits across disease severity strata. Together, these studies illustrate how physiological assessment and targeted anti-inflammatory therapies are advancing personalized care in pediatric asthma.
-
----
-### [15] Clinical remission in allergy and clinical immunology practice: State of the art and World Allergy Organization (WAO) call to action.
+### [10] Clinical remission in allergy and clinical immunology practice: State of the art and World Allergy Organization (WAO) call to action.
 **Author**: Morais-Almeida Mário et al. | **Journal**: The World Allergy Organization journal (2026/May)
 **PMID**: 42058161 | https://pubmed.ncbi.nlm.nih.gov/42058161/
 
 Recent advances in biological therapies, small molecules and allergen-specific immunotherapy are reshaping the management of immunoallergic diseases, progressively shifting therapeutic goals from short-term disease control toward the possibility of achieving sustained clinical remission. Despite increasing evidence across multiple conditions, a universally accepted and disease-transversal definition of clinical remission (CR) remains lacking. In this review we propose a comprehensive framework for defining clinical remission across a broad spectrum of immune-mediated diseases traditionally managed in Allergy and Clinical Immunology practice, including asthma, allergic rhinitis, chronic rhinosinusitis with nasal polyps, chronic urticaria, atopic dermatitis, mastocytosis, food allergy, and eosinophilic esophagitis. Clinical remission is defined as a sustained state of absence of clinically relevant disease manifestations, independently of underlying biological activity; suppression of inflammatory pathways and normalization of biomarkers define biological remission, which may coexist with, but is not required for, clinical remission. We introduce the 3D-CR model, a pragmatic, disease-adaptable framework integrating 3 complementary domains - clinical, biological, and functional - to characterize remission states as complete, partial, or absent. Building on this model, we propose the Allergic Disease Remission Score (ADReS) as a modular tool designed to support standardized assessment, longitudinal follow-up, and cross-disease comparison in clinical trials and real-world settings. These tools are intended as conceptual and research instruments rather than prescriptive algorithms for individual therapeutic decision-making. Finally, we outline a World Allergy Organization call to action advocating for a harmonized global approach to defining, measuring, and implementing clinical remission as a meaningful treatment target. Establishing standardized remission endpoints has the potential to improve patient outcomes, facilitate precision medicine strategies, enhance comparability across studies, and reduce heterogeneity in clinical research and practice worldwide.
 
 ---
-### [16] Update in childhood asthma.
-**Author**: Bush Andrew et al. | **Journal**: Allergology international : official journal of the Japanese Society of Allergology (2026/Apr)
-**PMID**: 42055854 | https://pubmed.ncbi.nlm.nih.gov/42055854/
+### [11] [Hand eczema and occupational counseling in adolescents].
+**Author**: Molin Sonja et al. | **Journal**: Dermatologie (Heidelberg, Germany) (2026/Apr)
+**PMID**: 42043525 | https://pubmed.ncbi.nlm.nih.gov/42043525/
 
-The areas covered represent a personal selection in the field. Asthma is defined in this manuscript as a clinical syndrome of wheeze, breathlessness and chest tightness, sometimes with excess cough. No assumptions are made about underlying pathology, and asthma thus becomes a clinical description, not a diagnosis. The areas covered include the need never to forget the importance of getting the basics right, including correct diagnosis and appropriate management; most children with asthma do not need biologics. Recent advances in preschool wheeze are covered next, especially the beginnings of phenotype-driven treatment, and the difficult issue of understanding non-eosinophilic wheezing. It is becoming clearer that infection likely plays a big role, but management is very difficult with no evidence base. We are now coming to realize the importance of phenotyping acute asthma attacks; one size does not fit all, but whereas many are eosinophilic, some are infection driven and are non-eosinophilic, especially in the preschool years. A phenotypic approach may allow us to reduce the burden of repeated oral corticosteroid bursts. Furthermore, we need to move beyond mere cell counting to assessing functional status. We are increasingly appreciating the importance of replacing short-acting β-2 agonist reliever therapy with combined inhaled corticosteroid and a fast acting short- and especially long-acting β-2 agonists. Finally, the use of biologicals in severe asthma is discussed. The possibility that early use of biologics may induce remission or even cure asthma.
-
----
-### [17] Oscillometry for the diagnosis of asthma in children: a systematic review.
-**Author**: Seneviratne Senali Y et al. | **Journal**: European respiratory review : an official journal of the European Respiratory Society (2026/Apr)
-**PMID**: 42055592 | https://pubmed.ncbi.nlm.nih.gov/42055592/
-
-BACKGROUND: Diagnosing asthma in children and young people (CYP) remains challenging. Oscillometry is a promising tool and is feasible from 2 years of age. European Respiratory Society (ERS) technical standards and bronchodilator response (BDR) oscillometry thresholds have been published, but diagnostic accuracy is not established.
-METHODS: We systematically reviewed studies comparing oscillometry and spirometry in CYP under investigation for asthma. Reference standards were positive BDR or positive methacholine challenge test (MCT). Primary aims were to investigate the sensitivity and specificity of current ERS oscillometry thresholds (>40% decrease in resistance at 5 Hz (R 5), >50% increase in reactance at 5 Hz (X 5) or >80% decrease in the area under the reactance curve); secondary aims were to identify oscillometry threshold values optimising both sensitivity and specificity.
-RESULTS: 11 studies were included; six (n=992 CYP) utilised BDR and five (n=531 CYP) MCT as reference standard. Meta-analysis was not possible due to heterogeneity of results reported. In two studies using current ERS BDR thresholds, zero sensitivity and high specificity (>85%) were observed. In weighted regression analyses of BDR studies, a 17.0% decrease in resistance at 5-6 Hz had sensitivity and specificity of 71.6% (95% CI 69.7-73.7%); a 20.2% increase in X 5 had sensitivity and specificity of 68.6% (95% CI 66.6-70.8%). Similarly, 27.7% increase in R 5 had sensitivity and specificity of 73.6% (95% CI 71.9-75.3%) for MCT.
-CONCLUSION: Currently recommended ERS thresholds for oscillometry BDR have low sensitivity. Proposed thresholds for defining positive BDR and MCT by oscillometry require prospective validation and adoption of standards for measuring and reporting oscillometry parameters in future diagnostic comparative studies.
-
----
-### [18] Allergen-specific immunotherapy at earlier stages of allergic respiratory diseases: a change is in the air!
-**Author**: Lombardi Carlo et al. | **Journal**: Current opinion in allergy and clinical immunology (2026/Jun)
-**PMID**: 42055088 | https://pubmed.ncbi.nlm.nih.gov/42055088/
-
-PURPOSE: This expert point of view discusses why allergen-specific immunotherapy (AIT) should be considered earlier in the management of allergic rhinitis and asthma, highlighting a shift from its traditional use as a last-line add-on therapy toward a more proactive, disease-modifying intervention in carefully selected patients.
-RECENT FINDINGS: Large real-world datasets, including the REACT program and the EfficAPSI study, show that adding AIT to standard care in patients with allergic rhinitis, with or without mild-to-moderate asthma, is associated with sustained reductions in pharmacologic treatment needs, fewer severe asthma exacerbations, and lower healthcare utilization over long-term follow-up. Pediatric and adolescent analyses suggest that starting AIT earlier in life enhances these benefits, supporting the concept of a "window of opportunity" during which immune modulation may prevent or delay asthma onset and limit new sensitizations, in line with the notion of the allergic march.
-SUMMARY: The accumulating real-world evidence that early AIT can alter the natural history of allergic airway disease provides a strong rationale to reposition AIT within clinical algorithms, moving it from a rescue option for pharmacologic failures to an earlier, integrated disease-modifying strategy. Earlier use of AIT, alongside optimized pharmacotherapy, may improve long-term control, reduce progression to severe asthma, with important implications for patients and health-care systems.
+BACKGROUND: Many adult patients with hand eczema report having noticed the first signs of their skin condition at a young age. The pathogenesis of hand eczema is multifactorial. In children or teenagers, atopic predisposition as well as skin irritation or contact sensitization play a major role in hand eczema development. To provide effective counseling to adolescents with hand eczema who are about to choose a career, it is helpful to know the current state of knowledge regarding hand eczema in this special group of patients.
+OBJECTIVES: Overview on the factors that are important for hand eczema in teenage patients, as well as possible approaches to career counseling.
+MATERIALS AND METHODS: Evaluation of the current literature on hand eczema in childhood and adolescence and the recommendations for career counseling.
+RESULTS: The average age of onset for hand eczema is about 12 years. The 1‑year and lifetime prevalence in childhood are described as 5.2-10% and 6.5-13.3%, respectively, and 12.1% and 18.3% in adolescents and young adults. Trigger factors differ within the young patient groups: while among children they are often found in the context of leisure activities and hobbies, in adolescents they sometimes relate to an occupational context. The choice of profession does not necessarily have to be restricted even in the context of a previous history of eczema or an atopic preposition. It is crucial to counsel the young patients in detail, educating them about the special needs of their skin as well as on consistent moisturizing and skin protection.
+CONCLUSION: Early identification of trigger factors as well as good counseling and treatment optimization are essential for adolescent hand eczema patients in order to keep the influence of hand eczema on their development, thriving, and career choices as low as possible.
+ZUSAMMENFASSUNG: HINTERGRUND: Viele erwachsene Patienten mit Handekzem berichten, dass sie bereits in jungen Jahren erste Anzeichen ihrer Hauterkrankung bemerkt haben. Die Pathogenese des Handekzems ist multifaktoriell. Im Kindes- bzw. Teenageralter können eine atopische Diathese sowie Hautirritation oder Kontaktsensibilisierung eine Rolle spielen. Um Jugendliche mit Handekzem, die vor der Berufswahl stehen, gut zu beraten, ist es hilfreich, den bisherigen Kenntnisstand zum Handekzem in dieser besonderen Patientengruppe zu kennen.
+ZIEL DER ARBEIT (FRAGESTELLUNG): Übersicht über die beim Handekzem im Teenageralter bedeutsamen Faktoren und mögliche Ansätze zur Berufsberatung.
+MATERIAL UND METHODEN: Auswertung der aktuellen Literatur zu Handekzem im Kindes- und Jugendalter und den Empfehlungen zur Berufsberatung.
+ERGEBNISSE: Das durchschnittliche Erkrankungsalter liegt bei etwa 12 Jahren, Einjahres- und Lebenszeitprävalenz werden mit 5,2–10 % bzw. 6,5–13,3 % im Kindesalter, 12,1 % und 18,3 % bei Jugendlichen und jungen Erwachsenen beschrieben. Triggerfaktoren unterscheiden sich innerhalb der jungen Patientengruppen: Bei Kindern sind diese oft im Rahmen von Freizeitbeschäftigungen und Hobbies zu finden, bei älteren Jugendlichen teils schon im beruflichen Umfeld. Bei Ekzemen in der Vorgeschichte oder einer atopischen Prädisposition muss die Berufswahl nicht zwingend eingeschränkt sein. Hier ist es wichtig, die Jugendlichen ausführlich zu beraten und auf die besonderen Bedürfnisse der eigenen Haut und die Notwendigkeit von konsequenter Rückfettung und Hautschutz hinzuweisen.
+SCHLUSSFOLGERUNGEN: Frühzeitige Identifizierung von Triggerfaktoren sowie gute Beratung und Therapieoptimierung sind bei jugendlichen Handekzempatienten essenziell, um den Einfluss des Handekzems auf Entwicklung, Gedeihen und Berufswahl so gering wie möglich zu halten.
 
 ---
-### [19] Risk factors, preventive strategies, and long-term effects of lower respiratory tract infections in early childhood: a comprehensive review.
-**Author**: N M Arul Kiruba et al. | **Journal**: The Journal of asthma : official journal of the Association for the Care of Asthma (2026/May)
-**PMID**: 42053419 | https://pubmed.ncbi.nlm.nih.gov/42053419/
+### [12] The Prevalence of Contact Allergy to Formaldehyde and Formaldehyde Releasers: A Systematic Review and Meta-Analysis.
+**Author**: Karimian Kian et al. | **Journal**: Contact dermatitis (2026/Apr)
+**PMID**: 42035787 | https://pubmed.ncbi.nlm.nih.gov/42035787/
 
-OBJECTIVE: To synthesize existing evidence on the risk factors, preventive measures, and long-term outcomes of lower respiratory tract infections (LRTIs) in early childhood, and to identify key gaps in research and policy.
-METHODS: A systematic search was conducted in PubMed, Scopus, and Web of Science for studies published between January 2000 and August 2025, supplemented by reports from WHO, UNICEF, and the Global Burden of Disease (GBD) database. Eligible studies included randomized controlled trials, cohort, case-control, and cross-sectional studies, as well as systematic reviews involving children aged 0-5 years. Studies focused solely on acute treatment or adult populations were excluded.
-RESULTS: Early-life LRTIs arise from interacting determinants, including prematurity, malnutrition, indoor air pollution, inadequate immunization, and socioeconomic inequities. Preventive strategies such as vaccination, maternal immunization, exclusive breastfeeding, micronutrient supplementation, and the use of clean fuels-significantly reduce childhood morbidity and mortality. Evidence also indicates long-term health consequences, including asthma, impaired lung function, neurodevelopmental delay, and increased cardiometabolic risk.
-CONCLUSIONS: Early-life LRTIs represent both an acute health burden and a determinant of lifelong respiratory and systemic outcomes. Expanding equitable vaccination coverage, improving maternal and child nutrition, reducing environmental exposures, and strengthening health-system capacity are essential to mitigate both short- and long-term global impacts.
+Formaldehyde and its releasers are common preservatives and potent sensitizers. This meta-analysis aimed to estimate the prevalence of formaldehyde contact allergy and allergy to its five most common releasers among dermatitis patients. Two authors independently searched PubMed, Embase, and Web of Science from inception to 30th September 2025. A proportion meta-analysis was conducted using a random-effects model. A total of 158 studies involving 1 347 638 dermatitis patients were included. The pooled prevalence of formaldehyde contact allergy was 2.88% (95% CI 2.55-3.24) with clinical relevance at 41.57%. The pooled prevalence for releasers was 2.76% for 2-bromo-2-nitropropane-1,3-diol, 1.89% for quaternium-15, 1.42% for diazolidinyl urea, 1.37% for DMDM hydantoin, and 1.20% for imidazolidinyl urea. Quaternium-15 showed the highest clinical relevance at 55.67%. Significant sensitization rates were observed in different geographic regions, with the highest prevalence found in North America (6.8%). The prevalence rate was 2.96% among children and 2.61% among adults, with no significant difference. The prevalence rate was 2.65% among patients with atopic dermatitis (AD) and 2.85% among patients without AD, with no significant difference. The profound geographic disparities suggest that regulatory interventions, such as the EU's prohibition of formaldehyde and quaternium-15 in cosmetics, are highly effective public health measures.
 
 ---
-### [20] The Use of Point-of-Care Lung Ultrasound in the Diagnosis of Pneumonia in Pediatric Patients.
-**Author**: Marzook Noah et al. | **Journal**: Pediatric emergency care (2026/May)
-**PMID**: 42050965 | https://pubmed.ncbi.nlm.nih.gov/42050965/
-
-Traditional methods to evaluate for pediatric pneumonia include clinical examination and chest radiography (CXR). Point-of-care lung ultrasound (LUS) has emerged as a promising, noninvasive alternative for diagnosing pediatric pneumonia. This review highlights the diagnostic accuracy, benefits, and limitations of LUS compared with clinical assessment and CXR in pediatric patients with suspected pneumonia. Multiple meta-analyses demonstrate that LUS offers high sensitivity (up to 94%) and specificity (up to 96%) in diagnosing pediatric pneumonia, comparable to or exceeding CXR performance. LUS provides significant advantages, including no radiation, bedside applicability, and lower costs. However, challenges remain in standardizing LUS interpretation, particularly distinguishing bacterial pneumonia from viral illness and asthma, where overlapping ultrasound findings are common and require careful clinical correlation. Standardized protocols, clinician training, and diagnostic algorithms are essential to optimize LUS utility in pediatric respiratory care. Further research is warranted to refine differentiation between bacterial and viral etiologies and effectively integrate LUS into routine clinical pathways.
-
----
-### [21] Follow-up after discontinuation of omalizumab in patients with moderate-to-severe asthma: A systematic review.
-**Author**: Yan Qiu-Li et al. | **Journal**: Allergy and asthma proceedings (2026/May)
-**PMID**: 42050841 | https://pubmed.ncbi.nlm.nih.gov/42050841/
-
-Background: Omalizumab is a well-established add-on therapy for patients with moderate-to-severe asthma. However, there is limited systematic evidence on the long-term outcomes after discontinuation of this treatment. Objective: To address this evidence gap, this review aimed to systematically evaluate the follow-up outcomes in patients with moderate-to-severe asthma after discontinuation of omalizumab treatment. Methods: The research was conducted in accordance with the systematic reviews and meta-analyses guidelines. We systematically searched medical literature data bases from December 2003 to August 2025 for observational studies (prospective or retrospective) on omalizumab discontinuation in moderate-to-severe asthma. Data extraction was conducted on key variables: omalizumab treatment regimens, postdiscontinuation long-term outcomes, asthma control status, relapse risk factors, asthma exacerbation rates, corticosteroid use, and patterns of omalizumab reinitiation. Results: A total of 11 eligible studies were included in the review. After discontinuation, most patients showed no remarkable changes in forced expiratory volume in 1 second, fractional exhaled nitric oxide level, total immunoglobulin E value, or absolute eosinophil count. Moreover, no obvious deterioration was observed in patient-reported quality of life. These findings confirm the sustained long-term benefits of previous omalizumab add-on therapy because the majority of patients maintained favorable disease control after discontinuation. Subgroup analyses further indicated that asthma exacerbations, when they occurred, predominantly occurred within the first year after discontinuation. Conclusion: This review indicates that, although most patients maintain stable objective indicators after omalizumab discontinuation, a significant proportion are at increased risk for exacerbations, deterioration in asthma control, and increased corticosteroid use, particularly within the first year.
-
----
-### [22] Breathing through the night: A meta-analysis of childhood asthma and obstructive sleep apnea in sleep-disordered contexts.
-**Author**: Zheng Kaiwen et al. | **Journal**: Allergy and asthma proceedings (2026/May)
-**PMID**: 42050836 | https://pubmed.ncbi.nlm.nih.gov/42050836/
-
-Background: The study was to systematically evaluate the correlation between childhood asthma and obstructive sleep apnea (OSA). Methods: Several medical literature data bases were searched for studies published up to March 2025, by using the keywords "asthma" and "obstructive sleep apnea" and "child*." We included observational studies, children with OSA diagnosed via polysomnography, clinical criteria, or validated tools; and asthma confirmed by physician diagnosis, medication use, or validated questionnaires and international code. Results: Eleven studies were included that covered populations in the United States, Europe, and Asia. The pooled odds ratio (OR) for the association between childhood asthma and OSA was 1.66 (95% confidence interval [CI], 1.21-2.26; p < 0.001). Subgroup analysis by study design showed significant associations in cohort (OR 2.00 [95% CI, 1.35-2.96]) and cross-sectional (OR 1.55 [95% CI, 0.69-3.44]) but not in case-control studies (OR 0.85 [95% CI, 0.32-2.28]). Geographically, the association was strongest in America (OR 1.99 [95% CI, 1.35-2.96]) and Asia (OR 1.64 [95% CI, 1.19-2.25]), with a nonsignificant trend in Europe (OR 0.91 [95% CI, 0.34-2.42]). Sensitivity analyses directionally consistent with the results, and Egger's test (p = .587) indicated no significant publication bias. Conclusion: Childhood asthma is significantly associated with an increased risk of OSA, with sleep disorders likely exacerbating this relationship. Integrated screening and management strategies are warranted, particularly in high-risk regions such as America and Asia.
-
----
-### [23] Evidence-based clinical recommendations on the use of telemedicine for the management of children, adolescents and young adults with moderate-severe asthma.
-**Author**: Brigadoi Giulia et al. | **Journal**: Italian journal of pediatrics (2026/Apr)
-**PMID**: 42045978 | https://pubmed.ncbi.nlm.nih.gov/42045978/
-
-(abstract not available)
-
----
-### [24] Clinical heterogeneity and endotype stratification in eosinophilic esophagitis.
-**Author**: Shoda Tetsuo et al. | **Journal**: Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/Apr)
-**PMID**: 42044692 | https://pubmed.ncbi.nlm.nih.gov/42044692/
-
-Eosinophilic esophagitis (EoE) is a chronic immune-mediated inflammatory disease marked by esophageal dysfunction and eosinophil inflammation, with significant variability in presentation, course, and treatment response. Although patients are diagnosed using the same criteria, patients exhibit a range of characteristics with varying age at onset, symptoms, endoscopic appearance, treatment response, and progression to fibrostenotic complications. Clinical phenotyping offers a framework for describing observable disease features, including age-related symptom patterns, inflammatory and fibrostenotic traits, atopic comorbidities, and treatment responses. Complementing this approach, molecular endotyping aims to identify biologically distinct subgroups based on shared underlying mechanisms, informed by transcriptomic, single-cell, and genetic analyses. In EoE, both bulk and single-cell transcriptomic studies have uncovered conserved disease signatures along with specific molecular endotypes linked to inflammatory load, epithelial dysfunction, and tissue remodeling. Genetic studies further reveal both polygenic risk factors and rare variants that influence disease susceptibility, progression, and response to treatment. This review synthesizes current knowledge on clinical phenotypes and molecular endotypes in EoE, highlighting how integrating these frameworks can improve risk stratification, inform treatment selection, and advance precision medicine.
-
----
-### [25] Early-life mercury exposure and allergic diseases in childhood: systematic review and meta-analysis.
-**Author**: Liang Qiming et al. | **Journal**: Frontiers in pediatrics (2026)
-**PMID**: 42038240 | https://pubmed.ncbi.nlm.nih.gov/42038240/
-
-BACKGROUND: Mercury is a persistent environmental contaminant that can cross the placenta and accumulate in fetal tissues. While its neurotoxic effects are well established, its potential association with allergic diseases in children remains unclear. Understanding how early-life mercury exposure relates to the burden of allergic conditions is important for child health and environmental risk assessment.
-METHODS: We conducted a systematic review and meta-analysis of observational studies reporting allergic outcomes in children with measured mercury exposure. PubMed and Embase were searched from inception to October 2025. Studies were eligible if they assessed prenatal or postnatal mercury exposure and reported at least one allergic outcome. Random-effects meta-analysis was used to estimate pooled prevalence of allergic outcomes reported in studies.
-RESULTS: Sixteen studies were included. The pooled prevalence among mercury-exposed children was 6.2% (95% CI, 1.8-18.8%) for asthma, 18.6% (95% CI, 9.0-34.5%) for atopic dermatitis, 14.4% (95% CI, 3.2-46.2%) for eczema, 15.8% (95% CI, 3.3-50.9%) for allergic rhinitis, and 22.3% (95% CI, 13.2-35.2%) for wheezing. Heterogeneity was high (I² > 90%). Studies from East Asia, which reported higher mercury exposure and fish intake, showed greater allergic disease proportions than European cohorts.
-CONCLUSIONS: Allergic diseases were frequent among populations in which mercury exposure was assessed, with regional and exposure-timing differences contributing to heterogeneity. The findings highlight the need for harmonised, prospective studies to clarify the role of mercury exposure in childhood allergic disease development.
-
----
-### [26] Update on environmental determinants of allergic diseases.
-**Author**: Monga Naina et al. | **Journal**: The Journal of allergy and clinical immunology (2026/Apr)
-**PMID**: 42034298 | https://pubmed.ncbi.nlm.nih.gov/42034298/
-
-This review article summarizes key advances from October 2022-December 2025 on the link between environmental exposures and allergic diseases, with an emphasis on early-life exposures and mechanistic insights relevant to disease prevention and therapy. Allergic diseases have genetic and environmental origins. As to the latter, predisposition to allergy is thought to arise as a result of increased exposure to harmful environmental factors that act as immune adjuvants for allergens, and reduced exposure to beneficial factors that induce allergen tolerance. Harmful factors include air pollutants (road traffic-related particulate matter and gases, cigarette smoke, fire smoke, etc.), and various man-made chemicals and particles. Beneficial exposures include commensal microorganisms and non-microbial factors present in the farming environment. Allergic diseases frequently start in early childhood. Therefore, many recently published manuscripts focus on environmental exposures occurring prenatally or during the first few months/years after birth, i.e. time windows prior to allergic disease manifestation. This review article summarizes and comments on recent work on prenatal, childhood, adult, protective and harmful exposures, highlighting relevant human cohort studies as well as mechanistic work in mouse models and in vitro culture systems. Studies published in the past three years describe novel biomarkers of environmental exposures, elucidate novel mechanisms by which exposures shape allergic diseases, and highlight novel targets for therapeutic intervention, setting a foundation for new approaches for early detection of allergic predisposition, allergy treatment and prevention.
-
----
-### [27] ILC2s and their immune checkpoints in the antitumor response.
-**Author**: Ciancaglini Cecilia et al. | **Journal**: Journal for immunotherapy of cancer (2026/Apr)
-**PMID**: 42031427 | https://pubmed.ncbi.nlm.nih.gov/42031427/
-
-Innate lymphoid cells (ILCs) are tissue-resident lymphocytes that patrol mucosal barriers. Among ILC subsets, ILC2s' involvement in the innate immune response to parasites, in the development of asthma and in the repair of damaged tissues is well known. However, their role in antitumor immune response is controversial, as it seems to be dependent on the type of cancer and on interaction with the other cell types in the microenvironment. Immune checkpoint expression and function have been studied recently in ILC2s, with a focus on programmed cell death protein-1 (PD-1) and cytotoxic T lymphocyte-associated protein-4 (CTLA-4). This review summarizes recent progress in understanding the ILC2s' contribution to cancer development and response to immunotherapy targeting inhibitory checkpoints.
-
----
-### [28] Inborn Errors of Immunity with overlap of Allergy and Autoimmune disease.
+### [13] Inborn Errors of Immunity with overlap of Allergy and Autoimmune disease.
 **Author**: Heimall Jennifer et al. | **Journal**: Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/Apr)
 **PMID**: 42031065 | https://pubmed.ncbi.nlm.nih.gov/42031065/
 
 Inborn errors of immunity (IEI) are increasingly recognized to present clinically with not just infection, but also symptoms of immune dysregulation including autoimmunity and severe atopy. IEI with atopy and autoimmunity can be grouped into 3 broad categories: 1) Cytoskeletal Impairments, 2) Cytokine Signaling Impairments, and 3) TCR Signaling Impairments. Additionally, Primary Immune Regulatory Disorders (PIRDS) are a subset of IEI that have been described with increasing frequency over the last 5 years to present predominantly with symptoms of immune dysregulation rather than severe or opportunistic infections. These PIRDs can present with overlaps of both atopy, most commonly atopic dermatitis and severe autoimmunity. In the latest IUIS genotypic categorization of IEI's, PIRDs were the group with largest expansion of newly identified monogenic etiologies, suggesting that these patients in our clinic waiting to be identified, and with the hope that identification of a monogenic cause can drive effective use of pathway specific, precision therapy. In this review we will provide an overview of the mechanisms behind T cell development or deficiency that can contribute to development of atopy and autoimmunity, review selected monogenic forms of PIRDs that present with an overlap of atopy and autoimmunity, and provide an overview of approaches to diagnostic testing for and management of these conditions in the allergy and immunology clinical setting.
 
 ---
-### [29] Asthma and increased carotid intima-media thickness: A systematic review and meta-analysis.
-**Author**: Haroun Mohammed et al. | **Journal**: Biomolecules & biomedicine (2026/Apr)
-**PMID**: 42028627 | https://pubmed.ncbi.nlm.nih.gov/42028627/
-
-Asthma has been associated with early vascular changes that elevate the risk of atherosclerosis and cardiovascular diseases. Carotid intima-media thickness (CIMT) serves as a non-invasive marker for subclinical atherosclerosis and cardiovascular risk. However, existing literature presents conflicting results regarding CIMT measurements in asthmatic patients. This study aims to evaluate whether CIMT is elevated in asthma patients compared to healthy controls and to explore potential modifiers. We conducted a systematic review following PRISMA guidelines, performing a literature search across PubMed, Web of Science, ScienceDirect, and the WHO VHL. We calculated pooled standardized mean differences (SMD) with 95% confidence intervals (CI) to assess the differences in CIMT values. Heterogeneity was evaluated using the I² statistic, and subgroup analyses and meta-regression were utilized to identify sources of heterogeneity. Our review included a total of 10 studies. The analysis indicated significantly higher CIMT values in asthma patients compared to healthy controls, with a pooled SMD of 0.65 (95% CI: 0.19 to 1.12, p = 0.005). A limited number of studies addressed various factors, such as disease severity and the use of inhaled corticosteroids, which may influence CIMT measurements. Notably, asthmatic patients, particularly children and adolescents, exhibited higher CIMT values compared to healthy controls, suggesting a potential association with subclinical atherosclerosis in this demographic. However, these findings should be interpreted with caution due to the observational nature of the included studies and the risk of residual confounding. Further longitudinal research is necessary to elucidate the effects of disease characteristics and treatment on vascular health.
-
----
-### [30] Association between nocturnal asthma, symptom severity, and clinical outcomes: a systematic review.
-**Author**: Tachinardi Patricia et al. | **Journal**: The Journal of asthma : official journal of the Association for the Care of Asthma (2026/May)
-**PMID**: 42017769 | https://pubmed.ncbi.nlm.nih.gov/42017769/
-
-OBJECTIVE: Nocturnal asthma is characterized by the worsening of asthma symptoms during the night and indicates more severe disease. This review aims to analyze evidence regarding the association between nocturnal asthma, symptom severity, pulmonary function, and clinical outcomes in both adult and pediatric populations.
-METHODS: Databases Embase, PubMed, CINAHL, Cochrane (Wiley), Scopus, and LILACS were searched from their dates of inception to April 8, 2024. We included studies comparing severity of asthma symptoms, pulmonary function, and clinical outcomes in patients with nocturnal asthma to patients with nocturnal asthma.
-RESULTS: Thirteen studies met the inclusion criteria for this review. These studies varied in setting, population, definitions of nocturnal, and outcome assessment. Despite methodological heterogeneity, a consistent pattern emerged: none of the evaluated outcomes had better results in the nocturnal asthma group, and nocturnal asthma was associated with worse symptom severity and poorer pulmonary function in most studies. However, evidence regarding hospital outcomes was mixed, with only one study reporting increased ward or intensive care unit (ICU) admission rates for nocturnal asthma patients, and no differences observed in length of stay.
-CONCLUSIONS: Evidence presented in this systematic review reinforced the association between nocturnal asthma and more severe disease manifestations, including worse symptom scores and poorer pulmonary function compared to non-nocturnal asthma. While evidence regarding hospitalization outcomes remains inconclusive, the findings underscore the clinical significance of recognizing nocturnal symptoms to improve disease management and diagnosis.
-
----
-### [31] [Research advances in non-pharmacological interventions in pediatric asthma].
-**Author**: Wang Wei-Rui et al. | **Journal**: Zhongguo dang dai er ke za zhi = Chinese journal of contemporary pediatrics (2026/Apr)
-**PMID**: 42015708 | https://pubmed.ncbi.nlm.nih.gov/42015708/
-
-Bronchial asthma (asthma) is the most common chronic inflammatory airway disease in children. Traditional pharmacotherapy achieves a disease control rate of less than 60%, and limitations such as poor treatment adherence and drug-related adverse reactions exist. With the development of life-course health management, pediatric asthma care has shifted from single-drug therapy to diversified, comprehensive management that integrates non-pharmacological interventions. Studies indicate that approaches such as breathing training, exercise training, and music therapy can act synergistically with medications to improve symptom control, enhance quality of life, and optimize lung function indices. This review summarizes the classifications, current research status, clinical efficacy, and limitations of non-pharmacological therapies for pediatric asthma, providing a reference for the rational clinical implementation of these interventions.
-支气管哮喘（简称哮喘）是儿童最常见的气道慢性炎症性疾病，传统药物治疗控制率不足60%，且存在治疗依从性低、药物不良反应等局限。随着生命全周期健康管理理念发展，儿童哮喘的诊疗模式已从传统的单一药物治疗逐渐转向结合非药物干预的多元化综合管理。研究显示，呼吸训练、运动训练及音乐疗法等非药物干预手段在改善哮喘症状控制、提高患儿生活质量、优化肺功能指标等方面与药物治疗具有协同增效作用。该文综述了目前儿童哮喘非药物治疗的分类、研究现状、临床疗效及局限性，以期为临床合理开展哮喘患儿非药物治疗管理提供参考依据。.
-
----
-### [32] Values-Based Healthcare and the Quintuple Aim: Connection, Compassion, Equity, & Stewardship.
-**Author**: Parikh Ashish D et al. | **Journal**: The journal of allergy and clinical immunology. In practice (2026/Apr)
-**PMID**: 42009256 | https://pubmed.ncbi.nlm.nih.gov/42009256/
-
-Transformation from a fee-for-service model to a value-based health care model is essential to achieve the Quintuple Aim of Healthcare, the goal of which is the improvement not only of patient and population outcomes but also clinician wellness in an equitable cost-effective paradigm of human connection. The enhancement of "values-based care" is critical to this transformation. Understanding the influences of population heterogeneity, patient idiosyncrasy and schema, and health expectation is central not only to consistently achieving the Quintuple Aim but to personal and professional satisfaction as well. The system must be centered around compassion, connection, stewardship, and making the right choice the frictionless choice. Life is short; thus, it is important that we work together, stand by the good, and strive to make things better as best as we can.
-
----
-### [33] Closing the Evidence-to-Practice Gap in Early Allergen Introduction: Policy Strategies to Prevent Food Allergy in the United States.
-**Author**: King Claire et al. | **Journal**: The journal of allergy and clinical immunology. In practice (2026/Apr)
-**PMID**: 41999914 | https://pubmed.ncbi.nlm.nih.gov/41999914/
-
-Food allergies affect millions of children and adults in the United States and globally. Early introduction of allergenic foods, especially peanut and egg, reduces allergy risk, as shown by the Learning Early About Peanut (LEAP), LEAP-On, Enquiring About Tolerance (EAT), and Beating Egg Allergy Trial (BEAT) studies. Despite strong evidence, adherence to early introduction guidelines is low due to changing guidelines, limited clinic time, caregiver concerns, and structural barriers. At the Center for Food Allergy and Asthma Research (CFAAR) annual Food Allergy Summit in July 2025, clinicians, researchers, and advocates discussed strategies to improve implementation. Six policy levers were highlighted: Bright Futures, the U.S. Preventive Services Task Force (USPSTF), insurance coverage, the Special Supplemental Nutrition Program for Women, Infants, and Children (WIC), medical society guideline alignment, and public education campaigns. Across these levers, a three-pronged approach is recommended to increase early introduction of allergens that focuses on (1) standardizing published guidelines, (2) increasing access through insurance, and (3) educating clinicians and caregivers. This strategy could improve guideline adherence and reduce the burden of food allergies.
-
----
-### [34] Development of a Competency-Based Curriculum for Advanced Practice Providers in Allergy and Immunology.
-**Author**: Bauer Maureen et al. | **Journal**: The journal of allergy and clinical immunology. In practice (2026/Apr)
-**PMID**: 41991002 | https://pubmed.ncbi.nlm.nih.gov/41991002/
-
-BACKGROUND: Advanced practice providers (APPs) are a rapidly expanding segment of the health care workforce, including subspeciality practices. They deliver high-quality and cost-effective care in a variety of medical settings and are valuable collaborators with physician colleagues. Other specialties have been successful in developing transition to training programs and/or formal certificate programs specific to the APP role. However, this is lacking in allergy and immunology (A&I) because no structured training is currently available on a national level specific to the APP role.
-OBJECTIVE: We describe the development of competencies to inform a competency-based curriculum for APPs in A&I. This curriculum seeks to establish fundamental-level knowledge within a target audience of APPs new to the field and serve as a complement to the clinical training obtained at their practice site.
-METHODS: Competencies were developed in three stages: initial competency development through an expert panel of doctors of medicine and APPs; competence validation through a modified Delphi approach in which 35 physicians and APPs provided feedback on the drafted competencies and competency refinement where provided qualitative and quantitative feedback was incorporated into finalized competencies. Competencies were developed in 11 previously identified educational areas.
-RESULTS: A total of 112 competencies within 11 identified educational areas were included in the initial draft. Thirty-five individuals completed competency validation and 99 competencies were included in the final version.
-CONCLUSION: Competencies developed will inform individual lectures and modules in a core curriculum for APPs in A&I, a steppingstone in education dedicated to the APP role in the field.
-
----
-### [35] Asthma control and exacerbation risk following SARS-CoV-2 infection in the post-acute COVID-19 phase: a systematic review.
-**Author**: Alhumaid Saad et al. | **Journal**: Allergy, asthma, and clinical immunology : official journal of the Canadian Society of Allergy and Clinical Immunology (2026/Apr)
-**PMID**: 41987304 | https://pubmed.ncbi.nlm.nih.gov/41987304/
+### [14] The Impact of Atopic Dermatitis on Growth in Children: A Systematic Review.
+**Author**: Shenouda Christopher et al. | **Journal**: Journal of cutaneous medicine and surgery (2026/Apr)
+**PMID**: 41988838 | https://pubmed.ncbi.nlm.nih.gov/41988838/
 
 (abstract not available)
 
 ---
-### [36] Impact of climate change on pediatric health outcomes.
-**Author**: Abbas Mohammed et al. | **Journal**: Global health action (2026/Dec)
-**PMID**: 41983323 | https://pubmed.ncbi.nlm.nih.gov/41983323/
-
-Climate change has become one of the most critical health issues globally in the twenty-first century with children bearing the disproportionate burden of the burden since they are more vulnerable than adults because of their physiological, behavioral, and developmental capacities. It is a systematic review that rates the evidence of the relationship between climatic exposures such as heat, air-pollution, and extreme weather events and pediatric health outcomes. The number of peer-reviewed studies involved was 23 published in 2000-2025, which represented different geographic areas and study designs and assessed acute and chronic health outcomes. The Newcastle-Ottawa Scale and the ROBINS-I tool were used to evaluate the methodological quality, and the majority of the studies had low to moderate risks of bias. The narrative synthesis shows that there are always links between air pollutants especially PM2.5, NO2 and O3 and respiratory morbidity, prevalence of asthma and hospitalization of children. Amplified temperatures as well as heat waves were associated with increased cases of heat illness, dehydration, and febrile state in infants and young children. There were elevated cases of diarrheal and vector-related infections, especially in low-resource settings, which were linked to extreme weather events especially floods. Although the overall results were similar, significant differences in the regions and methods were found, and low-income countries show little evidence. In addition, exposures as analyzed in most studies were usually considered individually, which may have underestimated the cumulative or compound climate risks.
-Main findings: This review shows that rising temperatures, air pollutants, and extreme weather events are consistently linked with higher rates of respiratory illness, heat-related illness, and infectious diseases among children.Added knowledge: The synthesis brings together two decades of evidence showing that children across multiple continents experience similar health vulnerabilities when exposed to climate-related environmental conditions.Global health impact for policy and action: The findings highlight an urgent need for stronger climate-responsive child health policies and early warning systems to protect children from worsening environmental threats worldwide.
-
----
-### [37] Are There Any Effective Behavior Change Strategies for Communicating Genetic Risk in Obesity Prevention and Body Weight Reduction Interventions?
-**Author**: Szczuka Zofia et al. | **Journal**: Obesity reviews : an official journal of the International Association for the Study of Obesity (2026/Apr)
-**PMID**: 41980754 | https://pubmed.ncbi.nlm.nih.gov/41980754/
-
-This systematic review examined how differences in intervention components may contribute to inconsistent findings in genetic risk communication studies, addressing obesity-related outcomes (e.g., weight reduction, nutrition behavior, exercise). The review was preregistered (PROSPERO #CRD42024524026) and followed PRISMA guidelines. Searches across eight databases identified 23 randomized controlled trials, covering 18 intervention trials. Risk of bias was assessed using the Risk of Bias 2 tool. A narrative synthesis was used to cluster studies by the content of intervention and control groups. Genetic risk communication alone (no behavioral counseling, addressing nutrition and exercise) or combined with phenotype-based risk was ineffective and sometimes counterproductive among low-risk individuals. When combined with personalized behavioral counseling, effectiveness improved, but only when compared to waitlist control groups or non-personalized behavioral counseling. Significant effects emerged in high-genetic risk subgroups within personalized behavioral counseling, using behavior change techniques such as problem-solving, feedback on behavior, self-monitoring, and environmental changes. The most promising results emerged from complex interventions integrating genetic risk communication into multiple sessions and combining numerous additional behavioral change techniques, such as social reward, cues/prompts, self-reward. Complex personalized interventions combining multiple behavior change techniques and prompting experiential genetic risk awareness show promise for improving weight, nutrition, and exercise-related outcomes.
-
----
-### [38] 'What' and 'How' to Measure in Allergy and Clinical Immunology: A Systematic Review of Core Outcome Sets and Outcome Harmonisation Processes.
+### [15] 'What' and 'How' to Measure in Allergy and Clinical Immunology: A Systematic Review of Core Outcome Sets and Outcome Harmonisation Processes.
 **Author**: Demidova Anastasia et al. | **Journal**: Clinical and experimental allergy : journal of the British Society for Allergy and Clinical Immunology (2026/May)
 **PMID**: 41974646 | https://pubmed.ncbi.nlm.nih.gov/41974646/
 
@@ -2958,106 +2375,14 @@ RESULTS: A total of 15,612 records were identified, with 44 studies (representin
 CONCLUSION: This review highlights growing efforts to harmonise outcome assessment in allergy and clinical immunology. Major gaps remain in coverage and methodological rigour. Quality of life and patient-reported symptoms are frequently recommended outcomes, yet definitions and measurement tools are inconsistent. Strengthening methodological consistency and expanding COS development to neglected areas are critical next steps to improve outcome reliability and comparability in the field.
 
 ---
-### [39] Prenatal Vitamin D, childhood wheeze, asthma, and lung function: Results from the Vitamin D Antenatal Asthma Reduction Trial (VDAART).
-**Author**: Litonjua Augusto A et al. | **Journal**: The Journal of steroid biochemistry and molecular biology (2026/Jul)
-**PMID**: 41966490 | https://pubmed.ncbi.nlm.nih.gov/41966490/
-
-This review article summarizes the main results of the Vitamin D Antenatal Asthma Reduction Trial. This work was presented at the 2025 Vitamin D Workshop.
-
----
-### [40] Sexual Dimorphism in Allergic and Mast Cell-Associated Diseases.
-**Author**: Kotha Aditya et al. | **Journal**: Clinical reviews in allergy & immunology (2026/Apr)
-**PMID**: 41963721 | https://pubmed.ncbi.nlm.nih.gov/41963721/
-
-Allergic diseases are common, affecting more than one-third of the global population and varying widely in severity. A consistent theme in asthma, food allergy, atopic dermatitis, and chronic urticaria is a female-dominant prevalence in adulthood. Some of these begin with male predominance in childhood and shift with puberty. A smaller subset of allergic diseases, including eosinophilic esophagitis and vernal keratoconjunctivitis, has a clear male prevalence. In fact, nearly all allergic diseases exhibit sexual dimorphism in either prevalence or severity. These striking disparities are being unraveled to reveal mechanisms that might be clinically targeted. In this review, we discuss the current state of knowledge about sexual dimorphism for these important inflammatory disorders. These insights are foundational for optimizing personalized medicine.
-
----
-### [41] Novel Epinephrine Delivery Devices.
-**Author**: Malley Nicole O' et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
-**PMID**: 41932751 | https://pubmed.ncbi.nlm.nih.gov/41932751/
-
-There has been a large amount of research into novel, noninjectable routes of epinephrine recently. These routes, such as intranasal and sublingual, can deliver epinephrine in a needle-free way to achieve similar pharmacokinetics as seen with autoinjectors. In fact, there is now an intranasal epinephrine device available to prescribe patients at-risk for anaphylaxis. Thus, clinicians should be familiar with studies of these new routes of epinephrine delivery and use a shared decision-making approach with patients/families to decide if noninjectable epinephrine is appropriate for them.
-
----
-### [42] Drug Anaphylaxis.
-**Author**: Chow Timothy G et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
-**PMID**: 41932747 | https://pubmed.ncbi.nlm.nih.gov/41932747/
-
-Anaphylaxis is a systemic clinical syndrome that rapidly evolves after an exposure to an inciting agent activates effector cells such as mast cells and basophils. Anaphylaxis can be triggered by a wide variety of agents, including drugs. Over the past decade, our understanding of drug-induced anaphylaxis (DIA) has become dramatically more nuanced, with a growing appreciation of multiple endotypes resulting in the phenotype of anaphylaxis. This review will discuss epidemiology, clinical features, mechanisms, clinical evaluation, and management of DIA.
-
----
-### [43] Equity and Anaphylaxis.
-**Author**: Abrams Elissa M et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
-**PMID**: 41932744 | https://pubmed.ncbi.nlm.nih.gov/41932744/
-
-Health equity is achieved when all individuals can reach their full health potential. In food-induced anaphylaxis, this goal remains unmet. Disparities in prevalence, diagnosis, and care are influenced by race, income, and environmental determinants. This article reviews emerging evidence on inequities in food allergy, emphasizing the need to understand who is most affected and why, and outlining strategies to promote equitable prevention and treatment.
-
----
-### [44] Bronchial thermoplasty for severe asthma: Systematic review and meta-analysis of benefits and harms.
-**Author**: Rayner Daniel G et al. | **Journal**: The journal of allergy and clinical immunology. Global (2026/May)
-**PMID**: 41907855 | https://pubmed.ncbi.nlm.nih.gov/41907855/
-
-BACKGROUND: The efficacy and safety of bronchial thermoplasty (BT) for severe asthma remains unclear.
-OBJECTIVE: We systematically synthesized the efficacy and safety of BT in patients with severe asthma.
-METHODS: As part of the upcoming American Academy of Allergy, Asthma & Immunology/American College of Allergy, Asthma & Immunology Joint Task Force on Practice Parameters severe asthma guidelines, we searched the Medline, Embase, and Central databases to July 29, 2025, for randomized trials comparing BT to control for asthma. Paired reviewers independently screened records and extracted data. Random-effects meta-analyses addressed asthma control (Asthma Control Questionnaire 6 [scale, 0-6; lower better]), asthma-related quality of life (Asthma Quality of Life Questionnaire [range, 1-7; higher better]), severe asthma exacerbations, and harms, stratified by procedural, postprocedural, and overall. The GRADE approach informed certainty-of-evidence ratings (PROSPERO: CRD42023408565).
-RESULTS: Six trials randomized 573 adults. Procedurally, BT likely increases severe exacerbations (incidence rate ratio [IRR] 2.95; 95% CI, 1.20-7.25; risk difference [RD] 0.08 more events per patient-year; moderate certainty) and serious respiratory adverse events (IRR 5.98; 95% CI, 1.07-33.29; RD 0.18 more events per patient-year; moderate certainty). Postprocedurally, BT may reduce severe exacerbations (IRR 0.67; 95% CI, 0.50-0.89; RD 0.67 fewer events per patient-year; low certainty). Overall, BT may improve asthma control (mean difference -0.37; 95% CI, -0.67 to -0.07; RD for 0.5-point decrease: 15.9% more; low certainty), asthma-related quality of life (mean difference 0.55; 95% CI, 0.28-0.82; RD for 0.5-point increase: 19.1% more; low certainty), and severe exacerbations (IRR 0.81; 95% CI, 0.68-0.97; RD 0.11 fewer events per patient-year; low certainty).
-CONCLUSION: Among adults with severe asthma, BT may improve asthma control and asthma-related quality of life and may reduce overall severe exacerbations, but it likely increases procedural severe exacerbations and serious respiratory harms.
-
----
-### [45] Risk and Protective Factors for Infection, Severe Disease, and Mortality in Epidemic Respiratory Viruses.
-**Author**: Zheng Yang et al. | **Journal**: Allergy (2026/May)
-**PMID**: 41888606 | https://pubmed.ncbi.nlm.nih.gov/41888606/
-
-The post-COVID pandemic era has witnessed a concerning resurgence of respiratory viruses, driving a global increase in acute respiratory infections. This trend may stem from relaxed non-pharmaceutical interventions, waning herd immunity, immunological imprinting limiting heterosubtypic protection, or viral antigenic evolution. This review aims to identify and characterize risk and protective factors associated with infection, hospitalization, severe illness, and mortality, while elucidating the drivers of the rising incidence of respiratory virus infections post-pandemic. Evidence on SARS-CoV-2 sublineages, influenza, respiratory syncytial virus, rhinovirus, adenovirus, human metapneumovirus, human parainfluenza virus, human coronaviruses, and cytomegalovirus has been collected and identified. Identified risk factors include demographic characteristics such as pediatrics and older age, male sex, race (Black, Hispanic, American Indian or Alaska native), preterm birth, and HLA-DQA1, IFNAR2, ST6GAL, and B3GALT5 genetic susceptibility. Behavioral, socioeconomic (low socioeconomic status, crowded living conditions), environmental influences (cold seasons, pollution), smoking, obesity and malnutrition could also exacerbate the risk of infection and adverse outcomes. Comorbidities, such as chronic conditions and immunocompromised states, significantly increase the risk of severe disease and hospitalization. Laboratory indices linked to severe disease outcomes include neutrophilia or neutropenia, lymphopenia, eosinopenia, and elevated C-reactive protein. Viral subtypes, viral load kinetics, vaccination status, and antiviral therapies further delineate risk profiles. Epithelial barrier impairment and underlying chronic airway diseases characterized by type 2 immunity also play a detrimental role in the development and severity of respiratory viral infections. Our findings highlight the need for stratified prevention strategies, which combine universal measures targeting shared determinants with virus-specific interventions addressing unique virological and transmission dynamics. It will provide a critical framework for optimizing precision public health strategies to counter repeated respiratory threats in the evolving post-COVID-19 pandemic landscape.
-
----
-### [46] Preschool Wheeze and the GINA 2025 Paradigm: Challenges and Adaptations for LMICs.
-**Author**: Rajvanshi Nikhil et al. | **Journal**: Indian pediatrics (2026/May)
-**PMID**: 41838274 | https://pubmed.ncbi.nlm.nih.gov/41838274/
-
-Wheezing in preschool children is a common clinical challenge characterized by a broad differential diagnosis and marked phenotypic heterogeneity. The Global Initiative for Asthma (GINA) 2025 guidelines introduce a structured framework for diagnosing asthma in this age group, shifting from a probabilistic to a more definitive labelling approach. While this represents a significant evolution, its applicability in low- and middle-income countries (LMICs) faces significant barriers including caregiver misreporting, limited diagnostic tools, and inconsistent follow-up. This article critically examines these challenges, particularly the risks of overdiagnosis and overtreatment in preschool wheeze within the LMIC context.
-
----
-### [47] Innovative methodologies for elucidating bushfire smoke-induced pathophysiological mechanism.
-**Author**: Paudel Keshav R et al. | **Journal**: The Science of the total environment (2026/Apr)
-**PMID**: 41818888 | https://pubmed.ncbi.nlm.nih.gov/41818888/
-
-Over the last century, the awareness of air pollution awareness and its harm to public health have resulted in the implementation of new protective measures to try and limit exposure. Bushfires generate waves of air pollution with orders of magnitudes higher than normal background pollution, necessitating studies to understand the physiological impact. Previous work has strongly linked bushfire smoke to respiratory disease (chronic obstructive pulmonary disease COPD, asthma, lung cancer) cardiovascular disease (myocardial infarction, stroke), and increased susceptibility to infection (COVID-19). Nevertheless, the underlying mechanisms of pathogenesis remain unclear. There is little consensus on what in vitro and in vivo techniques are best used to examine disease mechanisms. Individual investigations are useful but a lack of standard methods creates variability and makes comparisons difficult. Developing adaptable in vitro and in vivo models that are replicable, physiologically relevant, and affordable may reduce variability enabling comparisons. These models should also be capable of integrating multiple types of pollutants or reference materials to develop standards that other studies can follow, facilitating comparisons. Here, we discuss advance in vitro and in vivo experimental models to study the impact of bushfire smoke exposure induced pathophysiology. The goal is to improve comparison and translation across studies, and to lay the groundwork for future research into the mechanisms that underpin bushfire smoke-induced pathogenesis to enable the development of preventative measures and effective therapies.
-
----
-### [48] Mechanisms of thermoregulation in Pseudomonas aeruginosa.
-**Author**: Robinson Rachel E et al. | **Journal**: Journal of bacteriology (2026/Apr)
-**PMID**: 41810972 | https://pubmed.ncbi.nlm.nih.gov/41810972/
-
-Pseudomonas aeruginosa is a highly versatile opportunistic pathogen and a major cause of acute, chronic, and even lifelong respiratory infections in people with cystic fibrosis. It can also cause corneal infections, burn/wound infections, and bacteremia. P. aeruginosa is often found in human-associated environments such as hospitals, where it is a frequent cause of nosocomial catheter-associated urinary tract infections and ventilator-associated pneumonia. As a nosocomial pathogen, a major environmental change associated with transmission is the change from room or ambient temperature to human body temperature. P. aeruginosa is highly studied for its regulatory and adaptive responses to environmental stimuli, such as low iron conditions or the presence of antibiotics, but temperature regulation, or thermoregulation, is relatively understudied, particularly at a mechanistic level. This review explores the current understanding of mechanisms of global, transcriptional, post-transcriptional, and post-translational thermoregulation in P. aeruginosa, with a discussion on gaps in the field's knowledge and directions for future research. More mechanistic studies of thermoregulation inspired by the open questions presented here will improve our understanding of how P. aeruginosa adapts to different temperatures.
-
----
-### [49] Update on allergen immunotherapy for asthma.
-**Author**: Looney R John et al. | **Journal**: Current opinion in pulmonary medicine (2026/May)
-**PMID**: 41733137 | https://pubmed.ncbi.nlm.nih.gov/41733137/
-
-PURPOSE OF REVIEW: The usefulness of allergen-specific immunotherapy for asthma is controversial. Publications from 2024 and 2025 on allergen immunotherapy for asthma will be reviewed.
-RECENT FINDINGS: A trial of house dust mite for asthma was strikingly positive for a subset of patients with variant alleles in chromosome 17q12-21. A trail of cockroach immunotherapy for asthma was negative based on nasal challenge. However, there were promising effects on T cells. New allergen-specific vaccines using allergoids and adjuvants are being developed in Europe and look promising for reducing the number of injections and improving safety. Small clinical trials have shown that trained immunity vaccines containing bacterial lysates can reduce wheezing in young children and animal models suggest these vaccines can affect allergen sensitization and asthma. Recent reviews of multiple clinical trials have shown allergen-specific immunotherapy can reduce symptoms and medications in asthmatic individuals but not objective measures of lung fucntion. Recent reviews of combining biologics with allergen-immunotherapy suggest improved safety.
-SUMMARY: Allergen-specific immunotherapy remains an important treatment for allergic rhinitis and conjunctivitis and can be used safely in patients with mild or moderate well controlled asthma. Several new approaches look promising but need a lot more work.
-
----
-### [50] Eosinophilic granulomatosis with polyangiitis: recent therapeutic advances.
-**Author**: Chiara Emanuele et al. | **Journal**: Current opinion in rheumatology (2026/May)
-**PMID**: 41717826 | https://pubmed.ncbi.nlm.nih.gov/41717826/
-
-PURPOSE OF REVIEW: The aim of this review is to describe the substantial advances that have been made in the past 2 years on new treatment options in eosinophilic granulomatosis with polyangiitis (EGPA).
-RECENT FINDINGS: The therapeutic scenario in EGPA has been recently broadened by the publication of the results from the multicenter, double-blind randomized MANDARA trial, which proved the noninferiority of benralizumab to another anti-interleukin-5 (IL-5) drug, mepolizumab, for the induction of remission in patients with EGPA. A few real-world studies have confirmed these results. Furthermore, the first randomized controlled trial exploring the efficacy of rituximab (anti-CD20) in induction of remission of EGPA was recently published. Targeting other molecular pathways did not always show adequate control of systemic manifestations of EGPA, with only limited evidence of effectiveness from small case series. Interestingly, cases of EGPA onset in severe asthma patients treated with monoclonal antibodies were described.
-SUMMARY: Biological drug therapy targeting IL-5 consolidated its role in the management of EGPA, becoming the cornerstone of the treatment of this rare disease. Future guidelines should consider these recent findings to improve the management of EPGA. Notably, while selective IL-5 targeting is highly effective for remission maintenance, its role in inducing remission in EGPA remains to be fully established. Rituximab was non-superior to standard therapy in induction of remission in patients with EGPA, demonstrating a similar rate of response. The role of other targeted therapies, albeit promising in some cases, remains a matter of debate.
-
----
-### [51] Association between swimming pool attendance and allergic diseases: An updated systematic review and meta-analysis.
+### [16] Association between swimming pool attendance and allergic diseases: An updated systematic review and meta-analysis.
 **Author**: Wu Qingqing et al. | **Journal**: Regulatory toxicology and pharmacology : RTP (2026/May)
 **PMID**: 41708045 | https://pubmed.ncbi.nlm.nih.gov/41708045/
 
 Recently, increasing epidemiological studies have suggested a potential association between swimming pool attendance and allergic outcomes with inconsistent findings. This systematic review and meta-analysis aims to elucidate the association between swimming pool attendance and the risk of allergic diseases. We systematically searched PubMed, Web of Science, Scopus, and Embase to identify relevant studies published up to August 8, 2025, and performed a meta-analysis of the extracted data. Furthermore, subgroup analyses, sensitivity analyses, and assessments of publication bias were also conducted. A total of 23 studies involving 54,153 participants were included. The combined data showed a positive correlation between swimming pool attendance and asthma [OR = 1.14, 95% CI: (1.08-1.21)], but no significant link with allergic rhinitis, atopic dermatitis, hay fever, or wheezing. Subgroup analyses indicated stronger associations in children [asthma: OR = 1.14, 95% CI: (1.08-1.21)] and among those with early-life exposure [asthma: OR = 1.13, 95% CI: (1.06-1.20)]. Interestingly, early swimming pool attendance was negatively associated with allergic rhinitis in children [OR = 0.78, 95% CI: (0.63-0.97)]. In conclusion, swimming pool attendance was significantly associated with asthma, highlighting potential public health implications and the need for further research into relevant environmental exposures.
 
 ---
-### [52] Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
+### [17] Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
 **Author**: Islam Nazmul et al. | **Journal**: JAMA pediatrics (2026/May)
 **PMID**: 41661638 | https://pubmed.ncbi.nlm.nih.gov/41661638/
 
@@ -3071,21 +2396,488 @@ RESULTS: A total of 190 studies involving 2.8 million participants across 40 cou
 CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
 
 ---
-### [53] Understanding the impact of social determinants of health in hematology: a scoping review of trends across journals and over time.
+
+## peds_asthma_update
+### 小児喘息 — 57件
+
+**▼ Coworkへのプロンプト（コピーして貼り付け）:**
+
+> 以下は直近1ヶ月の小児喘息領域の論文一覧です。
+> 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
+> **「2026-05_気管支喘息_PubMed抽出」** というタイトルのGoogle Docを作成してください。
+>
+> Google Docは以下の2部構成にしてください:
+>
+> **【第1部: 日本語要約】**
+> 厳選した論文を 1, 2, 3... の番号順に並べ、各論文を「---」で区切って以下の形式で記載:
+> ① タイトル（英語）
+> ② PMID（入力データのものを正確に転記）
+> ③ なぜ重要か（1〜2文）
+> ④ 臨床への影響（1〜2文）
+> ⑤ 診療変更の必要性（Yes/No + 一言）
+>
+> **【第2部: 英語 Abstract】**
+> 同じ10本を同じ番号順で並べ、各論文を「---」で区切って以下の形式で記載:
+> 番号. タイトル
+> PMID: （番号）
+> Journal: （雑誌名）（発行年）
+> Abstract: （英語のアブストラクト全文）
+
+
+### [1] Shifting the Scope: Moving Toward Less Invasive Diagnosis and Monitoring of Eosinophilic Esophagitis.
+**Author**: Wright Benjamin L et al. | **Journal**: Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/May)
+**PMID**: 42134748 | https://pubmed.ncbi.nlm.nih.gov/42134748/
+
+BACKGROUND: Less invasive diagnostics that decrease dependence on sedated endoscopy are needed in eosinophilic esophagitis (EoE).
+OBJECTIVE: To review the literature describing alternatives to conventional upper endoscopy in EoE.
+DATA SOURCES: A literature search was conducted using MEDLINE for articles published through March 2026.
+STUDY SELECTIONS: Articles were considered for inclusion if they evaluated clinically available minimally invasive diagnostic tools or non-invasive biomarkers for EoE under investigation. Both adult and pediatric studies were considered. Case reports/series were excluded.
+METHODS: Studies were grouped into categories including minimally invasive sampling devices and non-invasive biomarkers. Non-invasive biomarkers were further subdivided into biomarkers for screening, surveillance, and prognostication. Data were qualitatively synthesized given heterogeneity in study design and outcomes.
+RESULTS: Unsedated transnasal endoscopy (TNE) and the esophageal string test (EST) are clinically available, minimally invasive surrogates for conventional sedated endoscopy. Completion rates are high for TNE (>95%) and the EST (>86%). Both are well tolerated and reduce overall visit time and cost. The TNE and EST are best suited for disease monitoring in adolescents and adults after EoE is diagnosed. Eosinophil counts, eosinophil-derived proteins, and eosinophil activation markers are the most widely investigated non-invasive blood biomarkers. RNA and microRNA biomarkers and specific cell types (e.g., pathogenic effector Th2 type T cells) may have superior diagnostic performance. Most biomarker studies are limited by the omission of allergic controls.
+CONCLUSION: Minimally invasive diagnostics can be implemented for monitoring EoE disease activity. Additional studies with allergic controls are needed to validate non-invasive EoE biomarkers for screening, surveillance, and disease/treatment outcome prediction.
+
+---
+### [2] Precision medicine in eosinophilic esophagitis.
+**Author**: Burk Caitlin M et al. | **Journal**: Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/May)
+**PMID**: 42134747 | https://pubmed.ncbi.nlm.nih.gov/42134747/
+
+Eosinophilic esophagitis (EoE) is a common, chronic, immune-mediated disease of the esophagus, affecting approximately 1 in 700 individuals in the United States. Despite rising prevalence, clinical management remains largely empiric and invasive: diagnosis and monitoring rely on endoscopy with biopsies, and treatment selection is guided by population-level response rates, patient preference, and access rather than individualized disease biology. Patients often experience diagnostic delays, repeated procedures, and cycles of trial-and-error therapy before achieving remission, while prolonged inflammation increases risk of fibrostenotic complications. Recent advances in epidemiology, genetics, molecular profiling, and immunology increasingly support EoE as a heterogeneous disease with distinct biological drivers. Emerging tools-including polygenic risk scores, molecular endotyping frameworks, and minimally invasive biomarkers-may improve risk stratification, reduce reliance on endoscopy, and better align therapy with underlying mechanisms. In this review, we describe the current EoE patient journey and examine opportunities to integrate precision medicine strategies across the disease continuum, from risk identification and diagnosis to treatment selection, food trigger identification, and noninvasive monitoring. We also discuss future directions aimed at defining antigen-specific immune pathways and how these insights may enable next-generation diagnostics, targeted therapies, and disease modification in EoE.
+
+---
+### [3] A lifecycle governance and learning health system framework for trustworthy, generalizable, and sustainable human-ai partnership in clinical practice: Lessons from the asthma-guidance and prediction system (A-GPS).
+**Author**: Wi Chung-Il et al. | **Journal**: Journal of the National Medical Association (2026/May)
+**PMID**: 42128801 | https://pubmed.ncbi.nlm.nih.gov/42128801/
+
+The integration of artificial intelligence (AI) into clinical decision support (CDS) holds promise for proactive, personalized, and precision care. However, current understanding of how to establish trustworthy human-AI partnerships is in its infancy, despite its critical importance for implementing AI in healthcare. We present the Asthma-Guidance and Prediction System (A-GPS) as a case study of a practice-integrated AI platform that demonstrates how trustworthy, generalizable and sustainable AI can be developed, evaluated, and implemented in real-world asthma care. We describe major challenges and solutions based on our real-world experience during the process and offer the practical framework, approaches, tools and workflow for implementing trustworthy, generalizable and sustainable AI in frontline practices. While A-GPS is an asthma-specific AI tool, it was built on top of a disease-agnostic electronic health record (EHR)-integrated clinical decision support (CDS) platform based on an Application Programming Interface (API)‑first backbone of reusable services. It was designed to reduce chart-review/processing burden and enable proactive, guideline-concordant asthma management by synthesizing fragmented longitudinal multimodal data into a clinical decision-relevant summary at the point of care. A-GPS platform integrates multiple natural language processing (NLP) algorithms to leverage free texts info in EHRs, machine learning model to offer risk stratification, and remote patient monitoring (RPM) approaches to capture real-time data from patients, enabling remote asthma (chronic disease) care. The platform has been deployed via Substitutable Medical Applications and Reusable Technologies-on-Fast Healthcare Interoperability Resources (SMART-on-FHIR) to ensure in-workflow delivery and maintainable governance making it flexible and interoperable across different EHRs systems and different chronic diseases. The translational maturity of A-GPS as an AI-powered CDS tool for pediatric asthma was demonstrated and sustained through engagement and co-design with diverse community and care team partners, including adult and pediatric Community Advisory Board, pediatric patients and their parents, clinicians (primary care providers and specialists), nurses, schedulers, as well as bioethicists and regulatory experts. Moreover, the tool was evaluated in two randomized clinical trial (RCT)s. The first trial showed a 67% reduction in clinicians' EHR review time, high clinician satisfaction, potential healthcare cost savings, fairness in model performance, and no adverse events. Trustworthiness was further assessed and supported through fairness evaluation by participant socioeconomic status (SES) using the HOUsing-based SocioEconomic Status (HOUSES) index, human-centered user interface/user experience (UI/UX) analysis, clinician workflow optimization, transparent governance practices, and best practices for regulatory science. The A-GPS experience operationalizes a reproducible, lifecycle-governed framework for generating decision-grade evidence on safety, effectiveness, usability, fairness, and workflow integration, directly addressing the translational gap between AI model development and trustworthy, sustainable deployment in real-world clinical environments. These efforts led to national recognitions, including invitation to the inaugural American Medical Informatics Association (AMIA) AI Showcase, and AI evaluation use case for a national health AI coalition. The second RCT evaluated the feasibility of integrating a remote patient monitoring (RPM) device (home spirometry) into the A-GPS platform, with a published RCT protocol that serves as a framework for RCT for evaluating AI models under the Standard Protocol Items: Recommendations for Interventional Trials (SPIRIT) guidelines for RCTs that evaluate AI tools, offering the practical framework, approaches, tools, and workflow for trustworthy, generalizable and sustainable AI tools in asthma care. This work illustrates how team science, community engagement, implementation science, and learning health system principles can be operationalized to establish a human-AI partnership model to advance translational science and clinical care, with the goal of improving health for all.
+
+---
+### [4] Managing Respiratory Failure in Late Pregnancy.
+**Author**: Williams Kate et al. | **Journal**: Journal of clinical medicine (2026/Apr)
+**PMID**: 42123182 | https://pubmed.ncbi.nlm.nih.gov/42123182/
+
+Background/Objectives: Respiratory failure in late pregnancy represents a complex and high-risk clinical scenario due to physiological adaptations during pregnancy that reduce maternal respiratory reserve, with tightly coupled maternal and foetal outcomes. This review aims to synthesise current evidence on epidemiology, maternal-foetal physiology, and management strategies for respiratory failure in late gestation. Methods: This narrative review integrates contemporary literature, national surveillance data, physiological principles, and expert consensus to summarise the causes, clinical implications, and management of respiratory failure in pregnancy. Results: Respiratory failure in pregnancy arises from diverse obstetric and non-obstetric conditions, including pneumonia, asthma, pulmonary embolism, cardiogenic pulmonary oedema, and ARDS. Maternal hypoxaemia is strongly associated with foetal compromise. Management requires pregnancy-specific ventilatory targets, avoidance of permissive hypercapnia, cautious use of non-invasive and invasive ventilation, and safe implementation of prone or semi-prone positioning. ECMO use has expanded, with maternal survival improving to approximately 75%, although optimal anticoagulation and timing of delivery remain uncertain. Conclusions: Effective management of respiratory failure in late pregnancy requires early recognition, multidisciplinary coordination, and adaptation of respiratory support to maternal-foetal physiology. Despite improvements in critical care and ECMO outcomes, key evidence gaps persist, underscoring the need for integrated maternal critical care pathways and further research to optimise outcomes for both mother and baby.
+
+---
+### [5] Emerging therapeutic potential of umbilical cord-derived extracellular vesicles in lung-injurious diseases: a review of recent advances.
+**Author**: Xiao Shuzhe et al. | **Journal**: Stem cell research & therapy (2026/May)
+**PMID**: 42121270 | https://pubmed.ncbi.nlm.nih.gov/42121270/
+
+Recent research has shown that extracellular vesicles (EVs) have significant potential in treating lung injuries. These vesicles facilitate communication between cells and regulate important biological processes, including cell growth, blood vessel formation, and inflammatory responses. Due to their natural ability to cross biological barriers and low risk of immune rejection, EVs are potential vehicles for targeted drug delivery. Among various biological sources, umbilical cord-derived EVs are highly advantageous because the collection process is non-invasive and provides a high yield of vesicles. Preclinical studies have demonstrated their therapeutic potential in conditions such as bronchopulmonary dysplasia, chronic obstructive pulmonary disease, acute respiratory distress syndrome, and asthma. This review summarizes the current evidence supporting the use of umbilical cord-derived EVs for lung diseases. It also discusses key translational challenges, such as manufacturing scalability and product consistency, alongside advanced engineering strategies for future clinical use.
+
+---
+### [6] Early-life air pollution exposure: epigenetics and child allergy.
+**Author**: Li Guangfei et al. | **Journal**: Epigenomics (2026/May)
+**PMID**: 42116758 | https://pubmed.ncbi.nlm.nih.gov/42116758/
+
+Globally, the incidence of allergic diseases in children has shown a significant upward trend, closely linked to environmental exposure in early life through epigenetic regulation mechanisms. Epigenetics enables dynamic regulation of genetic information via DNA methylation, histone modification, and non coding RNA without altering DNA sequence. The critical window from pregnancy to the first 1000 days of life is extremely sensitive to environmental factors exerting epigenetic effects, potentially influencing lifelong allergy susceptibility through fetal programming. This narrative review synthesizes current evidence on how early life air pollution exposure contributes to childhood allergic diseases via epigenetic mechanisms. A literature search was conducted using PubMed, Web of Science, Scopus, and Embase databases (up to December 2025). Studies were selected that provided mechanistic insights, epidemiological evidence from birth cohorts, or experimental findings relevant to epigenetic regulation. This review aims to provide a comprehensive overview of common air pollutant sources, their epigenetic effects at different developmental stages, and potential interventions during key windows to inform prevention and treatment strategies for childhood allergic diseases.
+Childhood allergies like asthma, hay fever and eczema are becoming more common worldwide. Research shows that air pollution plays an important role, especially when exposure happens during pregnancy and early life. Air pollution comes from many sources. Outdoor pollutants include tiny particles from vehicles and factories, as well as gases like nitrogen dioxide. Indoor pollutants include tobacco smoke, mold from damp homes, and chemicals from new furniture. This review explains how air pollution affects children’s health through epigenetics. Epigenetics works like instructions that tell our genes when to turn on or off. These instructions can be changed by environmental factors, including air pollution, without altering the DNA itself. During pregnancy, harmful particles can cross the placenta and cause epigenetic changes in the developing baby. These changes affect genes related to the immune system, making the child more likely to develop allergies later. Different pollutants affect different genes, and the timing of exposure matters greatly. The most vulnerable periods include the time before conception, during pregnancy, and the first few years of life. Understanding these mechanisms helps identify the most harmful pollutants and critical windows for prevention, guiding better public health policies to protect children’s health.
+
+---
+### [7] Application of FeNO in the diagnostic and therapeutic algorithm of pediatric asthma: From chronic cough and wheeze to personalized management.
+**Author**: Kunč Peter et al. | **Journal**: Allergologia et immunopathologia (2026)
+**PMID**: 42115808 | https://pubmed.ncbi.nlm.nih.gov/42115808/
+
+Bronchial asthma is the most common chronic respiratory disease in children. Treatment approaches should aim to achieve disease control, reduce limiting symptoms, and improve quality of life. The routine management of patients with asthma relies on the assessment of symptoms (including persistent cough and wheezing) and spirometry results However, these strategies do not consider the level of airway inflammation, which is a fundamental pathognomonic feature of the disease. The use of biomarkers is increasing in an effort to better understand individual asthma pathways (endotyping), offering the potential for personalized treatment with innovative biologics. Elevated levels of fractional exhaled nitric oxide (FeNO) are an indirect marker of T2 airway inflammation. FeNO is one of the few biomarkers that has been implemented in routine clinical practice because of its undeniable advantages, such as accessibility, noninvasiveness, simple implementation, and cost-effectiveness. However, the current scientific evidence in children is insufficient to recommend its universal use in the diagnosis and treatment of all patients. Considering its known limitations, FeNO can enhance therapeutic processes, particularly in children with severe asthma. High FeNO levels predict a good therapeutic response to corticosteroids and selected biologics (e.g., omalizumab and dupilumab) and indicate an increased risk of exacerbation. Similarly, measuring FeNO levels in children with recurrent wheezing can help determine the risk of future asthma development. Various factors contributing to FeNO value variability must be considered when interpreting the results. The lack of robust clinical studies is reflected in inconsistent guidelines from professional societies regarding the use of FeNO in managing childhood asthma. This review aims to evaluate the advantages, disadvantages, and potential applications of FeNO measurements in light of new findings in the field.
+
+---
+### [8] 50 years on: how inhaled corticosteroids have changed the treatment of asthma.
+**Author**: de Benedictis Fernando M et al. | **Journal**: The Lancet. Respiratory medicine (2026/May)
+**PMID**: 42107381 | https://pubmed.ncbi.nlm.nih.gov/42107381/
+
+Inhaled corticosteroids are the foundation of asthma therapy and now, 50 years on from their introduction, is an appropriate time to summarise some of the key studies that have progressed the field. We can now make better decisions in selecting the optimal inhaled corticosteroid-based regimens and identifying likely responders, based on biomarkers and patient characteristics. Inhaled corticosteroids reduce the risk of asthma attacks, but do not alter the course of the disease. Asthma remission, which is as yet an undefined therapeutic goal, is the aim, but the role of inhaled corticosteroids is unclear. High-dose inhaled corticosteroid therapy can cause systemic adverse events, suggesting that steps be taken to avoid this through the addition of long-acting β2-adrenergic agonists and the judicious use of biologics. Researchers will continue to learn more about the advantages and limitations of inhaled corticosteroids as they explore methods of disease prevention and remission in the future with new tools and treatments.
+
+---
+### [9] Recent Studies Concerning Adverse Childhood Experiences and Physical Activity in Adolescents.
+**Author**: Nagata Jason M et al. | **Journal**: Academic pediatrics (2026/May)
+**PMID**: 42103149 | https://pubmed.ncbi.nlm.nih.gov/42103149/
+
+(abstract not available)
+
+---
+### [10] The formaldehyde dispute - Part B: scientific critique of EPA's formaldehyde occupational exposure values (OEVs) and proposed alternative occupational exposure limits (OELs).
+**Author**: Perry Quincy et al. | **Journal**: Critical reviews in toxicology (2026/May)
+**PMID**: 42101930 | https://pubmed.ncbi.nlm.nih.gov/42101930/
+
+In 2024, the U.S. Environmental Protection Agency (EPA) finalized its Integrated Risk Information System (IRIS) Toxicological Review and Toxic Substances Control Act (TSCA) Risk Evaluation for formaldehyde. After analyzing all the data that they deemed relevant, TSCA relied on IRIS's proposed inhalation reference values to establish an 8-hour occupational exposure value (OEV) of 0.11 ppm derived from epidemiological evidence of nasopharyngeal cancer. They also developed a 15-minute OEV of 0.17 ppm based on the goal of preventing sensory irritation. In an earlier draft of EPA's TSCA Risk Evaluation, they initially proposed an 8-hour OEV of 0.011 ppm derived from residential exposure studies of children, but this was withdrawn. This review examined EPA's methodology, the nearly 40 years of scientific literature underlying the EPA's conclusions, and the more than 300 public comments, which were submitted to the draft IRIS Toxicological Review (Docket ID: [EPA-HQ-ORD-2010-0396]) and draft TSCA Risk Evaluation (Docket ID: [EPA-HQ-OPPT-2023-0613]). A minimum of five significant flaws were identified and discussed: (1) heavy reliance on epidemiological studies which had serious confounding factors and design limitations; (2) application of default uncertainty factors which were too high given the robust human data; (3) use of exclusion criteria which dismissed high-quality studies from being considered; (4) the use of a linear no-threshold (LNT) model despite decades of substantial evidence for a threshold-driven mode of action (MOA); and (5) neglect for a validated biologically based dose-response (BBDR) model which may have been the most robust ever developed. Based on our weight-of-evidence evaluation of toxicological, mechanistic, and epidemiological data, we propose occupational exposure limits (OELs) of 0.3 ppm (8-hour TWA) and 1 ppm (15-min STEL). These values are grounded in controlled human exposure studies of asthmatics and non-asthmatics and supported by an internationally accepted BBDR model estimating an approximately 1 in 940,000 increased cancer risk for workers. As such, these OELs protect against sensory irritation, asthma, and other adverse effects, as well as carcinogenicity. They are also aligned with limits adopted by other domestic and international regulatory bodies. Immediately before this paper was accepted, EPA released their Updated Draft Risk Calculation Memorandum: Formaldehyde for public comment, which proposed to drop their promulgated OEVs (0.11 ppm and 0.17 ppm) and adopt an 8-hour OEV of 0.3 ppm to protect against sensory irritation and cancer, similarly to what was recommended in this paper.
+
+---
+### [11] The gut-lung axis in childhood asthma: from early-life programming to microbiome-informed precision medicine-a narrative review.
+**Author**: Mo Miaojun et al. | **Journal**: Frontiers in immunology (2026)
+**PMID**: 42099620 | https://pubmed.ncbi.nlm.nih.gov/42099620/
+
+The gut-lung axis links early-life microbial programming to long-term respiratory health, offering a pivotal framework for understanding childhood asthma pathogenesis. This review synthesizes current evidence on how disruptions in microbial-immune crosstalk during critical developmental windows shape asthma susceptibility. Perinatal determinants-including maternal diet, delivery mode, antibiotic exposure, and breastfeeding-establish gut microbial communities that educate the developing immune system. Distinguishing itself from recent reviews, this review offers three novel contributions: (i) an integrated multi-omics framework linking early-life microbial maturation trajectories to specific asthma endotypes; (ii) a systematic synthesis of the molecular mechanisms by which microbial metabolites-including short-chain fatty acids, tryptophan derivatives, and bile acids-orchestrate gut-lung immune crosstalk; and (iii) a clinically actionable precision medicine algorithm that translates multi-omics profiling into personalized risk prediction, endotype-driven therapy selection, and targeted preventive strategies. Dysbiosis, characterized by delayed microbial maturation and depletion of short-chain fatty acid-producing taxa, compromises epithelial barrier integrity and skews immune homeostasis toward pro-allergic type-2 responses. Microbial metabolites, particularly short-chain fatty acids (acetate, propionate, butyrate) and tryptophan derivatives (indole-3-lactic acid, indole-3-propionic acid), serve as key molecular mediators that regulate regulatory T cells differentiation, reinforce mucosal barriers, and modulate distal airway inflammation. Microbial signatures correlate with specific asthma endotypes, offering opportunities for patient stratification. We critically evaluate emerging microbiome-targeted interventions-including strain-specific probiotics, prebiotics, postbiotics, and fecal microbiota transplantation-highlighting both therapeutic promise and the need for rigorous, well-powered clinical trials. Integrating multi-omics microbial profiling with host genetics and clinical phenotyping holds potential for microbiome-informed precision medicine, enabling personalized risk prediction, endotype-driven therapy selection, and novel preventive strategies targeting the gut-lung axis from the earliest stages of life.
+
+---
+### [12] Type 2 Diabetes and the Lung - Cause and Consequence.
+**Author**: Foer Dinah et al. | **Journal**: Current diabetes reports (2026/May)
+**PMID**: 42095998 | https://pubmed.ncbi.nlm.nih.gov/42095998/
+
+PURPOSE OF REVIEW: The purpose of this review is to synthesize literature investigating the relationship between type 2 diabetes (T2D) and obstructive airway diseases and to identify implications for clinical care.
+RECENT FINDINGS: Type 2 diabetes is a common and challenging comorbidity in patients with asthma and chronic obstructive pulmonary disease (COPD). Basic, translational and clinical studies support a bidirectional association between T2D and the lung. In animal models and human studies, insulin resistance and hyperglycemia are associated with pulmonary inflammation, respiratory exacerbation risk and disease severity. Corticosteroids are a mainstay for respiratory disease control and exacerbation treatment but promote ongoing metabolic dysregulation. Randomized, placebo-controlled trials of glucose-lowering medications for asthma are actively ongoing. Additional studies addressing clinical pathways to co-manage respiratory and metabolic risk are needed. Patients with comorbid T2D and asthma or COPD are at risk for worse outcomes. There are opportunities to improve cross-disciplinary care, potentially reducing risk and multimorbidity associated with both conditions.
+
+---
+### [13] Cost-Effectiveness of Allergen Immunotherapy for Allergic Rhinitis: A Systematic Review.
+**Author**: Jacob Joshua et al. | **Journal**: Allergy (2026/May)
+**PMID**: 42093212 | https://pubmed.ncbi.nlm.nih.gov/42093212/
+
+Allergic rhinitis imposes a substantial clinical and socioeconomic burden globally. While symptomatic pharmacotherapy such as oral antihistamines and intranasal corticosteroids offers temporary relief, allergen immunotherapy provides disease-modifying benefits but requires higher upfront costs. This systematic review synthesises cost-effectiveness evaluations of subcutaneous (SCIT) and sublingual immunotherapy (SLIT) compared to symptomatic pharmacotherapy (SP). A systematic search of electronic databases was undertaken, identifying 35 eligible economic evaluations. Due to methodological heterogeneity, a narrative synthesis was performed. Thirty-two evaluations (91%) concluded that allergen immunotherapy represents a cost-effective intervention, with incremental cost-effectiveness ratios predominantly falling below jurisdictional willingness-to-pay thresholds. Both SCIT and SLIT demonstrated economic value, particularly in patients with co-morbid asthma and when models incorporated sustained post-treatment benefits. Future clinical research should prioritise endpoints that facilitate direct estimation of health utility. Despite diverse healthcare settings and modelling approaches, the evidence supports allergen immunotherapy (AIT) as an economically rational investment. Policymakers should utilise these findings to inform reimbursement decisions. Trial Registration: PROSPERO registration number: CRD42024530911.
+
+---
+### [14] Aluminium adjuvants in vaccines and potential health effects: systematic review.
+**Author**: Doyon-Plourde Pamela et al. | **Journal**: BMJ (Clinical research ed.) (2026/May)
+**PMID**: 42091164 | https://pubmed.ncbi.nlm.nih.gov/42091164/
+
+OBJECTIVE: To systematically review and critically appraise human evidence on potential health effects of aluminium adjuvanted vaccines.
+DESIGN: Systematic review following PRISMA (preferred reporting items for systematic review and meta-analysis) 2020 guidelines.
+DATA SOURCES: Six databases and trial registries were searched from inception to 3 March 2023 then updated to 27 November 2025. Reference lists of eligible studies were also screened.
+ELIGIBILITY CRITERIA FOR SELECTING STUDIES: Human studies assessing health outcomes after aluminium adjuvanted vaccination, including randomised controlled trials, cohort studies, case series, and ecological studies. Investigational vaccines, case reports, and review articles were excluded.
+DATA EXTRACTION AND SYNTHESIS: Two reviewers screened studies (with AI assistance for the 2023-25 update), extracted data, and assessed risk of bias (using RoB 2.0, ROBINS-I, or an adapted tool for case series). Certainty of evidence was rated using GRADE (Grading of Recommendations Assessment, Development, and Evaluation).
+RESULTS: The review included 59 studies (37 case series, 11 randomised controlled trials, nine cohort studies, two ecological studies). High quality evidence from randomised controlled trials and large cohorts consistently showed no association between aluminium adjuvanted vaccines and serious or long term health outcomes, such as asthma, autism spectrum disorders, or other chronic conditions. Studies on macrophagic myofasciitis were generally small and methodologically limited, and did not provide credible evidence of a causal association (very low certainty). Localised persistent nodules or granulomas were observed infrequently after diphtheria-tetanus-pertussis vaccines, consistent with delayed type hypersensitivity (<1%, self-limited; moderate to low certainty). For common adverse events (eg, headache, myalgia), high certainty randomised controlled trials found no consistent increase in risk with aluminium adjuvanted formulations. When differences were observed, they were small and predominantly mild to moderate in severity. Evidence was dominated by methodologically limited studies, with most case series and ecological studies at serious or critical risk of bias. Conclusions are primarily supported by higher quality randomised controlled trials and cohort evidence.
+CONCLUSIONS: Current evidence does not support causal associations between aluminium adjuvanted vaccines and serious or long term health outcomes. The most consistently documented reactions were persistent nodules or granulomas that are uncommon, local, and self-limited hypersensitivity reactions. These findings are broadly consistent with post-licensure surveillance findings. The predominance of methodologically limited studies for some outcomes highlights the need for higher quality research.
+SYSTEMATIC REVIEW REGISTRATION: PROSPERO CRD42023462831.
+
+---
+### [15] Challenges to Assessing the Prevalence of Cystic Fibrosis in the Caribbean.
+**Author**: Rivera-Figueroa Krystal L et al. | **Journal**: Pediatric pulmonology (2026/May)
+**PMID**: 42087576 | https://pubmed.ncbi.nlm.nih.gov/42087576/
+
+UNLABELLED:  : Cystic fibrosis (CF) is likely underdiagnosed in Caribbean populations due to non-representative cystic fibrosis transmembrane conductance regulator (CFTR) variant screening panels, limited newborn screening programs, and structural healthcare barriers. Data from 2022 indicate substantial populations with European ancestry in Puerto Rico (1.4 M, 42.7%) and the Dominican Republic (1.4 M, 57.9%), yet the true burden of CF in the broader Caribbean remains largely undocumented.
+WORKING HYPOTHESIS: Current diagnostic frameworks, largely based on European-derived CFTR variant distributions, fail to capture the true burden of CF in Caribbean populations, leading to underestimated prevalence and delayed or missed diagnoses.
+OBJECTIVES: To synthesize registry, clinical, and published data to identify barriers to accurately assessing CF prevalence in Caribbean populations.
+STUDY DESIGN AND METHODS: This narrative literature review integrates CF registries, published data on CFTR variant distribution, population ancestry data, and clinical observations from CF centers in Puerto Rico and the Dominican Republic. Clinical insights were derived from pediatric patients evaluated at the Pediatric Rare Lung and Asthma Institute in Puerto Rico and the CF Clinic at Robert Reid Cabral Children's Hospital in the Dominican Republic.
+RESULTS: CFTR variant patterns differ from those in the United States, with higher frequencies of rare variants such as p.Ala559Thr. Standard screening panels may miss these variants, contributing to underdiagnosis. Limited newborn screening, misdiagnosis, and restricted access to CFTR modulator therapies further exacerbate disparities.
+CONCLUSIONS: Structural, diagnostic, and genetic factors hinder accurate CF prevalence estimates in the Caribbean, highlighting the need for region-specific research, improved screening, and expanded access to therapies.
+
+---
+### [16] Acute and Chronic Cough in Children.
+**Author**: Kempthorne Douglas et al. | **Journal**: Otolaryngologic clinics of North America (2026/May)
+**PMID**: 42086429 | https://pubmed.ncbi.nlm.nih.gov/42086429/
+
+Cough is one of the most common symptoms among children. While most acute cough episodes are viral and resolve within 4 weeks, chronic cough persisting beyond 4 weeks warrants further evaluation. Pediatric-specific cough guidelines emphasizing algorithmic evaluation assist in early and accurate diagnosis for preventing long-term pulmonary complications. This article reviews evidence-based approaches to evaluating and managing acute and chronic cough in children, highlighting key diagnostic strategies and targeted treatment options.
+
+---
+### [17] Trace Elements in Allergy: Narrative Review.
+**Author**: Ordak Michal et al. | **Journal**: Allergy (2026/May)
+**PMID**: 42083298 | https://pubmed.ncbi.nlm.nih.gov/42083298/
+
+Allergic diseases are increasing worldwide and reflect a complex interplay between genetic susceptibility and environmental exposures. Among environmental determinants, trace elements contribute to epithelial barrier dysfunction, tissue remodeling, redox homeostasis, and immune regulation and may influence the development and severity of allergic diseases. This narrative review summarizes current mechanistic, epidemiological, and clinical evidence on the role of essential and non-essential trace elements in allergy. We discuss essential elements, including iron, zinc, selenium, copper, manganese, iodine, molybdenum, and boron, which support antioxidant defense, epithelial integrity, and immune homeostasis. We also review sensitizing and potentially toxic elements such as nickel, chromium, cobalt, silicon, and fluoride, which may promote allergic sensitization and inflammation through hapten-driven immune responses, oxidative stress, and adjuvant-like effects. Evidence across asthma, allergic rhinitis, atopic dermatitis, and food allergy indicates that trace elements may contribute to the development and heterogeneity of allergic disease. However, reported associations between elemental status and allergic diseases remain heterogeneous across studies. This variability likely reflects both underlying biological differences and methodological heterogeneity, including variation in study design, biological matrices, exposure assessment, and analytical techniques. Better methodological harmonization will be essential to elucidate the roles of trace elements in allergy development and to strengthen future translational and preventive research efforts. At present, available evidence does not support routine assessment of trace element status or generalized supplementation in the prevention or management of allergic diseases, except in cases of documented deficiency or clearly defined clinical indications.
+
+---
+### [18] Real-life lessons on omalizumab and food allergy: The potential for unexplored outcomes.
+**Author**: Lo Scalzo Lucia et al. | **Journal**: The World Allergy Organization journal (2026/May)
+**PMID**: 42079786 | https://pubmed.ncbi.nlm.nih.gov/42079786/
+
+INTRODUCTION: IgE-mediated food allergy (FA) represents an increasing global health burden, with rising prevalence and limited therapeutic options beyond allergen avoidance and emergency management. The approval of omalizumab as the first biologic to reduce reactions after accidental food exposure marks a turning point in FA care. While randomized controlled trials (RCTs) have demonstrated its efficacy in raising reaction thresholds and reducing allergic responses, real-world studies provide complementary evidence capturing outcomes relevant to everyday life.
+METHODS: This review integrates evidence from sources of observational studies, including cohort, case series, and case reports evaluating omalizumab in patients with FA, including complex phenotypes and populations typically excluded from RCTs.
+DISCUSSION: Real-world data demonstrate that omalizumab can prevent severe reactions in atypical and non-ingestive FA phenotypes, increase reaction thresholds as monotherapy, and enable dietary liberalization in a substantial proportion of patients. Observational cohorts consistently report improvements in food allergy-related quality of life, reduced anxiety, and enhanced confidence in food management. Omalizumab appears effective and well tolerated across complex populations, including patients with multiple comorbidities and very high total IgE levels, even beyond currently approved dosing limits. Emerging evidence also suggests that FA may require disease-specific dosing paradigms distinct from those used in asthma.
+CONCLUSIONS: Real-world evidence complements RCTs findings by highlighting the multidimensional benefits of omalizumab in FA, encompassing clinical protection, dietary freedom, and psychosocial well-being as well as dose fine-tuning and off-label scenarios. These data support its broader clinical value and inform future research, dosing strategies, and personalized application in routine care.
+
+---
+### [19] Treatment Dose Increase Versus Co-Medication in Allergic Rhinitis: Systematic Review With Dose-Response Network Meta-Analysis.
+**Author**: Sousa-Pinto Bernardo et al. | **Journal**: Allergy (2026/May)
+**PMID**: 42068093 | https://pubmed.ncbi.nlm.nih.gov/42068093/
+
+BACKGROUND: To achieve adequate symptom control, patients with allergic rhinitis (AR) often need to increase their medication dose or add other treatments (co-medication). We aimed to perform a systematic review to compare the efficacy and safety of AR medications for increased dose versus co-medication.
+METHODS: We searched four bibliographic databases and three trial databases for randomised controlled trials assessing the effect of intranasal and/or oral medications in patients of all ages with seasonal or perennial AR. We performed pairwise meta-analysis based on direct evidence to compare (i) non-standard versus standard treatment doses, and (ii) co-medication strategies versus monotherapy using standard doses. Furthermore, we fitted dose-response network meta-analysis (NMA) to obtain projected estimates for comparisons involving two times the standard dose of AR medications in monotherapy versus co-medication with the standard dose of the same medications. We assessed the certainty of evidence using GRADE for NMA.
+RESULTS: We included 262 studies. Co-medication schemes involving oral antihistamines (OAH) + intranasal corticosteroids (INCS) resulted in higher improvements of nasal symptoms and quality of life than doubling the dose of OAH. However, doubling the dose of intranasal medications led to better results than having intranasal medications + OAH. Doubling the dose of INCS was associated with higher efficacy than adding intranasal antihistamines (INAH). No relevant safety differences were found between treatment strategies.
+CONCLUSIONS: Results favoured (i) doubling the dose of intranasal medications versus adding OAH, and (ii) adding INCS to OAH over doubling the dose of OAH. This study will inform the ARIA-EAACI 2024-2025 guidelines.
+
+---
+### [20] Recent advances in pediatric pulmonology and allergy: Articles of interest to fellows. Subclinical small airway dysfunction, anti-inflammatory reliever therapy, and biologic treatment in pediatric asthma.
+**Author**: Alvarado-Amador Irlanda et al. | **Journal**: Paediatric respiratory reviews (2026/Apr)
+**PMID**: 42067424 | https://pubmed.ncbi.nlm.nih.gov/42067424/
+
+Recent advances in pediatric asthma continue to refine the understanding of disease mechanisms and to reshape therapeutic strategies. In this brief review, we discuss three recent articles of particular interest to fellows and early-career clinicians. First, we examine evidence showing that subclinical small airway dysfunction may be present in children with well-controlled asthma despite normal FEV1, highlighting the potential role of oscillometry as a complementary tool in functional assessment. Second, we review the CARE trial, which demonstrated that as-needed budesonide-formoterol was superior to SABA-only reliever therapy in reducing asthma attacks in children with mild asthma. Third, we summarize recent data on dupilumab in children with uncontrolled moderate-to-severe type 2 asthma, showing sustained benefits across disease severity strata. Together, these studies illustrate how physiological assessment and targeted anti-inflammatory therapies are advancing personalized care in pediatric asthma.
+
+---
+### [21] Clinical remission in allergy and clinical immunology practice: State of the art and World Allergy Organization (WAO) call to action.
+**Author**: Morais-Almeida Mário et al. | **Journal**: The World Allergy Organization journal (2026/May)
+**PMID**: 42058161 | https://pubmed.ncbi.nlm.nih.gov/42058161/
+
+Recent advances in biological therapies, small molecules and allergen-specific immunotherapy are reshaping the management of immunoallergic diseases, progressively shifting therapeutic goals from short-term disease control toward the possibility of achieving sustained clinical remission. Despite increasing evidence across multiple conditions, a universally accepted and disease-transversal definition of clinical remission (CR) remains lacking. In this review we propose a comprehensive framework for defining clinical remission across a broad spectrum of immune-mediated diseases traditionally managed in Allergy and Clinical Immunology practice, including asthma, allergic rhinitis, chronic rhinosinusitis with nasal polyps, chronic urticaria, atopic dermatitis, mastocytosis, food allergy, and eosinophilic esophagitis. Clinical remission is defined as a sustained state of absence of clinically relevant disease manifestations, independently of underlying biological activity; suppression of inflammatory pathways and normalization of biomarkers define biological remission, which may coexist with, but is not required for, clinical remission. We introduce the 3D-CR model, a pragmatic, disease-adaptable framework integrating 3 complementary domains - clinical, biological, and functional - to characterize remission states as complete, partial, or absent. Building on this model, we propose the Allergic Disease Remission Score (ADReS) as a modular tool designed to support standardized assessment, longitudinal follow-up, and cross-disease comparison in clinical trials and real-world settings. These tools are intended as conceptual and research instruments rather than prescriptive algorithms for individual therapeutic decision-making. Finally, we outline a World Allergy Organization call to action advocating for a harmonized global approach to defining, measuring, and implementing clinical remission as a meaningful treatment target. Establishing standardized remission endpoints has the potential to improve patient outcomes, facilitate precision medicine strategies, enhance comparability across studies, and reduce heterogeneity in clinical research and practice worldwide.
+
+---
+### [22] Update in childhood asthma.
+**Author**: Bush Andrew et al. | **Journal**: Allergology international : official journal of the Japanese Society of Allergology (2026/Apr)
+**PMID**: 42055854 | https://pubmed.ncbi.nlm.nih.gov/42055854/
+
+The areas covered represent a personal selection in the field. Asthma is defined in this manuscript as a clinical syndrome of wheeze, breathlessness and chest tightness, sometimes with excess cough. No assumptions are made about underlying pathology, and asthma thus becomes a clinical description, not a diagnosis. The areas covered include the need never to forget the importance of getting the basics right, including correct diagnosis and appropriate management; most children with asthma do not need biologics. Recent advances in preschool wheeze are covered next, especially the beginnings of phenotype-driven treatment, and the difficult issue of understanding non-eosinophilic wheezing. It is becoming clearer that infection likely plays a big role, but management is very difficult with no evidence base. We are now coming to realize the importance of phenotyping acute asthma attacks; one size does not fit all, but whereas many are eosinophilic, some are infection driven and are non-eosinophilic, especially in the preschool years. A phenotypic approach may allow us to reduce the burden of repeated oral corticosteroid bursts. Furthermore, we need to move beyond mere cell counting to assessing functional status. We are increasingly appreciating the importance of replacing short-acting β-2 agonist reliever therapy with combined inhaled corticosteroid and a fast acting short- and especially long-acting β-2 agonists. Finally, the use of biologicals in severe asthma is discussed. The possibility that early use of biologics may induce remission or even cure asthma.
+
+---
+### [23] Oscillometry for the diagnosis of asthma in children: a systematic review.
+**Author**: Seneviratne Senali Y et al. | **Journal**: European respiratory review : an official journal of the European Respiratory Society (2026/Apr)
+**PMID**: 42055592 | https://pubmed.ncbi.nlm.nih.gov/42055592/
+
+BACKGROUND: Diagnosing asthma in children and young people (CYP) remains challenging. Oscillometry is a promising tool and is feasible from 2 years of age. European Respiratory Society (ERS) technical standards and bronchodilator response (BDR) oscillometry thresholds have been published, but diagnostic accuracy is not established.
+METHODS: We systematically reviewed studies comparing oscillometry and spirometry in CYP under investigation for asthma. Reference standards were positive BDR or positive methacholine challenge test (MCT). Primary aims were to investigate the sensitivity and specificity of current ERS oscillometry thresholds (>40% decrease in resistance at 5 Hz (R 5), >50% increase in reactance at 5 Hz (X 5) or >80% decrease in the area under the reactance curve); secondary aims were to identify oscillometry threshold values optimising both sensitivity and specificity.
+RESULTS: 11 studies were included; six (n=992 CYP) utilised BDR and five (n=531 CYP) MCT as reference standard. Meta-analysis was not possible due to heterogeneity of results reported. In two studies using current ERS BDR thresholds, zero sensitivity and high specificity (>85%) were observed. In weighted regression analyses of BDR studies, a 17.0% decrease in resistance at 5-6 Hz had sensitivity and specificity of 71.6% (95% CI 69.7-73.7%); a 20.2% increase in X 5 had sensitivity and specificity of 68.6% (95% CI 66.6-70.8%). Similarly, 27.7% increase in R 5 had sensitivity and specificity of 73.6% (95% CI 71.9-75.3%) for MCT.
+CONCLUSION: Currently recommended ERS thresholds for oscillometry BDR have low sensitivity. Proposed thresholds for defining positive BDR and MCT by oscillometry require prospective validation and adoption of standards for measuring and reporting oscillometry parameters in future diagnostic comparative studies.
+
+---
+### [24] Allergen-specific immunotherapy at earlier stages of allergic respiratory diseases: a change is in the air!
+**Author**: Lombardi Carlo et al. | **Journal**: Current opinion in allergy and clinical immunology (2026/Jun)
+**PMID**: 42055088 | https://pubmed.ncbi.nlm.nih.gov/42055088/
+
+PURPOSE: This expert point of view discusses why allergen-specific immunotherapy (AIT) should be considered earlier in the management of allergic rhinitis and asthma, highlighting a shift from its traditional use as a last-line add-on therapy toward a more proactive, disease-modifying intervention in carefully selected patients.
+RECENT FINDINGS: Large real-world datasets, including the REACT program and the EfficAPSI study, show that adding AIT to standard care in patients with allergic rhinitis, with or without mild-to-moderate asthma, is associated with sustained reductions in pharmacologic treatment needs, fewer severe asthma exacerbations, and lower healthcare utilization over long-term follow-up. Pediatric and adolescent analyses suggest that starting AIT earlier in life enhances these benefits, supporting the concept of a "window of opportunity" during which immune modulation may prevent or delay asthma onset and limit new sensitizations, in line with the notion of the allergic march.
+SUMMARY: The accumulating real-world evidence that early AIT can alter the natural history of allergic airway disease provides a strong rationale to reposition AIT within clinical algorithms, moving it from a rescue option for pharmacologic failures to an earlier, integrated disease-modifying strategy. Earlier use of AIT, alongside optimized pharmacotherapy, may improve long-term control, reduce progression to severe asthma, with important implications for patients and health-care systems.
+
+---
+### [25] Risk factors, preventive strategies, and long-term effects of lower respiratory tract infections in early childhood: a comprehensive review.
+**Author**: N M Arul Kiruba et al. | **Journal**: The Journal of asthma : official journal of the Association for the Care of Asthma (2026/May)
+**PMID**: 42053419 | https://pubmed.ncbi.nlm.nih.gov/42053419/
+
+OBJECTIVE: To synthesize existing evidence on the risk factors, preventive measures, and long-term outcomes of lower respiratory tract infections (LRTIs) in early childhood, and to identify key gaps in research and policy.
+METHODS: A systematic search was conducted in PubMed, Scopus, and Web of Science for studies published between January 2000 and August 2025, supplemented by reports from WHO, UNICEF, and the Global Burden of Disease (GBD) database. Eligible studies included randomized controlled trials, cohort, case-control, and cross-sectional studies, as well as systematic reviews involving children aged 0-5 years. Studies focused solely on acute treatment or adult populations were excluded.
+RESULTS: Early-life LRTIs arise from interacting determinants, including prematurity, malnutrition, indoor air pollution, inadequate immunization, and socioeconomic inequities. Preventive strategies such as vaccination, maternal immunization, exclusive breastfeeding, micronutrient supplementation, and the use of clean fuels-significantly reduce childhood morbidity and mortality. Evidence also indicates long-term health consequences, including asthma, impaired lung function, neurodevelopmental delay, and increased cardiometabolic risk.
+CONCLUSIONS: Early-life LRTIs represent both an acute health burden and a determinant of lifelong respiratory and systemic outcomes. Expanding equitable vaccination coverage, improving maternal and child nutrition, reducing environmental exposures, and strengthening health-system capacity are essential to mitigate both short- and long-term global impacts.
+
+---
+### [26] The Use of Point-of-Care Lung Ultrasound in the Diagnosis of Pneumonia in Pediatric Patients.
+**Author**: Marzook Noah et al. | **Journal**: Pediatric emergency care (2026/May)
+**PMID**: 42050965 | https://pubmed.ncbi.nlm.nih.gov/42050965/
+
+Traditional methods to evaluate for pediatric pneumonia include clinical examination and chest radiography (CXR). Point-of-care lung ultrasound (LUS) has emerged as a promising, noninvasive alternative for diagnosing pediatric pneumonia. This review highlights the diagnostic accuracy, benefits, and limitations of LUS compared with clinical assessment and CXR in pediatric patients with suspected pneumonia. Multiple meta-analyses demonstrate that LUS offers high sensitivity (up to 94%) and specificity (up to 96%) in diagnosing pediatric pneumonia, comparable to or exceeding CXR performance. LUS provides significant advantages, including no radiation, bedside applicability, and lower costs. However, challenges remain in standardizing LUS interpretation, particularly distinguishing bacterial pneumonia from viral illness and asthma, where overlapping ultrasound findings are common and require careful clinical correlation. Standardized protocols, clinician training, and diagnostic algorithms are essential to optimize LUS utility in pediatric respiratory care. Further research is warranted to refine differentiation between bacterial and viral etiologies and effectively integrate LUS into routine clinical pathways.
+
+---
+### [27] Follow-up after discontinuation of omalizumab in patients with moderate-to-severe asthma: A systematic review.
+**Author**: Yan Qiu-Li et al. | **Journal**: Allergy and asthma proceedings (2026/May)
+**PMID**: 42050841 | https://pubmed.ncbi.nlm.nih.gov/42050841/
+
+Background: Omalizumab is a well-established add-on therapy for patients with moderate-to-severe asthma. However, there is limited systematic evidence on the long-term outcomes after discontinuation of this treatment. Objective: To address this evidence gap, this review aimed to systematically evaluate the follow-up outcomes in patients with moderate-to-severe asthma after discontinuation of omalizumab treatment. Methods: The research was conducted in accordance with the systematic reviews and meta-analyses guidelines. We systematically searched medical literature data bases from December 2003 to August 2025 for observational studies (prospective or retrospective) on omalizumab discontinuation in moderate-to-severe asthma. Data extraction was conducted on key variables: omalizumab treatment regimens, postdiscontinuation long-term outcomes, asthma control status, relapse risk factors, asthma exacerbation rates, corticosteroid use, and patterns of omalizumab reinitiation. Results: A total of 11 eligible studies were included in the review. After discontinuation, most patients showed no remarkable changes in forced expiratory volume in 1 second, fractional exhaled nitric oxide level, total immunoglobulin E value, or absolute eosinophil count. Moreover, no obvious deterioration was observed in patient-reported quality of life. These findings confirm the sustained long-term benefits of previous omalizumab add-on therapy because the majority of patients maintained favorable disease control after discontinuation. Subgroup analyses further indicated that asthma exacerbations, when they occurred, predominantly occurred within the first year after discontinuation. Conclusion: This review indicates that, although most patients maintain stable objective indicators after omalizumab discontinuation, a significant proportion are at increased risk for exacerbations, deterioration in asthma control, and increased corticosteroid use, particularly within the first year.
+
+---
+### [28] Breathing through the night: A meta-analysis of childhood asthma and obstructive sleep apnea in sleep-disordered contexts.
+**Author**: Zheng Kaiwen et al. | **Journal**: Allergy and asthma proceedings (2026/May)
+**PMID**: 42050836 | https://pubmed.ncbi.nlm.nih.gov/42050836/
+
+Background: The study was to systematically evaluate the correlation between childhood asthma and obstructive sleep apnea (OSA). Methods: Several medical literature data bases were searched for studies published up to March 2025, by using the keywords "asthma" and "obstructive sleep apnea" and "child*." We included observational studies, children with OSA diagnosed via polysomnography, clinical criteria, or validated tools; and asthma confirmed by physician diagnosis, medication use, or validated questionnaires and international code. Results: Eleven studies were included that covered populations in the United States, Europe, and Asia. The pooled odds ratio (OR) for the association between childhood asthma and OSA was 1.66 (95% confidence interval [CI], 1.21-2.26; p < 0.001). Subgroup analysis by study design showed significant associations in cohort (OR 2.00 [95% CI, 1.35-2.96]) and cross-sectional (OR 1.55 [95% CI, 0.69-3.44]) but not in case-control studies (OR 0.85 [95% CI, 0.32-2.28]). Geographically, the association was strongest in America (OR 1.99 [95% CI, 1.35-2.96]) and Asia (OR 1.64 [95% CI, 1.19-2.25]), with a nonsignificant trend in Europe (OR 0.91 [95% CI, 0.34-2.42]). Sensitivity analyses directionally consistent with the results, and Egger's test (p = .587) indicated no significant publication bias. Conclusion: Childhood asthma is significantly associated with an increased risk of OSA, with sleep disorders likely exacerbating this relationship. Integrated screening and management strategies are warranted, particularly in high-risk regions such as America and Asia.
+
+---
+### [29] Evidence-based clinical recommendations on the use of telemedicine for the management of children, adolescents and young adults with moderate-severe asthma.
+**Author**: Brigadoi Giulia et al. | **Journal**: Italian journal of pediatrics (2026/Apr)
+**PMID**: 42045978 | https://pubmed.ncbi.nlm.nih.gov/42045978/
+
+(abstract not available)
+
+---
+### [30] Clinical heterogeneity and endotype stratification in eosinophilic esophagitis.
+**Author**: Shoda Tetsuo et al. | **Journal**: Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/Apr)
+**PMID**: 42044692 | https://pubmed.ncbi.nlm.nih.gov/42044692/
+
+Eosinophilic esophagitis (EoE) is a chronic immune-mediated inflammatory disease marked by esophageal dysfunction and eosinophil inflammation, with significant variability in presentation, course, and treatment response. Although patients are diagnosed using the same criteria, patients exhibit a range of characteristics with varying age at onset, symptoms, endoscopic appearance, treatment response, and progression to fibrostenotic complications. Clinical phenotyping offers a framework for describing observable disease features, including age-related symptom patterns, inflammatory and fibrostenotic traits, atopic comorbidities, and treatment responses. Complementing this approach, molecular endotyping aims to identify biologically distinct subgroups based on shared underlying mechanisms, informed by transcriptomic, single-cell, and genetic analyses. In EoE, both bulk and single-cell transcriptomic studies have uncovered conserved disease signatures along with specific molecular endotypes linked to inflammatory load, epithelial dysfunction, and tissue remodeling. Genetic studies further reveal both polygenic risk factors and rare variants that influence disease susceptibility, progression, and response to treatment. This review synthesizes current knowledge on clinical phenotypes and molecular endotypes in EoE, highlighting how integrating these frameworks can improve risk stratification, inform treatment selection, and advance precision medicine.
+
+---
+### [31] Update on environmental determinants of allergic diseases.
+**Author**: Monga Naina et al. | **Journal**: The Journal of allergy and clinical immunology (2026/Apr)
+**PMID**: 42034298 | https://pubmed.ncbi.nlm.nih.gov/42034298/
+
+This review article summarizes key advances from October 2022-December 2025 on the link between environmental exposures and allergic diseases, with an emphasis on early-life exposures and mechanistic insights relevant to disease prevention and therapy. Allergic diseases have genetic and environmental origins. As to the latter, predisposition to allergy is thought to arise as a result of increased exposure to harmful environmental factors that act as immune adjuvants for allergens, and reduced exposure to beneficial factors that induce allergen tolerance. Harmful factors include air pollutants (road traffic-related particulate matter and gases, cigarette smoke, fire smoke, etc.), and various man-made chemicals and particles. Beneficial exposures include commensal microorganisms and non-microbial factors present in the farming environment. Allergic diseases frequently start in early childhood. Therefore, many recently published manuscripts focus on environmental exposures occurring prenatally or during the first few months/years after birth, i.e. time windows prior to allergic disease manifestation. This review article summarizes and comments on recent work on prenatal, childhood, adult, protective and harmful exposures, highlighting relevant human cohort studies as well as mechanistic work in mouse models and in vitro culture systems. Studies published in the past three years describe novel biomarkers of environmental exposures, elucidate novel mechanisms by which exposures shape allergic diseases, and highlight novel targets for therapeutic intervention, setting a foundation for new approaches for early detection of allergic predisposition, allergy treatment and prevention.
+
+---
+### [32] ILC2s and their immune checkpoints in the antitumor response.
+**Author**: Ciancaglini Cecilia et al. | **Journal**: Journal for immunotherapy of cancer (2026/Apr)
+**PMID**: 42031427 | https://pubmed.ncbi.nlm.nih.gov/42031427/
+
+Innate lymphoid cells (ILCs) are tissue-resident lymphocytes that patrol mucosal barriers. Among ILC subsets, ILC2s' involvement in the innate immune response to parasites, in the development of asthma and in the repair of damaged tissues is well known. However, their role in antitumor immune response is controversial, as it seems to be dependent on the type of cancer and on interaction with the other cell types in the microenvironment. Immune checkpoint expression and function have been studied recently in ILC2s, with a focus on programmed cell death protein-1 (PD-1) and cytotoxic T lymphocyte-associated protein-4 (CTLA-4). This review summarizes recent progress in understanding the ILC2s' contribution to cancer development and response to immunotherapy targeting inhibitory checkpoints.
+
+---
+### [33] Inborn Errors of Immunity with overlap of Allergy and Autoimmune disease.
+**Author**: Heimall Jennifer et al. | **Journal**: Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/Apr)
+**PMID**: 42031065 | https://pubmed.ncbi.nlm.nih.gov/42031065/
+
+Inborn errors of immunity (IEI) are increasingly recognized to present clinically with not just infection, but also symptoms of immune dysregulation including autoimmunity and severe atopy. IEI with atopy and autoimmunity can be grouped into 3 broad categories: 1) Cytoskeletal Impairments, 2) Cytokine Signaling Impairments, and 3) TCR Signaling Impairments. Additionally, Primary Immune Regulatory Disorders (PIRDS) are a subset of IEI that have been described with increasing frequency over the last 5 years to present predominantly with symptoms of immune dysregulation rather than severe or opportunistic infections. These PIRDs can present with overlaps of both atopy, most commonly atopic dermatitis and severe autoimmunity. In the latest IUIS genotypic categorization of IEI's, PIRDs were the group with largest expansion of newly identified monogenic etiologies, suggesting that these patients in our clinic waiting to be identified, and with the hope that identification of a monogenic cause can drive effective use of pathway specific, precision therapy. In this review we will provide an overview of the mechanisms behind T cell development or deficiency that can contribute to development of atopy and autoimmunity, review selected monogenic forms of PIRDs that present with an overlap of atopy and autoimmunity, and provide an overview of approaches to diagnostic testing for and management of these conditions in the allergy and immunology clinical setting.
+
+---
+### [34] Asthma and increased carotid intima-media thickness: A systematic review and meta-analysis.
+**Author**: Haroun Mohammed et al. | **Journal**: Biomolecules & biomedicine (2026/Apr)
+**PMID**: 42028627 | https://pubmed.ncbi.nlm.nih.gov/42028627/
+
+Asthma has been associated with early vascular changes that elevate the risk of atherosclerosis and cardiovascular diseases. Carotid intima-media thickness (CIMT) serves as a non-invasive marker for subclinical atherosclerosis and cardiovascular risk. However, existing literature presents conflicting results regarding CIMT measurements in asthmatic patients. This study aims to evaluate whether CIMT is elevated in asthma patients compared to healthy controls and to explore potential modifiers. We conducted a systematic review following PRISMA guidelines, performing a literature search across PubMed, Web of Science, ScienceDirect, and the WHO VHL. We calculated pooled standardized mean differences (SMD) with 95% confidence intervals (CI) to assess the differences in CIMT values. Heterogeneity was evaluated using the I² statistic, and subgroup analyses and meta-regression were utilized to identify sources of heterogeneity. Our review included a total of 10 studies. The analysis indicated significantly higher CIMT values in asthma patients compared to healthy controls, with a pooled SMD of 0.65 (95% CI: 0.19 to 1.12, p = 0.005). A limited number of studies addressed various factors, such as disease severity and the use of inhaled corticosteroids, which may influence CIMT measurements. Notably, asthmatic patients, particularly children and adolescents, exhibited higher CIMT values compared to healthy controls, suggesting a potential association with subclinical atherosclerosis in this demographic. However, these findings should be interpreted with caution due to the observational nature of the included studies and the risk of residual confounding. Further longitudinal research is necessary to elucidate the effects of disease characteristics and treatment on vascular health.
+
+---
+### [35] Association between nocturnal asthma, symptom severity, and clinical outcomes: a systematic review.
+**Author**: Tachinardi Patricia et al. | **Journal**: The Journal of asthma : official journal of the Association for the Care of Asthma (2026/May)
+**PMID**: 42017769 | https://pubmed.ncbi.nlm.nih.gov/42017769/
+
+OBJECTIVE: Nocturnal asthma is characterized by the worsening of asthma symptoms during the night and indicates more severe disease. This review aims to analyze evidence regarding the association between nocturnal asthma, symptom severity, pulmonary function, and clinical outcomes in both adult and pediatric populations.
+METHODS: Databases Embase, PubMed, CINAHL, Cochrane (Wiley), Scopus, and LILACS were searched from their dates of inception to April 8, 2024. We included studies comparing severity of asthma symptoms, pulmonary function, and clinical outcomes in patients with nocturnal asthma to patients with nocturnal asthma.
+RESULTS: Thirteen studies met the inclusion criteria for this review. These studies varied in setting, population, definitions of nocturnal, and outcome assessment. Despite methodological heterogeneity, a consistent pattern emerged: none of the evaluated outcomes had better results in the nocturnal asthma group, and nocturnal asthma was associated with worse symptom severity and poorer pulmonary function in most studies. However, evidence regarding hospital outcomes was mixed, with only one study reporting increased ward or intensive care unit (ICU) admission rates for nocturnal asthma patients, and no differences observed in length of stay.
+CONCLUSIONS: Evidence presented in this systematic review reinforced the association between nocturnal asthma and more severe disease manifestations, including worse symptom scores and poorer pulmonary function compared to non-nocturnal asthma. While evidence regarding hospitalization outcomes remains inconclusive, the findings underscore the clinical significance of recognizing nocturnal symptoms to improve disease management and diagnosis.
+
+---
+### [36] [Research advances in non-pharmacological interventions in pediatric asthma].
+**Author**: Wang Wei-Rui et al. | **Journal**: Zhongguo dang dai er ke za zhi = Chinese journal of contemporary pediatrics (2026/Apr)
+**PMID**: 42015708 | https://pubmed.ncbi.nlm.nih.gov/42015708/
+
+Bronchial asthma (asthma) is the most common chronic inflammatory airway disease in children. Traditional pharmacotherapy achieves a disease control rate of less than 60%, and limitations such as poor treatment adherence and drug-related adverse reactions exist. With the development of life-course health management, pediatric asthma care has shifted from single-drug therapy to diversified, comprehensive management that integrates non-pharmacological interventions. Studies indicate that approaches such as breathing training, exercise training, and music therapy can act synergistically with medications to improve symptom control, enhance quality of life, and optimize lung function indices. This review summarizes the classifications, current research status, clinical efficacy, and limitations of non-pharmacological therapies for pediatric asthma, providing a reference for the rational clinical implementation of these interventions.
+支气管哮喘（简称哮喘）是儿童最常见的气道慢性炎症性疾病，传统药物治疗控制率不足60%，且存在治疗依从性低、药物不良反应等局限。随着生命全周期健康管理理念发展，儿童哮喘的诊疗模式已从传统的单一药物治疗逐渐转向结合非药物干预的多元化综合管理。研究显示，呼吸训练、运动训练及音乐疗法等非药物干预手段在改善哮喘症状控制、提高患儿生活质量、优化肺功能指标等方面与药物治疗具有协同增效作用。该文综述了目前儿童哮喘非药物治疗的分类、研究现状、临床疗效及局限性，以期为临床合理开展哮喘患儿非药物治疗管理提供参考依据。.
+
+---
+### [37] Values-Based Healthcare and the Quintuple Aim: Connection, Compassion, Equity, & Stewardship.
+**Author**: Parikh Ashish D et al. | **Journal**: The journal of allergy and clinical immunology. In practice (2026/Apr)
+**PMID**: 42009256 | https://pubmed.ncbi.nlm.nih.gov/42009256/
+
+Transformation from a fee-for-service model to a value-based health care model is essential to achieve the Quintuple Aim of Healthcare, the goal of which is the improvement not only of patient and population outcomes but also clinician wellness in an equitable cost-effective paradigm of human connection. The enhancement of "values-based care" is critical to this transformation. Understanding the influences of population heterogeneity, patient idiosyncrasy and schema, and health expectation is central not only to consistently achieving the Quintuple Aim but to personal and professional satisfaction as well. The system must be centered around compassion, connection, stewardship, and making the right choice the frictionless choice. Life is short; thus, it is important that we work together, stand by the good, and strive to make things better as best as we can.
+
+---
+### [38] Early Allergen Introduction: Policy Strategies to Prevent Food Allergy in the United States.
+**Author**: King Claire et al. | **Journal**: The journal of allergy and clinical immunology. In practice (2026/Apr)
+**PMID**: 41999914 | https://pubmed.ncbi.nlm.nih.gov/41999914/
+
+Food allergies affect millions of children and adults in the United States and globally. Early introduction of allergenic foods, especially peanut and egg, reduces allergy risk, as shown by the Learning Early About Peanut, LEAP-On, Enquiring About Tolerance, and Beating Egg Allergy Trial studies. Despite strong evidence, adherence to early introduction guidelines is low due to changing guidelines, limited clinic time, caregiver concerns, and structural barriers. At the Center for Food Allergy and Asthma Research annual Food Allergy Summit in July 2025, clinicians, researchers, and advocates discussed strategies to improve implementation. Six policy levers were highlighted: Bright Futures, the U.S. Preventive Services Task Force, insurance coverage, the Special Supplemental Nutrition Program for Women, Infants, and Children, medical society guideline alignment, and public education campaigns. Across these levers, a 3-pronged approach is recommended to increase early introduction of allergens that focuses on (1) standardizing published guidelines, (2) increasing access through insurance, and (3) educating clinicians and caregivers. This strategy could improve guideline adherence and reduce the burden of food allergies.
+
+---
+### [39] Development of a Competency-Based Curriculum for Advanced Practice Providers in Allergy and Immunology.
+**Author**: Bauer Maureen et al. | **Journal**: The journal of allergy and clinical immunology. In practice (2026/Apr)
+**PMID**: 41991002 | https://pubmed.ncbi.nlm.nih.gov/41991002/
+
+BACKGROUND: Advanced practice providers (APPs) are a rapidly expanding segment of the health care workforce, including subspeciality practices. They deliver high-quality and cost-effective care in a variety of medical settings and are valuable collaborators with physician colleagues. Other specialties have been successful in developing transition to training programs and/or formal certificate programs specific to the APP role. However, this is lacking in allergy and immunology (A&I) because no structured training is currently available on a national level specific to the APP role.
+OBJECTIVE: We describe the development of competencies to inform a competency-based curriculum for APPs in A&I. This curriculum seeks to establish fundamental-level knowledge within a target audience of APPs new to the field and serve as a complement to the clinical training obtained at their practice site.
+METHODS: Competencies were developed in three stages: initial competency development through an expert panel of doctors of medicine and APPs; competence validation through a modified Delphi approach in which 35 physicians and APPs provided feedback on the drafted competencies and competency refinement where provided qualitative and quantitative feedback was incorporated into finalized competencies. Competencies were developed in 11 previously identified educational areas.
+RESULTS: A total of 112 competencies within 11 identified educational areas were included in the initial draft. Thirty-five individuals completed competency validation and 99 competencies were included in the final version.
+CONCLUSION: Competencies developed will inform individual lectures and modules in a core curriculum for APPs in A&I, a steppingstone in education dedicated to the APP role in the field.
+
+---
+### [40] Asthma control and exacerbation risk following SARS-CoV-2 infection in the post-acute COVID-19 phase: a systematic review.
+**Author**: Alhumaid Saad et al. | **Journal**: Allergy, asthma, and clinical immunology : official journal of the Canadian Society of Allergy and Clinical Immunology (2026/Apr)
+**PMID**: 41987304 | https://pubmed.ncbi.nlm.nih.gov/41987304/
+
+(abstract not available)
+
+---
+### [41] Impact of climate change on pediatric health outcomes.
+**Author**: Abbas Mohammed et al. | **Journal**: Global health action (2026/Dec)
+**PMID**: 41983323 | https://pubmed.ncbi.nlm.nih.gov/41983323/
+
+Climate change has become one of the most critical health issues globally in the twenty-first century with children bearing the disproportionate burden of the burden since they are more vulnerable than adults because of their physiological, behavioral, and developmental capacities. It is a systematic review that rates the evidence of the relationship between climatic exposures such as heat, air-pollution, and extreme weather events and pediatric health outcomes. The number of peer-reviewed studies involved was 23 published in 2000-2025, which represented different geographic areas and study designs and assessed acute and chronic health outcomes. The Newcastle-Ottawa Scale and the ROBINS-I tool were used to evaluate the methodological quality, and the majority of the studies had low to moderate risks of bias. The narrative synthesis shows that there are always links between air pollutants especially PM2.5, NO2 and O3 and respiratory morbidity, prevalence of asthma and hospitalization of children. Amplified temperatures as well as heat waves were associated with increased cases of heat illness, dehydration, and febrile state in infants and young children. There were elevated cases of diarrheal and vector-related infections, especially in low-resource settings, which were linked to extreme weather events especially floods. Although the overall results were similar, significant differences in the regions and methods were found, and low-income countries show little evidence. In addition, exposures as analyzed in most studies were usually considered individually, which may have underestimated the cumulative or compound climate risks.
+Main findings: This review shows that rising temperatures, air pollutants, and extreme weather events are consistently linked with higher rates of respiratory illness, heat-related illness, and infectious diseases among children.Added knowledge: The synthesis brings together two decades of evidence showing that children across multiple continents experience similar health vulnerabilities when exposed to climate-related environmental conditions.Global health impact for policy and action: The findings highlight an urgent need for stronger climate-responsive child health policies and early warning systems to protect children from worsening environmental threats worldwide.
+
+---
+### [42] 'What' and 'How' to Measure in Allergy and Clinical Immunology: A Systematic Review of Core Outcome Sets and Outcome Harmonisation Processes.
+**Author**: Demidova Anastasia et al. | **Journal**: Clinical and experimental allergy : journal of the British Society for Allergy and Clinical Immunology (2026/May)
+**PMID**: 41974646 | https://pubmed.ncbi.nlm.nih.gov/41974646/
+
+BACKGROUND: Heterogeneity in outcome reporting and inconsistent use of outcome measurement instruments in allergy and clinical immunology research affects the comparability, synthesis, and clinical applicability of study findings. Harmonisation efforts, particularly Core Outcome Set (COS) development, aim to address these challenges by establishing standardised, evidence-based and consensus-driven outcome recommendations. This systematic review aims to map available COS and other harmonisation processes (HP) in allergy and clinical immunology, evaluate their methodological approaches, and assess their alignment with established development standards.
+METHODS: We systematically searched MEDLINE, EMBASE, and the COMET Initiative database until June 7, 2024 to identify COS and HP. We included studies if they provided recommendations on 'core' outcomes and/or outcome measurement instruments. Data extraction included disease focus, methodological approach, stakeholder involvement, and adherence to the Core Outcome Set-STAndards for Development criteria. We synthesised the data at the initiative (process) level rather than the publication level because harmonisation initiatives are frequently iterative and reported across multiple papers (e.g., protocol, Delphi rounds, consensus statement, and subsequent instrument-selection outputs).
+RESULTS: A total of 15,612 records were identified, with 44 studies (representing 22 initiatives both finished and in development) meeting inclusion criteria. The majority of initiatives focused on asthma (n = 9), followed by eczema (atopic dermatitis n = 2; hand eczema = 1; eczema = 1), urticaria (n = 2), allergic rhinitis (n = 2), chronic rhinosinusitis (n = 1), celiac disease (n = 1), Immunoglobulin E (IgE)-mediated food allergy (n = 1), eosinophilic esophagitis (n = 1), and hereditary angioedema (n = 1). No COS or HP addressed drug allergy, anaphylaxis, or other immune-mediated allergic conditions. 'Quality of life' was consistently included in all COS with 'signs and symptoms', 'exacerbations' and 'disease control' frequently selected as well. Methodological approaches to COS development varied widely, with most employing Delphi surveys, consensus meetings, and stakeholder involvement, though levels of engagement differed. COS developers inconsistently adhered to Core Outcome Set-STAndards for Development criteria, with some initiatives demonstrating rigorous methodology while others lacked transparency in key developmental steps.
+CONCLUSION: This review highlights growing efforts to harmonise outcome assessment in allergy and clinical immunology. Major gaps remain in coverage and methodological rigour. Quality of life and patient-reported symptoms are frequently recommended outcomes, yet definitions and measurement tools are inconsistent. Strengthening methodological consistency and expanding COS development to neglected areas are critical next steps to improve outcome reliability and comparability in the field.
+
+---
+### [43] Novel Epinephrine Delivery Devices.
+**Author**: Malley Nicole O' et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
+**PMID**: 41932751 | https://pubmed.ncbi.nlm.nih.gov/41932751/
+
+There has been a large amount of research into novel, noninjectable routes of epinephrine recently. These routes, such as intranasal and sublingual, can deliver epinephrine in a needle-free way to achieve similar pharmacokinetics as seen with autoinjectors. In fact, there is now an intranasal epinephrine device available to prescribe patients at-risk for anaphylaxis. Thus, clinicians should be familiar with studies of these new routes of epinephrine delivery and use a shared decision-making approach with patients/families to decide if noninjectable epinephrine is appropriate for them.
+
+---
+### [44] Drug Anaphylaxis.
+**Author**: Chow Timothy G et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
+**PMID**: 41932747 | https://pubmed.ncbi.nlm.nih.gov/41932747/
+
+Anaphylaxis is a systemic clinical syndrome that rapidly evolves after an exposure to an inciting agent activates effector cells such as mast cells and basophils. Anaphylaxis can be triggered by a wide variety of agents, including drugs. Over the past decade, our understanding of drug-induced anaphylaxis (DIA) has become dramatically more nuanced, with a growing appreciation of multiple endotypes resulting in the phenotype of anaphylaxis. This review will discuss epidemiology, clinical features, mechanisms, clinical evaluation, and management of DIA.
+
+---
+### [45] Equity and Anaphylaxis.
+**Author**: Abrams Elissa M et al. | **Journal**: Immunology and allergy clinics of North America (2026/May)
+**PMID**: 41932744 | https://pubmed.ncbi.nlm.nih.gov/41932744/
+
+Health equity is achieved when all individuals can reach their full health potential. In food-induced anaphylaxis, this goal remains unmet. Disparities in prevalence, diagnosis, and care are influenced by race, income, and environmental determinants. This article reviews emerging evidence on inequities in food allergy, emphasizing the need to understand who is most affected and why, and outlining strategies to promote equitable prevention and treatment.
+
+---
+### [46] Bronchial thermoplasty for severe asthma: Systematic review and meta-analysis of benefits and harms.
+**Author**: Rayner Daniel G et al. | **Journal**: The journal of allergy and clinical immunology. Global (2026/May)
+**PMID**: 41907855 | https://pubmed.ncbi.nlm.nih.gov/41907855/
+
+BACKGROUND: The efficacy and safety of bronchial thermoplasty (BT) for severe asthma remains unclear.
+OBJECTIVE: We systematically synthesized the efficacy and safety of BT in patients with severe asthma.
+METHODS: As part of the upcoming American Academy of Allergy, Asthma & Immunology/American College of Allergy, Asthma & Immunology Joint Task Force on Practice Parameters severe asthma guidelines, we searched the Medline, Embase, and Central databases to July 29, 2025, for randomized trials comparing BT to control for asthma. Paired reviewers independently screened records and extracted data. Random-effects meta-analyses addressed asthma control (Asthma Control Questionnaire 6 [scale, 0-6; lower better]), asthma-related quality of life (Asthma Quality of Life Questionnaire [range, 1-7; higher better]), severe asthma exacerbations, and harms, stratified by procedural, postprocedural, and overall. The GRADE approach informed certainty-of-evidence ratings (PROSPERO: CRD42023408565).
+RESULTS: Six trials randomized 573 adults. Procedurally, BT likely increases severe exacerbations (incidence rate ratio [IRR] 2.95; 95% CI, 1.20-7.25; risk difference [RD] 0.08 more events per patient-year; moderate certainty) and serious respiratory adverse events (IRR 5.98; 95% CI, 1.07-33.29; RD 0.18 more events per patient-year; moderate certainty). Postprocedurally, BT may reduce severe exacerbations (IRR 0.67; 95% CI, 0.50-0.89; RD 0.67 fewer events per patient-year; low certainty). Overall, BT may improve asthma control (mean difference -0.37; 95% CI, -0.67 to -0.07; RD for 0.5-point decrease: 15.9% more; low certainty), asthma-related quality of life (mean difference 0.55; 95% CI, 0.28-0.82; RD for 0.5-point increase: 19.1% more; low certainty), and severe exacerbations (IRR 0.81; 95% CI, 0.68-0.97; RD 0.11 fewer events per patient-year; low certainty).
+CONCLUSION: Among adults with severe asthma, BT may improve asthma control and asthma-related quality of life and may reduce overall severe exacerbations, but it likely increases procedural severe exacerbations and serious respiratory harms.
+
+---
+### [47] Risk and Protective Factors for Infection, Severe Disease, and Mortality in Epidemic Respiratory Viruses.
+**Author**: Zheng Yang et al. | **Journal**: Allergy (2026/May)
+**PMID**: 41888606 | https://pubmed.ncbi.nlm.nih.gov/41888606/
+
+The post-COVID pandemic era has witnessed a concerning resurgence of respiratory viruses, driving a global increase in acute respiratory infections. This trend may stem from relaxed non-pharmaceutical interventions, waning herd immunity, immunological imprinting limiting heterosubtypic protection, or viral antigenic evolution. This review aims to identify and characterize risk and protective factors associated with infection, hospitalization, severe illness, and mortality, while elucidating the drivers of the rising incidence of respiratory virus infections post-pandemic. Evidence on SARS-CoV-2 sublineages, influenza, respiratory syncytial virus, rhinovirus, adenovirus, human metapneumovirus, human parainfluenza virus, human coronaviruses, and cytomegalovirus has been collected and identified. Identified risk factors include demographic characteristics such as pediatrics and older age, male sex, race (Black, Hispanic, American Indian or Alaska native), preterm birth, and HLA-DQA1, IFNAR2, ST6GAL, and B3GALT5 genetic susceptibility. Behavioral, socioeconomic (low socioeconomic status, crowded living conditions), environmental influences (cold seasons, pollution), smoking, obesity and malnutrition could also exacerbate the risk of infection and adverse outcomes. Comorbidities, such as chronic conditions and immunocompromised states, significantly increase the risk of severe disease and hospitalization. Laboratory indices linked to severe disease outcomes include neutrophilia or neutropenia, lymphopenia, eosinopenia, and elevated C-reactive protein. Viral subtypes, viral load kinetics, vaccination status, and antiviral therapies further delineate risk profiles. Epithelial barrier impairment and underlying chronic airway diseases characterized by type 2 immunity also play a detrimental role in the development and severity of respiratory viral infections. Our findings highlight the need for stratified prevention strategies, which combine universal measures targeting shared determinants with virus-specific interventions addressing unique virological and transmission dynamics. It will provide a critical framework for optimizing precision public health strategies to counter repeated respiratory threats in the evolving post-COVID-19 pandemic landscape.
+
+---
+### [48] Preschool Wheeze and the GINA 2025 Paradigm: Challenges and Adaptations for LMICs.
+**Author**: Rajvanshi Nikhil et al. | **Journal**: Indian pediatrics (2026/May)
+**PMID**: 41838274 | https://pubmed.ncbi.nlm.nih.gov/41838274/
+
+Wheezing in preschool children is a common clinical challenge characterized by a broad differential diagnosis and marked phenotypic heterogeneity. The Global Initiative for Asthma (GINA) 2025 guidelines introduce a structured framework for diagnosing asthma in this age group, shifting from a probabilistic to a more definitive labelling approach. While this represents a significant evolution, its applicability in low- and middle-income countries (LMICs) faces significant barriers including caregiver misreporting, limited diagnostic tools, and inconsistent follow-up. This article critically examines these challenges, particularly the risks of overdiagnosis and overtreatment in preschool wheeze within the LMIC context.
+
+---
+### [49] Innovative methodologies for elucidating bushfire smoke-induced pathophysiological mechanism.
+**Author**: Paudel Keshav R et al. | **Journal**: The Science of the total environment (2026/Apr)
+**PMID**: 41818888 | https://pubmed.ncbi.nlm.nih.gov/41818888/
+
+Over the last century, the awareness of air pollution awareness and its harm to public health have resulted in the implementation of new protective measures to try and limit exposure. Bushfires generate waves of air pollution with orders of magnitudes higher than normal background pollution, necessitating studies to understand the physiological impact. Previous work has strongly linked bushfire smoke to respiratory disease (chronic obstructive pulmonary disease COPD, asthma, lung cancer) cardiovascular disease (myocardial infarction, stroke), and increased susceptibility to infection (COVID-19). Nevertheless, the underlying mechanisms of pathogenesis remain unclear. There is little consensus on what in vitro and in vivo techniques are best used to examine disease mechanisms. Individual investigations are useful but a lack of standard methods creates variability and makes comparisons difficult. Developing adaptable in vitro and in vivo models that are replicable, physiologically relevant, and affordable may reduce variability enabling comparisons. These models should also be capable of integrating multiple types of pollutants or reference materials to develop standards that other studies can follow, facilitating comparisons. Here, we discuss advance in vitro and in vivo experimental models to study the impact of bushfire smoke exposure induced pathophysiology. The goal is to improve comparison and translation across studies, and to lay the groundwork for future research into the mechanisms that underpin bushfire smoke-induced pathogenesis to enable the development of preventative measures and effective therapies.
+
+---
+### [50] Mechanisms of thermoregulation in Pseudomonas aeruginosa.
+**Author**: Robinson Rachel E et al. | **Journal**: Journal of bacteriology (2026/Apr)
+**PMID**: 41810972 | https://pubmed.ncbi.nlm.nih.gov/41810972/
+
+Pseudomonas aeruginosa is a highly versatile opportunistic pathogen and a major cause of acute, chronic, and even lifelong respiratory infections in people with cystic fibrosis. It can also cause corneal infections, burn/wound infections, and bacteremia. P. aeruginosa is often found in human-associated environments such as hospitals, where it is a frequent cause of nosocomial catheter-associated urinary tract infections and ventilator-associated pneumonia. As a nosocomial pathogen, a major environmental change associated with transmission is the change from room or ambient temperature to human body temperature. P. aeruginosa is highly studied for its regulatory and adaptive responses to environmental stimuli, such as low iron conditions or the presence of antibiotics, but temperature regulation, or thermoregulation, is relatively understudied, particularly at a mechanistic level. This review explores the current understanding of mechanisms of global, transcriptional, post-transcriptional, and post-translational thermoregulation in P. aeruginosa, with a discussion on gaps in the field's knowledge and directions for future research. More mechanistic studies of thermoregulation inspired by the open questions presented here will improve our understanding of how P. aeruginosa adapts to different temperatures.
+
+---
+### [51] Update on allergen immunotherapy for asthma.
+**Author**: Looney R John et al. | **Journal**: Current opinion in pulmonary medicine (2026/May)
+**PMID**: 41733137 | https://pubmed.ncbi.nlm.nih.gov/41733137/
+
+PURPOSE OF REVIEW: The usefulness of allergen-specific immunotherapy for asthma is controversial. Publications from 2024 and 2025 on allergen immunotherapy for asthma will be reviewed.
+RECENT FINDINGS: A trial of house dust mite for asthma was strikingly positive for a subset of patients with variant alleles in chromosome 17q12-21. A trail of cockroach immunotherapy for asthma was negative based on nasal challenge. However, there were promising effects on T cells. New allergen-specific vaccines using allergoids and adjuvants are being developed in Europe and look promising for reducing the number of injections and improving safety. Small clinical trials have shown that trained immunity vaccines containing bacterial lysates can reduce wheezing in young children and animal models suggest these vaccines can affect allergen sensitization and asthma. Recent reviews of multiple clinical trials have shown allergen-specific immunotherapy can reduce symptoms and medications in asthmatic individuals but not objective measures of lung fucntion. Recent reviews of combining biologics with allergen-immunotherapy suggest improved safety.
+SUMMARY: Allergen-specific immunotherapy remains an important treatment for allergic rhinitis and conjunctivitis and can be used safely in patients with mild or moderate well controlled asthma. Several new approaches look promising but need a lot more work.
+
+---
+### [52] Eosinophilic granulomatosis with polyangiitis: recent therapeutic advances.
+**Author**: Chiara Emanuele et al. | **Journal**: Current opinion in rheumatology (2026/May)
+**PMID**: 41717826 | https://pubmed.ncbi.nlm.nih.gov/41717826/
+
+PURPOSE OF REVIEW: The aim of this review is to describe the substantial advances that have been made in the past 2 years on new treatment options in eosinophilic granulomatosis with polyangiitis (EGPA).
+RECENT FINDINGS: The therapeutic scenario in EGPA has been recently broadened by the publication of the results from the multicenter, double-blind randomized MANDARA trial, which proved the noninferiority of benralizumab to another anti-interleukin-5 (IL-5) drug, mepolizumab, for the induction of remission in patients with EGPA. A few real-world studies have confirmed these results. Furthermore, the first randomized controlled trial exploring the efficacy of rituximab (anti-CD20) in induction of remission of EGPA was recently published. Targeting other molecular pathways did not always show adequate control of systemic manifestations of EGPA, with only limited evidence of effectiveness from small case series. Interestingly, cases of EGPA onset in severe asthma patients treated with monoclonal antibodies were described.
+SUMMARY: Biological drug therapy targeting IL-5 consolidated its role in the management of EGPA, becoming the cornerstone of the treatment of this rare disease. Future guidelines should consider these recent findings to improve the management of EPGA. Notably, while selective IL-5 targeting is highly effective for remission maintenance, its role in inducing remission in EGPA remains to be fully established. Rituximab was non-superior to standard therapy in induction of remission in patients with EGPA, demonstrating a similar rate of response. The role of other targeted therapies, albeit promising in some cases, remains a matter of debate.
+
+---
+### [53] Association between swimming pool attendance and allergic diseases: An updated systematic review and meta-analysis.
+**Author**: Wu Qingqing et al. | **Journal**: Regulatory toxicology and pharmacology : RTP (2026/May)
+**PMID**: 41708045 | https://pubmed.ncbi.nlm.nih.gov/41708045/
+
+Recently, increasing epidemiological studies have suggested a potential association between swimming pool attendance and allergic outcomes with inconsistent findings. This systematic review and meta-analysis aims to elucidate the association between swimming pool attendance and the risk of allergic diseases. We systematically searched PubMed, Web of Science, Scopus, and Embase to identify relevant studies published up to August 8, 2025, and performed a meta-analysis of the extracted data. Furthermore, subgroup analyses, sensitivity analyses, and assessments of publication bias were also conducted. A total of 23 studies involving 54,153 participants were included. The combined data showed a positive correlation between swimming pool attendance and asthma [OR = 1.14, 95% CI: (1.08-1.21)], but no significant link with allergic rhinitis, atopic dermatitis, hay fever, or wheezing. Subgroup analyses indicated stronger associations in children [asthma: OR = 1.14, 95% CI: (1.08-1.21)] and among those with early-life exposure [asthma: OR = 1.13, 95% CI: (1.06-1.20)]. Interestingly, early swimming pool attendance was negatively associated with allergic rhinitis in children [OR = 0.78, 95% CI: (0.63-0.97)]. In conclusion, swimming pool attendance was significantly associated with asthma, highlighting potential public health implications and the need for further research into relevant environmental exposures.
+
+---
+### [54] Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
+**Author**: Islam Nazmul et al. | **Journal**: JAMA pediatrics (2026/May)
+**PMID**: 41661638 | https://pubmed.ncbi.nlm.nih.gov/41661638/
+
+IMPORTANCE: The incidence and risk (predictive) factors for early life food allergy development remain uncertain.
+OBJECTIVE: To estimate the incidence and quantify risk factors for food allergy development.
+DATA SOURCES: MEDLINE and Embase were systematically searched to January 1, 2025. Data were analyzed from June 1, 2025, to November 25, 2025.
+STUDY SELECTION: Incidence estimates included studies confirming food allergy via food challenge. Risk factor analyses included cohort, case-control, and cross-sectional studies in any language assessing children younger than 6 years using multivariable analyses.
+DATA EXTRACTION AND SYNTHESIS: Paired reviewers independently extracted data. Random-effects meta-analyses pooled incidence and adjusted odds ratios (ORs). Risk of bias was assessed using the QUIPS tool, and certainty of evidence assessed using GRADE.
+MAIN OUTCOME AND MEASURE: The primary outcome was food allergy to age 6 years.
+RESULTS: A total of 190 studies involving 2.8 million participants across 40 countries were analyzed. Among studies using food challenge, overall food allergy incidence was likely 4.7% (moderate certainty). Among 176 studies identifying 342 risk factors with varying certainty, the strongest and most certain factors included prior allergic conditions (eg, atopic dermatitis [eczema] within the first year of life [OR, 3.88; risk difference [RD], 12.0%; 95% CI, 8.8%-15.7%], allergic rhinitis [OR, 3.39; RD, 10.1%; 95% CI, 6.7%-14.4%], and wheeze [OR, 2.11; RD, 5.0%; 95% CI, 2.1%-8.8%]), severity of atopic dermatitis (OR, 1.22; RD, 1.0%; 95% CI, 0.6%-1.6%), increased skin transepidermal water loss (OR, 3.36; RD, 10.0%; 95% CI, 6.3%-14.8%), filaggrin gene sequence variations (OR, 1.93; RD, 4.2%; 95% CI, 2.4%-6.4%), delayed solid food introduction (eg, peanut after age 12 months [OR, 2.55; RD, 6.8%; 95% CI, 1.9%-14.6%]), infant antibiotic use (first month [OR, 4.11; RD, 12.8%; 95% CI, 0.4%-40%], first year [OR, 1.39; RD, 1.8%; 95% CI, 0.8%-3.1%], during pregnancy [OR, 1.32; RD, 1.5%; 95% CI, 0.6%-2.5%]), male sex (OR, 1.24; RD, 1.1%; 95% CI, 0.7%-1.6%), firstborn child (OR, 1.13; RD, 0.6%; 95% CI, 0.3%-1.0%), family history of food allergy (eg, mother [OR, 1.98; RD, 4.4%; 95% CI, 2.5%-6.8%], father [OR, 1.69; RD, 3.2%; 95% CI, 1.3%-5.5%], both parents [OR, 2.07; RD, 4.8%; 95% CI, 1.3%-5.5%], siblings [OR, 2.36; RD, 6.0%; 95% CI, 4.4%-8.0%]), parental migration (OR, 3.28; RD, 9.7%; 95% CI, 4.9%-16.3%), self-identification as Black (vs White [OR, 3.93; RD, 12.1%; 95% CI, 5.2%-22.5%], vs non-Hispanic White [OR, 2.23; RD, 5.5%; 95% CI, 3.0%-8.7%]), and cesarean delivery (OR, 1.16; RD, 1.0%; 95% CI, 0.3%-1.2%). Factors like low birth weight, postterm birth, maternal diet, and stress during pregnancy showed no significant risk difference.
+CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
+
+---
+### [55] Understanding the impact of social determinants of health in hematology: a scoping review of trends across journals and over time.
 **Author**: Lu Bonnie et al. | **Journal**: Blood advances (2026/Apr)
 **PMID**: 41587417 | https://pubmed.ncbi.nlm.nih.gov/41587417/
 
 Addressing social determinants of health is increasingly recognized as a critical priority in medicine to optimize care delivery to all patients. To support health care providers, researchers, and the hematology field to process and synthesize the rapidly expanding hematology social determinants of health literature, we conducted a scoping review to catalog/describe recent hematology social determinants studies. Our goals were to highlight state of the art in hematology social determinants research, describe trends in this literature across journals/conferences and over time, identify gaps, and inspire efforts to improve health across populations. Our search returned 602 hematology articles and 153 abstracts. Most works examined racial or socioeconomic disparities among adults with hematologic malignancies or who are hematopoietic cell transplant/cell therapy recipients. In contrast, few explored basic science correlates of disparities, approaches to optimize collection, recording, reporting, and use of social determinants of health data, or interventions/educational initiatives to address care inequities. Many vulnerable populations were understudied, including Indigenous peoples; people living with disabilities; transgender/gender-nonbinary peoples; and disparities across parity, religion, or immigration/legal status. Only a minority of works considered intersectionality across multiple dimensions of disparities. Although both the number and proportion of social determinants studies increased over time, there were imbalances in journals in which these studies were published. Overall, this review is an important tool to advance hematology population health, highlight hematology social determinants of health research productivity, inform development of research agendas and priorities for societies/funders, and support researchers to address identified gaps. Closing these gaps will be essential to improve delivery of safe and effective hematologic care for all.
 
 ---
-### [54] Novel Uses of Digital Health and the Electronic Medical Record in Drug Allergy.
+### [56] Novel Uses of Digital Health and the Electronic Medical Record in Drug Allergy.
 **Author**: Rose Morgan et al. | **Journal**: The journal of allergy and clinical immunology. In practice (2026/May)
 **PMID**: 41482255 | https://pubmed.ncbi.nlm.nih.gov/41482255/
 
 Modern drug allergy practice is witnessing the steady expansion of electronic health records and digital health applications. This creates both obstacles and opportunities for optimizing allergy care. In this review we describe ways in which novel technology is being used with regard to immunologically mediated drug hypersensitivity research and clinical practice. We propose future directions to strengthen drug allergy diagnostic accuracy, clinical decision-making, and patient safety.
 
 ---
-### [55] Better Breathing, Tougher Speaking? A Scoping Review of the Effects of Inhaled Corticosteroids on the Voice Quality of Asthmatic Children.
+### [57] Better Breathing, Tougher Speaking? A Scoping Review of the Effects of Inhaled Corticosteroids on the Voice Quality of Asthmatic Children.
 **Author**: Reynolds Victoria et al. | **Journal**: Journal of voice : official journal of the Voice Foundation (2026/May)
 **PMID**: 38331703 | https://pubmed.ncbi.nlm.nih.gov/38331703/
 
@@ -3097,13 +2889,13 @@ DISCUSSION: The evidence of a relationship, between ICS and dysphonia in childre
 ---
 
 ## ped_development_update
-### 小児発達（ADHD・ASD・起立性調節障害） — 12件
+### 小児発達（ADHD・ASD・起立性調節障害） — 11件
 
 **▼ Coworkへのプロンプト（コピーして貼り付け）:**
 
 > 以下は直近1ヶ月の小児発達（ADHD・ASD・起立性調節障害）領域の論文一覧です。
 > 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、
-> **「2026-05_発達障害_abstract10本」** というタイトルのGoogle Docを作成してください。
+> **「2026-05_発達障害_PubMed抽出」** というタイトルのGoogle Docを作成してください。
 >
 > Google Docは以下の2部構成にしてください:
 >
@@ -3141,18 +2933,7 @@ SUPPLEMENTAL MATERIAL: https://doi.org/10.23641/asha.31934088.
 In preclinical research, animal models are a valid alternative for studying both the genetics and environmental factors related to human psychopathologies. Indeed, in the last few decades, a great emphasis has been placed on the spontaneously hypertensive rat (SHR) inbred strain as an attention-deficit/hyperactivity disorder (ADHD) animal model. Therefore, this systematic review and meta-analysis aim to evaluate the effects of environmental enrichment (EE) on the behavior profile of the SHRs. All methods used to conduct the review were registered a priori on the PROSPERO platform (CRD42023442128). Our searches found 142 articles indexed in the electronic databases EMBASE, MEDLINE via PubMed, Scopus, and Web of Science. According to the eligibility criteria, six articles were included in the review. The meta-analysis demonstrated that EE decreased locomotor activity (SMD = -1.85, 95% CI = -3.18 to -0.52, Z = 2.72, p = 0.007, τ2 = 2.07, I2 = 86%) and enhanced memory (SMD = 1.32, 95% CI = 0.83 to 1.80, Z = 5.32, p < 0.001, τ2 = 0, I2 = 0%) in SHRs. Therefore, EE appears to have a beneficial effect on the behaviors of the SHR strain and could be considered in the search for nonpharmacological approaches in ADHD research.
 
 ---
-### [3] Clinical response and risk factors of fecal microbiota transplantation in children: a systematic review and meta-analysis.
-**Author**: Liu Jiashun et al. | **Journal**: European journal of pediatrics (2026/Apr)
-**PMID**: 41975112 | https://pubmed.ncbi.nlm.nih.gov/41975112/
-
-UNLABELLED: The objective of this study is to investigate the clinical response and incidence of adverse events (AEs) following fecal microbiota transplantation (FMT) in children, across various diseases, populations, and treatment protocols. A systematic search was conducted across eight major Chinese and English databases, identifying 47 studies up to August 28, 2025, for inclusion. Study quality was assessed using the Quality Assessment with Diverse Studies (QuADS) tool. Single-arm rates were pooled via meta-analysis employing the Freeman-Tukey double arcsine transformation, followed by extensive subgroup comparisons to identify influencing factors. FMT demonstrated efficacy in pediatric recurrent Clostridium difficile infection (rCDI), inflammatory bowel disease (IBD), and autism spectrum disorder (ASD), although a higher incidence of AEs was observed in children with IBD. Subgroup analyses revealed that the use of donor feces from relatives or friends was associated with a higher clinical response rate in rCDI. The presence of comorbidities such as IBD diminished the response rate in rCDI patients. Younger age in rCDI and IBD patients showed a trend towards higher clinical response rates, though this did not reach statistical significance. No statistically or clinically significant differences were found in other subgroup comparisons. Meta-regression suggested IBD to be a risk factor for FMT-related AEs.
-CONCLUSION: This study innovatively delineates the efficacy-safety profile of pediatric FMT and outlines a pathway for optimizing individualized treatment regimens, providing crucial evidence-based guidance for clinical practice.
-TRIAL REGISTRATION: This study has been registered on the PROSPERO database (CRD42024614196).
-WHAT IS KNOWN: • Fecal Microbiota Transplantation (FMT) demonstrates preliminary therapeutic potential in several pediatric diseases. • Existing evidence remains fragmented, with limited systematic data on factors modifying efficacy and safety in children.
-WHAT IS NEW: • The study revealed FMT's high efficacy across rCDI, IBD, and ASD, and identified IBD as a risk factor for elevated FMT-related adverse events in pediatric patients. • Notably, related/friend donors improved rCDI response rates, while comorbidities like IBD reduced rCDI treatment efficacy.
-
----
-### [4] Effects of exercise on social dysfunction in children and adolescents with ADHD: A systematic review and network, dose-response meta-analyses.
+### [3] Effects of exercise on social dysfunction in children and adolescents with ADHD: A systematic review and network, dose-response meta-analyses.
 **Author**: Gao Xiang et al. | **Journal**: Research in developmental disabilities (2026/May)
 **PMID**: 41932092 | https://pubmed.ncbi.nlm.nih.gov/41932092/
 
@@ -3162,7 +2943,7 @@ RESULTS: Thirteen trials including 703 participants aged 6-13 years were eligibl
 CONCLUSION: Closed-skill and multicomponent exercise appear most effective for improving social functioning in children with ADHD, with benefits maximised at around 1290 MET-min/week.
 
 ---
-### [5] Therapeutic Effects of Dietary Supplements on Emotion-Related Symptoms in Children and Adolescents with Autism: A Systematic Review and Meta-analysis.
+### [4] Therapeutic Effects of Dietary Supplements on Emotion-Related Symptoms in Children and Adolescents with Autism: A Systematic Review and Meta-analysis.
 **Author**: Shi Yongbo et al. | **Journal**: The Journal of nutrition (2026/May)
 **PMID**: 41871665 | https://pubmed.ncbi.nlm.nih.gov/41871665/
 
@@ -3173,7 +2954,7 @@ RESULTS: Twenty-one RCTs (22 studies) comprising 866 participants were included.
 CONCLUSIONS: Dietary supplements may improve irritability and overall emotional symptoms in children and adolescents with ASD. However, evidence strength is limited by study heterogeneity, RoB, and small-sample sizes. High-quality, large-scale RCTs are needed to confirm these findings and establish optimal intervention protocols.
 
 ---
-### [6] The impact of neuraxial labour analgesia on neurodevelopmental disorders in offspring: a systematic review and meta-analysis.
+### [5] The impact of neuraxial labour analgesia on neurodevelopmental disorders in offspring: a systematic review and meta-analysis.
 **Author**: Li Yuan et al. | **Journal**: British journal of anaesthesia (2026/May)
 **PMID**: 41781242 | https://pubmed.ncbi.nlm.nih.gov/41781242/
 
@@ -3184,7 +2965,7 @@ CONCLUSIONS: Across population-based and family-based observational evidence, th
 SYSTEMATIC REVIEW PROTOCOL: PROSPERO (CRD420251148665).
 
 ---
-### [7] Validity of screening tools and risk factors for Co-occurring ADHD in children with epilepsy: a systematic review and meta-analysis.
+### [6] Validity of screening tools and risk factors for Co-occurring ADHD in children with epilepsy: a systematic review and meta-analysis.
 **Author**: Ni Guang et al. | **Journal**: Epilepsy & behavior : E&B (2026/May)
 **PMID**: 41740565 | https://pubmed.ncbi.nlm.nih.gov/41740565/
 
@@ -3195,14 +2976,14 @@ RESULTS: Twelve studies met inclusion criteria for qualitative synthesis.Diagnos
 CONCLUSIONS: The SDQ-Hyperactivity subscale demonstrates superior diagnostic accuracy for ADHD screening in children with epilepsy,supporting current ILAE recommendations.Externalizing behavior measures,particularly the DBD rating scale(g = 0.60),show the strongest discriminant validity.Children with poorly controlled seizures,early onset epilepsy and those receiving polytherapy warrant heightened screening vigilance.Implementation of systematic ADHD screening targeting high-risk subgroups may substantially improve early identification and intervention outcomes.
 
 ---
-### [8] Atypical antipsychotics and metabolic dysfunction-associated steatotic liver disease in children and adolescents: A systematic review.
+### [7] Atypical antipsychotics and metabolic dysfunction-associated steatotic liver disease in children and adolescents: A systematic review.
 **Author**: Duvuru Ruthwik et al. | **Journal**: International journal of psychiatry in medicine (2026/May)
 **PMID**: 41665195 | https://pubmed.ncbi.nlm.nih.gov/41665195/
 
 ObjectiveAtypical antipsychotics (AAP) are commonly prescribed to children and adolescents and are associated with important adverse effects, including weight gain and metabolic syndrome. Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD) is the most common pediatric liver disease and is associated with serious complications, including liver cirrhosis. Given that MASLD and AAP are associated with liver cirrhosis and metabolic syndrome, a systematic review and meta-analysis was conducted to examine the association between AAP and MASLD in children and adolescents.MethodsThe systematic review examined studies exploring MASLD in subjects younger than 18 years taking AAP. All studies published in the English language between 1950 and 2020 were screened following PRISMA (Preferred Reporting items for Systematic Reviews and Meta-Analysis) guidelines.ResultsA total of 407 articles were initially retrieved, although only 3 studies met inclusion criteria. These included retrospective cohort and case-control studies with varying sample sizes and methodologies. Shedlock et al found increased obesity related risks in children with autism spectrum disorder; Kumra et al observed risperidone induced hepatotoxicity; and Mouzaki et al linked psychotropic use with more severe MASLD. Meta-analysis showed a small and statistically insignificant positive association between AAP and MASLD, with significant heterogeneity among studies, indicating a need for careful interpretation of results. Risk of bias ratings varied from fair to good.ConclusionThese findings will serve as a foundation for future studies, assist in devising interventions, and may help to reform clinical guidelines for using AAP in children and adolescents to ensure patient safety.
 
 ---
-### [9] The effects of acute and chronic exercise on executive functions and core symptoms in adults with ADHD: A systematic review and meta-analysis.
+### [8] The effects of acute and chronic exercise on executive functions and core symptoms in adults with ADHD: A systematic review and meta-analysis.
 **Author**: Xu Shanshan et al. | **Journal**: Psychology of sport and exercise (2026/May)
 **PMID**: 41638541 | https://pubmed.ncbi.nlm.nih.gov/41638541/
 
@@ -3212,7 +2993,7 @@ RESULTS: Fourteen studies met the inclusion criteria for systematic review, with
 CONCLUSIONS: This study provides preliminary evidence on the potential role of exercise as a nonpharmacological strategy for improving executive functions and core symptoms in adults with ADHD.
 
 ---
-### [10] A meta-analysis of the intervention effect of cognitive behavioral therapy on adult ADHD.
+### [9] A meta-analysis of the intervention effect of cognitive behavioral therapy on adult ADHD.
 **Author**: Liu Yang et al. | **Journal**: Journal of affective disorders (2026/Apr)
 **PMID**: 41483880 | https://pubmed.ncbi.nlm.nih.gov/41483880/
 
@@ -3222,7 +3003,7 @@ RESULTS: Analysis of 14 RCTs selected from 949 identified records showed signifi
 CONCLUSION: CBT demonstrates efficacy for core and associated symptoms of adult ADHD, with the optimal intervention strategy varying meaningfully by outcome and modality. A symptom-guided, stepped-care approach is supported: group-based CBT formats are preferable for targeting core symptoms and executive function, while individual CBT better addresses emotional dysregulation and quality of life. The combination of CBT with medication offers added benefit for anxiety and quality of life. The consistent lack of effect on self-evaluation highlights a critical unmet therapeutic need.
 
 ---
-### [11] Efficacy, Safety and Tolerability of Lisdexamfetamine Dimesylate Treatment Compared With Placebo in Adults With Binge-Eating Disorder: A Systematic Review and Meta-Analysis of Randomised Controlled Trials.
+### [10] Efficacy, Safety and Tolerability of Lisdexamfetamine Dimesylate Treatment Compared With Placebo in Adults With Binge-Eating Disorder: A Systematic Review and Meta-Analysis of Randomised Controlled Trials.
 **Author**: Ellwanger Maurício Prätzel et al. | **Journal**: European eating disorders review : the journal of the Eating Disorders Association (2026/May)
 **PMID**: 41423727 | https://pubmed.ncbi.nlm.nih.gov/41423727/
 
@@ -3233,7 +3014,7 @@ RESULTS: Five RCTs were included in this meta-analysis, encompassing a total of 
 CONCLUSION: LDX demonstrates significant efficacy in reducing binge-eating behaviours and associated obsessive-compulsive symptoms in patients with BED, with a tolerable safety profile. These findings support the clinical use of LDX for managing BED.
 
 ---
-### [12] Effects of Exercise on Hyperactivity/Impulsivity and Inhibitory Control at Behavioral and Electrophysiological Levels in ADHD: A Systematic Review and Meta-Analysis.
+### [11] Effects of Exercise on Hyperactivity/Impulsivity and Inhibitory Control at Behavioral and Electrophysiological Levels in ADHD: A Systematic Review and Meta-Analysis.
 **Author**: Zhang Zeping et al. | **Journal**: Journal of attention disorders (2026/May)
 **PMID**: 41403099 | https://pubmed.ncbi.nlm.nih.gov/41403099/
 
@@ -3245,4 +3026,4 @@ CONCLUSION: Exercise enhances inhibitory control in individuals with ADHD, with 
 ---
 
 ---
-*取得完了: 2026-05-10 10:45 | 合計 319 件*
+*取得完了: 2026-05-16 00:56 | 合計 298 件*

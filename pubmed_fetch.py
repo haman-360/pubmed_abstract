@@ -20,6 +20,9 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 import time
 import os
+import argparse
+import html
+import re
 
 # ============================================================
 # ★ 設定: 検索クエリ一覧
@@ -32,6 +35,8 @@ SEARCHES = [
         "name": "primary_care_review",
         "label": "プライマリケア（レビュー・ガイドライン）",
         "filename_label": "プライマリケアレビュー",   # Google Docファイル名に使用
+        "frequency": "monthly",
+        "aliases": ["primary care", "プライマリケア"],
         "query": '(child* OR pediatric*) AND ("primary care") AND (guideline[pt] OR review[pt] OR systematic review[pt]) AND ("last 30 days"[dp])',
         "reldate": 0,   # クエリ内に日付フィルタあり
     },
@@ -39,6 +44,8 @@ SEARCHES = [
         "name": "Pediatric_Primary_Care_High_Impact",
         "label": "小児プライマリケア（高インパクト）",
         "filename_label": "小児プライマリケア",
+        "frequency": "monthly",
+        "aliases": ["high impact", "小児プライマリケア"],
         "query": '(child* OR pediatric*) AND ("primary care" OR outpatient) AND (guideline[pt] OR practice guideline[pt] OR meta-analysis[pt] OR randomized controlled trial[pt]) AND ("last 30 days"[dp])',
         "reldate": 0,
     },
@@ -46,6 +53,8 @@ SEARCHES = [
         "name": "ped_sleep_update",
         "label": "小児睡眠",
         "filename_label": "小児睡眠",
+        "frequency": "monthly",
+        "aliases": ["sleep", "睡眠"],
         "query": '(child* OR pediatric*) AND "sleep wake disorders" AND (guideline[Filter] OR "meta-analysis"[Filter])',
         "reldate": 30,  # クエリに日付フィルタなし → 直近30日で絞る
     },
@@ -53,6 +62,8 @@ SEARCHES = [
         "name": "ped_psycho_update",
         "label": "小児心身症・ゲーム障害・ネット依存",
         "filename_label": "小児心身症",
+        "frequency": "monthly",
+        "aliases": ["psychosomatic", "gaming", "internet", "心身症", "ゲーム障害", "ネット依存"],
         "query": '(child* OR pediatric*) AND (psychosomatic OR "internet addiction" OR "gaming disorder") AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])',
         "reldate": 30,
     },
@@ -60,6 +71,8 @@ SEARCHES = [
         "name": "ped_trauma_update",
         "label": "小児外傷・熱性けいれん・頭部外傷",
         "filename_label": "小児外傷",
+        "frequency": "monthly",
+        "aliases": ["trauma", "febrile seizure", "head injury", "外傷", "熱性けいれん", "頭部外傷"],
         "query": '(child* OR pediatric*) AND ("febrile seizure" OR "head injury" OR "minor trauma") AND (guideline[Filter] OR "meta-analysis"[Filter])',
         "reldate": 30,
     },
@@ -67,6 +80,8 @@ SEARCHES = [
         "name": "ped_vaccine_update",
         "label": "小児ワクチン（副反応）",
         "filename_label": "小児ワクチン",
+        "frequency": "monthly",
+        "aliases": ["vaccine", "ワクチン", "副反応"],
         "query": '(child* OR pediatric*) AND vaccine AND "adverse effects" AND (review[Filter] OR guideline[Filter])',
         "reldate": 30,
     },
@@ -74,6 +89,8 @@ SEARCHES = [
         "name": "ped_nephrology_update",
         "label": "小児腎臓（ネフローゼ・IgA腎症）",
         "filename_label": "小児腎臓",
+        "frequency": "monthly",
+        "aliases": ["nephrology", "nephrotic", "IgA", "腎臓", "ネフローゼ"],
         "query": '(child* OR pediatric*) AND (nephrology OR "nephrotic syndrome" OR "IgA nephropathy") AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])',
         "reldate": 30,
     },
@@ -81,6 +98,8 @@ SEARCHES = [
         "name": "ped_constipation_update",
         "label": "小児便秘",
         "filename_label": "便秘",
+        "frequency": "monthly",
+        "aliases": ["constipation", "便秘"],
         "query": '(child* OR pediatric*) AND constipation AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])',
         "reldate": 30,
     },
@@ -88,20 +107,26 @@ SEARCHES = [
         "name": "ped_enuresis_update",
         "label": "夜尿症",
         "filename_label": "夜尿症",
+        "frequency": "monthly",
+        "aliases": ["enuresis", "夜尿"],
         "query": 'enuresis AND (review[Filter] OR guideline[Filter])',
         "reldate": 30,
     },
     {
         "name": "ped_infection_1w_update",
-        "label": "小児感染症（週次・直近30日）",
+        "label": "小児感染症（週次）",
         "filename_label": "小児感染症",
-        "query": '(child* OR pediatric* OR paediatric*) AND (pneumonia OR otitis media OR pharyngitis OR "urinary tract infection" OR influenza OR RSV OR "respiratory syncytial virus" OR "antimicrobial stewardship" OR "acute gastroenteritis" OR norovirus OR rotavirus) AND (guideline[pt] OR practice guideline[pt] OR systematic review[pt] OR meta-analysis[pt] OR randomized controlled trial[pt]) AND ("last 30 days"[dp])',
-        "reldate": 0,
+        "frequency": "weekly",
+        "aliases": ["infection", "infectious", "感染症"],
+        "query": '(child* OR pediatric* OR paediatric*) AND (pneumonia OR otitis media OR pharyngitis OR "urinary tract infection" OR influenza OR RSV OR "respiratory syncytial virus" OR "antimicrobial stewardship" OR "acute gastroenteritis" OR norovirus OR rotavirus) AND (guideline[pt] OR practice guideline[pt] OR systematic review[pt] OR meta-analysis[pt] OR randomized controlled trial[pt])',
+        "reldate": 7,
     },
     {
         "name": "ped_food_update",
         "label": "小児食物アレルギー",
         "filename_label": "食物アレルギー",
+        "frequency": "monthly",
+        "aliases": ["food allergy", "食物アレルギー"],
         "query": '(child* OR pediatric*) AND "food allergy" AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])',
         "reldate": 30,
     },
@@ -109,6 +134,8 @@ SEARCHES = [
         "name": "ped_atopic_update",
         "label": "小児アトピー性皮膚炎",
         "filename_label": "アトピー性皮膚炎",
+        "frequency": "monthly",
+        "aliases": ["atopic dermatitis", "eczema", "アトピー"],
         "query": '(child* OR pediatric*) AND "atopic dermatitis" AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])',
         "reldate": 30,
     },
@@ -116,6 +143,8 @@ SEARCHES = [
         "name": "peds_asthma_update",
         "label": "小児喘息",
         "filename_label": "気管支喘息",
+        "frequency": "monthly",
+        "aliases": ["asthma", "喘息", "気管支喘息"],
         "query": '(child* OR pediatric*) AND asthma AND (guideline[Filter] OR review[Filter] OR "systematic review"[Filter])',
         "reldate": 30,
     },
@@ -123,6 +152,8 @@ SEARCHES = [
         "name": "ped_development_update",
         "label": "小児発達（ADHD・ASD・起立性調節障害）",
         "filename_label": "発達障害",
+        "frequency": "monthly",
+        "aliases": ["development", "ADHD", "ASD", "発達", "起立性調節障害"],
         "query": '(ADHD OR "autism spectrum disorder" OR "orthostatic dysregulation") AND (guideline[Filter] OR "meta-analysis"[Filter])',
         "reldate": 30,
     },
@@ -240,15 +271,212 @@ def format_article(idx, art):
     ])
 
 
+def safe_filename(text):
+    """Google Driveに上げやすいファイル名に整える"""
+    text = re.sub(r'[\\/:*?"<>|]+', "_", text)
+    text = re.sub(r"\s+", "_", text).strip("._ ")
+    return text or "pubmed"
+
+
+def build_doc_prompt(label, doc_title, period_label):
+    return "\n".join([
+        f"以下は{period_label}の{label}領域の論文一覧です。",
+        "外来小児科医として診療を変える可能性があるものだけ10本に厳選し、要約してください。",
+        "",
+        f"Google Docのタイトルは「{doc_title}」にしてください。",
+        "",
+        "Google Docは以下の2部構成にしてください。",
+        "",
+        "【第1部: 日本語要約】",
+        "各論文は独立したブロックとして表示し、論文ごとに区切り線「---」を入れてください。",
+        "各項目の間には1行空行を入れてください。",
+        "",
+        "①タイトル",
+        "②PMID（PMIDは必ず入力データに含まれるものを正確に転記）",
+        "③なぜ重要か（1〜2文）",
+        "④臨床への影響（1〜2文）",
+        "⑤診療変更の必要性（Yes / No + 一言）",
+        "",
+        "【第2部: 英語 Abstract】",
+        "同じ10本を同じ番号順で並べ、各論文を「---」で区切って以下の形式で記載してください。",
+        "",
+        "番号. タイトル",
+        "PMID: 番号",
+        "Journal: 雑誌名（発行年）",
+        "Abstract: 英語のアブストラクト全文",
+    ])
+
+
+def period_label_for(search):
+    return "直近1週間" if search.get("frequency") == "weekly" else "直近1ヶ月"
+
+
+def doc_title_for(search, now):
+    filename_label = search.get("filename_label", search["label"])
+    return f"{now.strftime('%Y-%m')}_{filename_label}_PubMed抽出"
+
+
+def format_article_html(idx, art):
+    pub_date = f"{art['year']}/{art['month']}" if art['month'] else art['year']
+    title = html.escape(art["title"])
+    author = html.escape(art["author"])
+    journal = html.escape(art["journal"])
+    pmid = html.escape(art["pmid"])
+    abstract = html.escape(art["abstract"]).replace("\n", "<br>")
+    pubmed_url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
+    return f"""
+<section class="article">
+  <h3>{idx}. {title}</h3>
+  <p><strong>Author:</strong> {author} et al. | <strong>Journal:</strong> {journal} ({html.escape(pub_date)})</p>
+  <p><strong>PMID:</strong> {pmid} | <a href="{pubmed_url}">{pubmed_url}</a></p>
+  <p>{abstract}</p>
+</section>
+"""
+
+
+def write_topic_html(search, articles, now, output_dir):
+    os.makedirs(output_dir, exist_ok=True)
+    doc_title = doc_title_for(search, now)
+    period_label = period_label_for(search)
+    prompt = build_doc_prompt(search["label"], doc_title, period_label)
+    file_path = os.path.join(output_dir, f"{safe_filename(doc_title)}.html")
+
+    articles_html = "\n".join(format_article_html(i, art) for i, art in enumerate(articles, 1))
+    content = f"""<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>{html.escape(doc_title)}</title>
+  <style>
+    body {{ font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; line-height: 1.6; }}
+    h1, h2, h3 {{ line-height: 1.3; }}
+    .meta {{ color: #555; }}
+    .prompt {{ background: #f6f8fa; border-left: 4px solid #8a8f98; padding: 12px 16px; white-space: pre-wrap; }}
+    .article {{ border-top: 1px solid #ccc; margin-top: 24px; padding-top: 16px; }}
+  </style>
+</head>
+<body>
+  <h1>{html.escape(doc_title)}</h1>
+  <p class="meta">取得日時: {now.strftime('%Y-%m-%d %H:%M')} / テーマ: {html.escape(search["label"])} / 対象期間: {html.escape(period_label)} / 件数: {len(articles)}</p>
+
+  <h2>ChatGPT / Gemini / Claude への依頼文</h2>
+  <div class="prompt">{html.escape(prompt)}</div>
+
+  <h2>PubMed Abstract一覧</h2>
+  {articles_html if articles else "<p>該当論文なし</p>"}
+</body>
+</html>
+"""
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    return file_path
+
+
+def matches_topic(search, topic):
+    needle = topic.casefold()
+    haystacks = [
+        search["name"],
+        search["label"],
+        search.get("filename_label", ""),
+        *search.get("aliases", []),
+    ]
+    return any(needle in value.casefold() for value in haystacks)
+
+
+def select_searches(frequency, topics):
+    selected = [
+        search for search in SEARCHES
+        if frequency == "all" or search.get("frequency", "monthly") == frequency
+    ]
+    if not topics:
+        return selected
+
+    topic_values = []
+    for topic in topics:
+        topic_values.extend(part.strip() for part in topic.split(",") if part.strip())
+
+    matched = []
+    missing = []
+    for topic in topic_values:
+        topic_matches = [search for search in selected if matches_topic(search, topic)]
+        if topic_matches:
+            for search in topic_matches:
+                if search not in matched:
+                    matched.append(search)
+        else:
+            missing.append(topic)
+
+    if missing:
+        choices = ", ".join(search["name"] for search in selected)
+        raise ValueError(f"テーマが見つかりません: {', '.join(missing)}\n利用可能: {choices}")
+
+    return matched
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="PubMedからテーマ別にabstractを取得し、MarkdownとGoogle Docs取り込み用HTMLを作成します。"
+    )
+    parser.add_argument(
+        "--frequency",
+        choices=["all", "monthly", "weekly"],
+        default="all",
+        help="実行する頻度グループ。通常月次は monthly、小児感染症のみ週次は weekly。",
+    )
+    parser.add_argument(
+        "--topic",
+        action="append",
+        help="実行するテーマ名。例: --topic asthma / --topic constipation / --topic 小児感染症。複数指定可。",
+    )
+    parser.add_argument(
+        "--retmax",
+        type=int,
+        default=100,
+        help="各テーマで取得する最大件数。",
+    )
+    parser.add_argument(
+        "--no-topic-docs",
+        action="store_true",
+        help="テーマ別Google Docs取り込み用HTMLを作らない。",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default=OUTPUT_DIR,
+        help="出力先フォルダ。",
+    )
+    return parser.parse_args()
+
+
+def output_stem(month_str, frequency, topics):
+    if topics:
+        topic_slug = safe_filename("_".join(
+            part.strip()
+            for topic in topics
+            for part in topic.split(",")
+            if part.strip()
+        ))
+        return f"abstracts_{month_str}_{topic_slug}"
+    if frequency in ("monthly", "weekly"):
+        return f"abstracts_{month_str}_{frequency}"
+    return f"abstracts_{month_str}"
+
+
 def main():
+    args = parse_args()
     now        = datetime.now()
     month_str  = now.strftime("%Y%m")
-    output_path = os.path.join(OUTPUT_DIR, f"abstracts_{month_str}.md")
+    output_dir = os.path.abspath(args.output_dir)
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, f"{output_stem(month_str, args.frequency, args.topic)}.md")
+    topic_doc_dir = os.path.join(output_dir, "google_docs", month_str)
+    searches = select_searches(args.frequency, args.topic)
 
     print(f"PubMed Abstract Fetcher  {now.strftime('%Y年%m月%d日 %H:%M')}")
     print("=" * 50)
-    print(f"検索テーマ数: {len(SEARCHES)}")
+    print(f"検索テーマ数: {len(searches)}")
     print(f"出力先: {output_path}")
+    if not args.no_topic_docs:
+        print(f"Google Docs取り込み用HTML: {topic_doc_dir}")
     print()
 
     # ファイルヘッダー（Coworkへの指示付き）
@@ -262,12 +490,12 @@ def main():
 処理したいテーマのセクションを指定して、以下のプロンプトをCoworkに貼り付けてください。
 各セクションの冒頭にコピー用プロンプトが用意されています。
 
-**Google Docのファイル名形式:** `YYYY-MM_テーマ名_abstract10本`
-（例: `{now.strftime('%Y-%m')}_気管支喘息_abstract10本`）
+**Google Docs取り込み用HTMLのファイル名形式:** `YYYY-MM_テーマ名_PubMed抽出.html`
+（例: `{now.strftime('%Y-%m')}_気管支喘息_PubMed抽出.html`）
 
-**Google Docの構成（2部構成）:**
-- 第1部: 日本語要約（①〜⑤の形式で10本）
-- 第2部: 英語 Abstract（同じ10本のfull abstractを番号順に掲載）
+**HTMLの構成:**
+- 冒頭: 重要論文10本の厳選・要約用プロンプト
+- 本文: PubMedから取得した英語Abstract一覧
 
 ---
 
@@ -277,23 +505,25 @@ def main():
     grand_total = 0
     toc_lines   = ["## 目次\n"]
 
-    for s in SEARCHES:
+    topic_doc_paths = []
+
+    for s in searches:
         name    = s["name"]
         label   = s["label"]
         query   = s["query"]
         reldate = s["reldate"]
+        period_label = period_label_for(s)
 
         print(f"🔍 {label} ...", end=" ", flush=True)
         toc_lines.append(f"- [{label}](#{name.lower().replace('_','-')}): ")
 
         try:
-            pmids, total = search_pubmed(query, reldate=reldate)
+            pmids, total = search_pubmed(query, reldate=reldate, retmax=args.retmax)
             time.sleep(REQUEST_INTERVAL)
-
-            toc_lines[-1] += f"{len(pmids)}件"
 
             if not pmids:
                 print("0件")
+                toc_lines[-1] += "0件"
                 sections.append(f"## {name}\n### {label}\n\n*該当論文なし*\n\n---\n\n")
                 continue
 
@@ -301,14 +531,16 @@ def main():
             time.sleep(REQUEST_INTERVAL)
 
             print(f"{len(articles)}件 (PubMed総数: {total}件)")
+            toc_lines[-1] += f"{len(articles)}件"
             grand_total += len(articles)
 
-            filename_label = s.get("filename_label", label)
-            doc_title = f"{now.strftime('%Y-%m')}_{filename_label}_abstract10本"
+            doc_title = doc_title_for(s, now)
+            if not args.no_topic_docs:
+                topic_doc_paths.append(write_topic_html(s, articles, now, topic_doc_dir))
 
             section  = f"## {name}\n### {label} — {len(articles)}件\n\n"
             section += "**▼ Coworkへのプロンプト（コピーして貼り付け）:**\n\n"
-            section += f"> 以下は直近1ヶ月の{label}領域の論文一覧です。\n"
+            section += f"> 以下は{period_label}の{label}領域の論文一覧です。\n"
             section += f"> 外来小児科医として診療を変える可能性があるもの10本程度に厳選し、\n"
             section += f"> **「{doc_title}」** というタイトルのGoogle Docを作成してください。\n"
             section += f">\n"
@@ -354,15 +586,24 @@ def main():
     print("=" * 50)
     print(f"✅ 完了！合計 {grand_total} 件を保存しました")
     print(f"📄 {output_path}")
+    if topic_doc_paths:
+        print(f"📁 Google Docs取り込み用HTML: {topic_doc_dir}")
     print()
     print("【次のステップ】Coworkを開き、abstracts_*.md を開いて")
     print("処理したいテーマのプロンプトをコピーしてClaudeに貼り付けてください。")
+    if topic_doc_paths:
+        print("または google_docs フォルダ内のHTMLをGoogle Driveへアップロードすると、")
+        print("テーマ別のGoogle DocとしてNotebookLMに取り込めます。")
     print()
-    print("Google Docは自動的に以下の2部構成で作成されます:")
-    print(f"  例: {now.strftime('%Y-%m')}_気管支喘息_abstract10本")
-    print("  　 第1部: 日本語要約（①〜⑤）")
-    print("  　 第2部: 英語 Abstract（full text）")
+    print("作成されるテーマ別HTMLの例:")
+    print(f"  {now.strftime('%Y-%m')}_気管支喘息_PubMed抽出.html")
+    print("  　 冒頭: 重要論文10本の厳選・要約用プロンプト")
+    print("  　 本文: PubMedから取得した英語Abstract一覧")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except ValueError as e:
+        print(f"エラー: {e}")
+        raise SystemExit(2)

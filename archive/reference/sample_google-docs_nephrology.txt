@@ -1,0 +1,329 @@
+2026-05_小児腎臓_abstract10本
+取得日: 2026年5月 | 対象テーマ: 小児腎臓（ネフローゼ・IgA腎症）
+選出: 81件中10件
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+【第1部: 日本語要約】
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+---
+
+1.
+
+① タイトル
+Anti-nephrin antibodies in pediatric nephrotic syndrome: a new paradigm.
+
+② PMID
+42026266
+
+③ なぜ重要か
+循環する抗ネフリン自己抗体が小児ネフローゼ症候群（特にステロイド感受性）の病態機序に中心的役割を果たすことが示され、「特発性」という説明から血清学的バイオマーカーに基づく疾患分類へのパラダイムシフトが起きている。
+
+④ 臨床への影響
+抗ネフリン抗体の測定が疾患活動性・再発リスク・移植前リスク評価のバイオマーカーとして実用化される可能性がある。B細胞標的療法（リツキシマブ等）の理論的根拠が強化され、ステロイド節減への道が開けつつある。
+
+⑤ 診療変更の必要性
+Yes（近未来） — 現在は研究段階だが、抗ネフリン抗体測定の実臨床導入に備えて概念を把握しておく必要がある。
+
+---
+
+2.
+
+① タイトル
+The podocyte slit-diaphragm: target of anti-nephrin antibodies.
+
+② PMID
+41733080
+
+③ なぜ重要か
+スリット膜の多層フィッシュネット構造が新技術（クライオ電子トモグラフィー等）で解明され、病原性抗ネフリン抗体がスリット膜の完全性を破壊しネフリン内在化→足突起消失→蛋白尿を引き起こすメカニズムが明確になった。
+
+④ 臨床への影響
+ステロイド感受性ネフローゼ症候群・MCD・FSGSを「抗体介在性自己免疫疾患」として再分類する根拠が得られた。抗ネフリン抗体を検出する標準化アッセイの確立が急務であり、診断・予後・治療選択に直結する。
+
+⑤ 診療変更の必要性
+Yes（近未来） — 疾患概念と治療方針の根本的な更新を要する内容であり、専門医との連携において重要な知識。
+
+---
+
+3.
+
+① タイトル
+Anti-nephrin autoantibodies in post-transplant recurrent focal segmental glomerulosclerosis: diagnostic advances and future directions.
+
+② PMID
+41746488
+
+③ なぜ重要か
+移植後再発FSGSの患者で循環抗ネフリン抗体が同定され、ELISAで検出可能なこと、再発時に腎生検でネフリンへのIgG沈着が確認され寛解後に消失することが示された。
+
+④ 臨床への影響
+FSGS患者の移植前に抗ネフリン抗体を測定することで再発リスクを予測し、移植後の厳重なモニタリング体制の構築や早期介入の判断に役立てられる可能性がある。
+
+⑤ 診療変更の必要性
+Yes（専門科連携） — FSGS患者の移植適応評価に抗ネフリン抗体検査を組み込む準備が必要。
+
+---
+
+4.
+
+① タイトル
+B-cell-targeting therapies in podocytopathies.
+
+② PMID
+42000953
+
+③ なぜ重要か
+MCD・FSGSを含むポドサイトパチーにおけるB細胞・抗ネフリンIgG・補体活性化の役割が整理され、リツキシマブを基盤とした次世代抗CD20薬（オビヌツズマブ）・抗CD38療法・BAFF/APRIL軸標的薬・CAR-T細胞療法まで包括的にレビューされた。
+
+④ 臨床への影響
+ステロイド依存性・頻回再発性ネフローゼへのリツキシマブが標準的ステロイド節減治療として確立されている一方、難治性・移植後再発例に対する次世代B細胞療法の選択肢が広がっており、専門科への紹介判断の根拠となる。
+
+⑤ 診療変更の必要性
+Yes — ステロイド依存性ネフローゼでリツキシマブ未使用の場合、専門科へ紹介して治療評価を促す。
+
+---
+
+5.
+
+① タイトル
+Late Outcomes Following Acute Kidney Injury in Children: A Systematic Review and Meta-Analysis.
+
+② PMID
+42081220
+
+③ なぜ重要か
+JAMA Pediatrics掲載の系統的レビュー・メタ解析（39研究・16,151人）で、小児AKI後のCKD累積発生率17%、高血圧16%、蛋白尿20%、死亡6%が示された。AKI重症度が高いほどCKDリスクが上昇（stage2-3: OR 2.84）。
+
+④ 臨床への影響
+入院中に何らかのAKIを経験した小児は、退院後も腎機能・血圧・蛋白尿の構造的な長期フォローアップが必要であることが示された。現在フォロー体制がない場合、小児腎臓専門医への定期紹介を検討すべきである。
+
+⑤ 診療変更の必要性
+Yes — AKIの既往歴がある患者に対し、外来での定期的な尿蛋白・血圧・eGFR測定を年1回以上実施する。
+
+---
+
+6.
+
+① タイトル
+The Role of Zinc in the Evolutionary Pattern of Pediatric Nephrotic Syndrome: A Meta-Analysis.
+
+② PMID
+40587383
+
+③ なぜ重要か
+6研究・484人の小児ネフローゼ症候群を対象としたメタ解析で、亜鉛補充が再発率を有意に減少させることが示された（RR 0.70, 95%CI 0.58-0.84, NNT=5）。
+
+④ 臨床への影響
+頻回再発性ネフローゼ症候群の患者に対し、亜鉛補充を補助的介入として検討できる可能性がある。エビデンスの確実性は中程度であり、副作用も少ないことから実臨床への応用が比較的容易である。
+
+⑤ 診療変更の必要性
+Yes（条件付き） — 頻回再発性ネフローゼ症候群の患者に亜鉛補充（NNT=5）を追加で検討し、腎臓専門医と相談の上で実施を考慮する。
+
+---
+
+7.
+
+① タイトル
+SGLT2 inhibitors for kidney protection in children: expanding horizons beyond endocrinology.
+
+② PMID
+40624155
+
+③ なぜ重要か
+成人CKDで腎保護効果が確立されたSGLT2阻害薬について、小児CKDへの応用の可能性を論じたレビュー。小児では先天性腎尿路異常（CAKUT）が主因であり、糸球体過剰濾過抑制・蛋白尿軽減・CKD進行抑制への期待が高まっている。進行中のDOUBLE PRO-TECT Alportトライアルが注目される。
+
+④ 臨床への影響
+現時点では小児への適用は研究段階だが、糖尿病以外の小児CKD患者（Alport症候群・ネフローゼなど）へのSGLT2i使用が近い将来実臨床に入ってくる可能性があり、把握しておく必要がある。
+
+⑤ 診療変更の必要性
+No（現時点） — 現在は研究段階で小児への標準的使用は推奨されていないが、進行中のエビデンスを注視する。
+
+---
+
+8.
+
+① タイトル
+Efficacy and safety of B-cell activating factor and A proliferation-inducing ligand-targeted therapies in IgA nephropathy: a systematic review and meta-analysis of randomized controlled trials.
+
+② PMID
+42014363
+
+③ なぜ重要か
+IgA腎症に対するBAFF/APRIL標的療法（4 Phase II RCT・331人）のメタ解析で、プラセボ比で24時間尿蛋白クレアチニン比が有意に減少（-38.9%）し、eGFRも改善（+7.05 mL/min/1.73m²）した。安全性プロファイルは良好。
+
+④ 臨床への影響
+IgA腎症の新規標的療法として、BAFF/APRIL軸への介入（テリタシセプト等）がACEI/ARBを超えた治療選択肢として近い将来実臨床に登場する可能性があり、専門科との連携において重要な情報である。
+
+⑤ 診療変更の必要性
+Yes（近未来） — 蛋白尿が持続するIgA腎症患者を専門科に紹介する際、新規標的療法の適用を相談するよう促す。
+
+---
+
+9.
+
+① タイトル
+Clinical characteristics, diagnosis, treatment, and prognosis of rituximab-induced serum sickness: a retrospective analysis of 39 reported cases.
+
+② PMID
+42051532
+
+③ なぜ重要か
+リツキシマブ誘発性血清病（RISS）39例の解析で、最終投与から中央値7日後に発症し、発熱（82%）・皮疹（67%）・関節痛（92%）の三主徴＋低補体血症（C3/C4低下76-79%）・炎症反応高値が特徴的であることが示された。ネフローゼ症候群が適応疾患として20.5%を占めた。
+
+④ 臨床への影響
+ネフローゼ症候群でリツキシマブを使用している患者が投与後1-2週に発熱・関節痛・皮疹を呈した場合、RISSを鑑別診断に挙げることが重要。短期ステロイド治療で82%が完全回復するが、再投与は60%が再発するため慎重に判断する。
+
+⑤ 診療変更の必要性
+Yes — リツキシマブ使用患者に対し、投与後2週間以内の発熱・関節痛・皮疹出現時はRISSを疑い補体検査（C3・C4）・CRP・ESRを確認する。
+
+---
+
+10.
+
+① タイトル
+The dietary management of sodium in children with kidney diseases — clinical practice recommendations from the Pediatric Renal Nutrition Taskforce.
+
+② PMID
+41251793
+
+③ なぜ重要か
+小児腎疾患における食事性ナトリウム管理に関するPediatric Renal Nutrition Taskforce（PRNT）の臨床実践推奨で、ナトリウム過剰（浮腫・高血圧）とナトリウム喪失（低血圧・成長障害）の両面からの管理戦略をデルファイ法で策定した。
+
+④ 臨床への影響
+ネフローゼ症候群・CKD・透析・腎移植後の小児における食事指導の標準化に活用できる。特にネフローゼ活動期の塩分制限（浮腫・高血圧軽減）と、尿細管障害や腹膜透析患者での塩分補充の必要性を実践的に示している。
+
+⑤ 診療変更の必要性
+Yes — ネフローゼ症候群の外来管理において、活動期・寛解期に応じた塩分摂取指導を栄養士と連携して具体的に提供する。
+
+---
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+【第2部: 英語 Abstract】
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+---
+
+1. Anti-nephrin antibodies in pediatric nephrotic syndrome: a new paradigm.
+PMID: 42026266
+Journal: Pediatric Nephrology (2026/Apr)
+Authors: Mühlig Anne K et al.
+
+Abstract:
+Circulating anti-nephrin antibodies have recently been identified as mediators in many cases of childhood nephrotic syndrome. After binding of the antibody to nephrin, a key component of the slit diaphragm, different intracellular signaling mechanisms lead to foot process effacement. These new insights into the pathophysiology of nephrotic syndrome may have the potential to influence clinical treatment strategies. First, the measurement provides a pathomechanism-specific serological biomarker of a previously clinically diagnosed renal disease. Second, it may have additional value for diagnosis and prognostication, as anti-nephrin antibodies are more common in steroid-sensitive forms and less frequently associated with multidrug-resistant forms. Furthermore, anti-nephrin autoantibodies have the potential to be used as biomarkers for disease activity and to estimate the risk of relapse before kidney transplantation, after conduction of appropriate clinical trials. Additionally, the detection of autoantibodies strengthens the role of B-cell targeting therapies and provides a potential rationale for further multicenter, prospective, randomized clinical trials using B-cell depletion to potentially reduce corticosteroid use and relapse rates in children. In the future, more targeted therapies such as the interference with downstream effects of antibody binding or the depletion of autoantigen-specific antibody producing cells might become possible. Finally, the detection of anti-nephrin autoantibodies provides an explanation for patients and their families with a previously elusive "idiopathic" disease in antibody positive patients. In summary, the identification of anti-nephrin antibodies in nephrotic syndrome now opens up new questions and paves the way for further experimental and clinical studies to improve diagnostic and therapeutic approaches.
+
+---
+
+2. The podocyte slit-diaphragm: target of anti-nephrin antibodies.
+PMID: 41733080
+Journal: Current Opinion in Nephrology and Hypertension (2026/May)
+Authors: Beck Laurence H et al.
+
+Abstract:
+PURPOSE OF REVIEW: This review is prompted by substantial new information on the composition and structure of the podocyte slit-diaphragm and the identification of anti-nephrin antibodies in patients with acquired diseases of the glomerular podocyte, including steroid-sensitive nephrotic syndrome of childhood, minimal change disease and some cases of primary focal and segmental glomerulosclerosis (FSGS).
+RECENT FINDINGS: New methodologies including multi-epitope affinity purification, high resolution proteomics and cryo-electron tomography reveal that the slit-diaphragm consists of a multi-layered fishnet-like structure made up by nephrin and neph1 homodimers as well as several co-assembled proteins with signaling properties. Insights from clinical studies and experimental models support the concept that pathogenic antibodies engaging the extracellular domain of nephrin disrupt the integrity of the slit-diaphragm and signal changes to the podocyte cytoskeleton that lead to foot process effacement and proteinuria.
+SUMMARY: These findings raise several questions to be answered experimentally, including the nephrin epitopes targeted by the antibodies and the way in which they alter the slit-diaphragm and podocyte architecture and induce nephrin endocytosis. They also highlight the need for a reliable and widely available assay for anti-nephrin antibodies, which would have diagnostic and therapeutic impact on diagnosis, prognosis and therapy.
+
+---
+
+3. Anti-nephrin autoantibodies in post-transplant recurrent focal segmental glomerulosclerosis: diagnostic advances and future directions.
+PMID: 41746488
+Journal: Clinical and Experimental Nephrology (2026/May)
+Authors: Shirai Yoko et al.
+
+Abstract:
+Nephrotic syndrome is a common kidney disease during childhood that is characterized by alterations in the glomerular filtration barrier and leads to protein loss in the urine. Approximately 90% of cases are classified as idiopathic nephrotic syndrome, most of which are histologically diagnosed as minimal change disease (MCD). Although the majority of patients achieve remission with steroid therapy, a subset develops steroid resistance and progresses to focal segmental glomerulosclerosis (FSGS) and kidney failure. Increasing evidence suggests that MCD and idiopathic FSGS represent a disease continuum, with FSGS reflecting a more advanced stage. Although several candidates have been proposed as circulating factors, none fully explains the disease pathogenesis. This landscape changed in 2022 with the discovery of anti-nephrin autoantibodies in MCD. Subsequently, we reported that circulating anti-nephrin autoantibodies were identified by ELISA in patients with post-transplant recurrent FSGS, and punctate IgG deposition colocalizing with nephrin was consistently detected in allograft biopsy specimens obtained during recurrence. Notably, these IgG deposits resolved following remission. Collectively, these findings suggest diffuse podocytopathies as autoantibody-mediated disorders and support a shift toward autoantibody-based disease classification. Experimental and clinical studies demonstrate that anti-nephrin autoantibodies induce nephrin phosphorylation. This process may be associated with nephrin endocytosis and subsequent cytoskeletal alterations. Additionally, autoantibodies targeting slit diaphragm molecules other than nephrin have been identified. However, the pathogenic roles of these autoantibodies remain to be clarified. Collectively, these findings highlight a complex, autoantibody-driven mechanism in diffuse podocytopathies and underscore the need for standardized assays and biomarker-driven classification strategies.
+
+---
+
+4. B-cell-targeting therapies in podocytopathies.
+PMID: 42000953
+Journal: Pediatric Nephrology (2026/Apr)
+Authors: Bigatti Carolina et al.
+
+Abstract:
+Podocytopathies, including minimal change disease and focal segmental glomerulosclerosis, represent the leading causes of nephrotic syndrome in children and adolescents. Although traditionally considered T-cell-mediated disorders, growing evidence over the last decade has reshaped this paradigm, highlighting a central role for B-cells, plasma cells, and humoral immune mechanisms in podocyte injury. The identification of pathogenic autoantibodies, particularly anti-nephrin IgG, and the involvement of complement activation have provided a strong mechanistic rationale for B-cell-targeted therapies. Rituximab, an anti-CD20 monoclonal antibody, has become an established steroid-sparing agent in steroid-dependent and frequently relapsing nephrotic syndrome, significantly reducing relapse rates and cumulative steroid exposure in pediatric patients. However, its efficacy is limited in steroid-resistant disease and in settings characterized by persistent autoantibody production or post-transplant recurrence. These limitations have prompted the exploration of next-generation anti-CD20 agents, such as obinutuzumab, which achieve deeper and more sustained B-cell depletion, as well as therapies targeting long-lived plasma cells, including anti-CD38 monoclonal antibodies. Emerging clinical data suggest that combined B-cell and plasma cell targeting may induce durable remission in refractory podocytopathies and recurrent post-transplant focal segmental glomerulosclerosis, while maintaining an acceptable safety profile. In parallel, novel strategies targeting the BAFF/APRIL axis and cellular therapies such as CAR-T cells are under investigation. This review summarizes current evidence on B-cell-directed therapies in podocytopathies, mostly in pediatrics, discusses unmet clinical needs, and outlines future perspectives toward precision, mechanism-based immunotherapy.
+
+---
+
+5. Late Outcomes Following Acute Kidney Injury in Children: A Systematic Review and Meta-Analysis.
+PMID: 42081220
+Journal: JAMA Pediatrics (2026/May)
+Authors: Meena Jitendra et al.
+
+Abstract:
+IMPORTANCE: Acute kidney injury (AKI) is a common complication among hospitalized children and may have lasting kidney and cardiovascular consequences. However, the long-term risks after pediatric AKI have not been comprehensively quantified.
+OBJECTIVE: To estimate the pooled incidence and relative risk with odds ratio of chronic kidney disease (CKD), mortality, hypertension, and proteinuria following AKI in hospitalized children.
+DATA SOURCES: PubMed, Embase, and Web of Science were searched from January 2007 through November 2025 without language restrictions.
+STUDY SELECTION: Studies were included if they reported at least 1 long-term outcome (CKD, mortality, hypertension, or proteinuria) following AKI in hospitalized children. Studies limited to children with obstructive lesions, primary vascular disorders (eg, hemolytic uremic syndrome) or solid organ transplant were excluded.
+DATA EXTRACTION AND SYNTHESIS: Two reviewers independently extracted data and assessed risk of bias. Random-effects meta-analyses were performed to estimate pooled cumulative incidences and odds ratios (ORs) with 95% CIs.
+MAIN OUTCOMES AND MEASURES: Cumulative incidence and odds of CKD, mortality, hypertension, and proteinuria following pediatric AKI.
+RESULTS: Of 17 068 screened records, 39 studies comprising 16 151 participants were included. The pooled cumulative incidences following AKI were 17% (95% CI, 12-22) for CKD, 6% (95% CI, 3-8) for mortality, 20% (95% CI, 12-29) for proteinuria, and 16% (95% CI, 11-23) for hypertension. In 23 studies with non-AKI comparators and follow-up ranging from 3 months to 18 years, AKI was associated with increased odds of CKD (OR, 1.74; 95% CI, 1.02-2.95) and mortality (OR, 1.92; 95% CI, 1.35-2.75) but not proteinuria (OR, 1.18; 95% CI, 0.62-2.25) or hypertension (OR, 1.29; 95% CI, 0.72-2.31). Greater AKI severity was associated with a higher odds of CKD (stages 2-3: OR, 2.84; 95% CI, 1.49-4.15; stage 1: OR, 1.72; 95% CI, 1.11-2.67).
+CONCLUSIONS AND RELEVANCE: The findings in this systematic review and meta-analysis demonstrate that, similar to adults, children experienced increased risk of late adverse outcomes following AKI, particularly CKD and mortality, supporting the need for structured post-AKI follow up.
+
+---
+
+6. The Role of Zinc in the Evolutionary Pattern of Pediatric Nephrotic Syndrome: A Meta-Analysis.
+PMID: 40587383
+Journal: Nutrition Reviews (2026/May)
+Authors: Lupu Ancuta et al.
+
+Abstract:
+BACKGROUND: Nephrotic syndrome (NS) is a chronic pathology, with an undulating evolution, that reduces the quality of life among children.
+OBJECTIVE: In this meta-analysis we sought to assess the reliability of zinc supplementation in reducing the relapse prevalence and morbidity associated with pediatric NS.
+DATA SOURCES: We searched the PubMed, Web of Science, Scopus, Embase, Google Scholar, and Semantic Scholar databases for the period of January 2000 to December 2023.
+DATA EXTRACTION: Inclusion criteria were articles reporting investigations of children younger than 18 years who were diagnosed with NS and would benefit from zinc supplementation compared with a similar control group. The studies were verified according to the PRISMA criteria. In our initial screening we identified 1063 articles. After screening, 25 full-text articles were analyzed. After we applied the inclusion/exclusion criteria, 6 articles (484 patients) were included in the review.
+DATA ANALYSIS: The data considered eligible, regardless of the duration of supplementation, were entered into Review Manager software for analysis using random effects models. Analysis of the causes of heterogeneity revealed that zinc supplementation has shown a beneficial effect on widening the disease-free interval, reducing the number of patients experiencing relapses (relative risk [RR]: 0.70, 95% CI, 0.58 to 0.84, P = .0001; NNT = 5), the mean relapse rate (SMD, -0.41, 95% CI, -0.78 to -0.04, P = .03) and of the need for hospitalization (SMD: -1.35, 95% CI -1.78 to -0.91, P < .00001) depending on the duration of supplementation. In accordance with the Grading of Recommendations Assessment, Development and Evaluation (GRADE) guidelines, we found a medium level of certainty for the interrelationship of zinc supplementation with reduction in the number of relapses/mean relapses and a low level between zinc supplementation and the reduction in time spent hospitalized.
+CONCLUSIONS: Zinc supplementation seems to be beneficial in improving the course of pediatric NS. Due to the limited amount of evidence included in the present study, additional studies are needed in order to establish the true size of the effect.
+
+---
+
+7. SGLT2 inhibitors for kidney protection in children: expanding horizons beyond endocrinology.
+PMID: 40624155
+Journal: Pediatric Nephrology (2026/May)
+Authors: Pucci Costanza et al.
+
+Abstract:
+For over two decades, kidney protection in children has relied on angiotensin-converting enzyme inhibitors (ACEi) and angiotensin receptor blockers (ARBs), which present significant limitations. Sodium-glucose cotransporter 2 inhibitors (SGLT2i), initially developed as antidiabetic agents, have demonstrated significant benefits in preserving kidney function in adults with chronic kidney disease (CKD), regardless of diabetes status. The pathophysiology of paediatric CKD differs from adult CKD, with congenital anomalies of the kidney and urinary tract (CAKUT) as the predominant cause. Extrapolating adult data to paediatric patients is challenging, though preliminary studies suggest SGLT2i may mitigate hyperfiltration-related damage, reduce proteinuria, and slow CKD progression, on top of RAS-blockers. Recent paediatric case series and small clinical trials have shown promising results, though larger controlled studies are needed to confirm efficacy and safety. The ongoing DOUBLE PRO-TECT Alport trial represents a significant step toward evaluating SGLT2i kidney protection in children. While current data suggest potential benefits, careful assessment of adverse effects such as euglycaemic ketoacidosis (EuDKA) and calcium phosphorus imbalances is crucial. This review aims to explore the mechanism of action, clinical evidence, and future perspectives of SGLT2i in paediatric CKD, highlighting their potential as a novel therapeutic strategy beyond diabetes management.
+
+---
+
+8. Efficacy and safety of B-cell activating factor and A proliferation-inducing ligand-targeted therapies in IgA nephropathy: a systematic review and meta-analysis of randomized controlled trials.
+PMID: 42014363
+Journal: Journal of Nephrology (2026/Apr)
+Authors: Dos Santos Borges Rafael et al.
+
+Abstract:
+BACKGROUND: IgA nephropathy (IgAN) is the most common primary glomerular disease worldwide. B-cell activating factor (BAFF) and A proliferation-inducing ligand (APRIL) are cytokines involved in B-cell activation and survival, contributing to the pathogenesis of IgAN. This meta-analysis aimed to evaluate the efficacy, safety, and biomarkers of BAFF- or APRIL-targeted therapies in patients with IgAN.
+METHODS: We searched PubMed, Scopus, and the Cochrane Library for randomized controlled trials (RCTs) comparing BAFF- or APRIL-targeted drugs with placebo in adults with IgAN, published up to December 2024 and written in English. Efficacy outcomes were the mean percent change in the 24-hour urine protein-to-creatinine ratio (UPCR) and the mean change in the estimated glomerular filtration rate (eGFR) from baseline. Safety included the incidence of adverse events. The biomarkers we used were changes in serum Gd-IgA1, IgG, IgA, and IgM from baseline.
+RESULTS: Four Phase II RCTs, including 331 patients, were included. Compared to placebo, BAFF- or APRIL-targeted drugs significantly reduced 24-hour UPCR (mean difference [MD] -38.94%; 95% confidence interval [CI] -58.98 to -18.90; P = 0.0001; I² = 0%) and significantly improved the eGFR (MD 7.05 mL/min/1.73 m²; 95% CI 3.83 to 10.27; P < 0.0001; I² = 0%). Adverse events did not significantly differ between the study groups. BAFF- or APRIL-targeted drugs significantly decreased serum Gd-IgA1, IgG, IgA, and IgM compared with placebo, indicating lower immune complex formation and response to treatment.
+CONCLUSION: BAFF- or APRIL-targeted therapies appear to be effective and safe in reducing proteinuria in patients with IgAN.
+
+---
+
+9. Clinical characteristics, diagnosis, treatment, and prognosis of rituximab-induced serum sickness: a retrospective analysis of 39 reported cases.
+PMID: 42051532
+Journal: Frontiers in Immunology (2026)
+Authors: Huang Yi et al.
+
+Abstract:
+BACKGROUND: Rituximab-induced serum sickness (RISS) is an uncommon delayed hypersensitivity reaction with incompletely characterized clinical features and management. We aimed to synthesize published case reports/series to delineate clinical patterns, therapeutic strategies, and outcomes.
+METHODS: PubMed, EMBASE, Web of Science, WanFang Data, and China National Knowledge Infrastructure (CNKI) were searched for rituximab-induced serum sickness reports published up to Nov 31, 2025.
+RESULTS: 30 eligible articles identified 39 patients. The median age was 33 years (range 6-86), with a female predominance (71.8%). The median symptom onset time was 7 days (range 1-18) after last rituximab exposure. The most common indications were multiple sclerosis (23.1%), nephrotic syndrome (20.5%), and immune thrombocytopenia (20.5%). Clinically, arthralgia/arthritis (92.3%), fever (82.1%), and rash (66.7%) predominated. Anti-rituximab antibodies were positive in 90.9% of tested cases. Inflammatory markers were frequently elevated, with 93.3% of patients showing elevated ESR and 91.3% showing elevated CRP. Complement consumption was frequent, with decreased C3 and C4 levels observed in 76.5% and 78.6% of tested patients, respectively. Corticosteroids were commonly used as the treatment for RISS. Overall, 82.1% achieved complete recovery with a median recovery time of 3.0 days. Rechallenge was reported in 10 patients, with recurrence in 60.0%.
+CONCLUSION: RISS is a delayed reaction occurring after a free interval of several days. Its main features include the classic triad of fever, rash, and arthralgia/arthritis, commonly accompanied by elevated inflammatory markers and hypocomplementemia. Most patients improve rapidly after drug withdrawal, supportive care, and short-course corticosteroid therapy; however, rechallenge carries a substantial risk of recurrence.
+
+---
+
+10. The dietary management of sodium in children with kidney diseases — clinical practice recommendations from the Pediatric Renal Nutrition Taskforce.
+PMID: 41251793
+Journal: Pediatric Nephrology (2026/May)
+Authors: Renken-Terhaerdt José et al.
+
+Abstract:
+Sodium imbalance is a common concern in children with kidney diseases, presenting as either sodium excess or sodium deficit, each with significant clinical implications. Sodium excess contributes to fluid overload and hypertension, while increased sodium losses, particularly via urine or peritoneal fluid, can predispose patients to hypotension and growth failure. Effective sodium management is thus a critical component of care in pediatric kidney diseases, with dietary sodium intake playing a pivotal role in maintaining homeostasis. The Pediatric Renal Nutrition Taskforce (PRNT) has developed clinical practice recommendations (CPRs) for dietary sodium management in children with kidney diseases, addressing key aspects of sodium balance, including primary dietary sources, nutritional assessment of sodium intake, non-dietary factors influencing sodium balance, and recommended intakes. Strategies for reducing sodium intake in cases of sodium excess and augmenting intake in patients with increased sodium losses are also provided. The consensus of international experts was assessed through a Delphi process. These CPRs will be regularly updated by the PRNT.
+
+---
+
+（取得日: 2026年5月 | 作成: Cowork / Claude）
+
