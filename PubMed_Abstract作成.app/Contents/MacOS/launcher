@@ -1,0 +1,2 @@
+#!/bin/zsh
+open -a Terminal "/Users/thama/Documents/GitHub/pubmed_abstract/PubMed_Abstract作成コマンド.command"
