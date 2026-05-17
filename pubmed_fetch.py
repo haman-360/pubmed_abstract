@@ -23,6 +23,7 @@ import os
 import argparse
 import html
 import re
+import subprocess
 
 # ============================================================
 # ★ 設定: 検索クエリ一覧
@@ -372,6 +373,65 @@ def write_topic_html(search, articles, now, output_dir):
     return file_path
 
 
+def normalize_text(text):
+    text = re.sub(r"\r\n?", "\n", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+
+def format_article_paste_text(idx, art):
+    return "\n".join([
+        f"{idx}.",
+        "",
+        "Title:",
+        normalize_text(art["title"]),
+        "",
+        "PMID:",
+        art["pmid"],
+        "",
+        "Journal:",
+        f"{art['journal']} ({art['year']}{'/' + art['month'] if art['month'] else ''})",
+        "",
+        "Abstract:",
+        normalize_text(art["abstract"]),
+        "",
+        "---",
+        "",
+    ])
+
+
+def write_chatgpt_paste_text(search, articles, now, output_dir):
+    os.makedirs(output_dir, exist_ok=True)
+    title = f"{now.strftime('%Y-%m')}_{search.get('filename_label', search['label'])}_ChatGPT貼付用"
+    file_path = os.path.join(output_dir, f"{safe_filename(title)}.txt")
+    period_label = period_label_for(search)
+
+    content = "\n".join([
+        "【領域】",
+        search["label"],
+        "",
+        "【対象期間】",
+        period_label,
+        "",
+        "【目的】",
+        "外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。",
+        "出力形式・選定基準はChatGPT Project Instructionsに従ってください。",
+        "PMIDは必ず入力データに含まれるものを正確に転記してください。",
+        "",
+        "【論文一覧】",
+        "",
+        "".join(format_article_paste_text(i, art) for i, art in enumerate(articles, 1)),
+    ])
+
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    return file_path, content
+
+
+def copy_to_clipboard(text):
+    subprocess.run(["pbcopy"], input=text, text=True, check=True)
+
+
 def matches_topic(search, topic):
     needle = topic.casefold()
     haystacks = [
@@ -440,6 +500,16 @@ def parse_args():
         help="テーマ別Google Docs取り込み用HTMLを作らない。",
     )
     parser.add_argument(
+        "--paste-text-only",
+        action="store_true",
+        help="ChatGPT貼り付け用txtだけを作成する。",
+    )
+    parser.add_argument(
+        "--copy-paste-text",
+        action="store_true",
+        help="作成したChatGPT貼り付け用txtの内容をクリップボードへコピーする。",
+    )
+    parser.add_argument(
         "--output-dir",
         default=OUTPUT_DIR,
         help="出力先フォルダ。",
@@ -469,13 +539,16 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, f"{output_stem(month_str, args.frequency, args.topic)}.md")
     topic_doc_dir = os.path.join(output_dir, "google_docs", month_str)
+    paste_text_dir = os.path.join(output_dir, "chatgpt_paste", month_str)
     searches = select_searches(args.frequency, args.topic)
 
     print(f"PubMed Abstract Fetcher  {now.strftime('%Y年%m月%d日 %H:%M')}")
     print("=" * 50)
     print(f"検索テーマ数: {len(searches)}")
-    print(f"出力先: {output_path}")
-    if not args.no_topic_docs:
+    if not args.paste_text_only:
+        print(f"出力先: {output_path}")
+    print(f"ChatGPT貼付用txt: {paste_text_dir}")
+    if not args.no_topic_docs and not args.paste_text_only:
         print(f"Google Docs取り込み用HTML: {topic_doc_dir}")
     print()
 
@@ -506,6 +579,8 @@ def main():
     toc_lines   = ["## 目次\n"]
 
     topic_doc_paths = []
+    paste_text_paths = []
+    paste_texts_for_clipboard = []
 
     for s in searches:
         name    = s["name"]
@@ -535,6 +610,13 @@ def main():
             grand_total += len(articles)
 
             doc_title = doc_title_for(s, now)
+            paste_path, paste_text = write_chatgpt_paste_text(s, articles, now, paste_text_dir)
+            paste_text_paths.append(paste_path)
+            paste_texts_for_clipboard.append(paste_text)
+
+            if args.paste_text_only:
+                continue
+
             if not args.no_topic_docs:
                 topic_doc_paths.append(write_topic_html(s, articles, now, topic_doc_dir))
 
@@ -572,33 +654,47 @@ def main():
             toc_lines[-1] += "エラー"
             sections.append(f"## {name}\n### {label}\n\n*取得エラー: {e}*\n\n---\n\n")
 
-    # 目次を挿入
-    toc = "\n".join(toc_lines) + "\n\n---\n\n"
-    sections.insert(1, toc)
+    if not args.paste_text_only:
+        # 目次を挿入
+        toc = "\n".join(toc_lines) + "\n\n---\n\n"
+        sections.insert(1, toc)
 
-    full_text  = "\n".join(sections)
-    full_text += f"\n---\n*取得完了: {now.strftime('%Y-%m-%d %H:%M')} | 合計 {grand_total} 件*\n"
+        full_text  = "\n".join(sections)
+        full_text += f"\n---\n*取得完了: {now.strftime('%Y-%m-%d %H:%M')} | 合計 {grand_total} 件*\n"
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(full_text)
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write(full_text)
+
+    if args.copy_paste_text and paste_texts_for_clipboard:
+        combined_text = "\n\n==============================\n\n".join(paste_texts_for_clipboard)
+        copy_to_clipboard(combined_text)
 
     print()
     print("=" * 50)
     print(f"✅ 完了！合計 {grand_total} 件を保存しました")
-    print(f"📄 {output_path}")
+    if not args.paste_text_only:
+        print(f"📄 {output_path}")
+    if paste_text_paths:
+        print(f"📋 ChatGPT貼付用txt: {paste_text_dir}")
+    if args.copy_paste_text and paste_texts_for_clipboard:
+        print("📋 ChatGPT貼付用txtをクリップボードにコピーしました")
     if topic_doc_paths:
         print(f"📁 Google Docs取り込み用HTML: {topic_doc_dir}")
     print()
-    print("【次のステップ】Coworkを開き、abstracts_*.md を開いて")
-    print("処理したいテーマのプロンプトをコピーしてClaudeに貼り付けてください。")
-    if topic_doc_paths:
-        print("または google_docs フォルダ内のHTMLをGoogle Driveへアップロードすると、")
-        print("テーマ別のGoogle DocとしてNotebookLMに取り込めます。")
-    print()
-    print("作成されるテーマ別HTMLの例:")
-    print(f"  {now.strftime('%Y-%m')}_気管支喘息_PubMed抽出.html")
-    print("  　 冒頭: 重要論文10本の厳選・要約用プロンプト")
-    print("  　 本文: PubMedから取得した英語Abstract一覧")
+    if args.paste_text_only:
+        print("【次のステップ】ChatGPT Projectを開き、クリップボードの内容を貼り付けてください。")
+        print("Project Instructions側に選定基準と出力形式を保存しておく想定です。")
+    else:
+        print("【次のステップ】Coworkを開き、abstracts_*.md を開いて")
+        print("処理したいテーマのプロンプトをコピーしてClaudeに貼り付けてください。")
+        if topic_doc_paths:
+            print("または google_docs フォルダ内のHTMLをGoogle Driveへアップロードすると、")
+            print("テーマ別のGoogle DocとしてNotebookLMに取り込めます。")
+        print()
+        print("作成されるテーマ別HTMLの例:")
+        print(f"  {now.strftime('%Y-%m')}_気管支喘息_PubMed抽出.html")
+        print("  　 冒頭: 重要論文10本の厳選・要約用プロンプト")
+        print("  　 本文: PubMedから取得した英語Abstract一覧")
 
 
 if __name__ == "__main__":

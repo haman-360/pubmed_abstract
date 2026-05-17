@@ -36,7 +36,12 @@ def run_command(args):
 
 
 def open_output_folder(mode):
-    folder = "ai_selected" if mode == "ai" else "google_docs"
+    folder_by_mode = {
+        "ai": "ai_selected",
+        "paste": "chatgpt_paste",
+        "fetch": "google_docs",
+    }
+    folder = folder_by_mode.get(mode, "google_docs")
     path = os.path.join(BASE_DIR, folder)
     if os.path.exists(path):
         subprocess.run(["open", path], check=False, stderr=subprocess.DEVNULL)
@@ -67,17 +72,22 @@ def main():
     print("作成方法を選んでください。")
     print("1. Abstract抽出のみ（AI選定なし）")
     print("2. AIで10本を選定（日本語評価 + 英語abstract集）")
-    mode_number = ask_number("番号を入力してください: ", 1, 2)
-    mode = "fetch" if mode_number == 1 else "ai"
+    print("3. ChatGPT Thinking貼付用txtを作成してコピー（API不要）")
+    mode_number = ask_number("番号を入力してください: ", 1, 3)
+    mode = {1: "fetch", 2: "ai", 3: "paste"}[mode_number]
 
     label, topic_args = topic_menu()
-    script = "pubmed_fetch.py" if mode == "fetch" else "pubmed_ai_select.py"
+    script = "pubmed_ai_select.py" if mode == "ai" else "pubmed_fetch.py"
     args = [sys.executable, os.path.join(BASE_DIR, script), *topic_args]
+    if mode == "paste":
+        args.extend(["--paste-text-only", "--copy-paste-text"])
 
     print()
     print(f"選択: {label}")
     if mode == "ai":
         print("AI選定を使います。OPENAI_API_KEY が必要です。")
+    elif mode == "paste":
+        print("ChatGPT Thinking貼付用txtを作成し、クリップボードへコピーします。")
 
     run_command(args)
     open_output_folder(mode)
