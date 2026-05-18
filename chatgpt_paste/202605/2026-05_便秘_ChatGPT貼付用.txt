@@ -1,0 +1,77 @@
+【領域】
+小児便秘
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Multifaceted Assessment of Nutritional Status and Gastrointestinal Health in Duchenne Muscular Dystrophy: Approaches Based on Skinfold Thickness and Mid-Upper Arm Circumference.
+
+PMID:
+42084007
+
+Journal:
+Journal of paediatrics and child health (2026/May)
+
+Abstract:
+Duchenne muscular dystrophy (DMD) is a progressive neuromuscular disorder characterized by prominent nutritional and gastrointestinal challenges. This study aimed to evaluate the nutritional status, gastrointestinal symptoms and biochemical deficiencies in children with DMD, with a particular focus on the clinical utility of supplementary anthropometric indicators such as mid-upper arm circumference Z-score (MUAC-Z) and triceps skinfold thickness Z-score (TSF-Z). This cross-sectional study included 65 genetically confirmed DMD patients aged 5-18 years. Anthropometric data (BMI-SDS, MUAC-Z, TSF-Z), gastrointestinal complaints, serum vitamin D levels and clinical features were analysed. ROC curve analysis was conducted to determine age thresholds associated with symptom onset. The most frequently reported gastrointestinal complaints were abdominal bloating (50.8%), constipation (32.3%) and regurgitation (30.8%). Swallowing difficulties and prolonged meal times were significantly associated with older age and loss of ambulation. ROC analysis identified > 14.5 years as the age threshold for solid food dysphagia. A moderate, significant positive correlation was observed between MUAC-Z and BMI-SDS (r = 0.520; p < 0.001), whereas no significant association was found between TSF-Z and BMI-SDS. Vitamin D deficiency (< 30 ng/mL) was widespread (86.2%) and more prevalent among non-ambulatory patients (96.6% vs. 77.8%; p = 0.036). Malnutrition was more frequently observed in steroid-naïve children than in those receiving corticosteroid therapy (50% vs. 19%; p = 0.041). Nutritional deficiencies and gastrointestinal symptoms are commonly encountered in paediatric DMD and tend to increase with advancing age and functional decline. MUAC-Z and TSF-Z may offer complementary insights into muscle mass and fat distribution beyond BMI. These simple and non-invasive measurements could be useful additions to routine nutritional surveillance in DMD management.
+
+---
+2.
+
+Title:
+Evaluating linaclotide for the treatment of functional constipation in children and adolescents.
+
+PMID:
+42083746
+
+Journal:
+Expert opinion on pharmacotherapy (2026/May)
+
+Abstract:
+INTRODUCTION: Pediatric functional constipation is a highly prevalent disorder associated with significant morbidity and impaired quality of life. Despite widespread use of osmotic and stimulant laxatives, a substantial proportion of children remain symptomatic, highlighting an unmet need for novel therapies.
+AREAS COVERED: This review provides an overview of the mechanism of action, pharmacokinetics, safety, and clinical efficacy of linaclotide for the treatment of functional constipation in children. Evidence from phase 2 dose-finding studies, a pivotal phase 3 randomized controlled trial, and real-world data is summarized. Prior pediatric experience with other prosecretory and prokinetic agents is discussed to contextualize the current therapeutic landscape. A focused literature review was conducted using PubMed/MEDLINE and regulatory sources (U.S. Food and Drug Administration [FDA]), prioritizing pediatric clinical trials and observational studies evaluating linaclotide in functional constipation.
+EXPERT OPINION: Linaclotide may represent a mechanism-based therapeutic option for pediatric patients with functional constipation who remain symptomatic despite optimized conventional therapy. By targeting guanylate cyclase-C-mediated epithelial secretion, linaclotide is associated with improvements in bowel habits and a predominantly gastrointestinal safety profile. However, the pediatric evidence base remains relatively limited, and further studies are needed to define long-term outcomes, predictors of response, and its role within treatment algorithms.
+
+---
+3.
+
+Title:
+Lower and Biliary Disorders of Gut-Brain Interaction: Child and Adolescent.
+
+PMID:
+41713707
+
+Journal:
+Gastroenterology (2026/May)
+
+Abstract:
+Rome V provides updated criteria for pediatric disorders of gut-brain interaction, replacing age-based subdivisions with a classification based on the following regions and symptom patterns: abdominal pain disorders, defecation and anorectal disorders, and discomfort disorders. New entities were introduced, including biliary pain syndrome, centrally mediated abdominal pain syndrome, functional abdominal bloating, and proctalgia fugax. The term "infantile colic" has been replaced with "infant distress syndrome." Existing criteria for irritable bowel syndrome, functional constipation, and nonretentive fecal incontinence were revised to improve diagnostic clarity and reflect current clinical understanding. Rome V also acknowledges that disorders of gut-brain interaction may coexist with other conditions producing gastrointestinal symptoms. These updates are intended to support a more consistent diagnostic framework and guide appropriate management strategies for children and adolescents.
+
+---
+4.
+
+Title:
+An update on probiotics in paediatrics.
+
+PMID:
+41334956
+
+Journal:
+Current opinion in clinical nutrition and metabolic care (2026/May)
+
+Abstract:
+PURPOSE OF REVIEW: Probiotics are widely used in paediatrics, but efficacy varies by strain and indication. In 2023, the European Society for Paediatric Gastroenterology, Hepatology and Nutrition (ESPGHAN) Special Interest Group on Gut Microbiota and Modifications issued strain-specific recommendations for gastrointestinal disorders. This review summarises studies published since 2024 to assess whether new evidence warrants changes to these recommendations.
+RECENT FINDINGS: Lacticaseibacillus rhamnosus GG (LGG) and Saccharomyces boulardii are recommended for preventing antibiotic-associated diarrhoea. LGG, S. boulardii , Limosilactobacillus reuteri DSM 17938, or the combination of L. rhamnosus 19070-2 and L. reuteri DSM 12246 may be considered in acute gastroenteritis. For infant colic, recommendations include L. reuteri DSM 17938 or Bifidobacterium lactis BB-12 in breast-fed infants; for functional abdominal pain, L. reuteri DSM 17938 or LGG. No probiotics are recommended for constipation. For prevention of necrotising enterocolitis, weak recommendations include LGG or a combination of B. infantis BB-02, B. lactis BB-12 and Streptococcus thermophilus TH-4. There is no recommendation for or against probiotic-supplemented formulas.
+SUMMARY: Recent trials have not provided sufficient evidence to justify changes to the ESPGHAN recommendations. Evidence for probiotic use in paediatrics is confined to a few strains and indications. Larger multicentre studies with standardised preparations and clearly defined outcomes are still needed.
+
+---

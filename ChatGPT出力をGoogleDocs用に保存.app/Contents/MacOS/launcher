@@ -1,2 +1,2 @@
 #!/bin/zsh
-open -a Terminal "/Users/thama/Documents/GitHub/pubmed_abstract/ChatGPT出力をGoogleDocs用に保存.command"
+open -a Terminal "/Users/thama/Documents/GitHub/pubmed_abstract/archive/launchers/ChatGPT出力をGoogleDocs用に保存.command"

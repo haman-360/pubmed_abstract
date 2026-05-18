@@ -1,0 +1,28 @@
+【領域】
+小児外傷・熱性けいれん・頭部外傷
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Demographic and causal patterns in child cyclist head Injuries: Informing helmet test methods.
+
+PMID:
+42001674
+
+Journal:
+Accident; analysis and prevention (2026/Jul)
+
+Abstract:
+Children's cycle helmets are certified using the same impact conditions as adult helmets, which can overlook important factors contributing to child head injuries. Our objective is to identify common patterns in traumatic brain injury pathologies, age, sex, riding environment, cause of injury, helmet use, and helmet injury reduction in child cyclists to inform child-specific test methods. We reviewed 48,074 head injury cases in cyclists under 17 years across 24 studies. An aggregate data meta-analysis was conducted to identify recurring patterns overall and in studies with a high proportion of severe injuries (n = 3,542 cases). Cases most often involved male riders (71.8%, CI: 71.6-72.1%), aged 10-13 years (40.2%, CI: 39.1-41.3%), occurring on paved roads (75.0%, CI: 74.2-75.9%) without prior collision (84.4%, CI: 84.1-84.8%). Injuries were predominantly intracranial (73.7%, CI: 71.6-75.8%). Studies with mostly severe injuries included significantly more males, on-road incidents, motor vehicle collisions, intracranial haemorrhages, and skull fractures. Helmets reduced odds of head injuries (OR = 0.44, CI = 0.41-0.47), but the efficacy was lower for severe injuries (OR = 0.61, CI = 0.58-0.65), which contrasts most findings for adult helmets. The identified factors associated with severe injuries in child cyclists, such as vehicle collisions and intracranial injuries with rotational mechanisms, are not represented in current child helmet test procedures. This work provides a foundation for further work aimed at quantifying representative head impact biomechanics in typical and severe child cycling incidents, with the ultimate goal of developing helmet test procedures tailored specifically to children.
+
+---

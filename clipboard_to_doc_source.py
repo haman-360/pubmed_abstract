@@ -34,9 +34,100 @@ def read_clipboard():
     return result.stdout.strip()
 
 
+def is_markdown_table_separator(line):
+    cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+    if not cells:
+        return False
+    return all(re.fullmatch(r":?-{3,}:?", cell or "") for cell in cells)
+
+
+def is_markdown_table_start(lines, index):
+    if index + 1 >= len(lines):
+        return False
+    return "|" in lines[index] and is_markdown_table_separator(lines[index + 1])
+
+
+def split_markdown_row(line):
+    return [cell.strip() for cell in line.strip().strip("|").split("|")]
+
+
+def render_markdown_table(lines, start):
+    header = split_markdown_row(lines[start])
+    rows = []
+    index = start + 2
+    while index < len(lines) and "|" in lines[index].strip():
+        row = split_markdown_row(lines[index])
+        if len(row) == len(header):
+            rows.append(row)
+            index += 1
+            continue
+        break
+
+    head_html = "".join(f"<th>{html.escape(cell)}</th>" for cell in header)
+    body_rows = []
+    for row in rows:
+        cells = "".join(f"<td>{html.escape(cell)}</td>" for cell in row)
+        body_rows.append(f"<tr>{cells}</tr>")
+
+    table_html = "\n".join([
+        "<table>",
+        f"<thead><tr>{head_html}</tr></thead>",
+        "<tbody>",
+        "\n".join(body_rows),
+        "</tbody>",
+        "</table>",
+    ])
+    return table_html, index
+
+
+def paragraph_to_html(paragraph_lines):
+    text = "\n".join(paragraph_lines).strip()
+    if not text:
+        return ""
+    if text.startswith("### "):
+        return f"<h3>{html.escape(text[4:].strip())}</h3>"
+    if text.startswith("## "):
+        return f"<h2>{html.escape(text[3:].strip())}</h2>"
+    if text.startswith("# "):
+        return f"<h2>{html.escape(text[2:].strip())}</h2>"
+    return f"<p>{html.escape(text).replace(chr(10), '<br>')}</p>"
+
+
+def markdownish_text_to_html(text):
+    lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    html_parts = []
+    paragraph = []
+    index = 0
+
+    while index < len(lines):
+        line = lines[index]
+
+        if is_markdown_table_start(lines, index):
+            if paragraph:
+                html_parts.append(paragraph_to_html(paragraph))
+                paragraph = []
+            table_html, index = render_markdown_table(lines, index)
+            html_parts.append(table_html)
+            continue
+
+        if line.strip() == "":
+            if paragraph:
+                html_parts.append(paragraph_to_html(paragraph))
+                paragraph = []
+            index += 1
+            continue
+
+        paragraph.append(line)
+        index += 1
+
+    if paragraph:
+        html_parts.append(paragraph_to_html(paragraph))
+
+    return "\n".join(part for part in html_parts if part)
+
+
 def text_to_html(title, text):
-    escaped = html.escape(text)
-    escaped = escaped.replace("\n", "<br>\n")
+    body_html = markdownish_text_to_html(text)
     return f"""<!doctype html>
 <html lang="ja">
 <head>
@@ -44,16 +135,18 @@ def text_to_html(title, text):
   <title>{html.escape(title)}</title>
   <style>
     body {{ font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif; line-height: 1.65; color: #222; }}
-    h1 {{ line-height: 1.3; }}
+    h1, h2, h3 {{ line-height: 1.3; }}
     .meta {{ color: #555; }}
-    .content {{ white-space: normal; }}
+    table {{ border-collapse: collapse; width: 100%; margin: 16px 0 28px; }}
+    th, td {{ border: 1px solid #bbb; padding: 6px 8px; vertical-align: top; }}
+    th {{ background: #f1f3f5; }}
   </style>
 </head>
 <body>
   <h1>{html.escape(title)}</h1>
   <p class="meta">作成日時: {datetime.now().strftime('%Y-%m-%d %H:%M')}</p>
   <div class="content">
-{escaped}
+{body_html}
   </div>
 </body>
 </html>

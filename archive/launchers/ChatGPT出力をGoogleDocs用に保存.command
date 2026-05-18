@@ -2,7 +2,7 @@
 
 set -e
 
-cd "$(dirname "$0")"
+cd "/Users/thama/Documents/GitHub/pubmed_abstract"
 
 echo "ChatGPTの回答をGoogle Docs用ファイルに保存します。"
 echo

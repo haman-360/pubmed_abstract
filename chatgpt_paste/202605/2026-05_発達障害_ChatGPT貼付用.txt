@@ -1,0 +1,192 @@
+【領域】
+小児発達（ADHD・ASD・起立性調節障害）
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Investigating Prosodic Focus Perception and Production in Autism Spectrum Disorder: A Systematic Review and Meta-Analysis.
+
+PMID:
+41984053
+
+Journal:
+Journal of speech, language, and hearing research : JSLHR (2026/May)
+
+Abstract:
+PURPOSE: Speakers of all human languages use prosodic changes to encode focus, and the ability to perceive and produce prosodic focus is crucial for developing linguistic and communicative skills. This review aims to explore the performance of prosodic focus perception and production among individuals with autism spectrum disorder (ASD) and to identify potential factors contributing to inconsistent findings in previous studies.
+METHOD: We conducted a systematic search in three electronic databases and one web search engine to identify peer-reviewed research articles that compared the perception and production of prosodic focus between individuals with ASD and typically developing (TD) individuals. Effect sizes were calculated based on random-effects models. Meta-regression analyses were conducted to assess potential individual and methodological moderators.
+RESULTS: The comparison of perception accuracy between 441 individuals with ASD and 511 TD individuals revealed that individuals with ASD exhibited impaired prosodic focus perception (Hedges's g = -0.40), with no significant moderators for heterogeneity across studies. Meanwhile, we compared production accuracy between 483 individuals with ASD and 619 TD individuals, finding that production impairments in ASD were more pronounced (Hedges's g = -0.85). The moderator analysis revealed that nonverbal IQ and expressive language skills were significant moderators of production accuracy. Besides, individuals with ASD also exhibited greater pitch variation in prosodic focus production.
+CONCLUSION: Overall, these findings suggest that individuals with ASD exhibit greater difficulties in the production of prosodic focus compared to its perception, and increased pitch variation might be a prosodic feature associated with ASD.
+SUPPLEMENTAL MATERIAL: https://doi.org/10.23641/asha.31934088.
+
+---
+2.
+
+Title:
+The Effects of Environmental Enrichment on the Behavioral Profile of an Attention-Deficit/Hyperactivity Disorder Animal Model: A Systematic Review and Meta-Analysis.
+
+PMID:
+41982070
+
+Journal:
+Developmental psychobiology (2026/May)
+
+Abstract:
+In preclinical research, animal models are a valid alternative for studying both the genetics and environmental factors related to human psychopathologies. Indeed, in the last few decades, a great emphasis has been placed on the spontaneously hypertensive rat (SHR) inbred strain as an attention-deficit/hyperactivity disorder (ADHD) animal model. Therefore, this systematic review and meta-analysis aim to evaluate the effects of environmental enrichment (EE) on the behavior profile of the SHRs. All methods used to conduct the review were registered a priori on the PROSPERO platform (CRD42023442128). Our searches found 142 articles indexed in the electronic databases EMBASE, MEDLINE via PubMed, Scopus, and Web of Science. According to the eligibility criteria, six articles were included in the review. The meta-analysis demonstrated that EE decreased locomotor activity (SMD = -1.85, 95% CI = -3.18 to -0.52, Z = 2.72, p = 0.007, τ2 = 2.07, I2 = 86%) and enhanced memory (SMD = 1.32, 95% CI = 0.83 to 1.80, Z = 5.32, p < 0.001, τ2 = 0, I2 = 0%) in SHRs. Therefore, EE appears to have a beneficial effect on the behaviors of the SHR strain and could be considered in the search for nonpharmacological approaches in ADHD research.
+
+---
+3.
+
+Title:
+Effects of exercise on social dysfunction in children and adolescents with ADHD: A systematic review and network, dose-response meta-analyses.
+
+PMID:
+41932092
+
+Journal:
+Research in developmental disabilities (2026/May)
+
+Abstract:
+BACKGROUND: Children with ADHD frequently face social dysfunction hindering neurodevelopment. While exercise shows promise, the relative efficacy of specific modalities and precise dose-response relationships remain undefined. This study compares exercise modalities to identify the optimal dose for enhancing social functioning.
+METHODS: Seven databases were systematically searched from inception to March 2025 for randomized controlled trials of exercise interventions targeting social outcomes in children with ADHD. Exercise interventions were categorized by modality (closed-skill exercise, open-skill exercise, multicomponent exercise and mind-body therapy). Doses were harmonized to MET-min/week. Bayesian network meta-analysis (Hedges' g) synthesized relative efficacy, while a 4-knot natural-spline model identified the optimal dose-response range.
+RESULTS: Thirteen trials including 703 participants aged 6-13 years were eligible. Closed-skill exercise produced the largest improvements in social functioning (Hedges' g = -0.96, 95% CrI: -1.18 to -0.75). Multicomponent exercise (Hedges' g = -0.74, 95% CrI: -1.13 to -0.34) and mind-body therapy (Hedges' g = -0.53, 95% CrI: -0.79 to -0.28) showed moderate, clinically meaningful effects, whereas open-skill exercise had small effects (Hedges' g = -0.16, 95% CrI: -0.36 to -0.04). Dose-response analysis indicated an inverted U-shaped relationship, with a minimum effective dose of 660 MET-min/week and an optimal dose of 1290 MET-min/week. Both age and gender had a significant impact on the outcomes.
+CONCLUSION: Closed-skill and multicomponent exercise appear most effective for improving social functioning in children with ADHD, with benefits maximised at around 1290 MET-min/week.
+
+---
+4.
+
+Title:
+Therapeutic Effects of Dietary Supplements on Emotion-Related Symptoms in Children and Adolescents with Autism: A Systematic Review and Meta-analysis.
+
+PMID:
+41871665
+
+Journal:
+The Journal of nutrition (2026/May)
+
+Abstract:
+BACKGROUND: Autism spectrum disorder (ASD) is frequently accompanied by emotional symptoms such as irritability and anxiety, which significantly impact quality of life. Dietary supplements have been proposed as potential interventions, but their efficacy for emotion-related symptoms in children and adolescents with ASD remains unclear.
+OBJECTIVES: This systematic review and meta-analysis aimed to evaluate the efficacy of various dietary supplements in improving emotion-related symptoms in children and adolescents with ASD, and to explore differences across supplement types.
+METHODS: PubMed, Cochrane Library, Web of Science, and Embase were searched from inception to 15 May, 2025. Randomized controlled trials (RCTs) evaluating dietary supplements for emotion-related symptoms in children and adolescents with ASD were included. Primary outcomes were irritability, anxiety, and overall emotional symptoms. Data were pooled using random-effects models to calculate standardized mean differences (SMD) with 95% confidence intervals (CIs). Subgroup analyses were conducted by supplement type and emotion category. Study quality was assessed using the Cochrane risk of bias (RoB) 2.0.
+RESULTS: Twenty-one RCTs (22 studies) comprising 866 participants were included. Dietary supplements significantly improved irritability (SMD = -0.36, 95% CI: -0.68, -0.05, P = 0.02) and overall emotional symptoms (SMD = -0.44, 95% CI: -0.81, -0.08, P = 0.02) compared with control groups, with small-to-moderate effect sizes. No significant improvement was observed for anxiety (SMD = -0.15, 95% CI: -0.45, 0.14, P = 0.32). Subgroup analyses by supplement type showed that vitamin supplements had some benefits for irritability (SMD = -0.44, 95% CI: -0.79, -0.10, P = 0.01). Other supplement types showed nonsignificant effects. Moderate-to-high heterogeneity was observed across analyses (I2 = 64.42%-68.41%). Sensitivity analyses excluding high-risk bias studies confirmed the robustness of findings.
+CONCLUSIONS: Dietary supplements may improve irritability and overall emotional symptoms in children and adolescents with ASD. However, evidence strength is limited by study heterogeneity, RoB, and small-sample sizes. High-quality, large-scale RCTs are needed to confirm these findings and establish optimal intervention protocols.
+
+---
+5.
+
+Title:
+The impact of neuraxial labour analgesia on neurodevelopmental disorders in offspring: a systematic review and meta-analysis.
+
+PMID:
+41781242
+
+Journal:
+British journal of anaesthesia (2026/May)
+
+Abstract:
+BACKGROUND: Whether neuraxial analgesia during labour influences offspring neurodevelopment remains controversial, largely because of reliance on observational evidence susceptible to residual confounding. We aimed to re-evaluate this association through an updated and methodologically rigorous systematic review and meta-analysis, with particular emphasis on family-based designs that better account for shared familial factors.
+METHODS: PubMed, Embase, Web of Science, and the Cochrane Library were searched to September 16, 2025. Eligible studies assessed epidural, caudal, or combined spinal-epidural anaesthesia during labour and reported clinically defined neurodevelopmental outcomes. Random-effects meta-analyses with restricted maximum likelihood estimation were performed, with prespecified sibling-matched analyses.
+RESULTS: Nineteen studies were included. In sibling-matched cohorts, which provide stronger control for shared genetic and familial confounding, neuraxial labour analgesia was not associated with autism spectrum disorder (ASD) (adjusted hazard ratio 1.06; 95% confidence interval 0.98-1.14) or attention-deficit/hyperactivity disorder. Population-based analyses showed a small increase in ASD risk after adjustment (adjusted hazard ratio 1.10; 95% confidence interval 1.08-1.13), but effect estimates attenuated with increasing control for familial confounding. No clinically meaningful associations were observed for other neurodevelopmental outcomes.
+CONCLUSIONS: Across population-based and family-based observational evidence, this updated systematic review and meta-analysis showed that there is no convincing evidence that neuraxial labour analgesia is associated with an increased risk of ASD, attention-deficit/hyperactivity disorder or other neurodevelopmental disorders in offspring.
+SYSTEMATIC REVIEW PROTOCOL: PROSPERO (CRD420251148665).
+
+---
+6.
+
+Title:
+Validity of screening tools and risk factors for Co-occurring ADHD in children with epilepsy: a systematic review and meta-analysis.
+
+PMID:
+41740565
+
+Journal:
+Epilepsy & behavior : E&B (2026/May)
+
+Abstract:
+BACKGROUND: Attention-deficit/hyperactivity disorder(ADHD)is the most common neuropsychiatric comorbidity in children with epilepsy and occurs at prevalence rates 2.5 to 5.5 times higher in children with epilepsy than the general population. To date,the largest comprehensive meta-analysis(46 studies)estimated the pooled ADHD prevalence among children with epilepsy to be almost one-third(30.7%),with a greater proportion of the inattentive subtype.Children with epilepsy who also have ADHD have poorer seizure outcomes,lower quality of life,academic underachievement,and increased healthcare utilization.Despite being present in so many of them,ADHD frequently remains underdiagnosed in children with epilepsy because of symptom overlap,diagnostic complexity,and the lack of standardized screening protocols. In addition,both the validity of screening instruments and risk factors associated with comorbid ADHD need to be studied to develop ways to diagnose and treat ADHD in this vulnerable population.
+OBJECTIVE: To assess the diagnostic accuracy and discriminant validity of ADHD screening tools for children with epilepsy and comorbid ADHD and to conduct a systematic review and meta-analysis on the risk factors related to ADHD in children with epilepsy.
+METHODS: We conducted this study according to the PRISMA guidelines(PROSPERO:CRD42018094617).A systematic search was performed on PubMed,Embase,PsycINFO,Cochrane Library,and Web of Science from inception until December 2023,based on the developed search strategies.The included studies were appraised for quality using three different approaches according to the three-layer analytical framework,in which diagnostic accuracy of a single instrument(Layer 1)was assessed using QUADAS-2,discriminant validity(Layer 2)was analyzed with the Newcastle-Ottawa Scale,and risk factor/prevalence evidence synthesis(Layer 3)was synthesized narratively.Meta-analyses were carried out using the DerSimonian-Laird random-effects models,and heterogeneity assessment was conducted.
+RESULTS: Twelve studies met inclusion criteria for qualitative synthesis.Diagnostic accuracy(Layer 1):The SDQ-Hyperactivity subscale had the highest diagnostic accuracy(sensitivity 86.4%,specificity 97.8%,Youden index 0.84,DOR = 285).Discriminant validity(Layer 2):The overall pooled effect size was g = 0.27(95%CI:0.17-0.38)and the externalizing behavior measures showed the highest discriminant validity(g = 0.54).Risk factor evidence was narratively synthesized. In studies which reported extractable association estimates,earlier seizure onset,neurodevelopmental/cognitive vulnerabilities(executive dysfunction,developmental coordination disorder),male sex,medical comorbidities,or higher antiepileptic drug burden were associated with an increased risk of comorbid ADHD.
+CONCLUSIONS: The SDQ-Hyperactivity subscale demonstrates superior diagnostic accuracy for ADHD screening in children with epilepsy,supporting current ILAE recommendations.Externalizing behavior measures,particularly the DBD rating scale(g = 0.60),show the strongest discriminant validity.Children with poorly controlled seizures,early onset epilepsy and those receiving polytherapy warrant heightened screening vigilance.Implementation of systematic ADHD screening targeting high-risk subgroups may substantially improve early identification and intervention outcomes.
+
+---
+7.
+
+Title:
+Atypical antipsychotics and metabolic dysfunction-associated steatotic liver disease in children and adolescents: A systematic review.
+
+PMID:
+41665195
+
+Journal:
+International journal of psychiatry in medicine (2026/May)
+
+Abstract:
+ObjectiveAtypical antipsychotics (AAP) are commonly prescribed to children and adolescents and are associated with important adverse effects, including weight gain and metabolic syndrome. Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD) is the most common pediatric liver disease and is associated with serious complications, including liver cirrhosis. Given that MASLD and AAP are associated with liver cirrhosis and metabolic syndrome, a systematic review and meta-analysis was conducted to examine the association between AAP and MASLD in children and adolescents.MethodsThe systematic review examined studies exploring MASLD in subjects younger than 18 years taking AAP. All studies published in the English language between 1950 and 2020 were screened following PRISMA (Preferred Reporting items for Systematic Reviews and Meta-Analysis) guidelines.ResultsA total of 407 articles were initially retrieved, although only 3 studies met inclusion criteria. These included retrospective cohort and case-control studies with varying sample sizes and methodologies. Shedlock et al found increased obesity related risks in children with autism spectrum disorder; Kumra et al observed risperidone induced hepatotoxicity; and Mouzaki et al linked psychotropic use with more severe MASLD. Meta-analysis showed a small and statistically insignificant positive association between AAP and MASLD, with significant heterogeneity among studies, indicating a need for careful interpretation of results. Risk of bias ratings varied from fair to good.ConclusionThese findings will serve as a foundation for future studies, assist in devising interventions, and may help to reform clinical guidelines for using AAP in children and adolescents to ensure patient safety.
+
+---
+8.
+
+Title:
+The effects of acute and chronic exercise on executive functions and core symptoms in adults with ADHD: A systematic review and meta-analysis.
+
+PMID:
+41638541
+
+Journal:
+Psychology of sport and exercise (2026/May)
+
+Abstract:
+BACKGROUND: The effectiveness of exercise on executive functions and core symptoms in adults with attention-deficit/hyperactivity disorder (ADHD) remains unclear. This study aimed to synthesize existing evidence on the effects of both acute and chronic exercise on these outcomes.
+METHODS: We systematically searched Web of Science, PubMed, Embase, Cochrane Library, and PsycINFO from inception to April 18, 2025. Studies that implemented acute or chronic exercise interventions targeting either executive functions or core symptoms in adults with ADHD were included. Only parallel-group randomized controlled trials and crossover trials with non-exercise control conditions were eligible for meta-analysis.
+RESULTS: Fourteen studies met the inclusion criteria for systematic review, with eight studies included in the meta-analysis. Acute exercise interventions exerted a moderate positive effect on inhibitory control (Hedges' g = 0.55, 95% CI [0.32, 0.79], p < 0.001), and a small beneficial effect on core symptoms (Hedges' g = 0.23, 95% CI [0.03, 0.43], p = 0.024) in adults with ADHD. For chronic exercise interventions, qualitative synthesis of existing evidence suggested mixed results, which highlights the need for further research.
+CONCLUSIONS: This study provides preliminary evidence on the potential role of exercise as a nonpharmacological strategy for improving executive functions and core symptoms in adults with ADHD.
+
+---
+9.
+
+Title:
+Efficacy, Safety and Tolerability of Lisdexamfetamine Dimesylate Treatment Compared With Placebo in Adults With Binge-Eating Disorder: A Systematic Review and Meta-Analysis of Randomised Controlled Trials.
+
+PMID:
+41423727
+
+Journal:
+European eating disorders review : the journal of the Eating Disorders Association (2026/May)
+
+Abstract:
+INTRODUCTION: Binge-Eating Disorder (BED) causes significant psychosocial impairment and comorbidities like obesity, depression, and anxiety. Given the limited effectiveness of current treatments, Lisdexamfetamine dimesylate (LDX), approved for Attention-Deficit/Hyperactivity Disorder- ADHD and BED in the U.S., may provide a promising alternative by enhancing impulse control and targeting reward pathways.
+OBJECTIVE: This study aims to assess the efficacy, safety, and tolerability of LDX compared with placebo in adults with BED.
+METHODS: We systematically searched PubMed, Embase and Cochrane databates for randomised controlled trials (RCTs). We used a random-effects model with a 95% confidence interval (CI) to pool the data. Outcomes analysed included binge-eating frequency, Yale-Brown Obsessive-Compulsive Scale for Binge-Eating (Y-BOCS-BE), weight change, treatment-emergent adverse events (TEAEs), and discontinuation rates. Sensitivity analyses were performed to assess heterogeneity. This systematic review and meta-analysis was prospectively registered in PROSPERO (CRD42024619617).
+RESULTS: Five RCTs were included in this meta-analysis, encompassing a total of 988 participants. LDX significantly reduced binge-eating days per week by an average of 1.29 days and decreased obsessive-compulsive behaviours by 6.16 points on the Y-BOCS-BE scale, compared with placebo. Additionally, LDX led to a significant weight reduction with an average decrease of 1.31 standardised mean differences (SMD). Diarrhoea was identified as a significant side effect not previously acknowledged in guidelines (RR = 4.06). Discontinuation rates were comparable between LDX and placebo.
+CONCLUSION: LDX demonstrates significant efficacy in reducing binge-eating behaviours and associated obsessive-compulsive symptoms in patients with BED, with a tolerable safety profile. These findings support the clinical use of LDX for managing BED.
+
+---
+10.
+
+Title:
+Effects of Exercise on Hyperactivity/Impulsivity and Inhibitory Control at Behavioral and Electrophysiological Levels in ADHD: A Systematic Review and Meta-Analysis.
+
+PMID:
+41403099
+
+Journal:
+Journal of attention disorders (2026/May)
+
+Abstract:
+OBJECTIVE: This study aimed to assess the impact of exercise on hyperactivity/impulsivity, inhibitory control, and inhibition-related event-related potential (ERP) components in individuals with ADHD.
+METHOD: A systematic search identified relevant studies, and methodological quality was assessed using the Revised Cochrane Risk-of-Bias tool for randomized trials (RoB 2) and the Risk of Bias in Non-Randomized Studies of Interventions (ROBINS-I), with data analysis conducted using Stata software.
+RESULTS: A total of 36 studies (38 comparisons) were included, comprising 10 acute and 26 chronic exercise interventions. Exercise yielded a small-to-moderate improvement in inhibitory control but showed no significant effects on hyperactivity/impulsivity or inhibition-related N2 and P3 components. Subgroup analyses of inhibitory control revealed significant moderating effects of age (children/adolescents), intervention type (chronic interventions), frequency (three sessions per week), control condition (sedentary or no-intervention groups), and study quality (studies with moderate or high risk of bias).
+CONCLUSION: Exercise enhances inhibitory control in individuals with ADHD, with the effect being especially pronounced in children and adolescents. Chronic interventions and a frequency of three sessions per week appear to be most beneficial. However, it shows no significant effect on hyperactivity/impulsivity or inhibition-related N2 and P3 components. The impact of exercising should not be overestimated.
+
+---

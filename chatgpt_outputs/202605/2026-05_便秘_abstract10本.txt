@@ -1,0 +1,127 @@
+入力データ4本のうち、外来小児便秘診療への影響が比較的大きい3本を選定しました。Duchenne型筋ジストロフィーの論文は重要ですが、一般小児外来の便秘診療を直接変える内容ではないため除外寄りとしました。
+
+# 【第1部：日本語要約】
+
+---
+
+①タイトル
+
+Evaluating linaclotide for the treatment of functional constipation in children and adolescents.
+
+②PMID
+
+42083746
+
+③なぜ重要か
+
+小児機能性便秘に対するlinaclotideの薬理、臨床試験、実臨床データをまとめたレビューであり、従来治療で不十分な症例への新しい選択肢を考えるうえで重要です。
+
+④臨床への影響
+
+浸透圧性下剤や刺激性下剤で十分に改善しない小児便秘に対し、分泌促進薬という別機序の治療を検討する流れを理解できます。ただし小児での長期データや治療アルゴリズム上の位置づけはまだ限定的であり、現時点では専門医相談や難治例での選択肢として捉えるのが妥当です。
+
+⑤診療変更の必要性
+
+Yes：難治性便秘では「従来薬の増減だけ」ではなく、新規機序薬の存在を意識する必要があります。
+
+---
+
+①タイトル
+
+Lower and Biliary Disorders of Gut-Brain Interaction: Child and Adolescent.
+
+②PMID
+
+41713707
+
+③なぜ重要か
+
+Rome Vによる小児DGBIの診断基準更新を扱っており、機能性便秘、過敏性腸症候群、非貯留性便失禁などの診断整理に関わります。
+
+④臨床への影響
+
+外来で「便秘」「腹痛」「便失禁」が重なっている症例を、より一貫した診断枠組みで整理しやすくなります。器質疾患の除外と機能性疾患の診断を分けて考えるうえで、今後の診療・説明・紹介判断に影響します。
+
+⑤診療変更の必要性
+
+Yes：診断名や説明の整理に影響するため、Rome Vの変更点は把握しておく価値があります。
+
+---
+
+①タイトル
+
+An update on probiotics in paediatrics.
+
+②PMID
+
+41334956
+
+③なぜ重要か
+
+小児で広く使われがちなプロバイオティクスについて、適応ごとの有効性を整理した実用的レビューです。便秘に対しては推奨されるプロバイオティクスがない点が明確です。
+
+④臨床への影響
+
+便秘の保護者相談で「整腸剤やプロバイオティクスを追加すべきか」と聞かれた際、便秘改善目的では積極的に勧めにくいと説明しやすくなります。急性胃腸炎、抗菌薬関連下痢、乳児疝痛などとは適応を分けて説明する必要があります。
+
+⑤診療変更の必要性
+
+Yes：便秘に対するプロバイオティクス使用を見直す材料になります。
+
+---
+
+# 【第2部：英語Abstract】
+
+---
+
+1. Evaluating linaclotide for the treatment of functional constipation in children and adolescents.
+
+PMID:
+42083746
+
+Journal:
+Expert opinion on pharmacotherapy (2026/May)
+
+Abstract:
+INTRODUCTION: Pediatric functional constipation is a highly prevalent disorder associated with significant morbidity and impaired quality of life. Despite widespread use of osmotic and stimulant laxatives, a substantial proportion of children remain symptomatic, highlighting an unmet need for novel therapies.
+AREAS COVERED: This review provides an overview of the mechanism of action, pharmacokinetics, safety, and clinical efficacy of linaclotide for the treatment of functional constipation in children. Evidence from phase 2 dose-finding studies, a pivotal phase 3 randomized controlled trial, and real-world data is summarized. Prior pediatric experience with other prosecretory and prokinetic agents is discussed to contextualize the current therapeutic landscape. A focused literature review was conducted using PubMed/MEDLINE and regulatory sources (U.S. Food and Drug Administration [FDA]), prioritizing pediatric clinical trials and observational studies evaluating linaclotide in functional constipation.
+EXPERT OPINION: Linaclotide may represent a mechanism-based therapeutic option for pediatric patients with functional constipation who remain symptomatic despite optimized conventional therapy. By targeting guanylate cyclase-C-mediated epithelial secretion, linaclotide is associated with improvements in bowel habits and a predominantly gastrointestinal safety profile. However, the pediatric evidence base remains relatively limited, and further studies are needed to define long-term outcomes, predictors of response, and its role within treatment algorithms.
+
+---
+
+2. Lower and Biliary Disorders of Gut-Brain Interaction: Child and Adolescent.
+
+PMID:
+41713707
+
+Journal:
+Gastroenterology (2026/May)
+
+Abstract:
+Rome V provides updated criteria for pediatric disorders of gut-brain interaction, replacing age-based subdivisions with a classification based on the following regions and symptom patterns: abdominal pain disorders, defecation and anorectal disorders, and discomfort disorders. New entities were introduced, including biliary pain syndrome, centrally mediated abdominal pain syndrome, functional abdominal bloating, and proctalgia fugax. The term "infantile colic" has been replaced with "infant distress syndrome." Existing criteria for irritable bowel syndrome, functional constipation, and nonretentive fecal incontinence were revised to improve diagnostic clarity and reflect current clinical understanding. Rome V also acknowledges that disorders of gut-brain interaction may coexist with other conditions producing gastrointestinal symptoms. These updates are intended to support a more consistent diagnostic framework and guide appropriate management strategies for children and adolescents.
+
+---
+
+3. An update on probiotics in paediatrics.
+
+PMID:
+41334956
+
+Journal:
+Current opinion in clinical nutrition and metabolic care (2026/May)
+
+Abstract:
+PURPOSE OF REVIEW: Probiotics are widely used in paediatrics, but efficacy varies by strain and indication. In 2023, the European Society for Paediatric Gastroenterology, Hepatology and Nutrition (ESPGHAN) Special Interest Group on Gut Microbiota and Modifications issued strain-specific recommendations for gastrointestinal disorders. This review summarises studies published since 2024 to assess whether new evidence warrants changes to these recommendations.
+RECENT FINDINGS: Lacticaseibacillus rhamnosus GG (LGG) and Saccharomyces boulardii are recommended for preventing antibiotic-associated diarrhoea. LGG, S. boulardii , Limosilactobacillus reuteri DSM 17938, or the combination of L. rhamnosus 19070-2 and L. reuteri DSM 12246 may be considered in acute gastroenteritis. For infant colic, recommendations include L. reuteri DSM 17938 or Bifidobacterium lactis BB-12 in breast-fed infants; for functional abdominal pain, L. reuteri DSM 17938 or LGG. No probiotics are recommended for constipation. For prevention of necrotising enterocolitis, weak recommendations include LGG or a combination of B. infantis BB-02, B. lactis BB-12 and Streptococcus thermophilus TH-4. There is no recommendation for or against probiotic-supplemented formulas.
+SUMMARY: Recent trials have not provided sufficient evidence to justify changes to the ESPGHAN recommendations. Evidence for probiotic use in paediatrics is confined to a few strains and indications. Larger multicentre studies with standardised preparations and clearly defined outcomes are still needed.
+
+---
+
+# 【第3部：候補論文スコア一覧】
+
+| PMID     | タイトル                                                                                                                                                                              | 総合スコア | 役立つか | 短いメモ                                        |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: | ---- | ------------------------------------------- |
+| 42083746 | Evaluating linaclotide for the treatment of functional constipation in children and adolescents.                                                                                  |     9 | 高い   | 難治性小児機能性便秘に対する新規治療選択肢。外来方針に影響しうる。           |
+| 41713707 | Lower and Biliary Disorders of Gut-Brain Interaction: Child and Adolescent.                                                                                                       |     8 | 高い   | Rome V更新。便秘、腹痛、便失禁の診断整理に有用。                 |
+| 41334956 | An update on probiotics in paediatrics.                                                                                                                                           |     7 | 中等度  | 便秘にプロバイオティクスは推奨なし。保護者説明に実用的。                |
+| 42084007 | Multifaceted Assessment of Nutritional Status and Gastrointestinal Health in Duchenne Muscular Dystrophy: Approaches Based on Skinfold Thickness and Mid-Upper Arm Circumference. |     4 | 低い   | DMD患者の栄養・消化器評価としては重要だが、一般小児便秘外来への直接的影響は小さい。 |

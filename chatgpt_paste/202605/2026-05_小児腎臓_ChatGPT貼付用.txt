@@ -1,0 +1,1415 @@
+【領域】
+小児腎臓（ネフローゼ・IgA腎症）
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Towards precision medicine for brain arteriovenous malformations.
+
+PMID:
+42138076
+
+Journal:
+The Journal of clinical investigation (2026/May)
+
+Abstract:
+Recent advances in cerebrovascular genomics, single-cell biology, pharmacology, and gene editing technology are transforming our understanding of brain arteriovenous malformations (bAVMs) - a leading cause of pediatric hemorrhagic stroke. Once considered static anatomical defects, bAVMs are now recognized as dynamic, genetically driven lesions resulting from somatic mutations in KRAS, BRAF, and pathways involved in arteriovenous specification, angiogenesis, and vascular remodeling. By integrating human genetics, animal models, and endovascular innovations, researchers have uncovered convergent mechanisms that link endothelial Ras/MAPK hyperactivation to abnormal vessel growth and higher rupture risk. These insights provide a foundation for precision medicine approaches that combine molecular diagnostics - such as liquid or endoluminal biopsies - with mutation-specific pharmacotherapies and emerging CRISPR-based gene editing strategies. We suggest that genotype-guided interventions, tailored by spatial and developmental cerebrovascular context, could ultimately reclassify bAVMs from surgically incurable malformations to treatable molecular conditions.
+
+---
+2.
+
+Title:
+A new perspective on the pathophysiology of kidney diseases: the intracellular complement system- "complosome".
+
+PMID:
+42136966
+
+Journal:
+Frontiers in nephrology (2026)
+
+Abstract:
+The complement cascade is a vital component of the innate immune system. It consists of around 50 proteins, including circulating complement proteins and membrane-bound receptors. It operates through three main activation pathways: classical, lectin, and alternative. Dysregulation of the complement system is implicated in several kidney diseases, such as complement-mediated thrombotic microangiopathy, lupus nephritis (LN), C3 glomerulopathy and kidney transplantation. The complement system also extends beyond immune responses, influencing cellular processes through the "complosome" - an intracellular system that regulates metabolism, autophagy, and gene expression. This intracellular complement activity has been linked to kidney diseases, including glomerular and tubular injuries and renal cancer. As research progresses, targeting both extracellular and intracellular complement components holds promise for more effective treatments in complement -driven diseases. In this mini review, the role of the complement system in immune defense, the impact of the alternative pathway in kidney diseases, and the relationship between intracellular complement activity -complosome- and cellular functions have been discussed. Additionally, new approaches for the treatment of complement dysregulation have been explored.
+
+---
+3.
+
+Title:
+Aging with Thalassemia and Sickle Cell Disease: A Gerontological Model of Accelerated Multimorbidity and Function-Centered Care Beyond Midlife.
+
+PMID:
+42136895
+
+Journal:
+Mediterranean journal of hematology and infectious diseases (2026)
+
+Abstract:
+BACKGROUND: Thalassemia and sickle cell disease are now increasingly present as lifelong chronic conditions in high-income countries, with growing numbers of patients reaching their 50s and 60s. This demographic shift transforms hemoglobinopathies from childhood-threatening disorders into chronic, multisystem conditions with cumulative morbidity. However, data specifically focused on later-life hemoglobinopathy populations remain limited, fragmented, and often extrapolated from younger cohorts, leaving hematologists and internists relatively unprepared for the functional decline, vulnerability, and geriatric syndromes that can characterize later life in these populations.
+CONTENT: This expert opinion narrative review synthesizes available evidence on the intersection of disease-driven pathology (anemia, hemolysis, vasculopathy), long-term treatment burden (transfusion-related iron overload, chelation toxicities), and aging biology (declining physiologic reserve, sarcopenia, cognitive vulnerability) in adults beyond midlife. Given the historical survival patterns in hemoglobinopathies and the inconsistent definition of "older adult" across studies, particularly in sickle cell disease, we use a pragmatic age threshold of >=50 years for the main gerontological framing, while incorporating evidence from cohorts beginning at 40-49 years when that is how the literature defines older hemoglobinopathy populations. We distinguish disease-specific priorities: thalassemia faces myocardial and hepatic iron deposition and endocrine failure, while sickle cell disease confronts cerebrovascular disease, chronic pain, and cardiopulmonary complications. Critically, care targets in later life must extend beyond survival and organ-specific metrics to functional endpoints, disability prevention, cognitive health, and quality of life. A conceptual mapping links mechanisms of hemoglobinopathy to established gerontology constructs, including inflammaging, cellular senescence, and vascular aging, while acknowledging that direct mechanistic evidence in older hemoglobinopathy cohorts remains incomplete.
+CONCLUSIONS: Three adjustments are necessary in adults beyond midlife: monitoring should prioritize early detection of treatable complications and emerging functional impairment rather than only documenting cumulative organ damage; therapeutic decisions should weigh treatment benefit, treatment burden, comorbidity burden, and goals of care rather than defaulting to pediatric-era protocols; and care systems should embed shared decision-making, palliative principles, and multidisciplinary coordination within primary care networks, with specialist hemoglobinopathy centers functioning as disease-specific hubs rather than stand-alone primary care providers.
+
+---
+4.
+
+Title:
+A Narrative Review of C3 Glomerulopathy: From Pathogenesis to Targeted Therapy.
+
+PMID:
+42131278
+
+Journal:
+Canadian journal of kidney health and disease (2026)
+
+Abstract:
+PURPOSE OF THE REVIEW: Complement factor 3 (C3) glomerulopathy (C3G) is an ultra-rare, progressive, complement-mediated kidney disease. Despite many advances in the understanding of its underlying pathophysiology, C3G remains a clinical challenge due to the overall burden of disease, diagnostic complexity, poor prognosis, lack of approved therapies, and limited access to drugs for kidney diseases in Canada. This narrative review explores the diagnosis and management of individuals with C3G, including novel complement-mediated therapies and their potential impact on patients and outcomes.
+SOURCES OF INFORMATION: This narrative review is based on the best available data, current treatment guidelines, and the authors' clinical experiences. Information for the patient perspective section was collected through discussions with two individuals with C3G.
+METHODS: A panel of Canadian nephrologists who actively care for individuals with C3G was assembled. A rare disease advocate and two individuals with C3G were invited to share their lived experiences. The authors conducted a comprehensive review of the literature to explore the state of the science and future directions in C3G, highlighting current limitations and unmet needs.
+KEY FINDINGS: C3 glomerulopathy is caused by dysregulation of the alternative complement pathway, leading to the deposition of complement proteins and their cleavage products in kidney glomeruli. The consequence of deposition of C3 is glomerular inflammation and tissue damage, which lead to proliferative glomerulonephritis and remodeling of the glomerular capillary walls. Individuals diagnosed with C3G experience significant symptoms that adversely impact their quality of life. Nearly half of patients develop kidney failure within 10 years of diagnosis. C3 glomerulopathy recurrence after kidney transplant occurs in more than half of patients. Severity of proteinuria and reduced estimated glomerular filtration rate (eGFR) are among the most important clinical predictors of kidney failure with further research required for the utility of biomarkers to guide prognosis. There is no established standard of care and no therapies specifically approved for individuals with C3G in Canada. Complement-directed therapies, iptacopan and pegcetacoplan, have demonstrated significant reductions in proteinuria and stabilization in kidney function, offering hope for individuals with C3G, including post-transplant. This review offers an up-to-date synthesis of current knowledge on C3G for Canadian nephrologists at a juncture where targeted therapies are becoming available.
+LIMITATIONS: A systematic review of the literature was not undertaken. Key takeaways are based on currently available evidence, of which head-to-head clinical trials are lacking. The possibility for bias based on the authors' clinical experiences may have occurred.
+JUSTIFICATION: La glomérulopathie à dépôts de C3 (GC3) est une maladie rénale très rare et progressive, médiée par le système du complément. En dépit des progrès dans la compréhension de sa physiopathologie, la GC3 demeure un enjeu clinique majeur en raison de son fardeau, de la complexité du diagnostic, du pronostic défavorable, de l’absence de traitements approuvés et de l’accès limité aux médicaments pour traiter les néphropathies au Canada. Cette revue narrative examine le diagnostic et la prise en charge de la GC3, notamment les nouvelles approches thérapeutiques ciblant le complément, ainsi que leurs effets potentiels sur les résultats cliniques.
+SOURCES DE L’INFORMATION: Cette revue narrative s’appuie sur les meilleures données disponibles, les recommandations actuelles de prise en charge et l’expérience clinique des auteurs. Le point de vue des patients a été recueilli au moyen de discussions itératives avec deux personnes atteintes de GC3.
+MÉTHODOLOGIE: Un groupe de néphrologues canadiens engagés dans la prise en charge active de personne atteinte de GC3 a été constitué. Une personne représentant les patients atteints de maladies rares et deux individus atteints de GC3 ont été invités à partager leurs expériences vécues. Les auteurs ont examiné la documentation existante afin d’explorer l’état des connaissances et les orientations futures sur la GC3, en soulignant les limites actuelles et les besoins non couverts.
+PRINCIPALES CONCLUSIONS: La C3G est causée par un dérèglement de la voie alternative du complément, menant au dépôt de protéines du complément et de leurs produits de clivage dans les glomérules rénaux. Ce dépôt de C3 provoque une inflammation des glomérules et des lésions tissulaires, entraînant une glomérulonéphrite proliférative et un remodelage des parois capillaires glomérulaires. Les personnes qui reçoivent un diagnostic de GC3 présentent des symptômes importants qui affectent négativement leur qualité de vie. Près de la moitié des patients développent une insuffisance rénale dans les dix ans suivant ce diagnostic. Après la transplantation rénale, la GC3 récidive chez plus de la moitié des patients. La gravité de la protéinurie et la réduction du DFGe figurent parmi les plus importants prédicteurs cliniques de l’insuffisance rénale. Des recherches supplémentaires sont nécessaires pour préciser le rôle des biomarqueurs dans l’évaluation pronostique. Au Canada, il n’existe aucune norme de soins établie ni traitement spécifiquement approuvé pour la prise en charge de la GC3. Des thérapies ciblant le système du complément (iptacopan et pegcetacoplan) ont démontré une réduction significative de la protéinurie et une stabilisation de la fonction rénale, offrant un espoir aux personnes atteintes de GC3, y compris après une transplantation. Cette revue narrative présente une synthèse actualisée des connaissances sur la C3G pour les néphrologues canadiens, à un moment charnière marqué par l’arrivée des thérapies ciblées.
+LIMITES: Aucune revue systématique de la littérature n’a été réalisée. Les principales conclusions de cette étude reposent sur les données probantes actuellement disponibles, en l’absence d’essais cliniques comparatifs directs. La possibilité d’un biais fondé sur les expériences cliniques des auteurs est envisageable.
+
+---
+5.
+
+Title:
+[Semaphorin 3B membranous nephropathy after hematopoietic stem cell transplantation in a child: a case report and literature review].
+
+PMID:
+42130362
+
+Journal:
+Zhongguo dang dai er ke za zhi = Chinese journal of contemporary pediatrics (2026/May)
+
+Abstract:
+A 10-year-old boy was admitted with facial edema and proteinuria for two months, occurring nine months after hematopoietic stem cell transplantation. He was clinically diagnosed with nephrotic syndrome and showed no remission after four weeks of standard glucocorticoid therapy, suggesting steroid-resistant disease. Renal biopsy was consistent with membranous nephropathy. Mass spectrometry identified granular co-deposition of IgG and semaphorin 3B (Sema3B) along the glomerular basement membrane, establishing the diagnosis of Sema3B-associated membranous nephropathy. Treatment with glucocorticoids combined with tacrolimus led to a marked reduction in proteinuria, resolution of edema, and clinical stabilization over a three-month follow-up, with no recurrence. This case highlights that Sema3B-associated membranous nephropathy may occur after hematopoietic stem cell transplantation in children and underscores the importance of precise diagnostics in pediatric nephropathies. Future multicenter studies are needed to clarify disease course and genetic susceptibility, develop specific biomarkers and therapies, promote individualized treatment, and improve prognosis.
+患儿，男，10岁，因造血干细胞移植后9个月，出现颜面水肿、蛋白尿2个月入院。临床诊断肾病综合征，经规范糖皮质激素治疗4周，尿蛋白未转阴，考虑激素耐药。行肾穿刺活检术，肾脏病理提示膜性肾病，质谱分析肾小球基底膜颗粒状IgG和信号蛋白 3B（semaphorin 3B, Sema 3B）共沉积，诊断为Sema 3B膜性肾病。给予糖皮质激素联合他克莫司治疗后，随访3个月，患儿尿蛋白明显减少，水肿消退，病情稳定，未出现复发。该病例提示儿童造血干细胞移植后可能出现Sema 3B膜性肾病，提示精准诊断在儿科肾病中的重要性，未来需多中心研究明确其病程和遗传易感性，开发特异性标志物和疗法，推动个体化治疗，改善患儿预后。.
+
+---
+6.
+
+Title:
+Metabolic complications of citrate anticoagulation in continuous renal replacement therapy (crrt): a delphi consensus on indications, monitoring and management.
+
+PMID:
+42129846
+
+Journal:
+Critical care (London, England) (2026/May)
+
+Abstract:
+BACKGROUND: Regional citrate anticoagulation (RCA) is recommended by guidelines over systemic heparinization for continuous renal replacement therapy (CRRT). However, its use in patients with impaired citrate metabolism poses specific challenges and standardized guidance for managing RCA-related metabolic complications remains lacking.
+METHODS: A modified Delphi study was conducted according to a predefined protocol and reported in adherence with the CREDES (Conducting and REporting of DElphi Studies) checklist. The international expert panel comprised 29 clinicians and researchers from Europe, United States and Canada, with recognized expertise in RCA for CRRT in critically ill patients. Three iterative survey rounds were conducted to obtain agreement with proposed statements.
+RESULTS: Twenty-three experts completed all Delphi rounds, achieving consensus on twenty-two statements. RCA was considered feasible in patients with liver dysfunction, severe shock, or hyperlactatemia, with close monitoring and citrate dosing adjustment. Citrate accumulation can be prevented and managed using a stepwise approach, focused on reducing citrate delivery and discontinuing RCA in cases of overt accumulation. Metabolic alkalosis and electrolyte disturbances were identified as relevant but manageable complications, underscoring the need for individualizing CRRT settings.
+CONCLUSION: These consensus statements support the use of RCA during CRRT in critically ill patients with impaired citrate metabolism and provide practical guidance for monitoring and management of metabolic complications. However they reflect expert opinion, especially for questions with limited data and low-level evidence.
+
+---
+7.
+
+Title:
+Central nervous system complications after allogeneic haematopoietic cell transplantation: best practice recommendations from the EBMT practice harmonisation and guidelines committee on epidemiology, outcome and neuroimaging.
+
+PMID:
+42129311
+
+Journal:
+Bone marrow transplantation (2026/May)
+
+Abstract:
+CNS complications (CNSC) may occur in a significant proportion of patients after allogeneic haematopoietic cell transplantation (allo-HCT). They can be differentiated into infectious and non-infectious CNSC, such as vascular pathologies (e.g., bleeding, stroke), drug-related abnormalities, and CNS relapse of the underlying malignancy. Initiation of prompt and adequate diagnostics - mainly neuroimaging and cerebrospinal fluid (CSF) analyses - and treatment are crucial to improve the prognosis. Here, we report on the epidemiology, outcome, and neuroimaging of CNSC after allo-HCT. We also provide an overview of the special considerations for children with these complications. These findings and recommendations were developed during a multidisciplinary EBMT harmonisation workshop. Novel diagnostics, such as CSF next-generation sequencing (NGS) and special MRI sequences, are emerging and may improve the accuracy of diagnosis for selected CNSC. The prognosis of post-transplant CNSC is heterogeneous, with drug-related CNSC mainly having a favourable prognosis, while the outcome of CNS bleeding, CNS leukaemia, and cerebral fungal disease is still frequently dismal. A high level of awareness is crucial in the clinical routine - especially in distinct subgroups such as paediatrics - besides the development of novel algorithms, diagnostics, and treatment approaches to improve the outcome.
+
+---
+8.
+
+Title:
+A lifecycle governance and learning health system framework for trustworthy, generalizable, and sustainable human-ai partnership in clinical practice: Lessons from the asthma-guidance and prediction system (A-GPS).
+
+PMID:
+42128801
+
+Journal:
+Journal of the National Medical Association (2026/May)
+
+Abstract:
+The integration of artificial intelligence (AI) into clinical decision support (CDS) holds promise for proactive, personalized, and precision care. However, current understanding of how to establish trustworthy human-AI partnerships is in its infancy, despite its critical importance for implementing AI in healthcare. We present the Asthma-Guidance and Prediction System (A-GPS) as a case study of a practice-integrated AI platform that demonstrates how trustworthy, generalizable and sustainable AI can be developed, evaluated, and implemented in real-world asthma care. We describe major challenges and solutions based on our real-world experience during the process and offer the practical framework, approaches, tools and workflow for implementing trustworthy, generalizable and sustainable AI in frontline practices. While A-GPS is an asthma-specific AI tool, it was built on top of a disease-agnostic electronic health record (EHR)-integrated clinical decision support (CDS) platform based on an Application Programming Interface (API)‑first backbone of reusable services. It was designed to reduce chart-review/processing burden and enable proactive, guideline-concordant asthma management by synthesizing fragmented longitudinal multimodal data into a clinical decision-relevant summary at the point of care. A-GPS platform integrates multiple natural language processing (NLP) algorithms to leverage free texts info in EHRs, machine learning model to offer risk stratification, and remote patient monitoring (RPM) approaches to capture real-time data from patients, enabling remote asthma (chronic disease) care. The platform has been deployed via Substitutable Medical Applications and Reusable Technologies-on-Fast Healthcare Interoperability Resources (SMART-on-FHIR) to ensure in-workflow delivery and maintainable governance making it flexible and interoperable across different EHRs systems and different chronic diseases. The translational maturity of A-GPS as an AI-powered CDS tool for pediatric asthma was demonstrated and sustained through engagement and co-design with diverse community and care team partners, including adult and pediatric Community Advisory Board, pediatric patients and their parents, clinicians (primary care providers and specialists), nurses, schedulers, as well as bioethicists and regulatory experts. Moreover, the tool was evaluated in two randomized clinical trial (RCT)s. The first trial showed a 67% reduction in clinicians' EHR review time, high clinician satisfaction, potential healthcare cost savings, fairness in model performance, and no adverse events. Trustworthiness was further assessed and supported through fairness evaluation by participant socioeconomic status (SES) using the HOUsing-based SocioEconomic Status (HOUSES) index, human-centered user interface/user experience (UI/UX) analysis, clinician workflow optimization, transparent governance practices, and best practices for regulatory science. The A-GPS experience operationalizes a reproducible, lifecycle-governed framework for generating decision-grade evidence on safety, effectiveness, usability, fairness, and workflow integration, directly addressing the translational gap between AI model development and trustworthy, sustainable deployment in real-world clinical environments. These efforts led to national recognitions, including invitation to the inaugural American Medical Informatics Association (AMIA) AI Showcase, and AI evaluation use case for a national health AI coalition. The second RCT evaluated the feasibility of integrating a remote patient monitoring (RPM) device (home spirometry) into the A-GPS platform, with a published RCT protocol that serves as a framework for RCT for evaluating AI models under the Standard Protocol Items: Recommendations for Interventional Trials (SPIRIT) guidelines for RCTs that evaluate AI tools, offering the practical framework, approaches, tools, and workflow for trustworthy, generalizable and sustainable AI tools in asthma care. This work illustrates how team science, community engagement, implementation science, and learning health system principles can be operationalized to establish a human-AI partnership model to advance translational science and clinical care, with the goal of improving health for all.
+
+---
+9.
+
+Title:
+Suprapubic versus transurethral diversion after hypospadias repair: A systematic review and meta-analysis.
+
+PMID:
+42128736
+
+Journal:
+Journal of pediatric urology (2026/May)
+
+Abstract:
+INTRODUCTION: Hypospadias repair is a common pediatric urological procedure often requiring urinary diversion to minimize postoperative complications. The optimal diversion technique-transurethral versus suprapubic diversion -remains debated. The aim of this study is to systematically review and compare outcomes of transurethral versus suprapubic diversion following hypospadias repair in pediatric patients.
+METHODS: A systematic review and meta-analysis were performed in accordance with PRISMA guidelines. PubMed, Scopus, Web of Science, and Cochrane Library were searched through December 2024. Eligible studies included randomized controlled trials and comparative observational studies reporting outcomes of transurethral versus suprapubic diversion. Main outcomes included urethrocutaneous fistula, meatal stenosis, and bladder spasms.
+RESULTS: Five studies including 680 patients were analyzed. Initial pooled analysis showed no significant difference between transurethral and suprapubic diversion in fistula incidence (RR 1.21, 95% CI 0.75-1.96; p = 0.42). Sensitivity analysis excluding one study suggested a potential reduction in fistula risk with suprapubic diversion (RR 0.35, 95% CI 0.16-0.78; p = 0.01). Meatal stenosis rates were comparable between groups (RR 1.25, 95% CI 0.60-2.59; p = 0.55). For bladder spasms, pooled analysis showed no difference (RR 0.81, 95% CI 0.55-1.20; p = 0.29), but sensitivity analysis favored suprapubic diversion (RR 0.08, 95% CI 0.02-0.32; p = 0.0003).
+CONCLUSION: Both methods yield comparable outcomes with some potential advantages of suprapubic diversion in some outcomes only after sensitivity analysis. While SPT may offer a viable alternative to traditional urinary catheterization in select cases of hypospadias repair, the current evidence base does not support definitive conclusions about its superiority or inferiority. Given the variability in study quality, small sample sizes, and heterogeneity in reported outcomes, no definitive recommendation can yet be made. Future RCTs are essential to guide practice.
+
+---
+10.
+
+Title:
+Blood Pressure Assessment Across the Lifespan: Improving Clinical Research and Clinical Practice: A National Heart, Lung, and Blood Institute Workshop Report.
+
+PMID:
+42126153
+
+Journal:
+Journal of the American College of Cardiology (2026/May)
+
+Abstract:
+Hypertension is a modifiable risk factor for cardiovascular disease (CVD) and its prevalence is high in the United States and worldwide. Adequate characterization of blood pressure (BP) is essential for the diagnosis and management of hypertension. However, BP assessment can be challenging because of the unique influences across the lifespan, disease conditions, and physical environmental context. Moreover, complex uncertainties in BP assessment may contribute to underdiagnosis, undertreatment, and preventable morbidity and mortality. Recent advances in BP measurement devices have enabled comprehensive characterization of BP that could dramatically change how hypertension is managed to optimize CVD risk reduction, avoid complications of low BP, and improve hypertension control rates. To address the rapidly evolving landscape in BP assessment, the National Heart, Lung, and Blood Institute of the U.S. National Institutes of Health convened a 2-day workshop of clinicians and researchers in December 2024. The present report summarizes the topics presented and discussed during the meeting, which focused on the latest evidence on BP assessment as well as obstacles and knowledge gaps to be addressed to advance BP assessment in clinical practice and research.
+
+---
+11.
+
+Title:
+Circulating Short-Chain Fatty Acid Levels in Chronic Kidney Disease: A Systematic Review and Meta-Analysis.
+
+PMID:
+42124048
+
+Journal:
+Nutrients (2026/Apr)
+
+Abstract:
+BACKGROUND: Chronic kidney disease (CKD) is characterised by a disrupted gut-kidney axis, wherein intestinal dysbiosis is associated with the accumulation of uraemic toxins and the potential depletion of beneficial short-chain fatty acids (SCFAs). Whilst acetate, propionate, and butyrate are known to modulate systemic inflammation and blood pressure, their precise circulating concentrations across different CKD stages and age groups remain poorly defined. This systematic review and meta-analysis aimed to quantify blood SCFA concentrations in CKD patients compared to healthy controls.
+METHODS: We conducted a systematic search of Medline, EMBASE, and the Cochrane Library for clinical studies reporting blood SCFA concentrations in humans with CKD. Methodological quality was assessed using the NIH tool. Standardised mean differences (SMDs) were calculated for the quantitative meta-analysis, with subgroup analyses performed for age, CKD stage, and treatment modality (dialysis vs. transplantation).
+RESULTS: Twenty-one studies encompassing 9661 participants were included. Quantitative synthesis revealed a significant and consistent systemic depletion of circulating acetate and propionate in adult CKD patients compared to healthy controls (p < 0.05). This depletion followed a stage-dependent trajectory, worsening alongside declining glomerular filtration rates. Notably, a "butyrate paradox" was identified in paediatric cohorts; whilst adults showed progressive butyrate depletion, children with CKD often maintained or exhibited elevated levels, particularly in the context of hypertension. Furthermore, whilst haemodialysis patients exhibited the most profound SCFA deficiencies, kidney transplantation appeared to partially restore these metabolites toward healthy baseline levels.
+CONCLUSIONS: CKD is associated with a profound systemic reduction in acetate and propionate, supporting the model of a compromised gut-kidney axis based on converging evidence. The divergent results for butyrate in paediatric versus adult populations suggest that SCFA metabolism is influenced by age-related factors or compensatory mechanisms. These findings highlight the potential for SCFA monitoring as a candidate or emerging markers for detecting early renal damage and stratifying risk.
+
+---
+12.
+
+Title:
+Machine learning model predicts acute kidney injury in pediatric patients after cardiac surgery: a systematic review and meta-analysis.
+
+PMID:
+42121090
+
+Journal:
+BMC nephrology (2026/May)
+
+Abstract:
+BACKGROUND: Acute kidney injury (AKI) is a common complication following pediatric cardiac surgery, frequently leading to poor outcomes and even death in severe cases. Early prevention remains the primary intervention strategy. Studies have developed prediction models to identify at-risk children at an early stage. This study systematically evaluate existing AKI prediction models to support their clinical utility and future refinement.
+METHODS: PubMed, Embase, Web of Science, Cochrane Library, China National Knowledge Infrastructure, Wanfang and SinoMed were searched from inception to 31 December, 2024. The search of references from included studies, as well as the manual search, extended until November 30, 2025. Literature searching, screening, and data extraction were done by two authors. Quality evaluation according to prediction model risk of bias assessment tool (PROBAST). Area under the receiver operating characteristic curve (AUROC) was pooled using a random-effects model to summarize the overall performance of existing models, exploring sources of heterogeneity of performance through subgroup analysis and meta-regression. Sensitivity analysis and Egger's method were used to analyze the stability of the included studies and to identify publication bias. This study was registered with PROSPERO (CRD42024593112) and reported following the Transparent Reporting of Multivariable Prediction Models for Individual Prognosis or Diagnosis: Checklist for Systematic Reviews and Meta-Analysis (TRIPOD-SRMA).
+RESULTS: A total of 2189 studies were screened which represented the total number of studies retrieved from the database search, the search of references from included studies, and the manual search. Nineteen studies were included in this review. Included studies differed in study design, AKI definition, predictor screening, model development and validation and model performance. The overall pooled AUROC was 0.850 (95% CI, 0.810-0.890), but all studies were evaluated as high risk of bias using the PROBAST. Heterogeneity in model performance was high, and study design and development methods were identified as possible sources of heterogeneity in pooled AUROC. Included studies were stable and free of publication bias.
+CONCLUSIONS: This systematic review suggested that machine learning models for predicting postoperative AKI in pediatric cardiac surgery indicated good discriminative ability. However, the high risk of bias across all included studies and the significant heterogeneity in model performance indicated that the reported performance may be overestimated. The high heterogeneity observed highlights the substantial variability in model performance, which is likely driven by differences in study design and development methods. The clinical utility of these models was currently limited due to the lack of external validation in most studies and the methodological limitations identified. Future research must incorporate rigorous study design, transparent reporting based on the TRIPOD guidelines, and external validation to develop prediction models with clinical utility.
+
+---
+13.
+
+Title:
+Research Trends in HIV-Associated Nephropathy (HIVAN) from 2015 to 2025: A Bibliometric Analysis Using CiteSpace.
+
+PMID:
+42117106
+
+Journal:
+HIV/AIDS (Auckland, N.Z.) (2026)
+
+Abstract:
+BACKGROUND: In recent years, HIV-associated nephropathy (HIVAN) has significantly impacted the compliance, quality of life, and treatment outcomes for patients with AIDS. This study employs CiteSpace bibliometric analysis to predict emerging topics and research trends, thereby offering clear scientific navigation and strategic recommendations for HIVAN research.
+METHODS: We retrieved publications related to HIVAN from the Web of Science Core Collection covering the period from 2015 to 2025. Utilizing CiteSpace, we analyzed the co-occurrence network, clustering,and timeline of research trends in this field to illustrate the knowledge evolution surrounding HIVAN.
+RESULTS: A total of 1,470 publications were included from 2015 to 2025. The United States maintained its dominant position in medical research, while countries such as the United Kingdom, South Africa, France, and China emerged as key contributors in the field. Prominent institutions, including the University of California system, Johns Hopkins University, and University of the London, were central to HIVAN research. Scholars such as Estrella, Michelle M. Shlipak, Michael G. and Kopp, Jeffrey B exhibited substantial academic output and garnered considerable citation attention. Leading journals, including "Clinical Infectious Diseases", "PLOS ONE" and "AIDS" served as premier venues for review articles, providing essential platforms and establishing foundations for ongoing research. The research activity and academic impact of HIVAN within the sub-discipline of nephrology currently represent prominent areas of inquiry.
+CONCLUSION: This study examined the knowledge network structure of HIVAN from 2015 to 2025 examined bibliometric analysis. Future research should focus on enhancing international collaboration, particularly in resource limited regions, to investigate various intervention strategies aimed at improving compliance, quality of life, and treatment outcomes for HIVAN patients.
+
+---
+14.
+
+Title:
+Red Blood Cell Exchange in Sickle Cell Disease Care: A Comprehensive Review.
+
+PMID:
+42116603
+
+Journal:
+Therapeutic apheresis and dialysis : official peer-reviewed journal of the International Society for Apheresis, the Japanese Society for Apheresis, the Japanese Society for Dialysis Therapy (2026/May)
+
+Abstract:
+Erythrocytaphoresis or RBC exchange (RBCX) is a key intervention in the management of sickle cell anemia for both chronic prophylaxis and emergent clinical care during sickle cell disease (SCD) emergencies. RBCX removes sickled RBCs while replacing them with donor RBCs and reducing hemoglobin S (HbS) levels. Unlike simple transfusion, it minimizes iron overload and avoids fluid overload, making it a mainstay for the management of acute stroke, acute chest syndrome, and other settings where fluid overload can complicate disease morbidity. Chronic RBCX has shown benefit in not only improving oxygenation and reducing hospitalization rates but also improving overall quality of life in SCD patients. Advances in apheresis technology and personalized transfusion have brought new opportunities for enhancement in safety, efficacy, and feasibility of this therapeutic modality. In this review, we explore the clinical efficacy and role of chronic RBC exchange and its long-term outcomes in managing complications of SCD.
+
+---
+15.
+
+Title:
+Challenges and knowledge gaps in sex differences in cardio-kidney-metabolic syndrome across the lifespan.
+
+PMID:
+42116222
+
+Journal:
+Biology of sex differences (2026/May)
+
+Abstract:
+Cardiovascular-kidney-metabolic (CKM) syndrome represents a continuum of interrelated adiposity, insulin resistance, cardiovascular disease, kidney dysfunction, and metabolic disturbances that evolve across the lifespan. Emerging evidence demonstrates that both biological sex and sociocultural gender significantly shape CKM risk, progression, and clinical expression. CKM syndrome pathogenesis reflects complex multisystem interactions involving adipose tissue dysfunction, neurohormonal activation, inflammatory signaling, and vascular impairment, all of which exhibit important sex-specific patterns. This review examines CKM syndrome from a sex- and gender-informed perspective, highlighting how endogenous and exogenous sex hormones, reproductive transitions, pregnancy-related complications, and dietary exposures shape the long-term CKM syndrome risk. Particular attention is given to the roles of estrogen and testosterone in modulating adipose biology, vascular function, and metabolic regulation. Polycystic ovary syndrome is discussed as a model of androgen excess and multisystem metabolic vulnerability that accelerates CKM features. Finally, we address brain vulnerability within CKM syndrome, emphasizing shared inflammatory, vascular, and neuroendocrine mechanisms linking metabolic dysfunction to cognitive decline and neuropsychiatric disorders. Recognizing these interconnected and sex-specific influences is critical for advancing precision prevention and treatment strategies across the CKM syndrome spectrum.
+
+---
+16.
+
+Title:
+Clinical Prediction Models for Acute Kidney Injury in Neonatology-A Systematic Review and Modelling Analysis.
+
+PMID:
+42108540
+
+Journal:
+Journal of paediatrics and child health (2026/May)
+
+Abstract:
+AIMS: Acute kidney injury (AKI) affects up to one-third of neonates admitted to neonatal intensive care units (NICUs). NICUs are highly data-rich environments, offering opportunities to develop clinical prediction rules (CPRs) that use clinical and demographic data to estimate AKI risk. We sought to identify and critically appraise existing CPRs for predicting neonatal AKI.
+METHODS: A systematic search of PubMed and OVID-MEDLINE was conducted for literature published from 1946 to Q2-2025. Eligible studies reported the development or validation of CPRs for neonatal AKI in NICU populations. The review followed PRISMA guidelines and was prospectively registered with PROSPERO (CRD420250653606). Data extraction followed the CHARMS checklist, and risk of bias was assessed using the PROBAST tool.
+RESULTS: From 685 identified articles, 11 underwent full-text review and three met inclusion criteria. Sample sizes ranged from 276 to 706 participants. One CPR was derived from multi-centre data; two used prospectively collected datasets. The number of predictor variables ranged between 4 and 10. Internal validation methods varied, with those who reported commenting on apparent performance only and none performing external validation. Hosmer-Lemeshow testing and calibration plots were the most commonly used forms of analysis.
+CONCLUSIONS: Current CPRs for neonatal AKI show potential but remain underdeveloped and poorly validated. Rigorous research, including external validation prior to integration into clinical workflows, is essential to enable effective early detection of neonatal AKI.
+
+---
+17.
+
+Title:
+Efficacy and safety of automated insulin delivery system in very young children with type 1 diabetes: A systematic review and meta-analysis of randomized controlled trials.
+
+PMID:
+42108409
+
+Journal:
+Diabetic medicine : a journal of the British Diabetic Association (2026/May)
+
+Abstract:
+AIM: To evaluate the efficacy and safety of automated insulin delivery (AID) systems in very young children with type 1 diabetes (T1D).
+METHODS: PubMed, Embase, Scopus, and Web of Science were searched until 10 October 2025. Inclusion criteria were randomized controlled trials (RCTs); T1D populations under 7 years old; comparing AID systems with standard care (SC). Primary efficacy endpoint was the percentage of time-in-range of 70-180 mg/dL (TIR) derived from continuous glucose monitoring (CGM), secondary outcomes included glycated haemoglobin (HbA1c), other CGM metrics, and insulin dose. Safety endpoints included severe hypoglycaemia (SH) and diabetic ketoacidosis (DKA).
+RESULTS: Four RCTs involving 292 participants were included. The mean age was 4.70 years, with a mean T1D duration of 1.96 years. The study duration ranged from 8 to 16 weeks. Compared with SC, AID significantly improved TIR by mean difference (MD) +9.29% (95% confidence interval [CI]: 7.27-11.30, I2 = 70%, p < 0.001) accompanied by a favourable effect on HbA1c by MD -4 mmol/mol (-0.39%) (95% CI [-6 to -2] (-0.57 to -0.21), I2 = 82%, p < 0.001). A favourable decrease in time-above-range (TAR, >180 mg/dL; >250 mg/dL) and mean blood glucose were also observed in AID over SC (all p < 0.05). No significant differences were observed between AID and SC groups in time in hypoglycaemia, insulin dose, and risk of SH and DKA (all p > 0.05).
+CONCLUSION: AID systems may outperform SC in improving short-term glycaemic control (TIR, HbA1c, TAR) in very young children with T1D, without increasing time in hypoglycaemia, insulin dose, or risk of SH and DKA. These preliminary findings support the clinical potential of AID systems and highlight the need for longer term studies.
+
+---
+18.
+
+Title:
+Exosome-based strategies to enhance CAR-T cell therapy for systemic lupus erythematosus: A promising new frontier.
+
+PMID:
+42105262
+
+Journal:
+International reviews of immunology (2026/May)
+
+Abstract:
+Dysregulated B lymphocyte activation plays a pivotal role in the pathogenesis of systemic lupus erythematosus (SLE), making it a promising target for therapeutic intervention. Chimeric antigen receptor T cell (CAR-T) therapy, specifically targeting CD19-positive B cells, has shown potential in selectively eliminating aberrant B cells, offering a path toward sustained remission and even complete eradication of SLE. However, the broad immunosuppressive effects and cytotoxicity associated with CAR-T therapy pose significant challenges to its application in autoimmune disease treatment. Recent advances in extracellular vesicle biology, particularly exosomes, have highlighted their potential as a cell-free therapeutic platform due to their superior biocompatibility, plasticity, and ability to modulate immune responses. CAR-T-derived or engineered exosomes represent a potential cell-free alternative to reduce cellular dose and toxicity while preserving efficacy in SLE. This review provides a comprehensive analysis of the current landscape of CAR-T cell therapy in autoimmune diseases, with a focus on its safety, effectiveness, and potential in treating SLE. Furthermore, it explores the emerging role of exosomes as a promising adjunct to traditional CAR-T therapy, offering novel perspectives and therapeutic strategies for SLE management.
+Systemic lupus erythematosus (SLE) is a chronic autoimmune disease that causes widespread inflammation and organ damage. Current treatments often rely on long-term use of steroids or immunosuppressive drugs, which can have serious side effects and may not achieve lasting remission. A new therapy called chimeric antigen receptor T cell (CAR-T) therapy is showing promise. CAR-T cells are specially engineered immune cells designed to recognize and destroy harmful B cells that drive SLE. Early studies suggest that this approach can lead to rapid and sustained remission in some patients. However, CAR-T therapy also has limitations. It may cause strong immune reactions, such as cytokine release syndrome, and its manufacturing process is complex and expensive. To address these challenges, researchers are exploring the use of exosomes—tiny particles naturally released by cells. Exosomes can carry signals and therapeutic molecules, and those derived from CAR-T cells may retain their ability to target harmful B cells while reducing toxicity. Because they are cell-free, exosomes may also be safer, easier to produce, and potentially more affordable. This review discusses the current evidence on CAR-T therapy for autoimmune diseases, especially SLE, and introduces exosomes as an exciting new partner strategy. Combining CAR-T cells with exosomes may help improve safety, effectiveness, and long-term disease control. If these approaches can be successfully developed, they may transform the treatment of SLE and offer new hope to patients who have limited options today.
+
+---
+19.
+
+Title:
+Review of the clinical, humanistic, and economic burden of focal segmental glomerulosclerosis.
+
+PMID:
+42101820
+
+Journal:
+The American journal of managed care (2026/May)
+
+Abstract:
+Focal segmental glomerulosclerosis (FSGS) is a progressive glomerular disease characterized by podocyte injury, proteinuria, and risk of kidney failure. Until recently, no medicines had been approved by the FDA or European Medicines Agency, with management focused on supportive care and proteinuria reduction. This supplement explores the burden of FSGS from a clinical, humanistic, and economic perspective, informed by the results of 3 systematic literature reviews. FSGS is associated with poorer quality of life and high health care costs, and these outcomes are correlated with disease severity. Kidney Disease: Improving Global Outcomes guidelines recommend monitoring estimated glomerular filtration rate (eGFR) for kidney function; however, it is acknowledged that given the variable decline in FSGS, eGFR is not an ideal trial end point. Consequently, proteinuria reduction has become the preferred surrogate efficacy end point, as supported by the International Society of Glomerular Disease's global Proteinuria and Other Biomarkers as Endpoints for Clinical Trials in Kidney Disease initiative and subsequent FDA endorsement. Available treatments, such as glucocorticoids or calcineurin inhibitors, are limited in efficacy and safety. Among emerging medicines, sparsentan, a dual endothelin and angiotensin receptor antagonist (DEARA), has demonstrated consistent and significant reductions in proteinuria among patients with primary and genetic FSGS resulting in its approval by the FDA to reduce proteinuria in adult and pediatric patients aged 8 years and older with FSGS without nephrotic syndrome. In the phase 2 DUET clinical trial (NCT01613118), those treated with sparsentan showed a urine protein-creatinine ratio reduction of -35.6% (95% CI, -46.3% to -24.6%) vs baseline at 240 weeks. Sparsentan also showed greater reductions in proteinuria vs irbesartan, a standard renin-angiotensin system agent, along with a comparable safety profile in the phase 3 DUPLEX trial (NCT03493685). In model-based projections among real-world registry cohorts, sustained reductions in proteinuria are associated with lower long-term risk of kidney failure. These findings align with the PARASOL-FSGS initiative, supporting the role of proteinuria reduction as a key end point, facilitating pragmatic trial designs to address the persistent treatment gap in FSGS.
+
+---
+20.
+
+Title:
+A systematic review of short-term outcomes in patients with anti-factor H associated atypical HUS managed with plasma exchanges versus eculizumab.
+
+PMID:
+42101481
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/May)
+
+Abstract:
+BACKGROUND: Antibodies to factor H (anti-FH) are a leading cause of atypical hemolytic uremic syndrome (aHUS) in school-going children. While terminal complement blockade with eculizumab (ECZ) is standard of care for all forms of aHUS, anti-FH associated aHUS is uniquely amenable to combination therapy with plasma exchange (PEX) and immunosuppression. There are no controlled comparisons on the relative short- or medium-term efficacy of the two strategies of management.
+OBJECTIVES: The primary objectives were to compare the time from initiation of therapy to hematological remission and renal recovery between patients managed with PEX versus ECZ, with or without immunosuppression, for anti-FH associated aHUS in native kidneys. We also compared the proportions of patients attaining hematological remission or renal recovery by 7, 14 and 28 days of therapy, and proportion of patients with chronic kidney disease G1-5, dialysis-dependence, or death.
+DATA SOURCES: PubMed and Embase were searched from January 2004 to April 2025.
+STUDY ELIGIBILITY CRITERIA: Studies, in English language, were eligible if they reported the time to hematological remission and renal recovery in individual patients with anti-FH antibody-associated aHUS in native kidneys and treated with either PEX or ECZ with or without additional immunosuppression.
+PARTICIPANTS AND INTERVENTIONS: Within studies, individual patients were included if they had received either, and not both, PEX or ECZ, and information regarding time to hematological remission and renal recovery was available.
+STUDY APPRAISAL AND SYNTHESIS METHODS: The risk of bias for retrospective cohort studies and case reports or series was assessed using the Newcastle-Ottawa Quality Assessment Scale and Joanna Briggs Institute (JBI) tool for systematic reviews, respectively. Individual patient data were combined by therapy group to report time-to-event outcomes as hazard ratios (95% confidence intervals, CI), compared using the log rank test. Other continuous measures were compared between groups using the rank sum test.
+RESULTS: Fourteen of 57 studies shortlisted from among 403 search results met eligibility criteria, within which 99 patients, including 81 managed with PEX and 18 with ECZ, with/without immunosuppression, were eligible. Patients receiving PEX presented later with more severe anemia and lower eGFR, and more often required dialysis. Median time to hematologic remission was significantly shorter with PEX (9 vs. 20 days; P = 0.0007) while time to renal recovery was similar (16 vs. 20 days; P = 0.36). The proportion with CKD G3-5 and mortality was insignificantly higher with PEX than ECZ (respective P 0.077 and 0.36).
+LIMITATIONS: Our findings are limited by small numbers of participants and studies, lack of comparative studies, heterogeneity in disease severity, and variations in definitions of outcomes.
+CONCLUSIONS AND IMPLICATIONS OF KEY FINDINGS: Patients managed with PEX achieved hematological remission faster than those on ECZ; the time to renal recovery was similar. Given the precautions and vigilance necessary with complement blockade, PEX appears to be a satisfactory initial choice for managing anti-FH associated HUS, particularly in low-resource settings. Prospective trials should compare the efficacy, safety and healthcare costs of these strategies in managing patients with anti-FH associated HUS.
+SYSTEMATIC REVIEW REGISTRATION NUMBER: PROSPERO ID: CRD420251033150.
+
+---
+21.
+
+Title:
+Bioelectrical Impedance in Pediatric Dialysis: Clinical Applications, Limitations, and Opportunities.
+
+PMID:
+42101376
+
+Journal:
+Hemodialysis international. International Symposium on Home Hemodialysis (2026/May)
+
+Abstract:
+BACKGROUND: Optimizing fluid and nutritional management is a cornerstone of care for children with end-stage kidney disease on dialysis. Inaccurate assessment of hydration status contributes to hypertension, fluid overload, and increased cardiovascular risk, while masking important changes in muscle and fat compartments that affect growth and long-term outcomes. Bioelectrical impedance analysis (BIA) offers clinicians a noninvasive, rapid, and practical tool to support decision-making in this setting.
+AIMS: This review aims to provide clinicians with a practical framework for the use of BIA in pediatric dialysis, including its clinical applications, limitations, and opportunities for integration into routine care.
+MATERIALS AND METHODS: A narrative review of the literature was conducted, and findings were synthesized focusing on the principles of BIA, device technologies, and clinical studies evaluating its use in pediatric dialysis populations. Emphasis was placed on studies addressing fluid assessment, body composition, and clinical implementation. Adult literature was included where pediatric literature was lacking.
+RESULTS: Available evidence suggests BIA can provide useful estimates of total body water, fat mass, and lean tissue that may support ultrafiltration strategies, nutritional assessment, and longitudinal monitoring. Key limitations include variability related to growth, delayed maturation, obesity, malnutrition, and reliance on adult-derived prediction equations. Current evidence supports BIA as an adjunctive tool integrated with clinical assessment rather than a standalone measure.
+DISCUSSION: BIA may enhance individualized fluid and nutritional management when interpreted within the clinical context and standardized measurement protocols. Broader implementation requires awareness of pediatric-specific limitations, interdisciplinary interpretation, and cautious use of device-derived estimates.
+CONCLUSION: BIA is a practical adjunct for pediatric dialysis care with potential to improve fluid management and nutritional monitoring. Pediatric-specific validation studies, standardized protocols, and integration with clinical outcomes is needed to optimize its utility.
+
+---
+22.
+
+Title:
+Ten tips for ordering, interpreting, and communicating genetic test results in nephrology.
+
+PMID:
+42100715
+
+Journal:
+Clinical kidney journal (2026/May)
+
+Abstract:
+Genetic testing is becoming a routine-and increasingly time-sensitive-tool in nephrology, with implications for diagnosis, prognosis, targeted therapy, transplant planning, and family counselling. However, many nephrologists remain uncomfortable with genetic concepts in general, and variant interpretation specifically. This gap will increasingly limit their ability to fully leverage genetic testing in routine nephrology care-and to translate results into management decisions that improve patient outcomes. In this review, we provide 10 practical tips to help nephrologists integrate genetic testing safely and confidently into everyday practice. We emphasize early testing when a molecular diagnosis could plausibly change management, and the primacy of careful phenotyping (including extra-renal features) to guide efficient test selection (single-gene testing, targeted panels, exome, or genome). We outline a pragmatic approach to informed consent that addresses the family impact, secondary findings, and the possibility of misattributed parentage. We then walk through how to read genetic reports, recognize common technical 'blind spots' (e.g. copy number variants), and classify results in a clinically meaningful way (diagnostic, suggestive, or uninformative). We highlight how to handle variants of uncertain significance as hypotheses rather than diagnoses, and why periodic reanalysis is essential as gene-disease assertions and variant classifications evolve. Finally, we encourage clinicians to work within multidisciplinary pathways and to contribute to data-sharing efforts that advance nephrogenetics. Each tip concludes with a brief 'nephrogenetics nugget'-a practical takeaway, a useful metaphor, or a simple script-to help clinicians translate core concepts into real-world conversations and decisions at the point of care. Overall, these tips provide a practical framework for ordering, interpreting, and disclosing genetic test results in routine nephrology care.
+
+---
+23.
+
+Title:
+Reversible Rituximab-Induced Bronchiectasis: A Pediatric Case Report and Literature Review.
+
+PMID:
+42098995
+
+Journal:
+The American journal of case reports (2026/May)
+
+Abstract:
+BACKGROUND Rituximab (RTX) is a chimeric IgG monoclonal antibody directed against the CD20 antigen expressed on normal and malignant B cells. It is used for treating a variety of neoplastic, autoinflammatory, and autoimmune pathologies, including disorders occurring in the pediatric population. It has been proven that rituximab can induce pulmonary complications including interstitial lung disease, bronchiectasis and pulmonary toxicities, predominantly in adults. By describing this case, we aim to raise awareness among pediatricians given the limited literature on rituximab-induced bronchiectasis in pediatrics, aiding in early recognition for better outcomes. CASE REPORT We present the case of a 12-year-old girl with relapsing steroid-dependent nephrotic syndrome who was diagnosed at age 6 years. When rituximab was introduced, remission was achieved. A year later, she developed a persistent wet cough. Initial imaging suggested pneumonia, and subsequent admissions revealed recurrent respiratory infections. Workup showed hypogammaglobulinemia, attributed to rituximab-induced humoral immunosuppression. High-resolution computed tomography (HRCT) revealed segmental atelectasis and bronchiectatic changes. Pulmonology testing diagnosed chronic suppurative lung disease, likely secondary to immunosuppression. Rituximab was discontinued, and the patient was started on azithromycin and airway clearance therapy. Intravenous immunoglobulin (IVIG) was initiated due to persistent hypogammaglobulinemia. Repeated HRCT showed complete resolution of bronchiectasis, with minimal residual scarring. CONCLUSIONS While it is a more common complication in adults, it is important to recognize rituximab as a culprit in pediatric patients with respiratory symptoms after prolonged use for various indications. Prompt recognition and intervention are crucial for mitigating further lung damage and perhaps full recovery. Pediatricians are encouraged to monitor for rituximab-induced pulmonary complications, particularly in naive lungs.
+
+---
+24.
+
+Title:
+Efficacy and safety of non-pharmacological interventions for gastroesophageal reflux and gastroesophageal reflux disease in children: a systematic review.
+
+PMID:
+42098776
+
+Journal:
+Italian journal of pediatrics (2026/May)
+
+Abstract:
+BACKGROUND: Gastroesophageal reflux (GER) and gastroesophageal reflux disease (GERD) are common in infants and children. Non-pharmacological approaches are widely used, but their efficacy and safety remain uncertain. This systematic review evaluates the current evidence on non-pharmacological interventions for pediatric GER and GERD.
+METHODS: We conducted a systematic review following Cochrane methodology and PRISMA 2020 guidelines (PROSPERO: CRD420251041380). We included randomized controlled trials and systematic reviews of non-pharmacological interventions for GER or GERD in individuals aged 0-18 years. Eligible interventions included dietary modifications, positioning, alginates, probiotics, massage, and complementary therapies. Study selection, data extraction, and risk of bias assessment were performed in duplicate. Due to heterogeneity, meta-analyses were not conducted. Certainty of evidence was assessed using the GRADE approach.
+RESULTS: We included 40 studies: 39 RCTs (15 crossover) and one systematic review. Most studies involved infants with uncomplicated GER or GERD. Interventions included dietary modifications (n = 25), probiotics (n = 3), alginates (n = 4), positioning (n = 6), and massage therapy (n = 2). Most trials reported regurgitation or Infant Gastro-Esophageal Reflux Questionnaire Revised as primary outcomes. Several interventions, especially thickened feeds, probiotics, alginates, and left lateral positioning, were associated with reduced regurgitation frequency. Risk of bias was frequently high, and GRADE certainty ranged from very low to moderate, depending on outcome and intervention type.
+CONCLUSIONS: Thickened formulas and alginates showed the most consistent symptom improvement in infants with GER or GERD, though overall evidence quality was low to moderate. Other interventions yielded mixed results. Non-pharmacological strategies appear generally safe, but further high-quality research is needed to support clinical decision-making.
+
+---
+25.
+
+Title:
+Symptom-guided approach to central nervous system complications in allogeneic hematopoietic cell transplant recipients: Best practice recommendations from the EBMT Practice Harmonisation and Guidelines committee.
+
+PMID:
+42098382
+
+Journal:
+Bone marrow transplantation (2026/May)
+
+Abstract:
+Central nervous system complications (CNSC) after allogeneic hematopoietic cell transplantation (allo-HCT) are relatively common and may have a major impact on patients´ outcomes. Neurological symptoms may occur at any point during the post-transplant course, although they are more common early after HCT, with a wide range of possible presentations. As many of CNSC symptoms are non-specific, the initial assessment is often difficult, and early decisions regarding the diagnostic work-up can influence the identification of the underlying cause. Blood tests, neuroimaging and cerebrospinal fluid (CSF) analyses are particularly important, as they frequently provide the first clues that help narrow the very wide differential diagnoses. In view of these challenges, an international EBMT working group composed of haematologists, infectious disease specialists, neurologists, a neuroradiologist, and a microbiologist developed symptom-based recommendations for the early evaluation of CNSC after allo-HCT. The work summarizes key aspects of the clinical presentation and outlines practical steps for the initial diagnostic approach. These recommendations are intended to support haematologists, who are usually the first to assess these patients, in promptly recognizing CNSC so to start timely appropriate management.
+
+---
+26.
+
+Title:
+Post-asphyxia acute kidney injury in neonates: a systematic review.
+
+PMID:
+42096066
+
+Journal:
+European journal of pediatrics (2026/May)
+
+Abstract:
+UNLABELLED: Perinatal asphyxia is a major cause of neonatal morbidity and mortality globally. It affects multi-systems and has significant renal consequences. Acute kidney injury (AKI) is a frequent complication of perinatal asphyxia; however, its burden, diagnosis, and outcomes remain variably characterized. This study employed a scoping review approach to map and synthesize the existing evidence on post-asphyxia AKI in neonates. A total of 30 studies published between 1995 and 2025 were included, encompassing different geographic regions, study designs, and diagnostic criteria. The review demonstrates a clear growth in scholarly attention to post-asphyxia AKI, particularly in the last 25 years, coinciding with the introduction of neonatal-modified KDIGO definitions and advances in neonatal nephrology. Reported incidence of AKI varied widely, ranging from 20% to over 60%, reflecting non-homogeneity in study populations, differing case definitions of acute kidney injury in neonates, the severities of hypoxic-ischemic encephalopathy, and varied methodological approaches. Findings consistently indicate that AKI is strongly associated with severe forms of perinatal asphyxia, the presence of multi-organ dysfunction, prolonged neonatal intensive care stay, and mortality.
+CONCLUSION:  Despite emerging interest in novel biomarkers and standard definitions, important gaps persist in early detection, long-term renal outcome data, and evidence from low- and middle-income countries. Addressing these gaps through standardized monitoring, biomarker validation, and longitudinal follow-up will improve renal survival in neonates affected by perinatal asphyxia.
+WHAT IS KNOWN: • The newborn kidneys are susceptible to the hemodynamic changes that follow ischemia/asphyxia due to a poor functioning capacity and oftentimes an inadequate structural potential. • Neonatal AKI is closely linked to severe forms of asphyxia, increased length of hospital stay and increased mortality. its reported incidence is widely varied.
+WHAT IS NEW: • The emergence of novel biomarkers in the identification and diagnosis of neonatal AKI, and the uptake and application of standard definitions (modified neonatal KDIGO) in the identification of neonatal AKI. • The availabiltiy of specialized kidney support therapy (continuous kidney replacement therapy; the carpadiem) in the management of neonatal AKI.
+
+---
+27.
+
+Title:
+Key performance indicators for acute kidney replacement therapy in critically ill children: a systematic review.
+
+PMID:
+42095908
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/May)
+
+Abstract:
+BACKGROUND: Acute kidney injury is common among critically ill children and independently associated with morbidity and mortality, particularly in those receiving kidney replacement therapy (KRT). As KRT is not innocuous, standardizing its delivery is critical for accurate outcome tracking. Establishing key performance indicators (KPIs) is essential to guide quality improvement and support decision-making through ongoing monitoring of KRT processes.
+OBJECTIVES: This systematic review evaluated existing evidence on KPIs related to KRT delivery in critically ill pediatric populations.
+DATA SOURCES: A comprehensive search of Ovid MEDLINE, Ovid Embase, CINAHL, and the Cochrane Library was conducted for studies published from inception to February 2025.
+STUDY ELIGIBILITY CRITERIA: Eligible studies reported KPIs related to dialysis processes in critically ill children receiving KRT.
+PARTICIPANTS AND INTERVENTIONS: Critically ill children receiving all KRT modalities were assessed for KPIs according to the Donabedian framework, with each KPI stratified based on whether it measured a process related to KRT care.
+STUDY APPRAISAL AND SYNTHESIS METHODS: Six reviewers independently screened, selected, and appraised studies using the risk-of-bias tool appropriate for each study design. Data were summarized narratively.
+RESULTS: Of 7,111 citations screened, 107 studies met inclusion criteria, comprising 57 retrospective cohorts, 27 case series, 16 prospective cohorts, 4 case reports, 2 randomized controlled trials, and 1 audit. Most studies (66.7%) were of moderate quality. Six KPIs were identified across 240 instances: solute clearance (n = 59), filter life (n = 52), downtime (n = 43), fluid management (n = 36), hypotension (n = 25), and prescription (n = 24). KPI definitions were heterogeneous. KPIs were categorized as important (n = 242, 52.1%), scientifically acceptable (n = 107, 23.1%), and feasible (n = 115, 24.8%).
+LIMITATIONS: This systematic review is limited by heterogeneity in study quality, with most evidence derived from observational or clinical studies rather than structured quality improvement initiatives. CONCLUSIONS AND IMPLICATIONS OF KEY FINDINGS : Multiple potential KPIs for pediatric KRT were identified; however, definitions and validation were inconsistent. Standardizing and prioritizing a set of concise KPIs are needed to measure, benchmark, and improve KRT quality in critically ill children.
+SYSTEMATIC REVIEW REGISTRATION NUMBER: PROSPERO CRD42023474374 (October 30, 2023).
+
+---
+28.
+
+Title:
+GPIHBP1 Autoantibody-Related Hypertriglyceridemia in Children: A Report of Two Cases and a Review of Pediatric Cases From the Literature.
+
+PMID:
+42093112
+
+Journal:
+Molecular genetics & genomic medicine (2026/May)
+
+Abstract:
+BACKGROUND: Severe hypertriglyceridemia (HTG) is rare in children and is often caused by monogenic disorders. However, autoimmune mechanisms, particularly antibodies against glycosylphosphatidylinositol-anchored high-density lipoprotein-binding protein 1 (GPIHBP1), have emerged as rare causes. Pediatric-onset GPIHBP1 autoantibody-related HTG remains poorly characterized.
+METHODS: We evaluated two 3-year-old children with extreme HTG (triglyceride level > 3000 mg/dL). Whole-exome sequencing was performed to investigate monogenic etiologies. Autoimmune testing included antinuclear antibodies (ANAs) and anti-Sjögren's syndrome-related antigen A (SSA) antibodies, as well as an enzyme-linked immunosorbent assay (ELISA) for anti-GPIHBP1 antibodies. A clinical response to immunosuppressive therapy was assessed. A literature review of previously reported pediatric cases was conducted.
+RESULTS: No pathogenic variants were identified by whole-exome sequencing. Both patients were positive for ANAs (1:320, speckled), and one had high-titer anti-SSA antibodies. The ELISA confirmed the presence of anti-GPIHBP1 antibodies in both cases. Immunosuppressive therapy with hydroxychloroquine effectively reduced the triglyceride level in one patient, while the other required additional prednisolone. At follow-ups (ages 9 and 10), neither patient developed overt systemic autoimmune disease. A literature review revealed 13 previously reported pediatric cases, most of which were diagnosed after the age of 11 years and were frequently associated with systemic lupus erythematosus or other autoimmune disorders.
+CONCLUSION: GPIHBP1 autoantibody-related HTG is important and potentially treatable severe pediatric HTG, representing an early manifestation of autoimmune dysregulation that requires an accurate diagnosis and longitudinal surveillance.
+
+---
+29.
+
+Title:
+Hypertension management in pediatric peritoneal dialysis: A scoping review.
+
+PMID:
+42089756
+
+Journal:
+Peritoneal dialysis international : journal of the International Society for Peritoneal Dialysis (2026/May)
+
+Abstract:
+BackgroundPeritoneal dialysis (PD) is a prominent treatment option for children with kidney failure. However, cardiovascular disease remains the leading cause of both morbidity and early mortality in this pediatric population, with 50-70% of patients experiencing hypertension. This scoping review aims to assess pediatric hypertension management among those receiving PD, along with exploring new potential techniques to optimize care.MethodsPubMed and Web of Science were used to conduct a literature search using PRISMA-ScR guidelines. The topic was hypertension management in PD in the pediatric population. Studies within the last 10 years that were written in English were included to capture the latest advancements in the literature. Six articles were included in the review.ResultsThe included articles illustrated 3 main management strategies, which were diet, fluid volume, and antihypertensive drugs. More specifically, an inverse relationship between vitamin D and cholesterol levels and a lack of correlation between simple salt balance and hypertension have been described. Bioimpedance spectroscopy and B-type natriuretic peptide were found to be useful in the estimation of fluid volume. Additionally, the persistence of hypertension was found despite the use of antihypertensive drugs.ConclusionsThe presenting studies reflect the uncertainty of the current evidence available on hypertensive treatments in this population. Thus, our findings may help guide further research until the evidence is sufficient for clinical recommendations.
+
+---
+30.
+
+Title:
+Renal osteodystrophy in pediatric patients. A systematic review and meta-analysis.
+
+PMID:
+42081926
+
+Journal:
+Bone (2026/May)
+
+Abstract:
+Chronic kidney disease (CKD) in children is associated with significant comorbidities, including mineral and bone disorder (CKD-MBD). A key manifestation of CKD-MBD is renal osteodystrophy (ROD), diagnosed by bone biopsy followed by histomorphometric analysis. In pediatric patients, ROD can lead to bone deformities and impaired growth. However, the limited use of bone biopsy in this population hampers the understanding of ROD patterns and severity. This systematic review and meta-analysis aimed to evaluate histomorphometric findings in children with CKD. We screened 5082 abstracts published up to 2024 and included 28 eligible studies, encompassing 980 bone biopsies from children in different stages of CKD. Significant heterogeneity in nomenclature, abbreviations, and reference units of histomorphometric parameters was observed, despite the ASBMR recommendations. Osteitis fibrosa was the most prevalent type of ROD. Notably, 36% of the studies did not report dynamic parameters. Meta-analyses revealed substantial variability in both histomorphometric and biochemical measures. Meta-regression identified study design, age, sex, and CKD treatment modality as key contributors to heterogeneity in bone structure, formation, and resorption parameters. In conclusion, most children with CKD exhibit some form of ROD. Standardized biopsy protocols and normative histomorphometric references stratified by age and sex are needed to enhance result interpretation and comparability across future studies.
+
+---
+31.
+
+Title:
+Late Outcomes Following Acute Kidney Injury in Children: A Systematic Review and Meta-Analysis.
+
+PMID:
+42081220
+
+Journal:
+JAMA pediatrics (2026/May)
+
+Abstract:
+IMPORTANCE: Acute kidney injury (AKI) is a common complication among hospitalized children and may have lasting kidney and cardiovascular consequences. However, the long-term risks after pediatric AKI have not been comprehensively quantified.
+OBJECTIVE: To estimate the pooled incidence and relative risk with odds ratio of chronic kidney disease (CKD), mortality, hypertension, and proteinuria following AKI in hospitalized children.
+DATA SOURCES: PubMed, Embase, and Web of Science were searched from January 2007 through November 2025 without language restrictions.
+STUDY SELECTION: Studies were included if they reported at least 1 long-term outcome (CKD, mortality, hypertension, or proteinuria) following AKI in hospitalized children. Studies limited to children with obstructive lesions, primary vascular disorders (eg, hemolytic uremic syndrome) or solid organ transplant were excluded.
+DATA EXTRACTION AND SYNTHESIS: Two reviewers independently extracted data and assessed risk of bias. Random-effects meta-analyses were performed to estimate pooled cumulative incidences and odds ratios (ORs) with 95% CIs.
+MAIN OUTCOMES AND MEASURES: Cumulative incidence and odds of CKD, mortality, hypertension, and proteinuria following pediatric AKI.
+RESULTS: Of 17 068 screened records, 39 studies comprising 16 151 participants were included. The pooled cumulative incidences following AKI were 17% (95% CI, 12-22) for CKD, 6% (95% CI, 3-8) for mortality, 20% (95% CI, 12-29) for proteinuria, and 16% (95% CI, 11-23) for hypertension. In 23 studies with non-AKI comparators and follow-up ranging from 3 months to 18 years, AKI was associated with increased odds of CKD (OR, 1.74; 95% CI, 1.02-2.95) and mortality (OR, 1.92; 95% CI, 1.35-2.75) but not proteinuria (OR, 1.18; 95% CI, 0.62-2.25) or hypertension (OR, 1.29; 95% CI, 0.72-2.31). Greater AKI severity was associated with a higher odds of CKD (stages 2-3: OR, 2.84; 95% CI, 1.49-4.15; stage 1: OR, 1.72; 95% CI, 1.11-2.67).
+CONCLUSIONS AND RELEVANCE: The findings in this systematic review and meta-analysis demonstrate that, similar to adults, children experienced increased risk of late adverse outcomes following AKI, particularly CKD and mortality, supporting the need for structured post-AKI follow up.
+
+---
+32.
+
+Title:
+From 10-Valent to 21-Valent Pneumococcal Conjugate Vaccines: Divergent Global Pathways and Future Directions for India.
+
+PMID:
+42081063
+
+Journal:
+Indian pediatrics (2026/May)
+
+Abstract:
+Pneumococcal conjugate vaccines (PCVs) have greatly reduced invasive pneumococcal disease worldwide, though outcomes vary with the serotype formulation and regional context. India's introduction of indigenous 10-valent PCV into its Universal Immunization Program (UIP) was a major milestone, differing from the earlier globally available PCV10 by including serotypes 19A and 6A-both of which have been linked to antimicrobial resistance (AMR) in countries such as Belgium and Brazil. This review synthesizes global vaccine experiences, explores serotype biology, cross-protection, and the emergence of non-vaccine types, and considers the spectrum of higher-valency options (PCV14, PCV20, and PCV21). India's pediatric PCV coverage has expanded rapidly, though unevenly, while adult uptake remains limited. While indigenous PCV10 introduction and scale-up, followed by indigenous PCV14 introduction seems a pragmatic policy for India's UIP today, sustained genomic and AMR surveillance, plus eventual transitions to broader PCVs, will be essential for long-term, adaptable immunization strategies.
+
+---
+33.
+
+Title:
+Isolated Kidney Transplant in Primary Hyperoxaluria-1 Enabled by Small Interfering RNA (siRNA) Therapy. Is It Time for Change? Case Report and Review of the Literature.
+
+PMID:
+42080407
+
+Journal:
+Pediatric transplantation (2026/May)
+
+Abstract:
+BACKGROUND: Primary hyperoxaluria type 1 (PH1) is a rare genetic disorder characterized by excessive oxalate production that leads to nephrocalcinosis or nephrolithiasis and progressive kidney failure, associated with systemic oxalosis that is not reversed by dialysis. Pharmacological treatment is limited. Combined or sequential liver and kidney transplant is standard of care for PH1. Recently approved RNA-interference (RNAi) therapy with lumasiran or nedosiran targeting glycolate oxidase and lactate dehydrogenase A, respectively, reduces hepatic oxalate synthesis. This makes kidney-only (isolated) transplantation (iKT) a potentially successful, novel approach for managing PH1 patients with advanced kidney disease combined with hyperhydration, urine alkalinization, and vitamin B6 (where applicable).
+METHODS: We analyzed the course of a young PH1 kidney transplant recipient at our institution and performed a literature review of patients with small interfering RNA-enabled iKT.
+CASE PRESENTATION: A patient with PH1 due to a homozygous, pathogenic variant in AGXT exon 1 (c.121G>A; p.Gly41Arg) received a deceased donor kidney transplant after 6.5 years of hemodialysis and 4.3 years of RNAi therapy with lumasiran. He maintained good kidney allograft function 9 months post-transplant despite the occurrence of an asymptomatic calyceal stone within the graft prior to transition to adult nephrology care. At 14 months, he experienced a T cell-mediated rejection, associated with a rise in serum creatinine and plasma oxalate, and a partially obstructing stone. A review of all 10 accessible cases of RNAi-supported iKT, including our own, revealed several instances of kidney stone formation (20%), stent obstruction (20%), and mild, mostly transient crystal deposition in the graft (37.5%).
+CONCLUSIONS: This report enriches the limited experience of RNAi-enabled kidney-only transplantation in PH1. RNA interference therapy has the potential to challenge the current standard of dual liver and kidney transplantation in children and young adults with this devastating disease but requires uninterrupted access to the drug with individualized, eGFR and oxalate level adjusted dosing, continued vigilance, and reporting of long-term outcomes.
+
+---
+34.
+
+Title:
+Artificial intelligence for predicting paediatric acute kidney injury: a systematic review and meta-analysis.
+
+PMID:
+42079462
+
+Journal:
+Clinical kidney journal (2026/May)
+
+Abstract:
+BACKGROUND: Acute kidney injury (AKI) in hospitalised children is a major complication associated with significant morbidity and mortality. The integration of artificial intelligence (AI)/machine learning (ML) models may enable early detection and risk stratification. This systematic review evaluates the performance of AI/ML models for predicting paediatric AKI across clinical settings.
+METHODS: We systematically searched PubMed, Embase, and Web of Science for studies applying AI/ML models to predict AKI in paediatric populations. Studies reporting performance metrics such as the area under the curve (AUC), sensitivity, specificity, positive predictive value (PPV), negative predictive value (NPV), accuracy, and F1 score were included.
+RESULTS: Among 470 records identified, 11 studies met the inclusion criteria, with 14 AI/ML models used. The overall sample size included 33 949 paediatric patients with an AKI proportion of 12.5%. Meta-analyses of the AUC were conducted on neural network, gradient boosting, and logistic regression. Gradient boosting had the highest pooled AUC of 0.873 (95% confidence interval 0.836-0.909). Random forest demonstrated the highest median sensitivity (0.821), specificity (0.942), PPV (0.860), NPV (0.935), and accuracy (0.821); however, these metrics could not be pooled due to inconsistent reporting and limited validation.
+CONCLUSION: Gradient boosting, random forest, and logistic regression demonstrated reasonable predictive performance for paediatric AKI prediction within specific clinical contexts. However, small sample size, heterogeneity, lack of testing/validation cohorts, insufficient data, and inconsistent patient populations and AKI diagnostic criteria restrict generalisability.
+
+---
+35.
+
+Title:
+Molecular and Genetic Determinants of Nephrocalcinosis: Mechanisms, Genotype-Phenotype Correlations, and Precision Medicine.
+
+PMID:
+42074253
+
+Journal:
+International journal of molecular sciences (2026/Apr)
+
+Abstract:
+Nephrocalcinosis, defined as the deposition of calcium salts within the renal parenchyma, represents a radiologic and pathologic endpoint shared by a broad spectrum of metabolic and monogenic disorders. Advances in genomic medicine have identified more than 30 genes involved in tubular transport, mineral and acid-base homeostasis, oxalate metabolism, mitochondrial function, ciliary signaling, and nephron development, reframing nephrocalcinosis as a heterogeneous manifestation of discrete molecular defects rather than a single disease entity. Despite this diversity, these conditions converge on common physicochemical pathways of tubular supersaturation, crystal nucleation, growth, and intrarenal retention. These processes are amplified by the intrinsic vulnerability of the renal medulla-characterized by hyperosmolality, hypoxia, and slow tubular flow-and by epithelial injury, loss of crystallization inhibitors, and impaired ciliary signaling. Distinct genotype-phenotype signatures, including age at onset, biochemical profiles, and extrarenal manifestations, provide important diagnostic clues and help differentiate major monogenic entities. The increasing availability of targeted gene panels, whole-exome sequencing, and whole-genome sequencing has substantially improved diagnostic yield, particularly in pediatric populations. Molecular diagnosis now directly informs therapeutic decision-making and long-term management, enabling a shift toward precision nephrology. This narrative review integrates genetic, mechanistic, and clinical perspectives to illustrate how molecular diagnosis reshapes the evaluation, prognosis, and treatment of nephrocalcinosis.
+
+---
+36.
+
+Title:
+Guidelines for the management of acute porphyria: recommendations from the International Porphyria Network.
+
+PMID:
+42069412
+
+Journal:
+The Lancet. Haematology (2026/May)
+
+Abstract:
+Autosomal dominant acute porphyrias are rare inherited disorders of haem biosynthesis characterised by accumulation of potentially neurotoxic porphyrin precursors and attacks of severe abdominal pain with autonomic and neuropsychiatric features. Disease severity ranges from asymptomatic individuals to those with recurrent, life-threatening attacks. The International Porphyria Network invited 34 acute porphyria specialists from 17 countries to form an expert panel. The invited group included clinicians from diverse specialities (ie, internal medicine, haematology, endocrinology, gastroenterology, hepatology, neurology, and biochemistry), together with laboratory scientists and patient representatives. The panel met online (in 2023-25) to develop 15 evidence-based recommendations with the use of the Grading of Recommendations, Assessment, Development, and Evaluations framework addressing attack prevention, management of sporadic and recurrent attacks, long-term follow-up, surveillance for primary liver cancer, and family screening. The guidelines support safe, consistent clinical care and improved outcomes, recognising global variation in resources and access to high-cost drugs, and highlighting priorities for future research.
+
+---
+37.
+
+Title:
+Rational use of expensive medicines in the Netherlands: strategies to improve effectiveness and reduce burden on patients and society - a narrative review.
+
+PMID:
+42062879
+
+Journal:
+BMC medicine (2026/Apr)
+
+Abstract:
+BACKGROUND: While new expensive medicines often offer substantial benefits to patients, they can carry inherent drawbacks such as uncertainty regarding efficacy translating into effectiveness, safety and rational use, as well as a substantial financial burden on society and/or patients. Rational use of medicines aims to maximize effectiveness whilst minimizing side effects, patient burden, and societal costs. In the Netherlands, initiatives aiming to improve the rational use of expensive medicines are being carried out with increasing frequency and in a programmatic manner. This review identified the strategies used, and includes a structured approach for their application during the medicine's use in clinical practice.
+MAIN BODY: Rational use initiatives, driven by clinicians and pharmacists, and funded by the Dutch Ministry of Health and the Dutch health insurers were evaluated for strategies that aim to improve the rational use of expensive medicines. In addition, a non-systematic narrative review was carried out through searches in Google, Google Scholar, Pubmed, the Artificial Intelligence (AI)- tools Global Campus and Evidence Hunt to identify additional strategies. Identified strategies were categorized by assessing whether they aimed to address the efficacy-effectiveness gap or to reduce the side effects and societal burden of expensive medicines. Thirteen strategies to improve rational use were identified. Two strategies were identified that aim to address the efficacy-effectiveness gap: optimize patient selection and generating evidence on clinical endpoints. 11 additional strategies that aim to reduce side effects or societal burden were identified: dose reduction, personalized dose optimization, interval lengthening, shortening of the treatment duration, biosimilar/generic drug use, non-medical drug switching, reduction of additional non-medication costs, reduction of drug wastage, switching the route of administration, boosting (improve drug exposure and/or reduce the dose by influencing pharmacokinetic parameters through co-interventions), and optimization of medication adherence.
+CONCLUSIONS: Rational use of expensive medications is essential as part of a drug's life cycle and can benefit patients as well as society. The framework and strategies described in this overview provide guidance for the future rational use of expensive medicines, both for those already in use and for those newly introduced.
+
+---
+38.
+
+Title:
+Inter-society consensus on the management of acute bloody diarrhea and shiga toxin-producing Escherichia Coli infection in the molecular microbiology era.
+
+PMID:
+42050676
+
+Journal:
+Italian journal of pediatrics (2026/Apr)
+
+Abstract:
+(abstract not available)
+
+---
+39.
+
+Title:
+Placebo in Paediatric Clinical Trials: Systematic Literature Review and Framework-Based Synthesis.
+
+PMID:
+42046265
+
+Journal:
+Journal of paediatrics and child health (2026/Apr)
+
+Abstract:
+INTRODUCTION: Placebo-controlled trials can provide strong evidence on safety and efficacy, but their ethical acceptability in paediatric research is contested because children have limited decisional capacity and placebo use may entail withholding effective therapy.
+OBJECTIVE: To identify the ethical and methodological conditions under which placebo controls are acceptable in paediatric clinical trials, using a systematic review of the literature and regulatory guidance.
+METHODS: We searched Medline, Scopus and Embase for sources addressing the ethics, acceptability or regulation of placebo use in paediatric trials. We extracted study characteristics and ethical arguments, mapped them to beneficence, non-maleficence, autonomy and justice, and then synthesised findings using Emanuel, Wendler and Grady's seven requirements for ethical clinical research. We also obtained expert guidance from UK, USA and European regulators.
+RESULTS: We included 51 sources spanning neonatal research, disease-specific paediatric contexts, parental perspectives and general ethics/regulatory discussions. Placebo was generally considered acceptable when methodologically necessary and scientifically sound, when no proven effective therapy was withheld (or any withholding carried minimal incremental risk), and when safeguards such as rescue therapy, early escape, and close monitoring were in place. Common emphases included limits on non-beneficial risk in children, assent and parental permission, and fair participant selection.
+CONCLUSION: Placebo use in paediatric trials is acceptable only under constrained conditions centred on scientific necessity, minimising harm from withholding therapy, robust safeguards and appropriate permission/assent processes. Further work should translate these conditions into disease-specific, operational guidance.
+
+---
+40.
+
+Title:
+How outcomes are defined in randomized controlled trials of acute kidney injury: a scoping review.
+
+PMID:
+42043560
+
+Journal:
+Intensive care medicine (2026/Apr)
+
+Abstract:
+INTRODUCTION: Research on acute kidney injury (AKI) is hindered by heterogeneous definitions, measurements, and follow-up periods, which limit comparability across randomized controlled trials (RCTs) and the translation of findings into evidence-based practice. This review aimed to describe outcomes reported in RCTs of AKI prevention and treatment.
+METHODS: This scoping review followed PRISMA-ScR guidance. PubMed, Embase, Web of Science, and Cochrane CENTRAL were searched for RCTs published between January 2014 and April 2024. Eligible studies included adults or children with AKI or at risk for AKI. Outcomes were categorized using the COMET taxonomy according to core area, core domain, specific domain, measurement method, and timing.
+RESULTS: Among 3921 abstracts screened, 251 RCTs were included. Prevention trials represented 197/251 (78.5%). Most outcomes belonged to the Physiological/Clinical Core Area (194/197, 98.5%), in the Renal outcomes Core Domain (186/197, 94%). Renal function (162/197, 82%) and renal damage (15/197, 7.5%) were the most frequent domains. Measurements relied mainly on serum creatinine, alone (130/162, 80%) or combined with urine output (25/162, 15%), assessed between 48-72 h (65%) and 7 days (22%). Outcomes in therapeutic RCTs (54/251, 21.5%) belonged to the Physiological/Clinical (37/54, 69%) and Mortality/Survival (14/54, 26%) Core Areas. Renal outcomes (33/54, 61%) included renal function (9/54, 17%), renal recovery (10/54, 19%), and use of RRT (3/54, 6%). Measurements included serum creatinine (16/54, 30%), mortality (14/54, 26%) and estimated glomerular filtration rate (eGFR) (3/54, 6%), assessed between 7 and 90 days.
+CONCLUSION: Outcome reporting is heterogeneous, highlighting the need for a standardized core outcome set.
+
+---
+41.
+
+Title:
+Obesity-Related Coagulation Activation in Adolescents and Children: A Systematic Review and Meta-Analysis.
+
+PMID:
+42036302
+
+Journal:
+Obesity reviews : an official journal of the International Association for the Study of Obesity (2026/Apr)
+
+Abstract:
+UNLABELLED: Obesity is recognized as a pro-thrombotic condition, yet the extent of coagulation activation across biomarkers remains unclear. This meta-analysis evaluates the impact of obesity on parameters-D-dimer, fibrinogen, plasminogen activator inhibitor-1 (PAI-1), von Willebrand factor (vWF), factor VIII (FVIII), and endogenous thrombin potential (ETP)-in children and adults.
+METHODS: Sixty-four studies comprising 59,503 individuals were analyzed. Plasma biomarker levels were compared between non-obese and obese groups using standardized mean differences (SMDs), with subgroup analyses.
+RESULTS: D-dimer was significantly elevated in adults with obesity (SMD 1.36, 95% CI 0.47-2.25, p = 0.003) and children with obesity (SMD 0.77, 95% CI 0.19-1.36, p = 0.009), indicating increased fibrin turnover. Fibrinogen levels were markedly higher in both adults (SMD 1.17, 95% CI 0.14-2.20, p = 0.03) and children (SMD 1.43, 95% CI 0.93-1.92, p < 0.0001). PAI-1 showed the most pronounced increase in adults (SMD 2.30, 95% CI 0.1.51-3.09, p < 0.0001) and children (SMD 3.54, 95% CI 1.65-5.43, p = 0.0002). FVIII levels were modestly elevated (SMD 0.52, 95% CI 0.10-0.94, p = 0.02), whereas vWF levels showed inconsistent changes. ETP was significantly higher in obesity, in children (SMD 1.06, 95% CI 0.24-1.88, p = 0.01) and adults (SMD 0.71, 95% CI 0.46-0.97, p < 0.0001). Gender-stratified data indicated higher PAI-1, fibrinogen, and ETP levels in females.
+CONCLUSION: Obesity is associated with increased coagulation activation, suggesting a pro-thrombotic shift. These findings support the need for age- and gender-specific research into obesity-related hemostatic alterations.
+
+---
+42.
+
+Title:
+Positive Psychology Intervention Effects on Emotions and Well-Being in Depression: A Systematic Review and Meta-Analysis.
+
+PMID:
+42030477
+
+Journal:
+Journal of psychosocial nursing and mental health services (2026/Apr)
+
+Abstract:
+PURPOSE: The current systematic review and meta-analysis evaluated the effectiveness of positive psychology intervention (PPI) on emotional well-being and depression in adults. The objective was to assess whether PPI improves happiness, life satisfaction, and psychological well-being, and whether it serves as a viable alternative to standard or no treatment in managing depression.
+METHOD: A systematic search was conducted in five electronic databases. Seventeen randomized controlled trials involving 2,579 participants were included. Standardized mean difference (SMD) or mean difference (MD) with 95% confidence intervals (CIs) were calculated.
+RESULTS: PPI significantly improved happiness (SMD = 0.25; 95% CI [0.06, 0.43]), positive affect (MD = 2.41; 95% CI [0.27, 4.54]), life satisfaction (MD = 2.18; 95% CI [0.81, 3.54]), and environmental mastery (SMD = 0.28; 95% CI [0.02, 0.54]). Depression scores showed no significant change (SMD = -0.27; 95% CI [-0.61, 0.08]).
+CONCLUSION: PPI enhances positive mental health indicators, including happiness, positive affect, and well-being, but has limited effect on depression severity. PPI may serve as a complementary tool alongside standard treatment.
+
+---
+43.
+
+Title:
+Fasting safely during Ramadan with diabetes: clinical practice recommendations for Arab populations from the Arab Diabetes Forum (FSR-ADF).
+
+PMID:
+42026416
+
+Journal:
+Hormones (Athens, Greece) (2026/Apr)
+
+Abstract:
+(abstract not available)
+
+---
+44.
+
+Title:
+Anti-nephrin antibodies in pediatric nephrotic syndrome: a new paradigm.
+
+PMID:
+42026266
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/Apr)
+
+Abstract:
+Circulating anti-nephrin antibodies have recently been identified as mediators in many cases of childhood nephrotic syndrome. After binding of the antibody to nephrin, a key component of the slit diaphragm, different intracellular signaling mechanisms lead to foot process effacement. These new insights into the pathophysiology of nephrotic syndrome may have the potential to influence clinical treatment strategies. First, the measurement provides a pathomechanism-specific serological biomarker of a previously clinically diagnosed renal disease. Second, it may have additional value for diagnosis and prognostication, as anti-nephrin antibodies are more common in steroid-sensitive forms and less frequently associated with multidrug-resistant forms. Furthermore, anti-nephrin autoantibodies have the potential to be used as biomarkers for disease activity and to estimate the risk of relapse before kidney transplantation, after conduction of appropriate clinical trials. Additionally, the detection of autoantibodies strengthens the role of B-cell targeting therapies and provides a potential rationale for further multicenter, prospective, randomized clinical trials using B-cell depletion to potentially reduce corticosteroid use and relapse rates in children. In the future, more targeted therapies such as the interference with downstream effects of antibody binding or the depletion of autoantigen-specific antibody producing cells might become possible. Finally, the detection of anti-nephrin autoantibodies provides an explanation for patients and their families with a previously elusive "idiopathic" disease in antibody positive patients. In summary, the identification of anti-nephrin antibodies in nephrotic syndrome now opens up new questions and paves the way for further experimental and clinical studies to improve diagnostic and therapeutic approaches.
+
+---
+45.
+
+Title:
+Patient-reported measures in children and adolescents with chronic kidney disease and their validation: A scoping review.
+
+PMID:
+42024155
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/Apr)
+
+Abstract:
+CONTEXT: Children with chronic kidney disease (CKD) experience complex challenges affecting their physical, emotional and quality of life outcomes. Patient-reported outcome measures (PROMs) and experience measures (PREMs), collectively known as patient-reported measures (PRMs) are essential to capture these impacts, but their validation and suitability in pediatric CKD research remain underexplored.
+OBJECTIVE: To identify and evaluate the psychometric properties of PRMs used in research in children with CKD.
+DATA SOURCES: Medline, Embase, CINAHL and PSYCinfo searched from inception to March 2025.
+STUDY SELECTION: Studies that reported the results of at least one PRM completed by patients or proxies in children aged 0-18 years with CKD were included.
+DATA EXTRACTION: Study and measure characteristics and psychometric properties of PRMs were extracted.
+RESULTS: One hundred seventy-five studies involving 21,423 children from 39 countries were eligible and included. 307 PRMs were identified, representing 121 unique tools across 23 outcome domains. Pediatric Quality of Life Inventory (PedsQL) was the most frequently used measure (50%). Approximately 40% were applied in the pediatric CKD population without evidence of external validation. Internal consistency was the most frequently reported psychometric property, assessed for 19 of all identified PRMs (6%). Disease-specific instruments (PRO-KID, TECAVNER) had good internal consistency (α ≥ 0.8).
+CONCLUSIONS: There is firm reliance on using generic PRMs in children with CKD; however, most lack robust external validation in this population. Co-development and comprehensive validation of disease-specific instruments that reflect outcomes valued by patients and families are required to enhance the relevance of outcome assessment in pediatric CKD care.
+
+---
+46.
+
+Title:
+MDA5-associated juvenile dermatomyositis and interstitial lung disease from rapidly progressive to silent: a report of three cases in South African children and a review of the literature.
+
+PMID:
+42018270
+
+Journal:
+Clinical rheumatology (2026/Apr)
+
+Abstract:
+BACKGROUND: Juvenile dermatomyositis (JDM) is a rare pediatric autoimmune disease. A distinct clinical phenotype is associated with anti-melanoma differentiation-associated gene 5 (anti-MDA5) autoantibodies, which are linked to features such as arthritis, ulcerative skin lesions, and a heightened risk of interstitial lung disease (ILD), including its rapidly progressive form (RP-ILD). Despite increased recognition of this phenotype in East Asian, European, and North American populations, significant gaps remain in understanding its pathogenesis, and no consensus has been reached regarding optimal treatment strategies. Moreover, data on anti-MDA5-associated JDM in African populations are nonexistent.
+CASE PRESENTATION: We report the first three documented cases of anti-MDA5-positive JDM with ILD in African children. All patients exhibited characteristic extramuscular manifestations, and all had pulmonary involvement, which was rapidly progressive in two children, one of whom died. The clinical course, diagnostic findings, and treatment strategies are discussed in the context of existing literature.
+METHODS: A review of the literature was performed to evaluate the prevalence, clinical presentation, and treatment approaches for RP-ILD in anti-MDA5-associated JDM across different populations.
+CONCLUSION: These cases highlight the wide heterogeneity of clinical phenotypes associated with anti-MDA5 autoantibodies in JDM. Given this variability, individualized monitoring and management strategies are essential to optimize outcomes.
+
+---
+47.
+
+Title:
+Clinical practice guideline for pediatric IgA vasculitis in Japan 2023: a digest-secondary publication.
+
+PMID:
+42018240
+
+Journal:
+Clinical and experimental nephrology (2026/Apr)
+
+Abstract:
+(abstract not available)
+
+---
+48.
+
+Title:
+Virus-Like Nanoparticles for Vaccine Development and Drug Delivery.
+
+PMID:
+42017442
+
+Journal:
+Reviews in medical virology (2026/May)
+
+Abstract:
+Virus-like nanoparticles (VLPs) are naturally occurring polymeric nanomaterials formed by the self-assembly of one or more viral capsid proteins (CPs). VLPs have garnered significant attention in a wide range of nanotechnology-based diagnostics and therapies, including immunotherapy and drug delivery. VLPs are Exhibiting high biocompatibility and biodegradability, alone with uniform structure and controlled assembly, VLPs represent a complex and versatile therapeutic platform. This review provides an overview of the fundamental aspects of VLPs, including their types, structures, immune mechanisms, as well as expression and purification method. Recent advances in the development and application of engineered VLPs for drug delivery, gene therapy, immunology studies and multifunctional therapeutics are discussed. This paper also summarised research advances in the use of virus-like particles as chimaeric vectors and highlights their potential as efficient delivery vehicles. Finally, we present several successful examples of VLPs-based drug delivery system and provide a comprehensive analysis of VLPs that takes advantage of both viral and non-viral delivery methods for efficient theranostic application.
+
+---
+49.
+
+Title:
+Efficacy, safety, and biomarker changes of B-cell activating factor and A proliferation-inducing ligand-targeted therapies in IgA nephropathy: a systematic review and meta-analysis of randomized controlled trials.
+
+PMID:
+42014363
+
+Journal:
+Journal of nephrology (2026/Apr)
+
+Abstract:
+BACKGROUND: IgA nephropathy (IgAN) is the most common primary glomerular disease worldwide. B-cell activating factor (BAFF) and A proliferation-inducing ligand (APRIL) are cytokines involved in B-cell activation and survival, contributing to the pathogenesis of IgAN. This meta-analysis aimed to evaluate the efficacy, safety, and biomarkers of BAFF- or APRIL-targeted therapies in patients with IgAN.
+METHODS: We searched PubMed, Scopus, and the Cochrane Library for randomized controlled trials (RCTs) comparing BAFF- or APRIL-targeted drugs with placebo in adults with IgAN, published up to December 2024 and written in English. Efficacy outcomes were the mean percent change in the 24-hour urine protein-to-creatinine ratio (UPCR) and the mean change in the estimated glomerular filtration rate (eGFR) from baseline. Safety included the incidence of adverse events. The biomarkers we used were changes in serum Gd-IgA1, IgG, IgA, and IgM from baseline. The risk of bias and the certainty of evidence were assessed using RoB v2.0 and the Grading of Recommendations, Assessment, Development, and Evaluations (GRADE). We used the R software version 4.2.1 for statistics.
+RESULTS: Four Phase II RCTs, including 331 patients, were included, with three studies having a low risk of bias, while there were some concerns regarding one study. Compared to placebo, BAFF- or APRIL-targeted drugs significantly reduced 24-hour UPCR (mean difference [MD] -38.94%; 95% confidence interval [CI] -58.98 to -18.90; P = 0.0001; I² = 0%) and significantly improved the eGFR (MD 7.05 mL/min/1.73 m²; 95% CI 3.83 to 10.27; P < 0.0001; I² = 0%). Adverse events did not significantly differ between the study groups. BAFF- or APRIL-targeted drugs significantly decreased serum Gd-IgA1, IgG, IgA, and IgM compared with placebo, indicating lower immune complex formation and response to treatment.
+CONCLUSION: BAFF- or APRIL-targeted therapies appear to be effective and safe in reducing proteinuria in patients with IgAN.
+PROSPERO REGISTRATION ID: CRD42024598157.
+
+---
+50.
+
+Title:
+Implementation of a kidney protection strategy to prevent acute kidney injury after major surgery in high-risk patients identified by biomarkers: a systematic review and individual participant data meta-analysis of randomized controlled trials.
+
+PMID:
+42007986
+
+Journal:
+Intensive care medicine (2026/Apr)
+
+Abstract:
+PURPOSE: Acute kidney injury (AKI) is a common complication after major surgery and is associated with increased morbidity and mortality. Kidney protection strategies may help prevent moderate or severe AKI in high-risk patients. This study aims to assess the effect of the Kidney Disease: Improving Global Outcomes (KDIGO) kidney protection strategy for the prevention of AKI in patients after major surgery.
+METHODS: We conducted a systematic review and individual participant data (IPD) meta-analysis of randomized controlled trials (RCTs) comparing the kidney protection strategy recommended by international guidelines consisting of hemodynamic and fluid status optimization, avoidance of nephrotoxins or radiocontrast agents, regular monitoring of kidney function, and glycemic control to standard care in high-risk patients after major surgery with an enrichment strategy based on renal biomarkers. The primary outcome was moderate or severe AKI (KDIGO stage ≥ 2) within 72 h after surgery. MEDLINE via PubMed, Web of Science, and the Cochrane Central Register of Controlled Trials were searched from January 1, 2000, to September 1, 2025. References of eligible trials and related reviews were hand-searched. Two reviewers independently assessed trial quality using the Cochrane Risk of Bias tool version 2.0. Certainty of the evidence was assessed using GRADE. IPD were pooled. Odds ratios (ORs) and mean difference with 95% confidence intervals (CIs) were computed with one-stage IPD meta-analysis. Heterogeneity was assessed by I2 and Cochran's Q.
+RESULTS: We identified four RCTs, two single-center trials and two multinational-multicenter trials. We pooled IPD from all four trials. The final cohort included 1,851 participants with 921 participants in the intervention group and 930 participants in the control group. Moderate or severe AKI occurred significantly less frequently in the intervention group (162/918 participants (17.7%)) compared to the control group (252/929 participants (27.1%)) (OR 0.55, 95% CI 0.44-0.70; p < 0.0001). There was no evidence of heterogeneity across studies (p = 0.7309, I2 = 0.0%, τ2 = 0). Secondary endpoints varied across trials and did not demonstrate major differences between groups. When measured, the intervention tended to result in fewer persistent AKI events and larger decreases in renal tubular stress biomarkers.
+CONCLUSION: The implementation of a kidney protection strategy reduces the rates of moderate or severe AKI in biomarker-enriched high-risk patients after major surgery compared to standard of care, while the incremental clinical value of biomarker-guided selection itself remains uncertain.
+REGISTRATION: The study was registered at the international, prospective register of systematic reviews PROSPERO. Identifier: PROSPERO 2025 CRD420251138328.
+
+---
+51.
+
+Title:
+Systematic Review of Trial Design and End Points in Lupus Nephritis.
+
+PMID:
+42006208
+
+Journal:
+Kidney international reports (2026/May)
+
+Abstract:
+INTRODUCTION: Advances in our understanding of immune dysregulation in lupus nephritis (LN) are driving a surge in the development of targeted pharmaceutical agents for a disease that continues to carry a high rate of morbidity and mortality. Although meaningful progress is being made in the management of LN, the substantial heterogeneity in critical elements of trial design and reporting that exists across contemporary LN trials hampers our ability to fairly compare the efficacy of new therapies.
+METHODS: In this review, we comprehensively summarized and compared end points, various aspects of methodology (including glucocorticoid usage and eligibility criteria), actual trial population, and results reporting across studies published in the last 2 decades. We assessed 15 phase 2/3, interventional, randomized controlled trials (RCTs), of which 4 demonstrated the superiority of the investigational agent over standard therapy.
+RESULTS: Emerging themes comprise the inclusion of participants with high median baseline kidney function (median of the average baseline estimated glomerular filtration rate (eGFR) was 95 ml/min per 1.73 m2), differences in definitions of active disease, high variability in kidney function, and glucocorticoid-based definitions of treatment response.
+CONCLUSION: Based on the findings of this review, we suggest a set of expert-posited guidelines to help in standardizing future studies in LN.
+
+---
+52.
+
+Title:
+International consensus on adolescent metabolic health: prevention of obesity and type 2 diabetes.
+
+PMID:
+42001194
+
+Journal:
+Diabetology & metabolic syndrome (2026/Apr)
+
+Abstract:
+BACKGROUND: The global rise in adolescent obesity is driving an aggressive phenotype of type 2 diabetes (T2D), which is marked by rapid progression and premature mortality. Therefore, evidence-based, internationally applicable prevention guidelines are urgently needed.
+METHODS: A multidisciplinary international panel (n = 21) developed consensus recommendations through a systematic literature review (utilizing Web of Science, Scopus, PubMed, Cochrane, and EMBASE for the years 2000–2025) and a structured meeting process (held from October 2024 to December 2025). Consensus required ≥ 80% agreement. A total of eighty statements were initially proposed, from which sixty achieved preliminary agreement in Phase 1. Following iterative refinement in Phases 2 and 3, fifty achieved final consensus, and thirty were eliminated, either for failing to achieve 80% agreement or by being designated for further research.
+RESULTS: The panel established fifty evidence-based recommendations across nine domains, which include screening, lifestyle intervention, school-based initiatives, digital health, therapeutic options, and policy. Key recommendations are to implement standardized screening protocols in schools, regulate the advertising of unhealthy foods and beverages, promote healthy lifestyle trends through media, and integrate artificial intelligence (AI) to tailor prevention plans.
+CONCLUSION: This consensus provides a practical, multisectoral framework for the global prevention of adolescent obesity and T2D, designed for application across healthcare, governmental, and non-governmental settings.
+SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1186/s13098-026-02142-y.
+
+---
+53.
+
+Title:
+Efficacy and safety of mirabegron versus solifenacin in the treatment of overactive bladder in children: a systematic review and meta-analysis.
+
+PMID:
+42001046
+
+Journal:
+BMC urology (2026/Apr)
+
+Abstract:
+BACKGROUND: Overactive bladder (OAB) affects 5–12% of children and is associated with urgency, frequency, and incontinence, often leading to psychosocial distress. Antimuscarinics are widely used but limited by systemic side effects. Mirabegron, a β3-adrenoceptor agonist, may offer better tolerability. This review evaluated available evidence comparing mirabegron and solifenacin in pediatric OAB.
+METHODS: Following PRISMA guidelines (PROSPERO: CRD420251129236), we searched PubMed, Scopus, Web of Science, and the Cochrane Library through September 2025 for studies directly comparing mirabegron and solifenacin in children ≤ 18 years with non-neurogenic OAB. Two reviewers independently screened studies, extracted data, and assessed quality. Risk ratios (RRs) with 95% confidence intervals (CIs) were pooled using random-effects models.
+RESULTS: Three studies (246 children; 116 mirabegron, 130 solifenacin) met inclusion criteria. Pooled analysis showed no significant difference in treatment response between groups (RR = 1.11, 95% CI: 0.92–1.33; p = 0.28; I² = 58%). Mirabegron was associated with significantly fewer adverse events (RR = 0.44, 95% CI: 0.28–0.70; p = 0.0004; I² = 0%).
+CONCLUSIONS: Mirabegron and solifenacin demonstrate comparable efficacy in pediatric OAB, with mirabegron suggesting a more favorable short-term safety profile. These preliminary findings require confirmation in larger, long-term trials with standardized outcome measures.
+CLINICAL TRIAL REGISTRATION: Not applicable.
+SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1186/s12894-026-02155-9.
+
+---
+54.
+
+Title:
+B-cell-targeting therapies in podocytopathies.
+
+PMID:
+42000953
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/Apr)
+
+Abstract:
+Podocytopathies, including minimal change disease and focal segmental glomerulosclerosis, represent the leading causes of nephrotic syndrome in children and adolescents. Although traditionally considered T-cell-mediated disorders, growing evidence over the last decade has reshaped this paradigm, highlighting a central role for B-cells, plasma cells, and humoral immune mechanisms in podocyte injury. The identification of pathogenic autoantibodies, particularly anti-nephrin IgG, and the involvement of complement activation have provided a strong mechanistic rationale for B-cell-targeted therapies. Rituximab, an anti-CD20 monoclonal antibody, has become an established steroid-sparing agent in steroid-dependent and frequently relapsing nephrotic syndrome, significantly reducing relapse rates and cumulative steroid exposure in pediatric patients. However, its efficacy is limited in steroid-resistant disease and in settings characterized by persistent autoantibody production or post-transplant recurrence. These limitations have prompted the exploration of next-generation anti-CD20 agents, such as obinutuzumab, which achieve deeper and more sustained B-cell depletion, as well as therapies targeting long-lived plasma cells, including anti-CD38 monoclonal antibodies. Emerging clinical data suggest that combined B-cell and plasma cell targeting may induce durable remission in refractory podocytopathies and recurrent post-transplant focal segmental glomerulosclerosis, while maintaining an acceptable safety profile. In parallel, novel strategies targeting the BAFF/APRIL axis and cellular therapies such as CAR-T cells are under investigation. This review summarizes current evidence on B-cell-directed therapies in podocytopathies, mostly in pediatrics, discusses unmet clinical needs, and outlines future perspectives toward precision, mechanism-based immunotherapy.
+
+---
+55.
+
+Title:
+[Research progress on the application of telitacicept in rheumatism and autoimmune diseases].
+
+PMID:
+41922188
+
+Journal:
+Zhejiang da xue xue bao. Yi xue ban = Journal of Zhejiang University. Medical sciences (2026/Apr)
+
+Abstract:
+Traditional treatment regimens for rheumatism and autoimmune diseases are associated with significant adverse effects, and some patients have a limited response, leading to poor prognosis. Telitacicept, a biologic agent and fusion protein targeting B cell activating factor (BAFF) and a proliferation inducing ligand (APRIL), offers a novel therapeutic strategy for refractory rheumatism and autoimmune diseases. Clinical trials have shown promising efficacy and safety. In systemic lupus erythematosus, telitacicept reduces disease activity and facilitates glucocorticoid sparing, with favorable outcomes also observed in pediatric patients. In Sjögren's syndrome, telitacicept achieves sustained improvement in clinical symptoms and disease activity. In rheumatoid arthritis, telitacicept improves the response rates for the American College of Rheumatology 20% improvement criteria (ACR20) and for the American College of Rheumatology 50% improvement criteria (ACR50) while significantly reducing glucocorticoid requirements. In IgA vasculitis, studies focused on patients with renal involvement, and showed efficacy in reducing proteinuria in both adults and children. In myasthenia gravis, telitacicept reduces disease severity and improves quality of life. Additionally, telitacicept has shown preliminary therapeutic potential in IgG4-related disease and granulomatosis with polyangiitis, warranting further investigation. Existing clinical data indicate a favorable overall safety profile for telitacicept. However, attention should be paid to long-term risks of infection, decreased immunoglobulin levels, potential resistance mechanisms, and its efficacy and safety in special populations. This review summarizes recent research progress on the use of telitacicept in rheumatism and autoimmune diseases, aiming to provide a reference for its clinical application.
+风湿病和自身免疫病传统治疗方案副作用明显，部分患者疗效有限，预后不佳。生物制剂泰它西普（telitacicept）作为靶向B细胞活化因子（BAFF）和增殖诱导配体（APRIL）的融合蛋白，为难治性风湿病和自身免疫病治疗提供了新策略，部分临床试验已展现出较好的临床效果及安全性。在系统性红斑狼疮中，泰它西普可降低患者疾病活动度并有助于减少糖皮质激素使用，在儿童患者中也显示较好的疗效。在干燥综合征中，泰它西普可持续改善患者临床症状及疾病活动度。在类风湿关节炎中，泰它西普能提高美国风湿病学会20%改善标准（ACR20）、美国风湿病学会50%改善标准（ACR50）应答率且显著减少激素使用量。在IgA血管炎中，研究主要集中于肾脏受累的患者，在减少成人及儿童蛋白尿方面均有较好疗效。在重症肌无力中，泰它西普可降低疾病严重程度并改善患者生活质量。此外，泰它西普在IgG4相关疾病及肉芽肿性多血管炎等疾病中也初步显示出治疗潜力，仍需进一步探索。现有临床数据表明，泰它西普整体安全性良好，但仍需关注长期应用的感染风险、免疫球蛋白水平下降、潜在耐药机制及其在特殊人群中的疗效及安全性等问题。本文综述了泰它西普在风湿病和自身免疫病中的应用研究进展，以期为泰它西普的临床应用提供参考。.
+
+---
+56.
+
+Title:
+Global, regional, and national burden of meningitis, its risk factors, and aetiologies, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.
+
+PMID:
+41911930
+
+Journal:
+The Lancet. Neurology (2026/May)
+
+Abstract:
+BACKGROUND: Meningitis remains the leading infectious cause of neurological disabilities globally, disproportionately affecting children younger than 5 years and populations in the African meningitis belt. Whereas previous global estimates focused on ten pathogen categories, this study presents the most comprehensive analysis to date, assessing the meningitis burden attributable to 17 causative pathogens based on the Global Burden of Diseases, Injuries, and Risk Factors Study (GBD) 2023 framework.
+METHODS: GBD is a systematic, scientific effort aimed at quantifying the comparative magnitude of health loss caused by diseases, injuries, and risk factors across age groups, sexes, and geographical locations over time. We estimated meningitis mortality using the Cause of Death Ensemble model (CODEm) and morbidity using DisMod-MR 2.1, incorporating data from vital registration, verbal autopsy, surveillance, hospital data, and systematic reviews. Aetiology-specific estimates were generated with pathogen-linked case-fatality ratios and splined binomial regression models. Risk factor attribution was based on established risk-outcome pairs and population attributable fractions.
+FINDINGS: In 2023, there were 259 000 (95% uncertainty interval 202 000-335 000) global deaths and 2·54 million (2·20-2·93) incident cases of meningitis. Children younger than 5 years accounted for more than a third of deaths (86 600 [53 300-149 000]). Streptococcus pneumoniae, Neisseria meningitidis, non-polio enteroviruses, and other viruses were the leading causes of death, while non-polio enteroviruses caused the most cases. The four WHO-defined preventable meningitis pathogens of interest (S pneumoniae, N meningitidis, Haemophilus influenzae, and Group B streptococcus) contributed to 98 700 deaths (77 000-127 000) and 594 000 cases (514 000-686 000). Low birthweight, short gestation, and household air pollution were the top risk factors for meningitis-related mortality.
+INTERPRETATION: Although mortality and incidence have declined significantly since 1990, progress is insufficient to meet WHO 2030 targets. Despite marked progress in reducing bacterial meningitis via global vaccination campaigns, a substantial meningitis burden persists, attributable both to common pathogens such as S pneumoniae and N meningitidis and to emerging non-bacterial pathogens such as Candida spp and drug-resistant fungi. Achieving WHO goals will require sustained investment in surveillance, vaccination, maternal screening, and health-system strengthening, especially in high-burden settings.
+FUNDING: Gates Foundation, Wellcome Trust, and UK Department of Health and Social Care.
+
+---
+57.
+
+Title:
+Nephrotic Syndrome: Current Management.
+
+PMID:
+41910850
+
+Journal:
+Indian journal of pediatrics (2026/May)
+
+Abstract:
+(abstract not available)
+
+---
+58.
+
+Title:
+Japanese clinical practice guidelines for vascular tumors, vascular malformations, lymphatic malformations, and lymphangiomatosis 2022.
+
+PMID:
+41893920
+
+Journal:
+Surgery today (2026/May)
+
+Abstract:
+The objective was to prepare guidelines to perform the current optimum treatment by organizing effective and efficient treatments of hemangiomas and vascular malformations, confirming the safety, and systematizing treatment, employing evidence-based medicine techniques and aimed at improvement of the outcomes. Clinical questions (CQs) were decided based on the important clinical issues. For document retrieval, key words for literature searches were set for each CQ and literature published from 1980 to the end of December 2020 was searched in PubMed, and Japana Centra Revuo Medicina (JCRM). The strengths of evidence and recommendations acquired by systematic reviews were determined following the Medical Information Network Distribution Service (Minds) technique. A total of 38 CQs were used to compile recommendations and the subjects included efficacy of resection, sclerotherapy/embolization, drug therapy, laser therapy, radiotherapy, and other conservative treatment, differences in appropriate treatment due to the location of lesions and among symptoms, appropriate timing of treatment and tests, pathological diagnosis deciding the diagnosis, and causal genes of vascular anomalies. Thus, the Japanese clinical practice guidelines for vascular tumors, vascular malformations, lymphatic malformations, and lymphangiomatosis 2022 have been prepared as the evidence-based guidelines for the management of vascular anomalies.
+
+---
+59.
+
+Title:
+Cellular senescence in skeletal muscle: myogenic and nonmyogenic cell populations, mechanisms, and therapeutic opportunities.
+
+PMID:
+41886266
+
+Journal:
+American journal of physiology. Cell physiology (2026/May)
+
+Abstract:
+Skeletal muscle plays a central role in systemic metabolism, physical function, and overall health. Aging and disease diminish the ability of myogenic and nonmyogenic skeletal muscle cells to coordinate adaptation and repair, but the mechanisms underlying this decline are not fully understood. Growing evidence implicates cellular senescence, a stress response marked by irreversible cell cycle arrest and proinflammatory signaling, as a key contributor to muscle pathology. In this review, we synthesize current insights into the molecular mechanisms that govern cellular senescence in skeletal muscle, its effects on myogenic and nonmyogenic cell populations, and recent technologies that have clarified key aspects of senescence biology. We further explore emerging therapeutic strategies aimed at targeting senescent cells and discuss key knowledge gaps that must be addressed to advance our understanding of senescent myogenic and nonmyogenic cells in skeletal muscle.
+
+---
+60.
+
+Title:
+Kidney Support Therapy: Recent Advances.
+
+PMID:
+41886184
+
+Journal:
+Indian journal of pediatrics (2026/May)
+
+Abstract:
+(abstract not available)
+
+---
+61.
+
+Title:
+Japanese Clinical Practice Guidelines for Vascular Tumors, Vascular Malformations, Lymphatic Malformations, and Lymphangiomatosis 2022.
+
+PMID:
+41881506
+
+Journal:
+The Journal of dermatology (2026/May)
+
+Abstract:
+The objective was to prepare guidelines to perform the current optimum treatment by organizing effective and efficient treatments of hemangiomas and vascular malformations, confirming the safety, and systematizing treatment, employing evidence-based medicine techniques and aimed at improvement of the outcomes. Clinical questions (CQs) were decided based on the important clinical issues. For document retrieval, key words for literature searches were set for each CQ and literature published from 1980 to the end of December 2020 was searched in PubMed, and Japana Centra Revuo Medicina (JCRM). The strengths of evidence and recommendations acquired by systematic reviews were determined following the Medical Information Network Distribution Service (Minds) technique. A total of 38 CQs were used to compile recommendations and the subjects included efficacy of resection, sclerotherapy/embolization, drug therapy, laser therapy, radiotherapy, and other conservative treatment, differences in appropriate treatment due to the location of lesions and among symptoms, appropriate timing of treatment and tests, pathological diagnosis deciding the diagnosis, and causal genes of vascular anomalies. Thus, the Japanese Clinical Practice Guidelines for Vascular Tumors, Vascular Malformations, Lymphatic Malformations, and Lymphangiomatosis 2022 have been prepared as the evidence-based guidelines for the management of vascular anomalies.
+
+---
+62.
+
+Title:
+Japanese clinical practice guidelines for vascular tumors, vascular malformations, lymphatic malformations, and lymphangiomatosis 2022.
+
+PMID:
+41880126
+
+Journal:
+Japanese journal of radiology (2026/May)
+
+Abstract:
+The objective was to prepare guidelines to perform the current optimum treatment by organizing effective and efficient treatments of hemangiomas and vascular malformations, confirming the safety, and systematizing treatment, employing evidence-based medicine techniques and aimed at improvement of the outcomes. Clinical questions (CQs) were decided based on the important clinical issues. For document retrieval, key words for literature searches were set for each CQ and literature published from 1980 to the end of December 2020 was searched in PubMed, and Japana Centra Revuo Medicina (JCRM). The strengths of evidence and recommendations acquired by systematic reviews were determined following the Medical Information Network Distribution Service (Minds) technique. A total of 38 CQs were used to compile recommendations and the subjects included efficacy of resection, sclerotherapy/embolization, drug therapy, laser therapy, radiotherapy, and other conservative treatment, differences in appropriate treatment due to the location of lesions and among symptoms, appropriate timing of treatment and tests, pathological diagnosis deciding the diagnosis, and causal genes of vascular anomalies. Thus, the Japanese Clinical Practice Guidelines for Vascular Tumors, Vascular Malformations, Lymphatic Malformations, and Lymphangiomatosis 2022 have been prepared as the evidence-based guidelines for the management of vascular anomalies.
+
+---
+63.
+
+Title:
+Prevalence of post-COVID symptoms across variants of concern and follow-up periods: A systematic review and meta-analysis.
+
+PMID:
+41819160
+
+Journal:
+International journal of infectious diseases : IJID : official publication of the International Society for Infectious Diseases (2026/May)
+
+Abstract:
+OBJECTIVES: The interaction between SARS-CoV-2 variants of concern (VoC) and post-COVID symptom duration remains unexplored. This is the first study to evaluate post-COVID prevalence stratified by VoC and follow-up periods.
+METHODS: Six databases were searched (12/2019-12/2024) for studies of adults with laboratory-confirmed SARS-CoV-2 and symptoms lasting ≥3 months. Data were stratified by VoC (Alpha through Omicron) and follow-up (<6 vs ≥6 months) to estimate pooled prevalence using random-effects models.
+RESULTS: Pooled prevalence across 35 studies (n = 159,000) was 28.5% (95% CI: 21.6-36.0), higher in pre-Omicron (35.5%) than Omicron (22.8%) eras (P = 0.04). Symptoms persisted beyond 6 months in 29.9% of cases. Fatigue was the most prevalent symptom across all VoCs and follow-ups followed by brain fog, dyspnea, and sleep impairment. Pre-Omicron variants were linked to dyspnea and anosmia, while Omicron was associated with brain fog and paresthesia. Most symptoms showed no significant reduction beyond 6 months. Sleep problems were higher in early pre-Omicron cohorts but improved over time; conversely, palpitations and ocular manifestations increased in later pre-Omicron follow-ups.
+CONCLUSION: Post-COVID condition remains a burden despite vaccination. Distinct symptomatology patterns across VoC and timelines highlight the need for tailored management strategies to mitigate long-term global impacts.
+
+---
+64.
+
+Title:
+Evaluating Infections in Solid Organ Donors Before Transplantation: A Systematic Review of Clinical Practice Guidelines.
+
+PMID:
+41805905
+
+Journal:
+Transplantation (2026/May)
+
+Abstract:
+BACKGROUND: Donor-derived infection remains a risk in solid organ transplantation. Clinical practice guidelines inform best practices for donor evaluation and acceptance, although they vary across centers and regions. This study aimed to evaluate the quality and consistency of guidelines for the evaluation of infections in solid organ donors and to summarize their recommendations.
+METHODS: We searched electronic databases and websites of professional organizations for clinical practice guidelines and consensus statements on evaluating solid organ donors for the presence and risk of infection. The methodological quality was assessed using the Appraisal of Guidelines for Research and Education II tool. Textual synthesis was used to compare the recommendations and summarize their conclusions.
+RESULTS: We included 19 clinical practice guidelines and 19 consensus statements covering different donor types (deceased/living, adult/pediatric), solid organs (liver, kidney, lung, heart, and pancreas) and infection types (viral, bacterial, fungal, parasitic, and prion). Most guidelines focused on describing the scope and purpose, but with less emphasis on domains such as the guidelines' applicability and rigor of development. Recommendations for screening and organ acceptance were generally consistent for hepatitis B virus, hepatitis C viru, HIV, Mycobacterium tuberculosis , Toxoplasma gondii , and Treponema pallidum infections. Variations exist, especially for emerging infections or when the screening test performance was poor. Most recommendations were ungraded.
+CONCLUSIONS: Recommendations for common infections were mostly consistent. Where uncertainties exist, transparency in evidence synthesis and translation into recommendations is needed. Real-world evaluation of guideline implementation and its clinical impact is crucial for maximizing donor organ use while minimizing donor-derived infections.
+
+---
+65.
+
+Title:
+Kidney and Cardiovascular Protection in Diabetes: Beyond Diabetes Typology.
+
+PMID:
+41791642
+
+Journal:
+American journal of kidney diseases : the official journal of the National Kidney Foundation (2026/May)
+
+Abstract:
+Despite the abundance of new therapies designed to delay or prevent kidney and cardiovascular events in people with type 2 diabetes mellitus (T2DM), a stark gap remains in the evidence supporting their efficacy and safety for other types of diabetes. Individuals without T2DM are frequently excluded from clinical trials based on the assumptions that their event risk, pathogenesis, and potential for adverse events differ significantly. It is anticipated that treatments will eventually be expanded to include this population, yet the uptake of new therapies even with clear evidence is often disappointingly low. In this perspective, we critically examine the characteristics of diabetes types other than T2DM and evaluate the available evidence for novel therapies in these underrepresented populations. Future small trials of surrogate end points and real-world studies, including individuals without T2DM, will be essential to understand and use recent advancements in treatments for preventing kidney failure and cardiovascular events and death.
+
+---
+66.
+
+Title:
+Anti-nephrin autoantibodies in post-transplant recurrent focal segmental glomerulosclerosis: diagnostic advances and future directions.
+
+PMID:
+41746488
+
+Journal:
+Clinical and experimental nephrology (2026/May)
+
+Abstract:
+Nephrotic syndrome is a common kidney disease during childhood that is characterized by alterations in the glomerular filtration barrier and leads to protein loss in the urine. Approximately 90% of cases are classified as idiopathic nephrotic syndrome, most of which are histologically diagnosed as minimal change disease (MCD). Although the majority of patients achieve remission with steroid therapy, a subset develops steroid resistance and progresses to focal segmental glomerulosclerosis (FSGS) and kidney failure. Increasing evidence suggests that MCD and idiopathic FSGS represent a disease continuum, with FSGS reflecting a more advanced stage. Although several candidates have been proposed as circulating factors, none fully explains the disease pathogenesis. This landscape changed in 2022 with the discovery of anti-nephrin autoantibodies in MCD. Subsequently, we reported that circulating anti-nephrin autoantibodies were identified by ELISA in patients with post-transplant recurrent FSGS, and punctate IgG deposition colocalizing with nephrin was consistently detected in allograft biopsy specimens obtained during recurrence. Notably, these IgG deposits resolved following remission. Collectively, these findings suggest diffuse podocytopathies as autoantibody-mediated disorders and support a shift toward autoantibody-based disease classification. Experimental and clinical studies demonstrate that anti-nephrin autoantibodies induce nephrin phosphorylation. This process may be associated with nephrin endocytosis and subsequent cytoskeletal alterations. Additionally, autoantibodies targeting slit diaphragm molecules other than nephrin have been identified. However, the pathogenic roles of these autoantibodies remain to be clarified. Collectively, these findings highlight a complex, autoantibody-driven mechanism in diffuse podocytopathies and underscore the need for standardized assays and biomarker-driven classification strategies.
+
+---
+67.
+
+Title:
+Timing Matters: Leveraging Positron Emission Tomography Imaging and Hormonal Cycles for Precision Psychiatry in Female Mental Health.
+
+PMID:
+41740642
+
+Journal:
+Biological psychiatry (2026/May)
+
+Abstract:
+Fluctuations in behavior across the menstrual cycle have been observed in several psychiatric disorders, particularly those affecting mood. Cycle-specific conditions, such as premenstrual dysphoric disorder (PMDD), and cycle-responsive conditions, in which changes in symptoms are tied to the menstrual cycle, including attention-deficit/hyperactivity disorder (ADHD), exemplify this pattern with an increase in symptoms during the luteal phase. Growing evidence indicates that within-cycle ovarian hormone fluctuations and withdrawal, along with associated neurotransmitter changes, shape symptom trajectories. In PMDD, serotonergic tone is associated with mood changes, providing direct evidence of a link between hormonal fluctuations and psychiatric symptoms. Advanced quantitative neuroimaging techniques, such as positron emission tomography (PET), offer a unique opportunity to investigate how neurotransmitter systems, particularly serotonin, GABA (gamma-aminobutyric acid), dopamine, and norepinephrine, interact with hormonal shifts to influence psychiatric symptoms. In this review, we explore the potential of PET neuroreceptor imaging to elucidate the neurobiological mechanisms underlying hormone-related mood changes. With PMDD as a model, we provide a conceptual framework and highlight directions of mechanistic understanding for ADHD and other psychiatric conditions across the relatively brief, yet consistently cyclical intervals, thereby identifying windows for targeted, menstrual phase-informed interventions. By integrating hormonal and cycle variability into psychiatric research and treatment, we aim to advance precision medicine approaches for mood disorders.
+
+---
+68.
+
+Title:
+The podocyte slit-diaphragm: target of anti-nephrin antibodies.
+
+PMID:
+41733080
+
+Journal:
+Current opinion in nephrology and hypertension (2026/May)
+
+Abstract:
+PURPOSE OF REVIEW: This review is prompted by substantial new information on the composition and structure of the podocyte slit-diaphragm and the identification of anti-nephrin antibodies in patients with acquired diseases of the glomerular podocyte, including steroid-sensitive nephrotic syndrome of childhood, minimal change disease and some cases of primary focal and segmental glomerulosclerosis (FSGS).
+RECENT FINDINGS: New methodologies including multi-epitope affinity purification, high resolution proteomics and cryo-electron tomography reveal that the slit-diaphragm consists of a multi-layered fishnet-like structure made up by nephrin and neph1 homodimers as well as several co-assembled proteins with signaling properties. Insights from clinical studies and experimental models support the concept that pathogenic antibodies engaging the extracellular domain of nephrin disrupt the integrity of the slit-diaphragm and signal changes to the podocyte cytoskeleton that lead to foot process effacement and proteinuria.
+SUMMARY: These findings raise several questions to be answered experimentally, including the nephrin epitopes targeted by the antibodies and the way in which they alter the slit-diaphragm and podocyte architecture and induce nephrin endocytosis. They also highlight the need for a reliable and widely available assay for anti-nephrin antibodies, which would have diagnostic and therapeutic impact on diagnosis, prognosis and therapy.
+
+---
+69.
+
+Title:
+Eosinophilic granulomatosis with polyangiitis: recent therapeutic advances.
+
+PMID:
+41717826
+
+Journal:
+Current opinion in rheumatology (2026/May)
+
+Abstract:
+PURPOSE OF REVIEW: The aim of this review is to describe the substantial advances that have been made in the past 2 years on new treatment options in eosinophilic granulomatosis with polyangiitis (EGPA).
+RECENT FINDINGS: The therapeutic scenario in EGPA has been recently broadened by the publication of the results from the multicenter, double-blind randomized MANDARA trial, which proved the noninferiority of benralizumab to another anti-interleukin-5 (IL-5) drug, mepolizumab, for the induction of remission in patients with EGPA. A few real-world studies have confirmed these results. Furthermore, the first randomized controlled trial exploring the efficacy of rituximab (anti-CD20) in induction of remission of EGPA was recently published. Targeting other molecular pathways did not always show adequate control of systemic manifestations of EGPA, with only limited evidence of effectiveness from small case series. Interestingly, cases of EGPA onset in severe asthma patients treated with monoclonal antibodies were described.
+SUMMARY: Biological drug therapy targeting IL-5 consolidated its role in the management of EGPA, becoming the cornerstone of the treatment of this rare disease. Future guidelines should consider these recent findings to improve the management of EPGA. Notably, while selective IL-5 targeting is highly effective for remission maintenance, its role in inducing remission in EGPA remains to be fully established. Rituximab was non-superior to standard therapy in induction of remission in patients with EGPA, demonstrating a similar rate of response. The role of other targeted therapies, albeit promising in some cases, remains a matter of debate.
+
+---
+70.
+
+Title:
+Use of kidney-preserving medications in breastfeeding.
+
+PMID:
+41692344
+
+Journal:
+Kidney international (2026/May)
+
+Abstract:
+Breastfeeding has recognized health benefits for all mother-infant dyads, which are particularly important for women with chronic kidney disease (CKD) and their children. There is growing evidence to suggest breastfeeding positively impacts maternal vascular health by lowering blood pressure, assisting with weight loss, improving lipid profiles, and preventing type 2 diabetes. Similarly, breastfed infants have demonstrated decreased risks of developing obesity, hypertension, and diabetes, improving their long-term vascular health. Postpartum women with CKD often require different therapies to manage their disease and improve long-term outcomes, but there is a lack of robust lactation safety data for many drugs used in the treatment of CKD. As a result, postpartum women with CKD may be deprived of nephroprotective therapies that impact long-term renal survival or the vascular protective effects associated with breastfeeding for themselves and their children. In this review, we summarize the importance of breastfeeding for women with CKD and their children, and existing data on the safety of drugs used for the treatment of CKD in lactation. We also review available methods for assessing drug safety and describe emerging pharmacometric modeling techniques that may be particularly useful for informing safety in lactation for drugs with little human data, helping to overcome some of the ethical and practical issues associated with conducting research on postpartum women and their infants.
+
+---
+71.
+
+Title:
+Mental health and kidney disease.
+
+PMID:
+41606193
+
+Journal:
+Nature reviews. Nephrology (2026/May)
+
+Abstract:
+Multiple long-term conditions, and particularly mental health conditions, are common in adults with chronic kidney disease (CKD). Some mental health conditions increase the risk of developing CKD, contribute to faster disease progression, and complicate care experiences and outcomes. Depression and anxiety are particularly prevalent and are associated with reduced quality of life, unplanned service use and poorer clinical outcomes. The manner in which depression and anxiety are detected and managed as part of routine kidney care can vary widely. Evidence for effective and acceptable treatments is mixed overall, although meta-analyses highlight the benefits of physical activity and cognitive behavioural therapy. Data on the use of antidepressants in people with CKD are also variable, limited by the lack of robust clinical trials. People with particularly complex needs, such as those with severe mental illness and CKD, have markedly shorter lifespans and higher rates of emergency hospitalizations than those without severe mental illness and are also less likely to access specialist nephrology care and to receive a transplantation. Health inequalities are amplified for those contending with wider disadvantages related to social and structural determinants of health. Reducing the burden of mental health in people with CKD is an urgent priority to alleviate personal and health system impacts. Here, we examine current evidence on mental health and CKD to inform policy and research and to support advances in prevention and management approaches.
+
+---
+72.
+
+Title:
+Combined Inhaled Pulmonary Vasodilators in Cardiac Surgery: A Scoping Review.
+
+PMID:
+41521132
+
+Journal:
+Journal of cardiothoracic and vascular anesthesia (2026/May)
+
+Abstract:
+Pulmonary hypertension is a risk factor for increased morbidity and mortality in cardiac surgery. The use of a combination of inhaled vasodilator agents could have an improved effect on pulmonary vascular resistance in the perioperative cardiac surgery setting without causing the systemic side effect of hypotension observed with intravenous agents. There is currently limited evidence regarding the use of combination therapy for pulmonary hypertension in the context of cardiac surgery. A scoping review was conducted to retrieve relevant literature on the use of a combination of inhaled vasodilator agents in the treatment of pulmonary hypertension and/or right ventricular dysfunction in adults and children undergoing cardiac surgery. The authors searched MEDLINE, Embase, and the Cochrane Central Register of Controlled Trials from inception to April 2025 for relevant articles. They identified 23 studies including 432 patients. The combined inhaled therapies reported in the literature are nitric oxide or milrinone combined with prostacyclin analogues. Of the 23 studies, 18 reported a hemodynamic benefit of the drugs in decreasing pulmonary hypertension and improving right ventricular function. Decreased intraoperative and postoperative vasopressor and/or inotropic use also was observed. Moreover, the impact on clinical outcomes, such as difficulty in weaning from cardiopulmonary bypass and length of intensive care unit stay, showed conflicting results. No study has reported an impact on mortality, length of hospital stay, or other intraoperative or postoperative complications. Combined therapies are promising therapeutic alternatives for the management of pulmonary hypertension and/or right ventricular dysfunction in cardiac surgery, but more studies are required to determine their systemic effects and impact on clinical outcomes.
+
+---
+73.
+
+Title:
+Medical device regulation and dialysis practice-impact on patients, doctors and manufacturers.
+
+PMID:
+41459722
+
+Journal:
+Nephrology, dialysis, transplantation : official publication of the European Dialysis and Transplant Association - European Renal Association (2026/Apr)
+
+Abstract:
+The Medical Device Regulation (MDR) was adopted in 2017 to replace the Medical Device Directive. Key changes included more rigorous clinical evidence requirements, increased scrutiny of notified bodies and improved traceability of medical devices, with the overarching aim to improve their safety and quality. For chronic haemodialysis, the impact of the MDR on devices has been substantial, resulting in niche devices being no longer available, and critical shortages, especially in paediatric nephrology. The EuDial board discussed these developments and concluded that the MDR has had a clear negative impact on innovation. In conjunction with other emerging economic macro-trends, this development heightens the potential for disruptions within critical supply chains. We offer actionable recommendations to optimize the benefits of the MDR and to minimize unintended consequences.
+
+---
+74.
+
+Title:
+Current Landscape of Mobile Health Applications for Hypertension Management in the United States: A Scoping Application Review.
+
+PMID:
+41400851
+
+Journal:
+American journal of hypertension (2026/May)
+
+Abstract:
+INTRODUCTION: Hypertension, a major contributor to cardiovascular mortality, requires multimodal monitoring and management strategies for optimal blood pressure (BP) control. Patients are turning toward mobile health (mHealth) applications to manage hypertension which vary widely in design and regulation. This study examines the landscape of hypertension mHealth applications on Apple App Store and Google Play Store and qualitatively evaluates their functionality and security features from patient and clinician perspectives.
+METHODS: Publicly available applications were identified using keyword "hypertension" on the Apple App Store and Google Play Store or in a recent meta-analysis that met specific review criteria. Applications with <1000 reviews (Apple App Store) or <10,000 reviews (Google Play Store) were excluded to capture the top 5% of applications with high public use. Of >700 applications, 43 underwent full application screening and 18 were reviewed for general information, storage, revenue models, security, patient/clinician interfaces, and associated research. Discrepancies were resolved through consensus and available manufacturer confirmation.
+RESULTS: Clinician interfaces were largely absent, with limited EMR integration and alert systems. Revenue models ranged from free to subscription-based. Security and data privacy policies varied with applications lacking clear opt-out options for data collection. Patient interfaces offered BP tracking and reminders, and accessibility features. Sentiment analysis showed an overall positive view of frequently reviewed Google Play Store applications.
+CONCLUSIONS: Current mHealth applications lack several features for optimal hypertension monitoring and management. Based on the range of qualitative application features assessed, we formulate a framework for developing an ideal mHealth application for optimal hypertension management.
+
+---
+75.
+
+Title:
+Androgen deprivation therapy with apalutamide in the treatment of metastatic castration-sensitive prostate cancer: the systematic review of its effectiveness and applicability for Asian men in the targeted investigational treatment analysis of novel anti-androgen (TITAN) trial.
+
+PMID:
+41353294
+
+Journal:
+International urology and nephrology (2026/May)
+
+Abstract:
+BACKGROUND: The TITAN trial established survival benefits of adding apalutamide to androgen deprivation therapy (ADT) in metastatic castration‑sensitive prostate cancer (mCSPC). Whether efficacy and safety are comparable in Asian men remains insufficiently characterized.
+METHODS: We conducted a PRISMA-guided review (PROSPERO CRD420251054772) and adhered to the SWiM framework for narrative synthesis. Databases searched in MEDLINE, Embase, Cochrane Library, and CINAHL from inception to 15 December 2024. Eligible studies presented Asian subpopulation outcomes for apalutamide + ADT in mCSPC from TITAN (final post hoc/data‑cut updates) and any independent Asian datasets. CASP critical appraisal was applied to selected studies; subgroup analysis was appraised for pre-specification, multiplicity, and reporting completeness. Overlapping publications were consolidated into the most mature dataset per endpoint.
+RESULTS: Four TITAN‑derived analysis met the inclusion criteria. In Asian patients (N = 221), apalutamide + ADT showed benefits directionally consistent with the overall population for overall survival (OS, HR 0.68, 95% CI 0.42-1.13, P = 0.1335) and radiographic progression‑free survival (rPFS, HR 0.506, 95% CI 0.302-0.849, P = 0.009). Prostate-specific antigen (PSA) responses (PSA ≤ 0.2 ng/mL, PSA 50/90 decline: 73.9%, 90.1%, 74.8% and early deep declines) favored apalutamide. Time to PSA progression (TTPP, HR: 0.21, 95% CI 0.13-0.35, P < 0.0001), time to castration resistance (TTCR, HR 0.3, 95% CI 0.21-0.46, P < 0.0001), and second progression-free survival (PFS2, HR 0.76, 95% CI 0.44-1.29, P = 0.3022) were significantly improved. Skin rash appeared higher in Asian patients (30.9% any grade; 5.5% grade ≥ 3), typically manageable with standard measures, with no new safety signals emerging.
+CONCLUSION: Asian subpopulation efficacy with apalutamide + ADT is directionally consistent with TITAN overall, with higher rash frequency that is generally manageable. Small subpopulation size and overlapping publications limit precision; regionally representative real‑world studies are needed.
+TRIAL REGISTRATION: PROSPERO number CRD420251054772.
+
+---
+76.
+
+Title:
+The dietary management of sodium in children with kidney diseases-clinical practice recommendations from the Pediatric Renal Nutrition Taskforce.
+
+PMID:
+41251793
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/May)
+
+Abstract:
+Sodium imbalance is a common concern in children with kidney diseases, presenting as either sodium excess or sodium deficit, each with significant clinical implications. Sodium excess contributes to fluid overload and hypertension, while increased sodium losses, particularly via urine or peritoneal fluid, can predispose patients to hypotension and growth failure. Effective sodium management is thus a critical component of care in pediatric kidney diseases, with dietary sodium intake playing a pivotal role in maintaining homeostasis. The Pediatric Renal Nutrition Taskforce (PRNT) has developed clinical practice recommendations (CPRs) for dietary sodium management in children with kidney diseases, addressing key aspects of sodium balance, including primary dietary sources, nutritional assessment of sodium intake, non-dietary factors influencing sodium balance, and recommended intakes. Strategies for reducing sodium intake in cases of sodium excess and augmenting intake in patients with increased sodium losses are also provided. The consensus of international experts was assessed through a Delphi process. These CPRs will be regularly updated by the PRNT.
+
+---
+77.
+
+Title:
+Improving Blood Pressure Management and Control With Out-of-Office Blood Pressure Monitoring.
+
+PMID:
+41206527
+
+Journal:
+American journal of hypertension (2026/May)
+
+Abstract:
+Out-of-office blood pressure (BP) monitoring is a critical component of modern hypertension diagnosis and management. Measuring BP outside of clinic reduces the stress response that contributes to white coat hypertension and also allows for the identification of masked hypertension, yielding more accurate cardiovascular disease (CVD) risk assessment and improved CVD prevention. Home BP monitoring and 24-hour ambulatory BP monitoring outperform office BP in predicting CVD outcomes and are cost-effective aspects to cardiovascular health promotion by preventing unnecessary treatment, reducing clinic visits, and lowering event-related costs. Despite these advantages, routine implementation remains limited due to patient, provider, and system-level barriers, including validated device access, workflow integration, patient-provider communication tools, and adherence. Efforts to minimize or eliminate these barriers are crucial to CVD prevention. Evidence is also needed to support alternative out-of-office BP measurement strategies, including community-based strategies, such as BP assessment by school nurses, pharmacists, or community health workers. The utility of these modalities in diagnosing and managing children with hypertension is greatly needed as the long-term prognostic data in this population are sparse. Expanding adoption and evidence for out-of-office monitoring is essential to optimize hypertension care and CVD risk reduction.
+
+---
+78.
+
+Title:
+Pregnancy in women on home dialysis: Your questions answered.
+
+PMID:
+41148202
+
+Journal:
+Peritoneal dialysis international : journal of the International Society for Peritoneal Dialysis (2026/May)
+
+Abstract:
+Women with kidney failure have impaired fertility challenges due to disruption of the hypothalamic gonadal axis and hormonal dysregulation, with pregnancy rates on home dialysis being much lower than those with normal kidney function. Pregnant women on dialysis are at high risk of hypertensive disorders, preterm birth, and fetal growth restriction, but intensified dialysis can mitigate these risks. Home dialysis offers advantages like flexibility, better hemodynamic stability, and improved fetal outcomes, but logistical and training challenges remain. Hybrid approaches combining hemodialysis and peritoneal dialysis may benefit select women during pregnancy. Effective management of pregnancy on dialysis requires treatment of anemia, optimized nutrition, close obstetric monitoring, and multi-disciplinary care. Postpartum care should focus on breastfeeding support, home dialysis prescription adjustment, and contraception counseling. Systematic capacity-building in home dialysis can lead to better pregnancy outcomes while alleviating in-center dialysis burdens.
+
+---
+79.
+
+Title:
+Pediatric kidney health outcomes in communities impacted by chronic kidney disease of unknown etiology (CKDu): a systematic review.
+
+PMID:
+41117970
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/May)
+
+Abstract:
+BACKGROUND: Chronic kidney disease of unknown etiology (CKDu) is a tubulointerstitial disease that disproportionately affects young, primarily male, agricultural workers in Mesoamerica and South Asia who lack traditional risk factors for kidney disease. Extensive research in adult populations suggests the etiology is complex and indicates that early childhood exposures could have an integral role.
+OBJECTIVES: To systematically uncover and understand international studies of kidney health among children living in CKDu-endemic areas or with CKDu-related exposures.
+DATA SOURCES: A systematic literature search was conducted in six databases and included a mix of keywords and subject headings representing chronic kidney disease of unknown etiology, Mesoamerican nephropathy, chronic interstitial nephritis of agricultural communities, chronic kidney disease, agriculture, farm, and pediatrics.
+STUDY ELIGIBILITY CRITERIA: Articles were included if they reported kidney health outcomes of pediatric populations living in proximity to CKDu-affected areas or with a CKDu-relevant exposure. There were no limitations on geography or study design.
+STUDY APPRAISAL AND SYNTHESIS METHODS: Multiple authors performed study screening and data extraction. Quality assessment was performed using the Appraisal Tool for Cross-Sectional Studies (AXIS) or the JBI Critical Appraisal Tool for Cohort Studies based on the study design. Each article's strengths and limitations are summarized narratively.
+RESULTS: We screened over 1800 abstracts and included twenty-nine peer-reviewed publications from nine different countries. The most common study design involved cross-sectional analysis of biological specimens from children in an established CKDu-endemic area. Prevalence of albuminuria and decreased estimated glomerular filtration rates differed widely between countries. Novel urinary biomarkers frequently demonstrated subclinical kidney damage, although the specific biomarker(s) varied between studies. Despite heterogeneous study outcomes, all studies concluded that there were signs of kidney injury in children living in CKDu-endemic areas or with a CKDu-relevant environmental exposure.
+LIMITATIONS: The limitations of our review include the heterogeneous nomenclature of CKDu and dependence on authors' awareness of this emerging disease. The included studies were heterogenous in the reported outcomes precluding direct comparisons of key metrics and meta-analysis. CONCLUSIONS AND IMPLICATIONS OF KEY FINDINGS: Our analysis suggests that the pathophysiologic process leading to CKDu may begin prior to adulthood. Future longitudinal research aimed at elucidating the multifaceted factors and exposures impacting entire communities, including children, is imperative for disease prevention strategies.
+SYSTEMATIC REVIEW REGISTRATION NUMBER: PROSPERO ID CRD42023394987.
+
+---
+80.
+
+Title:
+AI-powered insights in pediatric nephrology: current applications and future opportunities.
+
+PMID:
+40957986
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/May)
+
+Abstract:
+Artificial intelligence (AI) is rapidly emerging as a transformative force in pediatric nephrology, enabling improvements in diagnostic accuracy, therapeutic precision, and operational workflows. By integrating diverse datasets-including patient histories, genomics, imaging, and longitudinal clinical records-AI-driven tools can detect subtle kidney anomalies, predict acute kidney injury, and forecast disease progression. Deep learning models, for instance, have demonstrated the potential to enhance ultrasound interpretations, refine kidney biopsy assessments, and streamline pathology evaluations. Coupled with robust decision support systems, these innovations also optimize medication dosing and dialysis regimens, ultimately improving patient outcomes. AI-powered chatbots hold promise for improving patient engagement and adherence, while AI-assisted documentation solutions offer relief from administrative burdens, mitigating physician burnout. However, ethical and practical challenges remain. Healthcare professionals must receive adequate training to harness AI's capabilities, ensuring that such technologies bolster rather than erode the vital doctor-patient relationship. Safeguarding data privacy, minimizing algorithmic bias, and establishing standardized regulatory frameworks are critical for safe deployment. Beyond clinical care, AI can accelerate pediatric nephrology research by identifying biomarkers, enabling more precise patient recruitment, and uncovering novel therapeutic targets. As these tools evolve, interdisciplinary collaborations and ongoing oversight will be key to integrating AI responsibly. Harnessing AI's vast potential could revolutionize pediatric nephrology, championing a future of individualized, proactive, and empathetic care for children with kidney diseases. Through strategic collaboration and transparent development, these advanced technologies promise to minimize disparities, foster innovation, and sustain compassionate patient-centered care, shaping a new horizon in pediatric nephrology research and practice.
+
+---
+81.
+
+Title:
+Copeptin in the diagnosis and management of renal tubular disorders.
+
+PMID:
+40924182
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/May)
+
+Abstract:
+Copeptin, a stable glycopeptide derived from the precursor of arginine vasopressin (AVP), has emerged as a valuable surrogate biomarker for AVP due to its stability and ease of measurement. This narrative review explores the physiological role of copeptin, its utility as a diagnostic and prognostic biomarker in different kidney diseases, and its clinical relevance in renal tubular disorders. The clinical application of copeptin as a diagnostic biomarker is best established in the differential diagnosis of polyuria-polydipsia syndrome (PPS), distinguishing nephrogenic diabetes insipidus (NDI) from central diabetes insipidus (CDI) and primary polydipsia (PP). Baseline and stimulated copeptin levels demonstrate high diagnostic accuracy, although methodological and population-specific limitations exist, especially in pediatrics. Copeptin has also proved to be a marker of disease severity in a wide range of acute pathologies. In chronic kidney disease (CKD), it correlates negatively with kidney function, and it has been shown to be a marker of kidney function decline in kidney transplant patients and in autosomal dominant polycystic kidney disease (ADPKD). Regarding renal tubular disorders, CKD has increasingly been recognized in these patients, potentially driven by persistent volume depletion and activation of the renin-angiotensin-aldosterone system. Copeptin may offer an objective assessment of volume status and disease severity, particularly in infants and young children. However, further studies are needed to define standardized reference values, clarify its mechanistic role, and validate its prognostic utility in tubulopathies. Copeptin holds potential as both a diagnostic and prognostic biomarker in renal tubular disease, with implications for clinical practice and patient management.
+
+---
+82.
+
+Title:
+SGLT2 inhibitors for kidney protection in children: expanding horizons beyond endocrinology.
+
+PMID:
+40624155
+
+Journal:
+Pediatric nephrology (Berlin, Germany) (2026/May)
+
+Abstract:
+For over two decades, kidney protection in children has relied on angiotensin-converting enzyme inhibitors (ACEi) and angiotensin receptor blockers (ARBs), which present significant limitations. Sodium-glucose cotransporter 2 inhibitors (SGLT2i), initially developed as antidiabetic agents, have demonstrated significant benefits in preserving kidney function in adults with chronic kidney disease (CKD), regardless of diabetes status. The pathophysiology of paediatric CKD differs from adult CKD, with congenital anomalies of the kidney and urinary tract (CAKUT) as the predominant cause. Extrapolating adult data to paediatric patients is challenging, though preliminary studies suggest SGLT2i may mitigate hyperfiltration-related damage, reduce proteinuria, and slow CKD progression, on top of RAS-blockers. Recent paediatric case series and small clinical trials have shown promising results, though larger controlled studies are needed to confirm efficacy and safety. The ongoing DOUBLE PRO-TECT Alport trial represents a significant step toward evaluating SGLT2i kidney protection in children. While current data suggest potential benefits, careful assessment of adverse effects such as euglycaemic ketoacidosis (EuDKA) and calcium phosphorus imbalances is crucial. This review aims to explore the mechanism of action, clinical evidence, and future perspectives of SGLT2i in paediatric CKD, highlighting their potential as a novel therapeutic strategy beyond diabetes management.
+
+---
+83.
+
+Title:
+The Role of Zinc in the Evolutionary Pattern of Pediatric Nephrotic Syndrome: A Meta-Analysis.
+
+PMID:
+40587383
+
+Journal:
+Nutrition reviews (2026/May)
+
+Abstract:
+BACKGROUND: Nephrotic syndrome (NS) is a chronic pathology, with an undulating evolution, that reduces the quality of life among children.
+OBJECTIVE: In this meta-analysis we sought to assess the reliability of zinc supplementation in reducing the relapse prevalence and morbidity associated with pediatric NS.
+DATA SOURCES: We searched the PubMed, Web of Science, Scopus, Embase, Google Scholar, and Semantic Scholar databases for the period of January 2000 toDecember 2023.
+DATA EXTRACTION: Inclusion criteria were articles reporting investigations of children younger than 18 years who were diagnosed with NS and would benefit from zinc supplementation compared with a similar control group. The studies were verified according to the PRISMA criteria. In our initial screening we identified 1063 articles. After screening, 25 full-text articles were analyzed. After we applied the inclusion/exclusion criteria, 6 articles (484 patients) were included in the review.
+DATA ANALYSIS: The data considered eligible, regardless of the duration of supplementation, were entered into Review Manager software for analysis using random effects models. Analysis of the causes of heterogeneity revealed that zinc supplementation has shown a beneficial effect on widening the disease-free interval, reducing the number of patients experiencing relapses (relative risk [RR]: 0.70, 95% CI, 0.58 to 0.84, P = .0001; NNT = 5), the mean relapse rate (SMD, -0,41, 95% CI, -0.78 to -0.04, P = .03) and of the need for hospitalization (SMD: -1.35, 95% CI -1.78 to -0.91, P < 00001) depending on the duration of supplementation. In accordance with the Grading of Recommendations Assessment, Development and Evaluation (GRADE) guidelines, we found a medium level of certainty for the interrelationship of zinc supplementation-with reduction in the number of relapses/mean relapses and a low level between zinc supplementation and the reduction in time spent hospitalized.
+CONCLUSIONS: Zinc supplementation seems to be beneficial in improving the course of pediatric NS. Due to the limited amount of evidence included in the present study, additional studies are needed in order to establish the true size of the effect.
+SYSTEMATIC REVIEW REGISTRATION: PROSPERO registration No. [CRD42024527895].
+
+---

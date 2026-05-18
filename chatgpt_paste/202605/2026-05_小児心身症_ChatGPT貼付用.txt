@@ -1,0 +1,166 @@
+【領域】
+小児心身症・ゲーム障害・ネット依存
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Global prevalence of internet gaming disorder in children and adolescents: a systematic review and meta-analysis.
+
+PMID:
+42071239
+
+Journal:
+Child and adolescent psychiatry and mental health (2026/May)
+
+Abstract:
+BACKGROUND: Internet Gaming Disorder (IGD) has emerged as a significant behavioral concern among youth, yet global prevalence estimates remain inconsistent due to methodological variability. This systematic review and meta-analysis aimed to determine the global pooled prevalence of IGD in children and adolescents.
+METHODS: Following PRISMA 2020 guidelines and prospective registration in PROSPERO (CRD420251156483) prior to data extraction and analysis, comprehensive searches were conducted in PubMed, Scopus, Web of Science, Embase, and PsycINFO up to September 2025. Eligible observational studies assessed IGD prevalence in individuals aged 6-18 years using standardized diagnostic instruments based on DSM-5 or ICD-11 criteria. A random-effects meta-analysis (DerSimonian and Laird method) with Freeman-Tukey double arcsine transformation was used to pool prevalence estimates. Between-study heterogeneity was quantified using the I² statistic, and publication bias was assessed using funnel plot asymmetry and Egger's regression test.
+RESULTS: Nineteen studies involving 251,037 participants and 26,868 IGD cases met the inclusion criteria. The pooled global prevalence of IGD among children and adolescents was 10% (95% CI: 6-15%). Individual study estimates ranged from approximately 1% in some European populations to over 25% in studies conducted in Middle Eastern and Latin American settings. Heterogeneity was extreme (I² = 99.7%), and smaller studies tended to report higher prevalence.
+CONCLUSIONS: Approximately one in ten children and adolescents worldwide meet criteria for IGD, underscoring its growing significance as a global mental health concern. Given the substantial heterogeneity observed, the pooled estimate should be interpreted as an average across diverse contexts rather than a uniform global rate. These findings highlight the need for standardized diagnostic criteria, culturally sensitive preventive interventions, and early identification strategies to mitigate long-term psychosocial impact.
+
+---
+2.
+
+Title:
+Can breastfeeding practices explain sociodemographic disparities in childhood obesity and healthy eating? Results from NHANES 2005-2018.
+
+PMID:
+42060076
+
+Journal:
+Reviews in endocrine & metabolic disorders (2026/Apr)
+
+Abstract:
+(abstract not available)
+
+---
+3.
+
+Title:
+Precision Medicine in Mental Health: Applications, Challenges, and Recommendations.
+
+PMID:
+42037368
+
+Journal:
+European psychiatry : the journal of the Association of European Psychiatrists (2026/Apr)
+
+Abstract:
+(abstract not available)
+
+---
+4.
+
+Title:
+Medical device development and innovation for rare and pediatric populations: a global landscape overview.
+
+PMID:
+42036679
+
+Journal:
+Orphanet journal of rare diseases (2026/Apr)
+
+Abstract:
+(abstract not available)
+
+---
+5.
+
+Title:
+[Autism spectrum disorders-Transition from adolescence into adulthood].
+
+PMID:
+41975088
+
+Journal:
+Der Nervenarzt (2026/May)
+
+Abstract:
+Autism spectrum disorders (ASD) are neurodevelopmental disorders with a prevalence of approximately 0.7%. People with ASD show characteristic social interaction, verbal and nonverbal communication, routine-like and inflexible behavior, special interests and altered perception. ASD manifest in the first decade of life and usually persist throughout life. Like most other neurodevelopmental disorders, they are therefore inevitably not only a topic of child and adolescent psychiatry, psychosomatics and psychotherapy (CAPPP) but also of adult psychiatry, psychosomatics and psychotherapy (APPP); however, the transition from adolescence into adulthood poses a particular challenge for affected individuals, their caregivers, as well as for professionals in the healthcare and social welfare systems. Key aspects of the transition period include the treatment of comorbid mental, cognitive and language disorders as well as social legislation and healthcare aspects. This article depicts these aspects from the perspective of CAPPP and APPP.
+Autismusspektrumstörungen gehören mit einer Prävalenz von ca. 0,7 % zu den neuromentalen Entwicklungsstörungen. Sie sind charakterisiert durch Besonderheiten der sozialen Interaktion, der verbalen und nonverbalen Kommunikation, routineartigen und unflexiblen Verhaltensweisen, Sonderinteressen und veränderter Wahrnehmung. Sie manifestieren sich in der ersten Lebensdekade und persistieren in der Regel lebenslang. Damit sind sie wie die meisten anderen neuromentalen Entwicklungsstörungen zwangsläufig nicht nur ein Thema der Kinder- und Jugendpsychiatrie, -psychosomatik und -psychotherapie (KJPPP), sondern auch der Erwachsenenpsychiatrie, -psychosomatik und -psychotherapie (EPPP). Die Transition vom Jugend- in das Erwachsenenalter stellt für viele Betroffenen und ihre Angehörigen, aber auch für Professionelle des Versorgungssystems eine besondere Herausforderung dar. Zentrale Aspekte für die Transition sind einerseits die Behandlung komorbider psychischer, kognitiver und sprachlicher Störungen, zum anderen sozialrechtliche und Versorgungsaspekte. In diesem Beitrag werden diese aus der Perspektive der KJPPP und EPPP beleuchtet.
+
+---
+6.
+
+Title:
+Climate-Related and Nature-Based Interventions for Mental Health: An Umbrella Review and Meta-Analysis.
+
+PMID:
+41779404
+
+Journal:
+JAMA psychiatry (2026/May)
+
+Abstract:
+IMPORTANCE: Climate change is associated with increasing mental health morbidity and mortality. However, an umbrella review to classify and quantify the global evidence on climate-related and nature-based mental health interventions is lacking.
+OBJECTIVE: To assess associations of climate-related and nature-based mental health interventions with mental health outcomes.
+DATA SOURCES: PubMed, PsycINFO, Web of Science, and Cochrane databases were searched from inception to November 17, 2024.
+STUDY SELECTION: Systematic reviews with meta-analyses (SRMAs) with controlled climate-related or nature-based mental health interventions and mental health outcomes were included.
+DATA EXTRACTION AND SYNTHESIS: Standardized mean differences (SMDs; intervention vs control) and 95% CIs were synthesized, evidence was stratified according to the level of credibility, and associations were assessed using meta-regression.
+MAIN OUTCOMES AND MEASURES: Outcomes were mental disorders, psychiatric symptoms, and positive mental health.
+RESULTS: Twenty-eight SRMAs were included that examined 344 studies and 91 associations between psychosocial or nature-based interventions and outcomes. Of the 91 associations, 10 (11%) had a moderate credibility of evidence and 81 (89%) had low or very low credibility. Psychosocial interventions addressing climatic impact drivers were associated with very low credibility, based on limited data. Nature-based interventions were associated with reductions in tension (SMD, -0.87; 95% CI, -1.31 to -0.43), fatigue (SMD, -0.80; 95% CI, -1.16 to -0.44), confusion (SMD, -0.65; 95% CI, -1.12 to -0.19), and negative affect (SMD, -0.51; 95% CI, -0.85 to -0.16), as well as increases in positive affect (SMD, 0.98; 95% CI, 0.65 to 1.30), vigor (SMD, 0.83; 95% CI, 0.37 to 1.28), and well-being (SMD, 0.40; 95% CI, 0.07 to 0.73), with moderate credibility of evidence and not addressing climatic impact drivers. Older participants and study locations with lower tree cover, better health care access and quality, and lower systemic vulnerability to climate change were associated with stronger improvements in negative affect following nature-based interventions.
+CONCLUSIONS AND RELEVANCE: There is limited evidence for mental health interventions to reduce adverse mental health impacts of climatic impact drivers, but there is promising potential for future research in this field based on evidence from contexts other than climate change. Currently, strategies for mental health interventions in the context of climate change, such as those for implementing and scaling interventions, need to rely largely on global evidence from contexts other than climate change.
+
+---
+7.
+
+Title:
+Psychotropic medications and their interactions with subcortical brain volume in bipolar disorder: An ENIGMA mega-analysis.
+
+PMID:
+41540091
+
+Journal:
+Molecular psychiatry (2026/May)
+
+Abstract:
+MRI studies in bipolar disorder (BD) have yielded inconsistent findings, partly due to the varied use of psychotropic medications. This study utilised a mega-analysis approach, accounting for concurrent medication status (syndrome-based and Neuroscience-based Nomenclature (NbN) classifications), in order to assess the association of medication status with subcortical brain volumes in BD. Data from 2,664 BD patients and 4,065 controls (CN) were pooled from 34 research groups as part of the ENIGMA Bipolar Disorder Working Group. Standardized ENIGMA protocols were used to measure subcortical brain volumes. Linear-mixed-effects regression evaluated the association between psychotropic medications and subcortical volumes, and moderation analyses explored interactions. Medication-free patients (n = 410) showed mild ventricular enlargement (d = 0.07) and increased putamen volume (d = 0.06) compared to CN. Patients taking psychotropic medications exhibited smaller subcortical volumes (d = -0.06 to -0.11) and larger ventricles (d = 0.11 to 0.19). Use of antiepileptic and antipsychotic medications was associated with smaller hippocampal and thalamic volumes (d = -0.07 to -0.14), while NbN classification indicated that the categories of 'valproate' and 'dopamine and other monoamine receptor antagonists' are key variables when considering volume differences between BD and CN. Concurrent lithium use weakened the negative association between antiepileptic use and hippocampal volume (β = 0.19, q = 0.038) in patients. Medication status is associated with altered subcortical brain volumes in BD. The NbN classification provides a useful framework for future studies, emphasizing the need for comprehensive longitudinal research to further unravel complex clinical-pharmacological-neurobiological interactions in BD.
+
+---
+8.
+
+Title:
+Emotion-Related Treatments in Patients With Binge Eating Episodes-a Systematic Review and Meta-Analysis.
+
+PMID:
+41386725
+
+Journal:
+Obesity reviews : an official journal of the International Association for the Study of Obesity (2026/May)
+
+Abstract:
+Emotions represent potential triggers for binge eating, and binge eating can serve as a dysfunctional emotion regulation strategy. Therefore, we investigated emotion-related treatments in patients with binge eating in a systematic review. Change in binge eating were the primary outcome; eating disorder pathology and emotion-related outcomes were secondary outcomes. A meta-analysis was computed regarding pre-changes and post-changes in binge eating frequency within groups, and potential influencing factors were investigated, namely, BMI, eating disorder diagnosis, treatment type, aspects of BE outcome, age, and sex. Thirty-eight articles were included and 31 within the meta-analysis. Data quality was rated as moderate. The sample size varied strongly with a high proportion of women. Only five studies examined adolescents. Binge eating disorder (n = 18) and dialectical behavioral treatment (n = 16) were most frequently examined. Results show significant reductions in binge eating after treatment. Additionally, the systematic review indicates the superiority of emotion-related treatments compared with waitlist control groups and comparability with active control groups in terms of improvements in binge eating, eating disorder pathology, and emotion regulation. The effects appear to be stable at follow-up analyses from 1 to 12 months. Potential influencing factors did not affect the efficacy of emotion-related treatments. Overall, though meta-analytic results have to be interpreted with caution, emotion-related treatments hold promise in treating binge eating, and emotion regulation might represent a potential mechanism of change.
+
+---
+9.
+
+Title:
+[Youth mental health: early detection and early intervention of mental disorders].
+
+PMID:
+40560390
+
+Journal:
+Der Nervenarzt (2026/May)
+
+Abstract:
+BACKGROUND: Mental diseases occur particularly frequently between the ages of 12 and 25 years, with important implications for the pathogenesis, diagnosis and treatment.
+OBJECTIVE: Against this background this article outlines a youth mental health paradigm which prioritizes the early detection, early intervention and prevention of mental disorders, e.g., psychoses, bipolar disorders and personality disorders in adolescence.
+MATERIAL AND METHODS: The first part of the article summarizes the findings for sensitive phases during brain development, which indicate the elevated plasticity of neural circuits during youth that can be used for preventive interventions. The interactions between risk and resilience factors and ongoing brain development are an essential reason for the frequent occurrence of mental disorders between 12-25 years. Furthermore, innovative diagnostic approaches, such as clinical staging models, are proposed that are a prerequisite for early detection and early intervention. In this context, low-threshold service modelss and age-appropriate interventions, such as digital approaches, are necessary to improve access to care in youths.
+DISCUSSION: Taken together, a "youth mental health" paradigm could significantly enhance mental health in young people and initiate a shift towards the prevention of severe mental disorders.
+ZUSAMMENFASSUNG: HINTERGRUND: Psychische Erkrankungen treten besonders häufig zwischen dem 12. und 25. Lebensjahr auf, mit wichtigen Implikationen für die Pathogenese, Diagnose und Behandlung.
+ZIEL DER ARBEIT: Vor diesem Hintergrund skizzieren wir in diesem Artikel ein „Youth-Mental-Health“-Paradigma, in dem die Früherkennung, Frühintervention und Prävention psychischer Erkrankungen, wie z. B. Psychosen, bipolare Störungen und Persönlichkeitsstörungen, im Jugendalter im Mittelpunkt steht.
+MATERIAL UND METHODEN: Im ersten Teil des Artikels fassen wir Befunde zu „sensitiven Phasen“ in der Gehirnentwicklung im Jugendalter zusammen, die auf die besondere Plastizität neuronaler Schaltkreise hindeuten, die für präventive Interventionen genutzt werden können. Die Wechselwirkungen mit Risiko- und Resilienzfaktoren im Jugendalter sind ein wesentlicher Grund für das häufige Auftreten psychischer Erkrankungen. Des Weiteren werden innovative diagnostische Ansätze, wie z. B. „klinische Stadienmodelle“, vorgeschlagen, die eine Voraussetzung für Früherkennung und Frühintervention im Jugendalter sind. Hier sind niedrigschwellige Versorgungsstrukturen sowie altersgerechte Interventionen, z. B. durch digitale Ansätze, erforderlich, um Jugendlichen einen besseren Zugang zu klinischen Angeboten zu ermöglichen.
+DISKUSSION: Die Früherkennung und Frühintervention bei psychischen Erkrankungen stellen möglicherweise einen wichtigen Ansatz für die Forschung und Klinik dar, um langfristig die psychische Gesundheit bei Jugendlichen und jungen Erwachsenen zu verbessern.
+
+---
