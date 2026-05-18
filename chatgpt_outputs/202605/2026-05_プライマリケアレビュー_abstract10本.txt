@@ -1,0 +1,397 @@
+添付HTMLの55件を対象に、外来小児科で「明日から診療・説明・院内体制に反映しやすい」ものを優先して10本に厳選しました。
+
+【第1部：日本語要約】
+
+---
+
+①タイトル
+
+Preparation for Pediatric Emergencies in the Office: Policy Statement.
+
+②PMID
+
+42002280
+
+③なぜ重要か
+
+小児科外来でまれに起こる重症救急への備えを、AAPが更新した政策声明である。診療所の救急薬品、機器、役割分担、チェックリスト整備に直結する。
+
+④臨床への影響
+
+外来でのアナフィラキシー、けいれん、呼吸不全、脱水、外傷などへの初期対応体制を見直すきっかけになる。院内マニュアル、スタッフ訓練、救急搬送連携の再点検に使いやすい。
+
+⑤診療変更の必要性
+
+Yes：小児科外来の安全管理として、救急対応チェックリストの更新を検討すべき。
+
+---
+
+①タイトル
+
+Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
+
+②PMID
+
+41661638
+
+③なぜ重要か
+
+乳幼児の食物アレルギー発症リスク因子を、190研究・280万人規模で整理したJAMA Pediatricsのメタ解析である。アトピー性皮膚炎、経皮感作、アレルゲン導入遅延など、外来での予防指導に直結する。
+
+④臨床への影響
+
+乳児湿疹やアトピー性皮膚炎の早期管理、離乳食・アレルゲン導入の説明、抗菌薬使用歴などを含めたリスク評価に役立つ。食物アレルギー予防の相談で、過度な除去より適切な時期の導入を意識する根拠になる。
+
+⑤診療変更の必要性
+
+Yes：乳児湿疹・アトピー性皮膚炎児への食物アレルギー予防指導を再確認する価値が高い。
+
+---
+
+①タイトル
+
+Inter-society consensus on the management of acute bloody diarrhea and shiga toxin-producing Escherichia Coli infection in the molecular microbiology era.
+
+②PMID
+
+42050676
+
+③なぜ重要か
+
+急性血便とSTEC感染に関する小児科領域の合意文書であり、外来での検査、抗菌薬回避、HUSリスク評価に直結するテーマである。Abstractはないが、タイトルと論文種別から診療インパクトは大きい。
+
+④臨床への影響
+
+血便症例では、便培養・毒素検査・PCR検査の使い方、抗菌薬や止痢薬の扱い、HUS発症リスクの説明とフォローを見直す契機になる。外来で「様子見」にしすぎない判断が必要になる。
+
+⑤診療変更の必要性
+
+Yes：血便・STEC疑いの初期対応プロトコル確認が必要。
+
+---
+
+①タイトル
+
+The influence of existing interventions on sleep of youth with attention-deficit/hyperactivity disorder: A meta-analysis of randomized controlled trials.
+
+②PMID
+
+42096966
+
+③なぜ重要か
+
+ADHD児・思春期の睡眠問題に対する介入効果をRCTベースで統合したメタ解析である。薬物療法だけでなく、行動睡眠介入の位置づけを外来で説明しやすい。
+
+④臨床への影響
+
+ADHD児の睡眠障害では、睡眠衛生指導だけでなく多成分・個別化された行動介入を積極的に検討する根拠になる。入眠困難では薬物、睡眠の乱れ全体では行動介入という使い分けを意識できる。
+
+⑤診療変更の必要性
+
+Yes：ADHDフォロー時に睡眠評価と行動睡眠介入を標準的に組み込む価値がある。
+
+---
+
+①タイトル
+
+Nonpharmacologic Management of Insomnia Disorder in Primary Care.
+
+②PMID
+
+42120163
+
+③なぜ重要か
+
+不眠症に対する非薬物療法、特にCBT-Iをプライマリケアでどう扱うかを整理した実践的レビューである。小児・保護者・思春期にも応用できる視点がある。
+
+④臨床への影響
+
+不眠相談で、薬を先行させるよりも睡眠習慣、認知行動療法、デジタルCBT-Iなどを第一選択として説明しやすくなる。小児では家庭全体の睡眠行動を整える視点が重要になる。
+
+⑤診療変更の必要性
+
+Yes：睡眠相談で非薬物療法を第一に説明する外来フローを整える価値がある。
+
+---
+
+①タイトル
+
+Management of Pediatric Hand Injuries in the Acute Setting Part 1: Principles of Pediatric Hand Surgery Management.
+
+②PMID
+
+42058390
+
+③なぜ重要か
+
+小児の手外傷は外来・救急で遭遇しやすいが、成人と同じ扱いでは不十分なことがある。早期発見・初期固定・専門紹介の判断に役立つレビューである。
+
+④臨床への影響
+
+指の脱臼、切断、骨端線損傷、爪床損傷などで、安易な経過観察を避ける視点を持てる。紹介すべき手外傷と外来で初期対応可能なものの線引きに役立つ。
+
+⑤診療変更の必要性
+
+Yes：小児手外傷の紹介基準と初期対応を再確認すべき。
+
+---
+
+①タイトル
+
+Diagnosis and Management of Eating Disorders in Adolescents and Young Adults.
+
+②PMID
+
+42120165
+
+③なぜ重要か
+
+思春期・若年成人の摂食障害は増加傾向にあり、プライマリケアでの早期発見が重要である。外来でのスクリーニング不足と治療につながりにくさを示している。
+
+④臨床への影響
+
+体重減少、月経異常、過活動、食行動の変化、身体症状の背後に摂食障害を想起する必要がある。学校・家庭との連携、専門医紹介のタイミングを早める判断に役立つ。
+
+⑤診療変更の必要性
+
+Yes：思春期外来で摂食障害スクリーニングを意識的に行う必要がある。
+
+---
+
+①タイトル
+
+Practitioner Review: Clinical insights from attachment theory and research for professionals working with young children and their families.
+
+②PMID
+
+41736561
+
+③なぜ重要か
+
+乳幼児と養育者に関わる専門職向けに、愛着理論の実践応用を整理したレビューである。愛着分類を安易にラベル化しないという重要な臨床メッセージがある。
+
+④臨床への影響
+
+乳幼児健診、育児相談、発達相談で、親子関係を評価する際に「愛着障害」と短絡しない説明ができる。安全で安定した“good-enough care”を支援する視点が外来で使いやすい。
+
+⑤診療変更の必要性
+
+Yes：育児・発達相談での愛着概念の使い方を見直す価値がある。
+
+---
+
+①タイトル
+
+Perinatal interventions for parents with exposure to adverse childhood experiences: A narrative review of suitability for implementation in primary care.
+
+②PMID
+
+42102221
+
+③なぜ重要か
+
+親自身のACEが子どもの心身発達に影響する可能性を踏まえ、周産期からプライマリケアで実装可能な介入を検討したレビューである。乳幼児健診や産後支援と接続しやすい。
+
+④臨床への影響
+
+保護者のトラウマ歴、育児困難、メンタルヘルス、家庭支援ニーズを、子どもの診療の背景として捉えやすくなる。小児科単独ではなく、保健師・心理・地域支援との連携を意識する根拠になる。
+
+⑤診療変更の必要性
+
+Yes：乳幼児・周産期家庭への支援導線を外来で意識する価値がある。
+
+---
+
+①タイトル
+
+A lifecycle governance and learning health system framework for trustworthy, generalizable, and sustainable human-ai partnership in clinical practice: Lessons from the asthma-guidance and prediction system (A-GPS).
+
+②PMID
+
+42128801
+
+③なぜ重要か
+
+小児喘息のEHR統合型AI-CDSを実臨床に実装し、RCT評価まで行った事例をもとに、信頼できるAI導入の枠組みを示している。喘息外来の縦断データ整理やリスク層別化に関心がある診療所に有用である。
+
+④臨床への影響
+
+AIを単なる予測モデルではなく、診療ワークフロー、説明可能性、公平性、安全性、スタッフ受容性まで含めて設計すべきことが分かる。自院の喘息管理支援システムや問診・検査データ活用を考える上で実装面の参考になる。
+
+⑤診療変更の必要性
+
+Yes：すぐに治療を変える論文ではないが、喘息フォローのデータ活用体制を見直す価値が高い。
+
+---
+
+【第2部：英語Abstract】
+
+---
+
+1. Preparation for Pediatric Emergencies in the Office: Policy Statement.
+
+PMID: 42002280
+
+Journal: Pediatrics (2026/May)
+
+Abstract: Although not common, pediatric emergencies present in the medical office setting, and offices that care for children and adolescents can prepare for these emergencies. Offices vary depending on their location and office setting, patient population, and distance to an emergency department or hospital. Consequently, these factors should be taken into account in the planning process. This statement updates the recommendations from the 2007 American Academy of Pediatrics (AAP) practice guideline "Preparation for Emergencies in the Offices of Pediatricians and Pediatric Primary Care Providers." An accompanying technical report contains explanations and evidence for these recommendations and can be found at [https://doi.org/10.1542/peds.2026-076622](https://doi.org/10.1542/peds.2026-076622). This policy statement and companion technical report can be used as a guide to help create an individualized approach to emergencies that occur in offices that care for children, including both primary care and subspecialty practices. An accompanying checklist summarizes steps that medical offices can take to assess their readiness for pediatric emergencies.
+
+---
+
+2. Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
+
+PMID: 41661638
+
+Journal: JAMA pediatrics (2026/May)
+
+Abstract: IMPORTANCE: The incidence and risk (predictive) factors for early life food allergy development remain uncertain.
+OBJECTIVE: To estimate the incidence and quantify risk factors for food allergy development.
+DATA SOURCES: MEDLINE and Embase were systematically searched to January 1, 2025. Data were analyzed from June 1, 2025, to November 25, 2025.
+STUDY SELECTION: Incidence estimates included studies confirming food allergy via food challenge. Risk factor analyses included cohort, case-control, and cross-sectional studies in any language assessing children younger than 6 years using multivariable analyses.
+DATA EXTRACTION AND SYNTHESIS: Paired reviewers independently extracted data. Random-effects meta-analyses pooled incidence and adjusted odds ratios (ORs). Risk of bias was assessed using the QUIPS tool, and certainty of evidence assessed using GRADE.
+MAIN OUTCOME AND MEASURE: The primary outcome was food allergy to age 6 years.
+RESULTS: A total of 190 studies involving 2.8 million participants across 40 countries were analyzed. Among studies using food challenge, overall food allergy incidence was likely 4.7% (moderate certainty). Among 176 studies identifying 342 risk factors with varying certainty, the strongest and most certain factors included prior allergic conditions (eg, atopic dermatitis [eczema] within the first year of life [OR, 3.88; risk difference [RD], 12.0%; 95% CI, 8.8%-15.7%], allergic rhinitis [OR, 3.39; RD, 10.1%; 95% CI, 6.7%-14.4%], and wheeze [OR, 2.11; RD, 5.0%; 95% CI, 2.1%-8.8%]), severity of atopic dermatitis (OR, 1.22; RD, 1.0%; 95% CI, 0.6%-1.6%), increased skin transepidermal water loss (OR, 3.36; RD, 10.0%; 95% CI, 6.3%-14.8%), filaggrin gene sequence variations (OR, 1.93; RD, 4.2%; 95% CI, 2.4%-6.4%), delayed solid food introduction (eg, peanut after age 12 months [OR, 2.55; RD, 6.8%; 95% CI, 1.9%-14.6%]), infant antibiotic use (first month [OR, 4.11; RD, 12.8%; 95% CI, 0.4%-40%], first year [OR, 1.39; RD, 1.8%; 95% CI, 0.8%-3.1%], during pregnancy [OR, 1.32; RD, 1.5%; 95% CI, 0.6%-2.5%]), male sex (OR, 1.24; RD, 1.1%; 95% CI, 0.7%-1.6%), firstborn child (OR, 1.13; RD, 0.6%; 95% CI, 0.3%-1.0%), family history of food allergy (eg, mother [OR, 1.98; RD, 4.4%; 95% CI, 2.5%-6.8%], father [OR, 1.69; RD, 3.2%; 95% CI, 1.3%-5.5%], both parents [OR, 2.07; RD, 4.8%; 95% CI, 1.3%-5.5%], siblings [OR, 2.36; RD, 6.0%; 95% CI, 4.4%-8.0%]), parental migration (OR, 3.28; RD, 9.7%; 95% CI, 4.9%-16.3%), self-identification as Black (vs White [OR, 3.93; RD, 12.1%; 95% CI, 5.2%-22.5%], vs non-Hispanic White [OR, 2.23; RD, 5.5%; 95% CI, 3.0%-8.7%]), and cesarean delivery (OR, 1.16; RD, 1.0%; 95% CI, 0.3%-1.2%). Factors like low birth weight, postterm birth, maternal diet, and stress during pregnancy showed no significant risk difference.
+CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
+
+---
+
+3. Inter-society consensus on the management of acute bloody diarrhea and shiga toxin-producing Escherichia Coli infection in the molecular microbiology era.
+
+PMID: 42050676
+
+Journal: Italian journal of pediatrics (2026/Apr)
+
+Abstract: (abstract not available)
+
+---
+
+4. The influence of existing interventions on sleep of youth with attention-deficit/hyperactivity disorder: A meta-analysis of randomized controlled trials.
+
+PMID: 42096966
+
+Journal: Sleep medicine reviews (2026/May)
+
+Abstract: Sleep problems are commonly observed among children and adolescents with attention-deficit/hyperactivity disorders (ADHD). We completed a literature search by 2025-6-9 on EBSCOhost, PubMed, Web of Science, and Scopus to quantify the effects of any existing interventions on sleep outcomes among children/adolescents with ADHD. From a pool of 4081 studies, 40 randomized controlled trials (RCTs; 75% with low-risk-of-bias, 4361 participants and 65.2% attended interventions) were eligible for a pairwise meta-analysis (PWMA). Of these, 28 RCTs were included in a Bayesian network meta-analysis (NMA). Results were yielded from both mean change and post-test measurement of the outcomes if available. In PWMA (moderate-to-high certainty), the examined interventions had small and significant effects on sleep disturbance (standardized mean difference [SMD] by mean change [95% CI]: overall [k = 29]: -0.30 [-0.42, -0.17], p < 0.001; sleeping pills [k = 7]: -0.10 [-0.41, 0.22], p > 0.05; ADHD drugs [k = 6]: -0.25 [-0.52, 0.01], p > 0.05; behavioral sleep [BS] interventions [k = 10]: -0.48 [-0.70, -0.27], p < 0.001) and sleep onset latency (overall [k = 12]: -0.41 [-0.67, -0.14], p < 0.01; sleeping pills [k = 3]: -0.68 [-1.08, -0.27], p < 0.01; ADHD drug [k = 1]: -0.39 [-0.96, 0.18], p > 0.05; BS interventions [k = 5]: -0.36 [-0.88, 0.16], p > 0.05). The examined interventions did not have significant effects on sleep efficacy, sleep duration, latency to persistent sleep or daytime sleepiness. Results of NMA showed that sleeping pills had the best performance in shortening SOL, while BS interventions may be the best choice for reducing sleep disturbance. However, more rigorous evidence is warranted. This review indicates that a multi-component and tailored-designed intervention represents important personalized strategies for improving sleep in youths with ADHD.
+
+---
+
+5. Nonpharmacologic Management of Insomnia Disorder in Primary Care.
+
+PMID: 42120163
+
+Journal: Primary care (2026/Jun)
+
+Abstract: Nonpharmacological treatments for insomnia disorder, particularly cognitive behavioral therapy for insomnia (CBT-I), are increasingly recognized as first-line interventions due to their long-term efficacy and safety. Unlike medications, CBT-I addresses the behavioral and cognitive patterns that perpetuate sleep disturbances, offering durable improvements without risk of dependence. Delivery formats include in-person, telehealth, and digital platforms, expanding access across diverse populations. Adaptations for children, older adults, and caregivers have shown promising results. Emerging innovations, such as AI-driven personalization and therapist-guided digital CBT-I, are shaping the future of sleep care, making evidence-based treatment more accessible, scalable, and integrated into routine health care.
+
+---
+
+6. Management of Pediatric Hand Injuries in the Acute Setting Part 1: Principles of Pediatric Hand Surgery Management.
+
+PMID: 42058390
+
+Journal: Journal of the Pediatric Orthopaedic Society of North America (2026/May)
+
+Abstract: UNLABELLED: Injury to the pediatric hand is common, yet acute management techniques are variable due to limited evidence-based guidance. The initial evaluation and treatment often falls to emergency department physicians, on-call orthopaedic surgeons, or primary care providers, who may lack specialized training or experience in pediatric hand injuries. The purpose of this three-part series is to provide education about the differences in management of pediatric hand patients, as compared to adult hand care. Additionally, it provides recommendations for the initial management of traumatic hand injuries in skeletally immature patients, guided by the literature where possible. This includes the management of urgent and emergent traumatic pathologies, including digital amputations and joint dislocations, in addition to common pediatric pathology.
+KEY CONCEPTS: (1)Pediatric-specific anatomy and physiology require different management strategies for hand injuries compared to adults.(2)Not all pediatric hand injuries will be okay without active management; early detection and referral can be crucial.(3)System-wide coordination among primary care, the emergency department, on-call orthopaedic surgeons, and hand specialists is essential for optimal management of pediatric hand trauma.
+
+---
+
+7. Diagnosis and Management of Eating Disorders in Adolescents and Young Adults.
+
+PMID: 42120165
+
+Journal: Primary care (2026/Jun)
+
+Abstract: Eating disorders (EDs) are characterized by persistent disturbance of eating behavior that impairs health or psychosocial functioning. ED can persist for decades resulting in substantial burdens and psychosocial impairments. An increased prevalence of anorexia nervosa was noted during the COVID-19 pandemic. Despite a worsening trend in risky eating behavior among US college students, only 22% of colleges report offering year-round ED screening opportunities with 45% offering ED screenings once per year or semester. Furthermore, 20% or less of those who screened positive, received treatment.
+
+---
+
+8. Practitioner Review: Clinical insights from attachment theory and research for professionals working with young children and their families.
+
+PMID: 41736561
+
+Journal: Journal of child psychology and psychiatry, and allied disciplines (2026/May)
+
+Abstract: Attachment theory, with its core concepts, perspectives, and insights developed over the past five decades, is influential for professionals working with young children. However, practitioners face challenges translating attachment theory and research into practical applications. This manifests in attachment myths, theoretical misinterpretations, and inconsistency of application. This state-of-the-art review is authored by 47 attachment researchers and practitioners and examines key insights from attachment theory to facilitate attachment-aware practice for professionals working with children and their caregivers. Following the ongoing debate on practical relevance in attachment theory, we present both 'strict' and 'expansive' translational perspectives on applications for addressing preventative or clinical attachment concerns. We first review core attachment propositions, based on replicated research of attachment and caregiving. We next address common misconceptions that hinder adequate practical applications. We present measures of attachment and sensitive parenting that might be helpful for practitioners. We also review evidence-based and promising attachment interventions, discussing core components of (preventative) support for parents or caregivers and the children in their care. We emphasize that attachment theory's clinical value lies not in assigning attachment classifications, but rather in understanding crucial insights into caregiving and early socioemotional development (e.g., secure base phenomena; the value of safe, stable, and shared good-enough care), developed in attachment research over the past 50 years, that may inform policy and clinical reasoning and areas for prevention and intervention.
+
+---
+
+9. Perinatal interventions for parents with exposure to adverse childhood experiences: A narrative review of suitability for implementation in primary care.
+
+PMID: 42102221
+
+Journal: Infant mental health journal (2026/Jul)
+
+Abstract: Children of parents exposed to adverse childhood experiences (ACEs) face elevated risk of experiencing biopsychosocial challenges. Primary care screening for parental ACEs is increasing, and routine primary care touchpoints may reach parents with exposure to ACEs during the critical perinatal period. This review seeks to 1) evaluate existing perinatal interventions-including those not designed for primary care-for suitability for primary care implementation and 2) identify implementation factors missing from existing interventions that may enhance their implementation in primary care. The PubMed database was searched for articles in English reporting on randomized controlled trials of perinatal interventions among parents with exposure to ACEs. Fourteen articles detailing 14 unique interventions were included in the qualitative synthesis. Data were extracted on intervention characteristics identified by implementation research as relevant to primary care: evidence of benefit, applicability and relevance, complexity, clarity, practicality and utility, costs, and adaptability. Ten interventions were found to be effective for parents with greater exposure to ACEs; however, the variability within the interventions and relevant settings suggests nuanced decision-making is required to match interventions to settings. The current review offers primary care providers a framework for matching and adapting such interventions.
+
+---
+
+10. A lifecycle governance and learning health system framework for trustworthy, generalizable, and sustainable human-ai partnership in clinical practice: Lessons from the asthma-guidance and prediction system (A-GPS).
+
+PMID: 42128801
+
+Journal: Journal of the National Medical Association (2026/May)
+
+Abstract: The integration of artificial intelligence (AI) into clinical decision support (CDS) holds promise for proactive, personalized, and precision care. However, current understanding of how to establish trustworthy human-AI partnerships is in its infancy, despite its critical importance for implementing AI in healthcare. We present the Asthma-Guidance and Prediction System (A-GPS) as a case study of a practice-integrated AI platform that demonstrates how trustworthy, generalizable and sustainable AI can be developed, evaluated, and implemented in real-world asthma care. We describe major challenges and solutions based on our real-world experience during the process and offer the practical framework, approaches, tools and workflow for implementing trustworthy, generalizable and sustainable AI in frontline practices. While A-GPS is an asthma-specific AI tool, it was built on top of a disease-agnostic electronic health record (EHR)-integrated clinical decision support (CDS) platform based on an Application Programming Interface (API)-first backbone of reusable services. It was designed to reduce chart-review/processing burden and enable proactive, guideline-concordant asthma management by synthesizing fragmented longitudinal multimodal data into a clinical decision-relevant summary at the point of care. A-GPS platform integrates multiple natural language processing (NLP) algorithms to leverage free texts info in EHRs, machine learning model to offer risk stratification, and remote patient monitoring (RPM) approaches to capture real-time data from patients, enabling remote asthma (chronic disease) care. The platform has been deployed via Substitutable Medical Applications and Reusable Technologies-on-Fast Healthcare Interoperability Resources (SMART-on-FHIR) to ensure in-workflow delivery and maintainable governance making it flexible and interoperable across different EHRs systems and different chronic diseases. The translational maturity of A-GPS as an AI-powered CDS tool for pediatric asthma was demonstrated and sustained through engagement and co-design with diverse community and care team partners, including adult and pediatric Community Advisory Board, pediatric patients and their parents, clinicians (primary care providers and specialists), nurses, schedulers, as well as bioethicists and regulatory experts. Moreover, the tool was evaluated in two randomized clinical trial (RCT)s. The first trial showed a 67% reduction in clinicians' EHR review time, high clinician satisfaction, potential healthcare cost savings, fairness in model performance, and no adverse events. Trustworthiness was further assessed and supported through fairness evaluation by participant socioeconomic status (SES) using the HOUsing-based SocioEconomic Status (HOUSES) index, human-centered user interface/user experience (UI/UX) analysis, clinician workflow optimization, transparent governance practices, and best practices for regulatory science. The A-GPS experience operationalizes a reproducible, lifecycle-governed framework for generating decision-grade evidence on safety, effectiveness, usability, fairness, and workflow integration, directly addressing the translational gap between AI model development and trustworthy, sustainable deployment in real-world clinical environments. These efforts led to national recognitions, including invitation to the inaugural American Medical Informatics Association (AMIA) AI Showcase, and AI evaluation use case for a national health AI coalition. The second RCT evaluated the feasibility of integrating a remote patient monitoring (RPM) device (home spirometry) into the A-GPS platform, with a published RCT protocol that serves as a framework for RCT for evaluating AI models under the Standard Protocol Items: Recommendations for Interventional Trials (SPIRIT) guidelines for RCTs that evaluate AI tools, offering the practical framework, approaches, tools, and workflow for trustworthy, generalizable and sustainable AI tools in asthma care. This work illustrates how team science, community engagement, implementation science, and learning health system principles can be operationalized to establish a human-AI partnership model to advance translational science and clinical care, with the goal of improving health for all.
+
+---
+
+【第3部：候補論文スコア一覧】
+
+| PMID     | タイトル                                                                                               | 総合スコア | 役立つか | 短いメモ                                 |
+| -------- | -------------------------------------------------------------------------------------------------- | ----: | ---- | ------------------------------------ |
+| 42136936 | Strengthening the quality and safety of community mental health care for children and young people |   3.3 | 中    | 小児メンタルヘルス体制の参考になるが、日本の一般外来で即実装は限定的。  |
+| 42136895 | Aging with Thalassemia and Sickle Cell Disease                                                     |   1.2 | 低    | 成人慢性血液疾患中心で小児外来への影響は小さい。             |
+| 42134823 | Epidemiology of Obesity During Pregnancy in Europe                                                 |   1.5 | 低    | 疫学中心で小児外来の診療変更には直結しにくい。              |
+| 42129311 | CNS complications after allogeneic haematopoietic cell transplantation                             |   1.6 | 低    | 専門領域で一般小児外来への応用は限定的。                 |
+| 42128801 | A lifecycle governance and learning health system framework for trustworthy AI in asthma care      |   4.2 | 高    | 小児喘息AI-CDS実装の実例。外来データ活用の参考度が高い。      |
+| 42127958 | Paediatric palliative care and paediatric euthanasia                                               |   1.4 | 低    | 倫理的論考で、日本の一般小児外来の診療変更には直結しにくい。       |
+| 42120165 | Diagnosis and Management of Eating Disorders in Adolescents and Young Adults                       |   4.3 | 高    | 思春期外来での早期発見・紹介判断に有用。                 |
+| 42120163 | Nonpharmacologic Management of Insomnia Disorder in Primary Care                                   |   4.4 | 高    | 睡眠相談でCBT-Iや非薬物療法を第一選択に置く視点が有用。       |
+| 42117739 | HRQoL instruments for older persons with osteoporosis                                              |   1.0 | 低    | 高齢者骨粗鬆症が中心で小児外来には不向き。                |
+| 42114873 | Mapping the evidence on stillbirth prevention                                                      |   2.0 | 低    | 周産期領域として重要だが、小児外来での直接効果は限定的。         |
+| 42106586 | Single intrauterine death in monochorionic twin pregnancies with TAPS                              |   1.1 | 低    | 胎児・周産期専門領域で一般外来への影響は小さい。             |
+| 42105330 | Pneumococcal vaccination in Belgian adults                                                         |   1.6 | 低    | 成人・ベルギーの肺炎球菌ワクチンで小児外来には直接使いにくい。      |
+| 42102221 | Perinatal interventions for parents with ACEs                                                      |   4.1 | 高    | 乳幼児家庭支援、保護者背景の評価、地域連携に有用。            |
+| 42098382 | Symptom-guided approach to CNS complications after allo-HCT                                        |   1.5 | 低    | 移植後専門診療で、一般外来での使用頻度は低い。              |
+| 42096966 | Interventions on sleep of youth with ADHD                                                          |   4.6 | 高    | ADHD児の睡眠評価・行動介入に直結するメタ解析。            |
+| 42095998 | Type 2 Diabetes and the Lung                                                                       |   2.1 | 低    | 成人T2Dと喘息・COPD中心。小児喘息には参考程度。          |
+| 42088261 | Leadership in Obesity Care                                                                         |   2.5 | 中    | 肥満診療のコミュニケーションには参考になるが、実践性はやや抽象的。    |
+| 42084793 | Climate change and child health in Europe                                                          |   3.0 | 中    | 環境曝露・呼吸器疾患の説明に有用だが、即時の診療変更は限定的。      |
+| 42069412 | Guidelines for acute porphyria                                                                     |   1.8 | 低    | 希少疾患ガイドラインで、一般外来の頻度は低い。              |
+| 42059245 | Influenza vaccine effectiveness in Italy 2024/2025                                                 |   3.6 | 中    | ワクチン説明には有用だが、国・シーズン依存性がある。           |
+| 42058390 | Management of Pediatric Hand Injuries in the Acute Setting Part 1                                  |   4.4 | 高    | 小児手外傷の初期対応・紹介判断に有用。                  |
+| 42050676 | Acute bloody diarrhea and STEC consensus                                                           |   4.7 | 高    | 血便・STEC疑いの検査、抗菌薬回避、HUSフォローに直結。       |
+| 42030967 | The 2026 Europe report of the Lancet Countdown                                                     |   2.2 | 低    | 公衆衛生政策として重要だが、abstractなしで外来実装性は限定的。  |
+| 42029892 | Mentalization-Based Therapy for Children and Families                                              |   3.0 | 中    | 親子支援に参考になるが、効果は不確実で診療変更までは弱い。        |
+| 42026011 | Prevalence estimates of sickle cell disease in sub-Saharan Africa                                  |   1.7 | 低    | 疫学・地域特異性が強く、日本の一般小児外来への直接影響は小さい。     |
+| 42023460 | Insecure attachment and bipolar disorder                                                           |   1.3 | 低    | 成人双極症中心で小児外来への実用性は低い。                |
+| 42022434 | Public Health Achievements in Rwanda                                                               |   1.4 | 低    | 保健システム論として参考程度。個別診療には直結しにくい。         |
+| 42014777 | Risk-stratified breast cancer screening in Canada                                                  |   1.0 | 低    | 成人乳癌スクリーニングで小児外来対象外。                 |
+| 42010559 | Equity-oriented maternity care for refugee women                                                   |   2.0 | 低    | 周産期・移民医療として重要だが、小児外来への直接性は低い。        |
+| 42010098 | Medical-Legal Partnership as Value-Based Primary Care                                              |   2.7 | 中    | 社会的課題への支援体制として参考になるが、日本での実装は工夫が必要。   |
+| 42005636 | MASLD Across East and Southeast Asia                                                               |   2.6 | 中    | 小児肥満・脂肪肝の背景知識として参考。直接的な小児指針ではない。     |
+| 42002682 | SDOH screening in neonatal care pathways                                                           |   2.9 | 中    | NICU退院後・早産児フォローには有用だが、一般外来では対象が限られる。 |
+| 42002280 | Preparation for Pediatric Emergencies in the Office                                                |   5.0 | 高    | 小児科外来の安全管理・救急対応体制に最重要。               |
+| 41984151 | Gender equality and equity in intensive care                                                       |   1.0 | 低    | ICU職場環境の合意文書で小児外来診療とは距離がある。          |
+| 41972388 | Chronic widespread pain and cardiovascular disease                                                 |   1.8 | 低    | 成人慢性疼痛中心。小児外来での直接性は低い。               |
+| 41972211 | EEG during acute painful procedures in neonates                                                    |   2.0 | 低    | 新生児疼痛研究の評価指標で、一般外来実装には遠い。            |
+| 41962320 | Stressful life events in young people with functional seizures                                     |   2.9 | 中    | 心因性非てんかん発作の背景理解に有用だが、診療変更効果は限定的。     |
+| 41921987 | Prediction of Developmental Outcomes in Preterm Infants                                            |   2.8 | 中    | 早産児フォローの説明には参考。ただし推奨モデルなし。           |
+| 41911930 | Global burden of meningitis 1990-2023                                                              |   3.1 | 中    | ワクチン・髄膜炎啓発には有用だが、個別外来行動の変更は限定的。      |
+| 41903554 | Climate change research priorities for women and children in LMICs                                 |   1.8 | 低    | 研究優先順位設定で、外来診療には直接使いにくい。             |
+| 41895458 | Expert perspectives on ME/CFS                                                                      |   2.4 | 中    | 慢性疲労・post-COVIDの理解に参考だが、実践的指針としては弱い。 |
+| 41819766 | Mediterranean Diet definition                                                                      |   1.7 | 低    | 栄養指導の背景にはなるが、小児外来での即時性は低い。           |
+| 41812543 | PROMIS Anxiety screening accuracy in adults                                                        |   1.5 | 低    | 成人不安スクリーニングで、小児外来には直接適用しにくい。         |
+| 41774412 | Oral Lamivudine for Extended HIV Postnatal Prophylaxis                                             |   2.5 | 中    | 小児HIV予防として重要だが、日本の一般外来での頻度は低い。       |
+| 41759235 | Pediatric pain assessment in sub-Saharan Africa                                                    |   2.2 | 低    | 小児疼痛評価の視点はあるが、地域特異性が高い。              |
+| 41758922 | Assessment and Treatment of Bipolar Disorder in the Community                                      |   2.7 | 中    | 思春期メンタルヘルスで参考になるが、一般小児外来での実装は慎重。     |
+| 41736561 | Practitioner Review: attachment theory and young children                                          |   4.2 | 高    | 育児相談・発達相談で愛着概念を適切に使う助けになる。           |
+| 41704016 | Generic Long-Acting Antiretrovirals for Global HIV Treatment                                       |   1.4 | 低    | HIV治療アクセスの政策論で、小児一般外来への直接性は低い。       |
+| 41690170 | YouTube misinformation for morning sickness self-help                                              |   2.1 | 低    | 妊婦相談では参考になるが、小児外来の中心課題ではない。          |
+| 41672015 | Amino acid fortification in RUTF formulations                                                      |   1.6 | 低    | 重症栄養不良治療の国際栄養領域で、日本の外来では限定的。         |
+| 41661638 | Food allergy risk factors in infants and children                                                  |   4.9 | 高    | 乳児湿疹、食物導入、食物アレルギー予防指導に直結。            |
+| 41392882 | COVID-19 pregnancy outcomes by hospitalization status                                              |   2.0 | 低    | 妊婦COVID-19重症化予防として重要だが、小児外来では間接的。    |
+| 41277016 | Perinatal factors and childhood acute leukemia                                                     |   1.9 | 低    | 疫学的関連が中心で、外来での診療変更には結びつきにくい。         |
+| 41047940 | ACEs and epigenetic age acceleration                                                               |   1.8 | 低    | 発達・心理背景の研究として興味深いが、実臨床への直接性は低い。      |
+| 40720671 | LNS and malaria preventive treatment during pregnancy                                              |   1.4 | 低    | サブサハラ妊婦栄養・マラリア対策で、日本の小児外来には不向き。      |
