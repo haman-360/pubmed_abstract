@@ -1,0 +1,209 @@
+【第1部：日本語要約】
+
+---
+
+①タイトル
+
+Aluminium adjuvants in vaccines and potential health effects: systematic review.
+
+②PMID
+
+42091164
+
+③なぜ重要か
+
+ワクチン忌避でしばしば問題になる「アルミニウムアジュバントの長期安全性」について、BMJ掲載のsystematic reviewとして整理している点が重要です。RCTや大規模コホートでは、喘息、自閉スペクトラム症、慢性疾患などとの因果関連は支持されませんでした。
+
+④臨床への影響
+
+外来で保護者から「アルミニウム入りワクチンは危険ではないか」と質問された際に、かなり実用的な説明根拠になります。局所の遷延性結節・肉芽腫はまれに起こり得るが、重篤・長期的健康被害との関連は現時点で支持されない、という説明に使えます。
+
+⑤診療変更の必要性
+
+Yes：説明内容のアップデートに有用。接種方針を変えるというより、ワクチン不安への説明を強化する論文です。
+
+---
+
+①タイトル
+
+Hepatitis B Vaccination at Birth: Safety, Effectiveness, and Public Health Benefit.
+
+②PMID
+
+41639943
+
+③なぜ重要か
+
+出生時B型肝炎ワクチンの安全性・有効性・公衆衛生上の意義を包括的に整理したPediatricsのレビューです。出生時接種を遅らせることによる安全性・有効性上の利点は示されず、乳児接種により小児HBV感染が99%減少したとされています。
+
+④臨床への影響
+
+日本の定期接種スケジュールとは制度背景が異なるものの、HBVワクチンの早期接種の意義を説明する際の根拠になります。特に、出生時接種をめぐる議論や、接種延期を希望する家族への説明で参考になります。
+
+⑤診療変更の必要性
+
+Yes：日本で即座に出生時接種へ変更する話ではありませんが、HBVワクチン延期に対する説明根拠として重要です。
+
+---
+
+①タイトル
+
+Immunogenicity and safety of Sabin-strain inactivated poliovirus vaccine in infants: a systematic review and meta-analysis.
+
+②PMID
+
+42060979
+
+③なぜ重要か
+
+乳児におけるSabin株由来不活化ポリオワクチンの免疫原性と安全性を、RCTのみで評価したsystematic review/meta-analysisです。従来のSalk株IPVと同等の免疫原性を示し、安全性もおおむね許容範囲でした。
+
+④臨床への影響
+
+日本の一般外来で直ちにワクチン選択を変える内容ではありませんが、国際的なポリオ根絶戦略やワクチン供給・製造安全性の観点で重要です。発熱やアレルギー反応がsIPVでやや多い可能性は、今後導入地域での説明ポイントになります。
+
+⑤診療変更の必要性
+
+No：現時点の国内小児外来で接種方針を変える内容ではありませんが、ワクチン安全性情報として把握しておく価値があります。
+
+---
+
+①タイトル
+
+Incidence of Bacille Calmette-Guérin associated lymphadenitis in healthy children: A systematic review and meta-analysis.
+
+②PMID
+
+42081288
+
+③なぜ重要か
+
+健康小児におけるBCG関連リンパ節炎の発生頻度を、約180万人規模で統合したsystematic review/meta-analysisです。 pooled incidenceは2.5%でしたが、サーベイランス方法、研究デザイン、BCG株により大きくばらつくことが示されました。
+
+④臨床への影響
+
+BCG後の腋窩リンパ節腫脹を診る場面で、「まれではあるが想定される副反応」として説明しやすくなります。ただし発生率の幅が大きく、個々の症例では化膿性リンパ節炎、抗酸菌感染、免疫不全などの鑑別は必要です。
+
+⑤診療変更の必要性
+
+Yes：BCG後リンパ節炎の説明・経過観察・紹介判断の整理に役立ちます。
+
+---
+
+①タイトル
+
+Bacillus Calmette-Guérin scar reactivation (BCGitis) in Kawasaki disease: a scoping review.
+
+②PMID
+
+42020814
+
+③なぜ重要か
+
+BCG接種部位の発赤・再活性化が川崎病診断の補助所見になり得ることを、アジアのBCG接種児データを中心に整理したscoping reviewです。特に2歳未満で頻度が高く、不全型川崎病の診断補助として実用性があります。
+
+④臨床への影響
+
+発熱児、とくに乳幼児で川崎病を疑う際に、BCG痕を診察で確認する意義を再確認できます。ただし予後予測、冠動脈病変との関連については交絡が残るため、BCGitisの有無だけで重症度判断をするべきではありません。
+
+⑤診療変更の必要性
+
+Yes：発熱乳幼児の身体診察でBCG痕確認をより意識するきっかけになります。
+
+---
+
+【第2部：英語Abstract】
+
+---
+
+1. Aluminium adjuvants in vaccines and potential health effects: systematic review.
+
+PMID:
+42091164
+
+Journal:
+BMJ (Clinical research ed.) (2026/May)
+
+Abstract:
+OBJECTIVE: To systematically review and critically appraise human evidence on potential health effects of aluminium adjuvanted vaccines.
+DESIGN: Systematic review following PRISMA (preferred reporting items for systematic review and meta-analysis) 2020 guidelines.
+DATA SOURCES: Six databases and trial registries were searched from inception to 3 March 2023 then updated to 27 November 2025. Reference lists of eligible studies were also screened.
+ELIGIBILITY CRITERIA FOR SELECTING STUDIES: Human studies assessing health outcomes after aluminium adjuvanted vaccination, including randomised controlled trials, cohort studies, case series, and ecological studies. Investigational vaccines, case reports, and review articles were excluded.
+DATA EXTRACTION AND SYNTHESIS: Two reviewers screened studies (with AI assistance for the 2023-25 update), extracted data, and assessed risk of bias (using RoB 2.0, ROBINS-I, or an adapted tool for case series). Certainty of evidence was rated using GRADE (Grading of Recommendations Assessment, Development, and Evaluation).
+RESULTS: The review included 59 studies (37 case series, 11 randomised controlled trials, nine cohort studies, two ecological studies). High quality evidence from randomised controlled trials and large cohorts consistently showed no association between aluminium adjuvanted vaccines and serious or long term health outcomes, such as asthma, autism spectrum disorders, or other chronic conditions. Studies on macrophagic myofasciitis were generally small and methodologically limited, and did not provide credible evidence of a causal association (very low certainty). Localised persistent nodules or granulomas were observed infrequently after diphtheria-tetanus-pertussis vaccines, consistent with delayed type hypersensitivity (<1%, self-limited; moderate to low certainty). For common adverse events (eg, headache, myalgia), high certainty randomised controlled trials found no consistent increase in risk with aluminium adjuvanted formulations. When differences were observed, they were small and predominantly mild to moderate in severity. Evidence was dominated by methodologically limited studies, with most case series and ecological studies at serious or critical risk of bias. Conclusions are primarily supported by higher quality randomised controlled trials and cohort evidence.
+CONCLUSIONS: Current evidence does not support causal associations between aluminium adjuvanted vaccines and serious or long term health outcomes. The most consistently documented reactions were persistent nodules or granulomas that are uncommon, local, and self-limited hypersensitivity reactions. These findings are broadly consistent with post-licensure surveillance findings. The predominance of methodologically limited studies for some outcomes highlights the need for higher quality research.
+SYSTEMATIC REVIEW REGISTRATION: PROSPERO CRD42023462831.
+
+---
+
+2. Hepatitis B Vaccination at Birth: Safety, Effectiveness, and Public Health Benefit.
+
+PMID:
+41639943
+
+Journal:
+Pediatrics (2026/May)
+
+Abstract:
+Since 1991, the CDC has recommended screening for hepatitis B virus (HBV) infection in pregnancy and universal hepatitis B vaccination of all medically stable infants at birth, serving as a core strategy to prevent perinatal and postnatal infection and eliminate HBV transmission nationwide. On December 5, 2025, the Advisory Committee on Immunization Practices (ACIP) voted (1) among women who screen negative in pregnancy, parents decide, in consultation with providers, when or if to vaccinate their child for hepatitis B, and if not at birth, then aged no earlier than 2 months, and (2) consider collection of infant immune titers to guide decision-making for completing the vaccine series. We conducted a comprehensive review of the evidence on the safety, immunogenicity, efficacy, and effectiveness of the birth dose and a delayed first dose, and of the potential role of serology for clinical decision-making. We analyzed studies of the epidemiology of HBV infection, clinical trials, systematic reviews, vaccine safety from surveillance and clinical studies, and the potential impact of revised guidelines on individual and public health. We synthesized the history of ACIP recommendations and resulting trends in HBV incidence. The review found strong evidence for the safety and effectiveness of the birth dose, and no improvement in safety or effectiveness with a delayed first dose. We found no evidence to support the use of postvaccination serology. Infant vaccination has resulted in a 99% reduction in pediatric HBV infections; we found no evidence to support a change in vaccine recommendations but identified potential health consequences.
+
+---
+
+3. Immunogenicity and safety of Sabin-strain inactivated poliovirus vaccine in infants: a systematic review and meta-analysis.
+
+PMID:
+42060979
+
+Journal:
+Vaccine (2026/Jun)
+
+Abstract:
+BACKGROUND: Poliomyelitis remains a threat to children under five despite global vaccination efforts. The Sabin-strain inactivated poliovirus vaccine (sIPV) has emerged as a safer alternative to conventional Salk-strain IPV (cIPV) due to lower biosafety requirements. This systematic review and meta-analysis evaluated the immunogenicity and safety of sIPV compared with cIPV in healthy infants completing the primary IPV series.
+METHODS: PubMed, Embase, Scopus, and Cochrane Library were searched for RCTs. Outcomes included seroconversion rates, seroprotection rates, geometric mean titers (GMTs), and adverse events. Data were pooled using random-effects models, and evidence certainty was assessed using RoB 2.0 and GRADE.
+RESULTS: Seven RCTs with 4646 infants were included. Seroconversion rates were comparable: PV1 100% (RR 1.00, 95% CI 1.00-1.01), PV2 102% (RR 1.02, 95% CI 0.98-1.07), PV3 100% (RR 1.00, 95% CI 0.99-1.01). GMTs were higher for sIPV after PV1 (MD 1.50, 95% CI 0.98-2.02) and PV2 (MD 0.52, 95% CI 0.06-0.98). Local adverse events were similar (OR 1.27, 95% CI 0.95-1.71), while systemic adverse events were higher with cIPV (OR 1.36, 95% CI 1.15-1.60). Fever (OR 1.50, 95% CI 1.20-1.87) and allergic reactions (OR 2.19, 95% CI 1.02-4.69) were slightly more frequent with sIPV.
+CONCLUSIONS: sIPV provides immunogenicity comparable to cIPV with an acceptable safety profile in infants. Its lower biosafety requirements support its use in global polio eradication programs.
+
+---
+
+4. Incidence of Bacille Calmette-Guérin associated lymphadenitis in healthy children: A systematic review and meta-analysis.
+
+PMID:
+42081288
+
+Journal:
+Human vaccines & immunotherapeutics (2026/Dec)
+
+Abstract:
+Few systematic reviews or meta-analyses have addressed on the incidence of Bacille Calmette-Guérin (BCG) lymphadenitis in healthy children. A systematic literature search was independently conducted by two researchers using four English and Korean databases (PubMed, Scopus, KMbase, RISS). The risk of bias was assessed. A total of 52 peer-reviewed journal articles (about 1.8 million children) were included in meta-analyses. The incidence proportion of BCG lymphadenitis ranged from 0.0% to 25.6%. The pooled incidence proportion was 2.5% (95% CI, 1.6-3.6; I2 = 99%). Studies employing active (vs. passive) surveillance reported a significantly higher incidence proportion of lymphadenitis, as did randomized controlled trials (vs. prospective and retrospective cohort studies). Also, the incidence significantly differed according to study quality, publication period, and BCG strain. This study highlights substantial variability in the incidence of BCG lymphadenitis among diverse studies and underscores the influence of surveillance methods, study design, and vaccine strain on reported outcomes.
+
+---
+
+5. Bacillus Calmette-Guérin scar reactivation (BCGitis) in Kawasaki disease: a scoping review.
+
+PMID:
+42020814
+
+Journal:
+European journal of pediatrics (2026/Apr)
+
+Abstract:
+UNLABELLED: The aim of this study is to map and synthesise the evidence on the scattered and heterogeneous reported prevalence of Bacillus Calmette-Guérin (BCG) scar reactivation (BCGitis) in Kawasaki disease (KD), examine clinical relationships, and identify knowledge gaps for future research. A scoping review was conducted according to the PRISMA-ScR guidelines. PubMed, Scopus, EMBASE, Web of Science, Cochrane Library, China National Knowledge Infrastructure (CNKI), and KoreaMed were searched for observational studies of BCG-vaccinated children with KD. We retrieved the prevalence of BCGitis and its relationship with age, sex, KD form, BCG vaccine strain, coronary artery abnormalities (CAA), and treatment response. Fifteen studies from five Asian countries (Japan, Korea, Taiwan, China, and Singapore), including 21,880 children with KD, were identified. The median reported prevalence of BCGitis was 37.5% (range, 3.5%-75.2%), driven by a few large studies. Its prevalence was 61.8% below 2 years and 9.1% over 2 years in 17,000 patients with KD. Its unweighted study-level prevalence (MU-SLP) was slightly higher in males than in females (49.8% vs. 46.1%), and in the largest number of patients with KF reported, it was associated with lower CAA rates of 11.6 vs.13.8% in the absence of BCGitis. No significant relationships were observed between KD type, vaccine strain, or treatment response.
+CONCLUSION: Owing to the inherent methodology and limitations of scoping reviews, these findings should be interpreted as a map of the current evidence rather than a quantitative conclusion. BCGitis is a common manifestation of KD in BCG-vaccinated children and may have diagnostic value, particularly in younger children, in whom diagnosis may be difficult. Although it also seems to have prognostic value regarding the development of CAA, we urge caution because confounding cannot be ruled out. However, the current evidence lacks robustness due to the heterogeneity and design limitations of the studies. Future research addressing these limitations is required.
+WHAT IS KNOWN: • Reactivation at the Bacillus Calmette-Guérin (BCG) inoculation site (BCGitis) has been reported in patients with Kawasaki disease (KD). • Its true prevalence remains unclear due to inconsistent reporting of BCG vaccination status or examination of the inoculation site.
+WHAT IS NEW: • The unweighted study-level prevalence (MU-SLP) of BCGitis among children with KD and prior BCG vaccination was 38.6%. It is slightly higher in males and younger children but is not different between complete and incomplete KD, with coronary artery abnormalities (CAA) being more common in the absence of BCGitis. • Further studies are required to provide robust evidence for these findings.
+TRIAL REGISTRATION:  Hassib Narchi and Alyson Skinner. Bacillus Calmette-Guérin scar reactivation (BCGitis) in Kawasaki disease. A Scoping Review. MedRxiv [preprint]. October 5, 2025. doi:  [https://doi.org/10.1101/2025.10.03.25337219](https://doi.org/10.1101/2025.10.03.25337219).
+
+---
+
+【第3部：候補論文スコア一覧】
+
+| PMID     |                                                                                                                              タイトル | 総合スコア | 役立つか   | 短いメモ                                           |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------: | ----: | ------ | ---------------------------------------------- |
+| 42091164 |                                                  Aluminium adjuvants in vaccines and potential health effects: systematic review. |   9.5 | Yes    | ワクチン忌避・副反応説明に直結。外来で非常に使いやすい。                   |
+| 41639943 |                                               Hepatitis B Vaccination at Birth: Safety, Effectiveness, and Public Health Benefit. |   8.5 | Yes    | HBVワクチンの早期接種・延期希望への説明根拠として重要。                  |
+| 42060979 |       Immunogenicity and safety of Sabin-strain inactivated poliovirus vaccine in infants: a systematic review and meta-analysis. |   7.5 | Yes    | 国内診療変更は限定的だが、乳児IPVの安全性・免疫原性データとして重要。           |
+| 42081288 |         Incidence of Bacille Calmette-Guérin associated lymphadenitis in healthy children: A systematic review and meta-analysis. |   7.5 | Yes    | BCG後リンパ節炎の説明・経過観察に有用。                          |
+| 42020814 |                                       Bacillus Calmette-Guérin scar reactivation (BCGitis) in Kawasaki disease: a scoping review. |   7.0 | Yes    | 発熱乳幼児・川崎病疑いでBCG痕を確認する意義を再確認。                   |
+| 42108718 |                                                                        Treatments for Molluscum contagiosum: A systematic review. |   6.5 | Partly | 小児外来皮膚診療には有用だが、ワクチン副反応領域からはやや外れる。MMR免疫療法の記載あり。 |
+| 42135262 |                                                               Paracetamol in Pregnancy: Uncertain Evidence, Certain Consequences. |   4.5 | Partly | ワクチンではないが、妊娠中薬剤・自閉症リスクをめぐる誤情報への批判として参考。        |
+| 42068103 | Different Immune Cells Modified With Chimeric Antigen Receptors Are Being Applied to Ovarian Cancer: Which Is the Most Effective? |   1.0 | No     | 成人腫瘍免疫療法の総説で、小児ワクチン外来への影響はほぼない。                |
