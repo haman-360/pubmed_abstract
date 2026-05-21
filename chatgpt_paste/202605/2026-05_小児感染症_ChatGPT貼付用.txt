@@ -1,0 +1,75 @@
+【領域】
+小児感染症（週次）
+
+【対象期間】
+直近1週間
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Gastrostomy plus fundoplication or gastro-jejunal tube or gastrostomy alone for treating or preventing gastro-esophageal reflux in children and adolescents with neurological impairment.
+
+PMID:
+42159156
+
+Journal:
+The Cochrane database of systematic reviews (2026/May)
+
+Abstract:
+RATIONALE: Children with neurological impairment (NI) represent a vulnerable pediatric population who often experience multiple co-occurring chronic conditions and may develop worsening comorbidities over time due to primary dysfunctions of the nervous system. Among the most significant of these are gastro-esophageal reflux (GER) and dysphagia, which likely account for much of the associated morbidity and mortality. There is substantial variation in the management of GER, and few studies have been conducted to evaluate the effects of antireflux procedures in preventing and improving outcomes in this population.
+OBJECTIVES: To assess the benefits and harms of the two most common enteral feeding tubes and associated antireflux procedures. We aimed to compare: 1) gastrostomy tube (GT) plus fundoplication, 2) gastrostomy plus insertion of a gastro-jejunal (GJ) tube, and 3) GT alone for treating or preventing GER in children and adolescents with NI.
+SEARCH METHODS: We searched CENTRAL, MEDLINE, Embase, six other databases, and two trials registers, together with reference checking and contact with two experts in the field, to identify studies for inclusion in the review. There were no restrictions on language. The latest search date was 17 September 2024.
+ELIGIBILITY CRITERIA: Randomized controlled trials (RCTs) and non-randomized studies of interventions (NRSIs) in children with NI, with or without GER, comparing the three interventions. We excluded studies of neurologically normal children.
+OUTCOMES: Our critical outcomes were symptoms of GER and mortality. Important outcomes included major surgical complications (perforation or peritonitis), length of stay (LOS), number of hospitalizations for respiratory morbidity (pneumonia), number of emergency department (ED) visits, and child's quality of life (QoL).
+RISK OF BIAS: We used the ROBINS-I tool to assess bias in NRSIs. We did not find any RCTs.
+SYNTHESIS METHODS: We meta-analyzed the results for each outcome where possible (inverse-variance, random-effects). Where this was precluded by the nature of the data, we synthesized results according to Synthesis Without Meta-analysis (SWiM) guidelines. We used GRADE to assess the certainty of evidence.
+INCLUDED STUDIES: We included 11 NRSIs with a total of 3122 children with NI. Among these, seven cohort studies compared GT plus fundoplication versus GT alone (2654 participants); one cohort study compared GJ tubes versus GT alone (50 participants); and three cohort studies compared GT plus fundoplication versus GJ tubes (418 participants).
+SYNTHESIS OF RESULTS: GT plus fundoplication compared to GT alone for GER in children with NI The evidence is very uncertain about the effect of GT plus fundoplication on symptoms of GER (odds ratio [OR] 2.02, 95% confidence interval [CI] 0.64 to 6.44; 3 NRSIs, 180 participants; very low-certainty evidence); mortality (OR 2.62, 95% CI 0.41 to 16.80; 3 NRSIs, 415 participants; very low-certainty evidence); major surgical complications (OR 2.61, 95% CI 0.46 to 14.87; 3 NRSIs, 412 participants; very low-certainty evidence); and LOS (1 NRSI with no comparison, 130 participants; very low-certainty evidence). GT plus fundoplication may result in little to no difference in the number of hospitalizations for pneumonia (mean difference [MD] 0.04 higher, 95% CI 0.01 lower to 0.09 higher; 1 NRSI, 2054 participants; low-certainty evidence). The evidence is very uncertain about the effect of GT plus fundoplication on the number of ED visits (OR 1.82, 95% CI 0.78 to 4.27; 1 NRSI, 130 participants; very low-certainty evidence). Child's QoL was not reported. GJ tubes compared to GT alone for GER in children with NI The evidence is very uncertain about the effect of GJ tubes on mortality (OR 5.38, 95% CI 0.40 to 73.09; 1 NRSI, 50 participants; very low-certainty evidence) and child's QoL (effect estimate not reported; no effect of the type of tube on quality of life; 1 prospective NRSI, 50 participants; very low-certainty evidence). Symptoms of GER, major surgical complications, LOS, number of hospitalizations for respiratory morbidity (pneumonia), and number of ED visits were not reported. GT plus fundoplication compared to GJ tubes for GER in children with NI The evidence is very uncertain about the effect of GT plus fundoplication on symptoms of GER (3 NRSIs with conflicting results, including 1 unmatched cohort, 1531 participants; very low-certainty evidence); mortality (OR 1.12, 95% CI 0.52 to 2.41; 3 NRSIs, 418 participants; very low-certainty evidence); major surgical complications (OR 2.84, 95% CI 0.45 to 17.82; 2 NRSIs, 190 participants; very low-certainty evidence); and LOS (1 NRSI with no comparison, 79 participants; very low-certainty evidence). GT plus fundoplication may result in little to no difference in the number of hospitalizations for pneumonia (MD 0.05 lower, 95% CI 0.21 lower to 0.11 higher; 1 NRSI, 228 participants; low-certainty evidence). Number of ED visits and child's QoL were not reported. We downgraded the certainty of evidence for risk of bias and imprecision. Most studies were at serious risk of bias due to confounding, except for hospitalizations for pneumonia for the comparisons of GT plus fundoplication versus GT alone and versus GJ tubes.
+AUTHORS' CONCLUSIONS: In children with NI, the evidence is very uncertain about the effect of GT plus fundoplication on symptoms of GER, mortality, major surgical complications, and LOS, when compared to GT alone or GJ tubes (very low-certainty evidence). GT plus fundoplication may result in little to no difference in the number of hospitalizations for pneumonia when compared to GT alone or GJ tubes (low-certainty evidence). The evidence is very uncertain about the effect of GT plus fundoplication on the number of ED visits when compared to GT alone (very low-certainty evidence). The evidence is very uncertain about the effect of GJ tubes on mortality and child's QoL when compared to GT alone (very low-certainty evidence). We found no RCTs, and our results should be interpreted with caution due to the limited number of studies and the limitations of NRSIs. Additional research is necessary. It is likely that RCTs will be difficult to conduct; however, better-designed NRSIs could improve the quality of evidence in this area.
+FUNDING: This review was funded by Foundation Fresno, Universidad Católica de Chile, for librarian support only. The foundation had no role in the design or conduct of this review.
+REGISTRATION: Protocol available via DOI: 10.1002/14651858.CD015007.
+
+---
+2.
+
+Title:
+Prevalence of common respiratory viruses of infants with respiratory tract infections in European countries in the past decade: a systematic review and meta-analysis comparing between the pre-COVID-19, pandemic, and post-COVID-19 periods.
+
+PMID:
+42142180
+
+Journal:
+European journal of pediatrics (2026/May)
+
+Abstract:
+UNLABELLED: The purpose of this study is. to determine the leading cause of respiratory tract infections over the decade; this review examined the proportions of airway viruses in infants with respiratory tract infections in Europe before, during, and after the COVID-19 pandemic. The protocol for this systematic review was registered in the PROSPERO database (CRD42024497097). Literature searches in PubMed, Embase, Scopus, and Web of Science (WoS) identified 20,453 studies reporting respiratory viral testing in Europe over the past decade (2012/13-2022/23). Eligible studies were English-language full-text or grey articles with low risk of bias and complete data, and reports that explicitly provided the number of positive airway virus cases (n, virus) and the total infant population (N). Risk of bias was assessed using the Hoy et al. scoring system. Pooled prevalence estimates (pooled proportion [95% CI]) were calculated for pre-, during-, and post-COVID-19 periods using proportional meta-analysis with the MetaProp package in R. Fifty studies before, ten studies during, and 18 studies after the COVID-19 pandemic were eligible for proportional meta-analyses of viral testing in infants. Before the pandemic, the predominant viruses in infants with respiratory infections were Respiratory Syncytial Virus (RSV) (0.48 [0.41-0.56]), Human rhinovirus (HRV) (0.24 [0.18-0.29]), and Influenza virus (IV) (0.08 [0.04-0.12]). Post-pandemic, the leading viruses were RSV (0.63 [0.51-0.75]), HRV (0.25 [0.11-0.40]), and IV (0.10 [0.00-0.20]) again.
+CONCLUSIONS:  RSV and HRV remained the two most identified viruses in infants with respiratory infections, pre- and post-COVID-19 pandemic. Interestingly, both RSV and IV were suppressed during the pandemic. The trajectory dynamics of respiratory viruses were divergent, with resilient viruses (RSV, HRV, and IV) regaining dominance more rapidly than persistently suppressed viruses.
+WHAT IS KNOWN: • The COVID-19 pandemic induced an infection precautions policy, which reduced the spread of respiratory infectious diseases. • Respiratory Syncytial Virus (RSV) was estimated as one of the most common causes of respiratory infections in infants. Still, there are no reports summarising the geographical distributions of the various viral agents of infant respiratory diseases.
+WHAT IS NEW: • This meta-analysis shows that the prevalence of RSV and HRV infections in infants remains high in Europe following the COVID-19 pandemic and the associated precautionary policy. Furthermore, RSV proportionally experienced a marked reduction during COVID-19 pandemic (lockdown periods). However, the immunological debt may have led to a re-emergence in RSV positivity after the lockdown periods. • Our proportional meta-analysis indicates the heterogeneous post-pandemic recovery patterns of each respiratory virus commonly identified in infants, where HRV was shown to be resilient whilst RSV was rapidly rebound.
+
+---
+3.
+
+Title:
+The Effect of a 5-Day Course of Azithromycin on Streptococcus Pneumoniae Carriage and Antimicrobial Resistance Among Kenyan Children Discharged From Hospital.
+
+PMID:
+41542944
+
+Journal:
+The Journal of infectious diseases (2026/May)
+
+Abstract:
+BACKGROUND: Mass azithromycin distribution reduces child mortality in some settings, potentially through reductions in nasopharyngeal carriage of Streptococcus pneumoniae, but has been associated with increased antimicrobial resistance. Individual-level data are lacking on the impact of azithromycin on antimicrobial resistance over time.
+METHODS: We analyzed data from a double-blind, randomized placebo-controlled trial (ClinicalTrials.gov; NCT02414399) which followed 1398 hospitalized Kenyan children to evaluate the impact of a 5-day course of oral azithromycin at discharge from hospital on pneumococcal carriage and the proportion of isolates (among a random sample) resistant to azithromycin. Randomization to azithromycin or placebo (1:1) was stratified by enrollment county (Kisii or Homa Bay). Using generalized estimating equations, we calculated prevalence ratios (PRs) and 95% CIs for the intervention, adjusting for enrollment site.
+RESULTS: Overall, 1253/1398 (89.6%) enrolled children received antibiotics during their hospitalization. Pneumococcal carriage at discharge was similar among children randomized to the azithromycin group (158/702 [22.5%]) compared with the placebo group (171/696 [24.6%]; P = .4) and did not differ at month 3 (65.6% versus 67.0%; PR: 0.98 [0.90, 1.06]) or month 6 (66.7% versus 66.5%; PR: 1.00 [0.92, 1.08]). At discharge, 15.7% of isolates were resistant to azithromycin and there was no difference between azithromycin-treated and placebo groups at month 3 (35/266 [13.2%] versus 32/256 [12.5%]; PR: 1.06 [0.86, 1.66]) or month 6 (41/245 [16.7%] versus 43/243 [17.6%]; PR: 1.01 [0.69, 1.49]).
+CONCLUSIONS: Azithromycin treatment did not effect pneumococcal carriage or antimicrobial resistance 3- or 6-months post-randomization. High inpatient antibiotic use in this recently discharged population may have reduced any further impact of azithromycin.
+
+---

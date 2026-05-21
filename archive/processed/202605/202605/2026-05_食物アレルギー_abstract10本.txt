@@ -1,0 +1,255 @@
+以下、添付された食物アレルギー領域14本から、外来小児科医として診療を変える可能性が比較的高いものを選定しました。今回は7本を採用します。
+
+# 【第1部：日本語要約】
+
+---
+
+①タイトル
+
+Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
+
+②PMID
+
+41661638
+
+③なぜ重要か
+
+小児食物アレルギー発症リスクを、190研究・280万人規模で整理したJAMA Pediatricsのsystematic review/meta-analysisである。乳児湿疹、経皮水分喪失、アレルゲン導入遅延、抗菌薬曝露など、外来で介入・説明しやすい因子が明確に示されている。
+
+④臨床への影響
+
+乳児湿疹を「食物アレルギー予防の重要なサイン」として扱い、早期から皮膚バリア管理と適切な離乳食・アレルゲン導入指導を強化する根拠になる。抗菌薬処方についても、食物アレルギーリスクを含めた適正使用の説明材料になりうる。
+
+⑤診療変更の必要性
+
+Yes：乳児湿疹児への早期介入、アレルゲン導入指導、抗菌薬適正使用の説明をより意識する。
+
+---
+
+①タイトル
+
+Preventing Food Anaphylaxis.
+
+②PMID
+
+41932746
+
+③なぜ重要か
+
+食物アナフィラキシー予防を、従来の回避指導だけでなく、経口免疫療法やオマリズマブなどの能動的予防戦略まで含めて整理している。外来での生活指導、学校・園対応、専門医紹介の判断に直結するレビューである。
+
+④臨床への影響
+
+食品表示確認、誤食時対応、園・学校との情報共有、エピペン指導に加え、重症例や生活制限が強い例では能動的治療を検討する視点が必要になる。特にオマリズマブや経口免疫療法を「専門施設へつなぐ選択肢」として説明しやすくなる。
+
+⑤診療変更の必要性
+
+Yes：食物アレルギー管理を「回避のみ」から「リスク低減と生活の質改善」へ広げて考える。
+
+---
+
+①タイトル
+
+Anaphylaxis: Clinical Criteria, Severity, and Clinical Courses.
+
+②PMID
+
+41932742
+
+③なぜ重要か
+
+アナフィラキシー診断基準、重症度、臨床経過を整理し、2024年のAnaphylaxis Clinical Support Toolにも触れている。外来・救急初期対応で迷いやすい「主観症状が中心」「誘因不明」「他疾患との鑑別」に実用的である。
+
+④臨床への影響
+
+エピネフリン投与判断、観察時間、再燃・二相性反応への説明、紹介判断を標準化する助けになる。保護者説明や院内マニュアル更新の材料として使いやすい。
+
+⑤診療変更の必要性
+
+Yes：アナフィラキシー疑い時の診断・初期対応フローを見直す価値がある。
+
+---
+
+①タイトル
+
+Real-life lessons on omalizumab and food allergy: The potential for unexplored outcomes.
+
+②PMID
+
+42079786
+
+③なぜ重要か
+
+食物アレルギーに対するオマリズマブのRCT以外の実臨床データを整理したレビューである。偶発曝露時の反応軽減だけでなく、食事自由度、QOL、不安軽減といった外来で重要なアウトカムを扱っている。
+
+④臨床への影響
+
+多品目アレルギー、重症反応歴、生活制限が強い児では、専門医紹介や治療選択肢の説明にオマリズマブを含める意義が高まる。一般外来では導入そのものより、対象になりうる患者を拾い上げる視点が重要である。
+
+⑤診療変更の必要性
+
+Yes：重症・多品目・生活支障例では、生物学的製剤も含めた専門医相談を考える。
+
+---
+
+①タイトル
+
+Probiotics in the alleviation of food allergies in infants and young children: research progress.
+
+②PMID
+
+42138226
+
+③なぜ重要か
+
+乳幼児食物アレルギーに対するプロバイオティクスの機序、臨床研究、安全性を整理したレビューである。牛乳アレルギーに対するLactobacillus rhamnosus GG含有高度加水分解乳や、経口免疫療法補助としての可能性が扱われている。
+
+④臨床への影響
+
+現時点では全例に routine に推奨する段階ではないが、保護者から質問されやすい領域であり、期待できる場面と不確実性を説明するために有用である。特殊なミルク選択や免疫療法補助としては専門医領域で検討されうる。
+
+⑤診療変更の必要性
+
+No：現時点で一般外来の標準対応を大きく変えるほどではないが、説明知識として重要。
+
+---
+
+①タイトル
+
+When Medically Required Food Avoidance Goes Awry: A Conceptual Framework of ARFID as an Underrecognized Clinical Complication of Food Allergy.
+
+②PMID
+
+41649377
+
+③なぜ重要か
+
+食物アレルギーに伴う医学的除去が、回避・制限性食物摂取症、いわゆるARFIDにつながる可能性を整理した論文である。検査結果や不安に基づく過剰除去が、栄養・発達・心理面へ悪影響を及ぼす点を強調している。
+
+④臨床への影響
+
+「念のため除去」を安易に拡大しないこと、必要最小限の除去と再評価、栄養・心理面の確認が重要になる。食物アレルギー児で食事範囲が極端に狭い、体重増加不良、食への強い恐怖がある場合は早めに介入・紹介を考える。
+
+⑤診療変更の必要性
+
+Yes：過剰除去や検査依存による医原性リスクを意識し、食行動の評価を加える。
+
+---
+
+①タイトル
+
+Trace Elements in Allergy: Narrative Review.
+
+②PMID
+
+42083298
+
+③なぜ重要か
+
+微量元素とアレルギー疾患の関連を広く整理しつつ、現時点では routine の測定や一般的なサプリメント補充を支持しないと明記している。保護者からの亜鉛、鉄、セレンなどの相談に対して、過剰な検査・補充を避ける根拠になる。
+
+④臨床への影響
+
+食物アレルギーやアトピー疾患を理由に、微量元素を一律測定・補充する必要はないと説明しやすい。欠乏が疑われる場合や明確な臨床適応がある場合に限定して評価する方針が妥当である。
+
+⑤診療変更の必要性
+
+No：むしろ不要な検査・サプリメント推奨を避ける確認材料として有用。
+
+---
+
+# 【第2部：英語Abstract】
+
+---
+
+1. Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
+
+PMID: 41661638
+Journal: JAMA pediatrics (2026/May)
+Abstract:
+IMPORTANCE: The incidence and risk (predictive) factors for early life food allergy development remain uncertain.
+OBJECTIVE: To estimate the incidence and quantify risk factors for food allergy development.
+DATA SOURCES: MEDLINE and Embase were systematically searched to January 1, 2025. Data were analyzed from June 1, 2025, to November 25, 2025.
+STUDY SELECTION: Incidence estimates included studies confirming food allergy via food challenge. Risk factor analyses included cohort, case-control, and cross-sectional studies in any language assessing children younger than 6 years using multivariable analyses.
+DATA EXTRACTION AND SYNTHESIS: Paired reviewers independently extracted data. Random-effects meta-analyses pooled incidence and adjusted odds ratios (ORs). Risk of bias was assessed using the QUIPS tool, and certainty of evidence assessed using GRADE.
+MAIN OUTCOME AND MEASURE: The primary outcome was food allergy to age 6 years.
+RESULTS: A total of 190 studies involving 2.8 million participants across 40 countries were analyzed. Among studies using food challenge, overall food allergy incidence was likely 4.7% (moderate certainty). Among 176 studies identifying 342 risk factors with varying certainty, the strongest and most certain factors included prior allergic conditions (eg, atopic dermatitis [eczema] within the first year of life [OR, 3.88; risk difference [RD], 12.0%; 95% CI, 8.8%-15.7%], allergic rhinitis [OR, 3.39; RD, 10.1%; 95% CI, 6.7%-14.4%], and wheeze [OR, 2.11; RD, 5.0%; 95% CI, 2.1%-8.8%]), severity of atopic dermatitis (OR, 1.22; RD, 1.0%; 95% CI, 0.6%-1.6%), increased skin transepidermal water loss (OR, 3.36; RD, 10.0%; 95% CI, 6.3%-14.8%), filaggrin gene sequence variations (OR, 1.93; RD, 4.2%; 95% CI, 2.4%-6.4%), delayed solid food introduction (eg, peanut after age 12 months [OR, 2.55; RD, 6.8%; 95% CI, 1.9%-14.6%]), infant antibiotic use (first month [OR, 4.11; RD, 12.8%; 95% CI, 0.4%-40%], first year [OR, 1.39; RD, 1.8%; 95% CI, 0.8%-3.1%], during pregnancy [OR, 1.32; RD, 1.5%; 95% CI, 0.6%-2.5%]), male sex (OR, 1.24; RD, 1.1%; 95% CI, 0.7%-1.6%), firstborn child (OR, 1.13; RD, 0.6%; 95% CI, 0.3%-1.0%), family history of food allergy (eg, mother [OR, 1.98; RD, 4.4%; 95% CI, 2.5%-6.8%], father [OR, 1.69; RD, 3.2%; 95% CI, 1.3%-5.5%], both parents [OR, 2.07; RD, 4.8%; 95% CI, 1.3%-5.5%], siblings [OR, 2.36; RD, 6.0%; 95% CI, 4.4%-8.0%]), parental migration (OR, 3.28; RD, 9.7%; 95% CI, 4.9%-16.3%), self-identification as Black (vs White [OR, 3.93; RD, 12.1%; 95% CI, 5.2%-22.5%], vs non-Hispanic White [OR, 2.23; RD, 5.5%; 95% CI, 3.0%-8.7%]), and cesarean delivery (OR, 1.16; RD, 1.0%; 95% CI, 0.3%-1.2%). Factors like low birth weight, postterm birth, maternal diet, and stress during pregnancy showed no significant risk difference.
+CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
+
+---
+
+2. Preventing Food Anaphylaxis.
+
+PMID: 41932746
+Journal: Immunology and allergy clinics of North America (2026/May)
+Abstract:
+Food-induced anaphylaxis incidence rates in 0 to 19 year-olds and 0 to 4 year-olds are reported as 0.2 and 7.0 per 100 person years respectively, with increased hospitalizations reported in the United States. Avoidance has been our traditional approach to prevent food-induced anaphylaxis and it involves reading nutrition labels, understanding forms of allergen exposure, food allergy policies outside the home, and communicating effectively about personal risk. Active approaches have also emerged including oral immunotherapy and omalizumab, which are both Food and Drug Administaration-approved. Many other options are currently in development, for example, epicutaneous immunotherapy, sublingual immunotherapy, and a variety of biologic drugs.
+
+---
+
+3. Anaphylaxis: Clinical Criteria, Severity, and Clinical Courses.
+
+PMID: 41932742
+Journal: Immunology and allergy clinics of North America (2026/May)
+Abstract:
+Anaphylaxis is a potentially life-threatening allergic reaction that is increasing worldwide. While it is often straightforward to diagnose, at times the diagnosis remains uncertain, especially if there is no clear trigger, symptoms overlap with other conditions, or patients mainly report subjective symptoms without confirmatory physical findings. Unfortunately, there is no gold-standard test for diagnosing anaphylaxis, so clinicians must rely on clinical criteria to assess its likelihood. The first widely accepted clinical criteria were published in 2006 by the National Institute of Allergy and Infectious Diseases and the Food Allergy Network, and in 2020, the World Allergy Organization proposed updates to these criteria. The new 2024 Anaphylaxis Clinical Support Tool addresses discrepanices between previous criteria.
+
+---
+
+4. Real-life lessons on omalizumab and food allergy: The potential for unexplored outcomes.
+
+PMID: 42079786
+Journal: The World Allergy Organization journal (2026/May)
+Abstract:
+INTRODUCTION: IgE-mediated food allergy (FA) represents an increasing global health burden, with rising prevalence and limited therapeutic options beyond allergen avoidance and emergency management. The approval of omalizumab as the first biologic to reduce reactions after accidental food exposure marks a turning point in FA care. While randomized controlled trials (RCTs) have demonstrated its efficacy in raising reaction thresholds and reducing allergic responses, real-world studies provide complementary evidence capturing outcomes relevant to everyday life.
+METHODS: This review integrates evidence from sources of observational studies, including cohort, case series, and case reports evaluating omalizumab in patients with FA, including complex phenotypes and populations typically excluded from RCTs.
+DISCUSSION: Real-world data demonstrate that omalizumab can prevent severe reactions in atypical and non-ingestive FA phenotypes, increase reaction thresholds as monotherapy, and enable dietary liberalization in a substantial proportion of patients. Observational cohorts consistently report improvements in food allergy-related quality of life, reduced anxiety, and enhanced confidence in food management. Omalizumab appears effective and well tolerated across complex populations, including patients with multiple comorbidities and very high total IgE levels, even beyond currently approved dosing limits. Emerging evidence also suggests that FA may require disease-specific dosing paradigms distinct from those used in asthma.
+CONCLUSIONS: Real-world evidence complements RCTs findings by highlighting the multidimensional benefits of omalizumab in FA, encompassing clinical protection, dietary freedom, and psychosocial well-being as well as dose fine-tuning and off-label scenarios. These data support its broader clinical value and inform future research, dosing strategies, and personalized application in routine care.
+
+---
+
+5. Probiotics in the alleviation of food allergies in infants and young children: research progress.
+
+PMID: 42138226
+Journal: Critical reviews in food science and nutrition (2026/May)
+Abstract:
+The annual rise in food allergies among infants and young children significantly impacts their quality of life and development, making it a global public health concern. Currently, therapeutic approaches for food allergy, including pharmacotherapy, immunotherapy, and dietary modifications, exhibit certain limitations. Accumulating studies suggest that probiotic supplementation may mitigate food allergy symptoms in pediatric populations through multiple mechanisms, including gut microbial composition modulation, reinforcement of intestinal epithelial integrity, and immunomodulatory effects. This review focuses on the association between infant food allergy and probiotics, elaborates on the potential mechanisms of action of probiotics, and summarizes and discusses the findings and perspectives from current animal model experiments and clinical studies. We have also examined the safety of probiotics in infant populations. Some studies suggest that probiotics (e.g., Lactobacillus rhamnosus GG and Bifidobacterium spp.) may help improve allergic symptoms. An extensively hydrolyzed formula with L. rhamnosus GG could potentially improve symptoms and contribute to the development of immunological tolerance in some children with cow's milk allergy. Furthermore, probiotics as adjuvants to oral immunotherapy can reduce the risk of adverse reactions. These findings provide theoretical and practical references for subsequent clinical practice, facilitating better management of food allergies in infants and young children.
+
+---
+
+6. When Medically Required Food Avoidance Goes Awry: A Conceptual Framework of ARFID as an Underrecognized Clinical Complication of Food Allergy.
+
+PMID: 41649377
+Journal: The International journal of eating disorders (2026/May)
+Abstract:
+Pediatric patients with medical/developmental conditions face increased risk for avoidant/restrictive food intake disorder (ARFID). Diet-managed chronic illnesses may heighten risk for disordered eating, with emerging research finding medical symptoms predating disordered eating behaviors. Pediatric-onset immunoglobulin E-mediated food allergy ("food allergy") is on the rise, affecting an astonishing 8% of US children. The relationship between food allergy and ARFID is puzzlingly understudied despite food allergy clearly altering the individual's relationship with food, posing continuous danger, and requiring persistent, fundamental eating changes to maintain safety. Food allergy is managed through strict dietary avoidance of allergen(s) and confers well-documented risk to psychosocial functioning. Dietary restriction exceeding medically required avoidance (as observed in ARFID) further compounds risk for adverse health and psychosocial impacts. In this Spotlight, our team of clinical researchers working at the intersection of ARFID and food allergy proposes a model identifying three areas of food allergy-specific impact that may drive the higher prevalence of ARFID within this population. Failure to successfully regulate these universal drivers to preserve daily functioning may precipitate the development of ARFID. We propose (1) unique characteristics of allergic reactions and medical treatment, (2) the impacts of chronic vigilance and avoidance, and (3) response to learning paradigms and physiological upregulation disrupt the development of feeding/eating for both patients and caregivers. Patients with food allergy + ARFID may also be especially vulnerable to iatrogenic harm from the imprecision of current allergy testing modalities. We outline the sparse literature on food allergy + ARFID comorbidity and call for ARFID-focused research in this area.
+
+---
+
+7. Trace Elements in Allergy: Narrative Review.
+
+PMID: 42083298
+Journal: Allergy (2026/May)
+Abstract:
+Allergic diseases are increasing worldwide and reflect a complex interplay between genetic susceptibility and environmental exposures. Among environmental determinants, trace elements contribute to epithelial barrier dysfunction, tissue remodeling, redox homeostasis, and immune regulation and may influence the development and severity of allergic diseases. This narrative review summarizes current mechanistic, epidemiological, and clinical evidence on the role of essential and non-essential trace elements in allergy. We discuss essential elements, including iron, zinc, selenium, copper, manganese, iodine, molybdenum, and boron, which support antioxidant defense, epithelial integrity, and immune homeostasis. We also review sensitizing and potentially toxic elements such as nickel, chromium, cobalt, silicon, and fluoride, which may promote allergic sensitization and inflammation through hapten-driven immune responses, oxidative stress, and adjuvant-like effects. Evidence across asthma, allergic rhinitis, atopic dermatitis, and food allergy indicates that trace elements may contribute to the development and heterogeneity of allergic disease. However, reported associations between elemental status and allergic diseases remain heterogeneous across studies. This variability likely reflects both underlying biological differences and methodological heterogeneity, including variation in study design, biological matrices, exposure assessment, and analytical techniques. Better methodological harmonization will be essential to elucidate the roles of trace elements in allergy development and to strengthen future translational and preventive research efforts. At present, available evidence does not support routine assessment of trace element status or generalized supplementation in the prevention or management of allergic diseases, except in cases of documented deficiency or clearly defined clinical indications.
+
+---
+
+# 【第3部：候補論文スコア一覧】
+
+| PMID     |                                                                                                                                           タイトル | 総合スコア | 役立つか    | 短いメモ                                   |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------: | ----: | ------- | -------------------------------------- |
+| 41661638 |                               Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis. |   9.5 | とても役立つ  | 乳児湿疹、早期導入、抗菌薬適正使用など、予防外来に直結する高品質メタ解析。  |
+| 41932746 |                                                                                                                   Preventing Food Anaphylaxis. |   8.5 | 役立つ     | 回避指導に加え、OIT・オマリズマブなど能動的予防を整理。          |
+| 41932742 |                                                                                Anaphylaxis: Clinical Criteria, Severity, and Clinical Courses. |   8.0 | 役立つ     | 診断基準と重症度評価の再確認に有用。院内対応フロー見直し向き。        |
+| 42079786 |                                                       Real-life lessons on omalizumab and food allergy: The potential for unexplored outcomes. |   8.0 | 役立つ     | 重症・多品目食物アレルギーの専門医紹介判断に影響。              |
+| 42138226 |                                              Probiotics in the alleviation of food allergies in infants and young children: research progress. |   7.0 | やや役立つ   | 保護者質問が多い領域。標準治療変更というより説明材料。            |
+| 41649377 | When Medically Required Food Avoidance Goes Awry: A Conceptual Framework of ARFID as an Underrecognized Clinical Complication of Food Allergy. |   7.0 | 役立つ     | 過剰除去、検査依存、食行動異常への注意喚起として外来で重要。         |
+| 42083298 |                                                                                                   Trace Elements in Allergy: Narrative Review. |   6.5 | やや役立つ   | routine測定・一般補充を支持しない点が実用的。             |
+| 42134747 |                                                                                                Precision medicine in eosinophilic esophagitis. |   6.0 | 限定的に役立つ | EoEの将来像として重要だが、一般小児外来で明日から変わる内容は少なめ。   |
+| 41932753 |                                                                  Hereditary Alpha-Tryptasemia (HαT) as a Risk Modifier for Severe Anaphylaxis. |   5.5 | 限定的     | 重症アナフィラキシーのリスク層別化として興味深いが、現時点では専門領域寄り。 |
+| 42058161 |          Clinical remission in allergy and clinical immunology practice: State of the art and World Allergy Organization (WAO) call to action. |   5.5 | 限定的     | 寛解概念の整理。研究・専門診療では有用だが、外来行動への即効性は低い。    |
+| 41932741 |                                                                                                     Anaphylaxis Epidemiology and Risk Factors. |   5.0 | 一部役立つ   | 疫学・リスク因子中心。基礎知識として有用だが診療変更インパクトは中等度。   |
+| 41932744 |                                                                                                                        Equity and Anaphylaxis. |   4.5 | 一部役立つ   | 医療格差への視点は重要だが、日本の一般外来での即時介入は限定的。       |
+| 42112503 |                                      Epigenetic insights into food allergy: The potential role of DNA methylation in diagnosis and management. |   4.0 | まだ限定的   | バイオマーカー研究として興味深いが、臨床実装には距離がある。         |
+| 41974646 |  'What' and 'How' to Measure in Allergy and Clinical Immunology: A Systematic Review of Core Outcome Sets and Outcome Harmonisation Processes. |   4.0 | 限定的     | 研究アウトカム標準化の論文。日常診療への直接性は低い。            |
