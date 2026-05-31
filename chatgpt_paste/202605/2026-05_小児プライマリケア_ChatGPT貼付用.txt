@@ -14,6 +14,75 @@ PMIDは必ず入力データに含まれるものを正確に転記してくだ�
 1.
 
 Title:
+Burden of Helicobacter pylori infection in children and adults in Vietnam: A systematic review and meta-analysis of prevalence.
+
+PMID:
+42216345
+
+Journal:
+Medicine (2026/May)
+
+Abstract:
+BACKGROUND: Although Helicobacter pylori (H. pylori) prevalence has declined in many high-income countries, data from Vietnam remain limited and fragmented. This systematic review and meta-analysis aimed to estimate the pooled prevalence of H. pylori infection in Vietnamese adults and children.
+METHODS: A systematic search of PubMed, Embase, Scopus, and Web of Science was conducted for observational studies published between January 2000 and September 2025. Eligible studies reported H. pylori prevalence in Vietnamese populations using validated diagnostic methods. Random-effects meta-analyses were used to calculate pooled prevalence estimates with 95% confidence intervals (CIs). Subgroup analyses were conducted by age group, geographic area, and study setting.
+RESULTS: Twenty-five studies met inclusion criteria, comprising 8204 adults and 4641 children. The pooled prevalence of H. pylori infection was 58.7% (95% CI: 49.9%-67.2%) in adults and 77.2% (95% CI: 67.1%-86.0%) in children, with high heterogeneity across studies (I2 > 98%, P < .001). Among adults, prevalence was 56.4% in those aged <50 years and 65.8% in those ≥50 years (P = .455). Prevalence was lower in rural areas (46.8%) compared to urban areas (60.7%) (P = .045), with no significant difference between community- and hospital-based settings (P = .723). Funnel plot assessment did not indicate evident publication bias.
+CONCLUSION: H. pylori infection remains common in the populations represented in this study, particularly among urban and healthcare-seeking groups in Vietnam. These findings underscore the need for expanded surveillance and monitoring to better characterize H. pylori infection patterns and inform appropriate response strategies.
+
+---
+2.
+
+Title:
+Visual Education and Distraction for Reducing Preoperative Anxiety in Children and Parents: A Randomized Controlled Trial.
+
+PMID:
+42208603
+
+Journal:
+International journal of nursing practice (2026/Jun)
+
+Abstract:
+AIM: To evaluate and compare the effectiveness of visual education and distraction methods in reducing preoperative anxiety among children and their parents.
+DESIGN: Three-arm, parallel-group randomized controlled trial.
+METHODS: The study was conducted between June 2023 and September 2024 in the paediatric outpatient surgery unit of a university hospital in Türkiye. A total of 105 children aged 5-12 years and their parents were randomly assigned to one of three groups: visual education, distraction using a kaleidoscope or control. Anxiety levels were assessed using the modified Yale Preoperative Anxiety Scale (mYPAS) for children and the State-Trait Anxiety Inventory-State (STAI-S) for parents. Data were analysed using repeated measures ANOVA, independent samples t-tests, Bonferroni post hoc tests, effect size and observed power.
+RESULTS: Both interventions significantly reduced preoperative anxiety compared with the control group. Repeated measures ANOVA revealed significant between-group differences for children (F = 11.937, p < 0.001, η2 = 0.190) and parents (F = 9.164, p < 0.001, η2 = 0.152). Bonferroni post hoc analyses confirmed that visual education and kaleidoscope distraction were effective in reducing anxiety in both children and parents. Although visual education produced a greater numerical reduction in anxiety, the difference between visual education and kaleidoscope distraction was not statistically significant.
+CONCLUSION: These results highlight the importance of integrating structured visual education and distraction strategies into routine paediatric nursing practice. Such interventions support family-centred care, enhance perioperative cooperation and may contribute to improved clinical experiences for children and parents.
+CLINICAL RELEVANCE: Structured visual education programs and distraction strategies can be integrated into routine paediatric nursing practice to support children and parents in the surgical process, enhance cooperation and improve perioperative care outcomes.
+TRIAL REGISTRATION: ClinicalTrials.gov identifier: NCT05279976.
+
+---
+3.
+
+Title:
+A Real-world Meta-analysis Study of Disease Severity in European Patients Who Received Baricitinib for Atopic Dermatitis: Data from BioDay, SCRATCH and TREATgermany.
+
+PMID:
+42204890
+
+Journal:
+Acta dermato-venereologica (2026/May)
+
+Abstract:
+Clinical trials have demonstrated the effectiveness of baricitinib, an oral selective Janus kinase 1/2 inhibitor, for patients with moderate-severe atopic dermatitis, but data from real-world practice are limited. This non-interventional cohort study evaluated clinician- and patient-reported disease severity over 16 weeks using 3 national atopic dermatitis registries: BioDay (Netherlands), SCRATCH (Denmark) and TREATgermany (Germany). Absolute scores for Eczema Area and Severity Index (EASI) and itch Numerical Rating Scale (Itch-NRS) were assessed at baseline and follow-up (Week 13/16) for each registry and for the overall pooled cohort. Descriptive analyses, generalized linear mixed modelling and meta-analysis approaches were applied to complete-case and multiply-imputed datasets. In total, 264 patients (89 BioDay, 117 SCRATCH, 58 TREATgermany) were included. Results showed improvements in EASI, with 58%, 68% and 62% achieving EASI≤7 at Week 13/16 in BioDay, SCRATCH and TREATgermany, respectively. In the pooled cohort, the proportion was 62% (95% CI: 50-73%). The pooled mean EASI change was -7.8 [14.4,-1.1]. Effectiveness was generally observed in both biologic-naïve and -experienced patients. Notable heterogeneity was observed, particularly for Itch-NRS, with the proportion achieving NRS≤4 ranging from 20% (BioDay) to 71% (TREATgermany). These real-world findings support the effectiveness of baricitinib while also highlighting variability in patient outcomes.
+
+---
+4.
+
+Title:
+An Updated Algorithm for the Management of Restless Legs Syndrome.
+
+PMID:
+42203073
+
+Journal:
+Mayo Clinic proceedings (2026/May)
+
+Abstract:
+Restless legs syndrome (RLS) is a common disorder, largely managed by primary care providers. Much has changed in its management since the last version of this algorithm was published in 2021. The Scientific and Medical Advisory Board of the RLS Foundation has written this new paper as a practical algorithmic guide to current treatment based on a review of the literature published since 2020 and consensus expert opinion. This updated algorithm includes management of intermittent RLS, including behavioral approaches; new indications for oral and intravenous iron therapy; the role of medications in exacerbating RLS; gabapentinoids as first line pharmacologic therapy for chronic persistent RLS; the risks of dopamine agonists and the precautions needed if they are used; the management of dopamine agonist augmentation; the important role of low-dose opioids in management and how to safely use them; novel therapies including peroneal nerve stimulation and buprenorphine; and RLS in children, during pregnancy and lactation, in end-stage renal failure and in the perioperative period. Alternative, investigative, and potential future approaches are addressed.
+
+---
+5.
+
+Title:
 Impact of travel time to health facilities on perinatal outcomes: a systematic review with narrative synthesis and meta-analysis.
 
 PMID:
@@ -30,7 +99,25 @@ CONCLUSIONS: We found that shorter journeys were associated with better perinata
 REGISTRATION: PROSPERO: CRD42023460423.
 
 ---
-2.
+6.
+
+Title:
+Perinatal outcomes following single intrauterine death in monochorionic twin pregnancies complicated by twin anemia polycythemia sequence: Systematic review and meta-analysis.
+
+PMID:
+42106586
+
+Journal:
+Acta obstetricia et gynecologica Scandinavica (2026/Jun)
+
+Abstract:
+INTRODUCTION: Most of the studies reporting the outcome of the surviving twin after single intra-uterine fetal death (sIUFD) focused on uncomplicated pregnancies or those affected by twin-to-twin transfusion syndrome, while there is a paucity of data for those complicated by twin anemia polycythemia sequence (TAPS). The aim of this systematic review was to report perinatal outcomes in monochorionic diamniotic (MCDA) twin pregnancies complicated by TAPS after sIUFD, according to gestational age at fetal loss and the presence of pregnancy-related comorbidities.
+MATERIAL AND METHODS: MEDLINE, EMBASE, and The Cochrane Library were searched for studies reporting the outcome of monochorionic twin pregnancies complicated by TAPS experiencing single IUFD. The primary outcome was the occurrence of co-twin IUFD. Secondary outcomes were neonatal death (NND), preterm birth (PTB) <34, <32, and <28 weeks of gestation, cerebral abnormalities detected at follow-up prenatal ultrasound, fetal magnetic resonance imaging (MRI) or postnatal imaging (ultrasound or MRI), and adverse neurodevelopmental outcome. Random-effects meta-analysis of proportions was used to analyze the data, and results were reported as pooled proportions or odd ratios (OR) with 95% CI.
+RESULTS: Eleven studies (83 twin pregnancies affected by TAPS, either spontaneous or post-laser, and complicated by single IUFD) were included in the systematic review and 10 (78 pregnancies) in the meta-analysis. Co-twin IUFD occurred in 4.9% (95% CI 1.1-11.3) after a single IUFD in pregnancies affected by TAPS, while there was no case of NND. PTB, either spontaneous or iatrogenic, occurred in 80.4% (95% CI 44.3-99.5) <34 weeks, and 50.0% (95% CI 16.3-83.7) <28 weeks of cases. Intra-uterine transfusion was required in 8.0% (95% CI 0.9-38.3). Cerebral anomalies at follow-up ultrasound or fetal MRI were reported in 15.0% (95% CI 8.2-78.3) and 11.4% (95% CI 2.4-55.7) of cases, while anomalies at post-natal imaging in 9.4% (95% CI 5.6-57.6) of cases. It was not possible to perform a meaningful pooled data synthesis on the observed outcomes according to the type and staging of TAPS and according to the donor or recipient twin.
+CONCLUSIONS: The occurrence of co-twin death after single IUFD in pregnancies complicated by TAPS appears low, while cerebral abnormalities detected either pre- or post-natally occur in 10-15% of cases. Further evidence is needed to elucidate the long-term neurological and neurodevelopmental risk of these children.
+
+---
+7.
 
 Title:
 Multimodal personalised executive function intervention (E-Fit) for school-aged children with complex congenital heart disease in Switzerland: a randomised controlled feasibility study.
@@ -55,7 +142,7 @@ CONCLUSIONS: E-Fit is a feasible intervention suggesting EF and social responsiv
 TRIAL REGISTRATION NUMBER: NCT05198583.
 
 ---
-3.
+8.
 
 Title:
 Genotype-Guided Antidepressant Prescribing for Patients With Depression: A Randomized Clinical Trial.
@@ -77,7 +164,7 @@ CONCLUSIONS AND RELEVANCE: In this randomized clinical trial, genotype-guided pr
 TRIAL REGISTRATION: ClinicalTrials.gov Identifiers: NCT04445792 (Master Protocol Research Program platform trial) and NCT05966155 (ADOPT PGx Depression trial).
 
 ---
-4.
+9.
 
 Title:
 Visual tubal patency tests for tubal occlusion and hydrosalpinx.
@@ -100,7 +187,7 @@ FUNDING: This Cochrane review had no dedicated funding.
 REGISTRATION: Protocol (2022) available via: https://doi.org/10.1002/14651858.CD014968.
 
 ---
-5.
+10.
 
 Title:
 Guidelines for the management of acute porphyria: recommendations from the International Porphyria Network.
@@ -115,30 +202,7 @@ Abstract:
 Autosomal dominant acute porphyrias are rare inherited disorders of haem biosynthesis characterised by accumulation of potentially neurotoxic porphyrin precursors and attacks of severe abdominal pain with autonomic and neuropsychiatric features. Disease severity ranges from asymptomatic individuals to those with recurrent, life-threatening attacks. The International Porphyria Network invited 34 acute porphyria specialists from 17 countries to form an expert panel. The invited group included clinicians from diverse specialities (ie, internal medicine, haematology, endocrinology, gastroenterology, hepatology, neurology, and biochemistry), together with laboratory scientists and patient representatives. The panel met online (in 2023-25) to develop 15 evidence-based recommendations with the use of the Grading of Recommendations, Assessment, Development, and Evaluations framework addressing attack prevention, management of sporadic and recurrent attacks, long-term follow-up, surveillance for primary liver cancer, and family screening. The guidelines support safe, consistent clinical care and improved outcomes, recognising global variation in resources and access to high-cost drugs, and highlighting priorities for future research.
 
 ---
-6.
-
-Title:
-Accelerated continuous theta burst stimulation targeting left primary motor cortex for children with autism spectrum disorder: multicentre randomised sham controlled trial.
-
-PMID:
-42055586
-
-Journal:
-BMJ (Clinical research ed.) (2026/Apr)
-
-Abstract:
-OBJECTIVES: To investigate the efficacy and safety of a five day accelerated continuous theta burst stimulation (a-cTBS) protocol in improving social communication impairment in children with autism spectrum disorder.
-DESIGN: Multicentre randomised sham controlled trial.
-SETTING: Three academic hospitals across three provinces in China, conducted from July 2023 to October 2024.
-PARTICIPANTS: 200 children aged 4-10 years with autism spectrum disorder (167 boys and 33 girls) all with a full scale intelligence quotient ≥50.
-INTERVENTIONS: Participants were randomised 1:1 to receive active a-cTBS (n=100) or sham (n=100) treatment stratified by full scale intelligence quotient (≥70 or <70) and study site. Participants received 10 sessions each day for five consecutive days, targeting the left primary motor cortex. Participants and evaluators were masked to interventions.
-MAIN OUTCOME MEASURES: Two primary outcomes were assessed using the Social Responsiveness Scale, second edition (SRS-2): changes in social communication impairment from baseline to post-intervention and from baseline to one month follow-up. Primary analyses were conducted on a modified intention-to-treat population, including participants who received at least one stimulation session. Secondary outcomes included language improvements assessed from baseline to one month follow-up and changes in SRS-2 subscales.
-RESULTS: Of the 200 participants, 198 were included in the modified intention-to-treat analysis (99 in each group) and 193 completed the full intervention. Compared with the sham group, the a-cTBS group showed significantly greater reductions in SRS-2 scores post-intervention (-6.25, 95% confidence interval -8.69 to -3.81; Cohen's d -0.92; P<0.001) and at one month follow-up (-6.17, -8.65 to -3.70; -0.90; P<0.001). Secondary outcomes also favoured a-cTBS, with significant improvements observed in language abilities (Cohen's d 0.12-0.47; all P<0.02; measured by Multilingual Assessment Instrument for Narratives). Reported adverse events were all mild to moderate and resolved without intervention.
-CONCLUSIONS: A five day a-cTBS protocol targeting the left primary motor cortex significantly improved social communication in children with autism spectrum disorder and showed a favourable safety profile. These findings support a-cTBS as a viable and scalable therapeutic option for children with autism spectrum disorder.
-TRIAL REGISTRATION: ClinicalTrials.gov NCT05927792.
-
----
-7.
+11.
 
 Title:
 Cardiorespiratory and Hematological Responses to High-Intensity Interval Training in Adolescent Girls With Overweight or Obesity: A Randomized Controlled Trial.
@@ -153,7 +217,7 @@ Abstract:
 This randomized controlled trial examined the effects of a 10-week high-intensity interval training (HIIT) program on physiological and hematological outcomes in 28 adolescent girls with overweight or obesity. Participants were randomly assigned to a HIIT group or a control group. The HIIT protocol comprised 4 sets of 6 × 15-s bouts at 90%-105% of maximal aerobic speed (MAS), interspersed with 15-s active recovery at 50% MAS, performed three times per week. Significant group×time interactions were observed for body composition, aerobic capacity, maximal heart rate (HRmax), erythrocytes, hemoglobin, hematocrit, creatine kinase (CK), and lactate dehydrogenase (LDH). Between-group comparisons showed greater improvements in body mass, body fat, waist circumference, MAS, estimated VO2max, and plasma volume in the HIIT group compared with controls, though not all differences reached statistical significance. Within-group analysis in the HIIT group revealed reductions in body mass (p < 0.001, d = 0.37), body fat (p = 0.001, d = 0.78), waist circumference (p < 0.001, d = 0.54), HRmax (p = 0.020, d = 0.88), erythrocytes (p = 0.007, d = 0.46), hemoglobin (p = 0.019, d = 0.84), hematocrit (p = 0.004, d = 0.34), CK (p = 0.049, d = 0.29), and LDH (p = 0.032, d = 0.41), alongside increases in MAS (p = 0.007, d = 0.64) and estimated VO2max (p = 0.007, d = 0.64). Plasma volume variation was also higher in the HIIT group. Overall, a 10-week HIIT intervention enhanced body composition, plasma volume, and cardiorespiratory fitness, while reducing markers of muscular and metabolic stress. These results indicate that HIIT is a feasible and effective approach for improving physiological and metabolic health in adolescent girls with overweight or obesity, supporting its potential as a targeted exercise strategy in this population.
 
 ---
-8.
+12.
 
 Title:
 Mediterranean diet for the primary prevention of cardiometabolic diseases: evidence from a systematic review and meta-analysis featured in the Italian National Guidelines "La Dieta Mediterranea".
@@ -171,7 +235,7 @@ RESULTS: Sixty studies comprising over 1.1 million participants were included. H
 CONCLUSIONS: Adherence to the Mediterranean diet is associated with a lower risk of several metabolic disorders, particularly T2DM and obesity in adults. These findings support the inclusion of the MD in public health strategies for metabolic disease prevention. Further high-quality longitudinal and interventional studies are warranted to clarify its effects on other metabolic outcomes.
 
 ---
-9.
+13.
 
 Title:
 Randomized Clinical Trial of Imagery Stabilization and Rescripting Therapy for Psychiatric Outpatients with Posttraumatic Stress Disorder.
@@ -189,7 +253,7 @@ RESULTS: Forty-two participants in the ISRT group and 20 participants in the CBT
 CONCLUSION: Our findings suggest that ISRT is a safe and effective treatment option for PTSD.
 
 ---
-10.
+14.
 
 Title:
 Efficacy of Mediterranean diet for the primary prevention of oncological diseases: A systematic review and meta-analysis featured in the Italian National Guidelines "La Dieta Mediterranea".
@@ -207,7 +271,26 @@ RESULTS: A total of 126 studies, including more than 8 million participants, acr
 CONCLUSIONS: Greater adherence to the MD is associated with a lower risk of several site-specific cancers and reduced cancer mortality. These findings support the promotion of the MD as a preventive dietary strategy within public health policies.
 
 ---
-11.
+15.
+
+Title:
+Nirmatrelvir-ritonavir versus usual care in at-risk adults with early SARS-CoV-2 infection in the UK, 2022-23: virological and immunological results of an open-label randomised trial (PANORAMIC).
+
+PMID:
+42035785
+
+Journal:
+The Lancet. Microbe (2026/May)
+
+Abstract:
+BACKGROUND: Nirmatrelvir-ritonavir is widely used for COVID-19, but effectiveness was established in unvaccinated people with SARS-CoV-2 variants before omicron. Within the randomised Platform Adaptive Trial of Novel Antivirals for Early Treatment of COVID-19 in the Community (PANORAMIC) trial, we did a substudy to evaluate virological and immunological outcomes.
+METHODS: Adults (aged ≥50 years, or ≥18 years with comorbidities) with early COVID-19 were recruited across the UK in an open-label trial and randomly assigned to receive nirmatrelvir-ritonavir twice daily for 5 days plus usual care (nirmatrelvir-ritonavir group) or usual care alone (supportive treatment only with the use of antipyretics as required; usual care group). Before randomisation, participants were also invited to enter the virology substudy, and those who consented were sent swabs and blood spot testing kits for self-sampling with instructions. We performed viral quantitative PCR, viral culture, and sequencing on self-collected combined nasal and pharyngeal swabs submitted daily for 7 days and at day 14 (intensive sampling group) or at baseline, day 5, and day 14. We measured blood spot SARS-CoV-2 spike antibody titre and C-reactive protein (CRP) at baseline, day 5, and day 14 in all participants. We undertook mixed-effects modelling to identify predictors of viral load or spike antibody rate of change and assessed viral rebound by multiple definitions. The trial was registered with EudraCT, 2021-005748-31.
+FINDINGS: From Sept 10, 2022, to Oct 23, 2023, 649 people agreed to participate in the virology substudy, of whom 27 were excluded per the prespecified analysis plan, resulting in 622 participants in the analysis: 326 in the nirmatrelvir-ritonavir group and 296 in the usual care group. Nirmatrelvir-ritonavir treatment reduced viral load from day 5 onwards and increased viral clearance. The estimated half-life was 0·78 days (95% CI 0·74-0·83) with usual care versus 0·66 days (95% CI 0·56-0·68) with nirmatrelvir-ritonavir; p<0·0001). Treatment reduced culturable virus at any timepoint after treatment initiation (three [3%] of 92 culture-positive samples vs 18 [15%] of 119 culture-positive samples; p=0·0046). Spike antibody doubling time over 14 days correlated positively with viral area under the curve and was significantly slower with nirmatrelvir-ritonavir treatment compared with usual care (doubling time 12·80 days [95% CI 11·11-14·83] with nirmatrelvir-ritonavir treatment vs 10·36 days [9·08-11·83] with usual care, p<0·0001); CRP at days 5 and 14 was similar between groups. There was no increase in viral rebound, mutagenesis, or resistance with nirmatrelvir-ritonavir treatment. Baseline spike antibody concentrations were high on average (mean 3·68 log10 U/mL [SD 0·48]), and baseline viral loads were low (mean 6·42 log10 copies per mL [1·49]) with the two correlating inversely (slope -0·63; p<0·0001).
+INTERPRETATION: Nirmatrelvir-ritonavir is effectively antiviral against omicron SARS-CoV-2 variants, but the magnitude of viral load reduction might be limited by effective population-wide immunity in the immunocompetent population.
+FUNDING: UK National Institute for Health and Care Research.
+
+---
+16.
 
 Title:
 Efficacy of Mediterranean Diet in pregnancy: A systematic review and meta-analysis featured in the Italian National Guidelines "La Dieta Mediterranea".
@@ -222,7 +305,7 @@ Abstract:
 Maternal nutritional status and dietary patterns represent key determinants of pregnancy outcomes and long-term health of the offspring, through metabolic, epigenetic, and developmental programming mechanisms. Mediterranean Diet (MD) has been widely acknowledged as a model of healthy eating, with anti-inflammatory and cardiometabolic benefits, and evidence on the impact of MD during pregnancy on maternal/infant outcomes is growing. The present systematic review and meta-analysis evaluates the association between adherence to MD during pregnancy and maternal and neonatal health outcomes. This review was conducted in accordance with PRISMA 2020 and MOOSE guidelines. A comprehensive search of PubMed/MEDLINE, Scopus, Embase, and Cochrane Library was performed up to February 28, 2024. Study quality was assessed using the Newcastle-Ottawa Scale, and the certainty of evidence was evaluated with the NUTRIGRADE approach. Pooled effect sizes were computed using a random-effects model and expressed as risk ratios (RR), hazard ratios (HR), or odds ratios (OR), as appropriate. Thirty-three studies (19 RCTs and 14 observational; >180 000 pregnant women) were included. Higher MD adherence was associated with lower risk of gestational diabetes mellitus (cohorts: OR 0.93, 95% CI 0.91-0.96; RCTs: RR 0.74, 95% CI 0.63-0.88), preterm delivery (cohorts: OR 0.96, 95% CI 0.92-0.99; RCTs: RR 0.45, 95% CI 0.05-0.84), low neonatal weight (cohorts: OR 0.96, 95% CI 0.91-1.00; RCTs: RR 0.61, 95% CI 0.42-0.88) and fetal growth alterations (RR 0.93, 95% CI 0.87-0.995). Evidence for pre-eclampsia was inconsistent, with significant associations in cohorts but not in RCTs. No significant effects were found for caesarean section, fetal death, neonatal asthma, or childhood obesity. NUTRIGRADE indicated moderate-to-high certainty for gestational diabetes, preterm delivery and low neonatal weight, and low certainty for other outcomes. Adherence to MD during pregnancy is associated with reduced risk of gestational diabetes, preterm birth and abnormal fetal growth. Given its safety and broader cardiometabolic benefits, the MD represents a suitable dietary pattern in pregnancy, although further high-quality trials with diverse populations and standardized MD metrics are warranted.
 
 ---
-12.
+17.
 
 Title:
 Prevalence estimates of sickle cell disease among children and adolescents in sub-Saharan Africa: a systematic review and modelling analysis.
@@ -241,25 +324,7 @@ INTERPRETATION: Despite data gaps in many countries, the burden of sickle cell d
 FUNDING: None.
 
 ---
-13.
-
-Title:
-Oral Nirmatrelvir-Ritonavir for Covid-19 in Higher-Risk Outpatients.
-
-PMID:
-42019019
-
-Journal:
-The New England journal of medicine (2026/Apr)
-
-Abstract:
-BACKGROUND: Nirmatrelvir-ritonavir has been shown to reduce progression to severe illness from severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) in unvaccinated high-risk outpatients. The effectiveness of nirmatrelvir-ritonavir in persons who have been vaccinated, infected naturally, or both is unclear.
-METHODS: In two open-label platform trials (PANORAMIC in the United Kingdom and CanTreatCOVID in Canada), we enrolled higher-risk adults (≥50 years of age or ≥18 years of age with coexisting conditions) in the community who tested positive for SARS-CoV-2 and had been unwell for 5 days or less. The participants were randomly assigned to receive usual care plus nirmatrelvir (300 mg)-ritonavir (100 mg) twice a day for 5 days or to receive usual care alone. The primary outcome was hospitalization or death from any cause within 28 days after randomization.
-RESULTS: From December 8, 2021, to September 30, 2024, a total of 3516 participants in the PANORAMIC trial and 716 participants in the CanTreatCOVID trial underwent randomization. In the PANORAMIC trial, 14 of 1698 participants (0.8%) in the nirmatrelvir-ritonavir group and 11 of 1673 participants (0.7%) in the usual-care group were hospitalized or died (adjusted odds ratio, 1.18; 95% Bayesian credible interval, 0.55 to 2.62; probability of superiority, 0.334). In the CanTreatCOVID trial, 2 of 343 participants (0.6%) in the nirmatrelvir-ritonavir group and 4 of 324 participants (1.2%) in the usual-care group were hospitalized or died (adjusted odds ratio, 0.48; 95% Bayesian credible interval, 0.08 to 2.23; probability of superiority, 0.830). In a substudy involving 634 participants, viral load was reduced by the end of treatment with nirmatrelvir-ritonavir. Serious adverse events with nirmatrelvir-ritonavir were reported in 9 participants in the PANORAMIC trial and in 4 participants in the CanTreatCOVID trial.
-CONCLUSIONS: In two open-label trials, nirmatrelvir-ritonavir did not reduce the incidence of hospitalization or death among vaccinated higher-risk participants with SARS-CoV-2 infection. (Funded by the National Institute for Health and Care Research, and others; PANORAMIC ISRCTN number, 2021-005748-31; CanTreatCOVID ClinicalTrials.gov number, NCT05614349.).
-
----
-14.
+18.
 
 Title:
 Safety and efficacy of individualised exercise and NAD+ precursor supplementation in patients with Friedreich's ataxia in the USA: a single-centre, 2 × 2 factorial, randomised controlled trial.
@@ -278,7 +343,7 @@ INTERPRETATION: The combination of nicotinamide riboside plus exercise for 12 we
 FUNDING: US National Institutes of Health and Friedreich's Ataxia Research Alliance.
 
 ---
-15.
+19.
 
 Title:
 Preparation for Pediatric Emergencies in the Office: Policy Statement.
@@ -293,7 +358,7 @@ Abstract:
 Although not common, pediatric emergencies present in the medical office setting, and offices that care for children and adolescents can prepare for these emergencies. Offices vary depending on their location and office setting, patient population, and distance to an emergency department or hospital. Consequently, these factors should be taken into account in the planning process. This statement updates the recommendations from the 2007 American Academy of Pediatrics (AAP) practice guideline "Preparation for Emergencies in the Offices of Pediatricians and Pediatric Primary Care Providers." An accompanying technical report contains explanations and evidence for these recommendations and can be found at https://doi.org/10.1542/peds.2026-076622. This policy statement and companion technical report can be used as a guide to help create an individualized approach to emergencies that occur in offices that care for children, including both primary care and subspecialty practices. An accompanying checklist summarizes steps that medical offices can take to assess their readiness for pediatric emergencies.
 
 ---
-16.
+20.
 
 Title:
 Chronic widespread pain and the risk of cardiovascular disease-a systematic review and meta-analysis.
@@ -308,7 +373,7 @@ Abstract:
 Previous research indicates that individuals with chronic widespread pain (CWP) have an excess risk of cardiovascular disease. Given the high global prevalence of CWP, this association may have substantial public health implications. Our objective was to summarise the current evidence on the association between CWP and incident cardiovascular disease in a systematic review and meta-analysis. We searched major databases (MEDLINE, Embase, Web of Science, and Cochrane) and included studies based on predefined eligibility criteria. We identified 18 studies reporting associations between CWP (n = 80,021) and atherosclerotic diseases or cardiovascular mortality (n events = 33,799). In the meta-analysis, we removed studies that analysed identical outcomes in the same population. Individuals with CWP had an almost doubled risk of atherosclerotic diseases, RR 1.94 (95% confidence interval [CI]: 1.56-2.41), and for cardiovascular mortality, the RR was 1.61 (95% CI: 1.24-2.08) in the minimally adjusted models. In the maximally adjusted model, the RR for atherosclerotic diseases was 1.53 (95% CI: 1.27-1.86) vs RR 1.12 (95% CI: 0.93-1.34) for cardiovascular mortality. The heterogeneity was high and potential publication bias was indicated for the mortality analysis. This meta-analysis, although based on relatively few studies with high heterogeneity, shows that CWP is consistently associated with incident atherosclerotic disease. Evidence for an association with cardiovascular mortality is less conclusive. Individuals with CWP may represent an underrecognized high-risk group for atherosclerotic diseases that could benefit from proactive cardiovascular risk assessment and intensified prevention. Further high-quality studies are warranted to confirm the strength and causality of the association.
 
 ---
-17.
+21.
 
 Title:
 Treatment outcomes of preformed metal crowns placed with the conventional versus hall techniques: One-year randomized controlled trial results.
@@ -327,7 +392,7 @@ CONCLUSIONS: Clinical success outcomes and restoration survival rates were simil
 CLINICAL SIGNIFICANCE: The non-invasive HT of placing PMCs to restore carious primary molars is a viable alternative to the traditional CT.
 
 ---
-18.
+22.
 
 Title:
 The influence of different immersive virtual reality devices on children's pain during needle-based procedures: A network meta-analysis and systematic review.
@@ -346,7 +411,28 @@ CONCLUSIONS: Semi-immersive VR showed the best overall therapeutic effect. We re
 PRACTICE IMPLICATIONS: These findings provide evidence-based guidance for clinical technology selection. Semi-immersive VR offers a practical, cost-effective, non-pharmacological intervention for outpatient and inpatient settings. Implementation should incorporate standardized operator training, 5-7 min immersion duration, and scenario activation 30 s pre-procedure.
 
 ---
-19.
+23.
+
+Title:
+Discontinuation Approach and Follow-Up of Low-Concentration Atropine for Myopia Progression: Eight-Year Results of the LAMP Randomized Clinical Trial.
+
+PMID:
+41885837
+
+Journal:
+JAMA ophthalmology (2026/May)
+
+Abstract:
+IMPORTANCE: Some but not all clinical trials have found 0.05% atropine effective for myopia control; however, discontinuation management remains unclear.
+OBJECTIVE: To evaluate a taper vs stop treatment discontinuation approach.
+DESIGN, SETTING, AND PARTICIPANTS: This randomized clinical trial involved children aged 4 to 12 years originally from the Low-Concentration Atropine for Myopia Progression (LAMP) study who were followed up for 8 years. All children who completed year 5 follow-up and were receiving atropine treatment were randomized into taper and stop groups at a 1:1 ratio.
+INTERVENTIONS: During the prediscontinuation period (year 6), participants in the taper group received 0.05% atropine for 6 months and then 0.025% atropine for another 6 months, while the stop group received 0.05% atropine eye drops for a full year. During the discontinuation period (years 7 and 8), all participants stopped the treatment and were monitored for 2 years.
+MAIN OUTCOMES AND MEASURES: Myopia progression in the taper and stop groups over 3 years; proportion of good response to treatment discontinuation, defined as spherical equivalent (SEP) progression -0.5 diopter (D) or more in both eyes during the discontinuation period; and associated factors with myopia progression over 3 years.
+RESULTS: Among 246 children who completed the year 5 follow-up, 180 children (73.2%) went on to complete 8 years of follow-up. The mean (SD) age was 13.47 (1.63) years; there were 139 male children (56.5%) and 107 female (43.5%). Over 3 years, SEP and axial length (AL) elongation were faster in the stop group than in the taper group: -0.78 D vs -0.54 D, respectively (difference, -0.24 D; 95% CI, -0.46 to -0.03 D; P = .02) and 0.44 mm vs 0.33 mm, respectively (difference, 0.11; 95% CI, 0.03 to 0.19 D; P = .01). The proportion of good response to treatment discontinuation in the taper group was greater than in the stop group (65.1% vs 42.6%, respectively; P = .003). Younger age and more myopic spherical equivalent/longer AL at prediscontinuation were associated with faster SEP and AL elongation over 3 years. Notably, the younger the age and the more myopic the spherical equivalent, the greater the estimated mean differences of SEP/AL elongation between the taper and stop groups.
+CONCLUSIONS AND RELEVANCE: This study found that over 3 years, the participants in the taper group had less myopia progression than the stop group, particularly in children who were younger and had more myopia. However, to our knowledge, the clinical relevance of this approximately 0.25-D difference between treatment groups is not well understood from the current medical literature.
+
+---
+24.
 
 Title:
 Intravenous ferric carboxymaltose versus oral ferrous sulphate for the treatment of moderate-to-severe postpartum anaemia in Nigerian women (IVON-PP): an open-label, randomised controlled trial.
@@ -365,7 +451,7 @@ INTERPRETATION: In treating postpartum moderate-to-severe anaemia, ferric carbox
 FUNDING: Bill & Melinda Gates Foundation.
 
 ---
-20.
+25.
 
 Title:
 Effect of Therapeutic Touch Based on Watson's Human Care Theory Applied to Infants With Infantile Colic for Different Durations on Colic Symptoms: A Randomized Controlled Study.
@@ -384,7 +470,7 @@ CONCLUSIONS: Therapeutic touch based on Watson's Human Care Theory effectively r
 TRIAL REGISTRATION: clinicaltrials.gov, NCT05244291.
 
 ---
-21.
+26.
 
 Title:
 Diabetes Testing Immediately Postpartum After Gestational Diabetes Mellitus: A Randomized Controlled Trial.
@@ -403,7 +489,7 @@ CONCLUSION: Diabetes testing before delivery discharge for individuals with GDM 
 CLINICAL TRIALS REGISTRATION: ClinicalTrials.gov , NCT05909046.
 
 ---
-22.
+27.
 
 Title:
 Implementation of a clinical decision support tool for hypertension in a rural health system.
@@ -421,7 +507,7 @@ RESULTS: Of 9155 patients with an elevated BP, remeasurement during the visit oc
 CONCLUSIONS: CDS improved pediatric BP care in a primarily rural health system while effectiveness varied by implementation approach.
 
 ---
-23.
+28.
 
 Title:
 Extended-Release vs Sublingual Buprenorphine in Pregnancy Through 12 Months Post Partum: A Randomized Clinical Trial.
@@ -443,7 +529,7 @@ CONCLUSIONS AND RELEVANCE: The findings of this randomized clinical trial suppor
 TRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT03918850.
 
 ---
-24.
+29.
 
 Title:
 The screening accuracy of the PROMIS® Anxiety measures in adults - A systematic review and multiple-thresholds meta-analysis.
@@ -460,7 +546,7 @@ METHODS: We searched the electronic databases from inception until 15 July 2025 
 CONCLUSIONS: The PROMIS®-SF-A-8a results were homogeneous, showing good screening accuracy. However, the limited number of studies - especially for other PROMIS® Anxiety measures - and the lack of replication in settings like primary care highlight the need for further research.
 
 ---
-25.
+30.
 
 Title:
 The effect of an information-motivation-behavioral skills model-based education program on disease management in adolescents with epilepsy: A randomized controlled trial.
@@ -479,7 +565,7 @@ CONCLUSION: The training provided using the IMB model effectively increased adol
 IMPLICATIONS FOR PRACTICE: These findings show that the IMB is a strong, practical model. It is advised to assess adolescents' knowledge, motivation, and behavioral skills to help manage their illness effectively, and to favor IMB-based training programs.
 
 ---
-26.
+31.
 
 Title:
 ACR Appropriateness Criteria® Chest Pain-Child.
@@ -494,7 +580,25 @@ Abstract:
 Chest pain is a common complaint in children and adolescents. The causes of chest pain are varied and include musculoskeletal, pulmonary or pleural, gastrointestinal, psychogenic, and cardiac etiologies. The etiology of pediatric chest pain is often benign but typically generates evaluation in the emergency room, urgent care, or outpatient setting. Diagnostic imaging is often used in the evaluation of pediatric chest pain. This document will discuss various clinical scenarios for children presenting with chest pain and will highlight initial imaging that is usually or may be appropriate, based on the best available evidence or expert consensus. Chest pain limited to the chest wall, from suspected pneumothorax or pneumomediastinum, secondary to suspected pulmonary embolism, from known or suspected cardiac disease, in the setting of sickle cell disease, and from suspected psychogenic causes, will be reviewed. The American College of Radiology Appropriateness Criteria are evidence-based guidelines for specific clinical conditions that are reviewed annually by a multidisciplinary expert panel. The guideline development and revision process support the systematic analysis of the medical literature from peer reviewed journals. Established methodology principles such as Grading of Recommendations Assessment, Development, and Evaluation or GRADE are adapted to evaluate the evidence. The RAND/UCLA Appropriateness Method User Manual provides the methodology to determine the appropriateness of imaging and treatment procedures for specific clinical scenarios. In those instances where peer reviewed literature is lacking or equivocal, experts may be the primary evidentiary source available to formulate a recommendation.
 
 ---
-27.
+32.
+
+Title:
+Parenting Intervention in Pediatric Primary Care Promotes Child Mental Health: Evidence from a Randomized Controlled Trial of PlayReadVIP.
+
+PMID:
+41692227
+
+Journal:
+The Journal of pediatrics (2026/Jun)
+
+Abstract:
+OBJECTIVE: To examine the effects of PlayReadVIP, a pediatric primary care intervention promoting early relational health, on child behaviors.
+STUDY DESIGN: A factorial randomized controlled trial enrolled mother-child dyads postpartum. PlayReadVIP was delivered in 2 phases: birth to 3 years (PlayReadVIP 0-3) and 3-5 years (PlayReadVIP 3-5). At enrollment, dyads were assigned to PlayReadVIP 0-3 or control. At age 3, dyads were rerandomized to PlayReadVIP 3-5 or control. Analyses included dyads with a second randomization and complete data on the mediators and child outcomes. In PlayReadVIP, dyads attended one-on-one sessions with a parent coach, in which they received child development information, learning materials, and real-time, strengths-based feedback on brief video recordings of parent-child interactions. Cognitive stimulation and harsh discipline were reported by mothers. Child behaviors were assessed using the Behavior Assessment System for Children, Second Edition.
+RESULTS: A total of 143 dyads, primarily immigrant, Latino/Hispanic, and low-socioeconomic status, comprised the analytic sample. Mothers in PlayReadVIP vs control had higher cognitive stimulation at 54 months, which resulted in reduced problem behaviors (aggression and attention problems) and better social skills in their children in second grade. No significant indirect effects through harsh discipline were found.
+CONCLUSIONS: PlayReadVIP leads to sustained but small improvements in child behaviors by enhancing maternal cognitive stimulation, emphasizing the potential of early intervention in pediatric primary care for promoting child mental health in disadvantaged populations.
+
+---
+33.
 
 Title:
 Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
@@ -516,7 +620,7 @@ RESULTS: A total of 190 studies involving 2.8 million participants across 40 cou
 CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
 
 ---
-28.
+34.
 
 Title:
 Adverse outcomes among pregnant women with COVID-19 according to hospitalization status: A prospective individual participant data meta-analysis in Europe and North America.
@@ -537,7 +641,7 @@ MAIN RESULTS: Data from 10 sources across seven countries contributed to the met
 CONCLUSIONS AND RELEVANCE: COVID-19 requiring hospitalization is associated with adverse pregnancy outcomes, emphasizing the need to prevent severe illness during pregnancy. This study also highlights the importance of international collaboration for gathering pregnancy data and shows that building global research networks is essential for responding to future health crises.
 
 ---
-29.
+35.
 
 Title:
 Role of the perinatal experience on the risk of acute leukemia in childhood or adolescence: Systematic review and meta-analysis.
@@ -552,7 +656,7 @@ Abstract:
 Acute leukemia is the most common type of cancer in children; however, the etiology is poorly understood. The objective of this review was to summarize the current evidence of the role of perinatal factors in the development of acute leukemia. All epidemiological studies published up to October 2023 that evaluated perinatal risk factors for childhood acute leukemia were identified using a multi-tiered approach in two electronic databases (PubMed and Web of Science), without restriction on publication year or language. A total of 85 studies (13 prospective cohort studies, 62 case-control studies, and 10 pooled analyses) were included. We combined the published risk estimates in a meta-analysis, using the Generic Inverse Variance method. An increased risk of acute leukemia and the lymphoblastic subtype (ALL) was associated with high birth weight (>4000 g) (odds ratio [OR] = 1.35; 95% confidence interval [95% CI] 1.20-1.53 and OR = 1.21; 95% CI 1.08-1.34, respectively), maternal history of abortion (OR = 1.27; 95% CI 1.12-1.43 and OR = 1.24; 95% CI 1.08-1.43, respectively), and maternal diabetes (OR = 1.30; 95% CI 1.14-1.48 and OR = 1.32; 95% CI 1.16-1.50, respectively). In addition, an increased risk for ALL was also associated with maternal hypertension (OR = 1.21; 95% CI 1.06-1.38) and cesarean section (OR = 1.10; 95% CI 1.05-1.16). Our review suggests a potential role for perinatal factors in the development of acute leukemia in children. These findings indicate potential avenues for developing cost-effective prevention strategies applicable at the population level, while the mechanism of action is investigated.
 
 ---
-30.
+36.
 
 Title:
 Cost-effectiveness of a faecal calprotectin-guided referral strategy for children with chronic abdominal symptoms: a cluster randomised controlled trial.
@@ -572,7 +676,7 @@ RESULTS: Adherence to the FCal strategy was 59%. Alarm symptoms for inflammatory
 CONCLUSION: The results do not justify recommending FCal testing in children in primary care without proper implementation. Additional research should focus on improving adherence to the FCal strategy.
 
 ---
-31.
+37.
 
 Title:
 A pilot trial investigating the effectiveness of online Triple P plus acceptance and commitment therapy (ACT) in addressing parental stress and child behavioural difficulties in a primary care level service.
@@ -590,7 +694,7 @@ RESULTS: Parents randomized to Triple P + ACT did not evidence decreases in 
 CONCLUSION: Findings from this study suggest minimal additive benefit of adding an ACT treatment component to standard Level 4 Triple P for parents of children presenting with behavioural difficulties in a primary care setting in relation to parental stress. The research suggests that standard behavioural management programmes may provide what parents require in primary care. However, ACT components may be effective for certain cohorts of parents who struggle to flexibly adapt behavioural management strategies in helping develop the parent-child relationship. Further research is required to identify which parents may benefit from the addition of ACT treatment components.
 
 ---
-32.
+38.
 
 Title:
 Improved diagnostic management of children with acute infections following the introduction of point-of-care C-reactive protein testing and general practitioner education in Latvia: a post hoc analyses of a randomised controlled intervention study.
@@ -611,5 +715,43 @@ MAIN OUTCOME: Impact of combined intervention and long-term education on testing
 RESULTS: Diagnostic testing was significantly increased in the combined intervention group versus the usual care group (aOR 11.1, 95% CI 8.0-15.3); however, it was decreased in the long-term education group (26.4%) (aOR 0.5, 95% CI 0.3-0.8). Rural practices and a longer expected time of laboratory results were associated with a more pronounced increase in diagnostic testing in the combined intervention group (aOR 37.6, 95% CI 17.9-79.0; aOR 23.2, 95% CI 14.1-38.0, respectively). It was found that a low CRP value, negative Strep A test or normal X-ray often did not convince GPs to withhold antibiotics.
 CONCLUSION: The availability of CRP POCT and GP education results in a much higher level of diagnostic testing prior to antibiotic prescribing, especially in rural regions. Further improvements in more rational testing and the interpretation of results to guide appropriate antibiotic prescribing are essential.
 UNLABELLED: Trial registration: ISRCTN registry - ISRCTN34931655.
+
+---
+39.
+
+Title:
+Neonatal morbidity in early-onset fetal growth restriction with and without anticoagulant therapy.
+
+PMID:
+41034645
+
+Journal:
+Pediatric research (2026/Jun)
+
+Abstract:
+BACKGROUND: The study aims to evaluate the effectiveness of low molecular weight heparin (LMWH) in reducing neonatal morbidity in pregnancies with early-onset fetal growth restriction (FGR).
+METHODS: A phase III, multicenter, triple-blind, parallel-arm randomized clinical trial conducted in two university hospitals in Spain. Singleton pregnancies with early-onset placental FGR (20 + 0-31 + 6 weeks at diagnosis) were randomized to receive bemiparin (3500 IU/0.2 mL/day) or placebo from diagnosis to delivery. The primary neonatal outcome was morbidity up to hospital discharge, assessed using the Morbidity Assessment Index for Newborns (MAIN) score. Analyses followed an intention-to-treat approach.
+RESULTS: Fifty patients were randomized (25 per arm), with 49 included in the final analysis (23 LMWH, 26 placebo). Median gestational ages at inclusion were 28.7 weeks (LMWH) and 28.4 weeks (placebo). No significant differences were observed in MAIN scores between groups (171.5 vs. 290; p = 0.887; adjusted median difference 139.1 [95% CI -88.4 to 319.8]). NICU stay lengths were also similar (9 vs. 6.5 days; p = 0.738; adjusted median difference 1.08 [95% CI -0.74 to 13.4]).
+CONCLUSION: Prophylactic LMWH started at diagnosis of early-onset FGR does not decrease neonatal morbidity or NICU stay duration.
+IMPACT: Prophylactic LMWH started at the diagnosis of early-onset FGR does not decrease neonatal morbidity or NICU stay duration. Its design is a randomized, triple-blind clinical trial, which provides high-quality evidence. LMWH is often prescribed during pregnancy for various indications, and in the absence of effective alternatives, it is increasingly used empirically in such cases. Our findings do not support its use for reducing perinatal morbidity or NICU admission duration.
+
+---
+40.
+
+Title:
+Effectiveness of sun risk prevention programmes in primary schools in a tropical region: The PRESOLRE trial.
+
+PMID:
+40960198
+
+Journal:
+Journal of the European Academy of Dermatology and Venereology : JEADV (2026/Jun)
+
+Abstract:
+INTRODUCTION: The growing incidence of skin cancers calls for improved sun protection from childhood onwards. The aim of this PRESOLRE study was to assess the effectiveness of three sun-related risk prevention programmes on the knowledge, attitudes and behaviour of primary school pupils on the island of Réunion.
+METHODS: PRESOLRE was a cluster randomized controlled trial in which the classes of pupils were randomized into four parallel groups (1:1:1:1): a reference group with no intervention (Arm 1), a group exposed to the 'Living with the Sun' (LWS) educational programme (Arm 2), a group exposed to LWS and an educational Peer Intervention (PI) (Arm 3) and a group exposed to both of these interventions (LWS + PI) as well as receiving photoprotection equipment (Arm 4). The main analysis, based on a linear mixed model with random intercept, involved a comparison of the percentage of correct answers to the knowledge questionnaire administered at the end of the school year (at 6 months from baseline), after adjustment for the average level of knowledge in the class at the start of the school year.
+RESULTS: The trial involved 1452 pupils aged 7-11 in 100 classes from 20 primary schools. After adjusting for baseline, the mean level of knowledge after intervention was significantly higher (p < 0.0001) in Arm 4 than in Arm 1, absolute increase: +5.4% [95% CI = +2.4; +8.3]. Better knowledge of sun protection behaviours was reported among pupils with a light phototype compared with those with a dark phototype.
+CONCLUSIONS: This randomized cluster trial shows the positive impact of a risk prevention programme run by external speakers and peer pupils, with photoprotection equipment delivery in primary schools, making it possible to envisage wider dissemination of this type of public health initiative. However, modifying behaviours is more difficult to initiate and demonstrate than improving knowledge.
+Helping children in Réunion protect themselves from the sun Too much sun exposure can cause serious skin problems, including cancer. In 2020, over 63,000 people around the world died from skin cancer caused mainly by the sun’s ultraviolet (UV) rays. This study was carried out on Réunion Island, a French island near the Tropic of Capricorn, where the sun is very strong all year long. The goal was to find out which school programmes help children better protect themselves from the harmful effects of the sun. The researchers worked with primary schools and tested three different sun safety programmes: No programme (just regular school activities – this was the comparison group) A classroom programme called Living with the Sun, which teaches children about sun safety Peer education, where trained student “ambassadors” taught their classmates about sun protection A combination of all the above, including free sun protection gear like hats or sunglasses The results showed that the children who received all three – the classroom lessons, peer teaching, and sun protection gear – learned the most about how to stay safe in the sun. Their knowledge increased clearly compared to children who didn’t get any programme. This study shows that sun safety programmes in schools – especially when they include peer support and protective items – can really help children develop better habits to stay safe under the sun. These kinds of programmes could be used more widely in schools to protect children’s health.
 
 ---

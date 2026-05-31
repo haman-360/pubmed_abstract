@@ -14,6 +14,39 @@ PMIDは必ず入力データに含まれるものを正確に転記してくだ�
 1.
 
 Title:
+The association between asthma and ADHD in children and adolescents: An observational study and a meta-analysis of Mendelian randomization studies.
+
+PMID:
+42175507
+
+Journal:
+Medicine (2026/May)
+
+Abstract:
+Observational epidemiological analysis and a meta-analysis of Mendelian randomization (MR) were used to investigate the association between attention-deficit/hyperactivity disorder (ADHD) and asthma in children and adolescents. Based on data from the 1999 to 2004 National Health and Nutrition Examination Survey (NHANES), an analysis was conducted to evaluate the association between ADHD and asthma in children and adolescents aged between 4 and 19 years. ADHD and asthma were defined based on self- or parent/guardian proxy-reported physician/health-professional diagnoses from the NHANES Medical Conditions Questionnaire. After analyzing ADHD genome-wide association study data from the Psychiatric Genomics Consortium as instrumental variables, we performed two-sample MR analyses based on genome-wide association study data from 5 studies to examine the causal relationship between genetically predicted ADHD liabilities. In addition, we summarized the results of the inverse-variance weighted method using a random-effects meta-analysis. Asthma prevalence was higher among participants with ADHD than those without ADHD (10.2% vs 5.9%). ADHD was associated with higher odds of asthma (odds ratio = 1.64, 95% confidence interval = 1.36-1.98), and the pattern of results was broadly consistent across subgroups. In contrast, the MR meta-analysis did not support a causal effect of genetically predicted ADHD liability on childhood asthma (odds ratio = 0.94, 95% confidence interval = 0.84-1.05, P > .05). According to data from the NHANES, ADHD and asthma are significantly associated in children and adolescents. A meta-analysis of the MR data did not reveal a causal connection between genetically predicted ADHD liability and childhood asthma. This paradoxical finding illustrates the complex interplay of genetic and nongenetic mechanisms in the ADHD-asthma association.
+
+---
+2.
+
+Title:
+Efficacy of dialectical behavior therapy-based interventions for individuals with autism spectrum disorder: a systematic review and meta-analysis.
+
+PMID:
+42104500
+
+Journal:
+BMC psychology (2026/May)
+
+Abstract:
+BACKGROUND: Autism spectrum disorder (ASD) is characterized by social communication deficits and emotional dysregulation. Dialectical behavior therapy (DBT) has shown potential benefits in various psychiatric conditions; however, evidence regarding its effectiveness in individuals with ASD remains limited. This study aimed to evaluate the effects of DBT-based interventions on emotional regulation, suicidal ideation, and depressive symptoms in ASD.
+METHODS: Six English and Chinese databases were searched from inception to April 1, 2025. Randomized controlled trials (RCTs) comparing DBT-based interventions with control conditions in individuals with ASD were included. Data were pooled using standardized mean difference (SMD) with 95% confidence intervals (CI). Heterogeneity was assessed using the I² statistic, and subgroup analyses were conducted.
+RESULTS: Four RCTs involving 375 participants were included. Compared with controls, DBT-based interventions were associated with significant improvements in emotional regulation (SMD = - 0.89, 95% CI: -1.67 to - 0.10) and reductions in suicidal ideation (SMD = - 1.97, 95% CI: -3.02 to - 0.91) and depressive symptoms (SMD = - 2.23, 95% CI: -4.35 to - 0.11). Subgroup analysis indicated that shorter session duration (≤ 60 min) was associated with greater improvements in emotional regulation, whereas no significant effect was observed for longer sessions (> 60 min). No significant effects were found for anxiety.
+CONCLUSION: DBT-based interventions show potential benefits in improving emotional regulation, reducing suicidal ideation, and alleviating depressive symptoms in individuals with ASD. However, the findings should be interpreted with caution due to the limited number of trials and substantial heterogeneity. Further large-scale, high-quality RCTs are warranted.
+
+---
+3.
+
+Title:
 Investigating Prosodic Focus Perception and Production in Autism Spectrum Disorder: A Systematic Review and Meta-Analysis.
 
 PMID:
@@ -30,7 +63,7 @@ CONCLUSION: Overall, these findings suggest that individuals with ASD exhibit gr
 SUPPLEMENTAL MATERIAL: https://doi.org/10.23641/asha.31934088.
 
 ---
-2.
+4.
 
 Title:
 The Effects of Environmental Enrichment on the Behavioral Profile of an Attention-Deficit/Hyperactivity Disorder Animal Model: A Systematic Review and Meta-Analysis.
@@ -45,7 +78,7 @@ Abstract:
 In preclinical research, animal models are a valid alternative for studying both the genetics and environmental factors related to human psychopathologies. Indeed, in the last few decades, a great emphasis has been placed on the spontaneously hypertensive rat (SHR) inbred strain as an attention-deficit/hyperactivity disorder (ADHD) animal model. Therefore, this systematic review and meta-analysis aim to evaluate the effects of environmental enrichment (EE) on the behavior profile of the SHRs. All methods used to conduct the review were registered a priori on the PROSPERO platform (CRD42023442128). Our searches found 142 articles indexed in the electronic databases EMBASE, MEDLINE via PubMed, Scopus, and Web of Science. According to the eligibility criteria, six articles were included in the review. The meta-analysis demonstrated that EE decreased locomotor activity (SMD = -1.85, 95% CI = -3.18 to -0.52, Z = 2.72, p = 0.007, τ2 = 2.07, I2 = 86%) and enhanced memory (SMD = 1.32, 95% CI = 0.83 to 1.80, Z = 5.32, p < 0.001, τ2 = 0, I2 = 0%) in SHRs. Therefore, EE appears to have a beneficial effect on the behaviors of the SHR strain and could be considered in the search for nonpharmacological approaches in ADHD research.
 
 ---
-3.
+5.
 
 Title:
 Effects of exercise on social dysfunction in children and adolescents with ADHD: A systematic review and network, dose-response meta-analyses.
@@ -63,7 +96,7 @@ RESULTS: Thirteen trials including 703 participants aged 6-13 years were eligibl
 CONCLUSION: Closed-skill and multicomponent exercise appear most effective for improving social functioning in children with ADHD, with benefits maximised at around 1290 MET-min/week.
 
 ---
-4.
+6.
 
 Title:
 Therapeutic Effects of Dietary Supplements on Emotion-Related Symptoms in Children and Adolescents with Autism: A Systematic Review and Meta-analysis.
@@ -82,7 +115,7 @@ RESULTS: Twenty-one RCTs (22 studies) comprising 866 participants were included.
 CONCLUSIONS: Dietary supplements may improve irritability and overall emotional symptoms in children and adolescents with ASD. However, evidence strength is limited by study heterogeneity, RoB, and small-sample sizes. High-quality, large-scale RCTs are needed to confirm these findings and establish optimal intervention protocols.
 
 ---
-5.
+7.
 
 Title:
 The impact of neuraxial labour analgesia on neurodevelopmental disorders in offspring: a systematic review and meta-analysis.
@@ -101,7 +134,7 @@ CONCLUSIONS: Across population-based and family-based observational evidence, th
 SYSTEMATIC REVIEW PROTOCOL: PROSPERO (CRD420251148665).
 
 ---
-6.
+8.
 
 Title:
 Validity of screening tools and risk factors for Co-occurring ADHD in children with epilepsy: a systematic review and meta-analysis.
@@ -120,7 +153,22 @@ RESULTS: Twelve studies met inclusion criteria for qualitative synthesis.Diagnos
 CONCLUSIONS: The SDQ-Hyperactivity subscale demonstrates superior diagnostic accuracy for ADHD screening in children with epilepsy,supporting current ILAE recommendations.Externalizing behavior measures,particularly the DBD rating scale(g = 0.60),show the strongest discriminant validity.Children with poorly controlled seizures,early onset epilepsy and those receiving polytherapy warrant heightened screening vigilance.Implementation of systematic ADHD screening targeting high-risk subgroups may substantially improve early identification and intervention outcomes.
 
 ---
-7.
+9.
+
+Title:
+A systematic review and meta-analysis of the proficiency and variability of mathematical ability in populations with autism spectrum disorder.
+
+PMID:
+41709032
+
+Journal:
+Nature human behaviour (2026/May)
+
+Abstract:
+The fundamental characteristics of math ability in individuals with autism spectrum disorder (ASD), specifically proficiency and variability, remain inadequately understood. Here, in this systematic review and meta-analysis, we addressed this gap by synthesizing evidence on math ability in autistic individuals relative to the non-autistic population. Searches in multiple databases yielded 66 studies. Risk of bias was assessed using an adapted Joanna Briggs Institute checklist. Random-effects meta-analyses used Hedges' g and natural logarithm of variability ratio (lnVR) as effect sizes. Publication bias was adjusted for using the precision-effect test and precision-effect estimate with standard errors, as well as a three-parameter selection model. Results show that, compared with the non-autistic population, as represented by standardized norms (mean 100, s.d. 15; 3,051 participants) and typically developing (TD) control groups (2,351 participants), individuals with ASD exhibit significantly lower math scores (ASD versus norms: Hedges' g = -0.360, 95% confidence interval (CI) -0.605 to -0.114; ASD versus TD: Hedges' g = -0.696, 95% CI -0.947 to -0.445) and greater variability (ASD versus norms: lnVR 0.159, 95% CI 0.102 to 0.216; ASD versus TD: lnVR 0.298, 95% CI 0.199 to 0.396). Group discrepancies were moderated by intelligence, age or their interactions. The math-intelligence relationship in ASD provides a theoretical framework for understanding their mathematical development. In addition, the ASD-TD discrepancy has widened over the past four decades. These findings underscore the need for sustained, individualized mathematical education for ASD and investigation of the developmental trajectories of mathematical skills in ASD. Methodological challenges in the field included potential publication bias and insufficient rigour in sample matching.
+
+---
+10.
 
 Title:
 Atypical antipsychotics and metabolic dysfunction-associated steatotic liver disease in children and adolescents: A systematic review.
@@ -135,7 +183,7 @@ Abstract:
 ObjectiveAtypical antipsychotics (AAP) are commonly prescribed to children and adolescents and are associated with important adverse effects, including weight gain and metabolic syndrome. Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD) is the most common pediatric liver disease and is associated with serious complications, including liver cirrhosis. Given that MASLD and AAP are associated with liver cirrhosis and metabolic syndrome, a systematic review and meta-analysis was conducted to examine the association between AAP and MASLD in children and adolescents.MethodsThe systematic review examined studies exploring MASLD in subjects younger than 18 years taking AAP. All studies published in the English language between 1950 and 2020 were screened following PRISMA (Preferred Reporting items for Systematic Reviews and Meta-Analysis) guidelines.ResultsA total of 407 articles were initially retrieved, although only 3 studies met inclusion criteria. These included retrospective cohort and case-control studies with varying sample sizes and methodologies. Shedlock et al found increased obesity related risks in children with autism spectrum disorder; Kumra et al observed risperidone induced hepatotoxicity; and Mouzaki et al linked psychotropic use with more severe MASLD. Meta-analysis showed a small and statistically insignificant positive association between AAP and MASLD, with significant heterogeneity among studies, indicating a need for careful interpretation of results. Risk of bias ratings varied from fair to good.ConclusionThese findings will serve as a foundation for future studies, assist in devising interventions, and may help to reform clinical guidelines for using AAP in children and adolescents to ensure patient safety.
 
 ---
-8.
+11.
 
 Title:
 The effects of acute and chronic exercise on executive functions and core symptoms in adults with ADHD: A systematic review and meta-analysis.
@@ -153,7 +201,7 @@ RESULTS: Fourteen studies met the inclusion criteria for systematic review, with
 CONCLUSIONS: This study provides preliminary evidence on the potential role of exercise as a nonpharmacological strategy for improving executive functions and core symptoms in adults with ADHD.
 
 ---
-9.
+12.
 
 Title:
 Efficacy, Safety and Tolerability of Lisdexamfetamine Dimesylate Treatment Compared With Placebo in Adults With Binge-Eating Disorder: A Systematic Review and Meta-Analysis of Randomised Controlled Trials.
@@ -172,7 +220,7 @@ RESULTS: Five RCTs were included in this meta-analysis, encompassing a total of 
 CONCLUSION: LDX demonstrates significant efficacy in reducing binge-eating behaviours and associated obsessive-compulsive symptoms in patients with BED, with a tolerable safety profile. These findings support the clinical use of LDX for managing BED.
 
 ---
-10.
+13.
 
 Title:
 Effects of Exercise on Hyperactivity/Impulsivity and Inhibitory Control at Behavioral and Electrophysiological Levels in ADHD: A Systematic Review and Meta-Analysis.

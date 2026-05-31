@@ -14,6 +14,38 @@ PMIDは必ず入力データに含まれるものを正確に転記してくだ�
 1.
 
 Title:
+[The history of the yellow fever vaccine].
+
+PMID:
+42213987
+
+Journal:
+Medecine sciences : M/S (2026/May)
+
+Abstract:
+After three centuries of devastation caused by yellow fever, which hindered trade and colonization, a live attenuated vaccine was produced and is still in use today. Its development took place in a context of commercial and colonial rivalry between Europeans and Americans. The history of this vaccine, widely used in endemic areas and among travelers, has been marked by specific challenges, including international health regulations governing its use and its integration into childhood immunization programs in endemic regions. Shortages triggered by the resurgence of epidemics in Africa and Latin America led to measures such as extending the validity of vaccination and reducing the administered dose. Many uncertainties remain regarding the significance and mechanisms of the adverse effects observed after vaccination, which are rare but potentially fatal. The development of a vaccine that is equally effective but easier to produce and associated with fewer side effects is a central issue in the present and future history of this nearly century-old vaccine.
+TITLE: L’aventure du vaccin contre la fièvre jaune.
+ABSTRACT: Après trois siècles de ravages causés par la fièvre jaune, un vaccin vivant atténué a été finalement mis au point et demeure encore utilisé aujourd’hui. Son élaboration s’est inscrite dans un contexte marqué par les rivalités entre les puissances commerciales et coloniales européennes et américaines. Largement utilisé aussi bien dans les zones d’endémie que chez les voyageurs, son utilisation a été encadrée par le Règlement sanitaire international, et intégrée aux programmes de vaccination préventive des enfants dans les régions endémiques. La pénurie provoquée par la reprise d’épidémies en Afrique et en Amérique latine a conduit à allonger la durée de validité de la vaccination et à réduire la dose administrée. De nombreuses incertitudes persistent néanmoins quant à l’ampleur et aux mécanismes de ses effets indésirables, parfois mortels. La mise au point d’un vaccin plus facile à produire, tout en étant aussi efficace, mais associé à moins d’effets secondaires, se trouve au cœur de l’histoire présente et future de ce vaccin presque centenaire.
+
+---
+2.
+
+Title:
+Vaccine hesitancy among U.S. parents: a mini review.
+
+PMID:
+42200136
+
+Journal:
+Frontiers in public health (2026)
+
+Abstract:
+Parental vaccine hesitancy in the United States continues to shape childhood immunization patterns and population-level disease prevention. Although extensive evidence demonstrates that vaccines are safe and effective, many parents base vaccination decisions on concerns about adverse reactions that extend beyond risk estimates derived from epidemiological data. Parents construct these interpretations through personal experiences with adverse reactions as well as through stories circulating within families, social networks, media, and online environments. This narrative mini review synthesizes interdisciplinary literature on parental vaccine hesitancy in the United States, focusing on how perceived and experienced adverse reactions influence attitudes toward childhood vaccination. The review examines contextual factors associated with hesitancy, including historical events, healthcare experiences, and interpretations of vaccine safety. By integrating public health research with parental vaccine perspectives, this review identifies gaps between population-level safety evidence and individual risk perception. Addressing these gaps offers opportunities to strengthen vaccine confidence, enhance public health communication, and support informed parental decision-making without exacerbating mistrust or polarization.
+
+---
+3.
+
+Title:
 Paracetamol in Pregnancy: Uncertain Evidence, Certain Consequences.
 
 PMID:
@@ -26,7 +58,7 @@ Abstract:
 Autism diagnoses have increased over the past decade, prompting debate on potential causes. In September 2025, US President Donald Trump claimed that paracetamol is a 'big factor' in autism, citing a systematic review based solely on observational studies. The review's selective reporting, methodological flaws (including applying an environmental health rather than evidence-based medicine framework) and lack of causal evidence provided weak justifications for its conclusions and have fuelled public confusion about paracetamol safety in pregnancy. This article critically appraises the review and examines how scientific uncertainty can be manipulated and amplified within broader public health domains.
 
 ---
-2.
+4.
 
 Title:
 Treatments for Molluscum contagiosum: A systematic review.
@@ -41,7 +73,7 @@ Abstract:
 Molluscum contagiosum (MC) is a viral skin infection that poses significant physical and psychosocial burdens, particularly in pediatric and immunocompromised populations. Despite the availability of various treatment options, comparative efficacy and safety data remain limited. This systematic review, conducted in accordance with PRISMA guidelines, evaluates and compares the efficacy, safety, recurrence, and adverse effects of MC treatments. A total of 89 studies encompassing 12,955 participants were analyzed. Curettage, potassium hydroxide (KOH), autoinoculation, and podophyllotoxin demonstrated high clearance rates (97.8%, 73.8%, 79.4%, and 75.0%, respectively) with minimal local side effects. Cryotherapy and laser therapies offered rapid lesion resolution though laser treatment was associated with more discomfort and higher cost. Emerging therapies such as berdazimer gel demonstrated favorable safety profiles, particularly for pediatric patients, while intralesional immunotherapies like Candida and MMR vaccine showed encouraging results in patients with persistent or recurring lesions. The management of MC requires an individualized approach, balancing efficacy, safety, and patient-specific factors such as age, lesion severity, and immune status. Cantharidin, KOH, cryotherapy, autoinoculation, and podophyllotoxin offer high clearance rates, with immunotherapies and lasers offering additional options for resistant cases. Further standardized trials are needed to optimize treatment strategies and long-term recurrence.
 
 ---
-3.
+5.
 
 Title:
 Aluminium adjuvants in vaccines and potential health effects: systematic review.
@@ -63,7 +95,7 @@ CONCLUSIONS: Current evidence does not support causal associations between alumi
 SYSTEMATIC REVIEW REGISTRATION: PROSPERO CRD42023462831.
 
 ---
-4.
+6.
 
 Title:
 Incidence of Bacille Calmette-Guérin associated lymphadenitis in healthy children: A systematic review and meta-analysis.
@@ -78,7 +110,7 @@ Abstract:
 Few systematic reviews or meta-analyses have addressed on the incidence of Bacille Calmette-Guérin (BCG) lymphadenitis in healthy children. A systematic literature search was independently conducted by two researchers using four English and Korean databases (PubMed, Scopus, KMbase, RISS). The risk of bias was assessed. A total of 52 peer-reviewed journal articles (about 1.8 million children) were included in meta-analyses. The incidence proportion of BCG lymphadenitis ranged from 0.0% to 25.6%. The pooled incidence proportion was 2.5% (95% CI, 1.6-3.6; I2 = 99%). Studies employing active (vs. passive) surveillance reported a significantly higher incidence proportion of lymphadenitis, as did randomized controlled trials (vs. prospective and retrospective cohort studies). Also, the incidence significantly differed according to study quality, publication period, and BCG strain. This study highlights substantial variability in the incidence of BCG lymphadenitis among diverse studies and underscores the influence of surveillance methods, study design, and vaccine strain on reported outcomes.
 
 ---
-5.
+7.
 
 Title:
 Different Immune Cells Modified With Chimeric Antigen Receptors Are Being Applied to Ovarian Cancer: Which Is the Most Effective?
@@ -91,43 +123,6 @@ Cancer medicine (2026/May)
 
 Abstract:
 Ovarian Cancer (OC), the deadliest gynecological malignancy, poses a major therapeutic challenge in advanced stages owing to its high recurrence rate and metastatic potential. In this regard, it is noteworthy that immunotherapy has recently gained significant attention in OC treatment, a phenomenon attributable to notable advances in over-the-counter Chimeric Antigen Receptor (CAR)-based cell therapy. At the heart of CAR-T Cell (CAR-T) immunotherapy is genetically modified CAR molecules that enable immune cells to target and recognize tumor antigens. Based on such strategies, CAR-T therapies have developed rapidly in hematological oncology and are gradually being extended to solid tumors. Despite their potential in OC treatment, several factors, including off-target effects attributable to the lack of Tumor-Specific Antigens (TSAs), as well as severe side effects such as tumor immune barriers, Cytokine Release Syndrome (CRS), and neurotoxicity, have been established to limit the clinical use of CAR-T therapies. Moreover, compared to CAR-T, CAR-Natural Killer (NK) and CAR-Macrophage (M) therapies have distinct advantages. The killing mechanism of NK cells integrates both CAR-dependent and non-dependent pathways, avoiding severe CRS and neurotoxicity. Furthermore, besides directly phagocytosing tumors due to its strong ability to infiltrate tumors, CAR-M therapy could also effectively improve the Immunosuppressive Microenvironment (IME) via immunomodulatory factor secretion to remodel M2-type Tumor-Associated Macrophages (TAMs) into the M1 phenotype with anti-tumor function. In this review, we systematically describe the research progress in CAR-T therapy for OC and compare the similarities and differences of three types of cellular therapies (CAR-T, CAR-NK, and CAR-M) regarding their mechanisms of action, clinical advantages, and technological bottlenecks. We hope that our findings will provide a theoretical basis for optimizing immunotherapeutic strategies for OC. Trial Registration: ClinicalTrials.gov identifier: NCT03585764.
-
----
-6.
-
-Title:
-Immunogenicity and safety of Sabin-strain inactivated poliovirus vaccine in infants: a systematic review and meta-analysis.
-
-PMID:
-42060979
-
-Journal:
-Vaccine (2026/Jun)
-
-Abstract:
-BACKGROUND: Poliomyelitis remains a threat to children under five despite global vaccination efforts. The Sabin-strain inactivated poliovirus vaccine (sIPV) has emerged as a safer alternative to conventional Salk-strain IPV (cIPV) due to lower biosafety requirements. This systematic review and meta-analysis evaluated the immunogenicity and safety of sIPV compared with cIPV in healthy infants completing the primary IPV series.
-METHODS: PubMed, Embase, Scopus, and Cochrane Library were searched for RCTs. Outcomes included seroconversion rates, seroprotection rates, geometric mean titers (GMTs), and adverse events. Data were pooled using random-effects models, and evidence certainty was assessed using RoB 2.0 and GRADE.
-RESULTS: Seven RCTs with 4646 infants were included. Seroconversion rates were comparable: PV1 100% (RR 1.00, 95% CI 1.00-1.01), PV2 102% (RR 1.02, 95% CI 0.98-1.07), PV3 100% (RR 1.00, 95% CI 0.99-1.01). GMTs were higher for sIPV after PV1 (MD 1.50, 95% CI 0.98-2.02) and PV2 (MD 0.52, 95% CI 0.06-0.98). Local adverse events were similar (OR 1.27, 95% CI 0.95-1.71), while systemic adverse events were higher with cIPV (OR 1.36, 95% CI 1.15-1.60). Fever (OR 1.50, 95% CI 1.20-1.87) and allergic reactions (OR 2.19, 95% CI 1.02-4.69) were slightly more frequent with sIPV.
-CONCLUSIONS: sIPV provides immunogenicity comparable to cIPV with an acceptable safety profile in infants. Its lower biosafety requirements support its use in global polio eradication programs.
-
----
-7.
-
-Title:
-Bacillus Calmette-Guérin scar reactivation (BCGitis) in Kawasaki disease: a scoping review.
-
-PMID:
-42020814
-
-Journal:
-European journal of pediatrics (2026/Apr)
-
-Abstract:
-UNLABELLED: The aim of this study is to map and synthesise the evidence on the scattered and heterogeneous reported prevalence of Bacillus Calmette-Guérin (BCG) scar reactivation (BCGitis) in Kawasaki disease (KD), examine clinical relationships, and identify knowledge gaps for future research. A scoping review was conducted according to the PRISMA-ScR guidelines. PubMed, Scopus, EMBASE, Web of Science, Cochrane Library, China National Knowledge Infrastructure (CNKI), and KoreaMed were searched for observational studies of BCG-vaccinated children with KD. We retrieved the prevalence of BCGitis and its relationship with age, sex, KD form, BCG vaccine strain, coronary artery abnormalities (CAA), and treatment response. Fifteen studies from five Asian countries (Japan, Korea, Taiwan, China, and Singapore), including 21,880 children with KD, were identified. The median reported prevalence of BCGitis was 37.5% (range, 3.5%-75.2%), driven by a few large studies. Its prevalence was 61.8% below 2 years and 9.1% over 2 years in 17,000 patients with KD. Its unweighted study-level prevalence (MU-SLP) was slightly higher in males than in females (49.8% vs. 46.1%), and in the largest number of patients with KF reported, it was associated with lower CAA rates of 11.6 vs.13.8% in the absence of BCGitis. No significant relationships were observed between KD type, vaccine strain, or treatment response.
-CONCLUSION: Owing to the inherent methodology and limitations of scoping reviews, these findings should be interpreted as a map of the current evidence rather than a quantitative conclusion. BCGitis is a common manifestation of KD in BCG-vaccinated children and may have diagnostic value, particularly in younger children, in whom diagnosis may be difficult. Although it also seems to have prognostic value regarding the development of CAA, we urge caution because confounding cannot be ruled out. However, the current evidence lacks robustness due to the heterogeneity and design limitations of the studies. Future research addressing these limitations is required.
-WHAT IS KNOWN: • Reactivation at the Bacillus Calmette-Guérin (BCG) inoculation site (BCGitis) has been reported in patients with Kawasaki disease (KD). • Its true prevalence remains unclear due to inconsistent reporting of BCG vaccination status or examination of the inoculation site.
-WHAT IS NEW: • The unweighted study-level prevalence (MU-SLP) of BCGitis among children with KD and prior BCG vaccination was 38.6%. It is slightly higher in males and younger children but is not different between complete and incomplete KD, with coronary artery abnormalities (CAA) being more common in the absence of BCGitis. • Further studies are required to provide robust evidence for these findings.
-TRIAL REGISTRATION:  Hassib Narchi and Alyson Skinner. Bacillus Calmette-Guérin scar reactivation (BCGitis) in Kawasaki disease. A Scoping Review. MedRxiv [preprint]. October 5, 2025. doi:  https://doi.org/10.1101/2025.10.03.25337219.
 
 ---
 8.

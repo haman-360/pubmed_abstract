@@ -14,6 +14,289 @@ PMIDは必ず入力データに含まれるものを正確に転記してくだ�
 1.
 
 Title:
+Comorbidities of atopic dermatitis in adults and children.
+
+PMID:
+42209105
+
+Journal:
+Journal of the American Academy of Dermatology (2026/May)
+
+Abstract:
+Atopic dermatitis is increasingly recognized by dermatologists as a systemic disease with significant comorbidities beyond the skin. This narrative review highlights the broad range of medical and psychiatric conditions associated with atopic dermatitis in children and adults, including depression, cardiovascular and endocrine conditions, autoimmune disorders, and serious infections. The burden of these comorbidities increases with disease severity and has important implications for treatment selection, including the potential benefit of therapies with multisystem efficacy. Dermatologists are uniquely positioned to identify early signs of comorbid conditions and initiate appropriate referrals. Proactive screening and interdisciplinary collaboration-especially with mental health, primary care, allergy/immunology, rheumatology, endocrinology, and cardiology-are essential for comprehensive care and tailoring treatment strategies to individual patient needs.
+
+---
+2.
+
+Title:
+A Real-world Meta-analysis Study of Disease Severity in European Patients Who Received Baricitinib for Atopic Dermatitis: Data from BioDay, SCRATCH and TREATgermany.
+
+PMID:
+42204890
+
+Journal:
+Acta dermato-venereologica (2026/May)
+
+Abstract:
+Clinical trials have demonstrated the effectiveness of baricitinib, an oral selective Janus kinase 1/2 inhibitor, for patients with moderate-severe atopic dermatitis, but data from real-world practice are limited. This non-interventional cohort study evaluated clinician- and patient-reported disease severity over 16 weeks using 3 national atopic dermatitis registries: BioDay (Netherlands), SCRATCH (Denmark) and TREATgermany (Germany). Absolute scores for Eczema Area and Severity Index (EASI) and itch Numerical Rating Scale (Itch-NRS) were assessed at baseline and follow-up (Week 13/16) for each registry and for the overall pooled cohort. Descriptive analyses, generalized linear mixed modelling and meta-analysis approaches were applied to complete-case and multiply-imputed datasets. In total, 264 patients (89 BioDay, 117 SCRATCH, 58 TREATgermany) were included. Results showed improvements in EASI, with 58%, 68% and 62% achieving EASI≤7 at Week 13/16 in BioDay, SCRATCH and TREATgermany, respectively. In the pooled cohort, the proportion was 62% (95% CI: 50-73%). The pooled mean EASI change was -7.8 [14.4,-1.1]. Effectiveness was generally observed in both biologic-naïve and -experienced patients. Notable heterogeneity was observed, particularly for Itch-NRS, with the proportion achieving NRS≤4 ranging from 20% (BioDay) to 71% (TREATgermany). These real-world findings support the effectiveness of baricitinib while also highlighting variability in patient outcomes.
+
+---
+3.
+
+Title:
+An Updated Algorithm for the Management of Restless Legs Syndrome.
+
+PMID:
+42203073
+
+Journal:
+Mayo Clinic proceedings (2026/May)
+
+Abstract:
+Restless legs syndrome (RLS) is a common disorder, largely managed by primary care providers. Much has changed in its management since the last version of this algorithm was published in 2021. The Scientific and Medical Advisory Board of the RLS Foundation has written this new paper as a practical algorithmic guide to current treatment based on a review of the literature published since 2020 and consensus expert opinion. This updated algorithm includes management of intermittent RLS, including behavioral approaches; new indications for oral and intravenous iron therapy; the role of medications in exacerbating RLS; gabapentinoids as first line pharmacologic therapy for chronic persistent RLS; the risks of dopamine agonists and the precautions needed if they are used; the management of dopamine agonist augmentation; the important role of low-dose opioids in management and how to safely use them; novel therapies including peroneal nerve stimulation and buprenorphine; and RLS in children, during pregnancy and lactation, in end-stage renal failure and in the perioperative period. Alternative, investigative, and potential future approaches are addressed.
+
+---
+4.
+
+Title:
+Systemic Lupus Erythematosus: What Every Clinician Needs to Know.
+
+PMID:
+42203072
+
+Journal:
+Mayo Clinic proceedings (2026/May)
+
+Abstract:
+Systemic lupus erythematosus (SLE) is a chronic, multisystem autoimmune disease that disproportionately affects women of reproductive age and is associated with substantial morbidity, premature mortality, and racial and ethnic disparities. Advances in diagnosis and immunosuppressive therapy have improved survival, yet patients remain at increased risk for kidney failure, cardiovascular disease, infection, pregnancy complications, and treatment related damage. Primary care and hospital-based clinicians are often the first point of contact and are central to early recognition, evaluation, and comorbidity management. Informed by a comprehensive literature review, this article links key SLE pathobiology to current therapies, including loss of immune tolerance to nuclear antigens, immune complex mediated tissue injury, and type I interferon driven inflammation. We outline a practical diagnostic approach that emphasizes pattern recognition across organ systems, judicious use and interpretation of antinuclear antibody testing, and timely referral to rheumatology. We highlight the distinction between disease activity and cumulative damage and describe a treat to target strategy focused on low disease activity or remission with minimal glucocorticoid exposure. Organ based sections address common renal, musculoskeletal, mucocutaneous, cardiopulmonary, hematologic, neuropsychiatric, and reproductive manifestations, with an emphasis on what clinicians should screen for, manage directly, and refer urgently. We review major comorbidities, including antiphospholipid syndrome, cardiovascular disease, osteoporosis, infection risk, and pediatric onset SLE, and address pregnancy and contraception. Throughout, we emphasize hydroxychloroquine as foundation therapy, a glucocorticoid sparing mindset, aggressive prevention of cardiovascular and bone disease, and structured collaboration between rheumatology and non-rheumatology clinicians to improve outcomes in SLE.
+
+---
+5.
+
+Title:
+Neurotransmitters in Auditory Processing Disorders and Neurodevelopmental Disorders: A Common Neurobiological Substrate?
+
+PMID:
+42194223
+
+Journal:
+Children (Basel, Switzerland) (2026/May)
+
+Abstract:
+Background/Objectives: Auditory processing disorders (APDs), defined as impaired neural processing of acoustic stimuli despite normal peripheral hearing, often co-occur with neurodevelopmental disorders (NDDs) and may contribute to language, attentional, and learning difficulties. Emerging evidence suggests that shared neurotransmitter systems may represent a common neurobiological substrate underlying these conditions. The aim of this study is to integrate current evidence on glutamatergic, GABAergic, and monoaminergic systems in neurodevelopmental and auditory processing disorders in children and adolescents, and to evaluate the hypothesis that shared neurotransmitter dysregulation may underlie their clinical overlap. Methods: A narrative review of the literature was conducted through electronic searches in PubMed and Embase up to 31 December 2025, using keywords related to neurotransmitters, NDDs and APDs. Results: Available evidence indicates that an imbalance between excitatory glutamatergic and inhibitory GABAergic neurotransmission has been proposed as a central mechanism in NDDs and may also contribute to auditory processing difficulties through altered neural synchrony, sensory gating and temporal auditory coding. Findings collectively suggest the hypothesis of shared neurotransmitter dysregulation across NDDs and APDs. Conclusions: Auditory processing difficulties may represent sensory-level expressions of shared neurochemical vulnerability across neurodevelopmental conditions. Future longitudinal and multimodal studies are needed to clarify causal relationships and to identify clinically useful biomarkers.
+
+---
+6.
+
+Title:
+Artificial Intelligence in Oncology: A Comprehensive Cross-Cancer Translational Readiness Analysis Across 18 Malignancies.
+
+PMID:
+42192906
+
+Journal:
+Cancers (2026/May)
+
+Abstract:
+BACKGROUND: Artificial intelligence (AI) is reshaping oncology at every stage of the cancer care pathway, from population-level screening through molecular diagnosis, treatment planning, and post-treatment surveillance. Despite an exponential growth in AI oncology publications exceeding 5000 peer-reviewed studies annually, a critical and persistent gap separates demonstrated algorithmic performance from genuine patient benefit. Most published evidence derives from retrospective, single-institution studies conducted in curated dataset environments that systematically differ from real-world clinical deployment conditions. This comprehensive review examines the translational maturity of AI applications across 18 major malignancies, providing an evidence-stratified, cross-cancer assessment of where AI has fulfilled, approaches, or remains far from fulfilling its transformative potential in oncological care.
+METHODS: A structured narrative review was conducted across PubMed/MEDLINE, Embase, IEEE Xplore, and the Cochrane Library, supplemented by regulatory grey literature including FDA 510(k) decision summaries, CE Technical Files, and ClinicalTrials.gov. Search terms combined cancer site-specific terminology with AI methodology terms and translational outcome descriptors. Studies were only included if they applied an AI or machine learning methodology to a defined clinical oncological task, reported a clearly specified performance evaluation, and involved human subjects or human-derived clinical data. Evidence quality was assessed using QUADAS-2, PROBAST, and Cochrane RoB 2. A five-tier translational readiness framework, grounded in the NIH T0-T4 translational spectrum and CONSORT-AI/SPIRIT-AI guidelines, was applied a priori to enable cross-cancer comparison. A rigorous distinction was maintained between diagnostic accuracy and clinical utility, defined as demonstrated impact on clinical decision-making or patient-centered outcomes.
+RESULTS: Across all 18 malignancies, AI development varied profoundly by cancer type. Breast cancer and prostate cancer (Tier 1) represent the most mature AI ecosystems, with multiple FDA-cleared tools for mammographic screening and digital pathology achieving prospective multi-institutional validation; however, randomized evidence demonstrating reduced cancer-specific mortality remains absent. Lung, hepatocellular, and melanoma AI (Tier 2) have achieved regulatory milestones but face documented performance disparities across demographic subgroups, including DermaSensor's 20.7% specificity in primary care settings and HCC model failures in non-viral disease etiologies. Colorectal, glioma, pancreatic, and ovarian cancers (Tier 3) exhibit technical maturity without clinical clarity: colorectal CADe systems increase adenoma detection but meta-analyses of 18,232 patients across 21 RCTs fail to demonstrate improvement in advanced neoplasia detection or cancer incidence reduction. A full study-level presentation of pooled estimates, confidence intervals, and heterogeneity statistics for each cited randomized evidence base across all cancer types would extend beyond the intended scope and format of this cross-cancer narrative review. Gastric, esophageal, cervical, bladder, head and neck, and endometrial cancers (Tier 4) demonstrate promising single-institutional or geographically restricted results without multi-institutional external validation, particularly notable for cervical cancer AI's transformative potential in low- and middle-income countries constrained by absent regulatory frameworks. Hematologic malignancies, sarcoma, and pediatric solid tumors (Tier 5) face structural barriers, workflow incompatibility in hematopathology, extreme rarity in sarcoma (>70 subtypes, <15,000 US cases annually), and irreducible ethical constraints in pediatric data governance, that cannot be resolved through algorithmic refinement alone.
+CONCLUSIONS: Oncological AI has not yet fulfilled its clinical promise. Across all five translational tiers, a single finding is consistent: diagnostic accuracy is not a surrogate for patient benefit. AI tools with high sensitivity and specificity have repeatedly failed to demonstrate equivalent reductions in cancer-specific mortality, overdiagnosis, or procedural harm under real-world outcome scrutiny. Simultaneously, documented performance disparities across races, ethnicity, disease etiology, and geographic setting reveal that current AI systems risk amplifying the very health inequities they are positioned to resolve. Bridging this translational gap requires three coordinated systemic shifts: regulatory frameworks mandating post-market outcome surveillance as a condition of clinical clearance; prospective trial designs measuring patient-centered endpoints rather than diagnostic concordance alone; and sustained infrastructure investment in federated data governance, demographically inclusive training datasets, and LMIC-accessible regulatory pathways. AI holds genuine potential to reduce cancer mortality on a global scale-but only if held to the evidentiary and equity standards that the stakes of oncological care demand.
+
+---
+7.
+
+Title:
+Perspectives and Challenges of Healthcare Professionals, Patients, and Caregivers Regarding Utilizing Antibiotics and Implementing Antibiotic Stewardship in Healthcare Facilities in Low- and Middle-Income Countries: A Systematic Review of Qualitative Studies.
+
+PMID:
+42192690
+
+Journal:
+Antibiotics (Basel, Switzerland) (2026/May)
+
+Abstract:
+Background: Antibiotic resistance (ABR) is a critical global health threat, disproportionately affecting low- and middle-income countries (LMICs) where systemic constraints, economic pressures and sociocultural factors drive inappropriate antibiotic use. While quantitative studies describe prevalence patterns, they fail to capture the underlying motivations and contextual barriers influencing prescribing and dispensing behaviors. This systematic review synthesizes qualitative evidence on the perceptions of healthcare professionals, patients, and caregivers regarding antibiotic use and explores the barriers and facilitators for implementing antibiotic stewardship programs in LMIC healthcare settings. Methods: We conducted a systematic review following PRISMA 2020 guidelines, based on a registered protocol in PROSPERO ID: CRD42024583749. Searches were performed in Medline, Embase, Cochrane Library, Web of Science, and Google Scholar for English-language studies published between 2014 and 2024. Qualitative and mixed-method studies examining stakeholder perspectives on antibiotic use and antibiotic stewardship implementation in LMICs were included. Studies were excluded if they focused exclusively on pediatric or neonatal populations, veterinary medicine, or quantitative outcomes without qualitative components. The data were analyzed using thematic analysis to identify and categorize codes and identify themes following methodological quality assessment of included studies using the Critical Appraisal Skills Programme Qualitative Studies Checklist by two independent reviewers. Results: Out of 2214 studies screened, a total of 119 studies from 33 LMICs were included, encompassing over 4000 participants across hospital, primary care, and community settings. Five interlinked themes emerged: (1) antibiotic use as a pragmatic response to diagnostic uncertainty and resource constraints; (2) financial and commercial drivers shaping prescribing and dispensing practices; (3) the disconnect between knowledge, sociocultural norms, and clinical behavior; (4) multi-level structural and professional barriers to antibiotic stewardship implementation; and (5) the critical role of health system vulnerabilities in perpetuating misuse. Conclusions: Inappropriate antibiotic use in LMICs reflects rational adaptations to systemic limitations rather than isolated knowledge gaps. Effective ABS strategies must address structural deficiencies, economic incentives, and sociocultural norms, while integrating context-specific interventions that strengthen health systems and engage all levels of care. The findings should, however, be evaluated in light of the geographic unevenness of the evidence base, the exclusion of non-English and gray literature, and lack of certainty assessments for synthesized themes.
+
+---
+8.
+
+Title:
+Effectiveness of interventions for anxiety and depression in children and young people: an umbrella review of meta-analyses.
+
+PMID:
+42189204
+
+Journal:
+European child & adolescent psychiatry (2026/May)
+
+Abstract:
+Anxiety and depression are the most common mental health conditions for children and young people (CYP), yet treatment recommendations vary. Through this umbrella review (meta-analysis of meta-analyses), we aimed to identify the most effective interventions for CYP with anxiety and depression. We searched five electronic databases (PubMed, Medline, PsycINFO, Web of Science, ASSIA) from 1 October 2017 to 1 October 2022, with an updated search in PubMed from October 2022 to February 2026. Eligible meta-analyses reported on interventions for CYP (≤ 18 years) with anxiety or depression and/or associated symptoms. We identified 57 meta-analyses (569 effect sizes); of these, 43 (391 effects) were included in statistical analyses. For anxiety, psychosocial (d = -0.51, 95% CI [-0.56, -0.46], p < 0.001) and pharmacological (d = -0.67, 95% CI [-0.87, -0.46], p < 0.001) interventions appeared equally effective (t(5.50) = 0.64, p = 0.546). For depression, physical (d = -0.49, CI [-0.57, -0.40], p < 0.001) interventions appeared most effective, followed by psychosocial (d = -0.35, CI [-0.39, -0.32], p < 0.001), then pharmacological (d = -0.17, CI [-0.20, -0.15], p < 0.001), (F(2,151) = 11.44, p < 0.001). Psychosocial interventions were also associated with better outcomes for anxiety than for depression (MD = -0.14, CI [-0.21, -0.06], t(314.30) = -3.45, p < 0.001). As physical interventions and interpersonal therapy were the specific therapies associated with the greatest improvements in CYP's depression, policymakers and practitioners should monitor emerging evidence in these areas when shaping treatment recommendations, and researchers should consider exploring their effectiveness for the treatment of anxiety. In general, future research should focus on understanding the effectiveness of the studied interventions in real clinical practice settings.
+
+---
+9.
+
+Title:
+Smoking cessation in adolescents and effective strategies: a position paper.
+
+PMID:
+42185937
+
+Journal:
+Italian journal of pediatrics (2026/May)
+
+Abstract:
+Adolescent nicotine dependence represents a public health challenge, driven by the rapid evolution of tobacco products and by the unique neurobiological vulnerability of the developing brain to nicotine exposure. Clinically significant dependence may emerge after brief and intermittent use, often before adolescents self-identify as users, underscoring the need for proactive and systematic screening across all nicotine and tobacco product modalities. This position paper reviews the evidence on effective cessation strategies for adolescents and provides practical recommendations for clinicians and health systems. Psychological interventions, including cognitive-behavioral therapy and shared decision-making, remain the cornerstone of treatment, given their alignment with the motivational and developmental characteristics of this age group. Educational approaches, particularly school-based and digital interventions, show promise in reducing initiation and supporting cessation among current users. Family engagement and school environment play a critical supporting role, provided that adolescent confidentiality is consistently respected. Pharmacological options are limited by the absence of approved medications for individuals under 18 years of age. However, off-label use of nicotine replacement therapy may be considered in cases of moderate-to-severe dependence under specialist oversight. Effective strategies require integrated care pathways linking primary pediatric care, school health services, and community resources, supported by policy measures that reduce product accessibility and appeal. This joint position paper, endorsed by the Italian Society of Pediatrics (SIP) and the Italian Pediatric Respiratory Society (SIMRI), provides evidence-based recommendations for adolescent smoking cessation, encompassing educational and clinical interventions.
+
+---
+10.
+
+Title:
+Securing Somalia's health: leveraging sin tax revenues to drive universal health coverage and financial protection for lifesaving care in Somalia's health system-scoping review.
+
+PMID:
+42184057
+
+Journal:
+Health economics review (2026/May)
+
+Abstract:
+INTRODUCTION: Global non-communicable diseases account for 74% of deaths worldwide, causing 15 million premature deaths each year, and the WHO warns this could rise to 55 million by 2030. Universal Health Coverage (UHC) is therefore central to SDG 3.8, aiming to ensure access to essential services without financial hardship. In Somalia, where tax revenue is low, increasing sin-tax rates could boost fiscal capacity for health initiatives. This study aims to explore how sin-tax revenues can serve as a sustainable financial mechanism to address Somalia's health-financing challenges, promote UHC and enhance financial protection while examining global best practices and the political economy of implementation in fragile states.
+METHODS: This review followed the PRISMA-ScR framework for scoping reviews and synthesised evidence from academic and grey-literature sources on sin-tax (health taxes) revenues, health financing and UHC in fragile states-particularly Somalia. An initial 194 records were identified; after screening, 92 studies met the inclusion criteria for full-text analysis.
+RESULTS: In Fiscal Year 2024 Somalia collected US $ 369.35 million in revenue, a 12% rise from 2023; the additional US $ 40 million equals 0.35% of 2024 GDP. Estimates show that sin-tax instruments on tobacco and alcohol yield 0.01%-0.5% of GDP in fragile states. Sin-taxes in Somalia such as the khat tax in Somaliland, which generates about US $ 2 million annually demonstrate tangible scope to expand public-health financing while curbing harmful consumption.
+CONCLUSION: Somalia's path to UHC remains constrained by reliance on external aid, out-of-pocket spending and a narrow domestic tax base. Well-designed sin-tax instruments on tobacco, alcohol, sugary drinks and khat especially where revenues are partially earmarked (hypothecated) for priority health services offer a dual opportunity: they curb risk-laden consumption and create predictable revenue that can be earmarked for essential services such as primary care, maternal-and-child health and NCD prevention. Evidence from peer countries shows that high rates, automatic inflation adjustment and robust enforcement are critical for maximizing both health gains and fiscal space.
+
+---
+11.
+
+Title:
+Lipid clinics worldwide: harmonization and guidance on how to optimally organize and fund. European Atherosclerosis Society consensus statement across 55 countries and more than 500 lipid clinics.
+
+PMID:
+42178198
+
+Journal:
+Atherosclerosis (2026/May)
+
+Abstract:
+Because one in three of all individuals die from atherosclerotic cardiovascular disease (ASCVD), prevention of ASCVD is key to public health worldwide. Lipid clinics provide specialized diagnostic assessment, lifestyle management, and evidence-based lipid-lowering treatment to prevent ASCVD and acute pancreatitis in high-risk individuals. This includes individuals with familial hypercholesterolemia and/or markedly increased lipoprotein(a), statin intolerance, refractory or difficult-to-control low-density lipoprotein (LDL) cholesterol, severe hypertriglyceridaemia, and other rare or complex lipid disorders. Such specialized care not only benefits the individual patients and their families but facilitates dissemination of best practices in lipid disorder management to healthcare professionals in individual nations. Despite this, there is a lack of guidance on standards and metrics needed to establish a well-harmonized national lipid clinic network in most countries capable of offering comprehensive care. This consensus paper from the European Atherosclerosis Society Lipid Clinic Network aims to meet this unmet clinical need. We provide recommendations to enhance education and training on lipid disorders and to harmonize lipid clinics at both national and international levels. Furthermore, we provide guidance on optimal staffing structures and development of registries to improve diagnosis and management of lipid disorders. Finally, we offer recommendations to national and regional policymakers on funding of lipid clinics, with the long-term goal of reducing the overall societal burden and costs of cardiovascular and other lipid-related diseases.
+
+---
+12.
+
+Title:
+Temporomandibular disorders in children and adolescents: an underexplored condition in need of developmentally informed diagnostic guidance.
+
+PMID:
+42169539
+
+Journal:
+Pain management (2026/May)
+
+Abstract:
+INTRODUCTION: Temporomandibular disorders (TMD) are increasingly recognized in children and adolescents, yet their diagnosis and clinical management remain less clearly defined than in adult populations. Despite evidence that TMD symptoms often emerge during critical periods of craniofacial growth and that TMD-related pain in adolescence substantially increases the risk of persistence into adulthood, pediatric TMD remains underrepresented in research, clinical guidelines, and professional education.
+AREAS COVERED: The review synthesizes emerging consensus on age-appropriate screening tools and diagnostic frameworks based on adaptations of the Diagnostic Criteria for Temporomandibular Disorders (DC/TMD) for children and adolescents; highlights the importance of interdisciplinary, biopsychosocial approaches for early identification, prognosis, and management of pediatric TMD; and identifies key gaps in epidemiology, diagnostic validation, and longitudinal outcomes. When pediatric-specific evidence is available, this review summarizes practical approaches to screening, clinical examination, and psychosocial assessment that are feasible in primary care and pediatric dental settings. Gaps in the validation of diagnostic tools and thresholds across developmental stages are identified as pressing research priorities, as they directly influence epidemiological estimates, clinical decision-making, and care pathways.
+Temporomandibular disorders (TMD) are conditions that affect the jaw joint and the muscles used for chewing. They can cause pain in the jaw, face, or temples, as well as difficulty opening or moving the mouth. Although TMD is often thought of as an adult problem, it can also occur in children and teenagers, especially during growth and development. Pain that starts in adolescence may continue into adulthood if it is not recognized and managed early. This review looks at what is currently known about TMD in children and adolescents and which gaps remain. It explains how dentists and healthcare providers can better identify these conditions using adapted versions of adult diagnostic tools. It also discusses how TMD should be assessed not only by looking at physical symptoms, but also by considering emotional and social factors that can influence pain. The review highlights that early detection is important, but also that there is still limited research on how to best diagnose and track TMD in younger patients over time. There is also uncertainty about the most appropriate criteria to use at different ages.
+
+---
+13.
+
+Title:
+Updated trends in the global prevalence and burden of mental disorders, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.
+
+PMID:
+42167272
+
+Journal:
+Lancet (London, England) (2026/May)
+
+Abstract:
+BACKGROUND: The 2023 iteration of the Global Burden of Diseases, Injuries, and Risk Factors Study (GBD) estimated prevalence, incidence, and health burden for 375 diseases and injuries, including 12 mental disorders. We assess past, current, and emerging trends in the prevalence and burden of mental disorders across sexes and age groups, for 21 regions, 204 countries and territories, and by Socio-demographic Index (SDI) quintile, from 1990 to 2023.
+METHODS: Mental disorders included in GBD 2023 were anxiety disorders, major depressive disorder, dysthymia, bipolar disorder, schizophrenia, autism spectrum disorders, conduct disorder, attention-deficit hyperactivity disorder, anorexia nervosa, bulimia nervosa, idiopathic developmental intellectual disability, and a residual category of other mental disorders. A literature review identified epidemiological data for each disorder. These were analysed via a Bayesian meta-regression to estimate prevalence by disorder, sex, age, location, and year. Disorder-specific prevalence was multiplied by disability weights representing the severity of health loss associated with each disorder to estimate years lived with disability (YLDs). Deaths due to anorexia nervosa were assessed with a Cause of Death Ensemble modelling strategy to estimate deaths by sex, age, location, and year, and then multiplied by the standard life expectancy at age of death to estimate years of life lost (YLLs). YLDs equalled disability-adjusted life-years (DALYs) for all mental disorders except anorexia nervosa (the only mental disorder considered as an underlying cause of death in GBD), for which DALYs represented the sum of YLDs and YLLs. We presented prevalence, deaths, YLDs, YLLs, and DALYs as counts, age-specific rates per 100 000 population, and age-standardised rates per 100 000 population.
+FINDINGS: We estimated 1·17 billion (95% uncertainty interval 1·06-1·31) prevalent cases of mental disorders globally in 2023, equivalent to an age-standardised prevalence rate of 14 210·7 cases (12 849·5-15 940·1) per 100 000 population. These estimates represented a 95·5% (75·0-121·2) increase in prevalent cases and 24·2% (11·4-41·4) increase in age-standardised prevalence rate between 1990 and 2023. All mental disorders showed increases in prevalent cases between 1990 and 2023, while notable increases were seen in age-standardised prevalence rates for anxiety disorders, major depressive disorder, dysthymia, anorexia nervosa, bulimia nervosa, schizophrenia, and conduct disorder. There were an estimated 171 million (127-228) DALYs due to mental disorders globally across sex and age in 2023, equivalent to an age-standardised DALY rate of 2070·5 DALYs (1519·1-2750·5) per 100 000 population. Mental disorders contributed to 6·1% (4·8-7·6) of all-cause DALYs in 2023, making them the fifth leading cause of global DALYs (up from 12th in 1990). DALYs were almost entirely composed of YLDs. Mental disorders were the leading cause of YLDs in 2023 (up from second in 1990), explaining 17·3% (14·8-20·6) of all-cause global YLDs. Leading causes of mental disorder DALYs were anxiety disorders (ranked 11th among the 304 diseases and injuries at Level 4 of the GBD cause hierarchy), major depressive disorder (15th), and schizophrenia (41st). Globally in 2023, mental disorder age-standardised DALY rates were higher among females (2239·6 [1643·7-3014·1] per 100 000) than among males (1900·2 [1399·8-2510·8] per 100 000), and peaked in the 15-19 years age group (2617·3 [1850·6-3696·8] per 100 000). All locations showed increased mental disorder DALY rates in 2023 compared with 1990, ranging across countries and territories from 1302·4 (952·7-1683·7) per 100 000 in Viet Nam to 3555·8 (2661·9-4715·0) per 100 000 in the Netherlands. Across SDI quintiles, DALY rates ranged from 1853·0 (1352·1-2469·3) per 100 000 for middle SDI to 2184·1 (1606·1-2890·3) per 100 000 for high SDI.
+INTERPRETATION: A significant health burden was imposed by mental disorders in all countries and territories in 2023, irrespective of the health resources available. In some instances, this burden has increased over time and is unevenly distributed across populations. Stronger surveillance systems, particularly in low-income and middle-income countries, are required. Additionally, we need more coordinated and inclusive policies to reduce the burden through early treatment and prevention, tailored to sex and age differences across locations. Responding to the mental health needs of our global population, especially those most vulnerable, is an obligation, not a choice.
+FUNDING: Gates Foundation, Queensland Health, and University of Queensland.
+
+---
+14.
+
+Title:
+Microvascular ultrasound imaging of the neonatal brain: a scoping review.
+
+PMID:
+42162396
+
+Journal:
+European journal of pediatrics (2026/May)
+
+Abstract:
+Microvascular changes in the developing neonatal brain often precede clinically detectable injury. Advanced ultrasound techniques such as microvascular Doppler (MVD), contrast-enhanced ultrasound (CEUS), and super-resolution ultrasound (SRUS) offer the potential for bedside assessment of microvascular flow and perfusion without sedation, organotoxic contrast agents, or ionising radiation. Using Joanna Briggs Institute methodology and PRISMA-ScR guidance, MEDLINE, EMBASE, Web of Science, trial registries, and grey literature were searched for original in vivo neonatal studies reporting microvascular or perfusion data using MVD, CEUS, or SRUS-based approaches. Extracted data included study metadata, population characteristics, ultrasound systems and protocols, and key feasibility, safety, and performance outcomes. Of 3028 screened records, 23 studies met the inclusion criteria (1 SRUS, 8 CEUS, 14 MVD). Using SonoVue/Lumason microbubbles, the CEUS studies reported 163 neonatal brain scans in 91 neonates (25+3 to 41+4 weeks' gestation). A total of 263 infants were studied across 14 MVD studies. All studies demonstrated safe ultrasound techniques that can be used to assess brain perfusion and cerebrovascular pathologies in preterm and term neonates, particularly in understanding changes in cerebral microvasculature, mainly in infants with hypoxic-ischaemic encephalopathy (HIE), neurovascular, and congenital cardiac conditions. Conclusions: Advanced ultrasound techniques show promise as adjuncts in neonatal neuroimaging, enabling assessment of perfusion and microvascular haemodynamics. Future clinical translation would require standardised protocols, normative datasets, longitudinal outcome linkage, governance and training standards, and diagnostic effectiveness.
+
+---
+15.
+
+Title:
+Systematic mapping of rare genetic disease studies using UK primary care electronic health records.
+
+PMID:
+42162269
+
+Journal:
+European journal of human genetics : EJHG (2026/May)
+
+Abstract:
+Rare disease studies often rely on small, selected cohorts, are resource-intensive and difficult to scale. UK primary care electronic health record (EHR) databases provide population-based, longitudinal data, but their use for rare genetic disease research has not been systematically examined. Through systematic mapping of publications from five UK primary care EHR databases (CPRD, OPCRD, QResearch, SAIL Databank and THIN), we found that only 0.82% (47 of 5754) of studies reported on rare genetic diseases. Of these, 77% (36 of 47) linked to external datasets. Study designs included case-control, cross-sectional and cohort studies. Cohort designs predominated, often with individual-level matched comparators. Case ascertainment was primarily based on routinely recorded diagnostic codes. Most studies examined a single disease, collectively encompassing 23 conditions. There was a skew towards multisystem, neurological, autosomal dominant and single-gene disorders, with relatively higher population frequencies and therapeutic tractability. Rare disease sample sizes ranged from 21 to 5059 (median 392). Important insights were revealed into phenotypic variation, phenotype expansion, complications and management outcomes, including findings not readily identifiable in traditional studies. Examples include higher prevalence of hereditary haemorrhagic telangiectasia in females, consistent with sex-modified phenotypic expression; non-skeletal complications and premature mortality in X-linked hypophosphataemia; and elevated malignancy risk in myotonic dystrophy type 1 with type 2 diabetes, potentially attenuated by metformin. In conclusion, UK primary care EHR databases are markedly underutilised for rare genetic diseases. For many conditions, limited availability of diagnostic codes is a constraint. However, their demonstrated capacity, scale, scope and population representativeness support wider use.
+
+---
+16.
+
+Title:
+Cystic fibrosis related diabetes - viewpoints on three research areas presented at the 20th ECFS basic science conference.
+
+PMID:
+42156290
+
+Journal:
+Journal of cystic fibrosis : official journal of the European Cystic Fibrosis Society (2026/May)
+
+Abstract:
+Cystic fibrosis related diabetes (CFRD) is relevant for all individuals with cystic fibrosis. Those who are yet to develop the condition require regular screening, and those who have already received a diagnosis need appropriate treatment to limit the potential impact on their clinical condition. CFRD is distinct from type 1 and type 2 diabetes but has overlapping pathophysiology and genetic risk factors. The prevalence of CFRD is expected to increase with an ageing CF population. The impact of highly effective CFTR modulators on CFRD is unknown, but it is possible that sufficiently early treatment could delay or prevent development of CFRD. However, as studies show limited change in incidence and complexity of CFRD in the post modulator era, it is vital to accelerate research that will have direct patient benefit for the growing population of people living with or who will develop CFRD. In this review we highlight three emerging topics presented at the 20th ECFS Basic Science conference: (i) genetic and non-genetic risk factors for CFRD and their potential to inform on CFRD pathophysiology and to improve clinical risk prediction in CFRD, (ii) role of optimising dietary intake and body composition in the clinical management of CFRD, and (iii) applying advances from type 1 diabetes research including stem cells and organ on chip modelling to CFRD. Collectively, these topics outline emerging directions for CFRD research and clinical care.
+
+---
+17.
+
+Title:
+Implementing the commitments of the World Health Assembly kidney health resolution: a key opportunity to improve health for millions.
+
+PMID:
+42155504
+
+Journal:
+Lancet (London, England) (2026/May)
+
+Abstract:
+Chronic kidney disease affects 850 million people worldwide and places a disproportionate burden on low-income and middle-income countries where access to timely diagnosis, treatment, and life-sustaining kidney replacement therapy (KRT) is restricted. In May, 2025, the 78th World Health Assembly adopted a resolution on kidney health that called on all member states to integrate kidney care into national strategies; enhance prevention, early detection, and timely management; strengthen primary care; expand access to KRT; and enhance capacity for measuring burden, progress, and return on investment. These ambitious commitments were followed by the Political Declaration of the UN High-Level Meeting on NCDs and Mental Health. Capitalising on the opportunities created by these two initiatives will depend on governance, political commitment, and accountability, along with technical tools, appropriate funding, and mechanisms to measure progress. This Health Policy offers a practical framework to help governments and partners operationalise the commitments from the resolution and political declaration, drawing on lessons from other non-communicable disease programmes and on countries' experiences with kidney health policy.
+
+---
+18.
+
+Title:
+Misclassification of type 1 diabetes as type 2 diabetes in adults: practical guidance for screening and diagnosis for primary care providers.
+
+PMID:
+42152488
+
+Journal:
+Postgraduate medicine (2026/May)
+
+Abstract:
+Although type 2 diabetes (T2D) is more common in adults than type 1 diabetes (T1D), over half of individuals with T1D are diagnosed as adults. The onset of T1D in adulthood leads to a high prevalence of misclassification of diabetes, resulting in delayed or inadequate treatment and increased risk of complications. This review uses case studies to highlight clinical features that can aid in identifying adults who may have T1D, including family history of T1D, family or personal history of other autoimmune disorders, lack of metabolic syndrome features, and poor response to non-insulin diabetes medications. Practical recommendations for confirmatory testing are described, including autoantibody and C-peptide testing, while noting important limitations of these tests, to support clinicians in accurately classifying T1D in adults.
+There are different classifications of diabetes including type 1 diabetes (T1D) and type 2 diabetes (T2D). T2D is a metabolic disease and is common in adults. T1D is an autoimmune disease, where the body’s defense system mistakenly attacks the cells that make and release insulin. While T1D is believed to be more common in children and adolescents, it can develop in adulthood. As a result, adults with T1D are often mistakenly classified and treated as having T2D. This misclassification can lead to poor management of blood glucose and may increase the risk for diabetic ketoacidosis, a life-threatening complication. There are certain clues healthcare professionals can use to determine that an adult with diabetes might have T1D. For example, the person may not have features associated with insulin resistance such as excess abdominal fat. The person might have a family member with T1D, or someone in their family might have another autoimmune disease (such as celiac disease or thyroid disease). Medications for T2D may not address the person’s blood glucose well enough, and the person typically requires treatment with insulin within a few years after their diabetes is diagnosed. When healthcare professionals identify any of these discrepancies, they can order blood tests for autoantibodies that will provide additional information about whether the person has T1D. The healthcare professional may not be familiar with autoantibody testing for T1D. However, correct classification of the type of diabetes enables the person to receive the best care possible, which will likely improve their long-term health.
+
+---
+19.
+
+Title:
 Impact of travel time to health facilities on perinatal outcomes: a systematic review with narrative synthesis and meta-analysis.
 
 PMID:
@@ -30,22 +313,7 @@ CONCLUSIONS: We found that shorter journeys were associated with better perinata
 REGISTRATION: PROSPERO: CRD42023460423.
 
 ---
-2.
-
-Title:
-Strengthening the quality and safety of community mental health care for children and young people: a critical review of innovations from low- and middle-income countries.
-
-PMID:
-42136936
-
-Journal:
-Frontiers in health services (2026)
-
-Abstract:
-Improving the quality and safety of community mental health care for children and young people (CYP) is a global public health priority. Mental health problems affect 10%-20% of CYP globally. While many high and low- and middle-income countries (LMICs) face significant structural barriers to accessing safe, person-centred mental health services, there have been innovative developments in service delivery emerging from low resource settings that are pertinent to address quality and safety of CYP mental health services globally. In this paper, we critically review emerging evidence from these contexts to highlight best practices and innovations. We focus on six key domains: task-sharing with non-specialists including peer and near-peer approaches; socio-economic interventions; alternative models of access; advances in routine outcome measurement; developing quality standards; and digital interventions. Through three case studies from Malaysia, Rwanda, and South Africa and other contexts within Sub Saharan Africa and high-income countries (HICs), we demonstrate how locally responsive, contextually appropriate solutions can strengthen mental health services in community settings. We argue for reciprocal co-production in global mental health, positioning LMICs as sources of innovation rather than passive recipients of external expertise. We conclude by discussing how these innovations offer transferable lessons for all contexts and identifying pathways to support their sustainability and scalability.
-
----
-3.
+20.
 
 Title:
 Aging with Thalassemia and Sickle Cell Disease: A Gerontological Model of Accelerated Multimorbidity and Function-Centered Care Beyond Midlife.
@@ -62,7 +330,7 @@ CONTENT: This expert opinion narrative review synthesizes available evidence on 
 CONCLUSIONS: Three adjustments are necessary in adults beyond midlife: monitoring should prioritize early detection of treatable complications and emerging functional impairment rather than only documenting cumulative organ damage; therapeutic decisions should weigh treatment benefit, treatment burden, comorbidity burden, and goals of care rather than defaulting to pediatric-era protocols; and care systems should embed shared decision-making, palliative principles, and multidisciplinary coordination within primary care networks, with specialist hemoglobinopathy centers functioning as disease-specific hubs rather than stand-alone primary care providers.
 
 ---
-4.
+21.
 
 Title:
 Epidemiology of Obesity During Pregnancy in Europe: A Systematic Review.
@@ -80,7 +348,7 @@ RESULTS: In total, 99 studies were included. Over three quarters of studies (N�
 CONCLUSION: This review highlights consistent increases in obesity during pregnancy among European populations with significant implications for patients and health systems.
 
 ---
-5.
+22.
 
 Title:
 Central nervous system complications after allogeneic haematopoietic cell transplantation: best practice recommendations from the EBMT practice harmonisation and guidelines committee on epidemiology, outcome and neuroimaging.
@@ -95,7 +363,7 @@ Abstract:
 CNS complications (CNSC) may occur in a significant proportion of patients after allogeneic haematopoietic cell transplantation (allo-HCT). They can be differentiated into infectious and non-infectious CNSC, such as vascular pathologies (e.g., bleeding, stroke), drug-related abnormalities, and CNS relapse of the underlying malignancy. Initiation of prompt and adequate diagnostics - mainly neuroimaging and cerebrospinal fluid (CSF) analyses - and treatment are crucial to improve the prognosis. Here, we report on the epidemiology, outcome, and neuroimaging of CNSC after allo-HCT. We also provide an overview of the special considerations for children with these complications. These findings and recommendations were developed during a multidisciplinary EBMT harmonisation workshop. Novel diagnostics, such as CSF next-generation sequencing (NGS) and special MRI sequences, are emerging and may improve the accuracy of diagnosis for selected CNSC. The prognosis of post-transplant CNSC is heterogeneous, with drug-related CNSC mainly having a favourable prognosis, while the outcome of CNS bleeding, CNS leukaemia, and cerebral fungal disease is still frequently dismal. A high level of awareness is crucial in the clinical routine - especially in distinct subgroups such as paediatrics - besides the development of novel algorithms, diagnostics, and treatment approaches to improve the outcome.
 
 ---
-6.
+23.
 
 Title:
 A lifecycle governance and learning health system framework for trustworthy, generalizable, and sustainable human-ai partnership in clinical practice: Lessons from the asthma-guidance and prediction system (A-GPS).
@@ -110,7 +378,7 @@ Abstract:
 The integration of artificial intelligence (AI) into clinical decision support (CDS) holds promise for proactive, personalized, and precision care. However, current understanding of how to establish trustworthy human-AI partnerships is in its infancy, despite its critical importance for implementing AI in healthcare. We present the Asthma-Guidance and Prediction System (A-GPS) as a case study of a practice-integrated AI platform that demonstrates how trustworthy, generalizable and sustainable AI can be developed, evaluated, and implemented in real-world asthma care. We describe major challenges and solutions based on our real-world experience during the process and offer the practical framework, approaches, tools and workflow for implementing trustworthy, generalizable and sustainable AI in frontline practices. While A-GPS is an asthma-specific AI tool, it was built on top of a disease-agnostic electronic health record (EHR)-integrated clinical decision support (CDS) platform based on an Application Programming Interface (API)‑first backbone of reusable services. It was designed to reduce chart-review/processing burden and enable proactive, guideline-concordant asthma management by synthesizing fragmented longitudinal multimodal data into a clinical decision-relevant summary at the point of care. A-GPS platform integrates multiple natural language processing (NLP) algorithms to leverage free texts info in EHRs, machine learning model to offer risk stratification, and remote patient monitoring (RPM) approaches to capture real-time data from patients, enabling remote asthma (chronic disease) care. The platform has been deployed via Substitutable Medical Applications and Reusable Technologies-on-Fast Healthcare Interoperability Resources (SMART-on-FHIR) to ensure in-workflow delivery and maintainable governance making it flexible and interoperable across different EHRs systems and different chronic diseases. The translational maturity of A-GPS as an AI-powered CDS tool for pediatric asthma was demonstrated and sustained through engagement and co-design with diverse community and care team partners, including adult and pediatric Community Advisory Board, pediatric patients and their parents, clinicians (primary care providers and specialists), nurses, schedulers, as well as bioethicists and regulatory experts. Moreover, the tool was evaluated in two randomized clinical trial (RCT)s. The first trial showed a 67% reduction in clinicians' EHR review time, high clinician satisfaction, potential healthcare cost savings, fairness in model performance, and no adverse events. Trustworthiness was further assessed and supported through fairness evaluation by participant socioeconomic status (SES) using the HOUsing-based SocioEconomic Status (HOUSES) index, human-centered user interface/user experience (UI/UX) analysis, clinician workflow optimization, transparent governance practices, and best practices for regulatory science. The A-GPS experience operationalizes a reproducible, lifecycle-governed framework for generating decision-grade evidence on safety, effectiveness, usability, fairness, and workflow integration, directly addressing the translational gap between AI model development and trustworthy, sustainable deployment in real-world clinical environments. These efforts led to national recognitions, including invitation to the inaugural American Medical Informatics Association (AMIA) AI Showcase, and AI evaluation use case for a national health AI coalition. The second RCT evaluated the feasibility of integrating a remote patient monitoring (RPM) device (home spirometry) into the A-GPS platform, with a published RCT protocol that serves as a framework for RCT for evaluating AI models under the Standard Protocol Items: Recommendations for Interventional Trials (SPIRIT) guidelines for RCTs that evaluate AI tools, offering the practical framework, approaches, tools, and workflow for trustworthy, generalizable and sustainable AI tools in asthma care. This work illustrates how team science, community engagement, implementation science, and learning health system principles can be operationalized to establish a human-AI partnership model to advance translational science and clinical care, with the goal of improving health for all.
 
 ---
-7.
+24.
 
 Title:
 Paediatric palliative care and paediatric euthanasia: clarifying a moral continuum.
@@ -125,7 +393,24 @@ Abstract:
 This Viewpoint explores the complex relationship between two approaches to end-of-life care for children-paediatric palliative care and paediatric euthanasia. Both approaches share the goal of alleviating suffering in children with life-limiting conditions. They differ about which interventions are permissible or forbidden in pursuit of that goal. Palliative care permits the withdrawal of life-sustaining treatments and even the administration of medications that might hasten death, as long as the goal of administering the medications is to relieve suffering and not to hasten death. With euthanasia, doctors and parents agree that palliative care interventions cannot relieve suffering, and so it is permissible to give medications with the goal of hastening death. Different countries take different approaches to these practices. In some countries, it is permissible to withdraw or withhold all life-sustaining treatments and to give sedating drugs that might suppress respiration, but it is impermissible to give lethal injections. The countries that permit withholding, withdrawing, and sedation typically rely on the doctrine of double effect: treatments intended to relieve suffering might be ethically permissible even if they foreseeably hasten death, provided that death is not the intended aim. In others, such lethal injections are permissible. In these countries, policies rely on considerations of the child's best interest and specifically on an abhorrence of pain and suffering. We argue that these frameworks express overlapping values of compassion, proportionality, and respect for the child's interests. Recognising this overlap allows paediatric palliative care and euthanasia to be understood not as moral opposites but as points along a continuum of ethically motivated responses to suffering at the end of life.
 
 ---
-8.
+25.
+
+Title:
+Extreme temperature and airway dehydration: current understanding and integrative insights into respiratory vulnerability.
+
+PMID:
+42126453
+
+Journal:
+Expert review of respiratory medicine (2026/May)
+
+Abstract:
+INTRODUCTION: Climate change has significantly increased the frequency and intensity of extreme temperature events, posing growing threats to respiratory health. Among the underlying mechanisms, airway dehydration is a critical yet underrecognized pathway that disrupts the airway surface liquid (ASL), which is essential for mucociliary clearance, epithelial integrity, and immune defense.
+AREAS COVERED: This article examines evidence linking airway dehydration to respiratory disease during temperature extremes. We discuss how hot, dry air and cold, low-humidity conditions disrupt airway hydration balance, leading to impaired mucociliary clearance and increased susceptibility to infection and inflammation. The review summarizes the impacts of airway dehydration on vulnerable populations, including individuals with pre-existing respiratory conditions (asthma, allergic rhinitis, chronic obstructive pulmonary disease (COPD), and cystic fibrosis), children, older adults, outdoor workers, and socioeconomically disadvantaged groups.
+EXPERT OPINION: Airway dehydration represents a unifying mechanism linking climate extremes to respiratory vulnerability but remains underrepresented in clinical practice and public health strategies. We advocate for greater recognition of airway hydration in disease prevention, development of practical measurement tools, and targeted interventions for at-risk populations. Emphasizing airway dehydration as a key mediator offers opportunities to improve clinical management and develop effective climate adaptation strategies for respiratory health protection.
+
+---
+26.
 
 Title:
 Diagnosis and Management of Eating Disorders in Adolescents and Young Adults.
@@ -140,7 +425,7 @@ Abstract:
 Eating disorders (EDs) are characterized by persistent disturbance of eating behavior that impairs health or psychosocial functioning. ED can persist for decades resulting in substantial burdens and psychosocial impairments. An increased prevalence of anorexia nervosa was noted during the COVID-19 pandemic. Despite a worsening trend in risky eating behavior among US college students, only 22% of colleges report offering year-round ED screening opportunities with 45% offering ED screenings once per year or semester. Furthermore, 20% or less of those who screened positive, received treatment.
 
 ---
-9.
+27.
 
 Title:
 Nonpharmacologic Management of Insomnia Disorder in Primary Care.
@@ -155,7 +440,7 @@ Abstract:
 Nonpharmacological treatments for insomnia disorder, particularly cognitive behavioral therapy for insomnia (CBT-I), are increasingly recognized as first-line interventions due to their long-term efficacy and safety. Unlike medications, CBT-I addresses the behavioral and cognitive patterns that perpetuate sleep disturbances, offering durable improvements without risk of dependence. Delivery formats include in-person, telehealth, and digital platforms, expanding access across diverse populations. Adaptations for children, older adults, and caregivers have shown promising results. Emerging innovations, such as AI-driven personalization and therapist-guided digital CBT-I, are shaping the future of sleep care, making evidence-based treatment more accessible, scalable, and integrated into routine health care.
 
 ---
-10.
+28.
 
 Title:
 Health-related quality of life instruments for older persons with osteoporosis: a WHO-BOHEG systematic review of measurement properties for use in clinical trials and routine practice.
@@ -177,7 +462,7 @@ RESULTS: Forty-three studies reported the development and/or validation of nine 
 CONCLUSIONS: The evidence base supports purpose-driven selection of osteoporosis-specific HRQoL instruments rather than a single preferred instrument. Across included studies, ECOS-16 shows the most consistently supported measurement properties in older adults for longitudinal assessment, although important evidence gaps remain (notably measurement error and cross-cultural validity). When brevity is the primary feasibility constraint in routine care, the Mini-OQLQ may be considered; however, evidence for responsiveness is limited.
 
 ---
-11.
+29.
 
 Title:
 Mapping the evidence on stillbirth prevention across the reproductive continuum: an umbrella review.
@@ -199,7 +484,7 @@ CONCLUSIONS: This umbrella review identifies a range of interventions with evide
 PROSPERO REGISTRATION NUMBER: CRD42024531100.
 
 ---
-12.
+30.
 
 Title:
 Perinatal outcomes following single intrauterine death in monochorionic twin pregnancies complicated by twin anemia polycythemia sequence: Systematic review and meta-analysis.
@@ -208,7 +493,7 @@ PMID:
 42106586
 
 Journal:
-Acta obstetricia et gynecologica Scandinavica (2026/May)
+Acta obstetricia et gynecologica Scandinavica (2026/Jun)
 
 Abstract:
 INTRODUCTION: Most of the studies reporting the outcome of the surviving twin after single intra-uterine fetal death (sIUFD) focused on uncomplicated pregnancies or those affected by twin-to-twin transfusion syndrome, while there is a paucity of data for those complicated by twin anemia polycythemia sequence (TAPS). The aim of this systematic review was to report perinatal outcomes in monochorionic diamniotic (MCDA) twin pregnancies complicated by TAPS after sIUFD, according to gestational age at fetal loss and the presence of pregnancy-related comorbidities.
@@ -217,7 +502,7 @@ RESULTS: Eleven studies (83 twin pregnancies affected by TAPS, either spontaneou
 CONCLUSIONS: The occurrence of co-twin death after single IUFD in pregnancies complicated by TAPS appears low, while cerebral abnormalities detected either pre- or post-natally occur in 10-15% of cases. Further evidence is needed to elucidate the long-term neurological and neurodevelopmental risk of these children.
 
 ---
-13.
+31.
 
 Title:
 Pneumococcal vaccination in Belgian adults: a practical translation of the 2025 Superior Health Council guidelines.
@@ -235,7 +520,7 @@ KEY RECOMMENDATIONS: A single-dose conjugate vaccine approach now replaces all p
 CONCLUSION: One conjugate vaccine dose, selected by age, provides maximal pneumococcal protection. The challenge is implementation to increase vaccination coverage: every clinical encounter with an at-risk adult is a vaccination opportunity.
 
 ---
-14.
+32.
 
 Title:
 Perinatal interventions for parents with exposure to adverse childhood experiences: A narrative review of suitability for implementation in primary care.
@@ -250,7 +535,7 @@ Abstract:
 Children of parents exposed to adverse childhood experiences (ACEs) face elevated risk of experiencing biopsychosocial challenges. Primary care screening for parental ACEs is increasing, and routine primary care touchpoints may reach parents with exposure to ACEs during the critical perinatal period. This review seeks to 1) evaluate existing perinatal interventions-including those not designed for primary care-for suitability for primary care implementation and 2) identify implementation factors missing from existing interventions that may enhance their implementation in primary care. The PubMed database was searched for articles in English reporting on randomized controlled trials of perinatal interventions among parents with exposure to ACEs. Fourteen articles detailing 14 unique interventions were included in the qualitative synthesis. Data were extracted on intervention characteristics identified by implementation research as relevant to primary care: evidence of benefit, applicability and relevance, complexity, clarity, practicality and utility, costs, and adaptability. Ten interventions were found to be effective for parents with greater exposure to ACEs; however, the variability within the interventions and relevant settings suggests nuanced decision-making is required to match interventions to settings. The current review offers primary care providers a framework for matching and adapting such interventions.
 
 ---
-15.
+33.
 
 Title:
 Symptom-guided approach to central nervous system complications in allogeneic hematopoietic cell transplant recipients: Best practice recommendations from the EBMT Practice Harmonisation and Guidelines committee.
@@ -265,7 +550,7 @@ Abstract:
 Central nervous system complications (CNSC) after allogeneic hematopoietic cell transplantation (allo-HCT) are relatively common and may have a major impact on patients´ outcomes. Neurological symptoms may occur at any point during the post-transplant course, although they are more common early after HCT, with a wide range of possible presentations. As many of CNSC symptoms are non-specific, the initial assessment is often difficult, and early decisions regarding the diagnostic work-up can influence the identification of the underlying cause. Blood tests, neuroimaging and cerebrospinal fluid (CSF) analyses are particularly important, as they frequently provide the first clues that help narrow the very wide differential diagnoses. In view of these challenges, an international EBMT working group composed of haematologists, infectious disease specialists, neurologists, a neuroradiologist, and a microbiologist developed symptom-based recommendations for the early evaluation of CNSC after allo-HCT. The work summarizes key aspects of the clinical presentation and outlines practical steps for the initial diagnostic approach. These recommendations are intended to support haematologists, who are usually the first to assess these patients, in promptly recognizing CNSC so to start timely appropriate management.
 
 ---
-16.
+34.
 
 Title:
 The influence of existing interventions on sleep of youth with attention-deficit/hyperactivity disorder: A meta-analysis of randomized controlled trials.
@@ -280,7 +565,7 @@ Abstract:
 Sleep problems are commonly observed among children and adolescents with attention-deficit/hyperactivity disorders (ADHD). We completed a literature search by 2025-6-9 on EBSCOhost, PubMed, Web of Science, and Scopus to quantify the effects of any existing interventions on sleep outcomes among children/adolescents with ADHD. From a pool of 4081 studies, 40 randomized controlled trials (RCTs; 75% with low-risk-of-bias, 4361 participants and 65.2% attended interventions) were eligible for a pairwise meta-analysis (PWMA). Of these, 28 RCTs were included in a Bayesian network meta-analysis (NMA). Results were yielded from both mean change and post-test measurement of the outcomes if available. In PWMA (moderate-to-high certainty), the examined interventions had small and significant effects on sleep disturbance (standardized mean difference [SMD] by mean change [95% CI]: overall [k = 29]: -0.30 [-0.42, -0.17], p < 0.001; sleeping pills [k = 7]: -0.10 [-0.41, 0.22], p > 0.05; ADHD drugs [k = 6]: -0.25 [-0.52, 0.01], p > 0.05; behavioral sleep [BS] interventions [k = 10]: -0.48 [-0.70, -0.27], p < 0.001) and sleep onset latency (overall [k = 12]: -0.41 [-0.67, -0.14], p < 0.01; sleeping pills [k = 3]: -0.68 [-1.08, -0.27], p < 0.01; ADHD drug [k = 1]: -0.39 [-0.96, 0.18], p > 0.05; BS interventions [k = 5]: -0.36 [-0.88, 0.16], p > 0.05). The examined interventions did not have significant effects on sleep efficacy, sleep duration, latency to persistent sleep or daytime sleepiness. Results of NMA showed that sleeping pills had the best performance in shortening SOL, while BS interventions may be the best choice for reducing sleep disturbance. However, more rigorous evidence is warranted. This review indicates that a multi-component and tailored-designed intervention represents important personalized strategies for improving sleep in youths with ADHD.
 
 ---
-17.
+35.
 
 Title:
 Type 2 Diabetes and the Lung - Cause and Consequence.
@@ -296,23 +581,7 @@ PURPOSE OF REVIEW: The purpose of this review is to synthesize literature invest
 RECENT FINDINGS: Type 2 diabetes is a common and challenging comorbidity in patients with asthma and chronic obstructive pulmonary disease (COPD). Basic, translational and clinical studies support a bidirectional association between T2D and the lung. In animal models and human studies, insulin resistance and hyperglycemia are associated with pulmonary inflammation, respiratory exacerbation risk and disease severity. Corticosteroids are a mainstay for respiratory disease control and exacerbation treatment but promote ongoing metabolic dysregulation. Randomized, placebo-controlled trials of glucose-lowering medications for asthma are actively ongoing. Additional studies addressing clinical pathways to co-manage respiratory and metabolic risk are needed. Patients with comorbid T2D and asthma or COPD are at risk for worse outcomes. There are opportunities to improve cross-disciplinary care, potentially reducing risk and multimorbidity associated with both conditions.
 
 ---
-18.
-
-Title:
-Leadership in Obesity Care: Strategies to Support Healthcare Professionals in Effective Decisions, Communication, and Solutions - A Scoping Review.
-
-PMID:
-42088261
-
-Journal:
-Journal of healthcare leadership (2026)
-
-Abstract:
-Obesity care is central to addressing the global prevalence of obesity, yet patients still report lack of access to effective obesity-related services. Leadership among healthcare professionals (HCPs) is enacted through clinical decision-making, service design, advocacy, and communication practices that shape patient experience and access to care. In obesity prevention and management, it is therefore critical to translate evidence into effective, equitable practice. This study conducted a scoping review, with the question: "What leadership strategies in obesity care can support healthcare practitioners with effective decisions, communication, and solutions for people living with obesity?". Data from primary studies were synthesized in accordance with scoping review best practice and PRISMA guidelines. In total, 28 primary studies published between 2014 and 2025 were included. Obesity care and support strategies were mapped inductively according to frequency of strategy approach across studies, resulting in three categories: 1. Structural strategies; 2. General strategies; 3. Population-specific strategies. Findings were then synthesized deductively from the research question under the headings of 1. Communication; 2. Decision-making; and 3. Solutions. Mapping identified that the evidence base reporting adequate strategies remains limited, with gaps across policy, research, and practice compared with other chronic conditions. Key findings highlight calls for leadership at a structural level, particularly towards improving policy to address weight stigma across domains, and ensure that services are adequately resourced and financed. At service levels, the provision of high-quality and evidence-based obesity care requires the need for leadership in the development and evaluation of multi-level, interdisciplinary, and holistic approaches. HCPs also require training with skills for constructive conversations about weight, and in collaborative healthcare planning. To improve outcomes for people living with obesity, healthcare requires coordinated leadership across systems to address the drivers of obesity and ensure equitable access to services that are evidence-based, de-stigmatized, well-resourced, and supported by policy.
-Obesity care is an important part of helping people to improve their health and quality of life, yet many people around the world living with obesity still struggle to access the right support and services. This review brought together findings from 28 studies published from 2014 to 2025 that describe what helps healthcare professionals provide better care and support for people living with obesity. These studies reported strategies that demonstrate leadership approaches that can support healthcare professionals in making improved decisions, communicating effectively, and providing high-quality care interventions. These were grouped into three main areas: Structural strategies – such as improving policies, research, and funding for obesity care at government or system level.General strategies – such as teamwork and collaboration between different healthcare professionals in services that provide obesity care and support.Population-specific strategies – such as care for women during and after pregnancy, or the different needs that children can have. The review found that healthcare professionals are calling for improved leadership and support beyond primary care and at political and organizational levels. This includes developing better policies, reducing weight stigma in society and in healthcare, and ensuring that obesity services are properly funded and based on the best available evidence. Overall, the findings highlighted that effective obesity support and care need leadership for a joined-up approach across systems and the involvement of different professionals. People living with obesity should have access to services that are evidence-based, respectful, well-resourced, and free from stigma.
-
----
-19.
+36.
 
 Title:
 Climate change and child health in Europe: a scoping review of emerging impacts.
@@ -330,7 +599,7 @@ WHAT IS KNOWN: • Children are biologically vulnerable to environmental hazards
 WHAT IS NEW: • This scoping review confirms climate change may lead to increased pediatric morbidity in Europe, linking air pollution, heat stress, and wildfires to perinatal, respiratory, metabolic, and neurological risks. • European studies regarding climate change and children's health have mainly focused on the impact of air pollution, but hardly focused on the impact of heat stress, highlighting the need for broader research and a coordinated pan-European change in political interventions tackling climate change.
 
 ---
-20.
+37.
 
 Title:
 Guidelines for the management of acute porphyria: recommendations from the International Porphyria Network.
@@ -345,7 +614,7 @@ Abstract:
 Autosomal dominant acute porphyrias are rare inherited disorders of haem biosynthesis characterised by accumulation of potentially neurotoxic porphyrin precursors and attacks of severe abdominal pain with autonomic and neuropsychiatric features. Disease severity ranges from asymptomatic individuals to those with recurrent, life-threatening attacks. The International Porphyria Network invited 34 acute porphyria specialists from 17 countries to form an expert panel. The invited group included clinicians from diverse specialities (ie, internal medicine, haematology, endocrinology, gastroenterology, hepatology, neurology, and biochemistry), together with laboratory scientists and patient representatives. The panel met online (in 2023-25) to develop 15 evidence-based recommendations with the use of the Grading of Recommendations, Assessment, Development, and Evaluations framework addressing attack prevention, management of sporadic and recurrent attacks, long-term follow-up, surveillance for primary liver cancer, and family screening. The guidelines support safe, consistent clinical care and improved outcomes, recognising global variation in resources and access to high-cost drugs, and highlighting priorities for future research.
 
 ---
-21.
+38.
 
 Title:
 Effectiveness of Influenza Vaccines in Italy in the 2024/2025 Season: A Nationwide, Test-Negative Design Study Based on Surveillance Records.
@@ -360,7 +629,7 @@ Abstract:
 The 2024/2025 influenza season in Italy was characterised by cocirculation of influenza A and B viruses. Monitoring influenza vaccine effectiveness (IVE) remains essential to guide public health policy due to antigenic shifts and varying strain circulation. In this study, we aimed to estimate IVE in primary care and hospital settings during the 2024/2025 season in Italy. A nationwide test-negative control design was used. Data were collected from the RespiVirNet surveillance system, encompassing both primary care and hospital settings. A total of 8842 participants were included in the primary care analysis and 2492 in the hospital analysis. Adjusted vaccine effectiveness (aVE) against any influenza virus was 69.0% (95% CI: 60.4%-75.9%) in primary care and 62.3% (95% CI: 45.9%-74.2%) in hospital settings. Effectiveness was highest among individuals under 18 years and decreased with age. Influenza B showed the highest aVE (83.6% in primary care; 95.0% in hospital settings), particularly among younger individuals. aVE for influenza A subtypes was lower, with A H1N1pdm09 (54.0% in primary care; 63.8% in hospital) and A H3N2 (60.1% in primary care; 45.5% in hospital) showing moderate effectiveness. The results suggest that influenza vaccines were effective in preventing medically attended influenza disease, both in primary care and hospital settings. These findings provide valuable insights for public health planning and vaccine policy in Italy.
 
 ---
-22.
+39.
 
 Title:
 Management of Pediatric Hand Injuries in the Acute Setting Part 1: Principles of Pediatric Hand Surgery Management.
@@ -376,22 +645,7 @@ UNLABELLED: Injury to the pediatric hand is common, yet acute management techniq
 KEY CONCEPTS: (1)Pediatric-specific anatomy and physiology require different management strategies for hand injuries compared to adults.(2)Not all pediatric hand injuries will be okay without active management; early detection and referral can be crucial.(3)System-wide coordination among primary care, the emergency department, on-call orthopaedic surgeons, and hand specialists is essential for optimal management of pediatric hand trauma.
 
 ---
-23.
-
-Title:
-Inter-society consensus on the management of acute bloody diarrhea and shiga toxin-producing Escherichia Coli infection in the molecular microbiology era.
-
-PMID:
-42050676
-
-Journal:
-Italian journal of pediatrics (2026/Apr)
-
-Abstract:
-(abstract not available)
-
----
-24.
+40.
 
 Title:
 Mediterranean diet for the primary prevention of cardiometabolic diseases: evidence from a systematic review and meta-analysis featured in the Italian National Guidelines "La Dieta Mediterranea".
@@ -409,7 +663,7 @@ RESULTS: Sixty studies comprising over 1.1 million participants were included. H
 CONCLUSIONS: Adherence to the Mediterranean diet is associated with a lower risk of several metabolic disorders, particularly T2DM and obesity in adults. These findings support the inclusion of the MD in public health strategies for metabolic disease prevention. Further high-quality longitudinal and interventional studies are warranted to clarify its effects on other metabolic outcomes.
 
 ---
-25.
+41.
 
 Title:
 Efficacy of Mediterranean diet for the primary prevention of oncological diseases: A systematic review and meta-analysis featured in the Italian National Guidelines "La Dieta Mediterranea".
@@ -427,7 +681,7 @@ RESULTS: A total of 126 studies, including more than 8 million participants, acr
 CONCLUSIONS: Greater adherence to the MD is associated with a lower risk of several site-specific cancers and reduced cancer mortality. These findings support the promotion of the MD as a preventive dietary strategy within public health policies.
 
 ---
-26.
+42.
 
 Title:
 Efficacy of Mediterranean Diet in pregnancy: A systematic review and meta-analysis featured in the Italian National Guidelines "La Dieta Mediterranea".
@@ -442,7 +696,7 @@ Abstract:
 Maternal nutritional status and dietary patterns represent key determinants of pregnancy outcomes and long-term health of the offspring, through metabolic, epigenetic, and developmental programming mechanisms. Mediterranean Diet (MD) has been widely acknowledged as a model of healthy eating, with anti-inflammatory and cardiometabolic benefits, and evidence on the impact of MD during pregnancy on maternal/infant outcomes is growing. The present systematic review and meta-analysis evaluates the association between adherence to MD during pregnancy and maternal and neonatal health outcomes. This review was conducted in accordance with PRISMA 2020 and MOOSE guidelines. A comprehensive search of PubMed/MEDLINE, Scopus, Embase, and Cochrane Library was performed up to February 28, 2024. Study quality was assessed using the Newcastle-Ottawa Scale, and the certainty of evidence was evaluated with the NUTRIGRADE approach. Pooled effect sizes were computed using a random-effects model and expressed as risk ratios (RR), hazard ratios (HR), or odds ratios (OR), as appropriate. Thirty-three studies (19 RCTs and 14 observational; >180 000 pregnant women) were included. Higher MD adherence was associated with lower risk of gestational diabetes mellitus (cohorts: OR 0.93, 95% CI 0.91-0.96; RCTs: RR 0.74, 95% CI 0.63-0.88), preterm delivery (cohorts: OR 0.96, 95% CI 0.92-0.99; RCTs: RR 0.45, 95% CI 0.05-0.84), low neonatal weight (cohorts: OR 0.96, 95% CI 0.91-1.00; RCTs: RR 0.61, 95% CI 0.42-0.88) and fetal growth alterations (RR 0.93, 95% CI 0.87-0.995). Evidence for pre-eclampsia was inconsistent, with significant associations in cohorts but not in RCTs. No significant effects were found for caesarean section, fetal death, neonatal asthma, or childhood obesity. NUTRIGRADE indicated moderate-to-high certainty for gestational diabetes, preterm delivery and low neonatal weight, and low certainty for other outcomes. Adherence to MD during pregnancy is associated with reduced risk of gestational diabetes, preterm birth and abnormal fetal growth. Given its safety and broader cardiometabolic benefits, the MD represents a suitable dietary pattern in pregnancy, although further high-quality trials with diverse populations and standardized MD metrics are warranted.
 
 ---
-27.
+43.
 
 Title:
 The 2026 Europe report of the Lancet Countdown on health and climate change: narrowing window for decisive health action.
@@ -451,29 +705,13 @@ PMID:
 42030967
 
 Journal:
-The Lancet. Public health (2026/Apr)
+The Lancet. Public health (2026/Jun)
 
 Abstract:
 (abstract not available)
 
 ---
-28.
-
-Title:
-Mentalization-Based Therapy for Children and Families: A Systematic Review and Meta-Analysis of the Recent Literature.
-
-PMID:
-42029892
-
-Journal:
-Clinical child psychology and psychiatry (2026/Apr)
-
-Abstract:
-This systematic review evaluated the impact of Mentalization-Based Therapy (MBT) parenting interventions on parental reflective functioning (PRF, the operationalized measure of the metalizing construct), child psychosocial outcomes, and parenting factors. A meta-analysis of studies measuring PRF using the Parental Reflective Functioning Questionnaire (PRFQ) indicated small, non-significant effects, with high heterogeneity across studies. Narrative synthesis of 19 studies suggested generally positive outcomes, including improvements in PRF, child emotional regulation and parental stress, though findings were inconsistent. The variability in outcomes likely reflects methodological limitations, including lack of control groups, limited fidelity reporting, and diversity in intervention protocols and outcome measures. Only a minority of studies clearly adhered to manualised MBT models. While some high-quality studies showed sustained benefits, the evidence remains inconclusive regarding PRF as a primary mechanism of change. This review highlights the need for more rigorous, high-quality trials with fidelity checks and standardised reporting to clarify the efficacy and mechanisms of MBT parenting interventions.
-• Mentalization-Based Therapies (MBT) for parenting are increasingly used in clinical practice.• The current review provides inconsistent results in terms of whether MBT therapies actually increase parental reflective functioning (parents’ ability to understand their child’s behavior in terms of underlying mental states).• Programs that adopt MBT principles may help with child regulation and parental stress.
-
----
-29.
+44.
 
 Title:
 Prevalence estimates of sickle cell disease among children and adolescents in sub-Saharan Africa: a systematic review and modelling analysis.
@@ -492,7 +730,7 @@ INTERPRETATION: Despite data gaps in many countries, the burden of sickle cell d
 FUNDING: None.
 
 ---
-30.
+45.
 
 Title:
 Public Health Achievements in Rwanda: A 21st Century Transformation.
@@ -507,75 +745,7 @@ Abstract:
 This narrative review documents how Rwanda has transformed in public health extraordinarily post the 1994 Genocide against the Tutsi, placing it as an exemplary model for health care systems resilience in low-income countries. The review is based on the World Health Organization building blocks to look at the strategic changes that have led to measurable gains in the health of Rwandan people. Good centralized leadership and control have been key to this accomplishment. This made it possible to decentralize service delivery, build excellent health information systems, and invest money in the health workforce. A key part of the transformation is universal health coverage (UHC), especially mutuelle de santé, which increased coverage from 27% in 2004 to more than 85%, hence cutting down out of pocket costs, which improved equity. Integration and use of community health workers (CHWs) have been instrumental in expansion of primary care to the population mostly in rural settings, improving maternal and child life, tuberculosis (TB) treatment through direct observed therapy (DOT), and disease surveillance. These coordinated actions have resulted in substantial reductions in mortality from infectious diseases (HIV/AIDS, TB, and malaria), maternal and child health indicators, and the gradual integration of services for noncommunicable diseases and mental health. Rwanda's health system was stress tested and proved its effectiveness in the COVID-19 and Marburg outbreaks, proving exceptional planning and rapid response capacities. Despite Rwanda's achievement, obstacles still persist, such as reliance on foreign funds, limited human resources lowering the quality-of-service delivery, and mental health challenges still in existence. Rwanda's experience illustrates that a proactive government, citizen participation, and research-based innovation may produce rapid and significant overall health gains, providing a valuable model for similar situations to other countries.
 
 ---
-31.
-
-Title:
-Perspectives from a multi-stakeholder workshop for implementing a risk-stratified breast cancer screening program in Canada.
-
-PMID:
-42014777
-
-Journal:
-Communications medicine (2026/Apr)
-
-Abstract:
-Implementing population-wide risk-stratified breast screening (RSBS) requires coordinated planning across diverse stakeholders and adaptation within complex healthcare systems. We convened a multi-stakeholder workshop with 34 policymakers, breast screening program leaders and healthcare professionals across Canada. Participants co-envisioned an RSBS program and focused on defining care pathways, the implementation roadmap, stakeholder engagement, and workforce training. A national, flexible RSBS strategy was proposed with multiple entry points and timings for risk assessment, interoperable information technology systems, phased roll-out, and an embedded learning healthcare system. The resulting actionable plans support RSBS implementation in Canada and offer transferable insights for planning RSBS in varied international settings.
-
----
-32.
-
-Title:
-Understanding equity-oriented maternity care for women of refugee background in high-income countries: a qualitative systematic review.
-
-PMID:
-42010559
-
-Journal:
-International journal for equity in health (2026/Apr)
-
-Abstract:
-BACKGROUND: Women of refugee background in high-income countries experience disproportionately poorer maternity care experiences and maternal health outcomes compared to non-refugee women. Their maternity care needs remain under-recognised and under-researched.
-AIM: This qualitative systematic review aimed to synthesise evidence on (1) what women of refugee background need from maternity care in high-income countries, and (2) the barriers and enablers experienced by health, social, and community-based maternity care professionals providing maternity care to this population.
-METHODS: Following the JBI methodology for systematic reviews, five databases were searched for peer-reviewed qualitative studies published in English between 2013 and 2025. Eligible studies were screened, data were extracted and appraised critically for methodological quality. Findings were synthesised using meta-aggregation and the overall confidence in synthesised findings were assessed using the JBI ConQual approach. The EQUIP framework was applied to the findings to ensure health equity considerations were captured.
-FINDINGS: Fifty-six studies met the inclusion criteria. Three synthesised findings were generated: (1) Structural and systemic factors shape the provision of and access to equity-oriented maternity care; (2) Key components to equity-oriented maternity care are: trauma-informed care, culturally responsive care, woman and family-centred care, and continuity of care and carer; and (3) women’s settlement experiences influence their transition to new healthcare systems.
-CONCLUSION: Addressing the persistent health inequities faced by women of refugee background in high-income countries requires systemic reform, sustainable workforce investments and specialised training for care providers. Further research on the co-design of equity-oriented care interventions is also needed to ensure maternity services are responsive to the needs of this population.
-SUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1186/s12939-026-02848-5.
-
----
-33.
-
-Title:
-Medical-Legal Partnership as Value-Based Primary Care: Interprofessional Teamwork for Health-Related Social Needs.
-
-PMID:
-42010098
-
-Journal:
-Journal of general internal medicine (2026/Apr)
-
-Abstract:
-Today's primary care physicians are being asked to address patients' health-related social needs (HRSN) as part of their routine care practices. An aging population, with a growing complement of intersecting medical and social needs, increases this burden on primary care. Medical-legal partnerships (MLP) are interprofessional collaborations that combine clinical and legal expertise to address HRSN involving housing, public benefits, employment, and other domains remediable by civil legal assistance. A value-based approach to integrating MLP into the health system may help primary care practices more effectively address HRSN and, in turn, better balance revenue and expenses. At the practice and healthcare system levels, a key operational component is data coordination between medical and legal partners, which will enable MLP to define patient populations whose needs are amenable to legal intervention. At the state and federal levels, policy coordination will play a similar role, assessing existing authorities under Medicaid and other federal programs and advocating for data-justified enhancements. Health systems, hospitals, clinics, and primary care practices should recognize the potential for MLP to improve the value of clinical care delivery for patients with HRSN, their families, and communities.
-
----
-34.
-
-Title:
-Social determinants of health screening and interventions in neonatal care pathways (NICU to follow-up): a scoping review.
-
-PMID:
-42002682
-
-Journal:
-European journal of pediatrics (2026/Apr)
-
-Abstract:
-UNLABELLED: Social determinants of health (SDOH) influence families' ability to engage with neonatal care and may contribute to inequities in outcomes. Whilst the neonatal period presents a unique opportunity to address SDOH, it is unclear how screening and related responses are implemented across the neonatal care pathway. This review aimed to (i)o map and characterise existing screening tools and interventions used in the neonatal period to address SDOH and (ii) identify gaps in effectiveness and equity impacts. We conducted a scoping review (PRISMA-ScR) of studies from high-income countries reporting SDOH screening tools and/or interventions delivered in neonatal inpatient settings, discharge/postnatal pathways, neonatal follow-up services, or early infancy primary care. We report setting, tool content and delivery, downstream actions (referral/navigation), outcomes reported, and whether measurement properties were reported. Eight studies were included (predominantly from the USA/Canada) from 3764 studies screened. Most evidence related to implementation of screening and referral workflows rather than evaluation of downstream clinical outcomes. Screening approaches identified high levels of reported social need and commonly triggered social work involvement and referrals; only one study reported a defined "connection with resources" outcome beyond referral. Two studies evaluated equity-relevant interventions beyond screening: a digital participation intervention to support attendance at family-centred rounds and a follow-up intervention addressing structural barriers through coordinated support. Across included neonatal applications, psychometric properties of instruments were not reported, and tools were commonly adapted from other settings or locally developed. Outcomes were heterogeneous and most frequently process-focused (uptake, referrals), limiting comparability.
-CONCLUSION:  Evidence describing SDOH screening and responses across neonatal care pathways remains limited and largely descriptive. Future work should define a core set of SDOH domains with context-specific modules, use standardised outcome reporting, and apply a minimum reporting set for neonatal SDOH screening/intervention studies.
-WHAT IS KNOWN:  • Studies mainly report screening/referral processes; neonatal-context psychometric evidence and standardised downstream outcomes are lacking.
-WHAT IS NEW:  • We propose a minimum reporting set to improve how future neonatal SDOH screening/intervention studies are reported and evaluated.
-
----
-35.
+46.
 
 Title:
 Preparation for Pediatric Emergencies in the Office: Policy Statement.
@@ -590,7 +760,7 @@ Abstract:
 Although not common, pediatric emergencies present in the medical office setting, and offices that care for children and adolescents can prepare for these emergencies. Offices vary depending on their location and office setting, patient population, and distance to an emergency department or hospital. Consequently, these factors should be taken into account in the planning process. This statement updates the recommendations from the 2007 American Academy of Pediatrics (AAP) practice guideline "Preparation for Emergencies in the Offices of Pediatricians and Pediatric Primary Care Providers." An accompanying technical report contains explanations and evidence for these recommendations and can be found at https://doi.org/10.1542/peds.2026-076622. This policy statement and companion technical report can be used as a guide to help create an individualized approach to emergencies that occur in offices that care for children, including both primary care and subspecialty practices. An accompanying checklist summarizes steps that medical offices can take to assess their readiness for pediatric emergencies.
 
 ---
-36.
+47.
 
 Title:
 Chronic widespread pain and the risk of cardiovascular disease-a systematic review and meta-analysis.
@@ -605,7 +775,7 @@ Abstract:
 Previous research indicates that individuals with chronic widespread pain (CWP) have an excess risk of cardiovascular disease. Given the high global prevalence of CWP, this association may have substantial public health implications. Our objective was to summarise the current evidence on the association between CWP and incident cardiovascular disease in a systematic review and meta-analysis. We searched major databases (MEDLINE, Embase, Web of Science, and Cochrane) and included studies based on predefined eligibility criteria. We identified 18 studies reporting associations between CWP (n = 80,021) and atherosclerotic diseases or cardiovascular mortality (n events = 33,799). In the meta-analysis, we removed studies that analysed identical outcomes in the same population. Individuals with CWP had an almost doubled risk of atherosclerotic diseases, RR 1.94 (95% confidence interval [CI]: 1.56-2.41), and for cardiovascular mortality, the RR was 1.61 (95% CI: 1.24-2.08) in the minimally adjusted models. In the maximally adjusted model, the RR for atherosclerotic diseases was 1.53 (95% CI: 1.27-1.86) vs RR 1.12 (95% CI: 0.93-1.34) for cardiovascular mortality. The heterogeneity was high and potential publication bias was indicated for the mortality analysis. This meta-analysis, although based on relatively few studies with high heterogeneity, shows that CWP is consistently associated with incident atherosclerotic disease. Evidence for an association with cardiovascular mortality is less conclusive. Individuals with CWP may represent an underrecognized high-risk group for atherosclerotic diseases that could benefit from proactive cardiovascular risk assessment and intensified prevention. Further high-quality studies are warranted to confirm the strength and causality of the association.
 
 ---
-37.
+48.
 
 Title:
 Electroencephalography during acute painful procedures in neonates: a scoping review.
@@ -620,7 +790,7 @@ Abstract:
 Although electroencephalography (EEG) is used to assess neonatal pain in research settings, EEG assessments have not been sufficiently characterized for use as end points to assess the efficacy of analgesics in regulatory-endorsed, industry-sponsored trials. We aimed to identify all studies conducted in neonates with EEG recordings during acute somatic nociceptive skin-breaking procedures, and to create a network of authors who will be invited to contribute their individual participant data (IPD) to an IPD meta-analysis to establish the validity, reliability, and clinical interpretability of an EEG-based neonatal pain measure. To identify literature, we searched MEDLINE, Embase, CINAHL, Web of Science, Scopus, Google Scholar, ClinicalTrials.gov, and the WHO ICTRP from database inception to July 2, 2025. Eligible studies were primary empirical studies that included neonates with EEG recordings during acute skin-breaking procedures. We identified 55 studies across 11 countries. Heel lance was the most common painful procedure; others included venipuncture, immunization, and lumbar puncture. The impact of 12 analgesic interventions has been studied to date, mostly nonpharmacological interventions. Individual-electrode EEG is more common than EEG caps. We noted relatively high data loss due to EEG data-quality concerns. A wide range of non-EEG pain-relevant measures have been recorded alongside EEG (eg, behavior, vital signs). Coauthorship network analysis highlighted that authors commonly work within discrete authorship hubs, with limited coauthorship across hubs. The predominance of studies was from European and American institutions, which limits generalizability. We conclude that sufficient data are available to undertake an IPD meta-analysis.
 
 ---
-38.
+49.
 
 Title:
 Prevalence of stressful life events in young people with functional seizures: A systematic review and narrative synthesis.
@@ -638,7 +808,7 @@ RESULTS: A variety of SLEs were reported, but measurement approaches and sample 
 CONCLUSIONS: SLEs may represent one of several contextual or vulnerability factors for some young people with functional seizures, rather than a defining or causal feature. Evidence is limited by inconsistent measurement and study design. Future research using standardised SLE assessments, diverse samples, and controlled or longitudinal designs is needed to clarify the role of life stress within biopsychosocial formulations and clinical care.
 
 ---
-39.
+50.
 
 Title:
 Saliva as a Matrix for Primary Care: Feasibility and Scoping of Its Use for Assessment of Nutrition and Inflammation.
@@ -653,7 +823,7 @@ Abstract:
 Scarce laboratory capacity constrains both primary care and population surveillance for nutritional and inflammation assessment globally. One major contributing factor is the reliance on blood as the primary matrix, and its associated limitations of being invasive, having relatively lower acceptance in apparently healthy individuals and community settings, and being heavily dependent on laboratory and related infrastructure. Saliva offers a noninvasive, inexpensive, and more convenient alternative that causes less discomfort and has the potential to expand the portfolio of point-of-care testing for nutrition and inflammation assessment in primary care. We aimed to synthesize the evidence on the feasibility and scope of using salivary biomarkers for nutrition and inflammation assessment. A literature search was conducted in MEDLINE and CINAHL, without restrictions on language, geographical location, or publication date. Screening and data extraction were done in duplicate on Covidence. A narrative synthesis was done to summarize the results. Seventy-six studies examining salivary biomarkers for nutrition and inflammation were identified across 26 countries, involving 5425 children and 5617 adults. We summarized the results from 33 studies assessing ferritin, iron, zinc, calcium, vitamin A, vitamin B-12, vitamin D, vitamin C, and vitamin E in saliva. Additionally, we found 43 studies evaluating salivary inflammatory biomarkers, including C-reactive protein, α-1 acid glycoprotein, hepcidin, immunoglobulin A, and cytokines within the context of nutritional impairments. Although most biomarker values were detectable in saliva, significant evidence and methodological gaps remain, including the absence of standardized protocols for sample collection, transportation, processing, storage, and laboratory analysis; insufficient information on diagnostic performance, accuracy, and comparability with corresponding blood biomarkers; and challenges in interpreting findings across different population subsets and settings. Future research should focus on improving method reporting and ensuring the clinical relevance of findings to maximize the potential of saliva-based diagnostics for nutrition and inflammation assessment.
 
 ---
-40.
+51.
 
 Title:
 Prediction of Developmental Outcomes in Preterm Infants: A Systematic Review.
@@ -675,7 +845,22 @@ LIMITATIONS: Because of a high RoB among all included studies, no recommendation
 CONCLUSIONS: Although many prediction models for developmental outcomes after preterm birth exist, external validation is rare, and RoB is high. Future research is needed to validate and, if needed, update existing models to support perinatal decision-making.
 
 ---
-41.
+52.
+
+Title:
+Baseball-related throwing injuries in Japan versus the United States: A comprehensive comparison.
+
+PMID:
+41919774
+
+Journal:
+PM & R : the journal of injury, function, and rehabilitation (2026/May)
+
+Abstract:
+Throwing-related arm injuries are very common in baseball, and their incidence continues to rise. The United States and Japan-two of the largest baseball participation populations in the world-have developed unique nationwide initiatives to address these throwing injury "epidemics." Given the substantial interest and research in baseball and throwing injuries in both countries, curiosity about throwing injuries with respect to similarities and differences between the countries has been growing. When taking into account heterogeneous definitions of injury and injury collection methods, this review found higher rates of youth elbow injuries in Japan. Unlike Japan, U.S. injury surveillance methods included large national databases, whereas Japanese injury surveillance focused primarily on annual physical examinations, often with ultrasound. Biomechanically, U.S. pitchers threw faster and had greater joint torques, which increased injury risk. Regarding workload, the United States was the first of the two countries to implement pitch count regulations in hopes of mitigating injury risk. In Japan, smaller youth baseballs and a workload-limiting professional league structure may reduce injury risk factors. Furthermore, cultural differences appear to impact youth workload. Lastly, Japan's health care structure may provide better access to orthopedic sports medicine physicians but limits access to primary care sports medicine physicians. We present injury rates, risk factors, screening practices, and management approaches in both countries to inform strategies to address the throwing-injury epidemic.
+
+---
+53.
 
 Title:
 Global, regional, and national burden of meningitis, its risk factors, and aetiologies, 1990-2023: a systematic analysis for the Global Burden of Disease Study 2023.
@@ -694,7 +879,7 @@ INTERPRETATION: Although mortality and incidence have declined significantly sin
 FUNDING: Gates Foundation, Wellcome Trust, and UK Department of Health and Social Care.
 
 ---
-42.
+54.
 
 Title:
 Setting research priorities to understand and address the impact of climate change on the health of women and children in low-income and middle-income countries using the Child Health and Nutrition Research Initiative method.
@@ -709,7 +894,7 @@ Abstract:
 Climate change is a substantial global health threat in the 21st century, disproportionately affecting low-income and middle-income countries (LMICs), which face significant climate risks, pre-existing vulnerabilities, and have relatively few interventions in place. With a scarcity of research in LMICs, and diminishing development assistance, setting priorities to address climate change-related health impacts on women and children is both urgent and prudent. We consulted 88 climate and health researchers between 2022 and 2024 to generate relevant questions regarding climate change impacts on women and children's health and potential solutions. A diverse group of 52 experts prioritised a shortlist of 70 questions using the Child Health and Nutrition Research Initiative method. The top three priorities included vulnerability mapping, integrating climate metrics into surveillance, and long-term heat exposure effects. This Health Policy underscores key knowledge gaps in climate-related health outcomes affecting women and children in LMICs, and suggests a focused research agenda for guiding global investments in resilience and adaptation.
 
 ---
-43.
+55.
 
 Title:
 Expert perspectives on Myalgic encephalomyelitis/chronic fatigue syndrome - Insights from the 3rd International Conference of the Charité Fatigue Center.
@@ -724,7 +909,7 @@ Abstract:
 Myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS) is a complex, multisystemic disorder mostly triggered by viral infections, with core symptoms including post-exertional malaise (PEM), fatigue, pain, and cognitive dysfunction. Its prevalence has increased significantly in the context of the coronavirus disease 2019 (COVID-19) pandemic. Despite its severity and impact on patients' quality of life, ME/CFS remains poorly understood. On May 12 and 13, 2025, the 3rd International Conference hosted by the Charité Fatigue Center brought together nearly 200 researchers from various disciplines on-site, and around 3,700 participants online to discuss recent advances in ME/CFS research, diagnostics, clinical care, and therapeutic trials. The program featured 33 lectures by international experts on key topics such as post-COVID syndrome (PCS), care structures, and pathophysiological mechanisms including cardiovascular dysregulation, immune dysregulation, autoimmune mechanisms, and metabolic dysfunction. In addition, results from clinical trials addressing disease mechanisms, including those specifically targeting autoantibodies, were presented. While public awareness and funding opportunities have increased in the wake of the pandemic and the emergence of PCS, ME/CFS remains severely underresearched. Sustained and adequately funded research efforts are urgently required to advance understanding, identify diagnostic markers, and develop targeted therapeutic interventions.
 
 ---
-44.
+56.
 
 Title:
 An evidence-based, multidimensional definition of the Mediterranean Diet within the Italian National Guidelines "La Dieta Mediterranea".
@@ -739,7 +924,7 @@ Abstract:
 The Mediterranean Diet (MD), first conceptualized by Ancel Keys in the 1950s, is widely acknowledged as a dietary pattern associated with significant health benefits. It is also a cultural heritage, recognized by UNESCO in 2010. Despite its relevance, the MD has been variably defined through descriptive models, food pyramids, and adherence scoring systems. This heterogeneity limits comparability across research and practice. This paper describes the development of a standardized, evidence-based, and multidimensional definition of the MD within the Italian National Guidelines "La Dieta Mediterranea." Importantly, the proposed definition integrates both nutritional components and sociocultural dimensions, including lifestyle practices, conviviality, and sustainability. The guideline development process followed internationally recognized standards, involving a multidisciplinary panel and systematic evidence synthesis. The MD was defined conceptually through an operational approach based on the analysis of existing adherence scores available in the literature. Thirty-three eligible studies and fifteen Mediterranean Diet Scoring Systems were analyzed to identify common food groups, nutrients, and lifestyle components. The proposed definition emphasizes high consumption of plant-based foods, olive oil as the primary fat source, moderate intake of fish, dairy, and white meat, and limited consumption of red meat and processed products. Beyond nutrition, the MD is conceptualized as a multidimensional lifestyle encompassing physical activity, conviviality, and sustainability principles. This integrated approach aligns with contemporary evidence on chronic disease prevention and health promotion. The resulting definition provides a conceptual framework for healthcare professionals, researchers, and policymakers, supporting harmonized interventions and policy strategies that extend "beyond the plate."
 
 ---
-45.
+57.
 
 Title:
 The screening accuracy of the PROMIS® Anxiety measures in adults - A systematic review and multiple-thresholds meta-analysis.
@@ -756,7 +941,7 @@ METHODS: We searched the electronic databases from inception until 15 July 2025 
 CONCLUSIONS: The PROMIS®-SF-A-8a results were homogeneous, showing good screening accuracy. However, the limited number of studies - especially for other PROMIS® Anxiety measures - and the lack of replication in settings like primary care highlight the need for further research.
 
 ---
-46.
+58.
 
 Title:
 Oral Lamivudine for Extended HIV Postnatal Prophylaxis.
@@ -771,7 +956,7 @@ Abstract:
 Despite considerable progress in preventing mother-to-child transmission (PMTCT) of human immunodeficiency virus (HIV), eliminating paediatric HIV has not been achieved. Extended postnatal prophylaxis (ePNP), defined as prophylaxis administered to an HIV-exposed child after PMTCT perinatal prophylaxis ends, has been evaluated and is now proposed as an improved approach towards elimination. This approach should be urgently incorporated into international PMTCT recommendations. The antiretroviral drugs most commonly studied as ePNP, either alone or in combination, are lamivudine, nevirapine, lopinavir/ritonavir and zidovudine. In this study, we examined the efficacy, safety, pharmacology, genetic barrier to resistance and practicality of various ePNP regimens. Regimens combining multiple antiretroviral drugs are no more effective than single-drug regimens in terms of protective efficacy but they are associated with increased toxicity. On the basis of these criteria, we recommend lamivudine as the preferred ePNP drug or nevirapine as an alternative. Guided by maternal HIV viral load, ePNP may be particularly indicated, as it could ensure that the prophylaxis provides the greatest benefit/risk to children at highest risk. Long-acting injectable antiretroviral drugs and broadly neutralising antibodies (bNAbs) have yet to be fully evaluated in neonates, infants and children; however, they may offer new alternatives in the future.
 
 ---
-47.
+59.
 
 Title:
 Barriers and facilitators to pediatric pain assessment and management in sub-Saharan Africa: A scoping review.
@@ -791,7 +976,7 @@ CONCLUSION: Pediatric pain care in SSA is shaped by systemic challenges as well 
 IMPLICATIONS FOR PRACTICE: Region-specific, multidisciplinary interventions aligned with WHO and Sustainable Development Goal 3 should integrate pediatric pain education into training programs, adopt appropriate assessment tools, ensure medication availability, strengthen supply chains, and involve caregivers. Tailored interventions, grounded in SSA-specific evidence, are essential for equitable and effective pediatric pain care.
 
 ---
-48.
+60.
 
 Title:
 Assessment and Treatment of Bipolar Disorder in the Community.
@@ -806,7 +991,7 @@ Abstract:
 Bipolar disorder is a recurrent, heterogeneous condition that often begins in adolescence and typically requires lifelong, multimodal management. Advances in evidence-based assessment (EBA) offer structured frameworks for prediction, prescription, and progress monitoring, and pharmacological and psychosocial interventions supported by recent reviews and the Canadian Network for Mood and Anxiety Treatments (CANMAT)/International Society for Bipolar Disorders (ISBD) guidelines provide effective options across phases of illness. Despite these advances, the impact of evidence-based approaches remains blunted in practice: Diagnosis is often delayed, pharmacotherapy is inconsistently prescribed or monitored, psychosocial interventions are underused, and relapse prevention strategies are rarely sustained. Therefore, the field must embed prediction, treatment, and monitoring within community treatment settings-primary care, schools, digital platforms, and family systems-where risk can be identified early, preventive strategies can be delivered, and long-term maintenance can be supported. Framing EBA as a dynamic, community-anchored cycle offers the best chance of translating evidence into improved outcomes, bridging the gap between research efficacy and real-world effectiveness in the care of bipolar disorder.
 
 ---
-49.
+61.
 
 Title:
 Practitioner Review: Clinical insights from attachment theory and research for professionals working with young children and their families.
@@ -821,7 +1006,7 @@ Abstract:
 Attachment theory, with its core concepts, perspectives, and insights developed over the past five decades, is influential for professionals working with young children. However, practitioners face challenges translating attachment theory and research into practical applications. This manifests in attachment myths, theoretical misinterpretations, and inconsistency of application. This state-of-the-art review is authored by 47 attachment researchers and practitioners and examines key insights from attachment theory to facilitate attachment-aware practice for professionals working with children and their caregivers. Following the ongoing debate on practical relevance in attachment theory, we present both 'strict' and 'expansive' translational perspectives on applications for addressing preventative or clinical attachment concerns. We first review core attachment propositions, based on replicated research of attachment and caregiving. We next address common misconceptions that hinder adequate practical applications. We present measures of attachment and sensitive parenting that might be helpful for practitioners. We also review evidence-based and promising attachment interventions, discussing core components of (preventative) support for parents or caregivers and the children in their care. We emphasize that attachment theory's clinical value lies not in assigning attachment classifications, but rather in understanding crucial insights into caregiving and early socioemotional development (e.g., secure base phenomena; the value of safe, stable, and shared good-enough care), developed in attachment research over the past 50 years, that may inform policy and clinical reasoning and areas for prevention and intervention.
 
 ---
-50.
+62.
 
 Title:
 Accelerating Generic Long-Acting Antiretrovirals for Global HIV Treatment: Workshop Findings and a Roadmap to Access.
@@ -836,7 +1021,7 @@ Abstract:
 The global HIV response aims for widespread availability of affordable, quality-assured long-acting antiretroviral (LA ARV) drugs to achieve sustained epidemic control, particularly in low- and middle-income countries. This report summarizes key discussion points, findings, and outcomes from an international workshop on generic LA ARVs, held in Liverpool, United Kingdom, and co-organized by the Long-Acting/Extended-Release Antiretroviral Resource Program (LEAP) and the Centre of Excellence for Long-acting Therapeutics (CELT). The workshop brought together experts from across disciplines to evaluate the multifaceted challenges and opportunities for faster development and regulatory approval of affordable and accessible generic LA ARVs. Key topics included the application of novel pharmacokinetic end points to reduce study duration, the integration of community preferences into practice-based research in resource-limited settings, intellectual property considerations, formulation and manufacturing complexities that affect cost, scalability and implementation, and the growing role of model-integrated evidence in streamlining bioequivalence assessments. To reach the goal of timely and equitable global access to long-acting medicines, this workshop emphasized the need for strategic public-private engagement to promote data sharing, enhance regulatory efficiencies, and develop robust in vitro-in vivo correlation strategies that meet regulatory guidance for LAI products.
 
 ---
-51.
+63.
 
 Title:
 YouTube as a source of (mis)information for morning sickness self-help - A content analysis and literature review of recommendations for nausea and vomiting in pregnancy.
@@ -855,7 +1040,7 @@ RESULTS: We identified 85 unique recommendations, which could be sorted in 6 cat
 CONCLUSION: Women who seek NVP relief on YouTube are exposed to a wide variety of recommendations to reduce their symptoms. However, only few of these are evidence-based, and some may even be dangerous. Overall, there is a lack of research on effective non-pharmacological interventions for NVP relief. This highlights the need for improved guidance and dissemination of evidence-based interventions for NVP online.
 
 ---
-52.
+64.
 
 Title:
 Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
@@ -877,7 +1062,7 @@ RESULTS: A total of 190 studies involving 2.8 million participants across 40 cou
 CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
 
 ---
-53.
+65.
 
 Title:
 Adverse outcomes among pregnant women with COVID-19 according to hospitalization status: A prospective individual participant data meta-analysis in Europe and North America.
@@ -898,7 +1083,7 @@ MAIN RESULTS: Data from 10 sources across seven countries contributed to the met
 CONCLUSIONS AND RELEVANCE: COVID-19 requiring hospitalization is associated with adverse pregnancy outcomes, emphasizing the need to prevent severe illness during pregnancy. This study also highlights the importance of international collaboration for gathering pregnancy data and shows that building global research networks is essential for responding to future health crises.
 
 ---
-54.
+66.
 
 Title:
 Role of the perinatal experience on the risk of acute leukemia in childhood or adolescence: Systematic review and meta-analysis.
@@ -913,7 +1098,22 @@ Abstract:
 Acute leukemia is the most common type of cancer in children; however, the etiology is poorly understood. The objective of this review was to summarize the current evidence of the role of perinatal factors in the development of acute leukemia. All epidemiological studies published up to October 2023 that evaluated perinatal risk factors for childhood acute leukemia were identified using a multi-tiered approach in two electronic databases (PubMed and Web of Science), without restriction on publication year or language. A total of 85 studies (13 prospective cohort studies, 62 case-control studies, and 10 pooled analyses) were included. We combined the published risk estimates in a meta-analysis, using the Generic Inverse Variance method. An increased risk of acute leukemia and the lymphoblastic subtype (ALL) was associated with high birth weight (>4000 g) (odds ratio [OR] = 1.35; 95% confidence interval [95% CI] 1.20-1.53 and OR = 1.21; 95% CI 1.08-1.34, respectively), maternal history of abortion (OR = 1.27; 95% CI 1.12-1.43 and OR = 1.24; 95% CI 1.08-1.43, respectively), and maternal diabetes (OR = 1.30; 95% CI 1.14-1.48 and OR = 1.32; 95% CI 1.16-1.50, respectively). In addition, an increased risk for ALL was also associated with maternal hypertension (OR = 1.21; 95% CI 1.06-1.38) and cesarean section (OR = 1.10; 95% CI 1.05-1.16). Our review suggests a potential role for perinatal factors in the development of acute leukemia in children. These findings indicate potential avenues for developing cost-effective prevention strategies applicable at the population level, while the mechanism of action is investigated.
 
 ---
-55.
+67.
+
+Title:
+Identifying somatic and social concerns that may suggest an underlying mental health condition in pediatric primary care.
+
+PMID:
+41195459
+
+Journal:
+Journal of osteopathic medicine (2026/Jun)
+
+Abstract:
+Most adult mental health conditions begin in early childhood and adolescence, the most common being anxiety and behavioral disorders. Early intervention can improve outcomes and may reduce the risk of developing a clinical disorder in the future. However, children may not have the communication or understanding to share their symptoms with those around them, leaving pediatric primary care providers responsible for identifying concerning signs. This paper reviews both general symptoms that suggest possible mental health conditions as well as specific correlations between symptoms and psychiatric diagnoses. A literature search utilizing PubMed identified nine relevant articles that were supplemented with additional sources. The findings found that impaired coordination or balance, weakness, paralysis or loss of sensation, seizure-like activity, blindness, double vision, deafness, or one severe symptom, typically pain, were general signs that may indicate a psychiatric illness. More specific associations were also identified. For instance, children who report somatic complaints and school refusal have been linked to anxiety; in addition, reported stress, anger, and worries about family alcohol and drug use have been linked to depression, among many others. Awareness of the somatic and social concerns presented by children to primary care can reduce the delay from the onset of symptoms to diagnosis, leading to earlier identification, treatment, and improved outcomes. Early intervention may delay or prevent symptoms from developing into a diagnosable psychiatric disorder and/or may reduce the severity of symptoms in a child who already has a psychiatric condition.
+
+---
+68.
 
 Title:
 A Systematic Review of Adverse Childhood Experiences and Epigenetic Age Acceleration in Later Adult Life Measured With Second and Third-Generation Epigenetic Clocks.
@@ -928,7 +1128,7 @@ Abstract:
 We examined the relationship between adverse childhood experiences (ACEs) and epigenetic age acceleration (EAA) in adulthood as measured by second and third generation epigenetic clocks by performing a systematic review of the literature. The electronic databases MEDLINE and EMBASE were searched on 17 July 2023. All studies measuring epigenetic age using the second and third-generation clocks in adults who experienced ACEs when under the age of 18 were included. Papers from before 1 January 2018, papers where the full text was not available in the English language, and animal studies were excluded. Two independent reviewers extracted the data and screened the studies against the defined eligibility criteria, and any discrepancies were resolved by referral to an independent third reviewer. The Crowe Critical Appraisal Tool was used to assess bias. The outcome of interest was epigenetic age acceleration measured by second and third generation epigenetic clocks. Eight hundred thirty-six studies were identified by the search strategy. Ten studies were ultimately included in the review, nine of which were either high quality or very high quality. A consistent positive association between ACEs and EAA was seen across the studies with evidence of a dose-response effect. This study suggests that previously reported observations of childhood trauma leading to poorer adult health could be mediated by epigenetic changes to DNA among European populations. Further studies are needed to see if these findings are replicated in other ethnic groups.
 
 ---
-56.
+69.
 
 Title:
 Effects of Combined Lipid-Based Nutrient Supplements and Malaria Preventive Treatment during Pregnancy on Malaria, Maternal Nutrition, and Birth Outcomes: A Scoping Review.

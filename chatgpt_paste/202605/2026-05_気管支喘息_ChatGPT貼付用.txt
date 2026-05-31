@@ -14,6 +14,395 @@ PMIDは必ず入力データに含まれるものを正確に転記してくだ�
 1.
 
 Title:
+Artificial intelligence-based models in predicting acute exacerbations and diagnosing pediatric asthma: a systematic review and meta-analysis.
+
+PMID:
+42216027
+
+Journal:
+BMC medical informatics and decision making (2026/May)
+
+Abstract:
+PURPOSE: This systematic review and meta-analysis evaluated the performance of artificial intelligence (AI)-based models in diagnosing pediatric asthma and predicting acute asthma exacerbations.
+METHODS: A comprehensive literature search was conducted across PubMed, Embase, and Web of Science. The initial search was conducted up to December 6, 2024, and a supplementary search was conducted in April 2025 to identify newly published or newly indexed studies. Diagnostic performance metrics, including sensitivity, specificity, area under the curve (AUC), and 2 × 2 diagnostic data, were extracted or reconstructed. A bivariate random-effects model was used for meta-analysis, and study quality was assessed using a modified QUADAS-2 tool with PROBAST-informed signaling questions.
+RESULTS: A total of 18 studies were included: 13 studies evaluated AI-based models for pediatric asthma diagnosis and five studies evaluated AI-based models for predicting acute asthma exacerbations. For asthma diagnosis, internal validation showed a sensitivity of 0.87, specificity of 0.93, and AUC of 0.96, while external validation showed a sensitivity of 0.81 and specificity of 0.94. For acute exacerbation prediction, internal validation showed a sensitivity of 0.59, specificity of 0.79, and AUC of 0.68. These estimates should be interpreted cautiously because heterogeneity was very high and external validation evidence was limited.
+CONCLUSION: AI-based models showed promising but preliminary diagnostic performance for pediatric asthma, whereas their performance for predicting acute exacerbations remained limited. The findings should be interpreted cautiously because of substantial heterogeneity, potential publication bias, and limited external validation. Future studies should use standardized definitions and independent external validation before these models are implemented in clinical practice.
+CLINICAL TRIAL NUMBER: Not applicable.
+
+---
+2.
+
+Title:
+Early-life Gut Microbiota and Allergic Diseases: Immune Regulatory Mechanisms and Intervention Progress.
+
+PMID:
+42215763
+
+Journal:
+Clinical reviews in allergy & immunology (2026/May)
+
+Abstract:
+Over recent decades, the prevalence of allergic diseases has risen steadily, particularly among children, making these conditions a major global public health concern. Increasing evidence suggests that, in addition to genetic factors, gut microbiota dysbiosis is an important contributor to the development and progression of allergic diseases. The gut microbiota plays a critical role in host metabolism, maintenance of mucosal barrier integrity, and regulation of immune homeostasis, and is especially closely linked to immune system development and the establishment of immune tolerance in early life. Abnormalities in the composition and function of the gut microbiota may promote allergic susceptibility through multiple immunoregulatory pathways and contribute to the onset and progression of atopic dermatitis, allergic rhinitis, asthma, and other allergic diseases. This review focuses on the relationship between early-life gut microbiota and allergic diseases, summarizes the underlying immunoregulatory mechanisms, and discusses progress in microbiota-targeted interventions, with the aim of providing a reference for early prevention and precision intervention in allergic diseases.
+
+---
+3.
+
+Title:
+Effect of probiotics on allergic rhinitis in children; A systematic review and meta-analysis.
+
+PMID:
+42209809
+
+Journal:
+European journal of pediatrics (2026/May)
+
+Abstract:
+BACKGROUND: Allergic rhinitis (AR) is a prevalent chronic inflammatory disorder in children, often undiagnosed and associated with reduced quality of life and risk of comorbidities such as asthma. Probiotics have been found to be potential modulators of immune responses in allergic conditions. This systematic review and meta-analysis evaluated the efficacy of probiotics compared with placebo in the management of pediatric AR.
+METHODS: Searches were conducted in accordance with a pre-registered protocol using MEDLINE (PubMed), the Web of Science, Scopus, and Embase through April 8, 2025. Randomized controlled trials (RCTs) of children aged < 18 years that compared probiotics, prebiotics, or synbiotics with a placebo were considered for inclusion. Outcomes of interest included clinical and laboratory parameters. Random-effects models with Hedges' g were used; heterogeneity was assessed via I2.
+RESULTS: Fourteen RCTs involving 1,739 children were included. Meta-analysis revealed a significant reduction in nasal symptom scores (SMD = -1.40; 95% CI: -2.26 to -0.54; I2 = 91.3%) and eye symptom scores (SMD = -3.59; 95% CI: -5.84 to -1.33; I2 = 94.3%). Quality of life (RQLQ) was also significantly improved (SMD = -2.98; 95% CI: -4.85 to -1.12; I2 = 95.7%). Among laboratory markers, a small but significant increase in serum eosinophils was observed (SMD = 0.29; 95% CI: 0.06 to 0.52; I2 = 0%).
+CONCLUSION: Probiotics were associated with improvements in nasal and ocular symptoms and quality of life in children with AR; however, these findings should be interpreted with caution due to substantial heterogeneity across studies. Probiotics may have a potential role as an adjunctive therapy, but further high-quality, standardized trials are needed. PROSPERO registration code: CRD420250654461 on 24 February 2025. What is Known • Probiotics have been investigated as adjunctive therapy for pediatric allergic rhinitis because of their potential immunomodulatory effects. • Previous studies and meta-analyses have reported inconsistent findings regarding the clinical and immunological effects of probiotics in allergic rhinitis. What is New •This meta-analysis demonstrated significant improvements in nasal symptoms, ocular symptoms, and quality of life in children with allergic rhinitis receiving probiotics versus placebo. • Probiotic supplementation showed no consistent beneficial effects on immunological markers, while substantial heterogeneity remained across studies.
+
+---
+4.
+
+Title:
+Systemic therapies for atopic dermatitis.
+
+PMID:
+42209112
+
+Journal:
+Journal of the American Academy of Dermatology (2026/May)
+
+Abstract:
+Atopic dermatitis is a common, chronic, relapsing skin disorder characterized by eczematous lesions and intense pruritus, associated with reduced quality of life. Advanced systemic therapies (injectable biologics and oral Janus kinase inhibitors [JAKis]) for moderate-to-severe atopic dermatitis have transformed the options for patients. Dupilumab, a biologic targeting the interleukin-4 receptor, is now approved for patients as young as 6 months and improves comorbid allergic conditions, such as asthma and eosinophilic esophagitis. In the past 4 years, tralokinumab and lebrikizumab (both targeting interleukin-13) and the interleukin-31 receptor inhibitor, nemolizumab, have been approved for adolescents and adults. In contrast, oral JAKis, such as upadacitinib, abrocitinib, and baricitinib, inhibit the downstream JAK-signal transducers and activators of transcription pathway, providing rapid relief of pruritus and inflammation. Approved for adolescents and adults in the United States, JAKis expand therapeutic flexibility but carry greater safety considerations. This review highlights key systemic agents and discusses practical considerations in therapy selection.
+
+---
+5.
+
+Title:
+Comorbidities of atopic dermatitis in adults and children.
+
+PMID:
+42209105
+
+Journal:
+Journal of the American Academy of Dermatology (2026/May)
+
+Abstract:
+Atopic dermatitis is increasingly recognized by dermatologists as a systemic disease with significant comorbidities beyond the skin. This narrative review highlights the broad range of medical and psychiatric conditions associated with atopic dermatitis in children and adults, including depression, cardiovascular and endocrine conditions, autoimmune disorders, and serious infections. The burden of these comorbidities increases with disease severity and has important implications for treatment selection, including the potential benefit of therapies with multisystem efficacy. Dermatologists are uniquely positioned to identify early signs of comorbid conditions and initiate appropriate referrals. Proactive screening and interdisciplinary collaboration-especially with mental health, primary care, allergy/immunology, rheumatology, endocrinology, and cardiology-are essential for comprehensive care and tailoring treatment strategies to individual patient needs.
+
+---
+6.
+
+Title:
+Immune System Development-Pro Tips for Paediatricians.
+
+PMID:
+42207652
+
+Journal:
+Acta paediatrica (Oslo, Norway : 1992) (2026/May)
+
+Abstract:
+There are many misconceptions about the immune system in children, its impact on infectious disease susceptibility and its role in the rapidly increasing rates of immune mediated diseases in industrialized societies. In this mini review, I will discuss common believes and the data supporting or countering such believes, with a focus on clinically relevant topics of relevance to trainees and practicing paediatricians. I will emphasize data from studies performed in humans rather than reductionist mouse models. I discuss open questions requiring further investigation and end with a discussion on clinical observations of particular concern which paediatricians should consider when caring for children in their practices. Immune development is increasingly recognized as an important determinant of health, not just early in life, but also long term and all of us caring for children should know more about it.
+
+---
+7.
+
+Title:
+Validating exacerbations of asthma in electronic health records: a systematic review.
+
+PMID:
+42203235
+
+Journal:
+European respiratory review : an official journal of the European Respiratory Society (2026/Apr)
+
+Abstract:
+BACKGROUND: Previous studies have shown that the algorithms and code lists used to define asthma exacerbations vary across different sources of data, if reported at all. Defining and validating asthma exacerbations in electronic health records (EHR) would help to improve future research on asthma using EHR by leading to more consistent and comparable evidence.
+METHODS: We systematically reviewed the literature to evaluate studies that define exacerbations of asthma in EHR and report which algorithms have the highest validity. An adapted version of the QUADAS-2 designed for this review was used to assess risk of bias.
+RESULTS: Of the studies yielded by the search, only five met the inclusion criteria. Eligible studies used algorithms that contained codes from versions or modifications of either the 9th or 10th revisions of the International Statistical Classification of Diseases and Related Health (ICD-9 or ICD-10), and validity scores varied. Using the ICD-9 code 493 within algorithms to detect asthma exacerbations, sensitivity scores varied from 44.8% to 91.28% and specificity was >85%. Using the ICD-9 code 493.xx as the principal and secondary diagnosis in claims data, validity measures were all >85%. Using the ICD-10 code J45, scores for sensitivity, specificity and negative predictive value were also all >85%.
+CONCLUSIONS: Algorithms have been used to identify asthma exacerbations in EHR with varying degrees of validity. Algorithms including the ICD-9 code 493.xx or the ICD-10 code J45 to detect asthma exacerbations had high validity scores. However, there was a risk of bias in these studies and urgent work is needed using robust methods to validate definitions for future research using EHR.
+
+---
+8.
+
+Title:
+The evolution of scientific knowledge in childhood asthma over time.
+
+PMID:
+42203231
+
+Journal:
+European respiratory review : an official journal of the European Respiratory Society (2026/Apr)
+
+Abstract:
+Paediatric asthma management has undergone a significant transformation from rudimentary assessments in the early 20th century to sophisticated diagnostic and therapeutic approaches today. Early clinical observations lacked paediatric specificity, but mid-20th-century studies introduced functional assessments, spirometry and recognition of asthma as a chronic inflammatory condition. The introduction of inhaled corticosteroids transformed long-term management, offering targeted control with reduced systemic risks. Advances in noninvasive diagnostics, such as fractional exhaled nitric oxide, induced sputum analysis, exhaled breath condensate and electronic nose technology, have improved inflammation monitoring, phenotype classification and therapeutic responsiveness. The integration of omics technologies, i.e. genomics, proteomics and metabolomics, has enabled deeper insights into disease mechanisms and facilitated early, individualised interventions. Concurrently, artificial intelligence (AI) and machine learning are emerging as tools for predicting exacerbations, identifying clinical subtypes and enhancing decision-making through large-scale data integration. Despite these advancements, challenges remain around standardisation, data quality and ensuring equitable access. This narrative review synthesises decades of progress in paediatric asthma care, emphasising the transition from empirical treatment to personalised, biomarker-driven strategies. It highlights current gaps, particularly in algorithm transparency, paediatric-specific validation and holistic care integration. As asthma management enters an era of digital health and AI-assisted precision medicine, future success will depend on interdisciplinary collaboration, real-world validation and policies that close care disparities.
+
+---
+9.
+
+Title:
+Association Between Air Pollution and Childhood Asthma: A Systematic Review of Recent Evidence.
+
+PMID:
+42201234
+
+Journal:
+Advances in respiratory medicine (2026/May)
+
+Abstract:
+BACKGROUND: Air pollution is a major environmental determinant of respiratory health and a significant contributor to the global burden of childhood asthma. Although several recent narrative and systematic reviews have examined environmental triggers of asthma, highlighting air pollution as a consistent risk factor across diverse populations and study designs, recent epidemiological evidence-including multicenter cohort studies and region-specific analyses from Europe and Greece-has not been systematically synthesized.
+OBJECTIVE: To systematically review recent epidemiological evidence (2000-2025) on the association between ambient air pollution and childhood asthma incidence and exacerbations, with emphasis on European and Greek populations.
+METHODS: Following PRISMA guidelines, we systematically reviewed observational studies published between 2000 and 2025 in PubMed, Scopus, Web of Science, BMC, and Google Scholar. Studies evaluating quantitative exposure to PM2.5, PM10, NO2, O3, or SO2 and asthma incidence, prevalence, or exacerbations in children (≤18 years) were included. Evidence was synthesized by pollutant type, exposure window, geographic region, and study design.
+RESULTS: Twenty-four studies involving more than 3.5 million children were included. Consistent associations were observed across international and European cohorts between long-term exposure to PM2.5, PM10, and NO2 and increased asthma incidence. Risk estimates typically ranged from 15% to 30% increases in asthma incidence per 10 μg/m3 increase in long-term exposure to PM2.5 or NO2, as reported across multiple cohort analyses. Early-life exposure showed the strongest effects on asthma development and lung function decline. European and Greek studies demonstrated comparable trends, highlighting increased hospitalizations and symptom burden in urban populations despite pollutant concentrations often below current regulatory thresholds. Short-term pollution peaks were additionally associated with increased asthma exacerbations and hospital admissions, particularly during seasonal episodes of elevated particulate matter and ozone concentrations.
+CONCLUSIONS: This review provides an updated synthesis of 21st-century evidence demonstrating that ambient air pollution is a major and modifiable determinant of childhood asthma. The consistency of findings across regions, combined with limited longitudinal evidence from Greece, highlight the importance of improved air-quality management and continued public-health efforts to reduce exposure and the need for enhanced epidemiological monitoring.
+
+---
+10.
+
+Title:
+[Angioedema 2025 - Advancements in Diagnosis and Treatment].
+
+PMID:
+42200329
+
+Journal:
+Harefuah (2026/May)
+
+Abstract:
+Angioedema is a pathophysiologic process characterized by increased vascular endothelial hyperpermeability, leading to fluid accumulation and tissue swelling. This process is reversible in most cases; therefore, it is clinically exhibited by exacerbations and remissions. Patients experience paroxysmal, unpredictable, and slowly progressing episodes of swelling of the face, extremities, genitals, tongue, and larynx, and severe abdominal pains. Attacks affecting the oropharyngeal and upper airways impose a considerable life-threatening risk. Intestinal wall edema can cause bowel obstruction, mimicking "acute abdomen" and leading to unnecessary surgical interventions. As a chronic and recurrent disease with an undulating course, angioedema significantly affects the patient's quality of life and coping competence, presenting a considerable burden on health-providing systems. Understanding the pivotal role of C1 Inhibitor in the early 1960s and following research contributed to a better understanding of disease mechanisms. It led to unprecedented advancements in developing treatments for both attacks and prophylaxis. In parallel, international clinical guidelines and a new nomenclature have been established, assisting the diagnosis and treatment. Recently, the scope of angioedema has been expanded to include genetic variants and drug-induced angioedema. Treating angioedema associated with C1INH deficiency differs from treating allergic edema, such as in anaphylaxis and urticaria; therefore, a comprehensive evaluation, including laboratory studies, family history, and genotyping, is required. In such cases, focusing the treatment on bradykinin-dependent mechanisms is indicated for preventing attacks and reducing disease burden. This review aims to update the reader's scope of the various expressions of angioedema syndromes. It encompasses the pathophysiologic mechanisms, clinical algorithms for diagnosis, and an updated appraisal of the recommended pharmacologic treatment options for treating attacks and preventing their recurrence.
+
+---
+11.
+
+Title:
+Vitamin D Supplementation in Children with Asthma: An Umbrella Review.
+
+PMID:
+42197022
+
+Journal:
+Nutrients (2026/May)
+
+Abstract:
+BACKGROUND: Growing evidence suggests that vitamin D plays a role in the pathophysiology of childhood asthma. However, its effectiveness in reducing asthma exacerbations and improving asthma-related outcomes remains controversial.
+METHODS: We systematically searched PubMed, Embase, and the Cochrane Library from inception to 25 February 2026. Meta-analyses of randomized controlled trials (RCTs) evaluating the effects of vitamin D supplementation on any health outcomes in children with asthma were included. Methodological quality was assessed using the AMSTAR 2 tool. The credibility of evidence was evaluated using pre-specified evidence classification criteria, and the certainty of evidence was graded using the GRADE approach.
+RESULTS: A total of 14 systematic reviews were included, of which one was rated as high quality, six as low quality, and seven as critically low quality according to AMSTAR 2. Vitamin D supplementation significantly increased serum 25-hydroxyvitamin D levels in children with asthma (MD = 10.68 ng/mL; 95% CI, 6.30 to 15.05; n = 8 RCTs), although the evidence was of low credibility (class IV) and very low certainty. No significant improvements were observed in Childhood Asthma Control Test scores (MD = 0.15; 95% CI, -0.43 to 0.74; n = 3 RCTs; class V; moderate), overall asthma exacerbations (RR = 0.84; 95% CI, 0.65 to 1.08; n = 11 RCTs; class V; low), or lung function as measured by percent predicted forced expiratory volume in 1 second (SMD = 0.49; 95% CI, -0.05 to 1.04; n = 5 RCTs; class V; moderate). One meta-analysis suggested a possible reduction in asthma recurrence (RR = 0.53; 95% CI, 0.35 to 0.79; n = 6 RCTs; class IV; moderate).
+CONCLUSIONS: This umbrella review found no convincing evidence that vitamin D supplementation improves asthma control, reduces exacerbations, or enhances lung function in children with asthma, despite its effect on increasing serum 25-hydroxyvitamin D levels and a possible benefit for asthma recurrence. However, these findings should be interpreted with caution, considering that the available evidence was limited by generally low methodological quality, substantial overlap among meta-analyses, and incomplete reporting of clinically relevant modifiers.
+
+---
+12.
+
+Title:
+The role of intestinal microbiota in the pathogenesis of childhood asthma.
+
+PMID:
+42183220
+
+Journal:
+Frontiers in immunology (2026)
+
+Abstract:
+Childhood asthma represents a multifactorial inflammatory disorder shaped by genetic predisposition, environmental exposures, and immune dysregulation. Growing evidence underscores the gut microbiota as a critical mediator linking early-life microbial colonization with long-term respiratory immune outcomes. Gut commensals influence key immunological processes-including Th1/Th2/Th17/Treg balance, dendritic cell maturation, and epithelial barrier integrity-thereby shaping host susceptibility to asthma. Moreover, microbial metabolites such as SCFAs, LPS, tryptophan derivatives, and secondary bile acids serve as potent immunoregulatory agents, capable of either promoting or attenuating airway inflammation. The gut-lung axis provides a conceptual and mechanistic framework through which intestinal microbial alterations influence pulmonary immunity. This review outlines how microbial dysbiosis disrupts immune homeostasis by affecting T cell subset differentiation, dendritic and epithelial cell function, mucosal immunity, and inflammatory signaling, offering novel insights into asthma pathogenesis and highlighting promising targets for microbiota-based prevention and therapeutic strategies.
+
+---
+13.
+
+Title:
+EV-associated non-coding RNAs in paediatric asthma airway remodelling: current mechanistic evidence and therapeutic perspectives.
+
+PMID:
+42181900
+
+Journal:
+Frontiers in pharmacology (2026)
+
+Abstract:
+Paediatric asthma is a chronic inflammatory airway disease that can cause airway swelling, excessive mucus secretion, and increased smooth muscle tone, leading to airway narrowing and respiratory distress. Airway remodelling involves a series of pathophysiological alterations, including airway epithelial injury, proliferation of mucous glands and goblet cells, subepithelial fibrosis, proliferation and migration of airway smooth muscle cells, and airway epithelial-mesenchymal transition. These complex processes significantly increase airway resistance and reactivity, forming a crucial pathological basis for refractory asthma. With advances in molecular biology, non-coding RNAs such as microRNAs (miRNAs), long non-coding RNAs (lncRNAs), and circular RNAs (circRNAs) have garnered extensive attention due to their pivotal roles in gene expression regulation. Extracellular vesicles (EVs), as membrane-bound particles released by cells, can carry various bioactive molecules including non-coding RNAs, playing a crucial role in intercellular communication and influencing the functional state of recipient cells. In diseases such as asthma, non-coding RNAs participate in regulating processes including airway remodelling, emerging as potential diagnostic biomarkers and therapeutic targets. This narrative review summarises current evidence on EV-associated non-coding RNAs in paediatric asthma airway remodelling, noting that most cited studies used operational EV terminology rather than biogenesis-specific "exosomes" because endosomal origin was not experimentally validated in most cases. Current mechanistic evidence is strongest for miRNA-related studies, whereas direct evidence involving EV-associated lncRNAs and circRNAs in paediatric airway remodelling remains limited. The review therefore focuses on currently available mechanistic evidence, translational relevance, and major knowledge gaps.
+
+---
+14.
+
+Title:
+Pediatric IgE mediated food allergies and ethnic group inequalities: A scoping review.
+
+PMID:
+42179758
+
+Journal:
+The World Allergy Organization journal (2026/Jun)
+
+Abstract:
+BACKGROUND: The prevalence of pediatric food allergy ranges between 8% and 10% depending on age, geographic location, and the diagnostic criteria. There is considerable variation in clinical manifestation, with disparities in symptoms and phenotypes related to race, ethnic group, and coexisting allergic disease(s). The current evidence on ethnic group and racial differences remains limited and inconsistent. This scoping review aimed to explore the existing evidence on ethnic group and race health inequalities in pediatric IgE mediated food allergies in high-income countries.
+METHODS: We conducted a systematic search using MEDLINE, Embase, and CINAHL, inclusive of grey literature from database inception to November 2024. Observational and qualitative studies reporting data for children aged 0-19 years with professional diagnosis of IgE-mediated food allergy, and ethnic group or race in high-income countries, without language restrictions, were included. Screening and data extraction were performed independently in duplicate. Results were mapped thematically and reported descriptively. The review was conducted using Joanna Briggs Institute (JBI) methodology for scoping reviews and reported using the Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for Scoping Reviews (PRISMA-ScR) guidelines.
+RESULTS: Searches identified 4373 results, and 37 studies were included reporting pediatric IgE mediated food allergy and ethnic group data. Only 17 studies explicitly reported ethnic group differences, with most studies focused on prevalence. Nine studies examined prevalence differences, generally showing higher rates of food allergy among Black and Asian children compared with White children. Three studies examined differences in access to care and management between Black and Hispanic/Latino children and White children. Patterns showed White children had greater access to allergen-free foods and were over-represented in oral immunotherapy and more likely to receive epinephrine. Five studies examined health outcome severity, with some evidence suggesting Black children had the highest rates of food-induced anaphylaxis, and greater odds of asthma and allergic rhinitis compared with White children.
+CONCLUSION: Evidence to-date suggests there are ethnic group and racial differences among children with IgE-mediated food allergy related to prevalence, access to care and management, and health outcomes. However, there is incomplete and inconsistent reporting of ethnicity. Only 17 of the 37 included studies that included ethnic group and race data analyzed and reported ethnic group differences. This limits the field's capacity to understand inequalities and additional care requirements for minoritized and racialized ethnic groups. Further research is vital to inform the development of allergy services for children to ensure they have equitable access to care and treatment, as well as optimal health outcomes, regardless of ethnic group and race.
+
+---
+15.
+
+Title:
+Prevalence and Characteristics of North American Indigenous Inflammatory Skin Disease: A Systematic Scoping Review.
+
+PMID:
+42179093
+
+Journal:
+International journal of dermatology (2026/May)
+
+Abstract:
+Chronic inflammatory skin diseases (CISD) including atopic dermatitis (AD), psoriasis, and hidradenitis suppurativa (HS) are chronic conditions contributing to health inequities. Their burden among North American Indigenous peoples remains poorly characterized. This scoping review assessed Indigenous representation in clinical research, Phase III/IV trials, and practice guidelines on CISD in Canada and the United States, identifying evidence gaps and proposing strategies to enhance inclusion. Following PRISMA-ScR methodology, MEDLINE, Embase, CINAHL, Cochrane Library, Indigenous-focused databases, and gray literature were searched from inception to May 2022. Phase III/IV therapeutic trials for AD and psoriasis (2011-2021) were reviewed separately to evaluate reporting of Indigenous participants and North American guidelines were screened for Indigenous considerations. Of 49 studies included, 39% specifically focused on Indigenous populations of primarily pediatric, rural, and remote Canadian cohorts. Prevalence estimates for AD among Indigenous children ranged from 10% to 25%, with frequent comorbid asthma. Data on psoriasis suggested potentially higher morbidity among First Nations populations, while HS evidence was extremely limited. Indigenous representation was minimal in clinical trials (1.3% of total participants reported under Indigenous categories across included Phase III/IV therapeutic trial reports for AD and psoriasis), and only one recent guideline explicitly incorporated Indigenous perspectives. Overall certainty in burden estimates was low, especially for psoriasis and HS. To address these gaps, key recommendations include consistent reporting of Indigenous identity, setting recruitment targets in trials, supporting Indigenous-led cohorts and registries, and integrating Indigenous and remote care expertise into guidelines. Advancing CISD research and clinical equity requires alignment with Indigenous data sovereignty and governance principles.
+
+---
+16.
+
+Title:
+The Role of the Indoor Exposome in Food Allergy Development.
+
+PMID:
+42176051
+
+Journal:
+Current allergy and asthma reports (2026/May)
+
+Abstract:
+PURPOSE OF REVIEW: Due to the rapid rise in the prevalence of food allergy, environmental exposures, in addition to genetic susceptibility, are likely contributors to allergic disease. In developed countries, individuals spend a substantial proportion of time indoors. Therefore, the indoor exposome provides a unique framework to examine factors driving the increase in the rates of food allergy. This review summarizes epidemiological and mechanistic evidence of the indoor exposome, consisting of the combined exposures to food antigens, microbes, and chemicals encountered in indoor environments during early life, and their influence on food allergy development.
+RECENT FINDINGS: Indoor house dust contains detectable food allergens, which remain biologically active and may be linked to non-oral exposure, leading to allergic sensitization. In contrast, early-life exposures to diverse microbes and their products are associated with protection from allergic disease. Emerging evidence further demonstrates that indoor chemicals, including detergents, plasticizers, and pollutants, can disrupt epithelial barrier integrity or function as immune adjuvants, thus increasing susceptibility to food sensitization. Collectively, these findings highlight the indoor exposome as a complex and important determinant of food allergy risk. Improved understanding of how the indoor exposome influences food allergy development may inform future primary prevention or intervention strategies.
+
+---
+17.
+
+Title:
+Toxocara infection in children with asthma: a systematic review and meta-analysis.
+
+PMID:
+42175712
+
+Journal:
+Transactions of the Royal Society of Tropical Medicine and Hygiene (2026/May)
+
+Abstract:
+Evidence linking zoonotic nematode Toxocara and asthma is mounting in children. We aimed to estimate the pooled prevalence of Toxocara seropositivity in asthmatic children and quantify the association. We searched PubMed, Embase and Web of Science for studies (through 18 June 2025) reporting Toxocara seropositivity in asthmatic children. A random effects model was used to estimate pooled seroprevalence and odds ratios (ORs). Heterogeneity was explored using τ2, I2 and Cochran's Q test, subgroup analyses, meta-regression and sensitivity analysis. Publication bias assessment (Egger's test, funnel plots, trim and fill) and risk of bias evaluation (Newcastle-Ottawa Scale) was performed. Twenty-six studies comprising 3246 asthmatic children were included, of which 7 were high-quality studies. Pooled Toxocara seropositivity among asthma was 22% (95% confidence interval 16 to 29) with significant country-wise heterogeneity. In 23 studies comparing cases and controls, asthmatic children had significantly higher odds of Toxocara seropositivity (pooled OR 2.56, p<0.0001), with significant variation by geographic region (p<0.0001) and asthma case definitions (p=0.0004), with stronger associations observed in studies using rigorous definitions such as the Global Initiative for Asthma criteria. Sensitivity analyses showed that while the direction of association remained consistent, the magnitude was influenced by a few outlier studies. There is a significant association between Toxocara seropositivity and childhood asthma; however, the strength of this association should be interpreted cautiously due to heterogeneity, potential cross-reactivity in serological assays and methodological differences across studies. Prospective longitudinal studies and randomized controlled trials evaluating the impact of antiparasitic treatment are needed to clarify temporal relationships and establish causality.
+
+---
+18.
+
+Title:
+The association between asthma and ADHD in children and adolescents: An observational study and a meta-analysis of Mendelian randomization studies.
+
+PMID:
+42175507
+
+Journal:
+Medicine (2026/May)
+
+Abstract:
+Observational epidemiological analysis and a meta-analysis of Mendelian randomization (MR) were used to investigate the association between attention-deficit/hyperactivity disorder (ADHD) and asthma in children and adolescents. Based on data from the 1999 to 2004 National Health and Nutrition Examination Survey (NHANES), an analysis was conducted to evaluate the association between ADHD and asthma in children and adolescents aged between 4 and 19 years. ADHD and asthma were defined based on self- or parent/guardian proxy-reported physician/health-professional diagnoses from the NHANES Medical Conditions Questionnaire. After analyzing ADHD genome-wide association study data from the Psychiatric Genomics Consortium as instrumental variables, we performed two-sample MR analyses based on genome-wide association study data from 5 studies to examine the causal relationship between genetically predicted ADHD liabilities. In addition, we summarized the results of the inverse-variance weighted method using a random-effects meta-analysis. Asthma prevalence was higher among participants with ADHD than those without ADHD (10.2% vs 5.9%). ADHD was associated with higher odds of asthma (odds ratio = 1.64, 95% confidence interval = 1.36-1.98), and the pattern of results was broadly consistent across subgroups. In contrast, the MR meta-analysis did not support a causal effect of genetically predicted ADHD liability on childhood asthma (odds ratio = 0.94, 95% confidence interval = 0.84-1.05, P > .05). According to data from the NHANES, ADHD and asthma are significantly associated in children and adolescents. A meta-analysis of the MR data did not reveal a causal connection between genetically predicted ADHD liability and childhood asthma. This paradoxical finding illustrates the complex interplay of genetic and nongenetic mechanisms in the ADHD-asthma association.
+
+---
+19.
+
+Title:
+Physiological and Anatomical Alterations in Children with Liver Cirrhosis.
+
+PMID:
+42174350
+
+Journal:
+Pharmaceutical research (2026/May)
+
+Abstract:
+OBJECTIVE: To evaluate physiological and anatomical changes in children with liver cirrhosis supporting the development of physiologically based pharmacokinetic (PBPK) models.
+METHODS: A literature review was conducted (December 2023-May 2024) using PubMed and Google Scholar to identify studies reporting physiological and anatomical parameters in children (< 18 years) with liver cirrhosis. Parameters were analyzed in relation to disease severity (Child-Pugh and/or MELD/PELD scores), stratified by age, and compared to adult data. This study examined parameters modified in adult liver cirrhosis PBPK models to assess if similar changes occur in children.
+RESULTS: Parameters such as albumin, α1-acid glycoprotein, glomerular filtration rate, functional liver mass, portal blood flow, hepatic arterial blood flow, renal blood flow, and cardiac index showed either comparable alterations or lacked sufficient pediatric data to confirm differences from adult data. Hematocrit was significantly lower in children aged 2 to < 6 years (P = 0.022), with up to 25% greater fractional decline compared to adults, possibly due to developmental and nutritional factors.
+CONCLUSION: While children with liver cirrhosis exhibit physiological trends similar to adults, hematocrit shows a clear age-specific difference. For other parameters, limited pediatric data prevents firm conclusions, highlighting the need for age-specific studies to improve PBPK models and guide pediatric drug therapy.
+
+---
+20.
+
+Title:
+Nutritional, Growth, and Microbiome Implications of Oral Immunotherapy: Unintended Consequences and Clinical Considerations.
+
+PMID:
+42173442
+
+Journal:
+Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/May)
+
+Abstract:
+Food allergy management has changed significantly, with oral immunotherapy (OIT) emerging as a widely adopted strategy to increase reaction thresholds and reduce the risk of severe allergic reactions. Alongside its immunological effects, OIT has important implications for nutrition, growth, and the gut microbiome. Traditional management of food allergy relies on strict allergen avoidance, which may compromise dietary adequacy and growth, particularly in children avoiding nutrient-dense foods such as cow's milk and eggs. OIT offers an opportunity to reintroduce these foods in controlled amounts, potentially improving nutrient intake and supporting growth trajectories. Emerging evidence highlights the role of the gut microbiome in modulating immune tolerance. Microbial diversity, metabolite production, and early-life colonization patterns influence regulatory immune pathways and epithelial barrier integrity. During OIT, microbiome changes appear modest and variable, with some studies suggesting taxon-specific or functional shifts rather than global restructuring. Importantly, dietary factors, particularly the use of ultra-processed foods as dosing vehicles, may confound microbiome outcomes and influence treatment responses. From a nutritional perspective, OIT presents both opportunities and risks. While allergen reintroduction may improve protein and micronutrient intake, reliance on energy-dense masking foods may increase the risk of excessive calorie intake and suboptimal diet quality. Growth outcomes during OIT appear generally favorable, particularly in younger children and those with lower baseline growth. This article summarizes current evidence on OIT, focusing on its interactions with diet, growth, and the gut microbiome, and highlights the need for integrated, multidisciplinary approaches to optimize both clinical and nutritional outcomes.
+
+---
+21.
+
+Title:
+Finding A Balance: Auricular Acupressure in the Allergy Clinic.
+
+PMID:
+42167406
+
+Journal:
+The journal of allergy and clinical immunology. In practice (2026/May)
+
+Abstract:
+Auricular point acupressure (APA) is a simple technique related to acupuncture, which dates back to the 1950s, with acupuncture tools dating back thousands of years. The APA approach involves the short-term placement of beads or seeds to specific points on the external ear. In more recent times, auricular acupressure and acupuncture have been used in a wide array of settings for a myriad of conditions, including in combat and emergency settings, and even adopted by the United States military healthcare system and Veterans Administration as an integrated approach to opioid reduction strategies. For patients with dysautonomia, APA can offer a holistic approach to help improve sleep, anxiety, depression, headache, and pain. While evidence supporting the uses of APA in food allergy and asthma is very low certainty, several systematic reviews and meta-analysis suggest possible benefit in rhinitis. Adverse effects are uncommon but may include auricular trauma, migration of APA seeds into the ear canal, contact dermatitis, or allergic reactions. With simple approaches that can be learned and applied rapidly by clinicians and patients alike, APA may represent a useful approach for some patients.
+
+---
+22.
+
+Title:
+Glucagon-like peptide-1 receptor agonists in asthma and obesity-associated asthma: a systematic review of clinical outcomes and translational mechanisms.
+
+PMID:
+42167405
+
+Journal:
+The journal of allergy and clinical immunology. In practice (2026/May)
+
+Abstract:
+BACKGROUND: Obesity and metabolic dysfunction are increasingly recognized as important modifiers of asthma risk, severity, and treatment response. Glucagon-like peptide-1 receptor agonists (GLP-1RAs), widely used for type 2 diabetes and obesity, have been associated with improved respiratory outcomes, but the underlying clinical and biological mechanisms remain incompletely defined.
+OBJECTIVES: To systematically review and synthesize clinical, translational, and preclinical evidence evaluating the effects of GLP-1 receptor agonists on asthma outcomes, with particular attention to weight-dependent, metabolic, and airway-intrinsic mechanisms.
+METHODS: We conducted a systematic review of human observational studies, clinical trials, and preclinical investigations assessing associations between GLP-1RA exposure and asthma-related outcomes. Data extraction included study design, population characteristics, respiratory outcomes, mechanistic findings, and risk-of-bias assessments using validated tools appropriate to study type.
+RESULTS: Across observational human studies, GLP-1RA use was consistently associated with reduced asthma exacerbations and healthcare utilization, predominantly in populations with obesity and/or type 2 diabetes. Several studies reported associations that persisted after adjustment for body mass index or glycemic markers. Preclinical models demonstrated reductions in airway inflammation, hyperresponsiveness, and epithelial cytokine signaling, though these findings were subject to substantial risk of bias and species-specific differences in GLP-1 receptor expression. Overall, evidence supporting airway-intrinsic effects remains largely preclinical, while human data are limited by confounding and population selection.
+CONCLUSIONS: Current evidence suggests that GLP-1 receptor agonists may improve asthma outcomes through mechanisms that extend beyond weight loss, potentially involving metabolic and airway-relevant pathways. However, uncertainty remains regarding benefits in the absence of metabolic dysfunction. Ongoing randomized controlled trials will be critical to clarifying causality, defining responsive asthma phenotypes, and determining the clinical role of GLP-1RAs in broader asthma populations.
+
+---
+23.
+
+Title:
+ACAAI/ AAP Symposium -What was served in the last year: Food Allergy Non-treatment.
+
+PMID:
+42162787
+
+Journal:
+Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/May)
+
+Abstract:
+Food allergies are increasing with 1 in 13 children in the United States affected. This paper discusses articles chosen by the author for inclusion in the ACAAI/AAP Symposium Hot Topics in Pediatric Allergy and Immunology specifically on updates in food allergy non-treatment and provides a focused review with Podium to Practice Takeaways for each article. Food allergies with delayed presentation of symptoms from the time of exposure, like Food Protein-Induced Enterocolitis Syndrome(FPIES) and Alpha-gal syndrome(AGS) are highlighted. Both of these food allergies are increasingly seen by clinicians. Food challenges play an important role in the diagnosis, management and resolution of these conditions. As such, clinicians should understand the pattern of reaction severity over time in FPIES to assist families in deciding when, where and how oral food challenges should be scheduled. Regarding AGS, it is imperative that physicians understand risk factors for development of alpha-gal sensitization and the expected symptomatology. In addition, clinicians need to provide counselling that allows for appropriate but not excessive food avoidance based on allergenicity. Finally, the article addresses the concern that has arisen about the safety of gelatin containing vaccines in patients with AGS, and reports that reactions to gelatin-containing vaccines appears to be rare.
+
+---
+24.
+
+Title:
+[Effects of indoor environmental pollutants on allergic diseases in children: a Meta-analysis].
+
+PMID:
+42151081
+
+Journal:
+Zhonghua liu xing bing xue za zhi = Zhonghua liuxingbingxue zazhi (2026/May)
+
+Abstract:
+Objective: To evaluate the impact of indoor environmental pollution on childhood allergic diseases in recent years through Meta-analysis and explore the potential effects of pollution exposure on children's health. Methods: Literature published between January 2015 and March 2025 was retrieved from China National Knowledge Infrastructure, Wanfang Data Knowledge Service Platform, VIP Information Database, PubMed, and Web of Science. Additional studies were identified through reference tracing and manual supplementation. Studies meeting inclusion criteria were screened, and relevant data were extracted and analyzed. Results: A total of 36 studies from 9 countries were included, including 25 studies conducted in China. Most studies were cross-sectional ones (21), followed by cohort ones (8), case-control ones (4), and combined (cross-sectional and cohort) ones (3). Study participants were children aged 0-12 years. Indoor pollutants closely associated with allergic diseases included particulate matter, chemical pollutants, and biological pollutants. Meta-analysis results indicated that environmental tobacco exposure (OR=1.51, 95%CI:1.16-1.98, P=0.003) significantly increased the risk for childhood asthma; the exposure to new furniture (OR=1.44, 95%CI:1.13-1.83, P=0.003) was significantly associated with allergic rhinitis; the exposures to mold (OR=2.81, 95%CI:2.25-3.51, P<0.001), cockroach (OR=1.59, 95%CI:1.26-2.00, P<0.001), and damp or mouldy environmental surface (OR=1.42, 95%CI:1.26-1.62, P<0.001) significantly increased asthma risk. The exposure sensitivity varied across the development stages of children, with high sensitivity in infancy and early childhood. Conclusion: Children can expose to indoor environmental pollutants through multiple routes, including inhalation and skin contact, in daily life, which might increase the risk for allergic diseases by inducing abnormal immune responses and pose a significant threat to children's health.
+目的： 通过Meta分析，评估近年来室内环境污染对儿童过敏性疾病的影响，并探讨污染暴露对儿童健康的潜在影响。 方法： 检索中国知网、万方数据知识服务平台、维普资讯数据库、PubMed和Web of Science 5个数据库中2015年1月至2025年3月发表的相关文献，结合参考文献回溯补充，筛选符合标准的文献并提取数据进行分析。 结果： 共纳入36篇文献，覆盖9个国家，其中研究地点为中国的文献25篇。研究类型以横断面研究为主（21篇），其余为队列研究（8篇）、病例对照研究（4篇）及横断面与队列结合研究（3篇）。研究对象年龄范围为0~12岁。与儿童过敏性疾病密切关联的室内污染物主要包括颗粒物、化学污染物及生物污染物。Meta分析结果显示，环境烟草烟雾暴露（OR=1.51，95%CI：1.16~1.98，P=0.003）显著增加儿童哮喘风险；新家具暴露（OR=1.44，95%CI：1.13~1.83，P=0.003）与过敏性鼻炎显著相关；霉菌（OR=2.81，95%CI：2.25~3.51，P<0.001）、蟑螂（OR=1.59，95%CI：1.26~2.00，P<0.001）及环境表面潮湿或发霉（OR=1.42，95%CI：1.26~1.62，P<0.001）显著增加哮喘风险。不同生长阶段的暴露敏感性存在差异，婴幼儿期为污染物影响的高敏感窗口。 结论： 儿童在日常生活中通过吸入或皮肤接触等多种途径暴露于室内环境污染物，这些污染物可能通过诱发免疫系统异常反应，增加过敏性疾病的发生风险，对儿童健康构成重要威胁。.
+
+---
+25.
+
+Title:
 Shifting the Scope: Moving Toward Less Invasive Diagnosis and Monitoring of Eosinophilic Esophagitis.
 
 PMID:
@@ -32,7 +421,7 @@ RESULTS: Unsedated transnasal endoscopy (TNE) and the esophageal string test (ES
 CONCLUSION: Minimally invasive diagnostics can be implemented for monitoring EoE disease activity. Additional studies with allergic controls are needed to validate non-invasive EoE biomarkers for screening, surveillance, and disease/treatment outcome prediction.
 
 ---
-2.
+26.
 
 Title:
 Precision medicine in eosinophilic esophagitis.
@@ -47,7 +436,7 @@ Abstract:
 Eosinophilic esophagitis (EoE) is a common, chronic, immune-mediated disease of the esophagus, affecting approximately 1 in 700 individuals in the United States. Despite rising prevalence, clinical management remains largely empiric and invasive: diagnosis and monitoring rely on endoscopy with biopsies, and treatment selection is guided by population-level response rates, patient preference, and access rather than individualized disease biology. Patients often experience diagnostic delays, repeated procedures, and cycles of trial-and-error therapy before achieving remission, while prolonged inflammation increases risk of fibrostenotic complications. Recent advances in epidemiology, genetics, molecular profiling, and immunology increasingly support EoE as a heterogeneous disease with distinct biological drivers. Emerging tools-including polygenic risk scores, molecular endotyping frameworks, and minimally invasive biomarkers-may improve risk stratification, reduce reliance on endoscopy, and better align therapy with underlying mechanisms. In this review, we describe the current EoE patient journey and examine opportunities to integrate precision medicine strategies across the disease continuum, from risk identification and diagnosis to treatment selection, food trigger identification, and noninvasive monitoring. We also discuss future directions aimed at defining antigen-specific immune pathways and how these insights may enable next-generation diagnostics, targeted therapies, and disease modification in EoE.
 
 ---
-3.
+27.
 
 Title:
 A lifecycle governance and learning health system framework for trustworthy, generalizable, and sustainable human-ai partnership in clinical practice: Lessons from the asthma-guidance and prediction system (A-GPS).
@@ -62,22 +451,24 @@ Abstract:
 The integration of artificial intelligence (AI) into clinical decision support (CDS) holds promise for proactive, personalized, and precision care. However, current understanding of how to establish trustworthy human-AI partnerships is in its infancy, despite its critical importance for implementing AI in healthcare. We present the Asthma-Guidance and Prediction System (A-GPS) as a case study of a practice-integrated AI platform that demonstrates how trustworthy, generalizable and sustainable AI can be developed, evaluated, and implemented in real-world asthma care. We describe major challenges and solutions based on our real-world experience during the process and offer the practical framework, approaches, tools and workflow for implementing trustworthy, generalizable and sustainable AI in frontline practices. While A-GPS is an asthma-specific AI tool, it was built on top of a disease-agnostic electronic health record (EHR)-integrated clinical decision support (CDS) platform based on an Application Programming Interface (API)‑first backbone of reusable services. It was designed to reduce chart-review/processing burden and enable proactive, guideline-concordant asthma management by synthesizing fragmented longitudinal multimodal data into a clinical decision-relevant summary at the point of care. A-GPS platform integrates multiple natural language processing (NLP) algorithms to leverage free texts info in EHRs, machine learning model to offer risk stratification, and remote patient monitoring (RPM) approaches to capture real-time data from patients, enabling remote asthma (chronic disease) care. The platform has been deployed via Substitutable Medical Applications and Reusable Technologies-on-Fast Healthcare Interoperability Resources (SMART-on-FHIR) to ensure in-workflow delivery and maintainable governance making it flexible and interoperable across different EHRs systems and different chronic diseases. The translational maturity of A-GPS as an AI-powered CDS tool for pediatric asthma was demonstrated and sustained through engagement and co-design with diverse community and care team partners, including adult and pediatric Community Advisory Board, pediatric patients and their parents, clinicians (primary care providers and specialists), nurses, schedulers, as well as bioethicists and regulatory experts. Moreover, the tool was evaluated in two randomized clinical trial (RCT)s. The first trial showed a 67% reduction in clinicians' EHR review time, high clinician satisfaction, potential healthcare cost savings, fairness in model performance, and no adverse events. Trustworthiness was further assessed and supported through fairness evaluation by participant socioeconomic status (SES) using the HOUsing-based SocioEconomic Status (HOUSES) index, human-centered user interface/user experience (UI/UX) analysis, clinician workflow optimization, transparent governance practices, and best practices for regulatory science. The A-GPS experience operationalizes a reproducible, lifecycle-governed framework for generating decision-grade evidence on safety, effectiveness, usability, fairness, and workflow integration, directly addressing the translational gap between AI model development and trustworthy, sustainable deployment in real-world clinical environments. These efforts led to national recognitions, including invitation to the inaugural American Medical Informatics Association (AMIA) AI Showcase, and AI evaluation use case for a national health AI coalition. The second RCT evaluated the feasibility of integrating a remote patient monitoring (RPM) device (home spirometry) into the A-GPS platform, with a published RCT protocol that serves as a framework for RCT for evaluating AI models under the Standard Protocol Items: Recommendations for Interventional Trials (SPIRIT) guidelines for RCTs that evaluate AI tools, offering the practical framework, approaches, tools, and workflow for trustworthy, generalizable and sustainable AI tools in asthma care. This work illustrates how team science, community engagement, implementation science, and learning health system principles can be operationalized to establish a human-AI partnership model to advance translational science and clinical care, with the goal of improving health for all.
 
 ---
-4.
+28.
 
 Title:
-Managing Respiratory Failure in Late Pregnancy.
+Extreme temperature and airway dehydration: current understanding and integrative insights into respiratory vulnerability.
 
 PMID:
-42123182
+42126453
 
 Journal:
-Journal of clinical medicine (2026/Apr)
+Expert review of respiratory medicine (2026/May)
 
 Abstract:
-Background/Objectives: Respiratory failure in late pregnancy represents a complex and high-risk clinical scenario due to physiological adaptations during pregnancy that reduce maternal respiratory reserve, with tightly coupled maternal and foetal outcomes. This review aims to synthesise current evidence on epidemiology, maternal-foetal physiology, and management strategies for respiratory failure in late gestation. Methods: This narrative review integrates contemporary literature, national surveillance data, physiological principles, and expert consensus to summarise the causes, clinical implications, and management of respiratory failure in pregnancy. Results: Respiratory failure in pregnancy arises from diverse obstetric and non-obstetric conditions, including pneumonia, asthma, pulmonary embolism, cardiogenic pulmonary oedema, and ARDS. Maternal hypoxaemia is strongly associated with foetal compromise. Management requires pregnancy-specific ventilatory targets, avoidance of permissive hypercapnia, cautious use of non-invasive and invasive ventilation, and safe implementation of prone or semi-prone positioning. ECMO use has expanded, with maternal survival improving to approximately 75%, although optimal anticoagulation and timing of delivery remain uncertain. Conclusions: Effective management of respiratory failure in late pregnancy requires early recognition, multidisciplinary coordination, and adaptation of respiratory support to maternal-foetal physiology. Despite improvements in critical care and ECMO outcomes, key evidence gaps persist, underscoring the need for integrated maternal critical care pathways and further research to optimise outcomes for both mother and baby.
+INTRODUCTION: Climate change has significantly increased the frequency and intensity of extreme temperature events, posing growing threats to respiratory health. Among the underlying mechanisms, airway dehydration is a critical yet underrecognized pathway that disrupts the airway surface liquid (ASL), which is essential for mucociliary clearance, epithelial integrity, and immune defense.
+AREAS COVERED: This article examines evidence linking airway dehydration to respiratory disease during temperature extremes. We discuss how hot, dry air and cold, low-humidity conditions disrupt airway hydration balance, leading to impaired mucociliary clearance and increased susceptibility to infection and inflammation. The review summarizes the impacts of airway dehydration on vulnerable populations, including individuals with pre-existing respiratory conditions (asthma, allergic rhinitis, chronic obstructive pulmonary disease (COPD), and cystic fibrosis), children, older adults, outdoor workers, and socioeconomically disadvantaged groups.
+EXPERT OPINION: Airway dehydration represents a unifying mechanism linking climate extremes to respiratory vulnerability but remains underrepresented in clinical practice and public health strategies. We advocate for greater recognition of airway hydration in disease prevention, development of practical measurement tools, and targeted interventions for at-risk populations. Emphasizing airway dehydration as a key mediator offers opportunities to improve clinical management and develop effective climate adaptation strategies for respiratory health protection.
 
 ---
-5.
+29.
 
 Title:
 Emerging therapeutic potential of umbilical cord-derived extracellular vesicles in lung-injurious diseases: a review of recent advances.
@@ -92,7 +483,7 @@ Abstract:
 Recent research has shown that extracellular vesicles (EVs) have significant potential in treating lung injuries. These vesicles facilitate communication between cells and regulate important biological processes, including cell growth, blood vessel formation, and inflammatory responses. Due to their natural ability to cross biological barriers and low risk of immune rejection, EVs are potential vehicles for targeted drug delivery. Among various biological sources, umbilical cord-derived EVs are highly advantageous because the collection process is non-invasive and provides a high yield of vesicles. Preclinical studies have demonstrated their therapeutic potential in conditions such as bronchopulmonary dysplasia, chronic obstructive pulmonary disease, acute respiratory distress syndrome, and asthma. This review summarizes the current evidence supporting the use of umbilical cord-derived EVs for lung diseases. It also discusses key translational challenges, such as manufacturing scalability and product consistency, alongside advanced engineering strategies for future clinical use.
 
 ---
-6.
+30.
 
 Title:
 Early-life air pollution exposure: epigenetics and child allergy.
@@ -108,7 +499,7 @@ Globally, the incidence of allergic diseases in children has shown a significant
 Childhood allergies like asthma, hay fever and eczema are becoming more common worldwide. Research shows that air pollution plays an important role, especially when exposure happens during pregnancy and early life. Air pollution comes from many sources. Outdoor pollutants include tiny particles from vehicles and factories, as well as gases like nitrogen dioxide. Indoor pollutants include tobacco smoke, mold from damp homes, and chemicals from new furniture. This review explains how air pollution affects children’s health through epigenetics. Epigenetics works like instructions that tell our genes when to turn on or off. These instructions can be changed by environmental factors, including air pollution, without altering the DNA itself. During pregnancy, harmful particles can cross the placenta and cause epigenetic changes in the developing baby. These changes affect genes related to the immune system, making the child more likely to develop allergies later. Different pollutants affect different genes, and the timing of exposure matters greatly. The most vulnerable periods include the time before conception, during pregnancy, and the first few years of life. Understanding these mechanisms helps identify the most harmful pollutants and critical windows for prevention, guiding better public health policies to protect children’s health.
 
 ---
-7.
+31.
 
 Title:
 Application of FeNO in the diagnostic and therapeutic algorithm of pediatric asthma: From chronic cough and wheeze to personalized management.
@@ -123,7 +514,7 @@ Abstract:
 Bronchial asthma is the most common chronic respiratory disease in children. Treatment approaches should aim to achieve disease control, reduce limiting symptoms, and improve quality of life. The routine management of patients with asthma relies on the assessment of symptoms (including persistent cough and wheezing) and spirometry results However, these strategies do not consider the level of airway inflammation, which is a fundamental pathognomonic feature of the disease. The use of biomarkers is increasing in an effort to better understand individual asthma pathways (endotyping), offering the potential for personalized treatment with innovative biologics. Elevated levels of fractional exhaled nitric oxide (FeNO) are an indirect marker of T2 airway inflammation. FeNO is one of the few biomarkers that has been implemented in routine clinical practice because of its undeniable advantages, such as accessibility, noninvasiveness, simple implementation, and cost-effectiveness. However, the current scientific evidence in children is insufficient to recommend its universal use in the diagnosis and treatment of all patients. Considering its known limitations, FeNO can enhance therapeutic processes, particularly in children with severe asthma. High FeNO levels predict a good therapeutic response to corticosteroids and selected biologics (e.g., omalizumab and dupilumab) and indicate an increased risk of exacerbation. Similarly, measuring FeNO levels in children with recurrent wheezing can help determine the risk of future asthma development. Various factors contributing to FeNO value variability must be considered when interpreting the results. The lack of robust clinical studies is reflected in inconsistent guidelines from professional societies regarding the use of FeNO in managing childhood asthma. This review aims to evaluate the advantages, disadvantages, and potential applications of FeNO measurements in light of new findings in the field.
 
 ---
-8.
+32.
 
 Title:
 50 years on: how inhaled corticosteroids have changed the treatment of asthma.
@@ -138,7 +529,7 @@ Abstract:
 Inhaled corticosteroids are the foundation of asthma therapy and now, 50 years on from their introduction, is an appropriate time to summarise some of the key studies that have progressed the field. We can now make better decisions in selecting the optimal inhaled corticosteroid-based regimens and identifying likely responders, based on biomarkers and patient characteristics. Inhaled corticosteroids reduce the risk of asthma attacks, but do not alter the course of the disease. Asthma remission, which is as yet an undefined therapeutic goal, is the aim, but the role of inhaled corticosteroids is unclear. High-dose inhaled corticosteroid therapy can cause systemic adverse events, suggesting that steps be taken to avoid this through the addition of long-acting β2-adrenergic agonists and the judicious use of biologics. Researchers will continue to learn more about the advantages and limitations of inhaled corticosteroids as they explore methods of disease prevention and remission in the future with new tools and treatments.
 
 ---
-9.
+33.
 
 Title:
 Recent Studies Concerning Adverse Childhood Experiences and Physical Activity in Adolescents.
@@ -153,7 +544,7 @@ Abstract:
 (abstract not available)
 
 ---
-10.
+34.
 
 Title:
 The formaldehyde dispute - Part B: scientific critique of EPA's formaldehyde occupational exposure values (OEVs) and proposed alternative occupational exposure limits (OELs).
@@ -168,22 +559,7 @@ Abstract:
 In 2024, the U.S. Environmental Protection Agency (EPA) finalized its Integrated Risk Information System (IRIS) Toxicological Review and Toxic Substances Control Act (TSCA) Risk Evaluation for formaldehyde. After analyzing all the data that they deemed relevant, TSCA relied on IRIS's proposed inhalation reference values to establish an 8-hour occupational exposure value (OEV) of 0.11 ppm derived from epidemiological evidence of nasopharyngeal cancer. They also developed a 15-minute OEV of 0.17 ppm based on the goal of preventing sensory irritation. In an earlier draft of EPA's TSCA Risk Evaluation, they initially proposed an 8-hour OEV of 0.011 ppm derived from residential exposure studies of children, but this was withdrawn. This review examined EPA's methodology, the nearly 40 years of scientific literature underlying the EPA's conclusions, and the more than 300 public comments, which were submitted to the draft IRIS Toxicological Review (Docket ID: [EPA-HQ-ORD-2010-0396]) and draft TSCA Risk Evaluation (Docket ID: [EPA-HQ-OPPT-2023-0613]). A minimum of five significant flaws were identified and discussed: (1) heavy reliance on epidemiological studies which had serious confounding factors and design limitations; (2) application of default uncertainty factors which were too high given the robust human data; (3) use of exclusion criteria which dismissed high-quality studies from being considered; (4) the use of a linear no-threshold (LNT) model despite decades of substantial evidence for a threshold-driven mode of action (MOA); and (5) neglect for a validated biologically based dose-response (BBDR) model which may have been the most robust ever developed. Based on our weight-of-evidence evaluation of toxicological, mechanistic, and epidemiological data, we propose occupational exposure limits (OELs) of 0.3 ppm (8-hour TWA) and 1 ppm (15-min STEL). These values are grounded in controlled human exposure studies of asthmatics and non-asthmatics and supported by an internationally accepted BBDR model estimating an approximately 1 in 940,000 increased cancer risk for workers. As such, these OELs protect against sensory irritation, asthma, and other adverse effects, as well as carcinogenicity. They are also aligned with limits adopted by other domestic and international regulatory bodies. Immediately before this paper was accepted, EPA released their Updated Draft Risk Calculation Memorandum: Formaldehyde for public comment, which proposed to drop their promulgated OEVs (0.11 ppm and 0.17 ppm) and adopt an 8-hour OEV of 0.3 ppm to protect against sensory irritation and cancer, similarly to what was recommended in this paper.
 
 ---
-11.
-
-Title:
-The gut-lung axis in childhood asthma: from early-life programming to microbiome-informed precision medicine-a narrative review.
-
-PMID:
-42099620
-
-Journal:
-Frontiers in immunology (2026)
-
-Abstract:
-The gut-lung axis links early-life microbial programming to long-term respiratory health, offering a pivotal framework for understanding childhood asthma pathogenesis. This review synthesizes current evidence on how disruptions in microbial-immune crosstalk during critical developmental windows shape asthma susceptibility. Perinatal determinants-including maternal diet, delivery mode, antibiotic exposure, and breastfeeding-establish gut microbial communities that educate the developing immune system. Distinguishing itself from recent reviews, this review offers three novel contributions: (i) an integrated multi-omics framework linking early-life microbial maturation trajectories to specific asthma endotypes; (ii) a systematic synthesis of the molecular mechanisms by which microbial metabolites-including short-chain fatty acids, tryptophan derivatives, and bile acids-orchestrate gut-lung immune crosstalk; and (iii) a clinically actionable precision medicine algorithm that translates multi-omics profiling into personalized risk prediction, endotype-driven therapy selection, and targeted preventive strategies. Dysbiosis, characterized by delayed microbial maturation and depletion of short-chain fatty acid-producing taxa, compromises epithelial barrier integrity and skews immune homeostasis toward pro-allergic type-2 responses. Microbial metabolites, particularly short-chain fatty acids (acetate, propionate, butyrate) and tryptophan derivatives (indole-3-lactic acid, indole-3-propionic acid), serve as key molecular mediators that regulate regulatory T cells differentiation, reinforce mucosal barriers, and modulate distal airway inflammation. Microbial signatures correlate with specific asthma endotypes, offering opportunities for patient stratification. We critically evaluate emerging microbiome-targeted interventions-including strain-specific probiotics, prebiotics, postbiotics, and fecal microbiota transplantation-highlighting both therapeutic promise and the need for rigorous, well-powered clinical trials. Integrating multi-omics microbial profiling with host genetics and clinical phenotyping holds potential for microbiome-informed precision medicine, enabling personalized risk prediction, endotype-driven therapy selection, and novel preventive strategies targeting the gut-lung axis from the earliest stages of life.
-
----
-12.
+35.
 
 Title:
 Type 2 Diabetes and the Lung - Cause and Consequence.
@@ -199,7 +575,7 @@ PURPOSE OF REVIEW: The purpose of this review is to synthesize literature invest
 RECENT FINDINGS: Type 2 diabetes is a common and challenging comorbidity in patients with asthma and chronic obstructive pulmonary disease (COPD). Basic, translational and clinical studies support a bidirectional association between T2D and the lung. In animal models and human studies, insulin resistance and hyperglycemia are associated with pulmonary inflammation, respiratory exacerbation risk and disease severity. Corticosteroids are a mainstay for respiratory disease control and exacerbation treatment but promote ongoing metabolic dysregulation. Randomized, placebo-controlled trials of glucose-lowering medications for asthma are actively ongoing. Additional studies addressing clinical pathways to co-manage respiratory and metabolic risk are needed. Patients with comorbid T2D and asthma or COPD are at risk for worse outcomes. There are opportunities to improve cross-disciplinary care, potentially reducing risk and multimorbidity associated with both conditions.
 
 ---
-13.
+36.
 
 Title:
 Cost-Effectiveness of Allergen Immunotherapy for Allergic Rhinitis: A Systematic Review.
@@ -214,7 +590,7 @@ Abstract:
 Allergic rhinitis imposes a substantial clinical and socioeconomic burden globally. While symptomatic pharmacotherapy such as oral antihistamines and intranasal corticosteroids offers temporary relief, allergen immunotherapy provides disease-modifying benefits but requires higher upfront costs. This systematic review synthesises cost-effectiveness evaluations of subcutaneous (SCIT) and sublingual immunotherapy (SLIT) compared to symptomatic pharmacotherapy (SP). A systematic search of electronic databases was undertaken, identifying 35 eligible economic evaluations. Due to methodological heterogeneity, a narrative synthesis was performed. Thirty-two evaluations (91%) concluded that allergen immunotherapy represents a cost-effective intervention, with incremental cost-effectiveness ratios predominantly falling below jurisdictional willingness-to-pay thresholds. Both SCIT and SLIT demonstrated economic value, particularly in patients with co-morbid asthma and when models incorporated sustained post-treatment benefits. Future clinical research should prioritise endpoints that facilitate direct estimation of health utility. Despite diverse healthcare settings and modelling approaches, the evidence supports allergen immunotherapy (AIT) as an economically rational investment. Policymakers should utilise these findings to inform reimbursement decisions. Trial Registration: PROSPERO registration number: CRD42024530911.
 
 ---
-14.
+37.
 
 Title:
 Aluminium adjuvants in vaccines and potential health effects: systematic review.
@@ -236,7 +612,7 @@ CONCLUSIONS: Current evidence does not support causal associations between alumi
 SYSTEMATIC REVIEW REGISTRATION: PROSPERO CRD42023462831.
 
 ---
-15.
+38.
 
 Title:
 Challenges to Assessing the Prevalence of Cystic Fibrosis in the Caribbean.
@@ -256,7 +632,7 @@ RESULTS: CFTR variant patterns differ from those in the United States, with high
 CONCLUSIONS: Structural, diagnostic, and genetic factors hinder accurate CF prevalence estimates in the Caribbean, highlighting the need for region-specific research, improved screening, and expanded access to therapies.
 
 ---
-16.
+39.
 
 Title:
 Acute and Chronic Cough in Children.
@@ -271,7 +647,7 @@ Abstract:
 Cough is one of the most common symptoms among children. While most acute cough episodes are viral and resolve within 4 weeks, chronic cough persisting beyond 4 weeks warrants further evaluation. Pediatric-specific cough guidelines emphasizing algorithmic evaluation assist in early and accurate diagnosis for preventing long-term pulmonary complications. This article reviews evidence-based approaches to evaluating and managing acute and chronic cough in children, highlighting key diagnostic strategies and targeted treatment options.
 
 ---
-17.
+40.
 
 Title:
 Trace Elements in Allergy: Narrative Review.
@@ -286,7 +662,7 @@ Abstract:
 Allergic diseases are increasing worldwide and reflect a complex interplay between genetic susceptibility and environmental exposures. Among environmental determinants, trace elements contribute to epithelial barrier dysfunction, tissue remodeling, redox homeostasis, and immune regulation and may influence the development and severity of allergic diseases. This narrative review summarizes current mechanistic, epidemiological, and clinical evidence on the role of essential and non-essential trace elements in allergy. We discuss essential elements, including iron, zinc, selenium, copper, manganese, iodine, molybdenum, and boron, which support antioxidant defense, epithelial integrity, and immune homeostasis. We also review sensitizing and potentially toxic elements such as nickel, chromium, cobalt, silicon, and fluoride, which may promote allergic sensitization and inflammation through hapten-driven immune responses, oxidative stress, and adjuvant-like effects. Evidence across asthma, allergic rhinitis, atopic dermatitis, and food allergy indicates that trace elements may contribute to the development and heterogeneity of allergic disease. However, reported associations between elemental status and allergic diseases remain heterogeneous across studies. This variability likely reflects both underlying biological differences and methodological heterogeneity, including variation in study design, biological matrices, exposure assessment, and analytical techniques. Better methodological harmonization will be essential to elucidate the roles of trace elements in allergy development and to strengthen future translational and preventive research efforts. At present, available evidence does not support routine assessment of trace element status or generalized supplementation in the prevention or management of allergic diseases, except in cases of documented deficiency or clearly defined clinical indications.
 
 ---
-18.
+41.
 
 Title:
 Real-life lessons on omalizumab and food allergy: The potential for unexplored outcomes.
@@ -304,7 +680,7 @@ DISCUSSION: Real-world data demonstrate that omalizumab can prevent severe react
 CONCLUSIONS: Real-world evidence complements RCTs findings by highlighting the multidimensional benefits of omalizumab in FA, encompassing clinical protection, dietary freedom, and psychosocial well-being as well as dose fine-tuning and off-label scenarios. These data support its broader clinical value and inform future research, dosing strategies, and personalized application in routine care.
 
 ---
-19.
+42.
 
 Title:
 Treatment Dose Increase Versus Co-Medication in Allergic Rhinitis: Systematic Review With Dose-Response Network Meta-Analysis.
@@ -322,22 +698,7 @@ RESULTS: We included 262 studies. Co-medication schemes involving oral antihista
 CONCLUSIONS: Results favoured (i) doubling the dose of intranasal medications versus adding OAH, and (ii) adding INCS to OAH over doubling the dose of OAH. This study will inform the ARIA-EAACI 2024-2025 guidelines.
 
 ---
-20.
-
-Title:
-Recent advances in pediatric pulmonology and allergy: Articles of interest to fellows. Subclinical small airway dysfunction, anti-inflammatory reliever therapy, and biologic treatment in pediatric asthma.
-
-PMID:
-42067424
-
-Journal:
-Paediatric respiratory reviews (2026/Apr)
-
-Abstract:
-Recent advances in pediatric asthma continue to refine the understanding of disease mechanisms and to reshape therapeutic strategies. In this brief review, we discuss three recent articles of particular interest to fellows and early-career clinicians. First, we examine evidence showing that subclinical small airway dysfunction may be present in children with well-controlled asthma despite normal FEV1, highlighting the potential role of oscillometry as a complementary tool in functional assessment. Second, we review the CARE trial, which demonstrated that as-needed budesonide-formoterol was superior to SABA-only reliever therapy in reducing asthma attacks in children with mild asthma. Third, we summarize recent data on dupilumab in children with uncontrolled moderate-to-severe type 2 asthma, showing sustained benefits across disease severity strata. Together, these studies illustrate how physiological assessment and targeted anti-inflammatory therapies are advancing personalized care in pediatric asthma.
-
----
-21.
+43.
 
 Title:
 Clinical remission in allergy and clinical immunology practice: State of the art and World Allergy Organization (WAO) call to action.
@@ -352,57 +713,7 @@ Abstract:
 Recent advances in biological therapies, small molecules and allergen-specific immunotherapy are reshaping the management of immunoallergic diseases, progressively shifting therapeutic goals from short-term disease control toward the possibility of achieving sustained clinical remission. Despite increasing evidence across multiple conditions, a universally accepted and disease-transversal definition of clinical remission (CR) remains lacking. In this review we propose a comprehensive framework for defining clinical remission across a broad spectrum of immune-mediated diseases traditionally managed in Allergy and Clinical Immunology practice, including asthma, allergic rhinitis, chronic rhinosinusitis with nasal polyps, chronic urticaria, atopic dermatitis, mastocytosis, food allergy, and eosinophilic esophagitis. Clinical remission is defined as a sustained state of absence of clinically relevant disease manifestations, independently of underlying biological activity; suppression of inflammatory pathways and normalization of biomarkers define biological remission, which may coexist with, but is not required for, clinical remission. We introduce the 3D-CR model, a pragmatic, disease-adaptable framework integrating 3 complementary domains - clinical, biological, and functional - to characterize remission states as complete, partial, or absent. Building on this model, we propose the Allergic Disease Remission Score (ADReS) as a modular tool designed to support standardized assessment, longitudinal follow-up, and cross-disease comparison in clinical trials and real-world settings. These tools are intended as conceptual and research instruments rather than prescriptive algorithms for individual therapeutic decision-making. Finally, we outline a World Allergy Organization call to action advocating for a harmonized global approach to defining, measuring, and implementing clinical remission as a meaningful treatment target. Establishing standardized remission endpoints has the potential to improve patient outcomes, facilitate precision medicine strategies, enhance comparability across studies, and reduce heterogeneity in clinical research and practice worldwide.
 
 ---
-22.
-
-Title:
-Update in childhood asthma.
-
-PMID:
-42055854
-
-Journal:
-Allergology international : official journal of the Japanese Society of Allergology (2026/Apr)
-
-Abstract:
-The areas covered represent a personal selection in the field. Asthma is defined in this manuscript as a clinical syndrome of wheeze, breathlessness and chest tightness, sometimes with excess cough. No assumptions are made about underlying pathology, and asthma thus becomes a clinical description, not a diagnosis. The areas covered include the need never to forget the importance of getting the basics right, including correct diagnosis and appropriate management; most children with asthma do not need biologics. Recent advances in preschool wheeze are covered next, especially the beginnings of phenotype-driven treatment, and the difficult issue of understanding non-eosinophilic wheezing. It is becoming clearer that infection likely plays a big role, but management is very difficult with no evidence base. We are now coming to realize the importance of phenotyping acute asthma attacks; one size does not fit all, but whereas many are eosinophilic, some are infection driven and are non-eosinophilic, especially in the preschool years. A phenotypic approach may allow us to reduce the burden of repeated oral corticosteroid bursts. Furthermore, we need to move beyond mere cell counting to assessing functional status. We are increasingly appreciating the importance of replacing short-acting β-2 agonist reliever therapy with combined inhaled corticosteroid and a fast acting short- and especially long-acting β-2 agonists. Finally, the use of biologicals in severe asthma is discussed. The possibility that early use of biologics may induce remission or even cure asthma.
-
----
-23.
-
-Title:
-Oscillometry for the diagnosis of asthma in children: a systematic review.
-
-PMID:
-42055592
-
-Journal:
-European respiratory review : an official journal of the European Respiratory Society (2026/Apr)
-
-Abstract:
-BACKGROUND: Diagnosing asthma in children and young people (CYP) remains challenging. Oscillometry is a promising tool and is feasible from 2 years of age. European Respiratory Society (ERS) technical standards and bronchodilator response (BDR) oscillometry thresholds have been published, but diagnostic accuracy is not established.
-METHODS: We systematically reviewed studies comparing oscillometry and spirometry in CYP under investigation for asthma. Reference standards were positive BDR or positive methacholine challenge test (MCT). Primary aims were to investigate the sensitivity and specificity of current ERS oscillometry thresholds (>40% decrease in resistance at 5 Hz (R 5), >50% increase in reactance at 5 Hz (X 5) or >80% decrease in the area under the reactance curve); secondary aims were to identify oscillometry threshold values optimising both sensitivity and specificity.
-RESULTS: 11 studies were included; six (n=992 CYP) utilised BDR and five (n=531 CYP) MCT as reference standard. Meta-analysis was not possible due to heterogeneity of results reported. In two studies using current ERS BDR thresholds, zero sensitivity and high specificity (>85%) were observed. In weighted regression analyses of BDR studies, a 17.0% decrease in resistance at 5-6 Hz had sensitivity and specificity of 71.6% (95% CI 69.7-73.7%); a 20.2% increase in X 5 had sensitivity and specificity of 68.6% (95% CI 66.6-70.8%). Similarly, 27.7% increase in R 5 had sensitivity and specificity of 73.6% (95% CI 71.9-75.3%) for MCT.
-CONCLUSION: Currently recommended ERS thresholds for oscillometry BDR have low sensitivity. Proposed thresholds for defining positive BDR and MCT by oscillometry require prospective validation and adoption of standards for measuring and reporting oscillometry parameters in future diagnostic comparative studies.
-
----
-24.
-
-Title:
-Allergen-specific immunotherapy at earlier stages of allergic respiratory diseases: a change is in the air!
-
-PMID:
-42055088
-
-Journal:
-Current opinion in allergy and clinical immunology (2026/Jun)
-
-Abstract:
-PURPOSE: This expert point of view discusses why allergen-specific immunotherapy (AIT) should be considered earlier in the management of allergic rhinitis and asthma, highlighting a shift from its traditional use as a last-line add-on therapy toward a more proactive, disease-modifying intervention in carefully selected patients.
-RECENT FINDINGS: Large real-world datasets, including the REACT program and the EfficAPSI study, show that adding AIT to standard care in patients with allergic rhinitis, with or without mild-to-moderate asthma, is associated with sustained reductions in pharmacologic treatment needs, fewer severe asthma exacerbations, and lower healthcare utilization over long-term follow-up. Pediatric and adolescent analyses suggest that starting AIT earlier in life enhances these benefits, supporting the concept of a "window of opportunity" during which immune modulation may prevent or delay asthma onset and limit new sensitizations, in line with the notion of the allergic march.
-SUMMARY: The accumulating real-world evidence that early AIT can alter the natural history of allergic airway disease provides a strong rationale to reposition AIT within clinical algorithms, moving it from a rescue option for pharmacologic failures to an earlier, integrated disease-modifying strategy. Earlier use of AIT, alongside optimized pharmacotherapy, may improve long-term control, reduce progression to severe asthma, with important implications for patients and health-care systems.
-
----
-25.
+44.
 
 Title:
 Risk factors, preventive strategies, and long-term effects of lower respiratory tract infections in early childhood: a comprehensive review.
@@ -420,7 +731,7 @@ RESULTS: Early-life LRTIs arise from interacting determinants, including prematu
 CONCLUSIONS: Early-life LRTIs represent both an acute health burden and a determinant of lifelong respiratory and systemic outcomes. Expanding equitable vaccination coverage, improving maternal and child nutrition, reducing environmental exposures, and strengthening health-system capacity are essential to mitigate both short- and long-term global impacts.
 
 ---
-26.
+45.
 
 Title:
 The Use of Point-of-Care Lung Ultrasound in the Diagnosis of Pneumonia in Pediatric Patients.
@@ -435,7 +746,7 @@ Abstract:
 Traditional methods to evaluate for pediatric pneumonia include clinical examination and chest radiography (CXR). Point-of-care lung ultrasound (LUS) has emerged as a promising, noninvasive alternative for diagnosing pediatric pneumonia. This review highlights the diagnostic accuracy, benefits, and limitations of LUS compared with clinical assessment and CXR in pediatric patients with suspected pneumonia. Multiple meta-analyses demonstrate that LUS offers high sensitivity (up to 94%) and specificity (up to 96%) in diagnosing pediatric pneumonia, comparable to or exceeding CXR performance. LUS provides significant advantages, including no radiation, bedside applicability, and lower costs. However, challenges remain in standardizing LUS interpretation, particularly distinguishing bacterial pneumonia from viral illness and asthma, where overlapping ultrasound findings are common and require careful clinical correlation. Standardized protocols, clinician training, and diagnostic algorithms are essential to optimize LUS utility in pediatric respiratory care. Further research is warranted to refine differentiation between bacterial and viral etiologies and effectively integrate LUS into routine clinical pathways.
 
 ---
-27.
+46.
 
 Title:
 Follow-up after discontinuation of omalizumab in patients with moderate-to-severe asthma: A systematic review.
@@ -450,7 +761,7 @@ Abstract:
 Background: Omalizumab is a well-established add-on therapy for patients with moderate-to-severe asthma. However, there is limited systematic evidence on the long-term outcomes after discontinuation of this treatment. Objective: To address this evidence gap, this review aimed to systematically evaluate the follow-up outcomes in patients with moderate-to-severe asthma after discontinuation of omalizumab treatment. Methods: The research was conducted in accordance with the systematic reviews and meta-analyses guidelines. We systematically searched medical literature data bases from December 2003 to August 2025 for observational studies (prospective or retrospective) on omalizumab discontinuation in moderate-to-severe asthma. Data extraction was conducted on key variables: omalizumab treatment regimens, postdiscontinuation long-term outcomes, asthma control status, relapse risk factors, asthma exacerbation rates, corticosteroid use, and patterns of omalizumab reinitiation. Results: A total of 11 eligible studies were included in the review. After discontinuation, most patients showed no remarkable changes in forced expiratory volume in 1 second, fractional exhaled nitric oxide level, total immunoglobulin E value, or absolute eosinophil count. Moreover, no obvious deterioration was observed in patient-reported quality of life. These findings confirm the sustained long-term benefits of previous omalizumab add-on therapy because the majority of patients maintained favorable disease control after discontinuation. Subgroup analyses further indicated that asthma exacerbations, when they occurred, predominantly occurred within the first year after discontinuation. Conclusion: This review indicates that, although most patients maintain stable objective indicators after omalizumab discontinuation, a significant proportion are at increased risk for exacerbations, deterioration in asthma control, and increased corticosteroid use, particularly within the first year.
 
 ---
-28.
+47.
 
 Title:
 Breathing through the night: A meta-analysis of childhood asthma and obstructive sleep apnea in sleep-disordered contexts.
@@ -465,97 +776,7 @@ Abstract:
 Background: The study was to systematically evaluate the correlation between childhood asthma and obstructive sleep apnea (OSA). Methods: Several medical literature data bases were searched for studies published up to March 2025, by using the keywords "asthma" and "obstructive sleep apnea" and "child*." We included observational studies, children with OSA diagnosed via polysomnography, clinical criteria, or validated tools; and asthma confirmed by physician diagnosis, medication use, or validated questionnaires and international code. Results: Eleven studies were included that covered populations in the United States, Europe, and Asia. The pooled odds ratio (OR) for the association between childhood asthma and OSA was 1.66 (95% confidence interval [CI], 1.21-2.26; p < 0.001). Subgroup analysis by study design showed significant associations in cohort (OR 2.00 [95% CI, 1.35-2.96]) and cross-sectional (OR 1.55 [95% CI, 0.69-3.44]) but not in case-control studies (OR 0.85 [95% CI, 0.32-2.28]). Geographically, the association was strongest in America (OR 1.99 [95% CI, 1.35-2.96]) and Asia (OR 1.64 [95% CI, 1.19-2.25]), with a nonsignificant trend in Europe (OR 0.91 [95% CI, 0.34-2.42]). Sensitivity analyses directionally consistent with the results, and Egger's test (p = .587) indicated no significant publication bias. Conclusion: Childhood asthma is significantly associated with an increased risk of OSA, with sleep disorders likely exacerbating this relationship. Integrated screening and management strategies are warranted, particularly in high-risk regions such as America and Asia.
 
 ---
-29.
-
-Title:
-Evidence-based clinical recommendations on the use of telemedicine for the management of children, adolescents and young adults with moderate-severe asthma.
-
-PMID:
-42045978
-
-Journal:
-Italian journal of pediatrics (2026/Apr)
-
-Abstract:
-(abstract not available)
-
----
-30.
-
-Title:
-Clinical heterogeneity and endotype stratification in eosinophilic esophagitis.
-
-PMID:
-42044692
-
-Journal:
-Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/Apr)
-
-Abstract:
-Eosinophilic esophagitis (EoE) is a chronic immune-mediated inflammatory disease marked by esophageal dysfunction and eosinophilic inflammation, with significant variability in presentation, course, and treatment response. Although patients are diagnosed using the same criteria, they exhibit a range of characteristics with varying age at onset, symptoms, endoscopic appearance, treatment response, and progression to fibrostenotic complications. Clinical phenotyping offers a framework for describing observable disease features, including age-related symptom patterns, inflammatory and fibrostenotic traits, atopic comorbidities, and treatment responses. Complementing this approach, molecular endotyping aims to identify biologically distinct subgroups on the basis of shared underlying mechanisms, informed by transcriptomic, single-cell, and genetic analyses. In EoE, both bulk and single-cell transcriptomic studies have uncovered conserved disease signatures along with specific molecular endotypes linked to inflammatory load, epithelial dysfunction, and tissue remodeling. Genetic studies further reveal both polygenic risk factors and rare variants that influence disease susceptibility, progression, and response to treatment. This review synthesizes current knowledge on clinical phenotypes and molecular endotypes in EoE, highlighting how integrating these frameworks can improve risk stratification, inform treatment selection, and advance precision medicine.
-
----
-31.
-
-Title:
-Update on environmental determinants of allergic diseases.
-
-PMID:
-42034298
-
-Journal:
-The Journal of allergy and clinical immunology (2026/Apr)
-
-Abstract:
-This review article summarizes key advances from October 2022 to December 2025 on the link between environmental exposures and allergic diseases, with an emphasis on early-life exposures and mechanistic insights relevant to disease prevention and therapy. Allergic diseases have genetic and environmental origins. As to the latter, predisposition to allergy is thought to arise as a result of increased exposure to harmful environmental factors that act as immune adjuvants for allergens, and reduced exposure to beneficial factors that induce allergen tolerance. Harmful factors include air pollutants (eg, road traffic-related particulate matter and gases, cigarette smoke, fire smoke), and various man-made chemicals and particles. Beneficial exposures include commensal microorganisms and nonmicrobial factors present in the farming environment. Allergic diseases frequently start in early childhood. Therefore, many recently published reports focus on environmental exposures occurring prenatally or during the first few months or years after birth-that is, time windows before allergic disease manifestation. This review article summarizes and comments on recent work on prenatal, childhood, adult, protective, and harmful exposures, highlighting relevant human cohort studies as well as mechanistic work in mouse models and in vitro culture systems. Studies published in the past 3 years describe novel biomarkers of environmental exposures, elucidate novel mechanisms by which exposures shape allergic diseases, and highlight novel targets for therapeutic intervention, setting a foundation for new approaches for early detection of allergic predisposition, allergy treatment, and prevention.
-
----
-32.
-
-Title:
-ILC2s and their immune checkpoints in the antitumor response.
-
-PMID:
-42031427
-
-Journal:
-Journal for immunotherapy of cancer (2026/Apr)
-
-Abstract:
-Innate lymphoid cells (ILCs) are tissue-resident lymphocytes that patrol mucosal barriers. Among ILC subsets, ILC2s' involvement in the innate immune response to parasites, in the development of asthma and in the repair of damaged tissues is well known. However, their role in antitumor immune response is controversial, as it seems to be dependent on the type of cancer and on interaction with the other cell types in the microenvironment. Immune checkpoint expression and function have been studied recently in ILC2s, with a focus on programmed cell death protein-1 (PD-1) and cytotoxic T lymphocyte-associated protein-4 (CTLA-4). This review summarizes recent progress in understanding the ILC2s' contribution to cancer development and response to immunotherapy targeting inhibitory checkpoints.
-
----
-33.
-
-Title:
-Inborn Errors of Immunity with overlap of Allergy and Autoimmune disease.
-
-PMID:
-42031065
-
-Journal:
-Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/Apr)
-
-Abstract:
-Inborn errors of immunity (IEI) are increasingly recognized to present clinically with not just infection, but also symptoms of immune dysregulation including autoimmunity and severe atopy. IEI with atopy and autoimmunity can be grouped into 3 broad categories: 1) Cytoskeletal Impairments, 2) Cytokine Signaling Impairments, and 3) TCR Signaling Impairments. Additionally, Primary Immune Regulatory Disorders (PIRDS) are a subset of IEI that have been described with increasing frequency over the last 5 years to present predominantly with symptoms of immune dysregulation rather than severe or opportunistic infections. These PIRDs can present with overlaps of both atopy, most commonly atopic dermatitis and severe autoimmunity. In the latest IUIS genotypic categorization of IEI's, PIRDs were the group with largest expansion of newly identified monogenic etiologies, suggesting that these patients in our clinic waiting to be identified, and with the hope that identification of a monogenic cause can drive effective use of pathway specific, precision therapy. In this review we will provide an overview of the mechanisms behind T cell development or deficiency that can contribute to development of atopy and autoimmunity, review selected monogenic forms of PIRDs that present with an overlap of atopy and autoimmunity, and provide an overview of approaches to diagnostic testing for and management of these conditions in the allergy and immunology clinical setting.
-
----
-34.
-
-Title:
-Asthma and increased carotid intima-media thickness: A systematic review and meta-analysis.
-
-PMID:
-42028627
-
-Journal:
-Biomolecules & biomedicine (2026/Apr)
-
-Abstract:
-Asthma has been associated with early vascular changes that elevate the risk of atherosclerosis and cardiovascular diseases. Carotid intima-media thickness (CIMT) serves as a non-invasive marker for subclinical atherosclerosis and cardiovascular risk. However, existing literature presents conflicting results regarding CIMT measurements in asthmatic patients. This study aims to evaluate whether CIMT is elevated in asthma patients compared to healthy controls and to explore potential modifiers. We conducted a systematic review following PRISMA guidelines, performing a literature search across PubMed, Web of Science, ScienceDirect, and the WHO VHL. We calculated pooled standardized mean differences (SMD) with 95% confidence intervals (CI) to assess the differences in CIMT values. Heterogeneity was evaluated using the I² statistic, and subgroup analyses and meta-regression were utilized to identify sources of heterogeneity. Our review included a total of 10 studies. The analysis indicated significantly higher CIMT values in asthma patients compared to healthy controls, with a pooled SMD of 0.65 (95% CI: 0.19 to 1.12, p = 0.005). A limited number of studies addressed various factors, such as disease severity and the use of inhaled corticosteroids, which may influence CIMT measurements. Notably, asthmatic patients, particularly children and adolescents, exhibited higher CIMT values compared to healthy controls, suggesting a potential association with subclinical atherosclerosis in this demographic. However, these findings should be interpreted with caution due to the observational nature of the included studies and the risk of residual confounding. Further longitudinal research is necessary to elucidate the effects of disease characteristics and treatment on vascular health.
-
----
-35.
+48.
 
 Title:
 Association between nocturnal asthma, symptom severity, and clinical outcomes: a systematic review.
@@ -573,22 +794,7 @@ RESULTS: Thirteen studies met the inclusion criteria for this review. These stud
 CONCLUSIONS: Evidence presented in this systematic review reinforced the association between nocturnal asthma and more severe disease manifestations, including worse symptom scores and poorer pulmonary function compared to non-nocturnal asthma. While evidence regarding hospitalization outcomes remains inconclusive, the findings underscore the clinical significance of recognizing nocturnal symptoms to improve disease management and diagnosis.
 
 ---
-36.
-
-Title:
-Values-Based Healthcare and the Quintuple Aim: Connection, Compassion, Equity, & Stewardship.
-
-PMID:
-42009256
-
-Journal:
-The journal of allergy and clinical immunology. In practice (2026/Apr)
-
-Abstract:
-Transformation from a fee-for-service model to a value-based health care model is essential to achieve the Quintuple Aim of Healthcare, the goal of which is the improvement not only of patient and population outcomes but also clinician wellness in an equitable cost-effective paradigm of human connection. The enhancement of "values-based care" is critical to this transformation. Understanding the influences of population heterogeneity, patient idiosyncrasy and schema, and health expectation is central not only to consistently achieving the Quintuple Aim but to personal and professional satisfaction as well. The system must be centered around compassion, connection, stewardship, and making the right choice the frictionless choice. Life is short; thus, it is important that we work together, stand by the good, and strive to make things better as best as we can.
-
----
-37.
+49.
 
 Title:
 'What' and 'How' to Measure in Allergy and Clinical Immunology: A Systematic Review of Core Outcome Sets and Outcome Harmonisation Processes.
@@ -606,7 +812,7 @@ RESULTS: A total of 15,612 records were identified, with 44 studies (representin
 CONCLUSION: This review highlights growing efforts to harmonise outcome assessment in allergy and clinical immunology. Major gaps remain in coverage and methodological rigour. Quality of life and patient-reported symptoms are frequently recommended outcomes, yet definitions and measurement tools are inconsistent. Strengthening methodological consistency and expanding COS development to neglected areas are critical next steps to improve outcome reliability and comparability in the field.
 
 ---
-38.
+50.
 
 Title:
 Novel Epinephrine Delivery Devices.
@@ -621,7 +827,7 @@ Abstract:
 There has been a large amount of research into novel, noninjectable routes of epinephrine recently. These routes, such as intranasal and sublingual, can deliver epinephrine in a needle-free way to achieve similar pharmacokinetics as seen with autoinjectors. In fact, there is now an intranasal epinephrine device available to prescribe patients at-risk for anaphylaxis. Thus, clinicians should be familiar with studies of these new routes of epinephrine delivery and use a shared decision-making approach with patients/families to decide if noninjectable epinephrine is appropriate for them.
 
 ---
-39.
+51.
 
 Title:
 Drug Anaphylaxis.
@@ -636,7 +842,7 @@ Abstract:
 Anaphylaxis is a systemic clinical syndrome that rapidly evolves after an exposure to an inciting agent activates effector cells such as mast cells and basophils. Anaphylaxis can be triggered by a wide variety of agents, including drugs. Over the past decade, our understanding of drug-induced anaphylaxis (DIA) has become dramatically more nuanced, with a growing appreciation of multiple endotypes resulting in the phenotype of anaphylaxis. This review will discuss epidemiology, clinical features, mechanisms, clinical evaluation, and management of DIA.
 
 ---
-40.
+52.
 
 Title:
 Equity and Anaphylaxis.
@@ -651,7 +857,7 @@ Abstract:
 Health equity is achieved when all individuals can reach their full health potential. In food-induced anaphylaxis, this goal remains unmet. Disparities in prevalence, diagnosis, and care are influenced by race, income, and environmental determinants. This article reviews emerging evidence on inequities in food allergy, emphasizing the need to understand who is most affected and why, and outlining strategies to promote equitable prevention and treatment.
 
 ---
-41.
+53.
 
 Title:
 Bronchial thermoplasty for severe asthma: Systematic review and meta-analysis of benefits and harms.
@@ -670,7 +876,7 @@ RESULTS: Six trials randomized 573 adults. Procedurally, BT likely increases sev
 CONCLUSION: Among adults with severe asthma, BT may improve asthma control and asthma-related quality of life and may reduce overall severe exacerbations, but it likely increases procedural severe exacerbations and serious respiratory harms.
 
 ---
-42.
+54.
 
 Title:
 Risk and Protective Factors for Infection, Severe Disease, and Mortality in Epidemic Respiratory Viruses.
@@ -685,7 +891,22 @@ Abstract:
 The post-COVID pandemic era has witnessed a concerning resurgence of respiratory viruses, driving a global increase in acute respiratory infections. This trend may stem from relaxed non-pharmaceutical interventions, waning herd immunity, immunological imprinting limiting heterosubtypic protection, or viral antigenic evolution. This review aims to identify and characterize risk and protective factors associated with infection, hospitalization, severe illness, and mortality, while elucidating the drivers of the rising incidence of respiratory virus infections post-pandemic. Evidence on SARS-CoV-2 sublineages, influenza, respiratory syncytial virus, rhinovirus, adenovirus, human metapneumovirus, human parainfluenza virus, human coronaviruses, and cytomegalovirus has been collected and identified. Identified risk factors include demographic characteristics such as pediatrics and older age, male sex, race (Black, Hispanic, American Indian or Alaska native), preterm birth, and HLA-DQA1, IFNAR2, ST6GAL, and B3GALT5 genetic susceptibility. Behavioral, socioeconomic (low socioeconomic status, crowded living conditions), environmental influences (cold seasons, pollution), smoking, obesity and malnutrition could also exacerbate the risk of infection and adverse outcomes. Comorbidities, such as chronic conditions and immunocompromised states, significantly increase the risk of severe disease and hospitalization. Laboratory indices linked to severe disease outcomes include neutrophilia or neutropenia, lymphopenia, eosinopenia, and elevated C-reactive protein. Viral subtypes, viral load kinetics, vaccination status, and antiviral therapies further delineate risk profiles. Epithelial barrier impairment and underlying chronic airway diseases characterized by type 2 immunity also play a detrimental role in the development and severity of respiratory viral infections. Our findings highlight the need for stratified prevention strategies, which combine universal measures targeting shared determinants with virus-specific interventions addressing unique virological and transmission dynamics. It will provide a critical framework for optimizing precision public health strategies to counter repeated respiratory threats in the evolving post-COVID-19 pandemic landscape.
 
 ---
-43.
+55.
+
+Title:
+Regenerative therapeutics for chronic obstructive pulmonary disease.
+
+PMID:
+41856010
+
+Journal:
+Pharmacological reviews (2026/May)
+
+Abstract:
+Chronic obstructive pulmonary disease (COPD) is one of the most common lung diseases worldwide, characterized by an accelerated loss of lung function. A key problem underlying COPD is increased tissue destruction in combination with defective lung tissue repair. As current therapies do not modify the progression of the disease, new therapies aimed at restoring lung tissue repair in COPD need to be developed. In an attempt to address this major unmet need, there has been a surge in both preclinical and clinical studies, aiming to identify key mechanisms underpinning defective lung repair and the ability to inhibit or even reverse this defect. This includes small molecules such as retinoids, as well as advanced therapy medicinal products such as cell therapies or therapies with cell-derived products such as extracellular vesicles, or secreted proteins. The results of these endeavors have been variable with failures as well as successful proof-of-concepts. In this review, we provide an overview of the current state of the field, including modes of action of the therapeutics that are or have been considered for lung regeneration, including a discussion on the reasons for failure where relevant. In addition, we discuss hurdles in the clinical development of regenerative therapeutics for COPD including clinical outcomes, route of administration and formulation as these are pivotal considerations moving forward. SIGNIFICANCE STATEMENT: Chronic obstructive pulmonary disease is characterized by progressive alveolar destruction and defective epithelial regeneration. Targetable mechanisms, including cellular senescence, altered mesenchymal-epithelial signaling, and chronic inflammation, impair progenitor function and niche integrity. Therapeutic strategies that restore epithelial repair, including small molecules, biologics, and cell-based approaches, represent a promising path toward disease modification and long-term lung function restoration.
+
+---
+56.
 
 Title:
 Preschool Wheeze and the GINA 2025 Paradigm: Challenges and Adaptations for LMICs.
@@ -700,22 +921,7 @@ Abstract:
 Wheezing in preschool children is a common clinical challenge characterized by a broad differential diagnosis and marked phenotypic heterogeneity. The Global Initiative for Asthma (GINA) 2025 guidelines introduce a structured framework for diagnosing asthma in this age group, shifting from a probabilistic to a more definitive labelling approach. While this represents a significant evolution, its applicability in low- and middle-income countries (LMICs) faces significant barriers including caregiver misreporting, limited diagnostic tools, and inconsistent follow-up. This article critically examines these challenges, particularly the risks of overdiagnosis and overtreatment in preschool wheeze within the LMIC context.
 
 ---
-44.
-
-Title:
-Mechanisms of thermoregulation in Pseudomonas aeruginosa.
-
-PMID:
-41810972
-
-Journal:
-Journal of bacteriology (2026/Apr)
-
-Abstract:
-Pseudomonas aeruginosa is a highly versatile opportunistic pathogen and a major cause of acute, chronic, and even lifelong respiratory infections in people with cystic fibrosis. It can also cause corneal infections, burn/wound infections, and bacteremia. P. aeruginosa is often found in human-associated environments such as hospitals, where it is a frequent cause of nosocomial catheter-associated urinary tract infections and ventilator-associated pneumonia. As a nosocomial pathogen, a major environmental change associated with transmission is the change from room or ambient temperature to human body temperature. P. aeruginosa is highly studied for its regulatory and adaptive responses to environmental stimuli, such as low iron conditions or the presence of antibiotics, but temperature regulation, or thermoregulation, is relatively understudied, particularly at a mechanistic level. This review explores the current understanding of mechanisms of global, transcriptional, post-transcriptional, and post-translational thermoregulation in P. aeruginosa, with a discussion on gaps in the field's knowledge and directions for future research. More mechanistic studies of thermoregulation inspired by the open questions presented here will improve our understanding of how P. aeruginosa adapts to different temperatures.
-
----
-45.
+57.
 
 Title:
 Update on allergen immunotherapy for asthma.
@@ -732,7 +938,7 @@ RECENT FINDINGS: A trial of house dust mite for asthma was strikingly positive f
 SUMMARY: Allergen-specific immunotherapy remains an important treatment for allergic rhinitis and conjunctivitis and can be used safely in patients with mild or moderate well controlled asthma. Several new approaches look promising but need a lot more work.
 
 ---
-46.
+58.
 
 Title:
 Eosinophilic granulomatosis with polyangiitis: recent therapeutic advances.
@@ -749,7 +955,7 @@ RECENT FINDINGS: The therapeutic scenario in EGPA has been recently broadened by
 SUMMARY: Biological drug therapy targeting IL-5 consolidated its role in the management of EGPA, becoming the cornerstone of the treatment of this rare disease. Future guidelines should consider these recent findings to improve the management of EPGA. Notably, while selective IL-5 targeting is highly effective for remission maintenance, its role in inducing remission in EGPA remains to be fully established. Rituximab was non-superior to standard therapy in induction of remission in patients with EGPA, demonstrating a similar rate of response. The role of other targeted therapies, albeit promising in some cases, remains a matter of debate.
 
 ---
-47.
+59.
 
 Title:
 Association between swimming pool attendance and allergic diseases: An updated systematic review and meta-analysis.
@@ -764,7 +970,7 @@ Abstract:
 Recently, increasing epidemiological studies have suggested a potential association between swimming pool attendance and allergic outcomes with inconsistent findings. This systematic review and meta-analysis aims to elucidate the association between swimming pool attendance and the risk of allergic diseases. We systematically searched PubMed, Web of Science, Scopus, and Embase to identify relevant studies published up to August 8, 2025, and performed a meta-analysis of the extracted data. Furthermore, subgroup analyses, sensitivity analyses, and assessments of publication bias were also conducted. A total of 23 studies involving 54,153 participants were included. The combined data showed a positive correlation between swimming pool attendance and asthma [OR = 1.14, 95% CI: (1.08-1.21)], but no significant link with allergic rhinitis, atopic dermatitis, hay fever, or wheezing. Subgroup analyses indicated stronger associations in children [asthma: OR = 1.14, 95% CI: (1.08-1.21)] and among those with early-life exposure [asthma: OR = 1.13, 95% CI: (1.06-1.20)]. Interestingly, early swimming pool attendance was negatively associated with allergic rhinitis in children [OR = 0.78, 95% CI: (0.63-0.97)]. In conclusion, swimming pool attendance was significantly associated with asthma, highlighting potential public health implications and the need for further research into relevant environmental exposures.
 
 ---
-48.
+60.
 
 Title:
 Risk Factors for the Development of Food Allergy in Infants and Children: A Systematic Review and Meta-Analysis.
@@ -786,22 +992,27 @@ RESULTS: A total of 190 studies involving 2.8 million participants across 40 cou
 CONCLUSIONS AND RELEVANCE: In this meta-analysis, the most credible risk factors associated with development of childhood food allergy are a combination of major and minor risk factors, including early allergic conditions (atopic march/diathesis), delayed allergen introduction, genetics, antibiotic exposure, demographic factors, and birth-related variables.
 
 ---
-49.
+61.
 
 Title:
-Understanding the impact of social determinants of health in hematology: a scoping review of trends across journals and over time.
+Burden and risk of asthma and rhinitis in people with atopic dermatitis: global estimates from a hierarchical Bayesian model.
 
 PMID:
-41587417
+41641462
 
 Journal:
-Blood advances (2026/Apr)
+The British journal of dermatology (2026/May)
 
 Abstract:
-Addressing social determinants of health is increasingly recognized as a critical priority in medicine to optimize care delivery to all patients. To support health care providers, researchers, and the hematology field to process and synthesize the rapidly expanding hematology social determinants of health literature, we conducted a scoping review to catalog/describe recent hematology social determinants studies. Our goals were to highlight state of the art in hematology social determinants research, describe trends in this literature across journals/conferences and over time, identify gaps, and inspire efforts to improve health across populations. Our search returned 602 hematology articles and 153 abstracts. Most works examined racial or socioeconomic disparities among adults with hematologic malignancies or who are hematopoietic cell transplant/cell therapy recipients. In contrast, few explored basic science correlates of disparities, approaches to optimize collection, recording, reporting, and use of social determinants of health data, or interventions/educational initiatives to address care inequities. Many vulnerable populations were understudied, including Indigenous peoples; people living with disabilities; transgender/gender-nonbinary peoples; and disparities across parity, religion, or immigration/legal status. Only a minority of works considered intersectionality across multiple dimensions of disparities. Although both the number and proportion of social determinants studies increased over time, there were imbalances in journals in which these studies were published. Overall, this review is an important tool to advance hematology population health, highlight hematology social determinants of health research productivity, inform development of research agendas and priorities for societies/funders, and support researchers to address identified gaps. Closing these gaps will be essential to improve delivery of safe and effective hematologic care for all.
+BACKGROUND: Atopic dermatitis (AD) is a chronic inflammatory skin disease often associated with asthma and rhinitis. However, epidemiological evidence on these comorbidities remains fragmented and is largely limited to high-income countries.
+OBJECTIVES: To provide comprehensive global, regional and country-level estimates of the prevalence and odds ratios (ORs) of asthma, rhinitis and their subtypes among individuals with AD.
+METHODS: We systematically reviewed 278 studies retrieved from PubMed, Embase, Web of Science and CNKI (China National Knowledge Infrastructure). Standardized prevalence estimates and ORs were derived using a Bayesian hierarchical linear mixed-effects model.
+RESULTS: Among individuals with AD, the global prevalence estimate of asthma, rhinitis, allergic rhinitis, rhinoconjunctivitis, and coexisting asthma and rhinitis was 20.1% (ranging from 2.5% in Israel to 59.4% in India), 45.1% (ranging from 7.8% in Israel to 82.7% in India), 41.4% (ranging from 6.8% in Israel to 80.3% in India), 30.7% (ranging from 4.3% in Israel to 71.9% in India) and 10.4% (ranging from 1.1% in Israel to 40.8% in India), respectively. Estimates were higher when restricted to patients with AD diagnosed by dermatologists or physicians. The highest comorbid prevalence rates were found for India, Cuba, Finland and Puerto Rico. Compared with healthy control individuals, AD was associated with higher odds of asthma (OR 2.73; ranging from 1.59 in China to 6.64 in Ethiopia), rhinitis (OR 2.98; ranging from 1.73 in China to 7.23 in Ethiopia), allergic rhinitis (OR 2.42; ranging from 1.41 in China to 5.89 in Ethiopia), rhinoconjunctivitis (OR 4.21; ranging from 2.45 in China to 10.19 in Ethiopia), and coexisting asthma and rhinitis (OR 2.42; ranging from 1.41 in China to 5.89 in Ethiopia).
+CONCLUSIONS: This study provides the first globally standardized estimates of respiratory comorbidities in AD, and can inform clinical practice and public health policy.
+Atopic dermatitis is a common long-term inflammatory skin disease. It is also called eczema. It affects more than 200 million children and adults worldwide. People with the disease often have other conditions, particularly asthma and rhinitis. Asthma affects breathing and rhinitis causes sneezing or congestion. Most studies on these conditions have been in wealthy countries. They have also used a range of different research methods. This makes it difficult to compare and understand the global situation. In this study, researchers in China and the USA analysed data from 278 studies from around the world. We estimated how common asthma and rhinitis are in people with eczema in different regions and countries. We found that about 1 in 5 people with eczema have asthma and almost half have rhinitis. We also found that people with eczema are 2 to 4 times more likely to have these conditions than people without eczema. Some countries showed particularly high rates of these conditions. Our findings suggest that asthma and rhinitis are common problems for people with eczema. This is true no matter where they live. The information from this study may help doctors recognize and manage these conditions in people with eczema. These findings could also support future research to improve disease prevention and patient care.
 
 ---
-50.
+62.
 
 Title:
 Novel Uses of Digital Health and the Electronic Medical Record in Drug Allergy.
@@ -816,7 +1027,7 @@ Abstract:
 Modern drug allergy practice is witnessing the steady expansion of electronic health records and digital health applications. This creates both obstacles and opportunities for optimizing allergy care. In this review we describe ways in which novel technology is being used with regard to immunologically mediated drug hypersensitivity research and clinical practice. We propose future directions to strengthen drug allergy diagnostic accuracy, clinical decision-making, and patient safety.
 
 ---
-51.
+63.
 
 Title:
 Better Breathing, Tougher Speaking? A Scoping Review of the Effects of Inhaled Corticosteroids on the Voice Quality of Asthmatic Children.

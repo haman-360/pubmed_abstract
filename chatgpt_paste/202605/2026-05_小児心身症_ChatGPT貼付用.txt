@@ -14,6 +14,39 @@ PMIDは必ず入力データに含まれるものを正確に転記してくだ�
 1.
 
 Title:
+Guidelines for the prevention of psychosis from the World Federation of Societies of Biological Psychiatry (WFSBP) and EPI Canada.
+
+PMID:
+42201755
+
+Journal:
+The world journal of biological psychiatry : the official journal of the World Federation of Societies of Biological Psychiatry (2026/May)
+
+Abstract:
+OBJECTIVE: To prepare evidence-based guidelines on psychosis prevention.
+METHODS: We reviewed evidence on risk factors for/age at onset of psychosis, tools to assess clinical high-risk of psychosis (CHR-P), transition rates, risk calculation/ethical considerations around risk communication, CHR-P biological/clinical correlates, efficacy/cost-effectiveness of interventions/psychosis prevention services. The World Federation of Societies of Biological Psychiatry framework was used to grade evidence regarding interventions/services, elaborating guidelines with evidence-/consensus-based clinical recommendations to prevent psychosis in CHR-P subjects.
+RESULTS: At the service organisation level, (i) psychosis indicated prevention services might be implemented in close collaboration with early intervention services for psychosis to minimise duration of untreated illness, (ii) intake age criteria should be between 14 to 35, (iii) services should allow access to persons with cannabis use disorder. At the assessment and risk communication level, in clinical settings: (iv) staff in mental health services should be trained in administering/rating CHR-P assessment tools, (v) administer them, (vi) be trained in using/interpreting risk calculators, and (vii) in communicating risk, (viii) only use validated risk calculators, keeping a human-to-human interaction. Also, (ix) prevention services should assess comorbid mental disorders. At the intervention level: (x) staff should offer treatment for abstinence from cannabis, (xi) offer evidence-based treatment for comorbid mental disorders, and (xii) offer treatment for CHR-P based on patient preference, following the 'first do no harm' principle.
+CONCLUSIONS: Prevention services should be implemented, including interventions for cannabis use, reducing the duration of untreated psychosis, and treating comorbid mental disorders.
+
+---
+2.
+
+Title:
+Global review of assessments of online video gaming policies affecting young people: Loot boxes, age ratings, gameplay time restrictions, and beyond.
+
+PMID:
+42167097
+
+Journal:
+Comprehensive psychiatry (2026/May)
+
+Abstract:
+Online video gaming is a highly popular activity, especially amongst young people (aged ≤25), with entertainment, emotional, and social benefits. However, stakeholders are also concerned about potential risks and harms, including exposure to inappropriate (e.g., violent and sexual) content; excessive use (i.e., 'addiction' and 'gaming disorder'); and overspending, particularly in relation to gambling-like products (e.g., loot boxes). Various regulatory policies have been adopted worldwide in response. We reviewed empirical evaluations of the implementation of these policies. Results showed that age rating systems that provide information on the suitability of a game's content are widely adopted; however, many young people and their parents do not follow the guidance. Restrictions on how long and when young people can play video games in Asia could be easily circumvented and are not obviously beneficial. Regulations governing gambling-like loot boxes and in-game monetary spending in Europe and Asia are poorly complied with and enforced, leaving significant consumer protection concerns unaddressed. Many aspects of the adopted policies remain untested, and the regulatory situation in many countries remains unreported in the English academic literature. Stricter enforcement of pre-existing regulations, which has not occurred, may address many concerns. More research is needed to ensure all adopted policies are regularly monitored and tested: effective policies should be considered for adoption elsewhere, whilst ineffective policies should either be improved or repealed. Governments should fund more research into countermeasures to reduce the unwanted psychosocial effects of video games.
+
+---
+3.
+
+Title:
 Global prevalence of internet gaming disorder in children and adolescents: a systematic review and meta-analysis.
 
 PMID:
@@ -29,52 +62,7 @@ RESULTS: Nineteen studies involving 251,037 participants and 26,868 IGD cases me
 CONCLUSIONS: Approximately one in ten children and adolescents worldwide meet criteria for IGD, underscoring its growing significance as a global mental health concern. Given the substantial heterogeneity observed, the pooled estimate should be interpreted as an average across diverse contexts rather than a uniform global rate. These findings highlight the need for standardized diagnostic criteria, culturally sensitive preventive interventions, and early identification strategies to mitigate long-term psychosocial impact.
 
 ---
-2.
-
-Title:
-Can breastfeeding practices explain sociodemographic disparities in childhood obesity and healthy eating? Results from NHANES 2005-2018.
-
-PMID:
-42060076
-
-Journal:
-Reviews in endocrine & metabolic disorders (2026/Apr)
-
-Abstract:
-(abstract not available)
-
----
-3.
-
-Title:
-Precision Medicine in Mental Health: Applications, Challenges, and Recommendations.
-
-PMID:
-42037368
-
-Journal:
-European psychiatry : the journal of the Association of European Psychiatrists (2026/Apr)
-
-Abstract:
-(abstract not available)
-
----
 4.
-
-Title:
-Medical device development and innovation for rare and pediatric populations: a global landscape overview.
-
-PMID:
-42036679
-
-Journal:
-Orphanet journal of rare diseases (2026/Apr)
-
-Abstract:
-(abstract not available)
-
----
-5.
 
 Title:
 [Autism spectrum disorders-Transition from adolescence into adulthood].
@@ -90,7 +78,7 @@ Autism spectrum disorders (ASD) are neurodevelopmental disorders with a prevale
 Autismusspektrumstörungen gehören mit einer Prävalenz von ca. 0,7 % zu den neuromentalen Entwicklungsstörungen. Sie sind charakterisiert durch Besonderheiten der sozialen Interaktion, der verbalen und nonverbalen Kommunikation, routineartigen und unflexiblen Verhaltensweisen, Sonderinteressen und veränderter Wahrnehmung. Sie manifestieren sich in der ersten Lebensdekade und persistieren in der Regel lebenslang. Damit sind sie wie die meisten anderen neuromentalen Entwicklungsstörungen zwangsläufig nicht nur ein Thema der Kinder- und Jugendpsychiatrie, -psychosomatik und -psychotherapie (KJPPP), sondern auch der Erwachsenenpsychiatrie, -psychosomatik und -psychotherapie (EPPP). Die Transition vom Jugend- in das Erwachsenenalter stellt für viele Betroffenen und ihre Angehörigen, aber auch für Professionelle des Versorgungssystems eine besondere Herausforderung dar. Zentrale Aspekte für die Transition sind einerseits die Behandlung komorbider psychischer, kognitiver und sprachlicher Störungen, zum anderen sozialrechtliche und Versorgungsaspekte. In diesem Beitrag werden diese aus der Perspektive der KJPPP und EPPP beleuchtet.
 
 ---
-6.
+5.
 
 Title:
 Climate-Related and Nature-Based Interventions for Mental Health: An Umbrella Review and Meta-Analysis.
@@ -112,7 +100,7 @@ RESULTS: Twenty-eight SRMAs were included that examined 344 studies and 91 assoc
 CONCLUSIONS AND RELEVANCE: There is limited evidence for mental health interventions to reduce adverse mental health impacts of climatic impact drivers, but there is promising potential for future research in this field based on evidence from contexts other than climate change. Currently, strategies for mental health interventions in the context of climate change, such as those for implementing and scaling interventions, need to rely largely on global evidence from contexts other than climate change.
 
 ---
-7.
+6.
 
 Title:
 Psychotropic medications and their interactions with subcortical brain volume in bipolar disorder: An ENIGMA mega-analysis.
@@ -127,7 +115,7 @@ Abstract:
 MRI studies in bipolar disorder (BD) have yielded inconsistent findings, partly due to the varied use of psychotropic medications. This study utilised a mega-analysis approach, accounting for concurrent medication status (syndrome-based and Neuroscience-based Nomenclature (NbN) classifications), in order to assess the association of medication status with subcortical brain volumes in BD. Data from 2,664 BD patients and 4,065 controls (CN) were pooled from 34 research groups as part of the ENIGMA Bipolar Disorder Working Group. Standardized ENIGMA protocols were used to measure subcortical brain volumes. Linear-mixed-effects regression evaluated the association between psychotropic medications and subcortical volumes, and moderation analyses explored interactions. Medication-free patients (n = 410) showed mild ventricular enlargement (d = 0.07) and increased putamen volume (d = 0.06) compared to CN. Patients taking psychotropic medications exhibited smaller subcortical volumes (d = -0.06 to -0.11) and larger ventricles (d = 0.11 to 0.19). Use of antiepileptic and antipsychotic medications was associated with smaller hippocampal and thalamic volumes (d = -0.07 to -0.14), while NbN classification indicated that the categories of 'valproate' and 'dopamine and other monoamine receptor antagonists' are key variables when considering volume differences between BD and CN. Concurrent lithium use weakened the negative association between antiepileptic use and hippocampal volume (β = 0.19, q = 0.038) in patients. Medication status is associated with altered subcortical brain volumes in BD. The NbN classification provides a useful framework for future studies, emphasizing the need for comprehensive longitudinal research to further unravel complex clinical-pharmacological-neurobiological interactions in BD.
 
 ---
-8.
+7.
 
 Title:
 Emotion-Related Treatments in Patients With Binge Eating Episodes-a Systematic Review and Meta-Analysis.
@@ -142,7 +130,7 @@ Abstract:
 Emotions represent potential triggers for binge eating, and binge eating can serve as a dysfunctional emotion regulation strategy. Therefore, we investigated emotion-related treatments in patients with binge eating in a systematic review. Change in binge eating were the primary outcome; eating disorder pathology and emotion-related outcomes were secondary outcomes. A meta-analysis was computed regarding pre-changes and post-changes in binge eating frequency within groups, and potential influencing factors were investigated, namely, BMI, eating disorder diagnosis, treatment type, aspects of BE outcome, age, and sex. Thirty-eight articles were included and 31 within the meta-analysis. Data quality was rated as moderate. The sample size varied strongly with a high proportion of women. Only five studies examined adolescents. Binge eating disorder (n = 18) and dialectical behavioral treatment (n = 16) were most frequently examined. Results show significant reductions in binge eating after treatment. Additionally, the systematic review indicates the superiority of emotion-related treatments compared with waitlist control groups and comparability with active control groups in terms of improvements in binge eating, eating disorder pathology, and emotion regulation. The effects appear to be stable at follow-up analyses from 1 to 12 months. Potential influencing factors did not affect the efficacy of emotion-related treatments. Overall, though meta-analytic results have to be interpreted with caution, emotion-related treatments hold promise in treating binge eating, and emotion regulation might represent a potential mechanism of change.
 
 ---
-9.
+8.
 
 Title:
 [Youth mental health: early detection and early intervention of mental disorders].
