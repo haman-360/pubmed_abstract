@@ -2,7 +2,8 @@
 
 set -e
 
-cd "/Users/thama/Documents/GitHub/pubmed_abstract"
+REPO_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
+cd "$REPO_DIR"
 
 echo "Google Drive API用ライブラリをインストールします。"
 echo

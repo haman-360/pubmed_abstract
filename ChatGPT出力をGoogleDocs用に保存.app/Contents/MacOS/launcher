@@ -1,2 +1,3 @@
 #!/bin/zsh
-open -a Terminal "/Users/thama/Documents/GitHub/pubmed_abstract/archive/launchers/ChatGPT出力をGoogleDocs用に保存.command"
+REPO_DIR="$(cd "$(dirname "$0")/../../.." && pwd)"
+open -a Terminal "$REPO_DIR/archive/launchers/ChatGPT出力をGoogleDocs用に保存.command"
