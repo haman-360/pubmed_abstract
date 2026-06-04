@@ -1,0 +1,456 @@
+入力70本から、外来小児科医の診療行動に影響しやすい10本を選定しました。特に、学校検尿後の血尿・蛋白尿対応、急性糸球体腎炎の初期評価、腎嚢胞の画像フォロー、ネフローゼ治療の見直し、AKI後フォローを重視しました。対象データは添付ファイルのPubMed abstract一覧に基づいています。
+
+# 第1部：日本語要約
+
+---
+
+①タイトル
+
+AsPNA Clinical Practice Guidelines for the management of infection-related glomerulonephritis.
+
+②PMID
+
+41627401
+
+③なぜ重要か
+
+小児の急性糸球体腎炎、特に感染関連糸球体腎炎について、診断、初期検査、入院判断、生検適応、長期フォローを具体的に整理した実践的ガイドラインです。学校検尿後の血尿・蛋白尿、浮腫、高血圧の外来対応に直結します。
+
+④臨床への影響
+
+血尿と蛋白尿に加えて浮腫、乏尿、高血圧があれば急性糸球体腎炎として評価し、尿検査、腎機能、アルブミン、補体C3、血算、腎エコーを組み合わせる流れが明確になります。C3低値が12週を超える場合、ネフローゼ症候群、急速進行例などは腎生検・専門紹介を強く意識する必要があります。
+
+⑤診療変更の必要性
+
+Yes：小児外来での急性腎炎初期評価と紹介基準を標準化できる。
+
+---
+
+①タイトル
+
+Proteinuria.
+
+②PMID
+
+42219187
+
+③なぜ重要か
+
+小児の蛋白尿は一過性・起立性が多い一方、持続性蛋白尿は腎疾患のサインであり、腎予後に影響する修正可能なリスク因子でもあります。学校検尿や偶発的尿検査異常への外来対応に非常に実用的です。
+
+④臨床への影響
+
+一過性、起立性、持続性蛋白尿を整理し、糸球体性か尿細管性かを意識して評価する必要があります。特発性ネフローゼ症候群の管理にも触れており、外来での再検査、早朝尿、蛋白尿定量、紹介判断の見直しにつながります。
+
+⑤診療変更の必要性
+
+Yes：学校検尿後の蛋白尿対応をより系統的にできる。
+
+---
+
+①タイトル
+
+Imaging of Pediatric Renal Cysts: An Update-AJR Expert Panel Narrative Review.
+
+②PMID
+
+41258657
+
+③なぜ重要か
+
+小児腎嚢胞は偶発的に見つかることが増えている一方、小児特異的な統一指針が乏しい領域です。画像所見から経過観察か、専門紹介か、遺伝性疾患を疑うかを考える助けになります。
+
+④臨床への影響
+
+単純嚢胞、症候群性嚢胞性腎疾患、悪性を疑う嚢胞性病変の区別に、超音波、造影超音波、CT、MRIをどう位置づけるかが整理されています。小児外来では、腎エコーで嚢胞を指摘された児のフォロー間隔や紹介基準を考える材料になります。
+
+⑤診療変更の必要性
+
+Yes：偶発的腎嚢胞の説明・紹介判断に役立つ。
+
+---
+
+①タイトル
+
+Rituximab in pediatric refractory nephrotic syndrome: a systematic review and meta-analysis evaluating therapeutic efficacy and adverse event profiles.
+
+②PMID
+
+41204962
+
+③なぜ重要か
+
+小児難治性ネフローゼ症候群に対するリツキシマブの有効性と安全性を、従来の免疫抑制薬と比較したsystematic review/meta-analysisです。専門治療ではありますが、紹介先での治療選択肢を理解するうえで重要です。
+
+④臨床への影響
+
+リツキシマブはタクロリムスなどと比べて無再発生存率を高め、ステロイド中止率を上げ、ステロイド量を減らす可能性が示されています。一方で、外来小児科では治療後の感染、低ガンマグロブリン血症、ワクチン計画への配慮が重要になります。
+
+⑤診療変更の必要性
+
+Yes：難治性ネフローゼ紹介後の治療理解と感染管理の意識が変わる。
+
+---
+
+①タイトル
+
+Improving pediatric post-acute kidney injury care: considerations for the clinician.
+
+②PMID
+
+42161893
+
+③なぜ重要か
+
+小児AKIは急性期で終わらず、その後のCKDや高血圧につながる可能性があります。退院後に地域の小児科外来で何をフォローすべきかを考えるうえで重要です。
+
+④臨床への影響
+
+入院中にAKIを起こした児では、退院後も血圧、尿検査、腎機能を一定期間確認する発想が必要になります。特に重症AKI、ICU管理、腎代替療法を要した児では、専門医フォローの有無を確認し、見落としを防ぐ必要があります。
+
+⑤診療変更の必要性
+
+Yes：退院後外来でAKI既往を腎予後リスクとして扱うべき。
+
+---
+
+①タイトル
+
+Refractory Rickets: Evaluation and Management.
+
+②PMID
+
+41741919
+
+③なぜ重要か
+
+治療用量のビタミンDに反応しないくる病では、腎尿細管疾患やCKD-MBDなど腎臓関連疾患が背景にあることがあります。低身長、骨変形、低リン血症、多尿などを外来で拾ううえで実用的です。
+
+④臨床への影響
+
+難治性くる病では、カルシウム、リン、ALP、PTH、25水酸化ビタミンDだけでなく、尿検査や尿細管機能、腎石灰化、遺伝子検査を含めた系統的評価が必要になります。小児外来では「ビタミンD不足だけ」と決めつけず、専門紹介のタイミングを早める意義があります。
+
+⑤診療変更の必要性
+
+Yes：低リン血症や尿細管疾患を意識した検査・紹介につながる。
+
+---
+
+①タイトル
+
+New prognostic markers for IgA nephropathy in children.
+
+②PMID
+
+40996504
+
+③なぜ重要か
+
+小児IgA腎症の予後予測について、Oxford MEST-C、蛋白尿、eGFR、血圧に加え、新規バイオマーカーを整理したレビューです。学校検尿で見つかるIgA腎症のリスク層別化を理解する助けになります。
+
+④臨床への影響
+
+外来では、血尿の有無だけでなく蛋白尿の程度、血圧、腎機能が予後に重要であることを再確認できます。IgA/C3比、galactose-deficient IgA1などはまだ一般外来で即使用する段階ではありませんが、専門医説明の理解に役立ちます。
+
+⑤診療変更の必要性
+
+Yes：IgA腎症疑い・診断後のフォローで蛋白尿と血圧をより重視する。
+
+---
+
+①タイトル
+
+Systematic Review of IgA Nephropathy Coexisting With Alport Syndrome.
+
+②PMID
+
+42027550
+
+③なぜ重要か
+
+IgA腎症とAlport症候群が併存する病態を系統的に整理した論文です。血尿が持続する小児で、IgA腎症だけでなくCOL4A3/A4/A5関連疾患を考える必要性を示します。
+
+④臨床への影響
+
+顕微鏡的血尿は全例でみられ、小児ではネフローゼ域蛋白尿も多く、腎予後不良例が少なくありません。家族歴、聴力、眼所見、持続血尿、蛋白尿の程度から、遺伝性腎疾患を疑い専門医へつなぐ意識が重要です。
+
+⑤診療変更の必要性
+
+Yes：持続血尿を「IgA腎症らしい」で終わらせず、Alport関連疾患を意識する。
+
+---
+
+①タイトル
+
+Streamlining Diagnosis of Bardet-Biedl Syndrome: New Diagnostic Algorithm With Updated Criteria.
+
+②PMID
+
+42175648
+
+③なぜ重要か
+
+Bardet-Biedl症候群の診断基準とアルゴリズムを更新した国際的な合意文書です。肥満、発達特性、多指症、網膜症、腎尿路奇形などを組み合わせて早期診断につなげる視点が得られます。
+
+④臨床への影響
+
+小児外来で肥満、発達遅滞、腎尿路奇形、視覚異常、多指症の組み合わせを見たとき、単独の問題として扱わず症候群として評価するきっかけになります。遺伝子検査の位置づけも明確化されており、専門紹介の根拠になります。
+
+⑤診療変更の必要性
+
+Yes：腎疾患を含む症候群性疾患の拾い上げに役立つ。
+
+---
+
+①タイトル
+
+A systematic review of short-term outcomes in patients with anti-factor H associated atypical HUS managed with plasma exchanges versus eculizumab.
+
+②PMID
+
+42101481
+
+③なぜ重要か
+
+学童期に多いanti-factor H関連aHUSについて、血漿交換とエクリズマブの短期成績を比較したsystematic reviewです。まれですが、初期対応が腎予後に直結する重要疾患です。
+
+④臨床への影響
+
+血小板減少、溶血性貧血、AKIを伴う児では、通常の胃腸炎や脱水として見逃さずHUS/aHUSを疑う必要があります。治療選択は専門施設で行うものの、anti-FH関連aHUSでは血漿交換が初期選択肢になり得るという理解は、迅速紹介の重要性を高めます。
+
+⑤診療変更の必要性
+
+Yes：急性腎障害＋溶血＋血小板減少を見た際の緊急紹介意識が高まる。
+
+---
+
+# 第2部：英語Abstract
+
+---
+
+1. AsPNA Clinical Practice Guidelines for the management of infection-related glomerulonephritis.
+
+PMID: 41627401
+
+Journal: Pediatric nephrology (Berlin, Germany) (2026/Jun)
+
+Abstract:
+
+Infection-related glomerulonephritis (IRGN) is the leading cause of acute glomerulonephritis (GN) in children worldwide, particularly in low- and middle-income countries. To provide evidence-based care, the Glomerular Disease Workgroup of the Asian Pediatric Nephrology Association (AsPNA) convened a panel of experts to develop recommendations on diagnosis, evaluation and management of pediatric IRGN. Following a comprehensive literature search, available evidence was graded using the AAP-GRADE approach, and recommendations finalized through Delphi consensus. The panel recommends diagnosing acute GN in children presenting with hematuria and proteinuria, if accompanied with edema, oliguria, or hypertension. Postinfectious GN is suspected in patients with acute GN with recent streptococcal or staphylococcal infection and transient hypocomplementemia. The evaluation includes urinalysis, kidney function tests, serum albumin, complement C3, blood counts and kidney ultrasonography. Kidney biopsy is required for patients with atypical features, nephrotic syndrome, persistently low C3 beyond 12 weeks, and/or rapidly progressive GN. Therapy is chiefly supportive, including fluid and salt restriction in patients with edema or hypertension, diuretics for volume overload, and calcium channel blockers for stage 2 hypertension. Patients with significant edema, severe hypertension, or acute kidney injury require inpatient monitoring. Patients with staphylococcus-associated GN infective endocarditis associated GN and shunt nephritis require therapy with antibiotics. Immunosuppressive therapy is suggested in patients with crescentic IRGN or rapidly progressive course. All patients with IRGN, particularly those with crescentic GN or rapidly progressive GN, require long-term monitoring of serum creatinine, urinalysis and blood pressure. These guidelines intend to provide a structured, evidence-informed approach for the management of patients with IRGN.
+
+---
+
+2. Proteinuria.
+
+PMID: 42219187
+
+Journal: Pediatrics in review (2026/Jun)
+
+Abstract:
+
+Proteinuria in children is most often transient or orthostatic. However, the diagnosis and treatment of persistent proteinuria may significantly impact long-term health outcomes, as persistent proteinuria is both a sign of underlying kidney pathology as well as a modifiable risk factor for progression of kidney disease. The differential diagnosis of proteinuria differs depending on whether proteinuria is glomerular or tubular. This article reviews the pathophysiology, evaluation, and management of proteinuria, including an emphasis on the management of idiopathic nephrotic syndrome.
+
+---
+
+3. Imaging of Pediatric Renal Cysts: An Update-AJR Expert Panel Narrative Review.
+
+PMID: 41258657
+
+Journal: AJR. American journal of roentgenology (2026/Jun)
+
+Abstract:
+
+Pediatric renal cysts can be isolated, hereditary, or related to acquired disease processes, and they may be congenital or develop over time. Given the heterogeneity of pediatric renal cysts, their increasing detection, and the absence of unified pediatric-specific guidelines, additional practical imaging-based recommendations are needed. This AJR Expert Panel Narrative Review seeks to address such gaps by providing guidance for radiologists in the evaluation of renal cysts, focusing on imaging characteristics, diagnostic considerations, and management recommendations. The authors comprise a multidisciplinary panel of pediatric radiologists, a pediatric nephrologist, and a pediatric urologist. This article addresses incidental and syndromic cystic renal disease, differentiation between benign and malignant cystic lesions, and the role of clinical history in guiding radiologic assessment. The roles of ultrasound (including contrast-enhanced ultrasound), CT, and MRI are presented, along with application of the modified Bosniak renal cyst classification in pediatric cases. Consideration is given to surveillance strategies, subspecialist referral pathways, and integration of societal guidelines. By highlighting current controversies and knowledge gaps, the article aims to clarify where agreement currently exists and where further research and multidisciplinary consensus are needed to achieve standardized evidence-based care for children with renal cystic disease.
+
+---
+
+4. Rituximab in pediatric refractory nephrotic syndrome: a systematic review and meta-analysis evaluating therapeutic efficacy and adverse event profiles.
+
+PMID: 41204962
+
+Journal: Pediatric nephrology (Berlin, Germany) (2026/Jun)
+
+Abstract:
+
+BACKGROUND: Rituximab is considered a therapeutic option in children with refractory nephrotic syndrome (RNS). However, the efficacy and safety of rituximab treatment remain unclear.
+
+OBJECTIVE: This study systematically evaluated the clinical effectiveness and related adverse event profiles of rituximab compared with other immunosuppressants in children with RNS.
+
+METHOD: Two independent investigators conducted the methodological rigor evaluation in a double-blind manner. Statistical analyses were performed using RevMan 5.4.
+
+RESULTS: Relative to other conventional second-line agents, rituximab therapy presented a significantly increased relapse-free survival rate [vs. tacrolimus: OR = 3.42, 95% CI = 1.96-5.94, P < 0.01]. Fewer adverse drug reactions occurred in patients with rituximab than with other immunosuppressants [vs. cyclophosphamide: OR = 0.18, 95% CI = 0.04-0.89, P = 0.03; vs. tacrolimus: OR = 0.26, 95% CI = 0.07-0.92, P = 0.04]. The application of rituximab increased the steroid-discontinued rate and decreased the corticosteroid dose in the treatment [vs. cyclophosphamide: OR = 5.46, 95% CI = 2.00-14.92, P = 0.0009; vs. tacrolimus: OR = 3.42, 95% CI = 1.67-7.01, P = 0.0008].
+
+CONCLUSION: Our study demonstrates rituximab's superior efficacy and safety profile compared to conventional second-line immunosuppressants in pediatric RNS, particularly regarding steroid minimization. Systematic review registration number: CRD420251082051.
+
+---
+
+5. Improving pediatric post-acute kidney injury care: considerations for the clinician.
+
+PMID: 42161893
+
+Journal: Renal failure (2026/Dec)
+
+Abstract:
+
+Acute kidney injury (AKI) is a frequent complication among hospitalized children, particularly during critical illness, and is associated with higher mortality rates and prolonged hospitalization. Accumulating evidence indicates that the consequences of pediatric AKI extend beyond the acute hospitalization and have strong associations with subsequent adverse kidney outcomes and hypertension. A review of the pediatric literature reveals a paucity of data defining the optimal timing, frequency, and components of post-AKI follow-up in children to mitigate long-term morbidity. In this review, we will address the potential sequelae of AKI among hospitalized children, including the temporal spectrum of acute kidney disease and chronic kidney disease. We will further discuss risk factors associated with adverse long-term outcomes and recommended follow-up surveillance after childhood AKI. In addition, we will review emerging biomarkers that may help identify children at higher risk for adverse outcomes following AKI.
+
+---
+
+6. Refractory Rickets: Evaluation and Management.
+
+PMID: 41741919
+
+Journal: Indian journal of pediatrics (2026/Jun)
+
+Abstract:
+
+Refractory rickets refers to a set of diseases which are identified by a lack of response to therapeutic doses used to treat vitamin D deficiency. A child presenting with refractory rickets can pose a diagnostic dilemma as many kidney diseases have been identified as possible causes. Inherited (e.g., distal renal tubular acidosis, Fanconi syndrome, hypophosphatemic rickets, vitamin D-dependent rickets, nephronophthisis) and acquired tubular disorders [e.g., posterior urethral valves, reflux nephropathy leading to chronic kidney disease (CKD)-mineral bone disorder] may be complicated by refractory rickets. Rarely, chronic liver disease and malabsorption states can also result in refractory rickets. Hypophosphatemia is a feature of both calcipenic as well as phosphopenic rickets. Common features accompanying refractory rickets include polyuria, polydipsia, hypokalemic paralysis, fractures, limb deformities, failure-to-thrive, short-stature, tetany and nephrocalcinosis. A careful history, examination and biochemical evaluation is required to delineate the underlying cause. Using a rational algorithmic approach, it is possible to determine the correct diagnosis in these cases. Consequent upon easy availability of next generation sequencing (NGS), the accurate diagnoses can be promptly made aiding in targeted therapy. Children with refractory rickets need regular follow-up to optimise the biochemical abnormalities, monitor growth and retard the progression of CKD. This article describes the evaluation of a child with refractory rickets using an algorithmic approach, underscores the importance of the necessary blood and urine biochemical tests as well as NGS for identification of the precise etiology of refractory-rickets; and discusses the pathophysiology and management of the most important causes of refractory-rickets.
+
+---
+
+7. New prognostic markers for IgA nephropathy in children.
+
+PMID: 40996504
+
+Journal: Pediatric nephrology (Berlin, Germany) (2026/Jun)
+
+Abstract:
+
+IgA nephropathy (IgAN) is the most common glomerulonephritis worldwide, with significant implications for adults and children. The disease progresses variably, from asymptomatic hematuria to severe glomerulonephritis, and around 10-20% of children diagnosed in childhood develop stage 5 chronic kidney disease (CKD 5) within 20 years. Identifying reliable prognostic markers is crucial for early intervention and long-term management. The International IgAN Prediction Tool combines clinical, laboratory, and histological data and has been adapted for pediatric use. It is highly accurate in predicting CKD 5. Markers such as the Oxford MEST-C score, proteinuria, eGFR, and blood pressure assist in risk stratification. Emerging biomarkers, including the IgA/C3 ratio, galactose-deficient IgA1, soluble CD89, and urinary cytokines like IL-6 and TGF-β1, show potential for predicting disease progression. Although promising, further research is needed to validate these biomarkers in pediatric populations and refine predictive tools for IgAN progression. These advances will guide targeted therapies and improve long-term renal outcomes in children.
+
+---
+
+8. Systematic Review of IgA Nephropathy Coexisting With Alport Syndrome.
+
+PMID: 42027550
+
+Journal: Kidney international reports (2026/Jun)
+
+Abstract:
+
+INTRODUCTION: In recent years, IgA nephropathy (IgAN) coexisting with Alport syndrome (AS) has been increasingly reported. However, the clinicopathological and molecular features, treatment, and prognosis of this entity have not been fully elucidated.
+
+METHODS: We first retrospectively analyzed pediatric patients with IgAN coexisting with AS (IgAN-AS) admitted to our center, and performed galactose-deficient IgA1 (Gd-IgA1) immunostaining on renal biopsy specimens. We then systematically searched PubMed, Scopus, Web of Science, Wanfang Data, and the China National Knowledge Infrastructure for publications reporting on patients with IgAN-AS.
+
+RESULTS: A total of 81 patients from 72 families were included. Microscopic hematuria was a universal finding. Nephrotic-range proteinuria was significantly more frequent in children than in adults (73.7% vs. 8.8%). Pathological findings confirmed the dual diagnosis, with mesangial IgA-dominant deposits and significant glomerular basement membrane abnormalities, including thinning (69.5%, 41/59) and typical AS-related changes (28.8%, 17/59). Genetic analysis identified 66 distinct pathogenic variants across COL4A3/A4/A5 genes in 77 patients. Immunologic findings were heterogeneous, with inconsistent Gd-IgA1 deposition or circulating levels. Among patients evaluated for treatment response, complete remission (CR) and partial remission (PR) were observed in 7.1% (1/14) and 64.3% (9/14), respectively, during immunosuppressive treatment. In 27 patients with follow-up data, the median age at last visit was 16.0 (10.0-24.0) years, and 11 (40.7%) reached the kidney end point.
+
+CONCLUSION: IgAN-AS appears to be a heterogeneous condition with potentially unfavorable kidney outcomes. Some patients exhibited both immune and structural injury, suggesting that biomarkers with high sensitivity and specificity for IgAN may aid in disease stratification.
+
+---
+
+9. Streamlining Diagnosis of Bardet-Biedl Syndrome: New Diagnostic Algorithm With Updated Criteria.
+
+PMID: 42175648
+
+Journal: American journal of medical genetics. Part A (2026/May)
+
+Abstract:
+
+Considerable advances have been made in our understanding of Bardet-Biedl syndrome (BBS), particularly in its core clinical features and molecular genetics, warranting an update to the existing diagnostic criteria framework. Using a rigorous, evidence-based, and consensus-driven process, a multidisciplinary group of international experts and patient-led organizations developed an updated diagnostic algorithm. This algorithm provides practical, updated guidance for clinicians, including a pathway for accurately incorporating genetic findings into the diagnostic process. We recommend that a clinical diagnosis requires either 4 major criteria or 3 major and 2 minor criteria. Revised major criteria are retinal dystrophy, obesity (or overweight in individuals < 2 years old), congenital anomalies of the kidney and urinary tract or chronic kidney disease, hypogonadism/genital anomalies, neurodevelopmental/neurocognitive manifestations, and postaxial polydactyly. The diagnosis can also be established with a positive genetic testing result in patients exhibiting ≥ 1 major criterion, provided that genetic findings should be interpreted in the context of the patient's clinical presentation, age, family history, and overlap with related ciliopathies. These consensus criteria offer a simple algorithm incorporating updated definitions for major and minor criteria and genetic testing to support a timely and accurate diagnosis of patients with BBS, inform genetic counseling, and potentially facilitate earlier access to treatment. Trial Registration: CRIBBS Registry; ClinicalTrials.gov: NCT02329210.
+
+---
+
+10. A systematic review of short-term outcomes in patients with anti-factor H associated atypical HUS managed with plasma exchanges versus eculizumab.
+
+PMID: 42101481
+
+Journal: Pediatric nephrology (Berlin, Germany) (2026/May)
+
+Abstract:
+
+BACKGROUND: Antibodies to factor H (anti-FH) are a leading cause of atypical hemolytic uremic syndrome (aHUS) in school-going children. While terminal complement blockade with eculizumab (ECZ) is standard of care for all forms of aHUS, anti-FH associated aHUS is uniquely amenable to combination therapy with plasma exchange (PEX) and immunosuppression. There are no controlled comparisons on the relative short- or medium-term efficacy of the two strategies of management.
+
+OBJECTIVES: The primary objectives were to compare the time from initiation of therapy to hematological remission and renal recovery between patients managed with PEX versus ECZ, with or without immunosuppression, for anti-FH associated aHUS in native kidneys. We also compared the proportions of patients attaining hematological remission or renal recovery by 7, 14 and 28 days of therapy, and proportion of patients with chronic kidney disease G1-5, dialysis-dependence, or death.
+
+DATA SOURCES: PubMed and Embase were searched from January 2004 to April 2025.
+
+STUDY ELIGIBILITY CRITERIA: Studies, in English language, were eligible if they reported the time to hematological remission and renal recovery in individual patients with anti-FH antibody-associated aHUS in native kidneys and treated with either PEX or ECZ with or without additional immunosuppression.
+
+PARTICIPANTS AND INTERVENTIONS: Within studies, individual patients were included if they had received either, and not both, PEX or ECZ, and information regarding time to hematological remission and renal recovery was available.
+
+STUDY APPRAISAL AND SYNTHESIS METHODS: The risk of bias for retrospective cohort studies and case reports or series was assessed using the Newcastle-Ottawa Quality Assessment Scale and Joanna Briggs Institute (JBI) tool for systematic reviews, respectively. Individual patient data were combined by therapy group to report time-to-event outcomes as hazard ratios (95% confidence intervals, CI), compared using the log rank test. Other continuous measures were compared between groups using the rank sum test.
+
+RESULTS: Fourteen of 57 studies shortlisted from among 403 search results met eligibility criteria, within which 99 patients, including 81 managed with PEX and 18 with ECZ, with/without immunosuppression, were eligible. Patients receiving PEX presented later with more severe anemia and lower eGFR, and more often required dialysis. Median time to hematologic remission was significantly shorter with PEX (9 vs. 20 days; P = 0.0007) while time to renal recovery was similar (16 vs. 20 days; P = 0.36). The proportion with CKD G3-5 and mortality was insignificantly higher with PEX than ECZ (respective P 0.077 and 0.36).
+
+LIMITATIONS: Our findings are limited by small numbers of participants and studies, lack of comparative studies, heterogeneity in disease severity, and variations in definitions of outcomes.
+
+CONCLUSIONS AND IMPLICATIONS OF KEY FINDINGS: Patients managed with PEX achieved hematological remission faster than those on ECZ; the time to renal recovery was similar. Given the precautions and vigilance necessary with complement blockade, PEX appears to be a satisfactory initial choice for managing anti-FH associated HUS, particularly in low-resource settings. Prospective trials should compare the efficacy, safety and healthcare costs of these strategies in managing patients with anti-FH associated HUS.
+
+SYSTEMATIC REVIEW REGISTRATION NUMBER: PROSPERO ID: CRD420251033150.
+
+---
+
+# 第3部：候補論文スコア一覧
+
+| PMID     | タイトル                                                                                                                    | 総合スコア | 役立つか | 短いメモ                               |
+| -------- | ----------------------------------------------------------------------------------------------------------------------- | ----: | ---- | ---------------------------------- |
+| 42238679 | Antibiotic prophylaxis in percutaneous nephrostomy placements and replacements for malignant urinary tract obstruction. |     2 | 低    | 成人がん患者の腎瘻手技中心。小児外来への影響は小さい。        |
+| 42237872 | Pathophysiology and Treatment of Type 1 Diabetes in Older Adults.                                                       |     1 | 低    | 高齢者1型糖尿病。今回テーマ外。                   |
+| 42235560 | Chronic kidney disease, complex conditions, and advancing therapeutics.                                                 |     4 | 中    | CKD治療総論として有用だが成人・内科寄り。             |
+| 42232595 | Environmental footprint of peritoneal dialysis in Europe.                                                               |     2 | 低    | 透析の環境負荷。診療変更インパクトは限定的。             |
+| 42227334 | Addressing the needs of nano-rare patients: the n-Lorem experience.                                                     |     2 | 低    | 超希少疾患ASO治療の概説。小児腎臓外来には遠い。          |
+| 42224161 | Eating disorder-related electrolyte abnormalities and adverse outcomes.                                                 |     5 | 中    | 思春期の電解質異常には有用だが腎臓領域としては間接的。        |
+| 42220498 | Circular RNAs as diagnostic biomarkers in type 2 diabetes mellitus.                                                     |     1 | 低    | 基礎・バイオマーカー中心。小児外来への即効性なし。          |
+| 42219187 | Proteinuria.                                                                                                            |     9 | 高    | 学校検尿・蛋白尿対応に直結。選定。                  |
+| 42215984 | Correction: mirabegron versus solifenacin in children.                                                                  |     1 | 低    | Correctionでabstractなし。選定対象外。       |
+| 42209857 | Laparoscopic appendectomy for complicated appendicitis in children.                                                     |     3 | 低    | 小児外科領域。腎臓テーマ外。                     |
+| 42208400 | Pediatric kidney transplant candidates and excess weight.                                                               |     5 | 中    | 移植専門領域では重要だが一般外来への影響は限定的。          |
+| 42199841 | Renal replacement therapy in intensive care unit.                                                                       |     3 | 低    | ICU腎代替療法の総説。専門施設向け。                |
+| 42197057 | Vitamin B12 Supplementation: Is More Always Better?                                                                     |     2 | 低    | 腎臓・小児主題ではない。                       |
+| 42187128 | Delayed high-dose methotrexate elimination.                                                                             |     3 | 低    | 腫瘍治療中AKI管理。専門施設向け。                 |
+| 42187003 | Steroid avoidance or withdrawal for kidney transplant recipients.                                                       |     5 | 中    | Cochraneで質は高いが小児データ少なく移植専門。        |
+| 42175648 | Streamlining Diagnosis of Bardet-Biedl Syndrome.                                                                        |     8 | 高    | 肥満・発達・腎尿路奇形の拾い上げに有用。選定。            |
+| 42172886 | B lymphocytes in type 1 diabetes.                                                                                       |     1 | 低    | 糖尿病免疫機序。テーマ外。                      |
+| 42171960 | Finerenone in Cardiorenal Disease.                                                                                      |     4 | 中    | 成人CKD・心腎代謝疾患中心。小児適用は限定的。           |
+| 42169650 | Chronic radiation injury.                                                                                               |     1 | 低    | 基礎・放射線障害中心。                        |
+| 42168382 | Gene-disease relationships for glomerular phenotypes.                                                                   |     6 | 中    | 遺伝性糸球体疾患の検査設計に有用だが専門寄り。            |
+| 42167833 | Malignancy and Kidney Transplant: Core Curriculum 2026.                                                                 |     4 | 中    | 移植後がん管理。一般外来への直接性は低い。              |
+| 42167406 | Auricular Acupressure in the Allergy Clinic.                                                                            |     1 | 低    | アレルギー領域で腎臓テーマ外。                    |
+| 42166479 | Semaglutide-associated NAION.                                                                                           |     1 | 低    | 成人糖尿病薬の眼合併症。小児腎臓外来には遠い。            |
+| 42162636 | S100 proteins in podocyte biology and disease.                                                                          |     3 | 低    | ポドサイト基礎研究。診療変更には直結しない。             |
+| 42162578 | Combined antihypertensive and antidiabetic therapies.                                                                   |     2 | 低    | 成人心血管代謝疾患中心。                       |
+| 42161893 | Improving pediatric post-acute kidney injury care.                                                                      |     8 | 高    | AKI後の外来フォローに直結。選定。                 |
+| 42155504 | WHA kidney health resolution.                                                                                           |     3 | 低    | 政策論文。個別診療への即効性は低い。                 |
+| 42152940 | Macrophages in renal fibrosis bibliometric analysis.                                                                    |     1 | 低    | Bibliometric analysisで診療変更性は低い。    |
+| 42150999 | Obesity and intracranial aneurysms.                                                                                     |     1 | 低    | 脳血管領域。テーマ外。                        |
+| 42150391 | Skin cancer prevention after kidney transplantation.                                                                    |     4 | 中    | 移植後患者では有用だが成人中心。                   |
+| 42138076 | Precision medicine for brain arteriovenous malformations.                                                               |     1 | 低    | 脳血管奇形。テーマ外。                        |
+| 42131278 | C3 Glomerulopathy: From Pathogenesis to Targeted Therapy.                                                               |     7 | 中    | C3Gの新規治療理解に有用だが専門性が高い。             |
+| 42130362 | Sema3B membranous nephropathy after HSCT in a child.                                                                    |     3 | 低    | 症例報告。希少で一般外来インパクトは限定的。             |
+| 42129846 | Citrate anticoagulation in CRRT Delphi consensus.                                                                       |     3 | 低    | ICU/CRRT専門領域。                      |
+| 42129311 | CNS complications after allogeneic HCT.                                                                                 |     2 | 低    | 移植後神経合併症。腎臓テーマ外。                   |
+| 42128801 | Human-AI partnership in asthma care.                                                                                    |     2 | 低    | 喘息AI。腎臓テーマ外。                       |
+| 42126153 | Blood Pressure Assessment Across the Lifespan.                                                                          |     6 | 中    | 血圧測定の重要論文だが小児腎臓特化ではない。             |
+| 42121090 | ML predicts AKI after pediatric cardiac surgery.                                                                        |     5 | 中    | 小児AKI予測だが心臓術後・AIモデルで外来には遠い。        |
+| 42117106 | HIV-associated nephropathy bibliometric analysis.                                                                       |     1 | 低    | Bibliometric analysis。診療変更性は低い。    |
+| 42116603 | Red Blood Cell Exchange in Sickle Cell Disease.                                                                         |     2 | 低    | 鎌状赤血球症治療。日本の一般外来では限定的。             |
+| 42116222 | Sex differences in cardio-kidney-metabolic syndrome.                                                                    |     2 | 低    | 成人CKM総論。                           |
+| 42108540 | Clinical Prediction Models for AKI in Neonatology.                                                                      |     5 | 中    | 新生児AKI予測。外来よりNICU向け。               |
+| 42108409 | Automated insulin delivery in very young children.                                                                      |     2 | 低    | 小児糖尿病領域。腎臓テーマ外。                    |
+| 42105262 | Exosome-based strategies for CAR-T in SLE.                                                                              |     2 | 低    | 先端治療レビュー。現時点で外来診療変更は小さい。           |
+| 42101481 | Anti-factor H associated atypical HUS: PEX versus eculizumab.                                                           |     8 | 高    | 急性腎障害の緊急紹介意識に重要。選定。                |
+| 42101376 | Bioelectrical Impedance in Pediatric Dialysis.                                                                          |     5 | 中    | 小児透析専門領域。地域外来への直接性は低い。             |
+| 42098995 | Reversible Rituximab-Induced Bronchiectasis.                                                                            |     6 | 中    | リツキシマブ後の感染・咳に注意。症例報告のため選外。         |
+| 42098776 | Non-pharmacological interventions for pediatric GER/GERD.                                                               |     3 | 低    | 小児一般には有用だが腎臓テーマ外。                  |
+| 42098382 | CNS complications after allo-HCT symptom-guided approach.                                                               |     2 | 低    | 移植後神経合併症。テーマ外。                     |
+| 42096066 | Post-asphyxia acute kidney injury in neonates.                                                                          |     5 | 中    | 新生児AKIとして重要だが外来一般への即効性は中等度。        |
+| 42095908 | KPIs for acute kidney replacement therapy in critically ill children.                                                   |     4 | 中    | 小児ICU KRT品質指標。専門施設向け。              |
+| 42089756 | Hypertension management in pediatric peritoneal dialysis.                                                               |     4 | 中    | 小児PD高血圧。専門外来向け。                    |
+| 42027550 | IgA nephropathy coexisting with Alport syndrome.                                                                        |     8 | 高    | 持続血尿・遺伝性腎疾患の意識を高める。選定。             |
+| 42014363 | BAFF/APRIL-targeted therapies in IgA nephropathy.                                                                       |     6 | 中    | IgA腎症の新規治療。成人RCT中心で小児外来への直接性はやや低い。 |
+| 41905953 | Congenital aldosterone deficiency and resistance.                                                                       |     6 | 中    | 乳幼児の塩喪失・高K鑑別に有用だが腎臓主題からはやや外れる。     |
+| 41881105 | Survival outcomes in nephrology: basics and traditional methods.                                                        |     2 | 低    | 研究手法論文。臨床選定では低優先。                  |
+| 41875318 | 2026 Latin American consensus for hypertension and cardio-renal-metabolic disturbances.                                 |     4 | 中    | 高血圧管理の合意文書だが地域・成人色が強い。             |
+| 41869824 | Updates in pediatric kidney transplantation.                                                                            |     5 | 中    | 小児移植の最新情報。専門医向け。                   |
+| 41866019 | Paid Employment and Ability to Work Among People Receiving Dialysis.                                                    |     2 | 低    | 成人透析の就労・QOL。小児外来には遠い。              |
+| 41781720 | Social determinants of health on acute kidney injury.                                                                   |     4 | 中    | AKI格差の総説。政策・公衆衛生寄り。                |
+| 41741919 | Refractory Rickets: Evaluation and Management.                                                                          |     8 | 高    | 腎尿細管疾患の拾い上げに有用。選定。                 |
+| 41730387 | MASLD in children and adolescents.                                                                                      |     3 | 低    | 小児肥満診療には有用だが腎臓テーマ外。                |
+| 41627401 | AsPNA Clinical Practice Guidelines for IRGN.                                                                            |    10 | 高    | 急性腎炎の初期評価・紹介基準に直結。選定。              |
+| 41315123 | Green nephrology sustainability interventions.                                                                          |     2 | 低    | 腎医療の環境対策。診療変更性は低い。                 |
+| 41258657 | Imaging of Pediatric Renal Cysts.                                                                                       |     9 | 高    | 腎嚢胞のフォロー・紹介判断に有用。選定。               |
+| 41204962 | Rituximab in pediatric refractory nephrotic syndrome.                                                                   |     9 | 高    | 難治性ネフローゼ治療理解と感染管理に重要。選定。           |
+| 41145922 | Artificial intelligence methods in nephrology.                                                                          |     2 | 低    | AI手法の概説。臨床判断への直接性は低い。              |
+| 41085726 | Paediatric ABO incompatible kidney transplantation.                                                                     |     5 | 中    | 小児移植専門領域。一般外来への直接性は限定的。            |
+| 40996504 | New prognostic markers for IgA nephropathy in children.                                                                 |     8 | 高    | IgA腎症フォローで蛋白尿・血圧重視を再確認。選定。         |
+| 40641396 | Microelements in pediatric nephrotic syndrome.                                                                          |     5 | 中    | 栄養・微量元素の視点は興味深いが実装には慎重さが必要。        |

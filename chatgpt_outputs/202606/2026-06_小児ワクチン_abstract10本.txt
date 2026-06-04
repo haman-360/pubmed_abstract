@@ -1,0 +1,128 @@
+【第1部：日本語要約】
+
+---
+
+①タイトル
+
+Aluminium adjuvants in vaccines and potential health effects: systematic review.
+
+②PMID
+
+42091164
+
+③なぜ重要か
+
+アルミニウムアジュバント含有ワクチンの長期安全性について、RCT・コホート研究を含めて体系的に評価したBMJのsystematic reviewです。ワクチン副反応相談で保護者から質問されやすいテーマに直接答えられる論文です。
+
+④臨床への影響
+
+重篤または長期的健康影響、喘息、自閉スペクトラム症、慢性疾患との因果関係は支持されない、という説明に使いやすい内容です。一方で、接種部位の持続性結節・肉芽腫はまれに起こる局所性・自然軽快性の遅延型過敏反応として説明できます。
+
+⑤診療変更の必要性
+
+Yes：接種相談時の説明内容をより明確にできる。
+
+---
+
+①タイトル
+
+Evaluating the safety and efficacy of dengue vaccines: A comprehensive systematic review and meta-analysis.
+
+②PMID
+
+41912000
+
+③なぜ重要か
+
+デングワクチンの有効性と安全性を、42研究・175,434人で評価したsystematic review/meta-analysisです。日本の一般小児外来での日常接種ではないものの、渡航、流行地域出身者、今後のワクチン導入議論に関連します。
+
+④臨床への影響
+
+重篤な有害事象はプラセボと有意差がなく、局所反応や一部全身症状は増える可能性がある、というバランスの取れた説明に役立ちます。ただし、日本の定期接種・一般外来に直結するインパクトは限定的です。
+
+⑤診療変更の必要性
+
+No：現時点では渡航相談・情報更新レベル。
+
+---
+
+①タイトル
+
+Vaccine hesitancy among U.S. parents: a mini review.
+
+②PMID
+
+42200136
+
+③なぜ重要か
+
+保護者のワクチン忌避が、副反応の「実際の頻度」だけでなく、家族・SNS・メディア上の体験談によって形成されることを整理したreviewです。副反応不安へのコミュニケーション改善に役立つ可能性があります。
+
+④臨床への影響
+
+単に「安全です」と伝えるより、保護者が何を副反応として恐れているのか、どの情報源に影響されているのかを確認する重要性を再認識できます。ただし米国文脈のmini reviewであり、日本の外来で直接診療方針を変えるエビデンスとしてはやや弱いです。
+
+⑤診療変更の必要性
+
+No：接種説明の姿勢を見直す参考。
+
+---
+
+【第2部：英語Abstract】
+
+---
+
+1. Aluminium adjuvants in vaccines and potential health effects: systematic review.
+
+PMID:
+42091164
+
+Journal:
+BMJ (Clinical research ed.) (2026/May)
+
+Abstract:
+OBJECTIVE: To systematically review and critically appraise human evidence on potential health effects of aluminium adjuvanted vaccines.
+DESIGN: Systematic review following PRISMA (preferred reporting items for systematic review and meta-analysis) 2020 guidelines.
+DATA SOURCES: Six databases and trial registries were searched from inception to 3 March 2023 then updated to 27 November 2025. Reference lists of eligible studies were also screened.
+ELIGIBILITY CRITERIA FOR SELECTING STUDIES: Human studies assessing health outcomes after aluminium adjuvanted vaccination, including randomised controlled trials, cohort studies, case series, and ecological studies. Investigational vaccines, case reports, and review articles were excluded.
+DATA EXTRACTION AND SYNTHESIS: Two reviewers screened studies (with AI assistance for the 2023-25 update), extracted data, and assessed risk of bias (using RoB 2.0, ROBINS-I, or an adapted tool for case series). Certainty of evidence was rated using GRADE (Grading of Recommendations Assessment, Development, and Evaluation).
+RESULTS: The review included 59 studies (37 case series, 11 randomised controlled trials, nine cohort studies, two ecological studies). High quality evidence from randomised controlled trials and large cohorts consistently showed no association between aluminium adjuvanted vaccines and serious or long term health outcomes, such as asthma, autism spectrum disorders, or other chronic conditions. Studies on macrophagic myofasciitis were generally small and methodologically limited, and did not provide credible evidence of a causal association (very low certainty). Localised persistent nodules or granulomas were observed infrequently after diphtheria-tetanus-pertussis vaccines, consistent with delayed type hypersensitivity (<1%, self-limited; moderate to low certainty). For common adverse events (eg, headache, myalgia), high certainty randomised controlled trials found no consistent increase in risk with aluminium adjuvanted formulations. When differences were observed, they were small and predominantly mild to moderate in severity. Evidence was dominated by methodologically limited studies, with most case series and ecological studies at serious or critical risk of bias. Conclusions are primarily supported by higher quality randomised controlled trials and cohort evidence.
+CONCLUSIONS: Current evidence does not support causal associations between aluminium adjuvanted vaccines and serious or long term health outcomes. The most consistently documented reactions were persistent nodules or granulomas that are uncommon, local, and self-limited hypersensitivity reactions. These findings are broadly consistent with post-licensure surveillance findings. The predominance of methodologically limited studies for some outcomes highlights the need for higher quality research.
+SYSTEMATIC REVIEW REGISTRATION: PROSPERO CRD42023462831.
+
+---
+
+2. Evaluating the safety and efficacy of dengue vaccines: A comprehensive systematic review and meta-analysis.
+
+PMID:
+41912000
+
+Journal:
+Acta tropica (2026/Jun)
+
+Abstract:
+Over recent decades the incidence of dengue has increased on a global scale and in 2023 reached unprecedented levels. One potential promising approach to prevent dengue and reduce dengue symptoms is vaccination. We systematically searched PubMed/Medline, Scopus, Embase, Web of Science, Cochrane, and Lilacs databases from inception to the 27th of July 2025 (PROSPERO registration CRD42024579006). Outcomes were pooled and expressed as odds ratio (OR) with corresponding 95 % confidence intervals (CI). Meta-analysis was conducted for each outcome using Review Manager and the grading of evidence was carried out using the GRADE. We included 42 studies with a total of 175,434 participants. Efficacy of vaccine was demonstrated by the lower rate of viremia OR = 0.35, 95 %CI (0.25, 0.48), p < 0.00001, hemorrhagic fever OR = 0.16, 95 %CI (0.09, 0.28), p < 0.00001and high percentage of antibody production. In terms of safety, all vaccines showed promising results with no significant difference in serious adverse events when compared to placebo group. A higher rate of reaction at the injection site was reported only for swelling, erythema, pruritus, and rash. Asthenia, myalgia, arthralgia, malaise, nausea, and neutropenia were identified systemic side effects reported with a higher rate in the vaccinated group. Our findings suggest that dengue vaccination is potentially both safe and efficacious.
+
+---
+
+3. Vaccine hesitancy among U.S. parents: a mini review.
+
+PMID:
+42200136
+
+Journal:
+Frontiers in public health (2026)
+
+Abstract:
+Parental vaccine hesitancy in the United States continues to shape childhood immunization patterns and population-level disease prevention. Although extensive evidence demonstrates that vaccines are safe and effective, many parents base vaccination decisions on concerns about adverse reactions that extend beyond risk estimates derived from epidemiological data. Parents construct these interpretations through personal experiences with adverse reactions as well as through stories circulating within families, social networks, media, and online environments. This narrative mini review synthesizes interdisciplinary literature on parental vaccine hesitancy in the United States, focusing on how perceived and experienced adverse reactions influence attitudes toward childhood vaccination. The review examines contextual factors associated with hesitancy, including historical events, healthcare experiences, and interpretations of vaccine safety. By integrating public health research with parental vaccine perspectives, this review identifies gaps between population-level safety evidence and individual risk perception. Addressing these gaps offers opportunities to strengthen vaccine confidence, enhance public health communication, and support informed parental decision-making without exacerbating mistrust or polarization.
+
+---
+
+【第3部：候補論文スコア一覧】
+
+| PMID     | タイトル                                                                                                        | 総合スコア | 役立つか | 短いメモ                                                     |
+| -------- | ----------------------------------------------------------------------------------------------------------- | ----: | ---- | -------------------------------------------------------- |
+| 42091164 | Aluminium adjuvants in vaccines and potential health effects: systematic review.                            |     9 | 高い   | ワクチン副反応相談に直結。アルミニウムアジュバントへの不安に対して、RCT・コホートを含む安全性説明ができる。  |
+| 41912000 | Evaluating the safety and efficacy of dengue vaccines: A comprehensive systematic review and meta-analysis. |     6 | 中等度  | メタ解析として質は高めだが、日本の一般小児外来での日常接種には直結しにくい。渡航相談では有用。          |
+| 42200136 | Vaccine hesitancy among U.S. parents: a mini review.                                                        |     5 | 中等度  | 副反応不安への説明・コミュニケーション改善には有用。ただしmini reviewで米国文脈が中心。        |
+| 42108718 | Treatments for Molluscum contagiosum: A systematic review.                                                  |     4 | 限定的  | MMR vaccineなど免疫療法の記載はあるが、主題は伝染性軟属腫治療であり、ワクチン副反応領域からは外れる。 |

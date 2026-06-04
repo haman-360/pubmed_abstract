@@ -192,6 +192,22 @@ def build_title(args, now):
     return f"{now.strftime('%Y-%m')}_{label}_abstract10本"
 
 
+def unique_output_paths(out_dir, base):
+    txt_path = os.path.join(out_dir, f"{base}.txt")
+    html_path = os.path.join(out_dir, f"{base}.html")
+    if not os.path.exists(txt_path) and not os.path.exists(html_path):
+        return txt_path, html_path
+
+    number = 2
+    while True:
+        candidate_base = f"{base}_{number}"
+        txt_path = os.path.join(out_dir, f"{candidate_base}.txt")
+        html_path = os.path.join(out_dir, f"{candidate_base}.html")
+        if not os.path.exists(txt_path) and not os.path.exists(html_path):
+            return txt_path, html_path
+        number += 1
+
+
 def main():
     args = parse_args()
     text = read_clipboard()
@@ -205,8 +221,7 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
 
     base = safe_filename(title)
-    txt_path = os.path.join(out_dir, f"{base}.txt")
-    html_path = os.path.join(out_dir, f"{base}.html")
+    txt_path, html_path = unique_output_paths(out_dir, base)
 
     with open(txt_path, "w", encoding="utf-8") as f:
         f.write(text + "\n")

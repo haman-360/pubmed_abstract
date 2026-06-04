@@ -1,0 +1,270 @@
+【領域】
+小児食物アレルギー
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Pediatric IgE mediated food allergies and ethnic group inequalities: A scoping review.
+
+PMID:
+42179758
+
+Journal:
+The World Allergy Organization journal (2026/Jun)
+
+Abstract:
+BACKGROUND: The prevalence of pediatric food allergy ranges between 8% and 10% depending on age, geographic location, and the diagnostic criteria. There is considerable variation in clinical manifestation, with disparities in symptoms and phenotypes related to race, ethnic group, and coexisting allergic disease(s). The current evidence on ethnic group and racial differences remains limited and inconsistent. This scoping review aimed to explore the existing evidence on ethnic group and race health inequalities in pediatric IgE mediated food allergies in high-income countries.
+METHODS: We conducted a systematic search using MEDLINE, Embase, and CINAHL, inclusive of grey literature from database inception to November 2024. Observational and qualitative studies reporting data for children aged 0-19 years with professional diagnosis of IgE-mediated food allergy, and ethnic group or race in high-income countries, without language restrictions, were included. Screening and data extraction were performed independently in duplicate. Results were mapped thematically and reported descriptively. The review was conducted using Joanna Briggs Institute (JBI) methodology for scoping reviews and reported using the Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for Scoping Reviews (PRISMA-ScR) guidelines.
+RESULTS: Searches identified 4373 results, and 37 studies were included reporting pediatric IgE mediated food allergy and ethnic group data. Only 17 studies explicitly reported ethnic group differences, with most studies focused on prevalence. Nine studies examined prevalence differences, generally showing higher rates of food allergy among Black and Asian children compared with White children. Three studies examined differences in access to care and management between Black and Hispanic/Latino children and White children. Patterns showed White children had greater access to allergen-free foods and were over-represented in oral immunotherapy and more likely to receive epinephrine. Five studies examined health outcome severity, with some evidence suggesting Black children had the highest rates of food-induced anaphylaxis, and greater odds of asthma and allergic rhinitis compared with White children.
+CONCLUSION: Evidence to-date suggests there are ethnic group and racial differences among children with IgE-mediated food allergy related to prevalence, access to care and management, and health outcomes. However, there is incomplete and inconsistent reporting of ethnicity. Only 17 of the 37 included studies that included ethnic group and race data analyzed and reported ethnic group differences. This limits the field's capacity to understand inequalities and additional care requirements for minoritized and racialized ethnic groups. Further research is vital to inform the development of allergy services for children to ensure they have equitable access to care and treatment, as well as optimal health outcomes, regardless of ethnic group and race.
+
+---
+2.
+
+Title:
+The Role of the Indoor Exposome in Food Allergy Development.
+
+PMID:
+42176051
+
+Journal:
+Current allergy and asthma reports (2026/May)
+
+Abstract:
+PURPOSE OF REVIEW: Due to the rapid rise in the prevalence of food allergy, environmental exposures, in addition to genetic susceptibility, are likely contributors to allergic disease. In developed countries, individuals spend a substantial proportion of time indoors. Therefore, the indoor exposome provides a unique framework to examine factors driving the increase in the rates of food allergy. This review summarizes epidemiological and mechanistic evidence of the indoor exposome, consisting of the combined exposures to food antigens, microbes, and chemicals encountered in indoor environments during early life, and their influence on food allergy development.
+RECENT FINDINGS: Indoor house dust contains detectable food allergens, which remain biologically active and may be linked to non-oral exposure, leading to allergic sensitization. In contrast, early-life exposures to diverse microbes and their products are associated with protection from allergic disease. Emerging evidence further demonstrates that indoor chemicals, including detergents, plasticizers, and pollutants, can disrupt epithelial barrier integrity or function as immune adjuvants, thus increasing susceptibility to food sensitization. Collectively, these findings highlight the indoor exposome as a complex and important determinant of food allergy risk. Improved understanding of how the indoor exposome influences food allergy development may inform future primary prevention or intervention strategies.
+
+---
+3.
+
+Title:
+Nutritional, Growth, and Microbiome Implications of Oral Immunotherapy: Unintended Consequences and Clinical Considerations.
+
+PMID:
+42173442
+
+Journal:
+Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/May)
+
+Abstract:
+Food allergy management has changed significantly, with oral immunotherapy (OIT) emerging as a widely adopted strategy to increase reaction thresholds and reduce the risk of severe allergic reactions. Alongside its immunological effects, OIT has important implications for nutrition, growth, and the gut microbiome. Traditional management of food allergy relies on strict allergen avoidance, which may compromise dietary adequacy and growth, particularly in children avoiding nutrient-dense foods such as cow's milk and eggs. OIT offers an opportunity to reintroduce these foods in controlled amounts, potentially improving nutrient intake and supporting growth trajectories. Emerging evidence highlights the role of the gut microbiome in modulating immune tolerance. Microbial diversity, metabolite production, and early-life colonization patterns influence regulatory immune pathways and epithelial barrier integrity. During OIT, microbiome changes appear modest and variable, with some studies suggesting taxon-specific or functional shifts rather than global restructuring. Importantly, dietary factors, particularly the use of ultra-processed foods as dosing vehicles, may confound microbiome outcomes and influence treatment responses. From a nutritional perspective, OIT presents both opportunities and risks. While allergen reintroduction may improve protein and micronutrient intake, reliance on energy-dense masking foods may increase the risk of excessive calorie intake and suboptimal diet quality. Growth outcomes during OIT appear generally favorable, particularly in younger children and those with lower baseline growth. This article summarizes current evidence on OIT, focusing on its interactions with diet, growth, and the gut microbiome, and highlights the need for integrated, multidisciplinary approaches to optimize both clinical and nutritional outcomes.
+
+---
+4.
+
+Title:
+Finding A Balance: Auricular Acupressure in the Allergy Clinic.
+
+PMID:
+42167406
+
+Journal:
+The journal of allergy and clinical immunology. In practice (2026/May)
+
+Abstract:
+Auricular point acupressure (APA) is a simple technique related to acupuncture, which dates back to the 1950s, with acupuncture tools dating back thousands of years. The APA approach involves the short-term placement of beads or seeds to specific points on the external ear. In more recent times, auricular acupressure and acupuncture have been used in a wide array of settings for a myriad of conditions, including in combat and emergency settings, and even adopted by the United States military healthcare system and Veterans Administration as an integrated approach to opioid reduction strategies. For patients with dysautonomia, APA can offer a holistic approach to help improve sleep, anxiety, depression, headache, and pain. While evidence supporting the uses of APA in food allergy and asthma is very low certainty, several systematic reviews and meta-analysis suggest possible benefit in rhinitis. Adverse effects are uncommon but may include auricular trauma, migration of APA seeds into the ear canal, contact dermatitis, or allergic reactions. With simple approaches that can be learned and applied rapidly by clinicians and patients alike, APA may represent a useful approach for some patients.
+
+---
+5.
+
+Title:
+ACAAI/ AAP Symposium -What was served in the last year: Food Allergy Non-treatment.
+
+PMID:
+42162787
+
+Journal:
+Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/May)
+
+Abstract:
+Food allergies are increasing with 1 in 13 children in the United States affected. This paper discusses articles chosen by the author for inclusion in the ACAAI/AAP Symposium Hot Topics in Pediatric Allergy and Immunology specifically on updates in food allergy non-treatment and provides a focused review with Podium to Practice Takeaways for each article. Food allergies with delayed presentation of symptoms from the time of exposure, like Food Protein-Induced Enterocolitis Syndrome(FPIES) and Alpha-gal syndrome(AGS) are highlighted. Both of these food allergies are increasingly seen by clinicians. Food challenges play an important role in the diagnosis, management and resolution of these conditions. As such, clinicians should understand the pattern of reaction severity over time in FPIES to assist families in deciding when, where and how oral food challenges should be scheduled. Regarding AGS, it is imperative that physicians understand risk factors for development of alpha-gal sensitization and the expected symptomatology. In addition, clinicians need to provide counselling that allows for appropriate but not excessive food avoidance based on allergenicity. Finally, the article addresses the concern that has arisen about the safety of gelatin containing vaccines in patients with AGS, and reports that reactions to gelatin-containing vaccines appears to be rare.
+
+---
+6.
+
+Title:
+Probiotics in the alleviation of food allergies in infants and young children: research progress.
+
+PMID:
+42138226
+
+Journal:
+Critical reviews in food science and nutrition (2026/May)
+
+Abstract:
+The annual rise in food allergies among infants and young children significantly impacts their quality of life and development, making it a global public health concern. Currently, therapeutic approaches for food allergy, including pharmacotherapy, immunotherapy, and dietary modifications, exhibit certain limitations. Accumulating studies suggest that probiotic supplementation may mitigate food allergy symptoms in pediatric populations through multiple mechanisms, including gut microbial composition modulation, reinforcement of intestinal epithelial integrity, and immunomodulatory effects. This review focuses on the association between infant food allergy and probiotics, elaborates on the potential mechanisms of action of probiotics, and summarizes and discusses the findings and perspectives from current animal model experiments and clinical studies. We have also examined the safety of probiotics in infant populations. Some studies suggest that probiotics (e.g., Lactobacillus rhamnosus GG and Bifidobacterium spp.) may help improve allergic symptoms. An extensively hydrolyzed formula with L. rhamnosus GG could potentially improve symptoms and contribute to the development of immunological tolerance in some children with cow's milk allergy. Furthermore, probiotics as adjuvants to oral immunotherapy can reduce the risk of adverse reactions. These findings provide theoretical and practical references for subsequent clinical practice, facilitating better management of food allergies in infants and young children.
+
+---
+7.
+
+Title:
+Precision medicine in eosinophilic esophagitis.
+
+PMID:
+42134747
+
+Journal:
+Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/May)
+
+Abstract:
+Eosinophilic esophagitis (EoE) is a common, chronic, immune-mediated disease of the esophagus, affecting approximately 1 in 700 individuals in the United States. Despite rising prevalence, clinical management remains largely empiric and invasive: diagnosis and monitoring rely on endoscopy with biopsies, and treatment selection is guided by population-level response rates, patient preference, and access rather than individualized disease biology. Patients often experience diagnostic delays, repeated procedures, and cycles of trial-and-error therapy before achieving remission, while prolonged inflammation increases risk of fibrostenotic complications. Recent advances in epidemiology, genetics, molecular profiling, and immunology increasingly support EoE as a heterogeneous disease with distinct biological drivers. Emerging tools-including polygenic risk scores, molecular endotyping frameworks, and minimally invasive biomarkers-may improve risk stratification, reduce reliance on endoscopy, and better align therapy with underlying mechanisms. In this review, we describe the current EoE patient journey and examine opportunities to integrate precision medicine strategies across the disease continuum, from risk identification and diagnosis to treatment selection, food trigger identification, and noninvasive monitoring. We also discuss future directions aimed at defining antigen-specific immune pathways and how these insights may enable next-generation diagnostics, targeted therapies, and disease modification in EoE.
+
+---
+8.
+
+Title:
+Epigenetic insights into food allergy: The potential role of DNA methylation in diagnosis and management.
+
+PMID:
+42112503
+
+Journal:
+The World Allergy Organization journal (2026/May)
+
+Abstract:
+Advances in epigenetics have provided critical insights into mechanisms underlying complex immune-mediated diseases. DNA methylation, a key epigenetic modification found across eukaryotes, serves as a crucial regulator linking genetic predisposition with environmental exposures. This review provides an overview of current methods for detecting 5-methylcytosine and summarizes studies investigating the role of DNA methylation in food allergy. Specifically, studies have examined DNA methylation as a potential biomarker of clinical reactivity, tolerance, and disease severity, and as a regulator of pathways influencing allergic susceptibility. Interpretation across studies remains limited by several factors including methodological variability, small sample sizes, and inconsistent validation. Large-scale, standardized investigations are needed to confirm early findings and facilitate translation into clinical practice.
+
+---
+9.
+
+Title:
+Biologics in IgE-mediated food allergy: where are we know?
+
+PMID:
+41993019
+
+Journal:
+Current opinion in allergy and clinical immunology (2026/Jun)
+
+Abstract:
+PURPOSE OF REVIEW: This review summarizes current evidence on emerging biologics and their evolving role in IgE-mediated food allergy management. The goal is to assess the pros and cons of currently available and under evaluation biologicals.
+RECENT FINDINGS: Anti-IgE therapies remain central to biologic-based approaches. Omalizumab improves desensitization rates as monotherapy or when combined with oral immunotherapy (OIT), whose enhances safety and accelerates desensitization efficacy. Next-generation anti-IgE antibodies, including UB-221, show increased potency and promising early results. Less encouraging are data on Dupilumab, targeting IL-4/IL1-3 receptor, in IgE-mediated food allergy. Biologics targeting epithelial alarmins, such as anti-IL-33 (etokimab) and anti-TSLP (tezepelumab), demonstrate encouraging preliminary immunologic and clinical effects, with early success noted in peanut allergy trials. Further research focus is devoted to small molecules and vaccines.
+SUMMARY: Biologics offer a meaningful advance in food allergy treatment by targeting key immune pathways with an agnostic approach, therefore, independent on the specific antigen-specificity. This may offer the benefit of targeting multiple food allergies and also, eventually, further co-morbidities. There is broad evidence for an excellent safety profile for omalizumab. Studies are ongoing on other biologicals to explore the efficacy alongside the safety. A new era is also opened by the introduction of biosimilar on the market, by dramatically amortizing the economic burden. With the availability of multiple therapeutic options, the challenge for clinicians is to provide a personalized approach, shaped on the specific patient's need.
+
+---
+10.
+
+Title:
+Food allergy prevention by early introduction.
+
+PMID:
+41967460
+
+Journal:
+Current opinion in allergy and clinical immunology (2026/Jun)
+
+Abstract:
+PURPOSE OF REVIEW: Food allergy prevalence has increased substantially over the past two decades, particularly for peanut and egg, with significant clinical and psychosocial consequences. Earlier recommendations advocating delayed allergen introduction lacked supporting evidence and may have contributed to this trend. This review summarizes current evidence supporting early allergen introduction for primary prevention.
+RECENT FINDINGS: Recent advances in immunology demonstrate that oral tolerance is an active process promoted by early gastrointestinal exposure during a critical window in infancy. The dual-allergen exposure hypothesis suggests that impaired skin barrier exposure leads to sensitization, whereas early oral intake induces tolerance. Randomized controlled trials have transformed the field: the LEAP study showed a marked reduction in peanut allergy, and trials such as PETIT demonstrated benefit for heated egg. Meta-analyses confirm high-certainty evidence for peanut and egg, with emerging but less robust data for other allergens.
+SUMMARY: Early allergen introduction is now a key strategy for food allergy prevention, with important implications for clinical practice and guideline development. Implementation requires attention to safety, appropriate food forms, and local context. Future research should address optimal dosing, duration, and applicability across diverse populations.
+
+---
+11.
+
+Title:
+Stepwise oral food challenge test.
+
+PMID:
+41967109
+
+Journal:
+Current opinion in allergy and clinical immunology (2026/Jun)
+
+Abstract:
+PURPOSE OF REVIEW: The oral food challenge (OFC) remains the cornerstone procedure for diagnosing food allergies and guiding patient management. Recently, stepwise OFC, a new management strategy starting with very-low-dose (VLD) or low-dose OFC, has been reported. This review critically examines the clinical utility and safety profile of stepwise OFC approaches.
+RECENT FINDINGS: The stepwise OFC typically begins with a VLD or low-dose OFC, which is the most critical step in this approach. VLD and low-dose OFCs have been demonstrated to be useful strategies for avoiding complete elimination of causative foods and improving prognosis. Regarding safety considerations, a time interval of 30 min between doses may be insufficient, whereas an interval of at least 1 h is considered appropriate for stepwise OFC.
+SUMMARY: Stepwise OFCs starting with VLD or low-dose appear to be effective approaches. VLD and low-dose OFCs are well tolerated and effective for avoiding complete elimination of allergenic foods. VLD and low-dose OFCs, as part of stepwise OFC, represent useful strategies for improving the prognosis of children with food allergies.
+
+---
+12.
+
+Title:
+Rational Allergy Practice Guidelines by the Indian Academy of Pediatrics (IAP) and IAP-Allergy and Applied Immunology Chapter.
+
+PMID:
+41949750
+
+Journal:
+Indian pediatrics (2026/Jun)
+
+Abstract:
+OBJECTIVES: Recognition of allergic diseases in children is on the rise globally, with a similar burden in lower-middle-income countries such as India. There is a lack of structured, context-specific guidelines and standardized care pathways for pediatric allergic diseases. This document aims to provide evidence-based, pragmatic guidance for rational allergy practice in children.
+JUSTIFICATION: Heterogeneous diagnostic approaches and non-uniform management practices for allergic conditions in children contribute to inaccurate disease burden estimation, inappropriate investigations, and suboptimal therapeutic outcomes, thereby increasing morbidity and healthcare costs.
+PROCESS: Key domains including asthma, allergic rhinitis, atopic dermatitis, food allergy, urticaria/angioedema, and anaphylaxis were identified. A multidisciplinary expert panel comprising pediatricians, pulmonologists, otorhinolaryngologists, clinical immunologists, internists, and allergists was constituted, with inputs from World Allergy Organization (WAO) Centers of Excellence and professional bodies. Systematic literature searches were conducted in Cochrane Library, Medline, Embase, and Google Scholar. Evidence was appraised and graded using established classification systems. Feasibility, equity, and resource implications relevant to India were considered, with provisions for periodic updates.
+RECOMMENDATIONS: These guidelines provide an evidence-based framework for rational diagnosis, judicious testing, standardized treatment, timely referral, patient and family education, rational allergen immunotherapy, and advocacy for training and policy development. They aim to standardize pediatric allergy care in India while supporting, not replacing, clinician judgment.
+
+---
+13.
+
+Title:
+Skin intervention for food allergy prevention: recent advances and clinical implications.
+
+PMID:
+41947307
+
+Journal:
+Current opinion in allergy and clinical immunology (2026/Jun)
+
+Abstract:
+PURPOSE OF REVIEW: Food allergy has increased globally, with infancy representing a critical window for prevention. Accumulating evidence has shifted attention toward the skin as a key route of allergen exposure, particularly in the context of atopic dermatitis. This review is timely given recent advances that have established the dual allergen exposure hypothesis as a clinical paradigm and growing interest in early skin-based interventions.
+RECENT FINDINGS: Observational and interventional studies consistently identify early-onset atopic dermatitis as the strongest risk factor for food allergy. Current evidence does not support modification of routine skin cleansing practices for the purpose of food allergy prevention. Randomized controlled trials evaluating moisturizers have shown no convincing evidence that moisturizer use directly prevents food allergy. Any potential benefit appears limited to modulation of atopic dermatitis risk and may depend on formulation, timing, and target population. In contrast, early, sufficient, and anti-inflammatory treatment of atopic dermatitis - including treatment of nonlesional skin - has demonstrated the strong evidence for reducing egg allergy risk in recent randomized controlled trials.
+SUMMARY: Skin-based interventions have a supportive but limited role in food allergy prevention. While moisturizers and skin cleansing alone are insufficient to prevent food allergy, early and adequate control of atopic dermatitis appears central to suppressing percutaneous sensitization. Effective prevention requires integrated, risk-stratified strategies combining optimal eczema management with appropriate food introduction and environmental considerations based on the dual allergy exposure theory. Further research is needed to establish well tolerated and sustainable prevention frameworks applicable to early life.
+
+---
+14.
+
+Title:
+Basophil activation test in food allergy: where are we now?
+
+PMID:
+41947011
+
+Journal:
+Current opinion in allergy and clinical immunology (2026/Jun)
+
+Abstract:
+PURPOSE OF REVIEW: To highlight the most recent findings on the basophil activation test (BAT) in food allergy, with a focus on advances in assay standardization and logistics, and on emerging clinical applications across major allergens aimed at improving diagnostic accuracy and reducing the need for oral food challenges.
+RECENT FINDINGS: Recent literature supports BAT as a useful tool to complement history, skin prick testing, and specific IgE, particularly in equivocal cases where oral food challenge (OFC) would otherwise be required. Evidence is strongest for peanut and sesame, with expanding data for milk, egg, and tree nuts, including algorithm-based approaches for cross-reactive nuts. Methodological advances include delayed processing strategies, streamlined multicentre workflows, and passive/indirect BAT approaches, alongside international initiatives aimed at harmonizing performance across laboratories. However, nonresponder rates, lack of universal thresholds, and heterogeneous performance between foods remain key limitations, and severity prediction is inconsistent across settings.
+SUMMARY: BAT can enhance diagnostic certainty and may reduce OFC use in selected scenarios, but broader implementation requires harmonized protocols, prospective validation of clinically actionable cut-offs, and robust multicentre outcome studies.
+
+---
+15.
+
+Title:
+Clinical outcomes in food allergy: Implications for patients, clinicians, and health systems.
+
+PMID:
+41862017
+
+Journal:
+Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/Jun)
+
+Abstract:
+Food allergy prevalence continues to rise, with increasing recognition of its psychosocial burden and impact on health systems. As new therapeutic options emerge, outcome assessment in food allergy has expanded to include desensitization, remission, safety, quality of life, and healthcare utilization. However, heterogeneity in outcome definitions and measurement approaches limits cross-study comparability and complicates the interpretation of treatment benefit. This review examines current concepts and evidence related to remission and clinically meaningful outcomes in IgE-mediated food allergy. We summarized key definitions, including desensitization and sustained unresponsiveness, and reviewed the epidemiology and predictors of natural and treatment-induced remission. Data from allergen immunotherapy and biologic therapy trials are discussed, with emphasis on variability in durability of response and patient factors associated with remission. We also reviewed outcome domains beyond oral food challenge metrics, including immunologic markers, patient-reported outcomes, safety, and health system-level measures, highlighting their respective strengths and limitations. Finally, we discussed ongoing challenges in outcome standardization and the importance of harmonized, patient-centered outcome assessment to support clinical decision-making and translation of research into practice. Improved alignment of clinical, immunologic, and patient-reported outcomes will be essential to accurately characterize therapeutic benefit and guide the evolving management of food allergy.
+
+---
+16.
+
+Title:
+7 for 11: Food allergy treatment therapies.
+
+PMID:
+41791575
+
+Journal:
+Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology (2026/Jun)
+
+Abstract:
+(abstract not available)
+
+---

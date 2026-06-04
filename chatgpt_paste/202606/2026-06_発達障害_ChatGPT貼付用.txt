@@ -1,0 +1,281 @@
+【領域】
+小児発達（ADHD・ASD・起立性調節障害）
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Prenatal exposure to asthma medications and risk of neurodevelopmental disorders and educational difficulties: A systematic review and meta-analysis.
+
+PMID:
+42224295
+
+Journal:
+PLoS medicine (2026/Jun)
+
+Abstract:
+BACKGROUND: Since asthma exacerbations during pregnancy risk maternal and fetal health, continued medication is important. However, some studies have reported adverse neurodevelopmental outcomes following prenatal exposure to asthma medication. Therefore, this systematic review aimed to collate the existing evidence on the associations between prenatal exposure to asthma medication and neurodevelopmental and educational outcomes.
+METHODS AND FINDINGS: A systematic review was conducted in accordance with PRISMA guidelines and the PECO framework. PubMed, Medline and Embase databases were searched for studies investigating prenatal exposure to one or more asthma medication and neurodevelopmental or educational outcomes published, in English, between January 2003 and September 2024, and updated in November 2025. Studies of asthma medication used for other indications were excluded. Study quality was assessed using the Newcastle-Ottawa scale. Random-effects meta-analyses were conducted where appropriate and heterogeneity was evaluated using Cochran's Q and I2 tests. Of 16,824 studies identified by the initial search, seven were eligible for inclusion. All investigated beta-2-adrenergic agonists (B2AA), with one including B2AA as mono- and polytherapy-and one study also investigated inhaled corticosteroids (ICS) exposure. Two reported associations with autism spectrum disorder (ASD) and one with attention-deficit hyperactivity disorder (ADHD). An updated search identified one additional eligible study, which examined both ADHD and ASD, as well as other neurodevelopmental disorders. The included eight studies (n = 3,867,170 participants) comprised cohort (n = 5) and case-control (n = 3) designs and reported inconsistent results. Meta-analysis of three studies (n = 1,380,871) indicated significant associations with ASD for exposure to B2AA both preconception (aOR 1.34, 95% CI [1.19,1.52]) and during pregnancy (aOR 1.29, 95% CI [1.16,1.42]). Heterogeneity was low, with no evidence of significant publication bias. Limitations of the included studies comprised residual confounding and exposure misclassification. Additionally, studies included in the meta-analysis were few in number and did not adequately distinguish between medication effects and underlying maternal asthma.
+CONCLUSION: Meta-analysis suggested an association between prenatal exposure to B2AA and ASD. An association with ADHD, reported in a single study, requires corroboration. To date, based on our search strategy, no association has been reported with communication skills, motor skills, problem-solving and personal-social skills, or cerebral palsy.
+
+---
+2.
+
+Title:
+The association between asthma and ADHD in children and adolescents: An observational study and a meta-analysis of Mendelian randomization studies.
+
+PMID:
+42175507
+
+Journal:
+Medicine (2026/May)
+
+Abstract:
+Observational epidemiological analysis and a meta-analysis of Mendelian randomization (MR) were used to investigate the association between attention-deficit/hyperactivity disorder (ADHD) and asthma in children and adolescents. Based on data from the 1999 to 2004 National Health and Nutrition Examination Survey (NHANES), an analysis was conducted to evaluate the association between ADHD and asthma in children and adolescents aged between 4 and 19 years. ADHD and asthma were defined based on self- or parent/guardian proxy-reported physician/health-professional diagnoses from the NHANES Medical Conditions Questionnaire. After analyzing ADHD genome-wide association study data from the Psychiatric Genomics Consortium as instrumental variables, we performed two-sample MR analyses based on genome-wide association study data from 5 studies to examine the causal relationship between genetically predicted ADHD liabilities. In addition, we summarized the results of the inverse-variance weighted method using a random-effects meta-analysis. Asthma prevalence was higher among participants with ADHD than those without ADHD (10.2% vs 5.9%). ADHD was associated with higher odds of asthma (odds ratio = 1.64, 95% confidence interval = 1.36-1.98), and the pattern of results was broadly consistent across subgroups. In contrast, the MR meta-analysis did not support a causal effect of genetically predicted ADHD liability on childhood asthma (odds ratio = 0.94, 95% confidence interval = 0.84-1.05, P > .05). According to data from the NHANES, ADHD and asthma are significantly associated in children and adolescents. A meta-analysis of the MR data did not reveal a causal connection between genetically predicted ADHD liability and childhood asthma. This paradoxical finding illustrates the complex interplay of genetic and nongenetic mechanisms in the ADHD-asthma association.
+
+---
+3.
+
+Title:
+Pharmacological interventions for ADHD: a systematic review and dose-effect network meta-analysis.
+
+PMID:
+42134365
+
+Journal:
+The lancet. Psychiatry (2026/Jun)
+
+Abstract:
+BACKGROUND: Optimising the dosage of pharmacological treatments for ADHD is key to maximising their benefits, yet most clinical guidelines provide only limited information on this issue. Dose-effect relationships have not been comprehensively assessed across all ADHD medications and age groups, despite growing concerns about subtherapeutic prescribing. We aimed to estimate dose-effect curves for efficacy and tolerability of ADHD medications (stimulants and non-stimulants) across age groups.
+METHODS: We conducted a systematic review and dose-effect network meta-analysis of double-blind randomised controlled trials (RCTs) evaluating oral monotherapy (stimulants and non-stimulants) in individuals aged 5 years and older meeting standardised ADHD criteria. Studies involving genetic syndromes, treatment-resistant populations, or withdrawal-phase designs were excluded. We retrieved eligible studies from the MED-ADHD database, updated on Feb 17, 2025, without language restrictions. We included published and unpublished aggregated-level data. The primary outcome was efficacy (measured using validated clinical scales) and the secondary outcome was tolerability (discontinuation due to adverse events). Within-study bias was assessed with the Cochrane Risk of Bias Tool (version 2). We summarised dose-effect associations using a hierarchical Bayesian model with restricted cubic splines. Separate analyses were conducted for children or adolescents (aged <18 years) and adults (aged ≥18 years). The distribution of key effect modifiers was used to examine transitivity of the network. People with lived experience were involved in the conceptualisation and design of the study, and in the interpretation of the findings. The protocol was pre-registered on OSF.
+FINDINGS: Our 2017 search identified 9948 potential references for inclusion and our Feb 17, 2025 search identified 5148 references. Of these 15 096 references, 8467 were excluded after title and abstract screening, and a further 5862 references were excluded after a full-text read. Of the 767 remaining reports, 164 were included in the systematic review and 113 RCTs (45 in adults and 68 in children and adolescents) were included in the dose-effect network meta-analysis. The 68 RCTs on children and adolescents included 14 138 participants (9981 [70·6%] males and 4157 [29·4%] females) and the 45 RCTs on adults included 11 016 participants (5958 [54·0%] males and 5056 [46·0%] females). Data on ethnicity or race were inconsistently reported across RCTs. We found distinct dose-effect patterns by medication class and age group. In children and adolescents, methylphenidate, amphetamines, and guanfacine showed increasing median efficacy up to 45 mg/day, 25 mg/day and 4 mg/day, respectively, with no evidence of additional benefit at higher doses, although estimates at higher doses were characterised by wide credible intervals. In adults, amphetamines showed a plateau above approximatively 50 mg/day, whereas methylphenidate efficacy increased without evidence of a plateau, possibly due to sparse data. Dose-dependent increases in discontinuation probability due to adverse events were observed for amphetamines (above 25 mg/day for children and 50 mg/day for adults) and methylphenidate (above 50 mg/day for adults, with no clear dose-dependent risk for children). We found no evidence of dose-effect patterns for atomoxetine (in fixed-doses studies) and modafinil. Multiple sensitivity analyses confirmed the robustness of these findings. We found no evidence of intransitivity.
+INTERPRETATION: Our findings challenge both therapeutic inertia-accepting suboptimal response without further dose titration-and uncritical dose escalation beyond licensed limits, when potential harms outweigh expected benefits. Our findings can inform clinical guidelines and should support shared decision making regarding ADHD medication dosage.
+FUNDING: National Institute for Health and Care Research (NIHR303122).
+
+---
+4.
+
+Title:
+Maternal and paternal antidepressant use before and during pregnancy and offspring risk of neurodevelopmental disorders: a systematic review and meta-analysis.
+
+PMID:
+42134364
+
+Journal:
+The lancet. Psychiatry (2026/Jun)
+
+Abstract:
+BACKGROUND: The potential risk of neurodevelopmental disorders following prenatal antidepressant exposure is concerning. Meta-analyses conducted in the past decade have had small study numbers and insufficient assessment of confounding by treatment indication. We aimed to synthesise risk of neurodevelopmental disorders, including ADHD and autism spectrum disorder (ASD), with antidepressant exposure before or during pregnancy in mothers and fathers, accounting for antidepressant classes, agents, dose, and confounding.
+METHODS: In this systematic review and meta-analysis, we searched Embase, MEDLINE, PsycINFO, and Web of Science from database inception to May 14, 2025, for studies that included mothers or fathers with antidepressant use before or during the pregnancy period and that reported data on neurodevelopmental disorders. Relative risks (RRs) were pooled using random-effect meta-analyses. We assessed publication bias, subgroup analyses, and quality assessment (Newcastle-Ottawa scale). No people with relevant lived experience were involved in the research and writing process. Only two studies reported ethnicity data. This study is registered with PROSPERO (CRD420251052595).
+FINDINGS: We identified 37 studies involving 648 626 antidepressant-exposed and 24 967 806 unexposed pregnancies (weighted average mean age 28·8 years, range 28·5-32·3). Prenatal antidepressant use was associated with a modestly increased risk of neurodevelopmental disorders in offspring (RR 1·13, 95% CI 1·08-1·18; k=2; I2=64·9%; p=0·051), including ADHD (1·35, 1·24-1·47; k=14; I2=90·2%; p<0·0001) and ASD (1·69, 1·24-2·30; k=25; I2=98·1%; p<0·0001), but not intellectual disabilities, motor disorders, or speech and language disorders. No significant difference in ASD risk was found between high-dose and low-dose exposure, and paternal antidepressant use around conception was not linked to ASD. Both SSRI and non-SSRI antidepressants exhibited increased risk for ADHD (SSRI 1·35, 1·20-1·51; k=11; I2=87·3%; p<0·0001; non-SSRI 1·41, 1·33-1·50; k=3; I2=0%; p=0·35) and ASD (SSRI 1·52, 1·39-1·65; k=21; I2=55·6%; p<0·0001; non-SSRI 1·19, 1·03-1·45; k=4; I2=0%; p=0·38). Notably, similar associations were found for pre-conception exposure. Observed associations were attenuated or became non-significant in sensitivity analyses accounting for confounding factors, such as maternal mental disorders, familial or genetic influences, and misclassification. Paternal antidepressant use during pregnancy served as a negative control and was associated with increased ADHD risk (1·46, 1·38-1·56; k=2; I2=25·3%; p=0·24) and ASD risk (1·28, 1·16-1·40; k=6; I2=35·0%; p=0·20). When confounding by indication was minimised, only amitriptyline and nortriptyline were associated with increased risk of ADHD (amitriptyline 1·74, 1·00-3·03) or ASD (amitriptyline and nortriptyline 2·02, 1·32-3·10), whereas no significant associations were found for specific SSRIs or SNRIs. The certainty of evidence was low to very low.
+INTERPRETATION: This systematic review and meta-analysis indicated a small association between antidepressants and ADHD or ASD, which was attenuated or became non-significant after adjusting for confounding factors. Antidepressant treatment should be continued for pregnant women with moderate-to-severe depression. Optimising both maternal and paternal mental health is essential for the child's long-term neurodevelopment.
+FUNDING: None.
+
+---
+5.
+
+Title:
+Efficacy of dialectical behavior therapy-based interventions for individuals with autism spectrum disorder: a systematic review and meta-analysis.
+
+PMID:
+42104500
+
+Journal:
+BMC psychology (2026/May)
+
+Abstract:
+BACKGROUND: Autism spectrum disorder (ASD) is characterized by social communication deficits and emotional dysregulation. Dialectical behavior therapy (DBT) has shown potential benefits in various psychiatric conditions; however, evidence regarding its effectiveness in individuals with ASD remains limited. This study aimed to evaluate the effects of DBT-based interventions on emotional regulation, suicidal ideation, and depressive symptoms in ASD.
+METHODS: Six English and Chinese databases were searched from inception to April 1, 2025. Randomized controlled trials (RCTs) comparing DBT-based interventions with control conditions in individuals with ASD were included. Data were pooled using standardized mean difference (SMD) with 95% confidence intervals (CI). Heterogeneity was assessed using the I² statistic, and subgroup analyses were conducted.
+RESULTS: Four RCTs involving 375 participants were included. Compared with controls, DBT-based interventions were associated with significant improvements in emotional regulation (SMD = - 0.89, 95% CI: -1.67 to - 0.10) and reductions in suicidal ideation (SMD = - 1.97, 95% CI: -3.02 to - 0.91) and depressive symptoms (SMD = - 2.23, 95% CI: -4.35 to - 0.11). Subgroup analysis indicated that shorter session duration (≤ 60 min) was associated with greater improvements in emotional regulation, whereas no significant effect was observed for longer sessions (> 60 min). No significant effects were found for anxiety.
+CONCLUSION: DBT-based interventions show potential benefits in improving emotional regulation, reducing suicidal ideation, and alleviating depressive symptoms in individuals with ASD. However, the findings should be interpreted with caution due to the limited number of trials and substantial heterogeneity. Further large-scale, high-quality RCTs are warranted.
+
+---
+6.
+
+Title:
+Investigating Prosodic Focus Perception and Production in Autism Spectrum Disorder: A Systematic Review and Meta-Analysis.
+
+PMID:
+41984053
+
+Journal:
+Journal of speech, language, and hearing research : JSLHR (2026/May)
+
+Abstract:
+PURPOSE: Speakers of all human languages use prosodic changes to encode focus, and the ability to perceive and produce prosodic focus is crucial for developing linguistic and communicative skills. This review aims to explore the performance of prosodic focus perception and production among individuals with autism spectrum disorder (ASD) and to identify potential factors contributing to inconsistent findings in previous studies.
+METHOD: We conducted a systematic search in three electronic databases and one web search engine to identify peer-reviewed research articles that compared the perception and production of prosodic focus between individuals with ASD and typically developing (TD) individuals. Effect sizes were calculated based on random-effects models. Meta-regression analyses were conducted to assess potential individual and methodological moderators.
+RESULTS: The comparison of perception accuracy between 441 individuals with ASD and 511 TD individuals revealed that individuals with ASD exhibited impaired prosodic focus perception (Hedges's g = -0.40), with no significant moderators for heterogeneity across studies. Meanwhile, we compared production accuracy between 483 individuals with ASD and 619 TD individuals, finding that production impairments in ASD were more pronounced (Hedges's g = -0.85). The moderator analysis revealed that nonverbal IQ and expressive language skills were significant moderators of production accuracy. Besides, individuals with ASD also exhibited greater pitch variation in prosodic focus production.
+CONCLUSION: Overall, these findings suggest that individuals with ASD exhibit greater difficulties in the production of prosodic focus compared to its perception, and increased pitch variation might be a prosodic feature associated with ASD.
+SUPPLEMENTAL MATERIAL: https://doi.org/10.23641/asha.31934088.
+
+---
+7.
+
+Title:
+Cognitive behavioral therapy effects on global functioning, domain-specific functioning, and quality of life in adult ADHD: A comprehensive meta-analysis.
+
+PMID:
+41936228
+
+Journal:
+Behaviour research and therapy (2026/Jun)
+
+Abstract:
+BACKGROUND: Cognitive behavioral therapy (CBT) for adult ADHD provides adaptive coping strategies targeting executive dysfunction and emotion regulation, processes underlying functional impairment. However, most research has prioritized symptom reduction over functional outcomes. This meta-analysis quantified CBT effects on global functioning, quality of life (QoL), and domain-specific functioning (social, occupational, educational), while examining moderators and the role of ADHD symptom change.
+METHOD: We included 70 studies (5152 participants): 38 RCTs, four non-randomized trials, 24 single-arm trials, and four single-case designs. Random-effects meta-analyses estimated standardized mean differences for between-group and within-subject outcomes at post-treatment and follow-up. Risk of bias was formally assessed, and GRADE assessed evidence certainty.
+RESULTS: CBT produced moderate effects on global functioning at post-treatment (SMD = 0.47) that increased at follow-up (SMD = 0.67). QoL effects were smaller and non-significant at follow-up. Strongest effects were found for occupational functioning, effects on social functioning were moderate, and academic benefits were limited. Individual format and longer duration were associated with better outcomes. ADHD symptom improvement predicted QoL but not functioning.
+CONCLUSIONS: CBT was associated with improvements in functioning (often the primary treatment concern), with moderate effects observed at post-treatment and some evidence of sustained effects at follow-up, particularly in directly targeted domains. The dissociation between symptom change, QoL, and functioning suggests that functional gains may not be fully explained by symptom reduction alone, although the mechanisms underlying these effects remain unclear. These findings support a more process-oriented perspective on CBT, while highlighting the potential relevance of directly targeting everyday functioning within psychological interventions. Risk of bias, self-report reliance, Western sample concentration, and short follow-ups (typically 3 months) warrant cautious interpretation.
+
+---
+8.
+
+Title:
+Optimizing exercise prescription parameters for ADHD in children: A systematic review and meta-analysis.
+
+PMID:
+41932226
+
+Journal:
+Public health (2026/Jun)
+
+Abstract:
+OBJECTIVES: This study aimed to systematically evaluate the effects of physical exercise on children with Attention Deficit Hyperactivity Disorder (ADHD) and provide evidence for optimal exercise prescription.
+STUDY DESIGN: Systematic review and meta-analysis of randomized controlled trials following PRISMA guidelines.
+METHODS: We searched databases including PubMed, Web of Science, Cochrane Library, ScienceDirect, and EBSCO from inception to July 20, 2025, incorporating 20 randomized controlled trials with 48 effect sizes. We conducted meta-analysis and subgroup analysis using a random-effects model.
+RESULTS: Physical exercise may yield modest improvements in ADHD symptoms (SMD = 0.27, 95% CI [0.00-0.54]). Therapeutic and alternative exercise modalities (SMD = 0.45, 95% CI [0.26-0.65]) showed greater effects than Aerobic and Endurance Training (SMD = 0.16, 95% CI [0.00-0.32]). Mid-term interventions (12-24 weeks, SMD = 0.28, 95% CI [0.11-0.46]) outperformed short-term programs. Mid-frequency (twice weekly, SMD = 0.52, 95% CI [0.33-0.71]) and long duration sessions (60-90 min, SMD = 1.01, 95% CI [0.71-1.31]) demonstrated optimal effectiveness.
+CONCLUSIONS: Physical exercise serves as a potentially beneficial adjunctive treatment for improving ADHD symptoms in children. Exploratory subgroup analyses suggest that therapeutic and alternative exercise modalities lasting 12-24 weeks, performed twice weekly for 60-90 min per session, may be associated with larger effect sizes, though these findings require further confirmation. These findings provide important references for clinical practice in managing ADHD in children.
+
+---
+9.
+
+Title:
+Association between Attention Deficit Hyperactivity Disorder and Obstructive Sleep Apnea in Children: A Systematic Review and Meta-Analysis.
+
+PMID:
+41910119
+
+Journal:
+Journal of attention disorders (2026/Jun)
+
+Abstract:
+BACKGROUND: Obstructive Sleep Apnea (OSA) and Attention Deficit Hyperactivity Disorder (ADHD) are two relatively common conditions in the pediatric population, with multiple studies demonstrating a strong association between the two. Hypoxia and sleep fragmentation caused by OSA has been shown to exacerbate ADHD symptoms, while treatment for OSA, such as with continuous positive airway pressure or adenotonsillectomy, may improve ADHD symptoms. We aim to provide an updated systematic review and meta-analysis on the complex relationship between OSA and ADHD in children.
+METHODS: PubMed, Embase, and SCOPUS were searched from inception to 1 December 2024 for longitudinal studies investigating the association between OSA and ADHD in children. Two independent authors selected relevant articles, extracted data, assessed bias using the Newcastle-Ottawa Scale and evaluated quality of evidence following the Grading of Recommendations, Assessment, Development and Evaluations framework. Random-effects meta-analysis was performed to synthesize pooled prevalence, while descriptive reviews were performed for all other outcomes.
+RESULTS: This systematic review and meta-analysis of 11 studies and 903 children formally diagnosed with OSA or ADHD found that the pooled prevalence of OSA in children with ADHD was 44% (  95% CI [2%, 56%]). Descriptive analysis found that adenotonsillectomy for OSA consistently led to significant improvements in both OSA and ADHD symptoms, suggesting its potential in complementing existing pharmacological therapy in improving ADHD symptoms.
+CONCLUSION: OSA and ADHD are closely related comorbid conditions. Physicians should be cognizant of this association and consider concurrent evaluation for OSA in children with ADHD symptoms, which can effectively guide treatment strategies and potentially reduce the need for long-term pharmacological treatment.
+
+---
+10.
+
+Title:
+Do Children and Adolescents with Attention Deficit Hyperactivity Disorder Use Screens More? A Systematic Review and Meta-Analysis.
+
+PMID:
+41885001
+
+Journal:
+Comprehensive child and adolescent nursing (2026/Jun)
+
+Abstract:
+BACKGROUND: Our aim in conducting this review was to investigate whether children and adolescents with attention deficit hyperactivity disorder (ADHD) exhibit differences in screen time when compared to children and adolescents with typical development.
+METHOD: The study protocol was registered in the PROSPERO database. Databases and gray literature were screened. Studies that compared screen time between children and adolescents with ADHD and those with typical development were included and critically evaluated with the Joanna Briggs Institute tools. Meta-analyses were performed considering screen time ≥2 hours/day or its mean (hours/day). The Grading of Recommendations Assessment, Development, and Evaluation (GRADE) approach was applied for evaluating the certainty of the evidence. Twenty-two studies were included.
+RESULTS: In total, 235 283 children and adolescents of both sexes were evaluated. ADHD was diagnosed clinically or based on caregiver reporting, and different screen types were reported. With a low and very low certainty of evidence, children and adolescents with ADHD were more likely to spend ≥2 hours/day during the week with computers and screens in general and had a higher mean screen time (p < .05). ADHD medication did not seem to influence these results.
+CONCLUSIONS: Children and adolescents with ADHD spent more time during weekdays using screens and were therefore more likely to exhibit excessive screen and computer use.
+
+---
+11.
+
+Title:
+Prevalence and moderators of personality disorders in adults with ADHD: A meta-analysis.
+
+PMID:
+41849922
+
+Journal:
+Psychiatry research (2026/Jun)
+
+Abstract:
+This meta-analysis investigated the prevalence and moderators of personality disorders (PDs) in adults with Attention-Deficit/Hyperactivity Disorder (ADHD), synthesizing data from 11 studies encompassing 2120 participants across clinical and nonclinical settings. The results indicate a substantial but highly variable burden of personality pathology, with a pooled prevalence for the presence of at least one comorbid PD estimated at 57 % (95 % CI [42-71]). However, this figure was largely driven by specialized outpatient populations, and statistical heterogeneity was exceptionally high (I² > 90 %), suggesting that prevalence is deeply context-dependent. Among specific diagnoses, the highest co-occurrence rates were observed for Passive-Aggressive (25.3 %), Avoidant (23.1 %), and Borderline (21.9 %) personality disorders. Moderator analyses revealed that these estimates were significantly influenced by diagnostic methodology; structured clinical interviews (such as the SCID-II) and self-report inventories (like the MCMI) consistently yielded higher rates than standard clinical assessments. Furthermore, setting played a critical role, with ADHD-specific clinics showing significantly higher coexistence than prison or student samples. While tests for publication bias were non-significant, they were limited by low statistical power. Ultimately, these findings underscore the high frequency of personality-related impairment in adult ADHD while highlighting the challenges of "diagnostic noise" and phenotypic overlap. The extreme fluctuations in reported rates suggest that clinicians must look beyond categorical labels, acknowledging that the identified prevalence is often a byproduct of the specific instruments and clinical frameworks employed.
+
+---
+12.
+
+Title:
+Prevalence and clinical correlates of cocaine use disorder among patients diagnosed with bipolar disorder: A systematic review, meta-analysis, and meta-regression.
+
+PMID:
+41833851
+
+Journal:
+Neuroscience and biobehavioral reviews (2026/Jun)
+
+Abstract:
+INTRODUCTION: Substance Use Disorders (SUD) are among the most common comorbidities in individuals with Bipolar Disorder (BD). However, the prevalence of cocaine use disorder (CUD) and its impact on the clinical course of BD have not been extensively explored and synthesized to date.
+OBJECTIVE: To estimate the prevalence of CUD among individuals with BD and describe its associated clinical correlates.
+METHODS: We conducted a systematic review with meta-analysis and meta-regression following PRISMA guidelines. Six databases were searched through December 2024. We included observational studies reporting CUD prevalence or clinical comparisons between BD individuals with and without CUD. Risk of bias was assessed using the Newcastle-Ottawa Scale. A random-effects model was used for meta-analyses.
+RESULTS: Twenty-seven studies comprising 6150,881 individuals with BD were included in the meta-analysis. The pooled overall prevalence of CUD in BD was 10.94% (95% CI: 6.15-18.73), rising to 46.25% (95% CI: 34.77-58.15) in studies including primary SUD samples; heterogeneity across studies was high. Seven studies were included in the qualitative synthesis of clinical correlates. BD+CUD individuals showed worse affective symptoms, higher rates of psychiatric comorbidities (e.g., post-traumatic stress disorder, attention-deficit/hyperactivity disorder), polysubstance use, and lower medication adherence compared to BD individuals without comorbid CUD. Sociodemographic vulnerability and increased risk behaviors were also more frequent. Although cognitive performance was broadly similar, BD+CUD patients performed slightly better than BD+AUD in delayed recall, possibly reflecting substance-specific effects.
+CONCLUSION: CUD is common among individuals with BD and is associated with more severe clinical profiles. Findings highlight the need for integrated treatment strategies and greater clinical attention to this comorbidity.
+
+---
+13.
+
+Title:
+Estimating the impact of missed cases on the accuracy of autism screening tools.
+
+PMID:
+41785130
+
+Journal:
+Psychological assessment (2026)
+
+Abstract:
+A common problem for assessing psychiatric screening tools is that initial diagnostic accuracy estimates are conducted on cross-sectional data and later found to be lower than expected when longitudinal analyses are conducted. This article uses prevalence estimates to identify potentially missed cases and adjust diagnostic accuracy metrics. To display this approach, we meta-analyze and assess 27 population-level autism screening studies identified via an umbrella review and contrast four population adjustments (none, national, U.S.-centric, and world prevalence). Studies with no positive screen adjustments displayed adequate sensitivity (.75), but poor sensitivity resulted when applying national (.52), world (.50), and U.S.-centric (.33) population adjustments. We also address missing positive screen cases due to the common problem of attrition (Sheldrick et al., 2023). Positive screen adjustments suggested a range of sensitivity impacts ranging from very poor (.32) to good (.89). Across analyses, positive predictive value estimates also ranged from .20 to .73 depending on population and missed case assumptions. The strengths and benefits of blending epidemiology and psychometric perspectives to identify screening tools that are weaker than expected are discussed. (PsycInfo Database Record (c) 2026 APA, all rights reserved).
+
+---
+14.
+
+Title:
+The association between autism and psychosis and the tools used to measure it: An updated systematic review and meta-analysis.
+
+PMID:
+41403082
+
+Journal:
+The British journal of clinical psychology (2026/Jun)
+
+Abstract:
+OBJECTIVES: Autistic individuals are at increased risk of psychotic experiences and being diagnosed with psychotic disorders. This association may result from methodological issues, including the misinterpretation of psychosis questionnaires by autistic individuals and clinicians' difficulty distinguishing between the conditions.
+DESIGN: This meta-analysis aimed to review this association and examine whether it is moderated by the assessment measures used.
+METHODS: Systematic searches were conducted in PsycINFO, MEDLINE, CINAHL, Embase and Web of Science. Included studies required autism and psychosis-spectrum measurements, co-morbidity data, adult participants and quantitative data. Quality and risk of bias were assessed using the AXIS Critical Appraisal of Cross-Sectional Studies tool. Analyses examined correlations, odds ratios and Cohen's d as effects.
+RESULTS: Sixty-three papers (N = 6,903,960) were included. Associations were found between autistic and overall (r = .435, p < .0001), positive (r = .274, p < .0001), negative (r = .506, p < .0001) and disorganized (r = .366, p < .0001) psychosis-spectrum traits. Individuals with one condition had an increased risk of being diagnosed with the other (OR = 7.03, p < .001) and scored higher on trait measures of the other (d = 1.187, p < .0001).
+CONCLUSIONS: These meta-analyses evidence a strong association between autism and the psychosis spectrum, at both trait and diagnostic levels. Negative psychosis-spectrum traits were most strongly linked with autistic traits, while measures of positive traits showed weaker correlations, suggesting overlaps in expression and measurement. High heterogeneity and inconsistent reporting, however, hinder the certainty of conclusions, and research is required to better understand this overlap.
+
+---
+15.
+
+Title:
+Individual Participant Data Meta-Analysis: Moderators of Response to Stimulants for Preschool Attention-Deficit/Hyperactivity Disorder.
+
+PMID:
+40975435
+
+Journal:
+Journal of the American Academy of Child and Adolescent Psychiatry (2026/Jun)
+
+Abstract:
+OBJECTIVE: This study aimed to identify moderators of efficacy of stimulants against placebo to inform personalized recommendations for treatment in preschool children (<6 years of age) with attention-deficit/hyperactivity disorder (ADHD).
+METHOD: We acquired individual-level participant data from 2 randomized placebo-controlled trials (RCTs) of preschool ADHD: namely, MAPPA (8-week methylphenidate, 102 participants, Brazil) and SPD489-347 (6-week lisdexamfetamine, 148 participants, United States). We evaluated the moderator and predictor effects of baseline demographic (age, sex, race, ethnicity, maternal educational level) and baseline clinical (ADHD symptom severity, intelligence quotient, number of psychiatric comorbidities) characteristics, as available, on endpoint ADHD symptom severity scores. Data from each study were analyzed separately with linear mixed-effects model for repeated measures. For categorical variables, we also computed treatment effects (ie, stimulants vs placebo) within subgroups and, when possible, pooled them alongside subgroup data from the Preschoolers with Attention-Deficit/Hyperactivity Disorder Treatment Study (PATS) (5-week methylphenidate, 165 participants, United States) in random-effects meta-analyses.
+RESULTS: Stimulants had greater efficacy against placebo in White children compared to Black children when considering data from US studies. Older age was not a moderator of greater efficacy of stimulants against placebo, nor was it associated with worse ADHD symptom severity at endpoint. Greater baseline ADHD symptom severity was associated with higher ADHD symptom severity at endpoint independently of the assigned treatment group.
+CONCLUSION: Race, but not older age or baseline ADHD symptom severity, may moderate the efficacy of stimulants for preschool ADHD. Given the post hoc nature of subgroup analyses, the findings should be interpreted as exploratory and viewed as hypotheses for confirmation in future studies.
+PLAIN LANGUAGE SUMMARY: In this individual participant meta-analysis, the authors obtained data from 2 clinical trials of psychostimulants for preschool children (aged 6 years or younger) with attention-deficit/hyperactivity disorder (ADHD) to investigate associations between demographic, clinical characteristics, and treatment effects. One study was focused on methylphenidate and was conducted in Brazil with 102 participants. The other study focused on lisdexamfetamine and was conducted in the United States with 148 participants. Some analyses also included subgroup data from a study focused on methylphenidate and was conducted in the US with 165 participants. In the US studies, stimulants appeared to work better in White children than in Black children, while older age or clinical severity was not associated with effectiveness of stimulants. The authors emphasize that these findings are exploratory and should be confirmed in future studies before guiding clinical decisions.
+CLINICAL TRIAL REGISTRATION INFORMATION: Safety and Efficacy Study in Preschool Children Aged 4-5 Years With Attention-deficit/Hyperactivity Disorder (ADHD); https://clinicaltrials.gov/study/NCT03260205; Early Interventions in Children With Attention Deficit/Hyperactivity Disorder; https://clinicaltrials.gov/study/NCT02807870.
+
+---

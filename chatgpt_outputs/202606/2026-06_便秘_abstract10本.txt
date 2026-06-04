@@ -1,0 +1,126 @@
+対象7本を確認しました。便秘そのものの治療を直接変える強いRCT・ガイドラインは少なく、今回は「外来小児科で診療行動に影響しうるもの」として3本を選定します。入力元は添付ファイルです。
+
+【第1部：日本語要約】
+
+---
+
+①タイトル
+
+Safety and efficacy of liposomal iron for iron deficiency anemia in pediatric population: A systematic review and meta-analysis of randomized controlled trials.
+
+②PMID
+
+42183880
+
+③なぜ重要か
+
+小児鉄欠乏性貧血に対するリポソーム鉄のsystematic review/meta-analysisで、従来鉄剤に比べて有害事象と便秘リスクが少ない可能性が示されています。便秘を悪化させやすい小児に鉄剤を使う場面では、外来実務に直結します。
+
+④臨床への影響
+
+鉄剤で腹部症状・便秘・アドヒアランス不良が問題になる児では、リポソーム鉄が選択肢になり得ます。ただし、RCTは4本454例で、6か月時Hb改善には異質性が大きく、標準治療を直ちに置き換えるほどの確実性はまだ限定的です。
+
+⑤診療変更の必要性
+
+Yes：鉄剤で便秘や胃腸症状が問題になる症例では、代替選択肢として意識してよいです。
+
+---
+
+①タイトル
+
+ACR Appropriateness Criteria® Suspected Abdominal Neoplasm-Child.
+
+②PMID
+
+41784595
+
+③なぜ重要か
+
+小児の腹部腫瘤・腹部膨満の画像検査に関するACR Appropriateness Criteriaです。便秘と思っていた腹部腫瘤が腫瘍やヘルニアなど別疾患である可能性を整理する上で重要です。
+
+④臨床への影響
+
+便秘診療で「触れる腫瘤」「左右差のある腹部腫瘤」「全身症状を伴う腹部膨満」「治療で改善しない腹部所見」がある場合、単純に便塊と決めつけず画像検査や紹介を考える根拠になります。日常便秘診療のred flag確認を強める内容です。
+
+⑤診療変更の必要性
+
+Yes：腹部腫瘤を伴う便秘様症状では、画像・紹介判断をより明確にする必要があります。
+
+---
+
+①タイトル
+
+Enuresis in Children.
+
+②PMID
+
+41706319
+
+③なぜ重要か
+
+夜尿症診療の実用的reviewで、便秘を併存疾患として評価すべきことが明確に述べられています。便秘外来でも、夜尿・昼間尿症状を同時に確認する意義があります。
+
+④臨床への影響
+
+便秘児で夜尿、頻尿、尿意切迫、昼間尿失禁がある場合、便秘治療だけでなく下部尿路症状の評価が必要です。夜尿症ではfrequency-volume chart、基本的 urotherapy、アラーム、デスモプレシンなどの整理にもつながります。
+
+⑤診療変更の必要性
+
+Yes：便秘問診に夜尿・昼間尿症状を組み込む価値があります。
+
+---
+
+【第2部：英語Abstract】
+
+---
+
+1. Safety and efficacy of liposomal iron for iron deficiency anemia in pediatric population: A systematic review and meta-analysis of randomized controlled trials.
+
+PMID:
+42183880
+
+Journal:
+European journal of pediatrics (2026/May)
+
+Abstract:
+Iron deficiency anemia (IDA) remains a public health problem in children. Conventional iron therapy is effective but often causes gastrointestinal adverse effects that reduce adherence. Liposomal iron has been developed to enhance absorption and improve tolerability. This systematic review and meta-analysis evaluated the efficacy and safety of liposomal iron compared with conventional iron formulations in pediatric patients with IDA. We searched PubMed, Scopus, Web of Science, and the Cochrane Library up to February 21, 2026 for randomized controlled trials (RCTs) comparing liposomal iron with conventional oral iron in children with IDA. Analyses were performed using R software with the meta package. Continuous outcomes were pooled as mean differences (MDs) and dichotomous outcomes as risk ratios (RRs) with 95% confidence intervals (CIs) using a random-effects model. Subgroup analyses according to follow-up duration. Four RCTs involving 454 children were included. At 6 months, liposomal iron produced a significantly greater increase in hemoglobin compared with conventional iron (MD 0.96 g/dL, 95% CI 0.09-1.82; P = 0.03), although heterogeneity was substantial (I2 = 92.9%). No significant differences were observed at earlier time points. Liposomal iron significantly reduced total iron-binding capacity (MD - 35.52 μg/dL; P < 0.0001) and increased mean corpuscular hemoglobin (MD 1.83 pg; P < 0.0001). Liposomal iron was associated with fewer adverse events (RR 0.29; P = 0.02) and lower risk of constipation (RR 0.56; P = 0.02).Conclusion: Liposomal iron offered better tolerability and was non-inferior to conventional iron for most hematologic outcomes. Evidence remains preliminary and larger RCTs are needed to confirm its efficacy in pediatric IDA.
+
+---
+
+2. ACR Appropriateness Criteria® Suspected Abdominal Neoplasm-Child.
+
+PMID:
+41784595
+
+Journal:
+Journal of the American College of Radiology : JACR (2026/Jun)
+
+Abstract:
+Suspected abdominal neoplasms in children encompass a wide range of malignant and benign tumors originating from various abdominal organs and structures. Neoplasms often present with a palpable abdominal mass, which may be accompanied by other symptoms such as abdominal pain, distension, or systemic signs. However, not all palpable masses in children represent neoplasms, as they may also result from benign conditions such as constipation or hernias. Imaging plays a vital role in differentiating these conditions. The role of imaging is to characterize the mass, identify the organ of origin, assess the extent of disease, and guide treatment decisions. This document provides imaging guidelines for children presenting with three clinical scenarios: palpable abdominal mass with suspected neoplasm at initial imaging, palpable abdominal mass with suspected neoplasm following negative radiography, and palpable abdominal wall mass with suspected abdominal wall neoplasm at initial imaging. The American College of Radiology Appropriateness Criteria are evidence-based guidelines for specific clinical conditions that are reviewed annually by a multidisciplinary expert panel. The guideline development and revision process support the systematic analysis of the medical literature from peer reviewed journals. Established methodology principles such as Grading of Recommendations Assessment, Development and Evaluation or GRADE are adapted to evaluate the evidence. The RAND/UCLA Appropriateness Method User Manual provides the methodology to determine the appropriateness of imaging and treatment procedures for specific clinical scenarios. In those instances where peer reviewed literature is lacking or equivocal, experts may be the primary evidentiary source available to formulate a recommendation.
+
+---
+
+3. Enuresis in Children.
+
+PMID:
+41706319
+
+Journal:
+Indian journal of pediatrics (2026/Jun)
+
+Abstract:
+Enuresis, also known as nocturnal enuresis or bedwetting, refers to intermittent incontinence during sleep. It warrants medical attention, in children older than five years of age, or earlier if desired by the child or family, due to its significant emotional and psychological impact on quality of life. Children who have never achieved nighttime continence are diagnosed with primary enuresis, while those who begin bedwetting after at least six months of being dry, with secondary enuresis. The condition is further classified as monosymptomatic (MNE) or non-monosymptomatic (NMNE), depending on the absence or presence of lower urinary tract symptoms. Assessment, thus, focuses on ruling out underlying pathological causes and determining the phenotype as mentioned above. Comorbid conditions such as sleep-disordered breathing, behavioral or psychiatric disorders, and constipation should be identified. A frequency-volume chart is a valuable tool in both diagnosis and management. All families in select cases should receive basic urotherapy. The mainstays of MNE treatment are an enuresis alarm and desmopressin. Anticholinergic or β3-adrenergic agents may be added to desmopressin. Imipramine is considered a third-line agent. Management of NMNE requires targeted treatment of the associated lower urinary tract condition. Comorbidities must also be addressed appropriately. Therapy-resistant and treatment-refractory enuresis should be diagnosed only after ensuring adherence to prescribed therapies. A range of alternative therapies may be explored and individualized based on the patient's needs.
+
+---
+
+【第3部：候補論文スコア一覧】
+
+| PMID     |                                                                                                                                                                              タイトル | 総合スコア | 役立つか | 短いメモ                                                    |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----: | ---- | ------------------------------------------------------- |
+| 42183880 |                  Safety and efficacy of liposomal iron for iron deficiency anemia in pediatric population: A systematic review and meta-analysis of randomized controlled trials. |   8.0 | 高い   | 鉄剤による便秘・胃腸症状対策として外来で実用性あり。エビデンスはまだ preliminary。         |
+| 41784595 |                                                                                                                 ACR Appropriateness Criteria® Suspected Abdominal Neoplasm-Child. |   7.5 | 高い   | 便秘に見える腹部腫瘤をどう扱うか、red flagと画像判断に関係。                      |
+| 41706319 |                                                                                                                                                             Enuresis in Children. |   7.0 | 高い   | 夜尿症・下部尿路症状と便秘の併存評価に有用。便秘問診への追加項目として実用的。                 |
+| 42155890 |                                                            Long term outcomes of the antegrade continence enema in children with an anorectal malformation - A systematic review. |   5.5 | 限定的  | ARM専門領域。一般外来便秘診療の直接変更は小さいが、難治・術後例の理解には有用。               |
+| 40706019 |                                                                                                   Impact of Fermented Dairy on Gastrointestinal Health and Associated Biomarkers. |   5.0 | ややあり | 発酵乳と便秘症状のreviewだが narrative reviewで対象も広い。積極的な診療変更までは弱い。 |
+| 42084007 | Multifaceted Assessment of Nutritional Status and Gastrointestinal Health in Duchenne Muscular Dystrophy: Approaches Based on Skinfold Thickness and Mid-Upper Arm Circumference. |   4.0 | 限定的  | DMDの栄養・消化器評価。特殊領域で、一般外来便秘への波及は小さい。                      |
+| 42180565 |                                                   Gestational constipation and the gut microbiota: mechanisms, interventions, and implications for maternal and offspring health. |   3.5 | 低い   | 妊娠中便秘と母児健康のreview。小児外来便秘診療を直接変える内容ではない。                 |

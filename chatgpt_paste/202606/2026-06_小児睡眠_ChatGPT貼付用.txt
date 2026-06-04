@@ -1,0 +1,31 @@
+【領域】
+小児睡眠
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Pharmacotherapeutic interventions to improve postoperative sleep quality in older adult patients: a systematic review and meta-analysis.
+
+PMID:
+41991369
+
+Journal:
+British journal of anaesthesia (2026/Jun)
+
+Abstract:
+BACKGROUND: Postoperative sleep impairment is common in older adult patients and is associated with delayed recovery and a negative impact on overall health, daily functioning, and quality of life. Older adults are particularly vulnerable because of age-related physiological changes and reduced functional reserves. We conducted a systematic review to assess the efficacy of pharmacotherapeutic interventions for improving postoperative sleep in older adults.
+METHODS: PubMed, the Cochrane Library, and Embase were searched from inception to August 20, 2025. Randomised controlled trials investigating pharmacological interventions aimed at improving postoperative sleep in patients aged ≥60 yr were included. Risk of bias was assessed using the Cochrane Risk of Bias 2.0 tool, and certainty of evidence was evaluated using the GRADE framework. Random-effects meta-analysis was performed where appropriate. The review was registered in PROSPERO (CRD420250651275).
+RESULTS: Of the 525 identified studies, 21 met the inclusion criteria. Assessed interventions included dexmedetomidine, esketamine, alprazolam, remimazolam, melatonin, and zolpidem. Dexmedetomidine was the most consistently effective, improving both subjective and objective sleep. Subgroup meta-analysis comparing dexmedetomidine with placebo showed a moderate, statistically significant improvement in sleep quality (standardised mean differences -0.51; 95% confidence interval -0.86 to -0.17; p<0.001; I2=94%). Evidence for other agents was limited. Overall certainty of evidence was very low to low.
+CONCLUSIONS: Pharmacological interventions potentially improve postoperative sleep in older adults, but current evidence is limited. Dexmedetomidine appears most promising, with potential benefits across administration regimens. High-quality trials are needed to establish optimal dosing and timing and to assess longer-term effects on sleep and recovery in this vulnerable population.
+
+---

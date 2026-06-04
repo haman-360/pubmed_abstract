@@ -1,0 +1,121 @@
+【領域】
+小児便秘
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Safety and efficacy of liposomal iron for iron deficiency anemia in pediatric population: A systematic review and meta-analysis of randomized controlled trials.
+
+PMID:
+42183880
+
+Journal:
+European journal of pediatrics (2026/May)
+
+Abstract:
+Iron deficiency anemia (IDA) remains a public health problem in children. Conventional iron therapy is effective but often causes gastrointestinal adverse effects that reduce adherence. Liposomal iron has been developed to enhance absorption and improve tolerability. This systematic review and meta-analysis evaluated the efficacy and safety of liposomal iron compared with conventional iron formulations in pediatric patients with IDA. We searched PubMed, Scopus, Web of Science, and the Cochrane Library up to February 21, 2026 for randomized controlled trials (RCTs) comparing liposomal iron with conventional oral iron in children with IDA. Analyses were performed using R software with the meta package. Continuous outcomes were pooled as mean differences (MDs) and dichotomous outcomes as risk ratios (RRs) with 95% confidence intervals (CIs) using a random-effects model. Subgroup analyses according to follow-up duration. Four RCTs involving 454 children were included. At 6 months, liposomal iron produced a significantly greater increase in hemoglobin compared with conventional iron (MD 0.96 g/dL, 95% CI 0.09-1.82; P = 0.03), although heterogeneity was substantial (I2 = 92.9%). No significant differences were observed at earlier time points. Liposomal iron significantly reduced total iron-binding capacity (MD - 35.52 μg/dL; P < 0.0001) and increased mean corpuscular hemoglobin (MD 1.83 pg; P < 0.0001). Liposomal iron was associated with fewer adverse events (RR 0.29; P = 0.02) and lower risk of constipation (RR 0.56; P = 0.02).Conclusion: Liposomal iron offered better tolerability and was non-inferior to conventional iron for most hematologic outcomes. Evidence remains preliminary and larger RCTs are needed to confirm its efficacy in pediatric IDA.
+
+---
+2.
+
+Title:
+Gestational constipation and the gut microbiota: mechanisms, interventions, and implications for maternal and offspring health.
+
+PMID:
+42180565
+
+Journal:
+Frontiers in nutrition (2026)
+
+Abstract:
+Gestational constipation affects up to 40% of pregnant women, yet remains underappreciated as a clinical entity with implications beyond maternal discomfort. This review synthesizes current evidence on the intricate relationships between pregnancy-associated constipation, gut microbiota dynamics, and perinatal health outcomes. Pregnancy induces profound remodeling of the maternal gut ecosystem-characterized by reduced alpha diversity, expansion of Actinomycetota and Pseudomonadota, and increased Bifidobacterium-driven by hormonal, immunological, and dietary factors. When perturbed, these physiological shifts transition to dysbiosis, impairing colonic function through deficient short-chain fatty acid production, disrupted serotonergic signaling, and compromised intestinal barrier integrity. Dietary fiber intervention, critically dependent on physicochemical properties (solubility, fermentability), restores microbial equilibrium, alleviates constipation, and exerts systemic anti-inflammatory effects. Probiotic and synbiotic strategies offer strain-specific benefits extending to gestational diabetes mitigation and improved mental wellbeing. Translational evidence from swine models demonstrates that microbiota-targeted interventions during late gestation enhance reproductive performance, colostrum quality, and offspring health-effects mediated through vertical transmission and metabolic programming. Epidemiological studies link maternal constipation to increased risks of offspring atopic dermatitis (1.26-fold) and allergic rhinitis (1.20-fold), while low fiber intake associates with neurodevelopmental delays. Moving beyond one-size-fits-all approaches, future prenatal care must integrate personalized, microbiota-targeted strategies based on predictive microbial biomarkers, optimizing both maternal wellbeing and long-term child health across two generations.
+
+---
+3.
+
+Title:
+Long term outcomes of the antegrade continence enema in children with an anorectal malformation - A systematic review.
+
+PMID:
+42155890
+
+Journal:
+Journal of pediatric surgery (2026/May)
+
+Abstract:
+PURPOSE: The role of the antegrade continence enema (ACE) in children has been studied extensively; however, its role specifically in children with an anorectal malformation (ARM) is less clearly documented. This systematic review aimed to synthesise and evaluate existing data regarding long-term outcomes of ACE in children with ARM.
+METHODOLOGY: Two databases (Embase and MEDLINE) were reviewed. Studies were eligible if their population included children under the age of 18 with an ARM who underwent an ACE procedure. All studies from when the ACE was first described in April 1990, to April 2025, were considered. We excluded conference abstracts, non-English papers and studies with less than five children with ARM in the described population.
+RESULTS: After excluding duplicates, there were 456 relevant papers. Following abstract and full text screening, 19 papers were eligible for analysis. Most studies were case series, with two cross-sectional studies. The total number of children with ARM and ACE was 696. The type of ARM was specified in 205 of these patients. The type of ACE was reported for 317 patients. Although differences in continence definitions were found, continence data following the procedure were available from 16/19 studies with 404/479 patients reported to have faecal continence with ACE. There was insufficient data to subdivide the outcomes into either types of ACE or type of ARM. Complications were reported in seven studies; 128/474 patients experienced complications associated with their ACE. A total of 24 patients were reported to have ceased use of their ACE, 19 of whom no longer required it. Quality of life outcomes were commented on in four papers with overall improvement post ACE.
+CONCLUSION: This systematic review highlights the lack of reporting and subgroup analysis in the published literature regarding long-term outcomes of ACE use in children with ARM. These patients differ from those with chronic idiopathic constipation, neurogenic bowel or Hirschsprung disease and, therefore, require an independent assessment of the utility of the ACE. We urge authors to consider children with ARM as a separate group when reporting outcomes of ACE use in future studies.
+
+---
+4.
+
+Title:
+Multifaceted Assessment of Nutritional Status and Gastrointestinal Health in Duchenne Muscular Dystrophy: Approaches Based on Skinfold Thickness and Mid-Upper Arm Circumference.
+
+PMID:
+42084007
+
+Journal:
+Journal of paediatrics and child health (2026/May)
+
+Abstract:
+Duchenne muscular dystrophy (DMD) is a progressive neuromuscular disorder characterized by prominent nutritional and gastrointestinal challenges. This study aimed to evaluate the nutritional status, gastrointestinal symptoms and biochemical deficiencies in children with DMD, with a particular focus on the clinical utility of supplementary anthropometric indicators such as mid-upper arm circumference Z-score (MUAC-Z) and triceps skinfold thickness Z-score (TSF-Z). This cross-sectional study included 65 genetically confirmed DMD patients aged 5-18 years. Anthropometric data (BMI-SDS, MUAC-Z, TSF-Z), gastrointestinal complaints, serum vitamin D levels and clinical features were analysed. ROC curve analysis was conducted to determine age thresholds associated with symptom onset. The most frequently reported gastrointestinal complaints were abdominal bloating (50.8%), constipation (32.3%) and regurgitation (30.8%). Swallowing difficulties and prolonged meal times were significantly associated with older age and loss of ambulation. ROC analysis identified > 14.5 years as the age threshold for solid food dysphagia. A moderate, significant positive correlation was observed between MUAC-Z and BMI-SDS (r = 0.520; p < 0.001), whereas no significant association was found between TSF-Z and BMI-SDS. Vitamin D deficiency (< 30 ng/mL) was widespread (86.2%) and more prevalent among non-ambulatory patients (96.6% vs. 77.8%; p = 0.036). Malnutrition was more frequently observed in steroid-naïve children than in those receiving corticosteroid therapy (50% vs. 19%; p = 0.041). Nutritional deficiencies and gastrointestinal symptoms are commonly encountered in paediatric DMD and tend to increase with advancing age and functional decline. MUAC-Z and TSF-Z may offer complementary insights into muscle mass and fat distribution beyond BMI. These simple and non-invasive measurements could be useful additions to routine nutritional surveillance in DMD management.
+
+---
+5.
+
+Title:
+ACR Appropriateness Criteria® Suspected Abdominal Neoplasm-Child.
+
+PMID:
+41784595
+
+Journal:
+Journal of the American College of Radiology : JACR (2026/Jun)
+
+Abstract:
+Suspected abdominal neoplasms in children encompass a wide range of malignant and benign tumors originating from various abdominal organs and structures. Neoplasms often present with a palpable abdominal mass, which may be accompanied by other symptoms such as abdominal pain, distension, or systemic signs. However, not all palpable masses in children represent neoplasms, as they may also result from benign conditions such as constipation or hernias. Imaging plays a vital role in differentiating these conditions. The role of imaging is to characterize the mass, identify the organ of origin, assess the extent of disease, and guide treatment decisions. This document provides imaging guidelines for children presenting with three clinical scenarios: palpable abdominal mass with suspected neoplasm at initial imaging, palpable abdominal mass with suspected neoplasm following negative radiography, and palpable abdominal wall mass with suspected abdominal wall neoplasm at initial imaging. The American College of Radiology Appropriateness Criteria are evidence-based guidelines for specific clinical conditions that are reviewed annually by a multidisciplinary expert panel. The guideline development and revision process support the systematic analysis of the medical literature from peer reviewed journals. Established methodology principles such as Grading of Recommendations Assessment, Development, and Evaluation or GRADE are adapted to evaluate the evidence. The RAND/UCLA Appropriateness Method User Manual provides the methodology to determine the appropriateness of imaging and treatment procedures for specific clinical scenarios. In those instances where peer reviewed literature is lacking or equivocal, experts may be the primary evidentiary source available to formulate a recommendation.
+
+---
+6.
+
+Title:
+Enuresis in Children.
+
+PMID:
+41706319
+
+Journal:
+Indian journal of pediatrics (2026/Jun)
+
+Abstract:
+Enuresis, also known as nocturnal enuresis or bedwetting, refers to intermittent incontinence during sleep. It warrants medical attention, in children older than five years of age, or earlier if desired by the child or family, due to its significant emotional and psychological impact on quality of life. Children who have never achieved nighttime continence are diagnosed with primary enuresis, while those who begin bedwetting after at least six months of being dry, with secondary enuresis. The condition is further classified as monosymptomatic (MNE) or non-monosymptomatic (NMNE), depending on the absence or presence of lower urinary tract symptoms. Assessment, thus, focuses on ruling out underlying pathological causes and determining the phenotype as mentioned above. Comorbid conditions such as sleep-disordered breathing, behavioral or psychiatric disorders, and constipation should be identified. A frequency-volume chart is a valuable tool in both diagnosis and management. All families in select cases should receive basic urotherapy. The mainstays of MNE treatment are an enuresis alarm and desmopressin. Anticholinergic or β3-adrenergic agents may be added to desmopressin. Imipramine is considered a third-line agent. Management of NMNE requires targeted treatment of the associated lower urinary tract condition. Comorbidities must also be addressed appropriately. Therapy-resistant and treatment-refractory enuresis should be diagnosed only after ensuring adherence to prescribed therapies. A range of alternative therapies may be explored and individualized based on the patient's needs.
+
+---
+7.
+
+Title:
+Impact of Fermented Dairy on Gastrointestinal Health and Associated Biomarkers.
+
+PMID:
+40706019
+
+Journal:
+Nutrition reviews (2026/Jun)
+
+Abstract:
+In this narrative review, we examined observational and randomized controlled trials investigating the effects of fermented dairy foods, including yogurt, fermented milk, kefir, and cheese, on gastrointestinal (GI) symptoms and/or GI biomarkers of health. Studies that recorded GI symptoms such as intestinal discomfort, flatulence, gastroenteritis, diarrhea, and constipation were included. GI health biomarkers encompassed measurements of intestinal integrity or permeability (eg, endotoxemia, zonulin, 2-arachidonoylglycerol), immune responses (eg, TNFα, IL-6, high-sensitivity CRP [hs-CRP], IFNγ, IL-1β, CCL5, TGFβ, IL-10, secretory IgA, α- and β-defensin, and LL-37), fecal microbiota, and fecal short-chain fatty acids (SCFAs). Studies on probiotic-containing fermented dairy foods were included if the primary focus was the fermented dairy food, not specific probiotic strains. Thirty-seven reports met the inclusion criteria and encompassed studies on healthy children, healthy adults, or individuals with underlying conditions. Twenty-one of these studies included fermented dairy products with probiotic strains. No study reported a harmful impact of fermented dairy on gut health. Ten studies reported no benefit of fermented dairy on GI symptoms or immune biomarkers compared with milk or when no dairy was consumed. The remaining studies described significant changes in one or more gut symptoms or biomarkers with fermented dairy intake. Improvements in GI symptoms, such as abdominal pain or discomfort, flatulence, constipation, and IBS severity, were found in most studies for which such symptoms were assessed. Reductions in intestinal inflammatory markers, specifically serum TNFα levels, were found to be associated with fermented dairy intake. In several trials, significant alterations to the gut microbiota or increased levels of fecal SCFAs following fermented dairy intake were measured, but not all of those studies incorporated clinically relevant outcomes. New investigations evaluating the impact of fermented dairy on gut health should build upon the findings of these prior studies, considering target populations, underlying health conditions, and relevant gut health end points.
+
+---

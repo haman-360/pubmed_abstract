@@ -1,0 +1,123 @@
+入力ファイルの4本を確認しました。外来小児科で診療行動に影響しやすいものを優先し、今回は **3本を選定** しました。XPYEGのメタ解析はsystematic reviewではありますが、日本の一般外来でそのまま治療選択肢にしにくく、エビデンスも低〜中等度のため、今回は除外寄りとしました。
+
+【第1部：日本語要約】
+
+---
+
+①タイトル
+
+Enuresis in Children.
+
+②PMID
+
+41706319
+
+③なぜ重要か
+
+夜尿症の初期評価、単一症候性・非単一症候性の分類、便秘・睡眠呼吸障害・行動面の併存評価、治療選択を整理した実臨床向けレビューです。外来での問診、排尿記録、基本的生活指導、アラーム療法、デスモプレシンの位置づけが明確です。
+
+④臨床への影響
+
+5歳以上で本人・家族が困っている場合に診療対象とし、まずMNE/NMNEを分け、frequency-volume chartを活用する流れを再確認できます。治療抵抗例では、治療失敗と判断する前にアドヒアランス確認、便秘や下部尿路症状、睡眠関連疾患を見直す必要があります。
+
+⑤診療変更の必要性
+
+Yes：夜尿症外来の初期評価テンプレート、生活指導、紹介判断の整理に直結します。
+
+---
+
+①タイトル
+
+Rethinking monosymptomatic nocturnal enuresis as a developmental variation.
+
+②PMID
+
+42183884
+
+③なぜ重要か
+
+単一症候性夜尿症を「病気」として過度に医療化するのではなく、夜間覚醒機構などの成熟の遅れとして捉える視点を提示しています。家族への説明、治療開始のタイミング、共有意思決定に役立つレビューです。
+
+④臨床への影響
+
+外来では、重篤な基礎疾患が疑われないMNEに対して、自然軽快の可能性と発達的多様性を説明しやすくなります。一方で、本人の心理的負担や家族の困り感が強い場合には、アラーム療法やデスモプレシンなどを症状緩和として選択する、というバランスのよい説明につながります。
+
+⑤診療変更の必要性
+
+Yes：説明の仕方を変える価値があります。過剰検査・過剰治療を避ける方向に働きます。
+
+---
+
+①タイトル
+
+Objective sleep parameters in children with nocturnal enuresis: a scoping review of polysomnographic evidence.
+
+②PMID
+
+42201571
+
+③なぜ重要か
+
+夜尿症と睡眠生理の関係を、ポリソムノグラフィー研究に絞って整理したscoping reviewです。睡眠段階、覚醒反応、周期性四肢運動、閉塞性睡眠時無呼吸などが夜尿症の一部の病型に関与する可能性を示しています。
+
+④臨床への影響
+
+全例に睡眠検査を行う論文ではありませんが、難治例、いびき、無呼吸、日中眠気、落ち着きのなさ、脚の違和感などがある児では睡眠関連疾患を問診で拾う意義があります。治療抵抗性夜尿症を「薬が効かない」とだけ見ず、睡眠・覚醒調節の問題を併存因子として確認する視点が得られます。
+
+⑤診療変更の必要性
+
+Yes：難治例・非典型例で睡眠関連問診を追加する根拠になります。
+
+---
+
+【第2部：英語Abstract】
+
+---
+
+1. Enuresis in Children.
+
+PMID:
+41706319
+
+Journal:
+Indian journal of pediatrics (2026/Jun)
+
+Abstract:
+Enuresis, also known as nocturnal enuresis or bedwetting, refers to intermittent incontinence during sleep. It warrants medical attention, in children older than five years of age, or earlier if desired by the child or family, due to its significant emotional and psychological impact on quality of life. Children who have never achieved nighttime continence are diagnosed with primary enuresis, while those who begin bedwetting after at least six months of being dry, with secondary enuresis. The condition is further classified as monosymptomatic (MNE) or non-monosymptomatic (NMNE), depending on the absence or presence of lower urinary tract symptoms. Assessment, thus, focuses on ruling out underlying pathological causes and determining the phenotype as mentioned above. Comorbid conditions such as sleep-disordered breathing, behavioral or psychiatric disorders, and constipation should be identified. A frequency-volume chart is a valuable tool in both diagnosis and management. All families in select cases should receive basic urotherapy. The mainstays of MNE treatment are an enuresis alarm and desmopressin. Anticholinergic or β3-adrenergic agents may be added to desmopressin. Imipramine is considered a third-line agent. Management of NMNE requires targeted treatment of the associated lower urinary tract condition. Comorbidities must also be addressed appropriately. Therapy-resistant and treatment-refractory enuresis should be diagnosed only after ensuring adherence to prescribed therapies. A range of alternative therapies may be explored and individualized based on the patient's needs.
+
+---
+
+2. Rethinking monosymptomatic nocturnal enuresis as a developmental variation.
+
+PMID:
+42183884
+
+Journal:
+European journal of pediatrics (2026/May)
+
+Abstract:
+Monosymptomatic nocturnal enuresis (MNE), defined as nocturnal bedwetting in children without daytime lower urinary tract symptoms, is a frequent concern in general pediatric practice. It is common in early childhood and typically resolves spontaneously with increasing age, indicating a strong maturational component. Nevertheless, MNE is often conceptualized as a pathological disorder requiring active medical intervention. This mini-review proposes that MNE may be more appropriately interpreted as a developmental variation reflecting delayed maturation of nocturnal arousal mechanisms rather than a primary structural disorder. From a developmental perspective, nocturnal urine production, bladder storage capacity, and sleep-arousal mechanisms mature at different rates, and enuresis occurs when arousal maturation lags behind other components. Current therapeutic approaches mainly provide symptomatic control or facilitate adaptation rather than correcting a structural abnormality. Reframing MNE within a developmental framework may help support reassurance, shared decision-making, and more balanced clinical discussions regarding management in routine pediatric practice. What is Known: • Monosymptomatic nocturnal enuresis (MNE) is generally regarded as a functional disorder related to delayed maturation of nocturnal continence mechanisms. • Multiple factors, including nocturnal urine production, bladder capacity, and sleep-arousal function, contribute to the pathophysiology of MNE. What is New: • This article proposes that MNE may be better understood as a developmental variation caused by temporal mismatch among continence-related maturation processes, particularly sleep-arousal maturation. • The developmental perspective presented here may help reduce unnecessary medicalization and promote a more individualized understanding of children with MNE.
+
+---
+
+3. Objective sleep parameters in children with nocturnal enuresis: a scoping review of polysomnographic evidence.
+
+PMID:
+42201571
+
+Journal:
+European journal of pediatrics (2026/May)
+
+Abstract:
+Nocturnal enuresis (NE) is a common condition in childhood, yet the role of sleep in its pathophysiology remains unclear. While failure to awaken during sleep is a key feature, objective evidence from polysomnography (PSG) has yielded inconsistent results. This scoping review aimed to systematically map studies reporting objective sleep parameters in children and adolescents with NE. The review followed the PRISMA-ScR guideline and was preregistered on the Open Science Framework. PubMed EMBASE, and Web of Science, were systematically searched for peer-reviewed English-language articles reporting objective sleep measures in participants under 18 years, evaluated for NE. Eighteen studies using PSG were included, most employing hospital-based recordings. Findings on sleep architecture in children with NE were heterogeneous. Several studies reported alterations in sleep stage distribution, including reduced slow-wave sleep, whereas others found no differences compared with controls. Periodic limb movements were elevated in some cohorts, particularly in treatment-refractory cases, but were not consistently reported. Some studies suggested a higher prevalence of obstructive sleep apnoea. Treatment studies indicated that successful therapy may be accompanied by changes in sleep stage distribution, cortical arousals, and limb movements. Conclusion: Evidence suggests that alterations in sleep regulation and fragmentation may be present in at least a subset of patients with NE. Although the evidence remains heterogeneous, emerging patterns indicate that sleep physiology could play a role in the pathophysiology of enuresis. The data suggest that disturbed arousal regulation and PLMS may be related to NE, underscoring the need for standardised, multimodal sleep assessments. What is Known-What is New: • Children with nocturnal enuresis fail to awaken to bladder signals during sleep. Prior polysomnography studies have produced inconsistent findings on sleep stages, cortical arousals, and periodic limb movements. • This scoping review synthesises 18 polysomnographic studies and highlights heterogeneous yet suggestive evidence of altered sleep regulation, fragmentation, and limb movements in children with nocturnal enuresis. The findings underscore the need for standardised PSG studies and indicate that sleep physiology may represent a relevant target for future phenotyping and research.
+
+---
+
+【第3部：候補論文スコア一覧】
+
+| PMID     |                                                                                                                                                                        タイトル | 総合スコア | 役立つか | 短いメモ                                                                   |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----: | ---- | ---------------------------------------------------------------------- |
+| 41706319 |                                                                                                                                                       Enuresis in Children. |     9 | 高い   | 外来診療に直結する総説。MNE/NMNE分類、便秘・睡眠呼吸障害・行動面の確認、排尿記録、アラーム、デスモプレシンまで整理されており最優先。 |
+| 42183884 |                                                                                                 Rethinking monosymptomatic nocturnal enuresis as a developmental variation. |     8 | 高い   | MNEを発達的変異として説明する視点。過剰医療化を避け、家族説明と共有意思決定に有用。                            |
+| 42201571 |                                                              Objective sleep parameters in children with nocturnal enuresis: a scoping review of polysomnographic evidence. |     7 | 中〜高  | 全例の検査方針を変えるものではないが、難治例で睡眠呼吸障害、周期性四肢運動、覚醒障害を確認する視点が得られる。                |
+| 42205727 | Xingpi Yanger Granule combined with conventional medication for the treatment of nocturnal enuresis: a systematic review and meta-analysis of randomized controlled trials. |     4 | 低い   | メタ解析ではあるがXPYEGは日本の一般小児外来で使いにくく、エビデンスも低〜中等度。現時点で診療変更にはつながりにくい。          |

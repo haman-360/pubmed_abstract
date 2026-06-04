@@ -1,0 +1,149 @@
+【領域】
+小児心身症・ゲーム障害・ネット依存
+
+【対象期間】
+直近1ヶ月
+
+【目的】
+外来小児科医として診療を変える可能性がある論文を10本程度に厳選するためのPubMed abstract一覧です。
+出力形式・選定基準はChatGPT Project Instructionsに従ってください。
+PMIDは必ず入力データに含まれるものを正確に転記してください。
+
+【論文一覧】
+
+1.
+
+Title:
+Ecological Momentary Interventions in the Management of Eating Disorders and Obesity: A Systematic Review.
+
+PMID:
+42231037
+
+Journal:
+The International journal of eating disorders (2026/Jun)
+
+Abstract:
+OBJECTIVE: This systematic review evaluated the feasibility, efficacy, adherence, and methodological quality of ecological momentary intervention (EMI)-based treatments for individuals with diagnosed eating disorders (EDs) and/or obesity.
+METHOD: Eight electronic databases were systematically searched from inception to January 2026. Randomized, non-randomized, and uncontrolled studies evaluating EMI-based treatments for individuals with diagnosed EDs and/or obesity were included. Data on intervention characteristics, clinical and behavioral outcomes, feasibility, acceptability, and adherence were extracted. Risk of bias was assessed using RoB 2 and ROBINS-I, and findings were synthesized narratively.
+RESULTS: Fourteen studies met inclusion criteria (eight obesity-focused, six ED-focused), including nine randomized controlled trials. In ED studies, EMI-augmented interventions were associated with significant within-group reductions in binge-eating frequency and ED psychopathology. However, superiority over active cognitive-behavioral therapy-based controls was inconsistent and primarily observed during maintenance phases. Obesity-focused trials demonstrated small to moderate within-group improvements in weight-related outcomes, with generally small and non-sustained between-group effects. Feasibility and acceptability were generally high, although retention and engagement varied across studies. Risk of bias was low in most randomized trials but higher in non-randomized studies.
+DISCUSSION: EMIs appear to be a feasible and acceptable approach for extending evidence-based treatments for EDs and obesity into daily life. Current evidence suggests that EMIs may exert a beneficial adjunctive effect by enhancing engagement and improving short-term behavioral outcomes. However, their impact on long-term clinical outcomes remains limited and inconsistent, underscoring the necessity for conducting rigorously designed clinical trials with extended follow-up periods.
+
+---
+2.
+
+Title:
+Guidelines for the prevention of psychosis from the World Federation of Societies of Biological Psychiatry (WFSBP) and EPI Canada.
+
+PMID:
+42201755
+
+Journal:
+The world journal of biological psychiatry : the official journal of the World Federation of Societies of Biological Psychiatry (2026/May)
+
+Abstract:
+OBJECTIVE: To prepare evidence-based guidelines on psychosis prevention.
+METHODS: We reviewed evidence on risk factors for/age at onset of psychosis, tools to assess clinical high-risk of psychosis (CHR-P), transition rates, risk calculation/ethical considerations around risk communication, CHR-P biological/clinical correlates, efficacy/cost-effectiveness of interventions/psychosis prevention services. The World Federation of Societies of Biological Psychiatry framework was used to grade evidence regarding interventions/services, elaborating guidelines with evidence-/consensus-based clinical recommendations to prevent psychosis in CHR-P subjects.
+RESULTS: At the service organisation level, (i) psychosis indicated prevention services might be implemented in close collaboration with early intervention services for psychosis to minimise duration of untreated illness, (ii) intake age criteria should be between 14 to 35, (iii) services should allow access to persons with cannabis use disorder. At the assessment and risk communication level, in clinical settings: (iv) staff in mental health services should be trained in administering/rating CHR-P assessment tools, (v) administer them, (vi) be trained in using/interpreting risk calculators, and (vii) in communicating risk, (viii) only use validated risk calculators, keeping a human-to-human interaction. Also, (ix) prevention services should assess comorbid mental disorders. At the intervention level: (x) staff should offer treatment for abstinence from cannabis, (xi) offer evidence-based treatment for comorbid mental disorders, and (xii) offer treatment for CHR-P based on patient preference, following the 'first do no harm' principle.
+CONCLUSIONS: Prevention services should be implemented, including interventions for cannabis use, reducing the duration of untreated psychosis, and treating comorbid mental disorders.
+
+---
+3.
+
+Title:
+Global review of assessments of online video gaming policies affecting young people: Loot boxes, age ratings, gameplay time restrictions, and beyond.
+
+PMID:
+42167097
+
+Journal:
+Comprehensive psychiatry (2026/May)
+
+Abstract:
+Online video gaming is a highly popular activity, especially amongst young people (aged ≤25), with entertainment, emotional, and social benefits. However, stakeholders are also concerned about potential risks and harms, including exposure to inappropriate (e.g., violent and sexual) content; excessive use (i.e., 'addiction' and 'gaming disorder'); and overspending, particularly in relation to gambling-like products (e.g., loot boxes). Various regulatory policies have been adopted worldwide in response. We reviewed empirical evaluations of the implementation of these policies. Results showed that age rating systems that provide information on the suitability of a game's content are widely adopted; however, many young people and their parents do not follow the guidance. Restrictions on how long and when young people can play video games in Asia could be easily circumvented and are not obviously beneficial. Regulations governing gambling-like loot boxes and in-game monetary spending in Europe and Asia are poorly complied with and enforced, leaving significant consumer protection concerns unaddressed. Many aspects of the adopted policies remain untested, and the regulatory situation in many countries remains unreported in the English academic literature. Stricter enforcement of pre-existing regulations, which has not occurred, may address many concerns. More research is needed to ensure all adopted policies are regularly monitored and tested: effective policies should be considered for adoption elsewhere, whilst ineffective policies should either be improved or repealed. Governments should fund more research into countermeasures to reduce the unwanted psychosocial effects of video games.
+
+---
+4.
+
+Title:
+Risk of all-cause and cause-specific mortality, and suicide attempt in people with anxiety and stress-related disorders: a systematic review, meta-analysis and meta-regression analysis of 165 studies.
+
+PMID:
+42136520
+
+Journal:
+World psychiatry : official journal of the World Psychiatric Association (WPA) (2026/Jun)
+
+Abstract:
+Anxiety disorders are the most prevalent mental health conditions worldwide. While their burden in terms of excess mortality is known to be high, a quantitative systematic evaluation of all-cause and cause-specific mortality and suicide attempt risks in people with anxiety or stress-related disorders is lacking. We performed a systematic review and random effects meta-analysis, in which co-primary outcomes were risk ratios (RRs) for all-cause and suicide-related mortality, and secondary outcomes were natural-cause mortality, other cause-specific mortality, and risk of suicide attempt. Sensitivity and meta-regression analyses were conducted. Overall, 165 studies encompassing 7,395,722 people with any anxiety or stress-related disorder and 135,059,023 controls, from 27 different countries across all continents, were included. Compared with the general population, a higher risk of all-cause mortality was associated with any anxiety or stress-related disorder (n=42, RR=1.54, 95% CI: 1.14-2.08, p=0.005), generalized anxiety disorder (n=9, RR=1.48, 95% CI: 1.23-1.78, p<0.001), and post-traumatic stress disorder (PTSD) and other stress-related disorders (n=21, RR=1.39, 95% CI: 1.15-1.67, p<0.001), but not with panic disorder, phobias, and mixed anxiety or stress-related disorders. Suicide mortality was increased in people with any anxiety or stress-related disorder (n=39, RR=2.88, 95% CI: 2.13-3.89, p<0.001), panic disorder (n=3, RR=3.58, 95% CI: 1.39-9.25, p<0.008), mixed anxiety or stress-related disorders (n=27, RR=2.77, 95% CI: 1.89-4.07, p<0.001), PTSD and other stress-related disorders (n=11, RR=3.13, 95% CI: 1.85-5.28, p<0.001), and generalized anxiety disorder (n=3, RR=1.93, 95% CI: 1.17-3.17, p<0.01). Suicide attempt risk was higher than in the general population in people with all anxiety or stress-related disorders, ranging from RR=6.33 (95% CI: 4.08-9.82, n=5) in panic disorder to RR=2.74 (95% CI: 1.72-4.35, n=5) in phobias. Natural-cause mortality was increased in any anxiety or stress-related disorder (n=19, RR=1.25, 95% CI: 1.09-1.44, p=0.002), generalized anxiety disorder (n=5, RR=1.55, 95% CI: 1.19-2.02, p=0.001), mixed anxiety or stress-related disorders (n=8, RR=1.26, 95% CI: 1.02-1.56, p=0.033), and PTSD and other stress-related disorders (n=9, RR=1.17, 95% CI: 1.03-1.33, p=0.019), but not in panic disorder. Cardiovascular-related deaths were increased in any and mixed anxiety or stress-related disorders and in generalized anxiety disorder, while cancer mortality was increased only in generalized anxiety disorder. When analyzing people with vs. without anxiety disorders with samples being matched by comorbid physical or mental disorders, results remained significant for all-cause mortality in generalized anxiety disorder and panic disorder, but not in any or mixed anxiety or stress-related disorders, and in PTSD and stress-related disorders. When compared with other mental disorders, no difference in co-primary outcomes emerged from more than two studies. Publication bias was present across several analyses, but sensitivity analyses largely confirmed the main findings. In meta-regression analyses, more recent data collection mitigated all-cause mortality, while schizophrenia-spectrum and bipolar disorder comorbidity mitigated suicide mortality risk, possibly driven by underlying treatment. This meta-analysis documents a higher all-cause, suicide and natural-cause mortality, and a higher risk of suicide attempt, in people with anxiety or stress-related disorders compared to the general population. Given the high prevalence and the recognized global treatment gap for these disorders, this finding is of great public health concern, and calls for appropriate prevention, screening and treatment strategies. More studies are needed to fill the publication bias gap and to identify modifiable risk or mitigating factors.
+
+---
+5.
+
+Title:
+Mapping the Intellectual Landscape of Maladaptive Daydreaming Research: A Bibliometric Analysis of Web of Science-Indexed Publications (2009-2025).
+
+PMID:
+42044681
+
+Journal:
+International journal of psychology : Journal international de psychologie (2026/Jun)
+
+Abstract:
+Empirical research on maladaptive daydreaming (MD), a clinically impairing form of compulsive immersive fantasy associated with attention dysregulation, emotional dysregulation and digital behavioural addictions, has expanded substantially over the past decade. Despite this growth, the intellectual structure, thematic evolution and collaborative networks of the MD literature indexed in the Web of Science Core Collection (WoSCC) remain unmapped. This bibliometric study aimed to characterise the intellectual landscape of WoSCC-indexed MD research between 2009 and 2025. A total of 141 publications were analysed using bibliometrix (R), VOSviewer and Python-based network analyses. The corpus accumulated 2187 citations with a mean of 15.5 citations per document and a field h-index of 26. Israel, the United States and Italy were the most productive countries. Four thematic clusters emerged: core MD phenomenology and dissociation; neurodevelopmental and attentional correlates; emotional dysregulation and pandemic-related psychopathology and digital behavioural addictions. Thematic evolution revealed a shift from phenomenological description toward multidimensional clinical investigation with increasing neurodevelopmental integration. Persistent gaps include longitudinal studies, randomized controlled trials and neurobiological investigations. These findings clarify the structure, thematic evolution and collaborative landscape of the Web of Science-indexed literature on MD and identify underdeveloped areas for future empirical work.
+
+---
+6.
+
+Title:
+Common practice elements of cognitive behavioral therapy for gaming disorder: A systematic review and expert panel evaluation.
+
+PMID:
+41990707
+
+Journal:
+Clinical psychology review (2026/Jun)
+
+Abstract:
+Gaming disorder (GD) is an addictive disorder with health and social impacts recognized by the World Health Organization. Although the GD treatment evidence base appear to favor cognitive behavioral therapy (CBT), knowledge of its common practice elements is limited. This systematic review critically evaluates CBT interventions for GD, encompassing individual, group, and mixed approaches, to identify and synthesize common practice elements. Employing a systematic review protocol following PRISMA guidelines and guided by an international expert panel, this review identified CBT studies and then critically reviewed their associated treatment manuals, guidelines, handouts, and related resources. A database search yielding 8479 results identified 28 studies from 12 countries reporting on 22 CBT interventions (n = 7 individual; n = 7 group; n = 8 mixed). Study authors were invited to share intervention materials, which were then independently coded and synthesized. Overall, 14 common practice elements were identified. The most frequent element was emotion regulation skills training (n = 21; 95.5%), followed by psychoeducation (n = 20; 90.9%) and cognitive restructuring (n = 19; 86.4%). Exposure techniques, and strength identification and self-compassion were the least frequent (n = 6; 27.3%). All individual CBT interventions used behavioral activation, psychoeducation, and relapse prevention, whereas emotion regulation skills training was the most frequently used element in group CBT. These findings reveal commonly reported CBT practice elements in the GD evidence base and provide expert summaries of established and less utilized therapeutic techniques. Improving the field's shared understanding of CBT is foundational to advancing GD clinical research and a model of best practice.
+
+---
+7.
+
+Title:
+The screening accuracy of the PROMIS® Anxiety measures in adults - A systematic review and multiple-thresholds meta-analysis.
+
+PMID:
+41812543
+
+Journal:
+Journal of psychosomatic research (2026/Jun)
+
+Abstract:
+AIMS: To assess the test accuracy of PROMIS® Anxiety measures for screening any anxiety disorder (AAD) and generalised anxiety disorder (GAD), and how it varies by cut-offs.
+METHODS: We searched the electronic databases from inception until 15 July 2025 (Embase, MEDLINE, PubMed-not-MEDLINE-subset, PsycINFO). We included test accuracy studies using any PROMIS® anxiety measure and (semi-)structured interviews in adults, and assessed the study quality with the QUADAS-2 instrument. We applied a multiple thresholds model to estimate the summary sensitivities and specificities across cut-offs and the area under the curve (AUC) RESULTS: Six studies, each on a different disease, met the inclusion criteria, with a total of 1121 participants. For PROMIS® Short Form-(SF)-Anxiety(A)-8a, we found five studies, two for PROMIS®-CAT-A and one for PROMIS®-SF-A-7a. Meta-analyses for screening AAD and GAD were performed only for PROMIS®-SF-A-8a, identifying the maximised sum of sensitivity and specificity at T-score cut-offs 55.4 and 58.4, respectively. At these cut-offs, summary sensitivity and specificity were 0.76 (95% CI 0.71 to 0.80) and 0.74 (95% CI 0.70 to 0.78) for AAD, and 0.75 (95% CI 0.69 to 0.81) and 0.79 (95% CI 0.77 to 0.80) for GAD. Corresponding AUCs were 0.81 (95% CI 0.79 to 0.84) and 0.84 (95% CI 0.82 to 0.85). Only minor between-study heterogeneity was found.
+CONCLUSIONS: The PROMIS®-SF-A-8a results were homogeneous, showing good screening accuracy. However, the limited number of studies - especially for other PROMIS® Anxiety measures - and the lack of replication in settings like primary care highlight the need for further research.
+
+---
+8.
+
+Title:
+Effectiveness of Long-Acting Injectable Antipsychotics Versus Oral Antipsychotics in People With Bipolar Disorder: A Systematic Review and Meta-Analysis of Observational Studies: Efficacité des antipsychotiques injectables à action prolongée par rapport aux antipsychotiques oraux chez les personnes atteintes de troubles bipolaires : revue systématique et méta-analyse d'études observationnelles.
+
+PMID:
+41615846
+
+Journal:
+Canadian journal of psychiatry. Revue canadienne de psychiatrie (2026/Jun)
+
+Abstract:
+BACKGROUND: Randomised trials suggest long-acting injectable antipsychotics (LAIs) may outperform oral antipsychotics (OAPs) regarding adherence and relapse prevention in bipolar disorder (BD). We aimed to compare the effectiveness and tolerability of LAIs versus OAPs in observational studies.
+METHODS: Searching MEDLINE/Embase/PsycINFO until March-25-2025, we conducted a systematic review and random-effects meta-analysis (pre-registered protocol: https://osf.io/gkwrp) of observational studies comparing LAIs versus OAPs in people with BD (primary outcome = study-defined relapse/psychiatric hospitalisation).
+RESULTS: Seventeen studies (4 = cohort, 13 = mirror-image studies; 6186/3676 participants with BD, respectively, high-quality per Newcastle-Ottawa Scale Score ≥7 = 47.1%) were included. The relative risk (RR) for study-defined relapse/psychiatric hospitalisation was significantly lower with LAIs versus OAPs in cohort (k = 4, RR = 0.63, 95% confidence interval (CI) = 0.44;0.90, P = 0.026) and mirror-image studies (k = 5, RR = 0.46, 95% CI = 0.28;0.77, P = 0.013). LAIs were not significantly superior to OAPs in high-quality cohort studies (k = 3, P = 0.78) but in those adjusted for >5 factors (k = 2, RR = 0.56, 95% CI = 0.37;0.84, P = 0.006) nor in high-quality mirror-image studies (k = 2, P = 0.38), but in each second-generation antipsychotic-LAIs study (aripiprazole-LAI: k = 2, risperidone-LAI: k = 1) (k = 3, RR = 0.40, 95% CI = 0.20;0.80, P = 0.03). In cohort studies, LAIs and OAPs did not differ regarding psychiatric hospitalisations (k = 3, P = 0.078) but data on discontinuation and mortality risk were lacking/not meta-analysable. In mirror-image studies, LAIs were associated with significantly lower psychiatric (k = 4, RR = 0.50, 95% CI = 0.25;0.99, P = 0.048) and depression-related (k = 2, RR = 0.46, 95% CI = 0.24;0.86, P = 0.014), but not mania-related hospitalisation risk (k = 2, P = 0.075). LAIs were associated with fewer psychiatric hospitalisations (k = 7, SMD = -1.73, 95% CI = -2.88;-0.57, P = 0.011), hospitalisation days (k = 9, SMD = -1.35, 95% CI = -2.19;-0.52, P = 0.006), mania-related hospitalisations (k = 3, SMD = -0.87, 95% CI = -1.19;-0.56, P < 0.001) and manic episodes (k = 3, SMD = -1.13, 95% CI = -2.00;-0.26, P = 0.03), but not any mood (k = 4, P = 0.13) or depressive episodes (k = 3, P = 0.14). Tolerability outcomes were missing, and GRADE certainty-of-evidence was "low" to "very low".
+DISCUSSION: LAIs were superior versus OAPs in preventing relapse/hospitalisation in cohort and mirror-image studies, in the latter particularly for mania-related outcomes. More robust mirror-image and controlled cohort studies are needed to better assess the effectiveness and tolerability of LAI antipsychotics in BD.Plain Language Summary TitleEffectiveness of Long-Acting Injectable Antipsychotics versus Oral Antipsychotics in People with Bipolar Disorder: A Systematic Review and Meta-Analysis of Observational Studies.
+Clinical trials have suggested that long-acting injectable antipsychotics (LAIs) may help people with bipolar disorder stay on their medication and reduce relapse risk better than oral antipsychotics. This review looked at real-world studies to see how well LAIs work compared to oral antipsychotics in everyday clinical settings.We searched several medical databases up to March 2025 and included 17 studies that compared LAIs and OAPs in people with bipolar disorder. These studies followed people over time or compared outcomes before and after switching from oral to injectable medication. The main outcome was relapse or psychiatric hospitalization. Across studies, people using LAIs had a lower risk of relapse or psychiatric hospitalization compared to those taking oral antipsychotics. This benefit was seen in both types of studies (cohort and mirror-image).In studies that adjusted for more factors or focused on second-generation LAIs (like aripiprazole or risperidone), LAIs appeared particularly effective. LAIs were linked to fewer psychiatric hospitalizations overall, fewer days spent in hospital, and fewer manic episodes.There was no clear difference for depressive episodes. Information on side effects or tolerability was often missing. The overall certainty of the evidence was rated as low to very low, meaning more high-quality studies are needed. Long-acting injectable antipsychotics may help people with bipolar disorder stay well and avoid relapse or hospitalization better than oral medications, especially for mania. However, because most existing studies have limitations, more rigorous research is needed to confirm these findings and to understand the side effects of LAIs compared to oral antipsychotics.
+CONTEXTE:: Selon des essais à répartition aléatoire, les antipsychotiques injectables à action prolongée (APIAP) pourraient donner de meilleurs résultats sur le plan de l'observance et de la prévention des rechutes que les antipsychotiques oraux (APO) pour le traitement des troubles bipolaires (TB). Nous avons cherché à comparer l'efficacité et la tolérabilité des APIAP par rapport aux APO dans des études observationnelles.
+MÉTHODOLOGIE:: En faisant des recherches dans les bases de données MEDLINE/Embase/PsycINFO jusqu'au 25 mars 2025, nous avons procédé à une revue systématique et à une méta-analyse des effets aléatoires (protocole enregistré au préalable : https://osf.io/gkwrp) dans des études observationnelles comparant les APIAP et les APO chez des personnes atteintes de TB (critère d'évaluation principal : rechutes/hospitalisations psychiatriques définies dans le cadre de l'étude).
+RÉSULTATS:: Dix-sept études (4 études de cohorte, 13 études en miroir; 6 186/3 676 participants atteints de TB respectivement, haute qualité définie en fonction d'un score ≥ 7sur l'échelle Newcastle-Ottawa = 47,1 %) ont été incluses. Le risque relatif (RR) de rechutes/hospitalisations psychiatriques définies dans le cadre de l'étude était significativement plus faible avec les APIAP qu'avec les APO dans les études de cohorte (k = 4, RR = 0,63, intervalle de confiance [IC] à 95 % = 0,44; 0,90, p = 0,026) et les études en miroir (k = 5, RR = 0,46, IC à 95 % = 0,28; 0,77, p = 0,013). Les APIAP n'étaient pas significativement supérieurs aux APO dans les études de cohorte de haute qualité (k = 3, p = 0,78), mais l'étaient dans les études ajustées pour plus de 5 facteurs (k = 2, RR = 0,56, IC à 95 % = 0,37 à 0,84, p = 0,006); ils ne l'étaient pas dans les études en miroir de haute qualité (k = 2, p = 0,38), mais l'étaient dans chaque étude portant sur un APIAP de deuxième génération (aripiprazole AP : k = 2, rispéridone AP : k = 1) (k = 3, RR = 0,40, IC à 95 % = 0,20 à 0,80, p = 0,03). Dans les études de cohorte, les APIAP et les APO ne différaient pas sur le plan des hospitalisations psychiatriques (k = 3, p = 0,078), mais les données sur les résultats étaient insuffisantes ou ne pouvaient pas faire l'objet d'une méta-analyse. Dans les études en miroir, les APIAP étaient associés à un risque beaucoup plus faible d'hospitalisation liée à un trouble psychiatrique (k = 4, RR = 0,50, IC à 95 % = 0,25 à 0,99, p = 0,048) et liée à une dépression (k = 2, RR = 0,46, IC à 95 % = 0,24 à 0,86, p = 0,014), mais pas sur le plan du risque d'hospitalisation liée à un trouble maniaque (k = 2, p = 0,075). Les APIAP étaient associés à une diminution des hospitalisations liées à un trouble psychiatrique (k = 7, DMS = -1,73, IC à 95 % = -2,88 à -0,57, p = 0,011), des jours d'hospitalisation (k = 9, DMS = -1,35, IC à 95 % = -2,19 à -0,52, p = 0,006), des hospitalisations liées à un trouble maniaque (k = 3, DMS = -0,87, IC à 95 % = -1,19 à -0,56, p < 0,001) et des épisodes maniaques (k = 3, DMS = -1,13, IC à 95 % = -2,00 à -0,26, p = 0,03), mais pas des troubles de l'humeur (k = 4, p = 0,13) ni des épisodes dépressifs (k = 3, p = 0,14). Les résultats en matière de tolérabilité n'étaient pas suffisants, et le DEGRÉ de certitude des données probantes était « faible » à « très faible ».
+DISCUSSION:: Les APIAP étaient supérieurs aux APO pour ce qui est de la prévention des rechutes et des hospitalisations dans les études de cohorte et en miroir, dans ces dernières en particulier pour les résultats liés à la manie. Des études de cohortes contrôlées et en miroir plus robustes sont nécessaires pour permettre une meilleure évaluation de l'efficacité et de la tolérabilité des antipsychotiques injectables à action prolongée (APIAP) pour le traitement des TB.
+
+---

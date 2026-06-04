@@ -1,0 +1,387 @@
+入力ファイルをもとに、小児プライマリケア外来での診療行動への影響を優先して選定しました。今回は、実装しやすいRCT、臨床コンセンサス、アンブレラレビュー、一次医療介入研究を高く評価しています。
+
+【第1部：日本語要約】
+
+---
+
+①タイトル
+
+Cardiac evaluation of paediatric athletes.
+
+②PMID
+
+41967042
+
+③なぜ重要か
+
+小児アスリートの心臓スクリーニングについて、成人基準の流用ではなく小児特異的に整理した初の欧州コンセンサス文書である。12歳までに病歴、身体診察、12誘導心電図を含む評価を開始するという実践的提案が含まれる。
+
+④臨床への影響
+
+スポーツ参加前健診、学校心電図後の相談、失神・胸痛・家族歴を伴う小児の評価方針に直結する。小児外来で「どこまで精査するか」「心エコーを考える場面はどこか」を整理する材料になる。
+
+⑤診療変更の必要性
+
+Yes：スポーツ歴・家族歴・心電図所見の確認をより体系化する必要がある。
+
+---
+
+①タイトル
+
+Cognitive and Educational Outcomes After Preterm Birth or Low Birth Weight: An Umbrella Review and Meta-Analysis.
+
+②PMID
+
+41910988
+
+③なぜ重要か
+
+早産児・低出生体重児の認知・教育面の長期リスクを、既存のシステマティックレビューを統合して示したアンブレラレビューである。IQ、読字、数学、特別支援ニーズなど幅広いアウトカムで不利が持続することを示している。
+
+④臨床への影響
+
+乳幼児健診や就学前後の外来で、早産・低出生体重の既往を単なる周産期情報ではなく、学習・発達支援のリスク因子として扱う根拠になる。保護者説明、園・学校との連携、発達検査や教育支援へのつなぎ方に影響する。
+
+⑤診療変更の必要性
+
+Yes：早産・低出生体重児では学童期以降も学習面を継続的に確認する。
+
+---
+
+①タイトル
+
+Parenting Intervention in Pediatric Primary Care Promotes Child Mental Health: Evidence from a Randomized Controlled Trial of PlayReadVIP.
+
+②PMID
+
+41692227
+
+③なぜ重要か
+
+小児プライマリケアの場で行う親子関係・読み聞かせ・遊びを重視した介入が、就学後の子どもの行動面に持続的な好影響を示したRCTである。外来を予防的メンタルヘルス介入の場として位置づける論文である。
+
+④臨床への影響
+
+乳幼児健診や一般外来で、読み聞かせ、親子遊び、認知的刺激の重要性をより積極的に説明する根拠になる。特に社会的リスクのある家庭では、保護者支援を「助言」ではなく予防介入として捉え直せる。
+
+⑤診療変更の必要性
+
+Yes：乳幼児健診で親子相互作用・読み聞かせ支援を明確に組み込む価値がある。
+
+---
+
+①タイトル
+
+Improved diagnostic management of children with acute infections following the introduction of point-of-care C-reactive protein testing and general practitioner education in Latvia: a post hoc analyses of a randomised controlled intervention study.
+
+②PMID
+
+41162196
+
+③なぜ重要か
+
+小児急性感染症に対して、CRP迅速検査と医師教育を組み合わせた介入が診断検査行動に与える影響を評価している。抗菌薬適正使用に直結する一次医療研究である。
+
+④臨床への影響
+
+CRP迅速検査は抗菌薬処方前の情報を増やすが、低CRPや陰性迅速検査だけでは抗菌薬中止判断に十分活用されていないことも示された。検査を導入するだけでなく、結果解釈と処方行動をセットで教育・運用する必要がある。
+
+⑤診療変更の必要性
+
+Yes：CRPや迅速検査を「処方を正当化する検査」ではなく「抗菌薬を控える判断材料」として再設計する。
+
+---
+
+①タイトル
+
+Treatment outcomes of preformed metal crowns placed with the conventional versus hall techniques: One-year randomized controlled trial results.
+
+②PMID
+
+41966250
+
+③なぜ重要か
+
+乳臼歯う蝕に対する既成金属冠のHall techniqueが、従来法と同等の1年成績を示した一次医療ベースのRCTである。小児歯科領域だが、小児外来での歯科紹介や保護者説明に関連する。
+
+④臨床への影響
+
+乳歯う蝕の治療で、侵襲の少ないHall techniqueが有効な選択肢になり得ることを説明できる。小児科外来でも、う蝕を見つけた際に「痛くない・削らない治療の選択肢がある場合がある」と歯科受診を促しやすくなる。
+
+⑤診療変更の必要性
+
+No：小児科単独の治療変更ではないが、歯科紹介時の説明内容は改善できる。
+
+---
+
+①タイトル
+
+Impact of an Educational Programme in Primary Care for mothers With Infant Colic Babies: Quasi-Experimental Study.
+
+②PMID
+
+41793293
+
+③なぜ重要か
+
+乳児疝痛に対する母親教育プログラムが、過剰啼泣による医療機関受診を減らした一次医療研究である。乳児の泣きへの対応は小児外来で頻度が高く、実装しやすいテーマである。
+
+④臨床への影響
+
+母親のストレス自体は有意に下がらなかったが、不要な受診は減少しており、説明・安心づけ・再受診目安の整理が医療利用を適正化する可能性がある。乳児健診や初回相談時に、泣きの自然経過と危険サインを標準化して説明する価値がある。
+
+⑤診療変更の必要性
+
+Yes：乳児疝痛への説明テンプレートや再受診基準を整備するとよい。
+
+---
+
+①タイトル
+
+Visual Education and Distraction for Reducing Preoperative Anxiety in Children and Parents: A Randomized Controlled Trial.
+
+②PMID
+
+42208603
+
+③なぜ重要か
+
+小児と保護者の術前不安に対して、視覚教材と気晴らし介入の有効性を示したRCTである。外来小手術、採血、予防接種、検査説明にも応用しやすい。
+
+④臨床への影響
+
+子どもへの処置前説明は、言葉だけでなく視覚教材や注意転換を組み合わせることで不安軽減につながる可能性がある。処置室での動画・絵カード・おもちゃ・万華鏡的な視覚刺激の活用を検討できる。
+
+⑤診療変更の必要性
+
+Yes：処置前説明に視覚教材とディストラクションを組み込む価値がある。
+
+---
+
+①タイトル
+
+Effectiveness of sun risk prevention programmes in primary schools in a tropical region: The PRESOLRE trial.
+
+②PMID
+
+40960198
+
+③なぜ重要か
+
+小学生を対象にした日光曝露リスク予防プログラムのクラスターRCTである。知識改善にとどまる面はあるが、学校保健・予防教育として実装可能性が高い。
+
+④臨床への影響
+
+日本の一般外来では熱帯地域ほど紫外線リスクは高くないが、屋外スポーツ、夏季活動、アトピー性皮膚炎児の日焼け対策指導に応用できる。帽子、サングラス、日焼け止め、ピア教育を組み合わせると知識向上が期待できる。
+
+⑤診療変更の必要性
+
+No：日常診療を大きく変えるほどではないが、夏季の生活指導に使える。
+
+---
+
+①タイトル
+
+An Updated Algorithm for the Management of Restless Legs Syndrome.
+
+②PMID
+
+42203073
+
+③なぜ重要か
+
+むずむず脚症候群の診療アルゴリズム更新であり、小児、妊娠、腎不全など特殊状況も含めて実践的に整理している。鉄療法、薬剤性増悪、ドパミン作動薬のリスクなどが明確化されている。
+
+④臨床への影響
+
+小児外来では、睡眠障害、落ち着きのなさ、夜間の脚の不快感、鉄欠乏との関連を見直すきっかけになる。フェリチン確認や睡眠衛生指導、専門紹介の判断に役立つ。
+
+⑤診療変更の必要性
+
+Yes：睡眠相談や不登校・倦怠感の背景としてRLSを意識し、鉄欠乏評価を検討する。
+
+---
+
+①タイトル
+
+A pilot trial investigating the effectiveness of online Triple P plus acceptance and commitment therapy (ACT) in addressing parental stress and child behavioural difficulties in a primary care level service.
+
+②PMID
+
+41208510
+
+③なぜ重要か
+
+プライマリケアレベルで、標準的なTriple PにACTを追加する意義を検討したパイロットRCTである。結果としてACT追加の明確な上乗せ効果は乏しく、標準的な行動マネジメントの重要性を示唆する。
+
+④臨床への影響
+
+育児困難や子どもの行動問題に対して、複雑な心理介入を追加する前に、標準化された親支援・行動療法的アプローチを確実に届けることが重要と考えられる。外来での紹介先選択や保護者説明に役立つ。
+
+⑤診療変更の必要性
+
+No：新規介入導入というより、標準的ペアレントトレーニングを優先する確認材料である。
+
+---
+
+【第2部：英語Abstract】
+
+---
+
+1. Cardiac evaluation of paediatric athletes.
+
+PMID:
+41967042
+
+Journal:
+European heart journal (2026/Jun)
+
+Abstract:
+Paediatric athletes are not simply 'mini adults'. Most existing recommendations for cardiac screening in paediatric athletes are primarily based on evidence in adults and are designed for adult athletes. Paediatric-specific recommendations are needed due to the specifics of cardiac physiology, maturation and growth, age-related disease expression, modified diagnostic pathways, training adaptations, and to address relevant ethical considerations. This clinical consensus document from the European Association of Preventive Cardiology (EAPC) of the ESC and the Association for European Paediatric and Congenital Cardiology (AEPC) introduces specific advice for paediatric athletes for the first time, based on expert consensus, and where available, data from paediatric athlete populations. Members of the writing group voted anonymously on key advice statements, with ≥80% agreement required for consensus. All advice in this document applies to paediatric athletes aged <16 years, including those under 12 years of age. This document advises that cardiac screening of paediatric athletes with personal and family medical history, physical examination and 12-lead resting electrocardiogram (ECG) should be performed and should start no later than the age of 12 years. Implementing a screening programme requires ensuring the availability of necessary healthcare resources. One transthoracic echocardiogram may be appropriate to identify high-risk structural cardiac diseases not identifiable on ECG, provided appropriate infrastructure for baseline diagnostic assessments is in place. This document also includes suggested definitions of normal, borderline and abnormal ECG findings in paediatric athletes. Detailed advice is provided for further evaluation if suspicious findings are identified on initial tests. This document highlights that further research is required to optimise screening strategies, accurately assess and quantify the risk of sudden cardiac death and provide evidence-based eligibility recommendations for paediatric athletes with cardiac disease. It is also noted that increased opportunities for paediatric sports cardiology training are required to provide adequate medical care for the paediatric athlete population.
+
+---
+
+2. Cognitive and Educational Outcomes After Preterm Birth or Low Birth Weight: An Umbrella Review and Meta-Analysis.
+
+PMID:
+41910988
+
+Journal:
+JAMA pediatrics (2026/Jun)
+
+Abstract:
+IMPORTANCE: Advances in perinatal care have improved survival for infants born preterm (<37 weeks' gestation) or with low birth weight (<2500 g), but these individuals remain at increased risk of poorer cognitive and educational outcomes. OBJECTIVE: To synthesize evidence from systematic reviews on both cognitive and educational outcomes in individuals after preterm birth or with low birth weight using an umbrella review and meta-analysis approach. DATA SOURCES AND STUDY SELECTION: The PubMed, Embase, ERIC, RePEc, EconLit, and Google Scholar databases were searched from inception through April 2025 for systematic reviews examining associations between preterm birth or low birth weight and cognitive or educational outcomes. DATA EXTRACTION AND SYNTHESIS: Two reviewers independently selected studies, extracted data, and evaluated study quality and risk of bias (following the guidelines from the Joanna Briggs Institute). The effect sizes from the original primary studies included in meta-analyses were reanalyzed and converted to equivalent Hedges g effect sizes. Data were pooled using random-effects models. The subgroup analyses examined associations by gestational age, birth weight, and age. Narrative synthesis supplemented quantitative findings. MAIN OUTCOMES AND MEASURES: General cognitive ability (intelligence quotient [IQ]) and 4 domains of educational outcomes (academic attainment, type and length of schooling, need for additional educational support, and educational costs). RESULTS: Forty systematic reviews (22 with meta-analyses and 18 with narrative syntheses) were included, yielding 788 reanalyzed effect estimates. Preterm birth or low birth weight was associated with lower IQ (Hedges g, -0.65 [95% CI, -0.69 to -0.61]), poorer attainment in reading (Hedges g, -0.65 [95% CI, -0.87 to -0.43]), lower performance in mathematics (Hedges g, -0.77 [95% CI, -1.03 to -0.50]), lower performance in spelling (Hedges g, -0.56 [95% CI, -0.65 to -0.46]), and greater need for special educational support (Hedges g, 0.58 [95% CI, 0.41 to 0.74]). The associations were stronger at earlier gestational ages and lower birth weights, appeared to attenuate during adolescence, and remained evident into adulthood. Evidence on schooling and educational costs was limited but suggested lower school completion rates and higher educational costs. CONCLUSIONS AND RELEVANCE: This umbrella review and meta-analysis found that preterm birth and low birth weight were associated with persistent cognitive and educational disadvantages across the life course, underscoring the importance of early identification and long-term monitoring to inform health and educational planning.
+
+---
+
+3. Parenting Intervention in Pediatric Primary Care Promotes Child Mental Health: Evidence from a Randomized Controlled Trial of PlayReadVIP.
+
+PMID:
+41692227
+
+Journal:
+The Journal of pediatrics (2026/Jun)
+
+Abstract:
+OBJECTIVE: To examine the effects of PlayReadVIP, a pediatric primary care intervention promoting early relational health, on child behaviors. STUDY DESIGN: A factorial randomized controlled trial enrolled mother-child dyads postpartum. PlayReadVIP was delivered in 2 phases: birth to 3 years (PlayReadVIP 0-3) and 3-5 years (PlayReadVIP 3-5). At enrollment, dyads were assigned to PlayReadVIP 0-3 or control. At age 3, dyads were rerandomized to PlayReadVIP 3-5 or control. Analyses included dyads with a second randomization and complete data on the mediators and child outcomes. In PlayReadVIP, dyads attended one-on-one sessions with a parent coach, in which they received child development information, learning materials, and real-time, strengths-based feedback on brief video recordings of parent-child interactions. Cognitive stimulation and harsh discipline were reported by mothers. Child behaviors were assessed using the Behavior Assessment System for Children, Second Edition. RESULTS: A total of 143 dyads, primarily immigrant, Latino/Hispanic, and low-socioeconomic status, comprised the analytic sample. Mothers in PlayReadVIP vs control had higher cognitive stimulation at 54 months, which resulted in reduced problem behaviors (aggression and attention problems) and better social skills in their children in second grade. No significant indirect effects through harsh discipline were found. CONCLUSIONS: PlayReadVIP leads to sustained but small improvements in child behaviors by enhancing maternal cognitive stimulation, emphasizing the potential of early intervention in pediatric primary care for promoting child mental health in disadvantaged populations.
+
+---
+
+4. Improved diagnostic management of children with acute infections following the introduction of point-of-care C-reactive protein testing and general practitioner education in Latvia: a post hoc analyses of a randomised controlled intervention study.
+
+PMID:
+41162196
+
+Journal:
+Scandinavian journal of primary health care (2026/Dec)
+
+Abstract:
+OBJECTIVE: In order to reduce unnecessary antibiotic prescribing, diagnostic processes require improvement for children in primary care. DESIGN: Post hoc analyses of randomised controlled intervention study. SETTING: Eighty general practitioner (GP) practices throughout Latvia. INTERVENTION: In the first study period, one GP group received combined interventions (access to CRP POCT and GP education), while the second GP group continued usual care (control group). In the second study period, the GP groups were switched - previous control group received combined intervention, but previous intervention group re-established usual care, but the long-term education effect was evaluated in this group. SUBJECTS: Children with acute infections consulted by a GP. MAIN OUTCOME: Impact of combined intervention and long-term education on testing level (CRP, full blood count, Strep A test, influenza test, urinalysis and X-ray) before antibiotic prescribing. Patient- and GPs- related predictors (including practice location and access to laboratory services) of diagnostic testing were also analysed. Secondary outcome was antibiotic prescribing according to the test results. RESULTS: Diagnostic testing was significantly increased in the combined intervention group versus the usual care group (aOR 11.1, 95% CI 8.0-15.3); however, it was decreased in the long-term education group (26.4%) (aOR 0.5, 95% CI 0.3-0.8). Rural practices and a longer expected time of laboratory results were associated with a more pronounced increase in diagnostic testing in the combined intervention group (aOR 37.6, 95% CI 17.9-79.0; aOR 23.2, 95% CI 14.1-38.0, respectively). It was found that a low CRP value, negative Strep A test or normal X-ray often did not convince GPs to withhold antibiotics. CONCLUSION: The availability of CRP POCT and GP education results in a much higher level of diagnostic testing prior to antibiotic prescribing, especially in rural regions. Further improvements in more rational testing and the interpretation of results to guide appropriate antibiotic prescribing are essential. UNLABELLED: Trial registration: ISRCTN registry - ISRCTN34931655.
+
+---
+
+5. Treatment outcomes of preformed metal crowns placed with the conventional versus hall techniques: One-year randomized controlled trial results.
+
+PMID:
+41966250
+
+Journal:
+Journal of dentistry (2026/Jul)
+
+Abstract:
+BACKGROUND: Preformed metal crowns (PMCs) have been used for decades to restore carious primary molars as they are extremely durable restorations. PMCs are delivered either by the traditional conventional technique (CT) or the more conservative Hall technique (HT) OBJECTIVES: Assess the CT and the HT of PMC placement with regards to clinical outcomes and restoration survival after 12-months of the PMC restoration. The study also aimed to evaluate the occlusal vertical dimension (OVD) resolution following PMC placement by the HT. METHODOLOGY: This study was designed as a non-inferiority, primary care-based, two-arm parallel group, randomized controlled trial. Eighty carious primary molars indicated for PMC restoration were randomly assigned into the CT and HT treatment groups. Standardized procedural techniques were followed in both the treatment groups to restore the carious primary molars with PMCs. RESULTS: After 12-months of PMC placement, 73 of the 80 initially recruited trial participants returned for follow-up assessment. The clinical outcomes of all the PMC-restored teeth in both the CT and HT treatment groups were recognized as 'Successful' with none of the treated teeth experiencing any 'Major' or 'Minor' failures. All the PMC-restored primary molars in the CT and HT groups were functionally present at the 12-month follow-up (100% survival rate). The average increase in OVD immediately after crown placement by the HT was 1.18±0.68 mm. OVD reverted to its pre-treatment values within one-month of the PMC placement with no significant difference in OVD measurements at baseline and one-month after the HT PMC placement (P = 0.32). CONCLUSIONS: Clinical success outcomes and restoration survival rates were similar for both the CT and HT of PMC placement. CLINICAL SIGNIFICANCE: The non-invasive HT of placing PMCs to restore carious primary molars is a viable alternative to the traditional CT.
+
+---
+
+6. Impact of an Educational Programme in Primary Care for mothers With Infant Colic Babies: Quasi-Experimental Study.
+
+PMID:
+41793293
+
+Journal:
+Clinical pediatrics (2026/Jul)
+
+Abstract:
+This quasi-experimental study assessed the impact of a postpartum educational programme on health care utilization and maternal stress in mothers of infants with colic. A total of 84 mothers took part in 2 individual sessions, 15 days apart. Maternal stress was measured at baseline and again at 3 months using Perceived Stress Questionnaire; colic severity was evaluated with Infant Colic Questionnaire Severity. Analyses included the Wilcoxon test, repeated-measures analysis and Spearman correlation. Maternal stress levels were not significantly related to colic severity, feeding type, childbirth type or the number of paediatric or emergency visits. However, we observed a statistically significant reduction in health care visits for excessive crying during the intervention period (P < .01). Although the programme did not reduce maternal stress directly, mothers rated it highly satisfactory, and it effectively lowered unnecessary health care use. Early postpartum education and support programmes may enhance care quality and optimize health care resource utilization in primary care.Trial Registration: Clinicaltrials.gov NCT03326297.
+
+---
+
+7. Visual Education and Distraction for Reducing Preoperative Anxiety in Children and Parents: A Randomized Controlled Trial.
+
+PMID:
+42208603
+
+Journal:
+International journal of nursing practice (2026/Jun)
+
+Abstract:
+AIM: To evaluate and compare the effectiveness of visual education and distraction methods in reducing preoperative anxiety among children and their parents. DESIGN: Three-arm, parallel-group randomized controlled trial. METHODS: The study was conducted between June 2023 and September 2024 in the paediatric outpatient surgery unit of a university hospital in Türkiye. A total of 105 children aged 5-12 years and their parents were randomly assigned to one of three groups: visual education, distraction using a kaleidoscope or control. Anxiety levels were assessed using the modified Yale Preoperative Anxiety Scale (mYPAS) for children and the State-Trait Anxiety Inventory-State (STAI-S) for parents. Data were analysed using repeated measures ANOVA, independent samples t-tests, Bonferroni post hoc tests, effect size and observed power. RESULTS: Both interventions significantly reduced preoperative anxiety compared with the control group. Repeated measures ANOVA revealed significant between-group differences for children (F = 11.937, p < 0.001, η2 = 0.190) and parents (F = 9.164, p < 0.001, η2 = 0.152). Bonferroni post hoc analyses confirmed that visual education and kaleidoscope distraction were effective in reducing anxiety in both children and parents. Although visual education produced a greater numerical reduction in anxiety, the difference between visual education and kaleidoscope distraction was not statistically significant. CONCLUSION: These results highlight the importance of integrating structured visual education and distraction strategies into routine paediatric nursing practice. Such interventions support family-centred care, enhance perioperative cooperation and may contribute to improved clinical experiences for children and parents. CLINICAL RELEVANCE: Structured visual education programs and distraction strategies can be integrated into routine paediatric nursing practice to support children and parents in the surgical process, enhance cooperation and improve perioperative care outcomes. TRIAL REGISTRATION: ClinicalTrials.gov identifier: NCT05279976.
+
+---
+
+8. Effectiveness of sun risk prevention programmes in primary schools in a tropical region: The PRESOLRE trial.
+
+PMID:
+40960198
+
+Journal:
+Journal of the European Academy of Dermatology and Venereology : JEADV (2026/Jun)
+
+Abstract:
+INTRODUCTION: The growing incidence of skin cancers calls for improved sun protection from childhood onwards. The aim of this PRESOLRE study was to assess the effectiveness of three sun-related risk prevention programmes on the knowledge, attitudes and behaviour of primary school pupils on the island of Réunion. METHODS: PRESOLRE was a cluster randomized controlled trial in which the classes of pupils were randomized into four parallel groups (1:1:1:1): a reference group with no intervention (Arm 1), a group exposed to the 'Living with the Sun' (LWS) educational programme (Arm 2), a group exposed to LWS and an educational Peer Intervention (PI) (Arm 3) and a group exposed to both of these interventions (LWS + PI) as well as receiving photoprotection equipment (Arm 4). The main analysis, based on a linear mixed model with random intercept, involved a comparison of the percentage of correct answers to the knowledge questionnaire administered at the end of the school year (at 6 months from baseline), after adjustment for the average level of knowledge in the class at the start of the school year. RESULTS: The trial involved 1452 pupils aged 7-11 in 100 classes from 20 primary schools. After adjusting for baseline, the mean level of knowledge after intervention was significantly higher (p < 0.0001) in Arm 4 than in Arm 1, absolute increase: +5.4% [95% CI = +2.4; +8.3]. Better knowledge of sun protection behaviours was reported among pupils with a light phototype compared with those with a dark phototype. CONCLUSIONS: This randomized cluster trial shows the positive impact of a risk prevention programme run by external speakers and peer pupils, with photoprotection equipment delivery in primary schools, making it possible to envisage wider dissemination of this type of public health initiative. However, modifying behaviours is more difficult to initiate and demonstrate than improving knowledge.
+
+---
+
+9. An Updated Algorithm for the Management of Restless Legs Syndrome.
+
+PMID:
+42203073
+
+Journal:
+Mayo Clinic proceedings (2026/May)
+
+Abstract:
+Restless legs syndrome (RLS) is a common disorder, largely managed by primary care providers. Much has changed in its management since the last version of this algorithm was published in 2021. The Scientific and Medical Advisory Board of the RLS Foundation has written this new paper as a practical algorithmic guide to current treatment based on a review of the literature published since 2020 and consensus expert opinion. This updated algorithm includes management of intermittent RLS, including behavioral approaches; new indications for oral and intravenous iron therapy; the role of medications in exacerbating RLS; gabapentinoids as first line pharmacologic therapy for chronic persistent RLS; the risks of dopamine agonists and the precautions needed if they are used; the management of dopamine agonist augmentation; the important role of low-dose opioids in management and how to safely use them; novel therapies including peroneal nerve stimulation and buprenorphine; and RLS in children, during pregnancy and lactation, in end-stage renal failure and in the perioperative period. Alternative, investigative, and potential future approaches are addressed.
+
+---
+
+10. A pilot trial investigating the effectiveness of online Triple P plus acceptance and commitment therapy (ACT) in addressing parental stress and child behavioural difficulties in a primary care level service.
+
+PMID:
+41208510
+
+Journal:
+The British journal of clinical psychology (2026/Jun)
+
+Abstract:
+OBJECTIVE: This study aimed to assess the effectiveness of a therapist-led, online Level 4 Triple P + ACT behavioural management programme (intervention arm) relative to Level 4 Triple P (treatment as usual arm). The intervention comprised 2 specific ACT sessions and Triple P that aimed to provide additive effects for parents of children with behavioural difficulties in a primary care setting. METHOD: Fifty-five parents were randomized to receive either Level 4 Triple P + ACT or standard Triple P. RESULTS: Parents randomized to Triple P + ACT did not evidence decreases in parental stress relative to those in the standard Triple P. Both groups demonstrated reductions in terms of daily hassles. Findings favoured standard Triple P in terms of reductions in child behavioural difficulties although there was evidence of differing rates of externalizing diagnoses among the two groups. CONCLUSION: Findings from this study suggest minimal additive benefit of adding an ACT treatment component to standard Level 4 Triple P for parents of children presenting with behavioural difficulties in a primary care setting in relation to parental stress. The research suggests that standard behavioural management programmes may provide what parents require in primary care. However, ACT components may be effective for certain cohorts of parents who struggle to flexibly adapt behavioural management strategies in helping develop the parent-child relationship. Further research is required to identify which parents may benefit from the addition of ACT treatment components.
+
+---
+
+【第3部：候補論文スコア一覧】
+
+| PMID     |                                                                                                                                                                                  タイトル | 総合スコア | 役立つか | 短いメモ                                   |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----: | ---- | -------------------------------------- |
+| 41967042 |                                                                                                                                            Cardiac evaluation of paediatric athletes. |   9.5 | 高い   | 小児アスリート心臓評価の実践的コンセンサス。学校心電図・スポーツ相談に有用。 |
+| 41910988 |                                                                     Cognitive and Educational Outcomes After Preterm Birth or Low Birth Weight: An Umbrella Review and Meta-Analysis. |   9.2 | 高い   | 早産・低出生体重児の学童期フォローを強化する根拠。              |
+| 41692227 |                                            Parenting Intervention in Pediatric Primary Care Promotes Child Mental Health: Evidence from a Randomized Controlled Trial of PlayReadVIP. |   9.0 | 高い   | 小児外来での親子支援が長期の行動面に影響するRCT。             |
+| 41162196 | Improved diagnostic management of children with acute infections following the introduction of point-of-care C-reactive protein testing and general practitioner education in Latvia. |   8.8 | 高い   | 抗菌薬適正使用に直結。検査結果の解釈教育が重要。               |
+| 41966250 |                                                                                     Treatment outcomes of preformed metal crowns placed with the conventional versus hall techniques. |   8.0 | 中等度  | 小児歯科RCT。小児科での説明・歯科紹介に有用。               |
+| 41793293 |                                                                                              Impact of an Educational Programme in Primary Care for mothers With Infant Colic Babies. |   7.8 | 高い   | 乳児疝痛の説明・安心づけの標準化に使いやすい。                |
+| 42208603 |                                                                                           Visual Education and Distraction for Reducing Preoperative Anxiety in Children and Parents. |   7.6 | 中等度  | 採血・処置前説明にも応用可能なRCT。                    |
+| 40960198 |                                                                          Effectiveness of sun risk prevention programmes in primary schools in a tropical region: The PRESOLRE trial. |   7.2 | 中等度  | 学校保健・夏季生活指導に応用可能。ただし行動変容は限定的。          |
+| 42203073 |                                                                                                                    An Updated Algorithm for the Management of Restless Legs Syndrome. |   7.0 | 中等度  | 小児睡眠相談、鉄欠乏評価に関連。成人中心なのでやや減点。           |
+| 41208510 |                                                                                                      Online Triple P plus ACT for parental stress and child behavioural difficulties. |   6.8 | 中等度  | ACT追加効果は限定的。標準的ペアレントトレーニング重視の確認材料。     |
+| 41034645 |                                                                                    Neonatal morbidity in early-onset fetal growth restriction with and without anticoagulant therapy. |   6.5 | 低〜中  | RCTだが産科・新生児領域中心。小児外来への直接性は低い。          |
+| 41392882 |                                                                                              Adverse outcomes among pregnant women with COVID-19 according to hospitalization status. |   6.2 | 低〜中  | 妊婦COVID重症化予防には重要だが、小児外来の診療変更は限定的。      |
+| 42138261 |                                                                                                                     Impact of travel time to health facilities on perinatal outcomes. |   6.0 | 低〜中  | 周産期医療政策として重要。一般小児外来への直接性は低い。           |
+| 42035516 |                                                                                                                                          Efficacy of Mediterranean Diet in pregnancy. |   5.8 | 低〜中  | 妊婦栄養指導には有用だが、小児外来での即時性は低い。             |
+| 42103386 |                                                                                                                 E-Fit for school-aged children with complex congenital heart disease. |   5.6 | 低〜中  | 特殊集団の実行機能介入。一般外来への汎用性は限定的。             |
+| 42026011 |                                                                                                             Sickle cell disease among children and adolescents in sub-Saharan Africa. |   5.2 | 低い   | 疫学・政策的意義は大きいが、日本の小児外来には直接反映しにくい。       |
+| 42048757 |                                                                                                                Mediterranean diet for primary prevention of cardiometabolic diseases. |   5.0 | 低い   | 成人中心の栄養疫学。小児外来での診療変更は小さい。              |
+| 42044540 |                                                                                                                                Mediterranean Diet and oncological disease prevention. |   4.8 | 低い   | 成人のがん予防中心。小児外来への直接性は低い。                |
+| 42216345 |                                                                                                            Burden of Helicobacter pylori infection in children and adults in Vietnam. |   4.5 | 低い   | ベトナムの有病率メタ解析。日本の外来診療変更には乏しい。           |
+| 41812543 |                                                                                                                             Screening accuracy of PROMIS® Anxiety measures in adults. |   4.2 | 低い   | 成人対象で小児プライマリケアへの直接性が低い。                |
+| 42204890 |                                                                                                                          Baricitinib for atopic dermatitis: real-world meta-analysis. |   4.0 | 低い   | 成人・専門領域寄り。小児一般外来での実装性は低い。              |
+| 41972388 |                                                                                                                                   Chronic widespread pain and cardiovascular disease. |   3.8 | 低い   | 成人慢性疼痛中心。小児外来への直接性は低い。                 |
+| 42106586 |                                                                                                                Single intrauterine death in monochorionic twin pregnancies with TAPS. |   3.5 | 低い   | 周産期専門領域。一般小児外来への影響は小さい。                |
