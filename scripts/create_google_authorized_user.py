@@ -22,14 +22,21 @@ def main() -> None:
     parser.add_argument("client_secret_json", help="Google CloudのDesktop OAuth client JSON")
     parser.add_argument("--root-name", default="PubMed_Automation_Root")
     parser.add_argument("--output", default="google_authorized_user.json")
+    parser.add_argument(
+        "--token-only",
+        action="store_true",
+        help="Driveフォルダーを作成せず、認証トークンだけを保存する",
+    )
     args = parser.parse_args()
     flow = InstalledAppFlow.from_client_secrets_file(args.client_secret_json, SCOPES)
     credentials = flow.run_local_server(port=0, access_type="offline", prompt="consent")
-    drive = build("drive", "v3", credentials=credentials, cache_discovery=False)
-    root = drive.files().create(
-        body={"name": args.root_name, "mimeType": "application/vnd.google-apps.folder"},
-        fields="id",
-    ).execute()
+    root = None
+    if not args.token_only:
+        drive = build("drive", "v3", credentials=credentials, cache_discovery=False)
+        root = drive.files().create(
+            body={"name": args.root_name, "mimeType": "application/vnd.google-apps.folder"},
+            fields="id",
+        ).execute()
     authorized_user = json.dumps({
         "token": credentials.token,
         "refresh_token": credentials.refresh_token,
@@ -42,7 +49,8 @@ def main() -> None:
     output.write_text(authorized_user + "\n", encoding="utf-8")
     os.chmod(output, 0o600)
     print(f"GOOGLE_AUTHORIZED_USER_JSONを保存しました: {output}")
-    print(f"GOOGLE_DRIVE_ROOT_FOLDER_ID={root['id']}", file=sys.stderr)
+    if root:
+        print(f"GOOGLE_DRIVE_ROOT_FOLDER_ID={root['id']}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -1,7 +1,10 @@
 .env
+.venv/
 credentials.json
 token_drive_file.json
 google_authorized_user.json
+token*.json
+client_secret*.json
 selected_pmids_history.json
 __pycache__/
 *.pyc
