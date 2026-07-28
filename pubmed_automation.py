@@ -111,7 +111,6 @@ class DriveStore:
         topic = self.google.ensure_folder(self.documents_id, safe_drive_name(topic_name))
         return {
             "archive": self.google.ensure_folder(topic, "archive"),
-            "history": self.google.ensure_folder(topic, "notebooklm_history"),
             "current": self.google.ensure_folder(topic, "current"),
         }
 
@@ -319,7 +318,6 @@ def new_manifest(
             "screen": {"state": "PENDING", "attempts": []},
             "final": {"state": "PENDING", "attempts": []},
             "archive_doc": {"state": "PENDING", "file_id": None, "attempts": 0},
-            "notebook_history_doc": {"state": "PENDING", "file_id": None, "attempts": 0},
             "current_doc": {"state": "PENDING", "attempts": 0},
         },
         "failed_pmids": [],
@@ -635,21 +633,6 @@ def create_documents(
         })
         store.save_manifest(manifest)
 
-    history_component = manifest["components"]["notebook_history_doc"]
-    if not history_component.get("file_id"):
-        doc = store.google.create_doc(
-            folders["history"],
-            f"{prefix}{manifest['display_name']}_{stamp}_NotebookLM",
-            notebook_text,
-        )
-        history_component.update({
-            "state": "COMPLETED",
-            "file_id": doc["id"],
-            "url": doc["webViewLink"],
-            "sha256": content_hash(notebook_text),
-        })
-        store.save_manifest(manifest)
-
     current_component = manifest["components"]["current_doc"]
     topic_ledger = ledger["topics"][manifest["topic"]]
     try:
@@ -754,7 +737,6 @@ def finish_run(
     topic_ledger["component_states"] = {
         "run": manifest["state"],
         "archive_doc": manifest["components"]["archive_doc"]["state"],
-        "notebook_history_doc": manifest["components"]["notebook_history_doc"]["state"],
         "current_doc": current_state,
     }
     store.save_manifest(manifest)
@@ -834,21 +816,30 @@ def poll_manifest(
         manifest["selected_count"] = len(final["selected"])
         manifest["alternate_count"] = len(final["alternates"])
         store.save_manifest(manifest)
-    if manifest["components"]["notebook_history_doc"]["state"] != "COMPLETED":
+    needs_documents = (
+        manifest["components"]["archive_doc"]["state"] != "COMPLETED"
+        or manifest["components"]["current_doc"]["state"] == "PENDING"
+    )
+    if needs_documents:
         try:
             create_documents(store, ledger, manifest, config)
         except Exception as exc:
-            for name in ("archive_doc", "notebook_history_doc"):
-                component = manifest["components"][name]
-                if component["state"] != "COMPLETED":
-                    component["attempts"] = component.get("attempts", 0) + 1
-                    component["state"] = "RETRY_PENDING"
-                    component["last_error"] = str(exc)
-                    if component["attempts"] >= config["retry"]["component_max_attempts"]:
-                        component["state"] = "FAILED"
-                        manifest["state"] = "FAILED"
-                        manifest["failure_reason"] = f"{name}の作成に繰り返し失敗しました。"
-                    break
+            archive_component = manifest["components"]["archive_doc"]
+            if archive_component["state"] != "COMPLETED":
+                component = archive_component
+                component["attempts"] = component.get("attempts", 0) + 1
+                component["state"] = "RETRY_PENDING"
+                if component["attempts"] >= config["retry"]["component_max_attempts"]:
+                    component["state"] = "FAILED"
+                    manifest["state"] = "FAILED"
+                    manifest["failure_reason"] = "archive_docの作成に繰り返し失敗しました。"
+            else:
+                component = manifest["components"]["current_doc"]
+                component["attempts"] = component.get("attempts", 0) + 1
+                component["state"] = "CURRENT_UPDATE_PENDING"
+                if component["attempts"] >= config["retry"]["component_max_attempts"]:
+                    component["state"] = "FAILED_RETRYABLE"
+            component["last_error"] = str(exc)
             store.save_manifest(manifest)
             return
         if manifest["components"]["current_doc"]["state"] == "CURRENT_UPDATE_PENDING":
@@ -873,7 +864,6 @@ def digest_body(cycle: dict[str, Any], manifests: list[dict[str, Any]]) -> str:
             f"状態: {manifest['state']}",
             f"新着: {manifest['article_count']}件 / 選定: {final_count}件",
             f"全件アーカイブ: {manifest['components']['archive_doc'].get('url', '未作成')}",
-            f"NotebookLM履歴: {manifest['components']['notebook_history_doc'].get('url', '未作成')}",
             f"CURRENT: {manifest['components']['current_doc'].get('url', manifest['components']['current_doc']['state'])}",
             f"評価失敗PMID: {', '.join(manifest.get('failed_pmids', [])) or 'なし'}",
             "API使用量: "
