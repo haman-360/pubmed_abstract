@@ -64,5 +64,16 @@ class CurrentDocumentIdempotencyTests(unittest.TestCase):
         client.drive.files.return_value.create.assert_not_called()
 
 
+class DriveLookupTests(unittest.TestCase):
+    def test_find_child_returns_none_when_drive_search_is_empty(self):
+        client = GoogleWorkspaceClient.__new__(GoogleWorkspaceClient)
+        client.drive = MagicMock()
+        client.drive.files.return_value.list.return_value.execute.return_value = {"files": []}
+
+        result = client.find_child("parent", "missing")
+
+        self.assertIsNone(result)
+
+
 if __name__ == "__main__":
     unittest.main()
