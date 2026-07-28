@@ -1,9 +1,9 @@
 import unittest
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, call
 
 from automation_core import load_config
 from automation_services import GoogleWorkspaceClient
-from pubmed_automation import maybe_notify
+from pubmed_automation import DriveStore, maybe_notify
 
 
 class FailingGoogle:
@@ -36,7 +36,6 @@ class NotificationFailureTests(unittest.TestCase):
             "failed_pmids": [],
             "components": {
                 "archive_doc": {"state": "COMPLETED", "url": "archive"},
-                "notebook_history_doc": {"state": "COMPLETED", "url": "history"},
                 "current_doc": {"state": "COMPLETED", "url": "current"},
             },
         }
@@ -73,6 +72,30 @@ class DriveLookupTests(unittest.TestCase):
         result = client.find_child("parent", "missing")
 
         self.assertIsNone(result)
+
+
+class DocumentFolderTests(unittest.TestCase):
+    def test_only_archive_and_current_folders_are_created(self):
+        store = DriveStore.__new__(DriveStore)
+        store.documents_id = "documents"
+        store.google = MagicMock()
+        store.google.ensure_folder.side_effect = [
+            "topic-folder",
+            "archive-folder",
+            "current-folder",
+        ]
+
+        result = store.document_folders("topic")
+
+        self.assertEqual(result, {
+            "archive": "archive-folder",
+            "current": "current-folder",
+        })
+        self.assertEqual(store.google.ensure_folder.call_args_list, [
+            call("documents", "topic"),
+            call("topic-folder", "archive"),
+            call("topic-folder", "current"),
+        ])
 
 
 if __name__ == "__main__":
