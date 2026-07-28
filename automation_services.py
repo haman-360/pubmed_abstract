@@ -110,7 +110,8 @@ class GoogleWorkspaceClient:
             fields="files(id,name,mimeType,webViewLink,modifiedTime)",
             pageSize=2,
         ).execute()
-        return result.get("files", [None])[0]
+        files = result.get("files", [])
+        return files[0] if files else None
 
     def ensure_folder(self, parent_id: str, name: str) -> str:
         mime = "application/vnd.google-apps.folder"
