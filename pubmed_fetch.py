@@ -198,6 +198,67 @@ def search_pubmed(query, reldate=0, retmax=100):
     return ids, int(count)
 
 
+def search_pubmed_edat(
+    query,
+    start_date,
+    end_date,
+    page_size=500,
+    max_records=10000,
+    request_interval=REQUEST_INTERVAL,
+):
+    """EDAT範囲で検索し、ESearchをページングしてPMIDをすべて取得する。
+
+    既存クエリに含まれる相対日付指定は、自動監視ではEDAT範囲と競合するため除去する。
+    """
+    clean_query = re.sub(
+        r'\s+AND\s+\("?last\s+\d+\s+days"?\[dp\]\)?',
+        "",
+        query,
+        flags=re.IGNORECASE,
+    )
+    clean_query = re.sub(
+        r'\s+AND\s+\("?last\s+\d+\s+days"?\[pdat\]\)?',
+        "",
+        clean_query,
+        flags=re.IGNORECASE,
+    )
+    start_term = str(start_date).replace("-", "/")
+    end_term = str(end_date).replace("-", "/")
+    term = f"({clean_query}) AND ({start_term}[edat] : {end_term}[edat])"
+    ids = []
+    total = None
+    retstart = 0
+    while total is None or retstart < min(total, max_records):
+        retmax = min(page_size, max_records - retstart)
+        if retmax <= 0:
+            break
+        params = {
+            "db": "pubmed",
+            "term": term,
+            "retstart": retstart,
+            "retmax": retmax,
+            "retmode": "json",
+            "sort": "pub date",
+        }
+        data = json.loads(fetch_url(f"{ESEARCH_URL}?{urllib.parse.urlencode(params)}"))
+        result = data.get("esearchresult", {})
+        total = int(result.get("count", "0"))
+        page_ids = result.get("idlist", [])
+        ids.extend(page_ids)
+        if not page_ids:
+            break
+        retstart += len(page_ids)
+        if retstart < min(total, max_records):
+            time.sleep(request_interval)
+    if total is not None and total > max_records:
+        raise RuntimeError(
+            f"PubMed検索結果{total}件がmax_records={max_records}を超えました。"
+            "取りこぼしを防ぐため上限を増やして再実行してください。"
+        )
+    # ページ境界などで重複しても入力順を保って一意化する。
+    return list(dict.fromkeys(ids)), int(total or 0)
+
+
 def fetch_abstracts(pmids):
     """PMIDリストから論文情報を取得"""
     if not pmids:
@@ -245,6 +306,12 @@ def fetch_abstracts(pmids):
         else:
             author = "?"
 
+        publication_types = [
+            "".join(item.itertext()).strip()
+            for item in art.findall(".//PublicationTypeList/PublicationType")
+            if "".join(item.itertext()).strip()
+        ]
+
         articles.append({
             "pmid":     pmid,
             "title":    title,
@@ -253,6 +320,7 @@ def fetch_abstracts(pmids):
             "year":     year,
             "month":    month,
             "author":   author,
+            "publication_types": publication_types,
         })
 
     return articles

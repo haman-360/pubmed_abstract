@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Tokyo",
+  "models": {
+    "screen": {
+      "name": "gpt-5.6-luna",
+      "reasoning_effort": "low",
+      "input_usd_per_million": 0.5,
+      "cached_input_usd_per_million": 0.05,
+      "output_usd_per_million": 3.0
+    },
+    "final": {
+      "name": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "input_usd_per_million": 1.25,
+      "cached_input_usd_per_million": 0.125,
+      "output_usd_per_million": 7.5
+    }
+  },
+  "batch": {
+    "completion_window": "24h",
+    "max_partial_retries": 1
+  },
+  "selection": {
+    "selected_n": 10,
+    "alternate_n": 5,
+    "base_candidate_n": 20,
+    "rescue_max": 4,
+    "final_candidate_max": 24
+  },
+  "schedule": {
+    "biweekly_anchor": "2026-08-01",
+    "monthly_week_of_month": 1
+  },
+  "pubmed": {
+    "edat_overlap_days": 2,
+    "initial_lookback_days": 35,
+    "request_interval_seconds": 0.4,
+    "page_size": 500,
+    "max_records_per_topic": 10000
+  },
+  "retry": {
+    "component_max_attempts": 3,
+    "notification_max_attempts": 5
+  },
+  "topics": {
+    "ped_nephrology_update": {
+      "display_name": "小児腎臓",
+      "frequency": "weekly",
+      "current_name": "小児腎臓_NotebookLM_CURRENT"
+    },
+    "peds_asthma_update": {
+      "display_name": "小児喘息",
+      "frequency": "weekly",
+      "current_name": "小児喘息_NotebookLM_CURRENT"
+    },
+    "ped_infection_1w_update": {
+      "display_name": "小児感染症",
+      "frequency": "weekly",
+      "current_name": "小児感染症_NotebookLM_CURRENT"
+    },
+    "primary_care_review": {
+      "display_name": "プライマリケア・レビュー",
+      "frequency": "weekly",
+      "current_name": "プライマリケア・レビュー_NotebookLM_CURRENT"
+    },
+    "Pediatric_Primary_Care_High_Impact": {
+      "display_name": "小児プライマリケア高インパクト",
+      "frequency": "biweekly",
+      "current_name": "小児プライマリケア高インパクト_NotebookLM_CURRENT"
+    },
+    "ped_atopic_update": {
+      "display_name": "アトピー性皮膚炎",
+      "frequency": "biweekly",
+      "current_name": "アトピー性皮膚炎_NotebookLM_CURRENT"
+    },
+    "ped_development_update": {
+      "display_name": "発達障害",
+      "frequency": "biweekly",
+      "current_name": "発達障害_NotebookLM_CURRENT"
+    },
+    "ped_food_update": {
+      "display_name": "食物アレルギー",
+      "frequency": "biweekly",
+      "current_name": "食物アレルギー_NotebookLM_CURRENT"
+    },
+    "ped_psycho_update": {
+      "display_name": "小児心身症",
+      "frequency": "biweekly",
+      "current_name": "小児心身症_NotebookLM_CURRENT"
+    },
+    "ped_constipation_update": {
+      "display_name": "小児便秘",
+      "frequency": "biweekly",
+      "current_name": "小児便秘_NotebookLM_CURRENT"
+    },
+    "ped_vaccine_update": {
+      "display_name": "ワクチン",
+      "frequency": "biweekly",
+      "current_name": "ワクチン_NotebookLM_CURRENT"
+    },
+    "ped_enuresis_update": {
+      "display_name": "夜尿症",
+      "frequency": "monthly",
+      "current_name": "夜尿症_NotebookLM_CURRENT"
+    },
+    "ped_sleep_update": {
+      "display_name": "小児睡眠",
+      "frequency": "monthly",
+      "current_name": "小児睡眠_NotebookLM_CURRENT"
+    },
+    "ped_trauma_update": {
+      "display_name": "小児外傷等",
+      "frequency": "monthly",
+      "current_name": "小児外傷等_NotebookLM_CURRENT"
+    }
+  }
+}

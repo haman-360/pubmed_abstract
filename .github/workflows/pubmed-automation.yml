@@ -1,0 +1,115 @@
+name: PubMed automation
+
+on:
+  schedule:
+    - cron: "0 20 * * 5"  # Saturday 05:00 JST: dispatcher
+    - cron: "17 * * * *"  # Hourly poller, offset from the top of the hour
+  workflow_dispatch:
+    inputs:
+      action:
+        description: Action
+        required: true
+        type: choice
+        options: [dispatch, poll, retry-notification, validate]
+        default: poll
+      topic:
+        description: Internal topic name (optional)
+        required: false
+        type: string
+      test:
+        description: Run the 5-paper nephrology vertical slice in TEST
+        required: false
+        type: boolean
+        default: false
+      limit:
+        description: Maximum papers for a manual run (optional)
+        required: false
+        type: string
+      cycle_id:
+        description: Existing/idempotent cycle ID (optional)
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pubmed-drive-ledger-and-current
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '0 20 * * 5' &&
+       vars.AUTOMATION_ENABLED == 'true') ||
+      (github.event_name == 'workflow_dispatch' && inputs.action == 'dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-automation.txt
+      - run: pip install -r requirements-automation.txt
+      - name: Dispatch searches and screen batches
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_AUTHORIZED_USER_JSON: ${{ secrets.GOOGLE_AUTHORIZED_USER_JSON }}
+          GOOGLE_DRIVE_ROOT_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_ROOT_FOLDER_ID }}
+          GMAIL_NOTIFY_TO: ${{ secrets.GMAIL_NOTIFY_TO }}
+          INPUT_TOPIC: ${{ inputs.topic }}
+          INPUT_LIMIT: ${{ inputs.limit }}
+          INPUT_CYCLE_ID: ${{ inputs.cycle_id }}
+          INPUT_TEST: ${{ inputs.test }}
+        run: |
+          args=(dispatch)
+          if [[ -n "$INPUT_TOPIC" ]]; then args+=(--topic "$INPUT_TOPIC" --force); fi
+          if [[ -n "$INPUT_LIMIT" ]]; then args+=(--limit "$INPUT_LIMIT"); fi
+          if [[ -n "$INPUT_CYCLE_ID" ]]; then args+=(--cycle-id "$INPUT_CYCLE_ID"); fi
+          if [[ "$INPUT_TEST" == "true" ]]; then args+=(--test); fi
+          python pubmed_automation.py "${args[@]}"
+
+  poll:
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '17 * * * *' &&
+       vars.AUTOMATION_ENABLED == 'true') ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.action == 'poll' || inputs.action == 'retry-notification'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-automation.txt
+      - run: pip install -r requirements-automation.txt
+      - name: Poll batches and continue pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_AUTHORIZED_USER_JSON: ${{ secrets.GOOGLE_AUTHORIZED_USER_JSON }}
+          GOOGLE_DRIVE_ROOT_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_ROOT_FOLDER_ID }}
+          GMAIL_NOTIFY_TO: ${{ secrets.GMAIL_NOTIFY_TO }}
+          INPUT_ACTION: ${{ inputs.action }}
+          INPUT_CYCLE_ID: ${{ inputs.cycle_id }}
+          INPUT_TEST: ${{ inputs.test }}
+        run: |
+          command="${INPUT_ACTION:-poll}"
+          args=("$command")
+          if [[ -n "$INPUT_CYCLE_ID" ]]; then args+=(--cycle-id "$INPUT_CYCLE_ID"); fi
+          if [[ "$INPUT_TEST" == "true" ]]; then args+=(--test); fi
+          python pubmed_automation.py "${args[@]}"
+
+  validate:
+    if: github.event_name == 'workflow_dispatch' && inputs.action == 'validate'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python pubmed_automation.py validate
+      - run: python -m unittest discover -s tests -v

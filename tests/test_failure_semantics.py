@@ -1,0 +1,68 @@
+import unittest
+from unittest.mock import MagicMock
+
+from automation_core import load_config
+from automation_services import GoogleWorkspaceClient
+from pubmed_automation import maybe_notify
+
+
+class FailingGoogle:
+    def send_email(self, *_args, **_kwargs):
+        raise RuntimeError("temporary gmail failure")
+
+
+class FakeStore:
+    def __init__(self):
+        self.google = FailingGoogle()
+        self.save_count = 0
+
+    def save_ledger(self, _ledger):
+        self.save_count += 1
+
+
+class NotificationFailureTests(unittest.TestCase):
+    def test_gmail_failure_does_not_roll_back_document_state(self):
+        config = load_config("automation_config.json")
+        cycle = {
+            "cycle_id": "cycle",
+            "test": False,
+            "notification": {"state": "PENDING", "attempts": 0, "message_id": None},
+        }
+        manifest = {
+            "display_name": "小児腎臓",
+            "state": "COMPLETED",
+            "article_count": 5,
+            "selected_count": 5,
+            "failed_pmids": [],
+            "components": {
+                "archive_doc": {"state": "COMPLETED", "url": "archive"},
+                "notebook_history_doc": {"state": "COMPLETED", "url": "history"},
+                "current_doc": {"state": "COMPLETED", "url": "current"},
+            },
+        }
+        store = FakeStore()
+        maybe_notify(store, {"cycles": {"cycle": cycle}}, cycle, [manifest], config)
+        self.assertEqual(cycle["notification"]["state"], "NOTIFICATION_FAILED_RETRYABLE")
+        self.assertEqual(manifest["components"]["archive_doc"]["state"], "COMPLETED")
+        self.assertEqual(manifest["state"], "COMPLETED")
+        self.assertEqual(store.save_count, 1)
+
+
+class CurrentDocumentIdempotencyTests(unittest.TestCase):
+    def test_existing_document_is_updated_without_creating_a_new_file(self):
+        client = GoogleWorkspaceClient.__new__(GoogleWorkspaceClient)
+        client.find_child = MagicMock(return_value={
+            "id": "fixed-current-id",
+            "name": "小児腎臓_NotebookLM_CURRENT",
+            "webViewLink": "https://docs.google.com/document/d/fixed-current-id/edit",
+        })
+        client.replace_doc_text = MagicMock()
+        client.drive = MagicMock()
+        result = client.create_doc("folder", "小児腎臓_NotebookLM_CURRENT", "latest")
+        self.assertEqual(result["id"], "fixed-current-id")
+        client.replace_doc_text.assert_called_once_with("fixed-current-id", "latest")
+        client.drive.files.return_value.create.assert_not_called()
+
+
+if __name__ == "__main__":
+    unittest.main()

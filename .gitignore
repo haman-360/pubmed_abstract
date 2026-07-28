@@ -1,6 +1,7 @@
 .env
 credentials.json
 token_drive_file.json
+google_authorized_user.json
 selected_pmids_history.json
 __pycache__/
 *.pyc
