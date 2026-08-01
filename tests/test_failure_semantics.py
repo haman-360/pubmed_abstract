@@ -3,7 +3,7 @@ from unittest.mock import MagicMock, call
 
 from automation_core import load_config
 from automation_services import GoogleWorkspaceClient
-from pubmed_automation import DriveStore, maybe_notify
+from pubmed_automation import DriveStore, create_documents, maybe_notify
 
 
 class FailingGoogle:
@@ -75,27 +75,110 @@ class DriveLookupTests(unittest.TestCase):
 
 
 class DocumentFolderTests(unittest.TestCase):
-    def test_only_archive_and_current_folders_are_created(self):
+    def test_only_current_folder_is_created(self):
         store = DriveStore.__new__(DriveStore)
         store.documents_id = "documents"
         store.google = MagicMock()
         store.google.ensure_folder.side_effect = [
             "topic-folder",
-            "archive-folder",
             "current-folder",
         ]
 
         result = store.document_folders("topic")
 
         self.assertEqual(result, {
-            "archive": "archive-folder",
             "current": "current-folder",
         })
         self.assertEqual(store.google.ensure_folder.call_args_list, [
             call("documents", "topic"),
-            call("topic-folder", "archive"),
             call("topic-folder", "current"),
         ])
+
+
+class IntegratedDocumentTests(unittest.TestCase):
+    def test_create_documents_creates_only_one_integrated_google_doc(self):
+        store = MagicMock()
+        store.load_json.side_effect = [
+            {
+                "articles": [{
+                    "pmid": "1",
+                    "title": "Title 1",
+                    "abstract": "FULL ABSTRACT",
+                    "journal": "Journal",
+                    "year": "2026",
+                    "month": "Jul",
+                }]
+            },
+            [{
+                "pmid": "1",
+                "title": "Title 1",
+                "total_score": 20,
+                "outpatient_usefulness": 5,
+                "one_line_assessment": "重要",
+            }],
+            {
+                "selection_summary": "summary",
+                "selected": [{
+                    "rank": 1,
+                    "pmid": "1",
+                    "title": "Title 1",
+                    "why_important": "重要です",
+                    "clinical_impact": "影響します",
+                    "practice_change_needed": "Yes",
+                }],
+                "alternates": [],
+            },
+        ]
+        store.document_folders.return_value = {"current": "current-folder"}
+        store.google.create_doc.return_value = {
+            "id": "integrated-id",
+            "webViewLink": "https://docs.google.com/document/d/integrated-id/edit",
+        }
+        store.google.get_file.return_value = {
+            "id": "integrated-id",
+            "webViewLink": "https://docs.google.com/document/d/integrated-id/edit",
+        }
+        ledger = {
+            "topics": {
+                "topic": {
+                    "current_file_id": None,
+                }
+            }
+        }
+        manifest = {
+            "topic": "topic",
+            "display_name": "テーマ",
+            "run_id": "run",
+            "test": False,
+            "artifacts": {
+                "all_abstracts": {"file_id": "raw"},
+                "screen_evaluations": {"file_id": "scores"},
+                "final_evaluation": {"file_id": "final"},
+            },
+            "components": {
+                "current_doc": {"state": "PENDING", "attempts": 0},
+            },
+        }
+        config = {
+            "topics": {
+                "topic": {
+                    "current_name": "テーマ_NotebookLM_CURRENT",
+                }
+            }
+        }
+
+        create_documents(store, ledger, manifest, config)
+
+        store.google.create_doc.assert_called_once()
+        self.assertEqual(
+            store.google.create_doc.call_args.args[:2],
+            ("current-folder", "テーマ_NotebookLM_CURRENT"),
+        )
+        uploaded_text = store.google.create_doc.call_args.args[2]
+        self.assertIn("【第1部：日本語要約】", uploaded_text)
+        self.assertIn("【第2部：英語Abstract】", uploaded_text)
+        self.assertIn("FULL ABSTRACT", uploaded_text)
+        self.assertIn("【第3部：候補論文スコア一覧】", uploaded_text)
 
 
 if __name__ == "__main__":

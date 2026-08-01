@@ -28,7 +28,6 @@ from automation_core import (
     load_config,
     new_ledger,
     parse_jsonl,
-    render_archive_doc,
     render_notebook_doc,
     safe_drive_name,
     screen_batch_lines,
@@ -110,7 +109,6 @@ class DriveStore:
     def document_folders(self, topic_name: str) -> dict[str, str]:
         topic = self.google.ensure_folder(self.documents_id, safe_drive_name(topic_name))
         return {
-            "archive": self.google.ensure_folder(topic, "archive"),
             "current": self.google.ensure_folder(topic, "current"),
         }
 
@@ -317,7 +315,6 @@ def new_manifest(
         "components": {
             "screen": {"state": "PENDING", "attempts": []},
             "final": {"state": "PENDING", "attempts": []},
-            "archive_doc": {"state": "PENDING", "file_id": None, "attempts": 0},
             "current_doc": {"state": "PENDING", "attempts": 0},
         },
         "failed_pmids": [],
@@ -609,29 +606,19 @@ def create_documents(
     scores = store.load_json(manifest["artifacts"]["screen_evaluations"]["file_id"])
     final = store.load_json(manifest["artifacts"]["final_evaluation"]["file_id"])
     folders = store.document_folders(manifest["topic"])
-    prefix = "[TEST] " if manifest["test"] else ""
-    stamp = manifest["cycle_id"]
-    archive_text = render_archive_doc(
+    notebook_text = render_notebook_doc(
         manifest["display_name"], manifest["run_id"], raw["articles"], scores, final
     )
-    notebook_text = render_notebook_doc(
-        manifest["display_name"], manifest["run_id"], raw["articles"], final
-    )
 
-    archive_component = manifest["components"]["archive_doc"]
-    if not archive_component.get("file_id"):
-        doc = store.google.create_doc(
-            folders["archive"],
-            f"{prefix}{manifest['display_name']}_{stamp}_全件アーカイブ",
-            archive_text,
-        )
-        archive_component.update({
-            "state": "COMPLETED",
-            "file_id": doc["id"],
-            "url": doc["webViewLink"],
-            "sha256": content_hash(archive_text),
+    # 旧manifestが未完了のまま残っていても、過去の成果物は削除せず、
+    # 今後は2本目のアーカイブDocumentを作らない。
+    legacy_archive_component = manifest["components"].get("archive_doc")
+    if legacy_archive_component is not None:
+        legacy_archive_component.update({
+            "state": "NOT_REQUIRED",
+            "file_id": legacy_archive_component.get("file_id"),
+            "url": legacy_archive_component.get("url"),
         })
-        store.save_manifest(manifest)
 
     current_component = manifest["components"]["current_doc"]
     topic_ledger = ledger["topics"][manifest["topic"]]
@@ -683,7 +670,10 @@ def retry_current_if_needed(
         return
     final = store.load_json(manifest["artifacts"]["final_evaluation"]["file_id"])
     raw = store.load_json(manifest["artifacts"]["all_abstracts"]["file_id"])
-    text = render_notebook_doc(manifest["display_name"], manifest["run_id"], raw["articles"], final)
+    scores = store.load_json(manifest["artifacts"]["screen_evaluations"]["file_id"])
+    text = render_notebook_doc(
+        manifest["display_name"], manifest["run_id"], raw["articles"], scores, final
+    )
     topic_ledger = ledger["topics"][manifest["topic"]]
     try:
         current_id = topic_ledger.get("current_file_id")
@@ -736,7 +726,6 @@ def finish_run(
     topic_ledger["last_run_manifest_file_id"] = manifest["manifest_file_id"]
     topic_ledger["component_states"] = {
         "run": manifest["state"],
-        "archive_doc": manifest["components"]["archive_doc"]["state"],
         "current_doc": current_state,
     }
     store.save_manifest(manifest)
@@ -816,29 +805,16 @@ def poll_manifest(
         manifest["selected_count"] = len(final["selected"])
         manifest["alternate_count"] = len(final["alternates"])
         store.save_manifest(manifest)
-    needs_documents = (
-        manifest["components"]["archive_doc"]["state"] != "COMPLETED"
-        or manifest["components"]["current_doc"]["state"] == "PENDING"
-    )
+    needs_documents = manifest["components"]["current_doc"]["state"] == "PENDING"
     if needs_documents:
         try:
             create_documents(store, ledger, manifest, config)
         except Exception as exc:
-            archive_component = manifest["components"]["archive_doc"]
-            if archive_component["state"] != "COMPLETED":
-                component = archive_component
-                component["attempts"] = component.get("attempts", 0) + 1
-                component["state"] = "RETRY_PENDING"
-                if component["attempts"] >= config["retry"]["component_max_attempts"]:
-                    component["state"] = "FAILED"
-                    manifest["state"] = "FAILED"
-                    manifest["failure_reason"] = "archive_docの作成に繰り返し失敗しました。"
-            else:
-                component = manifest["components"]["current_doc"]
-                component["attempts"] = component.get("attempts", 0) + 1
-                component["state"] = "CURRENT_UPDATE_PENDING"
-                if component["attempts"] >= config["retry"]["component_max_attempts"]:
-                    component["state"] = "FAILED_RETRYABLE"
+            component = manifest["components"]["current_doc"]
+            component["attempts"] = component.get("attempts", 0) + 1
+            component["state"] = "CURRENT_UPDATE_PENDING"
+            if component["attempts"] >= config["retry"]["component_max_attempts"]:
+                component["state"] = "FAILED_RETRYABLE"
             component["last_error"] = str(exc)
             store.save_manifest(manifest)
             return
@@ -863,8 +839,8 @@ def digest_body(cycle: dict[str, Any], manifests: list[dict[str, Any]]) -> str:
             f"■ {manifest['display_name']}",
             f"状態: {manifest['state']}",
             f"新着: {manifest['article_count']}件 / 選定: {final_count}件",
-            f"全件アーカイブ: {manifest['components']['archive_doc'].get('url', '未作成')}",
-            f"CURRENT: {manifest['components']['current_doc'].get('url', manifest['components']['current_doc']['state'])}",
+            "NotebookLM用3部構成Document: "
+            f"{manifest['components']['current_doc'].get('url', manifest['components']['current_doc']['state'])}",
             f"評価失敗PMID: {', '.join(manifest.get('failed_pmids', [])) or 'なし'}",
             "API使用量: "
             + ", ".join(

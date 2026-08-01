@@ -1,0 +1,417 @@
+# 第1部：日本語要約
+
+---
+
+①遺伝性ネフローゼ症候群：小児・思春期における最新情報
+（Genetic Nephrotic Syndrome in Children and Adolescents: An Update.）
+
+②PMID
+
+42331440
+
+③なぜ重要か
+
+単一遺伝子性ネフローゼでは標準的な免疫抑制療法による寛解率が低く、末期腎不全への進行リスクが高い。遺伝学的診断は治療選択、予後説明、追加検査、移植計画に影響する。
+
+④臨床への影響
+
+乳児発症、家族歴、腎外症状、ステロイド抵抗性などを認める場合は、漫然と免疫抑制を強化する前に遺伝学的検査を検討する方向を支持する。
+
+⑤診療変更の必要性
+
+Yes — 遺伝性を疑う症例では、遺伝学的検査の検討時期を早める。
+
+---
+
+①IV型コラーゲン遺伝子関連糸球体疾患
+（Collagen Genes-Related Glomerular Disease.）
+
+②PMID
+
+42331441
+
+③なぜ重要か
+
+COL4A3、COL4A4、COL4A5関連疾患は、遺伝形式、性別、変異によって血尿のみから進行性CKDまで幅広い。遺伝学的検査の対象と結果の解釈、診断後のモニタリングを整理したレビューである。
+
+④臨床への影響
+
+持続性血尿、蛋白尿、難聴、家族歴を認める小児では、従来の「良性家族性血尿」という説明だけで終えず、Alport spectrumとして遺伝学的評価を検討する契機になる。
+
+⑤診療変更の必要性
+
+Yes — 持続性糸球体性血尿に対する遺伝学的評価の閾値を見直す。
+
+---
+
+①小児・若年者・成人SLEの管理に関する英国リウマチ学会2026年ガイドライン
+（The 2026 British Society for Rheumatology guideline for the management of children, young people and adults with systemic lupus erythematosus.）
+
+②PMID
+
+42336388
+
+③なぜ重要か
+
+系統的文献レビューと専門家・患者代表の合意に基づく102項目の推奨で、診断、モニタリング、薬物・非薬物療法、ループス腎炎を含む臓器別治療を網羅している。
+
+④臨床への影響
+
+小児SLEを疑う段階から専門施設紹介後の長期フォローまで、疾患活動性の抑制と不可逆的臓器障害の予防を中心とした管理の標準化に役立つ。
+
+⑤診療変更の必要性
+
+Yes — SLE・ループス腎炎の評価、モニタリング、治療目標を最新推奨に照らして確認する。
+
+---
+
+①SGLT2阻害薬、エンドセリンA受容体拮抗薬、二重エンドセリン・アンジオテンシン阻害薬：小児CKDの新たな展望
+（SGLT2i, anti-endothelin A and double endothelin and angiotensin inhibitors: a new future for chronic kidney disease in children.）
+
+②PMID
+
+42390808
+
+③なぜ重要か
+
+成人CKDでは腎保護効果が確立しつつある新規抗蛋白尿薬について、小児への応用可能性とエビデンスギャップを整理している。小児では治療によって得られる透析・移植回避期間が長くなる可能性がある。
+
+④臨床への影響
+
+現時点で小児への安易な適応外使用を支持するものではないが、RAAS阻害薬だけでは蛋白尿が残る小児CKDについて、専門施設での治験・新規治療検討を意識する材料になる。
+
+⑤診療変更の必要性
+
+No — 小児の長期有効性・安全性が不足しており、現時点では将来の治療候補として把握する。
+
+---
+
+①超早期発症型と非超早期発症型の小児ADPKDにおける遺伝学的特徴と腎予後の比較
+（Comparison of genetic profile and kidney outcomes between very early-onset and non-very-early-onset autosomal dominant polycystic kidney disease in children: a systematic review and meta-analysis.）
+
+②PMID
+
+42401882
+
+③なぜ重要か
+
+19研究、736例の解析で、18か月未満に発症したVEO-ADPKDは、高血圧、蛋白尿、CKD、腎不全のリスクが高かった。両アレル性PKD1変異と周産期死亡はVEO群でのみ認められた。
+
+④臨床への影響
+
+胎児期・乳児期に嚢胞腎を認めた症例を通常の小児ADPKDと同じ低頻度フォローにせず、血圧、蛋白尿、腎機能を厳密に追跡し、包括的遺伝学的評価を検討する根拠になる。
+
+⑤診療変更の必要性
+
+Yes — VEO-ADPKDを高リスク群として扱い、遺伝学的評価とフォローを強化する。
+
+---
+
+①発症年齢と初回プレドニゾロン累積投与量はステロイド感受性ネフローゼ症候群の頻回再発を予測する
+（Age at onset and cumulative initial prednisolone dose predict frequent relapses in steroid-sensitive nephrotic syndrome: an individual participant data systematic review and meta-analysis of placebo-controlled RCTs.）
+
+②PMID
+
+42412195
+
+③なぜ重要か
+
+3件のプラセボ対照RCT、529例の個別患者データ解析で、初回治療期間の延長は頻回再発や年間再発回数を減らさなかった。再発リスクには発症年齢と初回プレドニゾロン累積投与量がより強く関連した。
+
+④臨床への影響
+
+初発ネフローゼで再発予防を目的に治療期間だけを12週超へ延長する意義は乏しい。推奨された8～12週の治療を基本とし、投与期間と累積投与量を分けて考える必要がある。
+
+⑤診療変更の必要性
+
+Yes — 再発予防目的の漫然とした初回治療期間延長を避ける。
+
+---
+
+①胎児期に診断された多嚢胞性異形成腎と出生後のQOL
+（Fetal Multicystic Dysplastic Kidney and Its Effect on Post-natal Quality of Life: A Literature Review.）
+
+②PMID
+
+42428194
+
+③なぜ重要か
+
+単純な片側性MCDKは自然退縮と対側腎の代償性肥大を示すことが多く、現在は保存的管理が基本である。複雑例・両側例とのリスク層別化も整理されている。
+
+④臨床への影響
+
+単純な片側性MCDKでは手術を急がず、血圧、腎機能、尿路感染などを中心に経過観察する方針と、家族への良好な予後説明を支持する。
+
+⑤診療変更の必要性
+
+Yes — 単純片側性MCDKでは、過剰な画像検査や早期手術を避ける。
+
+---
+
+①小児夜尿症の管理に関する専門家コンセンサス
+（Expert consensus on the management of nocturnal enuresis in children.）
+
+②PMID
+
+42432408
+
+③なぜ重要か
+
+夜尿症の定義、単一症候性・非単一症候性の分類、排尿日誌、初期治療、治療抵抗例への対応を18項目の推奨として整理しており、一般小児外来で最も実用性が高い。
+
+④臨床への影響
+
+夜間多尿ではデスモプレシン、膀胱容量低下ではアラーム療法を選択し、昼間症状を伴う場合は夜尿より先に昼間の下部尿路症状を評価・治療する方針が明確になる。
+
+⑤診療変更の必要性
+
+Yes — 排尿日誌に基づく病型分類と、病態に応じた第一選択治療を標準化する。
+
+---
+
+①尿検査を超えて：日本の健診制度におけるライフコースCKDスクリーニング
+（Beyond urinalysis: a review of life-course chronic kidney disease screening across health examination systems in Japan.）
+
+②PMID
+
+42435123
+
+③なぜ重要か
+
+日本の3歳児健診、学校検尿、職域健診、特定健診などを連続したCKDスクリーニングとして検討し、検査機会は多いものの、対象疾患、精査経路、アウトカムが統一されていない問題を示している。
+
+④臨床への影響
+
+学校検尿で異常を発見するだけでなく、精査、継続管理、成人診療への移行までを一つの経路として設計する必要性を示す。学校検尿に関わる小児科医には特に有用である。
+
+⑤診療変更の必要性
+
+No — 個々の検査法を直ちに変更する根拠ではないが、フォロー脱落を防ぐ連携体制の見直しが必要。
+
+---
+
+①乳児特発性高カルシウム血症に対するフランス国家診断・ケアプロトコル
+（French national diagnosis and care protocol (PNDS) for infantile idiopathic hypercalcemia (IIH).）
+
+②PMID
+
+42469912
+
+③なぜ重要か
+
+CYP24A1またはSLC34A1関連の乳児特発性高カルシウム血症について、診断、遺伝学的評価、急性期管理、長期フォローを整理した国家プロトコルである。
+
+④臨床への影響
+
+乳児の高カルシウム血症・腎石灰化では、カルシウム摂取と通常型ビタミンD補充の中止、十分な水分、重症例での治療を検討し、原因遺伝子に応じた長期管理につなげる。
+
+⑤診療変更の必要性
+
+Yes — 原因不明の乳児高Ca血症・腎石灰化では、ビタミンD代謝異常と遺伝学的検査を早期に検討する。
+
+# 第2部：英語Abstract
+
+---
+
+1. Genetic Nephrotic Syndrome in Children and Adolescents: An Update.
+
+PMID: 42331440
+Journal: Advances in kidney disease and health
+Abstract:
+
+Idiopathic nephrotic syndrome is one of the most common glomerular diseases in children and adolescents. Monogenic nephrotic syndrome is associated with lower rates of remission following treatment with standard immunosuppressive therapies and a higher risk of progression to end-stage kidney disease. Advances in genetic testing technologies have identified more than 100 single-gene causes of nephrotic syndrome and made genetic testing more accessible in clinical practice. The vast majority of genes implicated in the etiology of nephrotic syndrome are associated with the glomerular filtration barrier and primarily with the podocyte. A molecular diagnosis of nephrotic syndrome has implications for medication choice, prognostication, indications for further testing, and transplant planning. Like all clinical tools, however, it must be utilized in the appropriate clinical context, though no standardized guidelines exist for indications for genetic testing in nephrotic syndrome. Standard treatment of nephrotic syndrome consists of immunosuppressive therapies. However, patients with monogenic nephrotic syndrome are less likely to achieve remission with immunosuppression, and alternative treatment options are under investigation.
+
+---
+
+2. Collagen Genes-Related Glomerular Disease.
+
+PMID: 42331441
+Journal: Advances in kidney disease and health
+Abstract:
+
+Alport syndrome is a genetic kidney disease caused by variants in genes encoding the ⍺3, ⍺4, or ⍺5 isoforms of type IV collagen leading to hematuria, proteinuria, and CKD in many, but not all, affected patients. Variants in type IV collagen genes have been increasingly recognized and may affect up to 1 in 106 people. There is wide phenotypic variability depending on inheritance pattern (autosomal recessive vs autosomal dominant vs X-linked vs digenic), sex of the affected individual, specific variant, and other as yet unidentified factors. This review examines the genotype/phenotype correlation for individuals with type IV collagen variants. We also review recommendations for who should be tested for type IV collagen variants as well as strategies for predicting pathogenicity of a variant once identified. Finally, we provide recommendations for monitoring of individuals with type IV collagen variants.
+
+---
+
+3. The 2026 British Society for Rheumatology guideline for the management of children, young people and adults with systemic lupus erythematosus.
+
+PMID: 42336388
+Journal: Rheumatology (Oxford, England)
+Abstract:
+
+Systemic lupus erythematosus (SLE) is a lifelong autoimmune condition with multi-system involvement that is associated with morbidity, mortality, and poor quality of life. The key aim of management should be to empower individuals with SLE to manage their condition, suppressing systemic disease activity, and preventing organ damage. This guideline builds on and expands the recommendations developed for the first guideline published in 2017 for adults living with SLE. This comprehensive life-course guideline was developed according to the British Society for Rheumatology Guidelines Protocol by a Guideline Working Group (GWG) comprising healthcare professionals with expertise in paediatric and adult SLE, and people with lived experience. The GWG reviewed published guidelines, undertook a systematic literature review and utilised expertise from specialist lupus centres across the UK and patient representatives to formulate a list of 102 recommendations with corresponding strength of recommendations and agreement scores. These recommendations encompass advances in the assessment, diagnosis, monitoring, general approaches to management, non-pharmacological and pharmacological management of SLE, organ-specific treatment including lupus nephritis and cutaneous lupus erythematosus, as well as the delivery of care in the context of the UK healthcare system. Furthermore, we have provided research and audit recommendations to support equitable access to care and improve health outcomes in SLE.
+
+---
+
+4. SGLT2i, anti-endothelin A and double endothelin and angiotensin inhibitors: a new future for chronic kidney disease in children.
+
+PMID: 42390808
+Journal: Pediatric nephrology (Berlin, Germany)
+Abstract:
+
+Chronic kidney disease (CKD) in childhood, although uncommon, has profound lifelong consequences. Because disease onset occurs early, even modest slowing of CKD progression may translate into decades free from dialysis, transplantation, and premature death. Progressive proteinuria is a central driver of nephron loss in pediatric CKD, making early and sustained antiproteinuric strategies particularly impactful. Despite heterogeneous etiologies, including congenital and immune-mediated kidney diseases, CKD progression in children converges on shared mechanisms such as glomerular hypertension, podocyte injury, tubular epithelial dysfunction, and fibrosis. Targeting these final common pathways offers the greatest opportunity to modify long-term outcomes. Several emerging pharmacological strategies are reshaping the therapeutic landscape of CKD. Sodium-glucose cotransporter 2 inhibitors (SGLT2i) reduce intraglomerular pressure by restoring tubuloglomerular feedback and exert additional natriuretic, metabolic, and anti-inflammatory effects. Endothelin A (ETA) receptor antagonists counteract endothelin-1-mediated vasoconstriction, inflammation, and fibrotic remodeling, key drivers of proteinuric kidney damage. Dual endothelin-angiotensin receptor antagonists (DEARAs) integrate selective ETA blockade with angiotensin II type 1 receptor inhibition, simultaneously suppressing two tightly interconnected pathways that amplify glomerular hypertension, podocyte injury, and fibrosis. Robust randomized trials support the efficacy and safety of these agents in adults, whereas pediatric evidence remains limited, particularly regarding long-term safety. In this review, we summarize the mechanistic rationale and available clinical data for these novel antiproteinuric therapies in children, highlighting ongoing trials and key knowledge gaps relevant to future pediatric CKD management.
+
+---
+
+5. Comparison of genetic profile and kidney outcomes between very early-onset and non-very-early-onset autosomal dominant polycystic kidney disease in children: a systematic review and meta-analysis.
+
+PMID: 42401882
+Journal: BMC nephrology
+Abstract:
+
+BACKGROUND: Autosomal dominant polycystic kidney disease (ADPKD) is the most common inherited kidney disorder and a leading cause of kidney failure. Although typically considered an adult-onset condition, a subset of patients present in utero or within the first 18 months of life (very early-onset ADPKD; VEO-ADPKD). This subgroup may experience a more severe disease course.
+
+METHODS: A systematic search of MEDLINE was conducted to identify studies reporting clinical, genetic, radiologic and kidney outcome data in children (< 18 years) with VEO-ADPKD. Case series including fewer than three VEO-ADPKD patients were excluded. ADPKD diagnosis was based on 2019 international consensus radiologic criteria, including age-appropriate cystic and/or enlarged kidneys, with supportive family history and/or genetic confirmation. Children with non-VEO-ADPKD reported within the same studies were included for comparison. Outcomes of interest included inheritance patterns, genetic profile, hypertension, proteinuria, chronic kidney disease (CKD), kidney failure, and perinatal death. Descriptive analyses and Bayesian model-averaged random-effects meta-analyses were performed using JASP (version 0.9.13) with a conditional model specification. A non-informative Beta (1,1) prior was used.
+
+RESULTS: Nineteen studies comprising 736 ADPKD children (VEO: 335, non-VEO: 401) met inclusion criteria. Bayesian model-averaged meta-analysis (8 studies) showed higher odds in VEO-ADPKD for hypertension (OR 2.08, 95% CrI 1.00-2.70; BF₁₀ 18.2), proteinuria (OR 1.58, 1.00-2.60; BF₁₀ 4.0), CKD (OR 1.77, 1.00-2.66; BF₁₀ 7.4) and kidney failure (OR 1.99, 1.00-2.69; BF₁₀ 10.6). Evidence for maternal inheritance in VEO-ADPKD was weak (OR 1.31, 1.00-2.44; BF₁₀ 1.6). Biallelic PKD1 mutations (38/158 vs. 0/147) and perinatal death (34/320 vs. 0/401) occurred exclusively in the VEO group and are reported descriptively, as complete separation precluded pooled estimation.
+
+CONCLUSION: VEO-ADPKD represents a distinct, high-risk pediatric phenotype characterized by earlier and more severe kidney involvement. These findings emphasize the importance of early diagnosis, comprehensive genetic evaluation, and close monitoring. Genetic testing is essential to identify children with biallelic mutations, representing a clinical entity more akin to mild autosomal recessive polycystic kidney disease. Standardized phenotyping and prospective pediatric studies are needed to guide early therapeutic interventions and improve long-term outcomes in this rare population.
+
+CLINICAL TRIAL NUMBER: NA.
+
+---
+
+6. Age at onset and cumulative initial prednisolone dose predict frequent relapses in steroid-sensitive nephrotic syndrome: an individual participant data systematic review and meta-analysis of placebo-controlled RCTs.
+
+PMID: 42412195
+Journal: Pediatric nephrology (Berlin, Germany)
+Abstract:
+
+BACKGROUND: Based on evidence from high-quality RCTs, current guidelines recommend that the initial episode of childhood-onset steroid-sensitive nephrotic syndrome be treated with prednisolone for 8-12 weeks. However, the relative impact of extended versus standard prednisolone therapy on outcomes requires evaluation alongside patient characteristics known to affect disease course.
+
+OBJECTIVES: To examine whether extending the duration of therapy for the initial episode of childhood-onset nephrotic syndrome reduces the risk of first and frequent relapses and annual relapse rate and whether sex, age at onset, ethnicity, time to remission, and cumulative prednisolone dose modify, confound, or independently influence these measures.
+
+DATA SOURCES: PubMed, Embase, and Cochrane Central Register.
+
+STUDY ELIGIBILITY CRITERIA: Placebo-controlled RCTs, published during 1980-2024, that compared extended (> 12 weeks) to standard (8-12 weeks) prednisolone therapy in pediatric patients at onset of steroid-sensitive nephrotic syndrome and for which individual participant data (IPD) was made available.
+
+PARTICIPANTS AND INTERVENTIONS: Patients, 1-18 years old, treated with predniso(lo)ne for the first episode of steroid-sensitive nephrotic syndrome.
+
+STUDY APPRAISAL AND SYNTHESIS METHODS: Cochrane Risk of Bias 2 tool; two- and one-stage IPD analyses.
+
+METHODS: This systematic review and IPD meta-analysis examined the time to first relapse and frequent relapses (estimated as hazard ratios, HR (95% CI)) and annual relapse rate following extended or standard therapy with prednisolone in pediatric patients with the initial episode of steroid-sensitive nephrotic syndrome. One-stage and two-stage IPD analyses examined sex, age, ethnicity, and time to remission as effect modifiers, confounders, and covariates of treatment effect.
+
+RESULTS: The IPD meta-analyses included 529 of 568 patients from three RCTs; 49% and 51% participants received extended and standard therapy, respectively. On two-stage meta-analysis, compared to standard therapy, extended therapy was associated with delayed first relapse (HR 0.80 (0.65, 0.97)) but not frequent relapses (0.92 (0.73, 1.17)), and similar annual relapse rate (MD 0.07 (-0.09, 0.23)). Extended therapy postponed the first relapse, but not frequent relapses, in patients < 2.5 years old and those of Asian or non-Western European ethnicity. Adjusted IPD meta-analyses did not find benefit of extended therapy in reducing the risks of first or frequent relapses. Multivariate one-stage meta-analyses showed that older age (≥ 2.5 years) and higher cumulative initial prednisolone dose (≥ 3.135 g/m2) were associated with reduced risk of first and frequent relapses.
+
+LIMITATIONS: Few studies; heterogeneity in duration of therapy among studies and study eligibility; inability to examine the independent impact of dose and duration on outcomes.
+
+CONCLUSIONS AND IMPLICATIONS OF KEY FINDINGS: Age at onset and cumulative initial dose of prednisolone, and not duration of extended therapy, determine disease course in pediatric steroid-sensitive nephrotic syndrome. The benefit of extending initial therapy on risk of first and frequent relapses in young patients requires examination in controlled trials using BSA-based dosing.
+
+SYSTEMATIC REVIEW REGISTRATION NUMBER: PROSPERO CRD42021291537.
+
+---
+
+7. Fetal Multicystic Dysplastic Kidney and Its Effect on Post-natal Quality of Life: A Literature Review.
+
+PMID: 42428194
+Journal: Cureus
+Abstract:
+
+Multicystic dysplastic kidney (MCDK) is a congenital renal malformation defined by a nonfunctional kidney consisting of numerous cysts and dysplastic parenchyma. MCDK most commonly affects one kidney that follows a benign course with spontaneous involution and compensatory hypertrophy of the contralateral kidney. Recent advances in prenatal ultrasonography and genetic testing such as chromosomal microarray analysis have improved early detection and risk stratification, allowing for individualized management approaches. Current guidelines favor conservative management for simple unilateral cases, prioritizing periodic blood pressure monitoring, renal function assessment, and surveillance for rare complications; these include hypertension, urinary tract infections, and malignancy. Complex or bilateral presentations have an increased risk of chronic kidney disease and perinatal morbidity, sometimes requiring multidisciplinary management, surgical intervention, or experimental fetal therapies. Beyond clinical outcomes, MCDK management has significant psychosocial, ethical, and economic implications for affected families. This review discusses current evidence on the pathophysiology, prenatal diagnosis, management approaches, risk stratification, and long-term clinical and psychosocial outcomes associated with MCDK.
+
+---
+
+8. Expert consensus on the management of nocturnal enuresis in children.
+
+PMID: 42432408
+Journal: World journal of pediatrics: WJP
+Abstract:
+
+BACKGROUND: Nocturnal enuresis (NE) is a common condition in childhood that can adversely affect children's physical and psychological health. Since the publication of the "Expert Consensus on the Management of Monosymptomatic Nocturnal Enuresis in Chinese Children" in 2014, substantial clinical experience has been accumulated and international guidelines have been updated, necessitating a revision to standardize and improve clinical management.
+
+METHODS: This consensus was developed by the Chinese Cooperative Group for the Management of Pediatric Nocturnal Enuresis, the Pediatric Nephrology Committee of the Chinese Medical Doctor Association using the Delphi method. A core writing group of nine experts drafted statements based on a synthesis of current evidence. These were subjected to iterative voting by 42 multidisciplinary panelists to achieve consensus, defined as ≥ 90% agreement.
+
+RESULTS: The consensus provides 18 key recommendations. It updates the diagnostic criteria for children aged ≥ 5 years with at least one involuntary void per month for three months. It emphasizes classification into monosymptomatic (MNE) or nonmonosymptomatic (NMNE) NE based on daytime lower urinary tract symptoms. Recommendations cover comprehensive evaluation (history, physical exam, voiding diary), basic management (education, lifestyle), and first-line treatment (desmopressin for nocturnal polyuria, alarm therapy for reduced bladder capacity). Strategies for treatment-resistant cases, management of NMNE (prioritizing daytime symptoms), and the role of primary care and traditional Chinese medicine are outlined.
+
+CONCLUSIONS: This expert consensus provides an updated, evidence-based, and practical framework for the diagnosis and management of childhood NE. It aims to harmonize clinical practice, promote individualized care, and improve patient outcomes through standardized recommendations.
+
+---
+
+9. Beyond urinalysis: a review of life-course chronic kidney disease screening across health examination systems in Japan.
+
+PMID: 42435123
+Journal: Clinical and experimental nephrology
+Abstract:
+
+Chronic kidney disease (CKD) is a major public health problem. Most international guidelines recommend targeted testing of individuals at high risk rather than population-wide screening. In Japan, urinalysis is embedded in health examination systems across the life course. However, the existence of repeated urinalysis opportunities has not necessarily meant that these programs functioned as a coherent CKD screening pathway. Repeated urinalyses were introduced under different legal mandates and for different public health purposes, with substantial variation in target conditions, test components, and follow-up arrangements. In this context, the 2025 policy decision to add serum creatinine to workplace-based health examinations, following sustained advocacy by the Japanese Society of Nephrology and growing recognition of non-proteinuric CKD, marks an important policy turning point. This review provides an overview of Japan's current health examination systems from the perspective of CKD screening throughout the life course. Specifically, this review describes the 3-year-old health examination, school urinary screening, workplace-based health examinations, the Specific Health Checkup, and late-stage elderly medical examinations by focusing on their institutional basis, structure, follow-up pathways, and current limitations. Taken together, Japan's health examination systems provide repeated urinalyses; however, these opportunities do not automatically amount to a coherent CKD screening strategy. This overview highlights the need to clarify target conditions, downstream interventions, outcome measures, and continuity across programs.
+
+---
+
+10. French national diagnosis and care protocol (PNDS) for infantile idiopathic hypercalcemia (IIH).
+
+PMID: 42469912
+Journal: Orphanet journal of rare diseases
+Abstract:
+
+The objective of this study was to establish a French National Diagnosis and Care Protocol (PNDS: Protocole National de Diagnostic et de Soins), with the aim of providing health professionals with free, open access synthesis on optimal management and care of patients with Infantile Idiopathic Hypercalcemia (IIH) ([https://www.has-sante.fr/jcms/p_3522489/fr/hypercalcemie-infantile-idiopathique-hii](https://www.has-sante.fr/jcms/p_3522489/fr/hypercalcemie-infantile-idiopathique-hii)). The process involved a critical review of the literature and a multidisciplinary expert consensus. IIH is a rare genetic disorder, with a prevalence estimated at 1 in 33,000. Its clinical manifestations (such as urinary stones or nephrocalcinosis) can appear at different ages. The pathophysiology of IHH is characterized by excessive 1,25(OH)2 vitamin D mediated dietary digestive calcium absorption. The underlying mechanism varies depending on the pathogenic variant involved, which is located in one of two genes, CYP24A1 or SLC34A1. The natural history and pathophysiology of IHH remain poorly understood and are underreported in the literature. Management of the disease varies according to the presentation and severity of hypercalcemia. Non-specific management strategies encompass the cessation of calcium intake, the discontinuation of native vitamin D supplementation, hyperhydration, and the occasional utilization of bisphosphonates. The necessity for long-term treatment, which may encompass both non-specific measures and specific interventions, depends on the severity and the genetic variant identified. Long-term follow-up appears essential, although there is limited data available, particularly for detecting complications of the disease, with nephrocalcinosis being the primary one.
+
+# 第3部：候補論文スコア一覧
+
+※総合スコアと「役立つか」は添付データの一次スコア（総合25点、外来有用性5点）です。最終選定では、症例報告・希少専門領域・臨床導入不能な研究を下げ、日本の小児外来への直接性を再評価しました。
+
+| PMID     | タイトル                                                                                            | 総合スコア | 役立つか | 短いメモ                         |
+| -------- | ----------------------------------------------------------------------------------------------- | ----: | ---: | ---------------------------- |
+| 42331436 | Genetic Testing in Nephrology: Policy, Health Economics, and Implications for Clinical Practice |     9 |    2 | 政策・医療経済中心で小児への直接性が低い         |
+| 42331438 | Genetic and Clinical Evaluation of Pediatric Cystic Kidney Diseases                             |    17 |    4 | 嚢胞性腎疾患の鑑別に有用。次点              |
+| 42331440 | Genetic Nephrotic Syndrome in Children and Adolescents                                          |    19 |    4 | 遺伝子検査が治療・予後・移植計画を変える         |
+| 42331441 | Collagen Genes-Related Glomerular Disease                                                       |    15 |    4 | 持続性血尿とAlport spectrumの評価に実用的 |
+| 42331443 | Fabry Disease: Current Perspectives                                                             |    12 |    3 | 疾患認識には有用だが希少疾患の総説            |
+| 42335674 | CAR-T cell therapy in autoimmune diseases                                                       |     6 |    1 | 将来技術で一般外来への直接性なし             |
+| 42336388 | 2026 BSR guideline for systemic lupus erythematosus                                             |    23 |    5 | 小児を含む包括的SLEガイドライン            |
+| 42338603 | Glycolytic reprogramming in cancer                                                              |     5 |    0 | 基礎・腫瘍代謝中心                    |
+| 42340793 | Robot-Assisted versus Laparoscopic Radical Nephrectomy                                          |    10 |    1 | 成人泌尿器外科                      |
+| 42344933 | HSCT in refractory paediatric RAS-associated lymphoproliferative disorder                       |    12 |    1 | 小児2例の症例報告                    |
+| 42346110 | Biomarkers in CAKUT: A Scoping Review                                                           |    14 |    3 | 有望だが標準化・臨床検証不足               |
+| 42346872 | Renal Involvement in Pediatric Small-Vessel Vasculitis                                          |    15 |    3 | 全体像把握に有用なナラティブレビュー           |
+| 42351464 | Renal Vein Thrombosis: A Narrative Review                                                       |    12 |    2 | 希少疾患の概説で直接的変更は限定的            |
+| 42353958 | Ontogenetic Immaturity of Urachal Structures                                                    |    17 |    4 | 保存的管理を支持するが定量的根拠なし           |
+| 42355606 | Prediction Models for Steroid Resistance in Childhood NS                                        |    16 |    3 | モデルのバイアスが高く臨床導入不可            |
+| 42355811 | Echocardiogram Testing in Post-COVID-19 Condition                                               |     6 |    2 | 確実性が非常に低く小児直接性なし             |
+| 42356217 | Breast Cancer Metastasis to the Uterus                                                          |     8 |    2 | 成人腫瘍領域                       |
+| 42367326 | Core Cancer Outcome in Kidney Transplantation Trials                                            |    10 |    1 | 研究アウトカム標準化が中心                |
+| 42371217 | Purtscher-like Retinopathy in Childhood NS                                                      |    15 |    3 | 重要な警告だが単症例報告                 |
+| 42378111 | Engineering Guide RNAs for CRISPR-Based Biosensors                                              |     6 |    1 | 技術開発段階                       |
+| 42388548 | Life Course Vaccination Continuum in India                                                      |     9 |    1 | 成人・インドの予防接種指針                |
+| 42389527 | Mechanisms Outpacing Medicine in Autoinflammatory Diseases                                      |    13 |    2 | 概念的レビュー                      |
+| 42389580 | Mitochondrial Redox Imbalance in Kidney Diseases                                                |     5 |    0 | 基礎病態中心                       |
+| 42390808 | Novel Antiproteinuric Therapies in Childhood CKD                                                |    17 |    4 | 将来の小児CKD治療を理解する重要総説          |
+| 42396858 | SNAP/CloCeBa Trials in MSSA Bacteraemia                                                         |    12 |    1 | 入院・成人感染症が中心                  |
+| 42397022 | Electrolyte Management During Leukocytapheresis                                                 |    12 |    3 | 特殊手技の安全管理                    |
+| 42397323 | Endocrine Hypertension in Children and Adults                                                   |    14 |    4 | 二次性高血圧の鑑別に有用。次点              |
+| 42397326 | Hypertension in Advanced CKD                                                                    |     8 |    1 | 成人進行CKD中心                    |
+| 42401882 | VEO versus Non-VEO ADPKD in Children                                                            |    20 |    4 | VEO-ADPKDを高リスク群と位置づける        |
+| 42404342 | Cardiovascular Risk in IBD                                                                      |    12 |    3 | 小児への直接的エビデンスが限定的             |
+| 42409299 | Serum Autoantibodies in Lupus Nephritis                                                         |    10 |    2 | 新規バイオマーカーだが未実装               |
+| 42410653 | COQ2-Associated CoQ10 Deficiency With Proteinuria                                               |    15 |    3 | 治療可能だが単症例中心                  |
+| 42412194 | Experiences After Pediatric Kidney Transplantation                                              |    16 |    3 | 心理社会的支援に有用だが介入効果不明           |
+| 42412195 | Prednisolone Dose and Frequent Relapse in Childhood NS                                          |    20 |    4 | 初回治療延長を見直すIPDメタ解析            |
+| 42417999 | Reno-Ocular Syndromes                                                                           |    15 |    3 | 鑑別の背景知識として有用                 |
+| 42418985 | When and Why to Perform Allograft Nephrectomy?                                                  |    12 |    1 | 移植専門領域                       |
+| 42426484 | Rituximab Pharmacokinetics                                                                      |    10 |    2 | 小児への投与最適化には未成熟               |
+| 42428194 | Fetal Multicystic Dysplastic Kidney                                                             |    17 |    4 | 単純片側例の保存的管理を支持               |
+| 42432408 | Expert Consensus on Childhood Nocturnal Enuresis                                                |    20 |    5 | 一般外来で最も実用性が高い                |
+| 42433995 | AI in Membranous Nephropathy                                                                    |     7 |    1 | 成人・将来技術中心                    |
+| 42435048 | Calciphylaxis in Children                                                                       |    17 |    3 | 重篤だが21例のみの希少疾患               |
+| 42435123 | Life-Course CKD Screening in Japan                                                              |    14 |    3 | 学校検尿後の継続管理を考える上で重要           |
+| 42448446 | Novel Biomarkers for Pediatric AKI                                                              |    14 |    1 | 集中治療向けで検証不足                  |
+| 42464065 | Knowledge Mapping of Alport Syndrome                                                            |     5 |    1 | 文献計量解析で診療変更なし                |
+| 42467991 | Computational Prediction of RNA Modification Sites                                              |     3 |    0 | 計算科学・基礎研究                    |
+| 42468119 | Belgian HIV Pregnancy and Breastfeeding Guidance                                                |    17 |    3 | 実用的だが小児腎臓領域外                 |
+| 42469912 | French Protocol for Infantile Idiopathic Hypercalcemia                                          |    20 |    5 | 診断・遺伝学的評価・長期管理を標準化           |
+| 42477302 | Tacrolimus Population Pharmacokinetic Models                                                    |    13 |    2 | 個別化投与は将来課題                   |
+| 42480118 | m6A Modification in Osteosarcoma                                                                |     7 |    0 | 基礎腫瘍研究                       |
+| 42481411 | Bronchiectasis in Renal Transplant Patients                                                     |    10 |    3 | 移植専門領域のナラティブレビュー             |
+| 42481964 | Infections in Kidney Transplantation Across Africa                                              |    10 |    1 | 地域・移植領域に限定                   |
+| 42482457 | ACE2/Ang1-7/MasR Axis in Pediatric Obesity                                                      |    13 |    2 | 機序中心で臨床介入なし                  |
+| 42483538 | IgA Nephropathy and the Gut-Kidney Axis                                                         |     9 |    2 | 一般的病態総説                      |
+| 42489608 | Reproductive Health in CKD                                                                      |    12 |    3 | 思春期カウンセリングに参考                |
+| 42490882 | Allograft Nephrectomy and Allosensitization                                                     |    15 |    2 | 移植専門領域                       |
+| 42493645 | Pediatric Sepsis-Associated AKI                                                                 |    13 |    0 | 集中治療領域                       |
+| 42495251 | Pediatric Nephrotic Syndrome Bibliometric Analysis                                              |     9 |    1 | 研究動向のみ                       |
+| 42500685 | T-cell Exhaustion in SLE                                                                        |     6 |    1 | 分子機序・将来治療中心                  |
+| 42506355 | Nicotine Products and Kidney Health                                                             |     5 |    1 | 成人中心のナラティブレビュー               |
+| 42511953 | Renal Functional Reserve and CKD                                                                |     9 |    2 | 未検証の仮説的枠組み                   |
+| 42512115 | Biomarkers for Diabetic Kidney Disease                                                          |     7 |    1 | 成人・研究開発段階                    |
+| 42512800 | Familial Hyperlipidemia: Phenotype to Genotype                                                  |    14 |    3 | 小児にも関連するが腎臓テーマ外              |
+| 42513099 | γ-Cyclodextrin and Metabolic Regulation                                                         |     6 |    1 | 動物・in vitro中心                |

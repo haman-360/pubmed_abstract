@@ -1,0 +1,253 @@
+# 第1部：日本語要約
+
+---
+
+①高リスク小児・青年に対する21価肺炎球菌結合型ワクチンV116の安全性・免疫原性：第3相無作為化試験（STRIDE-13）
+
+②PMID
+
+42334402
+
+③なぜ重要か
+
+基礎接種を完了した慢性疾患のある2～17歳882例において、V116はPPSV23と共通する12血清型で免疫原性が非劣性、V116固有の9血清型では優越性を示しました。結合型ワクチンによる追加接種という新たな選択肢を支持する第3相試験です。
+
+④臨床への影響
+
+今後V116が国内承認・推奨された場合、慢性心・肺・腎・肝疾患や糖尿病のある小児における追加接種がPPSV23から置き換わる可能性があります。ただし臨床的な感染予防効果と日本の血清型分布は別途検討が必要です。
+
+⑤診療変更の必要性
+
+No（現時点では承認状況・国内推奨を待つが、今後の変更可能性が高い）
+
+---
+
+①小児に対するRSV予防製剤：製品レビューと実臨床有効性のメタ解析
+
+②PMID
+
+42348792
+
+③なぜ重要か
+
+43件の実臨床研究を統合し、RSV関連入院に対する有効性はニルセビマブ80.9%、妊婦RSVpreFワクチン79.1%でした。臨床試験だけでなく、実装後にも高い予防効果が維持されることを示しています。
+
+④臨床への影響
+
+出生時期、乳児の基礎疾患、母体接種歴を確認し、ニルセビマブまたは妊婦ワクチンによる予防機会を逃さない運用が重要になります。日本での適応、供給、費用負担を踏まえた個別判断が必要です。
+
+⑤診療変更の必要性
+
+Yes（RSV流行期前の予防対象確認と保護者への情報提供を診療フローに組み込む）
+
+---
+
+①A群溶血性レンサ球菌咽頭炎に対する24種類の抗菌薬の有効性と安全性：64件のRCTのネットワークメタ解析
+
+②PMID
+
+42440760
+
+③なぜ重要か
+
+64件のRCT、23,287例を統合し、狭域ペニシリンを第一選択とする現在の方針を支持しました。一方、アジスロマイシンは除菌率が低く、再発と有害事象が多い結果でした。
+
+④臨床への影響
+
+セフェム系の一部は除菌率が高くても、抗菌薬適正使用の観点からペニシリン系を第一選択とする妥当性が再確認されます。マクロライド系、特にアジスロマイシンを安易な代替薬としないことが実践的なポイントです。
+
+⑤診療変更の必要性
+
+Yes（GAS咽頭炎の第一選択と、マクロライド使用条件を再確認する）
+
+---
+
+①乳児のワクチン注射時の苦痛を軽減する経口介入：系統的レビュー・メタ解析
+
+②PMID
+
+42444178
+
+③なぜ重要か
+
+59件の無作為化・準無作為化試験を統合し、接種中の授乳、ショ糖液、ブドウ糖液などが乳児の苦痛を軽減することを示しました。授乳中の接種は効果量が特に大きく、エビデンスの確実性も中等度でした。
+
+④臨床への影響
+
+追加の医療機器や高額な薬剤を必要とせず、予防接種外来で直ちに導入できます。可能であれば授乳しながら接種し、難しい場合は適切な甘味液を選択する手順が考えられます。
+
+⑤診療変更の必要性
+
+Yes（乳児予防接種時の標準的な疼痛・苦痛軽減策として導入を検討する）
+
+---
+
+①早産児のRSV感染症に対するモノクローナル抗体の有効性と安全性：系統的レビュー・ネットワークメタ解析
+
+②PMID
+
+42465211
+
+③なぜ重要か
+
+7件のRCT、11,319例を統合し、ニルセビマブ、モタビズマブ、パリビズマブはいずれも早産児のRSV関連入院とICU入室を減少させました。間接比較ではニルセビマブの効果が最大である可能性が示されました。
+
+④臨床への影響
+
+早産児のRSV予防では、毎月投与を要するパリビズマブより長時間作用型製剤が有力な選択肢になります。ただし薬剤間の直接比較は限られ、SUCRA順位だけで優劣を断定することはできません。
+
+⑤診療変更の必要性
+
+Yes（早産児のRSV予防計画では長時間作用型抗体を含めて検討する）
+
+---
+
+①小児急性中耳炎予防におけるプロバイオティクスの菌株・製剤別有効性：系統的レビュー・ネットワークメタ解析
+
+②PMID
+
+42491017
+
+③なぜ重要か
+
+18件のRCT、4,462例を菌株別に解析し、急性中耳炎の予防効果がプロバイオティクス全般に共通するのではなく、菌株に依存することを示しました。CBA-L74は高リスク研究を除外しても効果が維持されました。
+
+④臨床への影響
+
+「プロバイオティクスなら何でもよい」という説明は避けるべきです。ただし国内で利用できる製剤との対応、研究の異質性、絶対リスク減少、費用対効果が不明であり、現時点で一律投与を勧める段階ではありません。
+
+⑤診療変更の必要性
+
+No（有望だが、国内製剤に直接置き換えて推奨するには根拠が不足）
+
+# 第2部：英語Abstract
+
+---
+
+1. A phase 3, randomized study to evaluate the safety, tolerability, and immunogenicity of V116 in children and adolescents with increased risk of pneumococcal disease (STRIDE-13).
+
+PMID: 42334402
+
+Journal: Human vaccines & immunotherapeutics
+
+Abstract:
+
+Pneumococcal disease (PD) causes significant illness and death, especially in young children, older adults, and individuals with chronic medical conditions. Due to increased risk, children with chronic conditions are often advised to receive additional pneumococcal vaccination beyond the routine primary series. This phase 3 study evaluated the safety and immunogenicity of V116, a 21-valent pneumococcal conjugate vaccine, compared to PPSV23 in children aged 2 to <18 y with certain medical conditions that increase risk of PD who had previously completed a primary pneumococcal vaccination regimen. Individuals with diabetes mellitus, chronic heart, chronic lung, chronic kidney, and/or chronic liver disease were randomized 3:2 to receive a single dose of either V116 (n = 531) or PPSV23 (n = 351). Immunogenicity was assessed at 30 d postvaccination comparing opsonophagocytic activity (OPA) geometric mean titers (GMTs) and immunoglobulin G (IgG) geometric mean concentrations (GMCs) between groups. Safety was evaluated by the proportion of participants with adverse events (AEs). The V116 group met the statistical noninferiority criterion for each of the 12 pneumococcal vaccine serotypes shared between V116 and PPSV23 and additionally met superiority criterion for each of the 9 serotypes unique to V116 based on OPA GMTs. IgG GMCs were consistent with the OPA results. The safety profile was generally comparable between groups. In children and adolescents aged 2 to <18 y with certain medical conditions, V116 is well tolerated and immunogenic. These findings support the use of V116 to broaden pneumococcal serotype coverage in populations at increased risk of pneumococcal disease.
+
+---
+
+2. RSV prophylactics for pediatric populations: A product review and meta-analysis of real-world effectiveness.
+
+PMID: 42348792
+
+Journal: Human vaccines & immunotherapeutics
+
+Abstract:
+
+Respiratory syncytial virus (RSV) is a leading cause of acute lower respiratory tract infection and hospitalization in infants and young children worldwide. Clinical management in infants remains primarily supportive, and natural infection provides incomplete and transient immunity. For decades, prophylaxis was limited to monthly palivizumab for selected high-risk infants. Recent advances in prefusion F structural biology, antibody engineering, and maternal immunization have transformed RSV prevention. This review summarizes the biologic and clinical rationale for preventing RSV disease in pediatric populations, with emphasis on currently licensed long-acting monoclonal antibodies and maternal RSVpreF vaccination. We integrate a meta-analysis of real-world effectiveness data and discuss implementation of these novel immunoprophylactic strategies in clinical practice. Across 43 observational studies, pooled effectiveness against RSV-associated hospitalization was 80.9% for nirsevimab and 79.1% for maternal RSVpreF vaccination, demonstrating substantial real-world protection during early infancy. Success now depends on optimizing implementation and achieving equitable access.
+
+---
+
+3. Efficacy and safety of 24 antibiotics for group A streptococcal pharyngitis: a network meta-analysis of 64 randomized controlled trials.
+
+PMID: 42440760
+
+Journal: Frontiers in public health
+
+Abstract:
+
+BACKGROUND AND AIMS: Penicillin remains the first-line therapy for group A streptococcal (GAS) pharyngitis. However, broad-spectrum antibiotics continue to be widely prescribed in clinical practice. This study aimed to evaluate the relative efficacy and safety profiles of antibiotics for GAS pharyngitis.
+
+METHODS: Literature published through March 2026 was searched. Efficacy outcomes included early and late bacterial eradication, clinical response, and bacteriological recurrence, whereas safety was assessed according to adverse events. Per-protocol data were extracted, and a Bayesian network meta-analysis was performed to estimate pooled odds ratios (ORs) with 95% confidence intervals (CIs).
+
+RESULTS: We identified 64 RCTs (23,287 participants). For early bacterial eradication, cefdinir (OR: 3.09; 95% CI: 1.60-6.01) and cefpodoxime proxetil (OR: 2.58; 95% CI: 1.07-6.17) demonstrated greater efficacy compared with penicillin V, whereas azithromycin showed inferior eradication rates than penicillin V (OR: 0.53; 95% CI: 0.32-0.90). For late bacterial eradication, cefprozil demonstrated greater efficacy compared with penicillin V (OR: 3.12; 95% CI: 1.03-11.25), whereas azithromycin exhibited suboptimal performance (OR: 0.38; 95% CI: 0.25-0.62). For early clinical response, cefdinir (OR: 2.01; 95% CI: 1.28-3.25) and cefuroxime axetil (OR: 2.14; 95% CI: 1.19-3.60) demonstrated significantly greater efficacy compared with penicillin V. For late clinical response, spiramycin showed superior efficacy to penicillin V (OR: 0.17; 95% CI: 0.02-0.94), although evidence was limited to a single small trial. Azithromycin was associated with reduced efficacy, higher late recurrence rates, and increased adverse events.
+
+CONCLUSION: Standard penicillins should remain the preferred first-line therapy for GAS pharyngitis to support antimicrobial stewardship. Cefdinir represents an effective alternative. Conversely, azithromycin should be avoided due to inferior efficacy and increased adverse risks.
+
+SYSTEMATIC REVIEW REGISTRATION: [http://www.crd.york.ac.uk/prospero](http://www.crd.york.ac.uk/prospero), identifier CRD420251104703.
+
+---
+
+4. A Systematic Review and Meta-Analysis of the Effectiveness of Physical Interventions Administered Orally for Infants for Reducing Distress During Vaccine Injections.
+
+PMID: 42444178
+
+Journal: The Clinical journal of pain
+
+Abstract:
+
+BACKGROUND: Infants experience distress from repeated vaccine injections in the first year of life. This systematic review evaluated oral nutritive and non-nutritive interventions to reduce distress including: breastfeeding (pre-injection and during), bottle-feeding, sucrose solution, glucose/dextrose solutions, other sweet-tasting oral liquids, and non-nutritive sucking.
+
+DESIGN/METHODS: Cochrane methodology and GRADE were used. Searches were conducted in MEDLINE, EMBASE, APA PsycINFO, CINAHL, and ProQuest Dissertations to identify relevant randomized and quasi-randomized controlled trials. Distress was the critical outcome. Placebo-controlled trials were prioritized when possible. Eligible studies were reviewed and data extracted by at least 2 reviewers. A random-effects model was used to pool the data; results are presented as standardized mean differences (SMDs) with 95% CIs. The certainty of evidence (graded from high, moderate, low, to very low) and the magnitude of effect were used to develop summary statements.
+
+RESULTS: Fifty-nine distinctive studies were included, with certainty of evidence ranging from moderate to very low. The magnitude of effect exceeded the minimum threshold (SMD ≥0.2) for all interventions. Breastfeeding during vaccinations likely results in a large reduction in distress (SMD=-2.38, moderate certainty). Breastfeeding pre-injection (SMD=-1.19, low certainty) and bottle-feeding (SMD=-1.65, low certainty) may both result in a large reduction in distress. Evidence from placebo-controlled trials shows that sucrose solution likely results in a large decrease in distress (SMD=-1.02, moderate certainty) and glucose/dextrose solutions likely reduce distress (SMD=-0.78, moderate certainty). Other sweet-tasting oral liquids likely result in a large decrease in distress (SMD=-1.47, moderate certainty). Non-nutritive sucking may reduce distress, but the evidence is very uncertain (SMD=-1.98, very low certainty).
+
+CONCLUSIONS: In infants, breastfeeding, sweet-tasting solutions, and other oral sweet-tasting liquids are preferred oral interventions to reduce vaccine injection-related distress.
+
+---
+
+5. Efficacy and safety of monoclonal antibodies against respiratory syncytial virus disease in premature infants: a systematic review and network meta-analysis.
+
+PMID: 42465211
+
+Journal: Frontiers in pediatrics
+
+Abstract:
+
+OBJECTIVE: Respiratory syncytial virus (RSV) is a leading cause of lower respiratory tract infection (LRTI) in infants and young children, which may progress to bronchiolitis, pneumonia, and other severe respiratory complications. This study aimed to evaluate the efficacy and safety of monoclonal antibodies (mAbs) against the RSV disease in premature infants.
+
+METHODS: A comprehensive literature search was conducted across the PubMed, Cochrane Library, and Embase databases from inception through December 2025. Statistical analyses were performed using STATA software (version 15.0). Effect estimates were expressed as relative risk (RR) with corresponding 95% confidence intervals, and treatment rankings were evaluated using the surface under the cumulative ranking curve (SUCRA) probability.
+
+RESULTS: This Network Meta-analysis (NMA) included 7 randomized controlled trials involving 4 drugs and 11319 infants. Compared with the placebo, nirsevimab, motavizumab, and palivizumab have shown beneficial effects at reducing RSV-related hospitalization rates (RR, nirsevimab: 0.20, 95% CI: 0.09-0.45; motavizumab: 0.32 95% CI: 0.19-0.53; palivizumab: 0.43; 95% CI: 0.30-0.61) and Intensive Care Unit (ICU) admissions due to RSV infections (nirsevimab: 0.09, 95% CI: 0.01-0.87; motavizumab: 0.23, 95% CI: 0.08-0.65; palivizumab: 0.43, 95% CI: 0.21-0.90) in preterm infants. Nirsevimab was most likely to exert the best therapeutic effects, with the highest (SUCRA) values of 94.4% for RSV-related hospitalization rates and 89.1% for ICU admissions. No significant differences were found in mechanical ventilation use, deaths related to RSV Infections and drug-related adverse events.
+
+CONCLUSION: Nirsevimab, motavizumab, and palivizumab all reduced RSV-related hospitalizations and ICU admissions in preterm infants, with nirsevimab showing the greatest effect. However, further studies are needed to confirm these findings.
+
+SYSTEMATIC REVIEW REGISTRATION: [https://www.crd.york.ac.uk/PROSPERO/view/CRD42024583222](https://www.crd.york.ac.uk/PROSPERO/view/CRD42024583222), identifier CRD42024583222.
+
+---
+
+6. Comparative efficacy of different probiotic strains and preparations for prevention of acute otitis media in children: a systematic review and network meta-analysis.
+
+PMID: 42491017
+
+Journal: Frontiers in nutrition
+
+Abstract:
+
+BACKGROUND: Probiotics are established candidates for preventing acute otitis media (AOM) in children, yet existing meta-analyses treat all probiotic interventions as a single class, precluding strain-specific clinical guidance. This network meta-analysis (NMA) compared the efficacy and safety of individual probiotic strains for pediatric AOM prevention.
+
+METHODS: We systematically searched PubMed, Embase, the Cochrane Library, Web of Science, CNKI, WanFang, and CBM from inception to 15 March 2026. Eligible studies were RCTs evaluating probiotic interventions for AOM prevention in children aged 0-18 years. The primary outcome was AOM incidence; secondary outcomes included antibiotic prescription rates, tympanostomy tube placement rates, and adverse events. NMAs were performed using a multivariate random-effects frequentist framework (Stata 17.0). Treatment ranking was estimated using SUCRA values.
+
+RESULTS: Eighteen RCTs (reported in 20 publications) enrolling 4,462 children were included, evaluating seven probiotic nodes (SS-K12, SS-24SMB, BB-12, CBA-L74, LGG, Multi-strain, α-Strep) against placebo. For AOM incidence, only CBA-L74 (OR = 0.27, 95% CI: 0.11-0.68; SUCRA = 89.3%) and SS-K12 (OR = 0.44, 95% CI: 0.20-0.94; SUCRA = 71.8%) achieved statistically significant reductions vs. placebo. Sensitivity analyses excluding two high risk-of-bias trials showed that SS-K12's effect was substantially attenuated and lost significance, whereas CBA-L74 remained robustly effective (OR = 0.28, 95% CI: 0.14-0.56). For antibiotic prescription rates, Multi-strain (OR = 0.45; SUCRA = 87.1%) and LGG (OR = 0.69; SUCRA = 65.3%) demonstrated significant reductions; both were superior to SS-K12 in direct pairwise comparisons. No intervention significantly reduced tympanostomy tube placement rates, though Multi-strain showed the most favorable numerical trend (SUCRA = 93.2%). Among exploratory outcomes, SS-K12 and LGG significantly reduced RTI incidence, while CBA-L74 and LGG significantly reduced AGE incidence, with CBA-L74 ranking first for AGE (SUCRA = 95.9%).
+
+CONCLUSIONS: Probiotic efficacy for AOM prevention is highly strain-specific. CBA-L74 demonstrated the most robust and consistent protection across AOM and gastrointestinal outcomes; Multi-strain combinations and LGG were most effective for antibiotic stewardship. These findings provide the first strain-level evidence base to guide rational probiotic selection in pediatric AOM prevention.
+
+SYSTEMATIC REVIEW REGISTRATION: PROSPERO, [https://www.crd.york.ac.uk/prospero/display_record.php?ID=CRD420261360351](https://www.crd.york.ac.uk/prospero/display_record.php?ID=CRD420261360351), identifier CRD420261360351.
+
+# 第3部：候補論文スコア一覧
+
+| PMID     | タイトル                                                                            | 総合スコア | 役立つか   | 短いメモ                          |
+| -------- | ------------------------------------------------------------------------------- | ----: | ------ | ----------------------------- |
+| 42333002 | Topical or oral antibiotics in children with acute otitis media and microbiomes | 16/25 | やや役立つ  | 耳漏性AOMのRCTだが、主眼は細菌叢で臨床的優越性は不明 |
+| 42334402 | V116 in high-risk children and adolescents（STRIDE-13）                           | 20/25 | 役立つ    | 高リスク小児の追加肺炎球菌接種を変える可能性        |
+| 42348792 | RSV prophylactics: product review and real-world meta-analysis                  | 22/25 | 非常に役立つ | ニルセビマブと母体ワクチンの実臨床効果を定量化       |
+| 42349528 | COVID-19 and children's internalising symptoms                                  | 12/25 | 限定的    | 異質性が極めて高く、感染症診療変更への直接性が低い     |
+| 42354220 | Autoimmune thyroid diseases after COVID-19                                      |  8/25 | 限定的    | 症例報告中心で、小児への直接性が乏しい           |
+| 42357817 | Lianhua Qingke for pediatric M. pneumoniae pneumonia                            | 11/25 | 限定的    | 良好なRCTだが、中国伝統薬で国内実装が困難        |
+| 42359822 | RSV-associated acute otitis media under five years                              | 14/25 | やや役立つ  | 疾患理解には有用だが診療変更に直結しない          |
+| 42361643 | Gastroenteric viruses in wastewater systems                                     |  6/25 | 役立ちにくい | 公衆衛生・環境監視が中心                  |
+| 42390459 | Porcine circovirus-free rotavirus vaccine in Chinese infants                    | 14/25 | やや役立つ  | 製剤変更の免疫原性試験で日本の外来への影響は小さい     |
+| 42394542 | Electromagnetic stimulation for overactive bladder in MMC                       |  8/25 | 役立ちにくい | 感染症ではなく、特殊な神経因性膀胱が対象          |
+| 42436624 | Short- versus standard-course ceftriaxone for pneumonia                         | 13/25 | やや役立つ  | 単施設試験で対象・重症度定義が不明瞭            |
+| 42440760 | Antibiotics for GAS pharyngitis: network meta-analysis                          | 20/25 | 非常に役立つ | ペニシリン第一選択を支持し、アジスロマイシンに注意     |
+| 42441648 | Global inequities in telemedicine implementation                                |  6/25 | 役立ちにくい | 小児感染症外来との直接性なし                |
+| 42442127 | Balloon dilation of the Eustachian tube in children                             | 12/25 | 限定的    | 対照比較では標準治療への優越性を示さず           |
+| 42444178 | Oral interventions for infant vaccine distress                                  | 23/25 | 非常に役立つ | 低コストで明日から予防接種外来に導入可能          |
+| 42454043 | Biomarkers of post-acute infection syndrome                                     |  8/25 | 限定的    | 実用可能な診断バイオマーカーは未確立            |
+| 42457453 | EAU Guidelines on Urological Infections 2026                                    | 11/25 | 限定的    | ガイドラインだが成人泌尿器領域が中心            |
+| 42461883 | Community-acquired CNS infections in Western Asia                               |  8/25 | 役立ちにくい | 地域疫学中心で日本の外来への直接性が低い          |
+| 42465211 | RSV monoclonal antibodies in premature infants                                  | 20/25 | 非常に役立つ | 早産児の入院・ICU入室減少をRCTベースで確認      |
+| 42481964 | Infections after kidney transplantation in Africa                               |  6/25 | 役立ちにくい | 地域・移植領域に限定され、小児一般外来への影響が小さい   |
+| 42487142 | Psychotherapeutic intervention for post-COVID condition                         |  5/25 | 役立ちにくい | 成人対象で主要評価項目に有意差なし             |
+| 42491017 | Probiotic strains for prevention of pediatric AOM                               | 18/25 | 役立つ    | 菌株特異的効果を示すが国内製剤への適用に注意        |
+| 42502162 | Toothbrushing and VAP in PICU                                                   |  7/25 | 役立ちにくい | PICU対象で有意な予防効果を示さず            |

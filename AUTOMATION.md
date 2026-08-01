@@ -8,7 +8,7 @@
 2. `automation_config.json`の週次・隔週・月次設定に該当するテーマだけを配信runにまとめます。
 3. 1論文1リクエストの一次Responses Batchを投入します。
 4. 上位20本に最大4本の重要論文救済を加え、最大24本を最終Responses Batchへ送ります。
-5. 全件アーカイブと固定CURRENTをGoogle Docsに作ります。
+5. 日本語要約・選定論文の英語Abstract・全候補スコア一覧を統合した固定CURRENTを、Google Docsに1ファイルだけ作成・更新します。
 6. 同じcycleのテーマが終端状態になったらGmailを1通送ります。
 
 GitHub Actionsのpollerは毎時17分に動きます。各Batchの`completion_window`は24時間で、一次と最終を直列に行うため最大約48時間を想定しています。
@@ -46,7 +46,7 @@ Actionsの「PubMed automation」を手動実行し、次を指定します。
 - `test`: `true`
 - `limit`: `5`
 
-TESTフォルダーだけに、小児腎臓の実データ5論文、一次Batch入力・結果、最終Batch入力・結果、run manifest、全件アーカイブ、固定CURRENTが作られます。メール件名には`[TEST]`が付きます。
+TESTフォルダーだけに、小児腎臓の実データ5論文、一次Batch入力・結果、最終Batch入力・結果、run manifest、3部構成の固定CURRENTが作られます。メール件名には`[TEST]`が付きます。
 
 Batchは非同期なので、完了までActionsを手動で`action=poll`、`test=true`として実行します（通常の定期pollerは本番領域だけを対象にします）。同じ縦切りのCURRENTは同一内容でもう一度更新し、manifestの`stability_verified=true`でfile ID不変を確認します。
 
@@ -73,8 +73,7 @@ python3 pubmed_automation.py retry-notification --cycle-id manual-12345
 - `system/automation_ledger.json`: 軽量台帳。設定ハッシュ、EDAT、固定file ID、run manifest参照、状態だけ
 - `topics/{topic}/pmid_index.json`: PMID、初回取得、raw参照、run、配信状態
 - `runs/{cycle}/{topic}/`: Abstract JSON、Batch JSONL、生出力、評価、候補、manifest
-- `documents/{topic}/archive/`: 全新着のAbstractと評価、最終10本・次点5本
-- `documents/{topic}/current/`: 最終10本までのAbstract全文を含む、NotebookLMへ登録する固定文書
+- `documents/{topic}/current/`: 第1部「日本語要約」、第2部「選定論文の英語AbstractとPMID」、第3部「全候補のスコア一覧」を含む、NotebookLMへ登録する固定文書
 
 Gmailだけが失敗してもrunと文書は完了状態のままです。通知は最大5回自動再試行し、その後も手動再試行できます。送信済み応答IDを台帳に保存し、同じcycleの通常再実行では再送しません。ネットワーク切断がGmail側の受付直後に起きたという判定不能ケースに備え、メールにはcycle内容由来の固定Message-IDも付けます。
 
@@ -84,4 +83,4 @@ Gmailだけが失敗してもrunと文書は完了状態のままです。通知
 PYTHONPYCACHEPREFIX=/tmp/pubmed-pycache python3 -m unittest discover -s tests -v
 ```
 
-外部認証を使わないテストでは、14テーマ対応、頻度、EDATページング、救済、候補上限、選定・次点分離、NotebookLM除外条件、軽量台帳、Gmail失敗時の非ロールバックを確認します。実APIの縦切りはSecretsを設定した後に行います。
+外部認証を使わないテストでは、14テーマ対応、頻度、EDATページング、救済、候補上限、選定・次点分離、NotebookLM用文書の3部構成、軽量台帳、Gmail失敗時の非ロールバックを確認します。実APIの縦切りはSecretsを設定した後に行います。

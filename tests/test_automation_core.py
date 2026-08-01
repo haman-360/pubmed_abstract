@@ -13,7 +13,6 @@ from automation_core import (
     is_due,
     load_config,
     new_ledger,
-    render_archive_doc,
     render_notebook_doc,
     screen_batch_lines,
     validate_final_result,
@@ -177,17 +176,15 @@ class DocumentAndLedgerTests(unittest.TestCase):
             "alternates": [final_item(3, 3)],
         }
 
-    def test_notebook_excludes_abstract_and_alternates(self):
-        text = render_notebook_doc("テーマ", "run", self.articles, self.final)
-        self.assertNotIn("SECRET ABSTRACT", text)
-        self.assertNotIn("Title 3", text)
-        self.assertIn("Title 1", text)
-
-    def test_archive_keeps_abstract_scores_and_alternate(self):
-        text = render_archive_doc("テーマ", "run", self.articles, self.scores, self.final)
-        self.assertIn("SECRET ABSTRACT 3", text)
-        self.assertIn("[次点] Title 3", text)
-        self.assertIn("total_score=", text)
+    def test_notebook_has_three_parts_selected_abstracts_and_all_scores(self):
+        text = render_notebook_doc("テーマ", "run", self.articles, self.scores, self.final)
+        self.assertIn("【第1部：日本語要約】", text)
+        self.assertIn("【第2部：英語Abstract】", text)
+        self.assertIn("【第3部：候補論文スコア一覧】", text)
+        self.assertIn("SECRET ABSTRACT 1", text)
+        self.assertIn("SECRET ABSTRACT 2", text)
+        self.assertNotIn("SECRET ABSTRACT 3", text)
+        self.assertIn("3 | Title 3 | 17 | 要検討 (3/5) | 評価", text)
 
     def test_ledger_is_lightweight(self):
         ledger = new_ledger(self.config)

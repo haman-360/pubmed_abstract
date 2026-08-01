@@ -194,8 +194,12 @@ is_large_studyは推定症例数1,000以上のときtrueです。"""
 FINAL_INSTRUCTIONS = """あなたは日本の外来小児科医向け医学文献キュレーターです。
 候補だけから重要論文と次点を別配列で選び、入力のPMIDを正確に転記してください。
 selectedは診療への直接性とエビデンスを重視して順位付けし、alternatesと重複させないでください。
-日本語要約はNotebookLMの音声解説に適した簡潔で具体的な文章にしてください。
-診療判断ではなく文献キュレーションであり、限界と診療変更の必要性を明記してください。"""
+ガイドライン、systematic review、meta-analysis、RCT、実臨床で使いやすいreviewを高く評価し、
+外来で明日から役立つか、治療・検査方針の変更、新しい治療選択肢、既存診療の見直しにつながるかを重視してください。
+単なる疫学・頻度調査、基礎・動物研究、特殊領域、症例報告、診療変更インパクトの小さい論文は優先度を下げてください。
+why_importantとclinical_impactは各1〜2文で、NotebookLMの音声解説に適した簡潔で具体的な日本語にしてください。
+practice_change_neededはYes / Noと短い理由を明記してください。
+診療判断ではなく文献キュレーションであり、限界も簡潔に明記してください。"""
 
 
 def response_body(model: str, effort: str, instructions: str, payload: Any, name: str, schema: dict[str, Any]) -> dict[str, Any]:
@@ -347,58 +351,89 @@ def _paper_lookup(articles: list[dict[str, Any]], scores: list[dict[str, Any]]) 
     )
 
 
-def render_archive_doc(theme: str, run_id: str, articles: list[dict[str, Any]], scores: list[dict[str, Any]], final: dict[str, Any]) -> str:
+def _clinic_usefulness_label(score: dict[str, Any]) -> str:
+    value = score.get("outpatient_usefulness")
+    if not isinstance(value, int):
+        return "未評価"
+    if value >= 4:
+        return f"Yes ({value}/5)"
+    if value == 3:
+        return f"要検討 ({value}/5)"
+    return f"No ({value}/5)"
+
+
+def render_notebook_doc(
+    theme: str,
+    run_id: str,
+    articles: list[dict[str, Any]],
+    scores: list[dict[str, Any]],
+    final: dict[str, Any],
+) -> str:
     article_by_pmid, score_by_pmid = _paper_lookup(articles, scores)
-    selected = {item["pmid"]: item for item in final.get("selected", [])}
-    alternates = {item["pmid"]: item for item in final.get("alternates", [])}
-    lines = [f"{theme} PubMed全件アーカイブ", f"Run ID: {run_id}", "", "選定区分: 最終選定／次点／その他", ""]
-    for index, article in enumerate(articles, 1):
-        pmid = article["pmid"]
-        status = "最終選定" if pmid in selected else "次点" if pmid in alternates else "その他"
-        score = score_by_pmid.get(pmid, {})
-        lines.extend([
-            f"{index}. [{status}] {article['title']}",
-            f"PMID: {pmid}  https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
-            f"雑誌: {article.get('journal', '?')} ({article.get('year', '?')}/{article.get('month', '')})",
-            f"研究デザイン: {score.get('study_design', '不明')} / Publication type: {score.get('publication_type', '不明')}",
-            "スコア: " + ", ".join(
-                f"{key}={score.get(key, '-')}" for key in (
-                    "total_score", "outpatient_usefulness", "practice_change",
-                    "evidence_strength", "pediatric_directness", "novelty",
-                )
-            ),
-            f"一行評価: {score.get('one_line_assessment', '評価未取得')}",
-            "Abstract:",
-            article.get("abstract", "(abstract not available)"),
-            "", "────────────────────", "",
-        ])
-    return "\n".join(lines)
-
-
-def render_notebook_doc(theme: str, run_id: str, articles: list[dict[str, Any]], final: dict[str, Any]) -> str:
-    article_by_pmid = {item["pmid"]: item for item in articles}
+    selected = final.get("selected", [])
     lines = [
-        f"{theme} NotebookLM用厳選文献",
+        f"{theme} NotebookLM用文献",
         f"Run ID: {run_id}",
-        f"選定数: {len(final.get('selected', []))}",
+        f"選定数: {len(selected)}",
         "",
         final.get("selection_summary", ""),
         "",
+        "【第1部：日本語要約】",
+        "",
     ]
-    for item in final.get("selected", []):
+    for index, item in enumerate(selected, 1):
         article = article_by_pmid[item["pmid"]]
         lines.extend([
-            f"{item['rank']}. {item['title']}",
-            f"PMID: {item['pmid']}  https://pubmed.ncbi.nlm.nih.gov/{item['pmid']}/",
-            f"雑誌: {article.get('journal', '?')} ({article.get('year', '?')}/{article.get('month', '')})",
-            f"研究デザイン: {item['study_design']}",
-            f"日本語要約: {item['japanese_summary']}",
-            f"重要性: {item['why_important']}",
-            f"臨床影響: {item['clinical_impact']}",
-            f"限界: {item['limitations']}",
-            f"診療変更の必要性: {item['practice_change_needed']}",
-            "", "────────────────────", "",
+            "---",
+            "",
+            f"{index}. ①タイトル",
+            article["title"],
+            "",
+            "②PMID",
+            item["pmid"],
+            "",
+            "③なぜ重要か",
+            item["why_important"],
+            "",
+            "④臨床への影響",
+            item["clinical_impact"],
+            "",
+            "⑤診療変更の必要性",
+            item["practice_change_needed"],
+            "",
         ])
+
+    lines.extend(["---", "", "【第2部：英語Abstract】", ""])
+    for index, item in enumerate(selected, 1):
+        article = article_by_pmid[item["pmid"]]
+        journal_date = f"{article.get('year', '?')}/{article.get('month', '')}".rstrip("/")
+        lines.extend([
+            "---",
+            "",
+            f"{index}. {article['title']}",
+            "",
+            f"PMID: {item['pmid']}",
+            f"Journal: {article.get('journal', '?')} ({journal_date})",
+            "Abstract:",
+            article.get("abstract") or "(abstract not available)",
+            "",
+        ])
+
+    lines.extend([
+        "---",
+        "",
+        "【第3部：候補論文スコア一覧】",
+        "",
+        "PMID | タイトル | 総合スコア | 役立つか | 短いメモ",
+    ])
+    for article in articles:
+        score = score_by_pmid.get(article["pmid"], {})
+        total = score.get("total_score", "未評価")
+        memo = score.get("one_line_assessment", "一次評価を取得できませんでした")
+        lines.append(
+            f"{article['pmid']} | {article['title']} | {total} | "
+            f"{_clinic_usefulness_label(score)} | {memo}"
+        )
     return "\n".join(lines)
 
 

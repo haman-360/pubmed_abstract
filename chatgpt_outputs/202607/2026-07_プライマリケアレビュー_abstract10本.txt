@@ -1,0 +1,391 @@
+## 第1部：日本語要約
+
+---
+
+① The 2026 British Society for Rheumatology guideline for the management of children, young people and adults with systemic lupus erythematosus.
+
+② PMID
+
+42336388
+
+③ なぜ重要か
+
+小児を含むSLEの評価、診断、モニタリング、薬物療法、ループス腎炎などを102項目の推奨にまとめた包括的ガイドラインです。系統的文献レビューを基盤としており、今回の候補中で最もエビデンスと診療変更可能性が高い論文です。
+
+④ 臨床への影響
+
+SLEを疑う症例の初期評価や専門医紹介後のフォロー、臓器障害・治療有害事象の監視項目を見直す根拠になります。日本の診療体制や承認薬との相違には注意が必要です。
+
+⑤ 診療変更の必要性
+
+Yes — 小児SLEの評価・モニタリング方法を最新の推奨と照合する価値があります。
+
+---
+
+① A Systematic Review and Meta-Analysis on the Effectiveness of Interventions in Reducing Missed Opportunities for Vaccination Among Children Under Age Five.
+
+② PMID
+
+42347626
+
+③ なぜ重要か
+
+5歳未満の予防接種機会逸失を減らす介入を定量的に比較したメタ解析です。教育、電子予防接種登録・アラート、診療と接種の統合、多要素介入の有効性が示されています。
+
+④ 臨床への影響
+
+受診時に接種歴を自動確認し、未接種を通知して、その場で接種につなげる仕組みを支持します。ただし研究環境の異質性が大きく、エビデンスの確実性は非常に低～中等度です。
+
+⑤ 診療変更の必要性
+
+Yes — 電子アラートと受診時の接種歴確認を組み合わせる運用が推奨されます。
+
+---
+
+① Hidradenitis Suppurativa: Diagnosis and Treatment Challenges in Primary Care.
+
+② PMID
+
+42349979
+
+③ なぜ重要か
+
+小児・思春期では見逃されやすい化膿性汗腺炎について、プライマリケアでの認識と紹介判断を整理した実践的レビューです。感染性膿瘍や毛包炎として反復治療されることによる診断遅延を防ぐ点に意義があります。
+
+④ 臨床への影響
+
+腋窩、鼠径部、臀部などの反復する有痛性結節・膿瘍、瘻孔、瘢痕を認めた場合は、単純感染だけでなく化膿性汗腺炎を鑑別します。重症例や治療抵抗例では早期皮膚科紹介を検討します。
+
+⑤ 診療変更の必要性
+
+Yes — 反復する間擦部膿瘍の鑑別と紹介基準を見直す価値があります。
+
+---
+
+① Evidence-Based Clinical Recommendations for the Appropriate Use of Diagnostic Tests in Pediatric Allergology: Focus on Asthma, Rhinoconjunctivitis, and Keratoconjunctivitis Vernal.
+
+② PMID
+
+42356016
+
+③ なぜ重要か
+
+小児喘息、アレルギー性鼻結膜炎、春季カタルにおける検査の適正使用を、PICO・GRADEに基づいて整理した臨床推奨です。喘息診療でのスパイロメトリー、FeNO、アレルギー検査の位置づけを再確認できます。
+
+④ 臨床への影響
+
+症状だけで喘息を診断・調整せず、可能な年齢では呼吸機能、FeNO、アレルギー評価を組み合わせる方針を支持します。鼻結膜炎ではアレルゲン免疫療法の適応判断、春季カタルでは眼科連携にも有用です。
+
+⑤ 診療変更の必要性
+
+Yes — 喘息・鼻結膜炎の検査を目的別に整理し、漫然とした検査や治療を減らせます。
+
+---
+
+① State-of-the-Art Review: Vaccination in Pediatric Dermatology Patients Receiving Immunosuppressive or Immunomodulatory Therapy: A Review.
+
+② PMID
+
+42365857
+
+③ なぜ重要か
+
+生物学的製剤やJAK阻害薬などを使用する小児が増えるなか、免疫調整療法と定期接種の調整を整理したレビューです。皮膚科と予防接種を担当する小児科の連携に直接関係します。
+
+④ 臨床への影響
+
+不活化ワクチンは治療中でも原則接種可能である一方、MR・水痘などの生ワクチンは免疫抑制治療開始の少なくとも4週間前に完了させることが基本となります。実際には薬剤ごとの休薬条件と国内添付文書の確認が必要です。
+
+⑤ 診療変更の必要性
+
+Yes — 免疫調整療法開始前に接種歴を確認する仕組みを標準化すべきです。
+
+---
+
+① Comparative Effects of Antimicrobial Stewardship Interventions on Pediatric Antibiotic Prescribing: A Systematic Review of Randomized Controlled Trials.
+
+② PMID
+
+42367526
+
+③ なぜ重要か
+
+小児外来の急性呼吸器感染症に対する抗菌薬適正使用介入を、8件のランダム化比較試験から検討した系統的レビューです。単なる啓発よりも、処方実績の可視化とフィードバックを含む介入が有望でした。
+
+④ 臨床への影響
+
+医師個人への知識提供だけではなく、抗菌薬処方率の定期集計、同僚との比較、説明責任、フィードバックを組み合わせる運用が有効と考えられます。抗菌薬削減による再診、入院、症状悪化の増加は報告されませんでした。
+
+⑤ 診療変更の必要性
+
+Yes — 抗菌薬処方率を定期的に振り返る多要素型ASPの導入が推奨されます。
+
+---
+
+① Posttraumatic Stress Disorder in Children and Adolescents.
+
+② PMID
+
+42379610
+
+③ なぜ重要か
+
+小児プライマリケアで遭遇するPTSDとトラウマ関連症状について、認識、スクリーニング、治療、連携をまとめた臨床レビューです。身体症状、学校不適応、睡眠障害、行動変化の背景にあるトラウマを見逃さないために有用です。
+
+④ 臨床への影響
+
+原因不明の身体症状や不安、抑うつ、退行、学校不適応を認めた場合、発症前の出来事と安全性を確認する視点を加えます。診断だけでなく、安全確保、家族支援、心理専門職との連携が重要です。
+
+⑤ 診療変更の必要性
+
+Yes — 心身症・学校不適応の問診にトラウマ歴と安全性評価を組み込む価値があります。
+
+---
+
+① Expert consensus on the management of nocturnal enuresis in children.
+
+② PMID
+
+42432408
+
+③ なぜ重要か
+
+5歳以上の夜尿症について、診断、単一症候性・非単一症候性の分類、排尿日誌、初期治療、治療抵抗例を18項目の推奨にまとめた専門家コンセンサスです。
+
+④ 臨床への影響
+
+昼間下部尿路症状を確認したうえで、夜間多尿にはデスモプレシン、膀胱容量低下にはアラーム療法を選択する方針が示されています。非単一症候性夜尿症では昼間症状と便秘の治療を先行させます。
+
+⑤ 診療変更の必要性
+
+Yes — 夜尿症を病型分類し、夜間尿量と膀胱容量に応じて初期治療を選ぶ運用を支持します。
+
+---
+
+① Metabolic-Dysfunction Associated Steatotic Liver Disease (MASLD) in Children - A Review For Primary Care Pediatrics.
+
+② PMID
+
+42475149
+
+③ なぜ重要か
+
+NAFLDからMASLDへの名称・診断概念の変更と、小児プライマリケアでの対応を解説したレビューです。肝酵素上昇を必須としない新しい概念が重要です。
+
+④ 臨床への影響
+
+肥満児ではALTが正常でもMASLDを完全には否定できず、肥満度、代謝異常、血圧、生活習慣などを総合的に評価する必要があります。現時点の治療の中心は減量、食事改善、身体活動で、確立した薬物療法はありません。
+
+⑤ 診療変更の必要性
+
+Yes — 正常ALTのみを根拠に肥満児の脂肪性肝疾患を除外しないことが重要です。
+
+---
+
+① Identifying clinical signs of child abuse in primary care: a systematic review.
+
+② PMID
+
+42503486
+
+③ なぜ重要か
+
+プライマリケアを受診する被虐待児にみられる身体、心理、行動、発達上の徴候を19研究から整理した系統的レビューです。明らかな外傷だけでなく、非特異的な訴えを含めて虐待の可能性を考える契機になります。
+
+④ 臨床への影響
+
+説明と一致しない外傷、複数時期の外傷、反復する非特異的症状、行動変化、発達遅滞などが重なる場合は、生活環境と安全性を慎重に評価します。ただし腹痛、喘息、湿疹など単独の非特異的所見から虐待を推定してはいけません。
+
+⑤ 診療変更の必要性
+
+Yes — 複数所見と経時的変化を統合して安全性を評価する視点が必要です。
+
+## 第2部：英語Abstract
+
+---
+
+1. The 2026 British Society for Rheumatology guideline for the management of children, young people and adults with systemic lupus erythematosus.
+
+PMID: 42336388
+Journal: Rheumatology (Oxford, England)
+Abstract:
+
+Systemic lupus erythematosus (SLE) is a lifelong autoimmune condition with multi-system involvement that is associated with morbidity, mortality, and poor quality of life. The key aim of management should be to empower individuals with SLE to manage their condition, suppressing systemic disease activity, and preventing organ damage. This guideline builds on and expands the recommendations developed for the first guideline published in 2017 for adults living with SLE. This comprehensive life-course guideline was developed according to the British Society for Rheumatology Guidelines Protocol by a Guideline Working Group (GWG) comprising healthcare professionals with expertise in paediatric and adult SLE, and people with lived experience. The GWG reviewed published guidelines, undertook a systematic literature review and utilised expertise from specialist lupus centres across the UK and patient representatives to formulate a list of 102 recommendations with corresponding strength of recommendations and agreement scores. These recommendations encompass advances in the assessment, diagnosis, monitoring, general approaches to management, non-pharmacological and pharmacological management of SLE, organ-specific treatment including lupus nephritis and cutaneous lupus erythematosus, as well as the delivery of care in the context of the UK healthcare system. Furthermore, we have provided research and audit recommendations to support equitable access to care and improve health outcomes in SLE.
+
+---
+
+2. A Systematic Review and Meta-Analysis on the Effectiveness of Interventions in Reducing Missed Opportunities for Vaccination Among Children Under Age Five.
+
+PMID: 42347626
+Journal: Vaccines
+Abstract:
+
+INTRODUCTION: A knowledge gap exists around which interventions can be implemented to minimise missed opportunities for vaccination (MOVs) in children under age five. Children under age five experience higher rates of MOVs, making them a critical focus for interventions to reduce MOV. This study aims to plot evidence-based interventions reducing MOVs in children under age five.
+
+METHODS: We performed an electronic search without any language restriction for studies indexed between 1 January 1990 and 30 August 2025 in PubMed (Medline), Web of Science, Cochrane Central Register of Controlled Trials, Scopus, CINAHL, and other sources. We included studies highlighting interventions reducing MOVs in children under age five. A meta-analysis was conducted using the random-effects model with risk ratios (RRs) and 95% confidence intervals (CIs). When meta-analysis was not possible, results were reported individually.
+
+RESULTS: Out of 535 papers reviewed via titles and abstracts, 21 were included in the meta-analysis. Overall, education interventions reduced the risk of MOVs by 35% (RR 0.65, 95% CI 0.47 to 0.91). Our results also showed that electronic immunisation registries (EIRs) and alerts were successful in lowering the risk of MOVs by 29% (RR 0.71, 95% CI 0.54 to 0.92). Integrated delivery of health interventions reduced the risk of MOVs by 66% (RR 0.34, 95% CI 0.14 to 0.83). Other interventions that reduced the risk of MOVs included integrating a pharmacist in the under-five vaccination programme (RR 0.43, 95% CI 0.26 to 0.72) and multicomponent interventions (RR 0.62, 95% CI 0.48 to 0.80). Financial incentives (RR 0.87, 95% CI: 0.80, 0.94) and combined vaccines (RR 0.72, 95% CI 0.68 to 0.76) showed a statistically significant MOV reduction. However, our results were graded from very low-to-moderate grade evidence.
+
+CONCLUSIONS: Education interventions, EIRs and alerts, pharmacist inclusion in vaccination programme, integrated delivery of health interventions, multicomponent interventions, combined vaccines, and financial incentives may improve MOVs in children under age five as the evidence was graded from very low to moderate.
+
+---
+
+3. Hidradenitis Suppurativa: Diagnosis and Treatment Challenges in Primary Care.
+
+PMID: 42349979
+Journal: Pediatric Clinics of North America
+Abstract:
+
+Hidradenitis suppurativa (HS) is a chronic, recurrent inflammatory disease that can affect children and adolescents. It is often associated with significant medical and psychological comorbidities, leading to a substantial impact on quality of life. In this age group, HS is often underdiagnosed, resulting in delayed treatment and progression of disease. Timely recognition of HS by pediatricians and primary care providers is essential, particularly in distinguishing it from mimics like infections or folliculitis, providing appropriate treatment, and prevention of complications. Early referral to dermatology in severe or treatment-resistant cases can significantly improve patient outcomes.
+
+---
+
+4. Evidence-Based Clinical Recommendations for the Appropriate Use of Diagnostic Tests in Pediatric Allergology: Focus on Asthma, Rhinoconjunctivitis, and Keratoconjunctivitis Vernal.
+
+PMID: 42356016
+Journal: Journal of Clinical Medicine
+Abstract:
+
+Background: Appropriateness of diagnostic test prescriptions represents a critical component of quality care in pediatric allergology, directly influencing diagnostic accuracy, therapeutic decisions, healthcare resource utilization, and patient outcomes. A multidisciplinary expert panel was convened to develop evidence-based clinical recommendations addressing the appropriate use of specialist consultations and diagnostic investigations in children with asthma, allergic rhinoconjunctivitis, and vernal keratoconjunctivitis (VKC).
+
+Methods: Clinical questions were formulated using the PICO framework and prioritized through structured expert consensus. Systematic literature reviews were conducted across major databases, and the certainty of evidence was assessed using the GRADE methodology.
+
+Results: Specialist evaluation emerged as a key determinant of improved diagnostic precision, optimization of treatment strategies, and reduction of inappropriate therapies. In asthma, spirometry, FeNO measurement, and allergy testing contributed to enhanced diagnostic accuracy and better control. In allergic rhinoconjunctivitis, allergological assessment supported diagnosis and the selection of immunotherapy, with demonstrated benefits on symptoms and quality of life. For VKC, multidisciplinary specialist involvement facilitated early diagnosis, personalized management, and prevention of complications.
+
+Conclusions: Although the overall certainty of evidence ranged from moderate to low, consistent clinical benefits supported consensus-based recommendations. Implementation of these recommendations may improve care quality, promote equitable access to diagnostic resources, and reduce unnecessary healthcare utilization.
+
+---
+
+5. State-of-the-Art Review: Vaccination in Pediatric Dermatology Patients Receiving Immunosuppressive or Immunomodulatory Therapy: A Review.
+
+PMID: 42365857
+Journal: Pediatric Dermatology
+Abstract:
+
+Immunomodulatory agents have become a mainstay treatment for various dermatologic conditions within the pediatric population. Increased use of off-label and FDA-approved medications, especially at younger ages, decreases disease burden and mortality. The earlier usage of these immunosuppressants often parallels the pediatric vaccine schedule. Successful treatment of dermatologic conditions while enabling children to mount an adequate immunologic response to preventable diseases necessitates partnering between dermatologists and primary care physicians. Understanding the guidelines will enable dermatologists to better educate patients and engage in shared decision-making. A review of the literature for vaccination guidelines for patients on conventional immune modulating medications (CIMM), tumor necrosis factor alpha inhibitors (TNF-i), various biologic medications, and Janus kinase inhibitors (JAKi) was performed. Inactivated vaccines are generally considered safe, and routine administration, including during active treatment with immunosuppressants, is acceptable. For live attenuated vaccines, including measles-mumps-rubella (MMR) and varicella, consideration to vaccinate 4 weeks prior to initiation of immunosuppressants is generally advised.
+
+---
+
+6. Comparative Effects of Antimicrobial Stewardship Interventions on Pediatric Antibiotic Prescribing: A Systematic Review of Randomized Controlled Trials.
+
+PMID: 42367526
+Journal: Cureus
+Abstract:
+
+Acute respiratory tract infections (ARTIs) are a major driver of antibiotic prescribing in pediatric outpatient care, much of which is inappropriate. Multiple randomized trials have evaluated antimicrobial stewardship interventions; however, the consistency of effects across different intervention mechanisms remains unclear. We conducted a systematic review of randomized and cluster-randomized controlled trials evaluating interventions aimed at reducing antibiotic prescribing for pediatric ARTIs in outpatient and primary care settings. Searches were performed in PubMed, Embase, the Cochrane Library, and Google Scholar from inception to January 2026. Due to substantial clinical and methodological heterogeneity, findings were synthesized narratively. Eight randomized controlled trials were included. Intervention effects were heterogeneous, with strategies incorporating accountability and performance feedback demonstrating more consistent directional effects toward reduced or more appropriate antibiotic use. In contrast, shared decision-making, communication-based, diagnostic-guided, and stand-alone digital interventions showed mixed or neutral effects. Where reported, reductions or neutral effects were not associated with increased reconsultation, hospital admission, or symptom deterioration. Interventions incorporating accountability mechanisms demonstrated more consistent influence on pediatric antibiotic prescribing than single-component strategies, supporting the use of multicomponent antimicrobial stewardship approaches in outpatient pediatric care.
+
+---
+
+7. Posttraumatic Stress Disorder in Children and Adolescents.
+
+PMID: 42379610
+Journal: Pediatrics in Review
+Abstract:
+
+Traumatic events can affect children and adolescents in very unique and sometimes complex ways. Pediatricians in primary care settings are uniquely positioned to identify the influence traumatic experiences have upon their patients' general functioning and potential development of psychopathology. Thus, it is of vital importance for pediatricians to be able to recognize these influences and coordinate appropriate care for children and adolescents who are either presenting emerging symptoms or experiencing more definitive posttraumatic stress disorder (PTSD). To support these efforts, this article provides a review of key clinical features of PTSD and related conditions that are commonly presented in primary care, as well as best practices for screening, treatment, and coordination of care. By improving pediatricians' knowledge and awareness of common childhood reactions to adverse and traumatic experiences, the goal of this review is to promote a broader scope of trauma-informed practice considerations that will help clinicians prevent symptom progression and the development of PTSD for their child and adolescent patients.
+
+---
+
+8. Expert consensus on the management of nocturnal enuresis in children.
+
+PMID: 42432408
+Journal: World Journal of Pediatrics
+Abstract:
+
+BACKGROUND: Nocturnal enuresis (NE) is a common condition in childhood that can adversely affect children's physical and psychological health. Since the publication of the "Expert Consensus on the Management of Monosymptomatic Nocturnal Enuresis in Chinese Children" in 2014, substantial clinical experience has been accumulated and international guidelines have been updated, necessitating a revision to standardize and improve clinical management.
+
+METHODS: This consensus was developed by the Chinese Cooperative Group for the Management of Pediatric Nocturnal Enuresis, the Pediatric Nephrology Committee of the Chinese Medical Doctor Association using the Delphi method. A core writing group of nine experts drafted statements based on a synthesis of current evidence. These were subjected to iterative voting by 42 multidisciplinary panelists to achieve consensus, defined as ≥90% agreement.
+
+RESULTS: The consensus provides 18 key recommendations. It updates the diagnostic criteria for children aged ≥5 years with at least one involuntary void per month for three months. It emphasizes classification into monosymptomatic (MNE) or nonmonosymptomatic (NMNE) NE based on daytime lower urinary tract symptoms. Recommendations cover comprehensive evaluation (history, physical exam, voiding diary), basic management (education, lifestyle), and first-line treatment (desmopressin for nocturnal polyuria, alarm therapy for reduced bladder capacity). Strategies for treatment-resistant cases, management of NMNE (prioritizing daytime symptoms), and the role of primary care and traditional Chinese medicine are outlined.
+
+CONCLUSIONS: This expert consensus provides an updated, evidence-based, and practical framework for the diagnosis and management of childhood NE. It aims to harmonize clinical practice, promote individualized care, and improve patient outcomes through standardized recommendations.
+
+---
+
+9. Metabolic-Dysfunction Associated Steatotic Liver Disease (MASLD) in Children - A Review For Primary Care Pediatrics.
+
+PMID: 42475149
+Journal: South Dakota Medicine
+Abstract:
+
+Metabolic-dysfunction associated steatotic liver disease (MASLD) is the new terminology given to the previous diagnosis of non-alcoholic fatty liver disease (NAFLD). It is the most common cause of liver disease in the pediatric population, with an increase in prevalence primarily due to the rise in the rate of obesity in children and adolescents. With the change in definition of NAFLD to MASLD, there was also a change in the diagnostic criteria, which no longer requires an elevation in liver enzymes. The severity of MASLD ranges from steatosis to metabolic dysfunction-associated steatohepatitis (MASH), with the potential of progression to fibrosis, cirrhosis and hepatic failure. The mainstay of management is lifestyle modifications, including weight loss, dietary changes and increased physical activity, with medications having no proven benefit. This diagnosis remains a challenge for primary pediatricians, specialists and health-care systems, with further studies and recommendations needed to delineate screening and management of children with MASLD.
+
+---
+
+10. Identifying clinical signs of child abuse in primary care: a systematic review.
+
+PMID: 42503486
+Journal: Family Practice
+Abstract:
+
+INTRODUCTION: Child abuse may be the cause of clinical signs that are often poorly understood, leading to an underestimation of violence. According to United Nations agencies, 1 billion children worldwide are victims of violence.
+
+OBJECTIVE: The objective of this study was to identify the clinical signs of abused children during a consultation in primary care.
+
+STUDY DESIGN: A systematic review was conducted in the PubMed, Cochrane, PsycInfo, Embase, and CINAHL databases from 1996 to January 2024. The studies included focused on children aged 0-18 who were victims of abuse and presenting in primary care.
+
+RESULTS: Among the 3811 articles found in the databases, 19 were included in the review. Signs of physical trauma included fractures, bruises, burns, and genital and neurological injuries. Somatic symptoms in children may include abdominal pain, persistent nonspecific symptoms, and atopic manifestations such as eczema or asthma. The psychological symptoms identified were depression, despair, and anxiety. Abuse is also associated with behavioral disorders (externalizing or internalizing behaviors) and developmental delays (language, learning, and social interaction disorders).
+
+CONCLUSION: Few articles have investigated the clinical signs of child victims of violence presenting in primary care. These children may present with various clinical signs (physical trauma, pain, atopy, psychological disorders, behavioral disorders, developmental delays) that highlight the importance of considering abuse as the cause.
+
+Child abuse is a major public health issue that can cause physical, psychological, and social problems. This systematic review was conducted from 1996 to 2024 to identify the clinical signs of child abuse in primary care. Nineteen studies were included, most from the USA and Europe. Children who are victims of abuse may present direct stigmata (fractures, bruises, or burns), nonspecific symptoms such as abdominal pain, atopy (nocturnal asthma symptoms and eczema), and psychological (depression, anxiety) or behavioral problems. Developmental delays in language, learning, or social interaction were also reported. General practitioners are on the front line for detecting clinical signs of child abuse, and their ability to recognize early signs of child abuse is essential. However, few studies have focused on primary care. Further research is needed on primary care and general medicine, both in terms of detection and long-term consequences (symptoms, addiction, perpetration, and adult victimization), as well as the approach and support provided by general practitioners when faced with these complex situations.
+
+## 第3部：候補論文スコア一覧
+
+| PMID     | タイトル                                                                                                                             | 総合スコア | 役立つか | 短いメモ                    |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------- | ----: | ---- | ----------------------- |
+| 42331589 | Interventions to improve access to sexual and reproductive health services for adolescents living with HIV in sub-Saharan Africa |    15 | 中    | 地域・対象が限定的なスコーピングレビュー    |
+| 42336388 | 2026 BSR guideline for systemic lupus erythematosus                                                                              |    23 | 高    | 小児を含む包括的SLEガイドライン       |
+| 42338851 | Diagnosing Sepsis in Primary Care                                                                                                |    14 | 中    | 問題提起は有用だが小児特異的根拠が弱い     |
+| 42346165 | COVID-19 and Interacting Public Health Threats in Europe                                                                         |    11 | 低    | 公衆衛生の概説で個別診療への影響が小さい    |
+| 42346648 | Treatment of MRSA Bacteremia                                                                                                     |     7 | 低    | 入院・重症感染症中心              |
+| 42347067 | Artificial Intelligence in Pediatric Cardiology                                                                                  |    15 | 中    | 将来性はあるが実装エビデンス不足        |
+| 42347626 | Interventions Reducing Missed Opportunities for Vaccination                                                                      |    18 | 高    | 電子アラートや多要素介入を支持         |
+| 42349979 | Hidradenitis Suppurativa in Primary Care                                                                                         |    16 | 高    | 見逃しやすい疾患の早期認識に有用        |
+| 42349981 | Approaching the Pediatric Anogenital Exam                                                                                        |    15 | 中    | 実践的だが比較エビデンスなし          |
+| 42350451 | Progesterone receptor modulator prevention for TNBC                                                                              |     7 | 低    | 成人腫瘍・前臨床的内容             |
+| 42356016 | Diagnostic Tests in Pediatric Allergology                                                                                        |    20 | 高    | 喘息・鼻結膜炎の検査適正化に直結        |
+| 42362181 | HPV Vaccine Series Completion by 13 Years                                                                                        |     8 | 低    | Abstractがなく評価困難         |
+| 42363197 | Decision-Making Capacity Tools in Minor Adolescents                                                                              |    18 | 中    | 日常診療用の妥当な標準ツールは未確立      |
+| 42365523 | Vaccine Equity for Aboriginal Children                                                                                           |    17 | 中    | 日本への直接適用性が限定的           |
+| 42365857 | Vaccination During Immunomodulatory Therapy                                                                                      |    17 | 高    | 生ワクチン・不活化ワクチンの判断に有用     |
+| 42367526 | Antimicrobial Stewardship and Pediatric Prescribing                                                                              |    20 | 高    | 多要素介入と処方フィードバックを支持      |
+| 42369010 | How Primary Care Providers Seek Paediatric Advice                                                                                |    13 | 低    | 研究プロトコルで結果なし            |
+| 42370804 | AI and DXA                                                                                                                       |    10 | 低    | 成人骨粗鬆症中心で実装前            |
+| 42379610 | PTSD in Children and Adolescents                                                                                                 |    18 | 高    | 心身症・学校不適応の評価に有用         |
+| 42386421 | Cystic Fibrosis Nutrition                                                                                                        |    16 | 中    | 専門外来向けで一般外来への影響は限定的     |
+| 42390261 | Parenthood in US Medical Training                                                                                                |     8 | 低    | 診療内容と直接関係しない            |
+| 42396858 | SNAP MSSA/PSSA Trial Review                                                                                                      |    12 | 低    | 重症菌血症・成人中心              |
+| 42398900 | Access to Care for Child and Adolescent Eating Disorders                                                                         |    16 | 中    | 連携には有用だが介入根拠が弱い         |
+| 42401555 | Burden of Antimicrobial-Resistant Infections                                                                                     |     9 | 低    | 概念・疫学中心                 |
+| 42407212 | Adult ADHD and Primary Care                                                                                                      |     9 | 低    | 成人診療が中心                 |
+| 42409035 | Asthma Diagnosis in Adults and Children                                                                                          |    16 | 中～高  | 客観的検査の重要性を整理した次点候補      |
+| 42410139 | Desvenlafaxine as First-Line Treatment for MDD                                                                                   |     6 | 低    | 成人・企業関与・小児適用性なし         |
+| 42414794 | Trust Among Latino Patients                                                                                                      |    11 | 低    | 米国成人の医療制度・社会背景に依存       |
+| 42417451 | eHealth for Young People With Congenital Heart Disease                                                                           |    14 | 中    | 専門疾患の移行支援が中心            |
+| 42428256 | Prenatal Smoking and Newborn DNA Methylation                                                                                     |    16 | 低    | 機序・バイオマーカー研究            |
+| 42429868 | Ambient Heat and Perinatal/Neonatal Health                                                                                       |    14 | 中    | 公衆衛生上重要だが診療変更は限定的       |
+| 42430720 | AI Evidence Synthesis for Biologics in Osteogenesis Imperfecta                                                                   |    17 | 中    | 特殊疾患で一般外来への直接性が低い       |
+| 42432408 | Expert Consensus on Nocturnal Enuresis                                                                                           |    20 | 高    | 病型別評価・治療選択に直結           |
+| 42433178 | Preconception Counselling in Serious Mental Illness                                                                              |    13 | 低    | 成人・周産期領域                |
+| 42433989 | Health Benefits of Alkaline Water                                                                                                |    13 | 中    | 患者説明には使えるが小児エビデンスが弱い    |
+| 42434662 | Satisfaction After Vaginal Versus Cesarean Delivery                                                                              |     9 | 低    | 産科領域                    |
+| 42434765 | Point-of-Care Smell Testing                                                                                                      |    14 | 中    | 小児への直接性が低い              |
+| 42438295 | Hemophilia in Women and Girls                                                                                                    |    15 | 中    | 見逃し防止には有用だが専門性が高い       |
+| 42444552 | Economic Evaluation of Cleft Palate Speech Intervention                                                                          |    16 | 低～中  | 医療経済・専門リハビリ中心           |
+| 42450839 | Nursing Interventions for Health Literacy                                                                                        |    16 | 中    | 教育的意義はあるが診療変更根拠が弱い      |
+| 42451076 | PUFAs for Primary Prevention of Allergic Disease                                                                                 |    16 | 中    | ポジションペーパーで効果は限定的        |
+| 42460919 | Implementation Science in Hybrid RCTs                                                                                            |    10 | 低    | 研究方法論中心                 |
+| 42464286 | Maternal Oral Health Interventions                                                                                               |    13 | 低～中  | 妊産婦・地域保健が中心             |
+| 42470314 | Developmental Dysgraphia                                                                                                         |    19 | 中～高  | ADHD・不登校評価での見逃し防止に有用    |
+| 42475149 | Pediatric MASLD for Primary Care                                                                                                 |    17 | 高    | 正常ALTでも除外できない点が重要       |
+| 42476581 | BSR Guideline for Pain in Inflammatory Arthritis                                                                                 |    20 | 中    | 良質だが小児直接エビデンスが限定的       |
+| 42481094 | Opioids and Adolescents                                                                                                          |    17 | 中    | 海外では重要だが日本での頻度・薬剤環境が異なる |
+| 42485927 | Probiotics for Antibiotic-Associated Diarrhea                                                                                    |    16 | 中    | 実用的だが菌株別根拠の詳細が不明        |
+| 42488780 | Palliative Oncology in Caribbean and African Countries                                                                           |    11 | 低    | 政策・地域医療中心               |
+| 42495715 | Early Interventions for Self-Harm                                                                                                |    16 | 中    | 有望だが小規模・短期研究が中心         |
+| 42498420 | Sleep Medicine Basics                                                                                                            |    10 | 低～中  | 成人中心の一般的レビュー            |
+| 42503486 | Clinical Signs of Child Abuse in Primary Care                                                                                    |    18 | 高    | 複数の身体・心理・行動所見を統合        |
+| 42503908 | APASL Chronic Hepatitis B Guideline 2026                                                                                         |    15 | 中    | アジアで重要だが小児特異的情報が少ない     |
+| 42512206 | Climate-Health Divide                                                                                                            |    11 | 低    | 政策的概説で個別診療への影響が小さい      |
+| 42516272 | Global Trends in Epilepsy                                                                                                        |    12 | 低    | 疫学中心で中国の状況に重点           |
