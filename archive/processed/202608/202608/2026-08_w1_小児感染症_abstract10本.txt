@@ -1,0 +1,45 @@
+# 第1部：日本語要約
+
+---
+
+① **Impact of Non-Pharmaceutical Interventions Targeted at COVID-19 Pandemic on Influenza Burden—A Systematic Review and Meta-Analysis.**
+
+② **PMID：42522402**
+
+③ **なぜ重要か**
+
+COVID-19流行期に実施された非薬物的介入とインフルエンザ流行の変化を、98か国・115研究で評価した大規模な系統的レビュー・メタ解析です。インフルエンザ罹患は世界全体で約92％減少しましたが、6歳未満では減少幅が比較的小さいことも示されました。
+
+④ **臨床への影響**
+
+マスク、接触機会の削減、手指衛生などを組み合わせた社会的介入が、インフルエンザ流行を大きく抑制し得ることを裏付けます。一方、複数の介入が同時に行われた前後比較研究が中心であり、一般小児外来で特定の介入を新たに標準化する根拠としては不十分です。
+
+⑤ **診療変更の必要性**
+
+**No — 感染対策の説明を補強するエビデンスですが、現時点の個別診療・検査・治療方針を直接変更する内容ではありません。**
+
+---
+
+# 第2部：英語Abstract
+
+---
+
+**1. Impact of Non-Pharmaceutical Interventions Targeted at COVID-19 Pandemic on Influenza Burden-A Systematic Review and Meta-Analysis.**
+
+**PMID:** 42522402
+
+**Journal:** Influenza and other respiratory viruses
+
+**Abstract:**
+
+Seasonal influenza imposes a substantial global health burden. The COVID-19 pandemic, accompanied by widespread non-pharmaceutical interventions (NPIs), profoundly disrupted respiratory virus circulation, offering a unique opportunity to assess their broader epidemiological impact. This study aimed to quantify changes in influenza burden between the pre-pandemic and intra-pandemic periods. Within the RESPINOW project, we conducted a systematic review following PRISMA guidelines. Studies reporting absolute influenza case counts before and during the pandemic were included. Data extraction and quality assessment were performed using a modified NHLBI tool for before-after studies. Influenza cases were normalized by reporting period length, and relative changes were estimated using incidence rate ratios. Subgroup analyses explored age, setting, hemisphere, human development index, influenza transmission zones, WHO regions, and viral strains. Of 20,676 screened records, 115 studies from 98 countries were included. Globally, influenza incidence declined by -92% (95% CI: -94 to -90) following the onset of the pandemic. Reductions varied geographically, ranging from near-elimination in several countries to more modest declines (e.g., South Korea: -61%, 95% CI: -79 to -26). Decreases were observed across all transmission zones and WHO regions, with descriptively larger reductions observed in high-income countries (-96%, 95% CI: -98 to -94) than in low-income settings (-82%, 95% CI: -88 to -73). Age-specific declines appeared smaller among young children (< 6 years: -66%, 95% CI: -79 to -45) compared with adults aged 18-64 years (-80%, 95% CI: -90 to -63). Influenza A appeared to decline more strongly than influenza B. The COVID-19 pandemic was associated with an unprecedented global reduction in influenza incidence. Data limitations and the need for robust epidemiological indicators highlight the importance of strengthened, integrated global surveillance to inform future pandemic responses.
+
+---
+
+# 第3部：候補論文スコア一覧
+
+| PMID | タイトル | 総合スコア | 役立つか | 短いメモ |
+|---|---|---:|---|---|
+| 42522402 | Impact of Non-Pharmaceutical Interventions Targeted at COVID-19 Pandemic on Influenza Burden-A Systematic Review and Meta-Analysis. | 16/20 | △ | 大規模メタ解析として公衆衛生上は重要。幼児では介入下でも減少幅が小さいが、小児外来の個別診療を直接変更する内容ではない。 |
+
+今回は収載論文が1件のみでした。エビデンスレベルを考慮して選定しましたが、**「診療を変える重要論文」という観点では優先度は中程度**です。fileciteturn0file0

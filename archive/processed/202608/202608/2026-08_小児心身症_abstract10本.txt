@@ -1,0 +1,139 @@
+## 【第1部：日本語要約】
+
+今回は、**外来小児科での相談頻度、評価・説明への実用性、診療行動への影響**を重視し、13報から3報を選定しました。デジタルメディア、家族を介した肥満介入、トラウマ後ストレスの機能障害評価が、今回の候補中では比較的臨床応用性が高いと判断しました。fileciteturn0file0
+
+---
+
+### ① Digital-Media Use and Mental Health in Children and Adolescents.
+
+② PMID
+
+42394609
+
+③ なぜ重要か
+
+デジタルメディア利用が、睡眠、注意、言語発達、心理社会的健康、学業成績に及ぼす影響を、0～5歳、6～13歳、14～18歳の発達段階別に整理したレビューです。日常外来で増加している「ゲームやスマートフォンをどこまで制限すべきか」という相談への説明材料になります。
+
+④ 臨床への影響
+
+単純なスクリーンタイムだけでなく、問題使用、睡眠への影響、ネット上の有害コンテンツ、サイバーいじめなどを含めて評価する必要があります。一律禁止ではなく、年齢に応じた保護、メディアリテラシー、家庭内ルールを組み合わせる方針を支持します。
+
+⑤ 診療変更の必要性
+
+**Yes — 心身症、不登校、睡眠障害、注意・情緒問題の問診に、メディア利用状況を定型的に追加する価値があります。**
+
+---
+
+### ② Family matters? A Systematic review of interventions addressing family-level mechanisms in the treatment of childhood and adolescent obesity.
+
+② PMID
+
+42397486
+
+③ なぜ重要か
+
+小児肥満に対する家族介入について、食事や運動の指示だけでなく、養育スキル、親子関係、コミュニケーション、家族機能といった背景機序を評価した系統的レビューです。肥満を本人の意欲や自己管理だけの問題として扱わないことの重要性を示しています。
+
+④ 臨床への影響
+
+体重変化が得られた研究は22研究中9研究にとどまりますが、家族の健康習慣、自己効力感、栄養知識、生活の質には改善が認められています。外来では、児への直接指導だけでなく、保護者の関わり方や家庭内の役割・環境まで確認することが実践的です。
+
+⑤ 診療変更の必要性
+
+**Yes — 肥満指導を「児への生活指導」から「家族システムを対象とした支援」へ広げる必要があります。**
+
+---
+
+### ③ Assessment of functional impairment related to post-traumatic stress in children and adolescents: a systematic review.
+
+② PMID
+
+42411712
+
+③ なぜ重要か
+
+小児・青年のトラウマ後ストレス症状について、症状の有無だけでなく、学校、家庭、対人関係、日常生活などの機能障害を評価する尺度を体系的に整理したレビューです。PTSD診断では機能障害が重要である一方、評価方法が標準化されていないことを明確にしています。
+
+④ 臨床への影響
+
+外傷体験後の児を評価する際は、フラッシュバックや回避、過覚醒などの症状だけでなく、登校、学習、睡眠、家族関係、友人関係、日常生活への影響を領域別に確認する必要があります。特定の尺度を機械的に採用するより、複数領域を構造化して問診することが現時点では現実的です。
+
+⑤ 診療変更の必要性
+
+**Yes — トラウマ関連症状の問診に、具体的な生活機能障害の評価を必須項目として加えるべきです。**
+
+---
+
+## 【第2部：英語Abstract】
+
+---
+
+### 1. Digital-Media Use and Mental Health in Children and Adolescents.
+
+PMID: 42394609
+
+Journal: Zeitschrift fur Kinder- und Jugendpsychiatrie und Psychotherapie
+
+Abstract:
+
+Digital media have become a central part of children's and adolescents' daily lives, with increasing usage time and decreasing age of first exposure in recent years. While digital technologies offer opportunities for social participation, access to information, education, and therapeutic support, they are also associated with several risks to mental health. These include problematic use patterns, cyberbullying, exposure to harmful content and hazardous contacts as well as commercial exploitation through manipulative design practices ("dark patterns"). This evidence review summarizes current research on the opportunities and risks of digital media use from a developmental perspective across three age groups (0 - 5, 6 - 13, and 14 - 18 years). Evidence suggests associations between intensive media use and risks for sleep, attention, language development, psychosocial well-being, and academic performance. In adolescence, problematic internet use is also associated with behavioral addictions and mental health problems. Overall, the findings highlight the need for a balanced approach to digital media use, including age-appropriate protection, media literacy, and regulatory measures to safeguard the mental health of young people. This overview forms the basis for the position statement of the German Scientific Society and Associations for Child and Adolescent Psychiatry, Psychosomatics, and Psychotherapy on digital media use and mental health of children and adolescents.
+
+---
+
+### 2. Family matters? A Systematic review of interventions addressing family-level mechanisms in the treatment of childhood and adolescent obesity.
+
+PMID: 42397486
+
+Journal: Reviews in endocrine & metabolic disorders
+
+Abstract:
+
+Family systems are a key influencing factor in the development and maintenance of overweight and obesity in childhood and adolescence with family-based interventions being considered the gold standard in paediatric weight management. So-called second-order level mechanisms, underlying family processes such as communication, parenting skills, and organisational abilities are of particular importance for sustaining family-level behavioural changes and improved health outcomes. This systematic review synthesises interventions that integrate such mechanisms and their impact on health- and weight related outcomes. A systematic literature search was conducted in PubMed, PsycInfo, Web of Science, and the Cochrane Library following PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) guidelines. The initial search yielded 16,129 records, after a multistep process including two independent reviewers, n = 22 studies met the final inclusion criteria. Second-order level mechanisms addressed included parenting skills and practices (n = 11), parent-child relationships and communication (n = 6), family functioning and dynamics (n = 4), home and family environment (n = 3), and cultural and family values (n = 3), with several interventions addressing multiple mechanism clusters. n = 9 studies reported significant weight-related changes. Psychosocial and behavioral outcomes, when reported, showed improvements in health-related quality of life, family health routines, nutrition knowledge, and self-efficacy. This systematic review provides an integrative overview of family-based interventions utilising second-order level family mechanisms as structural and relational processes that may support the sustainability of change. The results offer a valuable framework for understanding how families regulate and maintain health behaviours beyond isolated behavioural components.
+
+---
+
+### 3. Assessment of functional impairment related to post-traumatic stress in children and adolescents: a systematic review.
+
+PMID: 42411712
+
+Journal: European journal of psychotraumatology
+
+Abstract:
+
+Background: Post-traumatic stress disorder (PTSD) often impairs children's and adolescents' functioning across different life domains. Significant functional impairment is a diagnostic criterion for PTSD in both the DSM-5 and the ICD-11, but the methods in terms of domains covered and scoring rules to assess functional impairments are quite inconsistent.
+
+Objective: This systematic review evaluates instruments specifically designed to assess post-traumatic stress symptoms (PTSS), PTSS modules within diagnostic interviews, and generic functional impairment measures used to capture PTSS-related functional impairment in children and adolescents.
+
+Method: A systematic search was conducted across six databases for studies published between January 2010 and November 2025. Eligible papers included the development or psychometric evaluation of PTSS-specific measures, PTSS modules in diagnostic interview, and generic functional impairment measures validated in samples exposed to trauma or adverse childhood experiences. Data were extracted and categorized based on assessed content domains, scoring methods, and psychometric properties, with results stratified by age group (6 years and younger versus 7 years and older).
+
+Results: From 3519 records, 30 papers met the inclusion criteria. Thirteen PTSS-specific instruments, one diagnostic interview module, and one generic functional impairment measure were identified. Together, these instruments assessed 11 different life domains, although considerable variation existed in the domains covered across tools. Scoring methods also varied, with approximately half using dichotomous response formats and the remainder using multi-categorical scales. Psychometric properties of the functional impairment scales were reported in only 20.7% of publications.
+
+Conclusion: Current tools for assessing PTSS-related functional impairment in youth lack standardization. There is a critical need for well-validated instruments that comprehensively capture the presence and severity of PTSS-related functional impairment.
+
+This systematic review identified and evaluated 15 instruments, comprising PTSS-specific measures, diagnostic interview modules, and generic functional impairment tools, used to assess PTSS-related functional impairment in children and adolescents.
+
+The instruments collectively assessed 11 different life domains; however, substantial variability existed in the domains covered, and scoring methods ranged from dichotomous formats to Likert-type scales.
+
+Only 20.7% of papers reported psychometric properties for functional impairment items, highlighting the critical need for standardized, developmentally appropriate tools with robust validation in children and adolescents with potentially traumatic experiences.
+
+Antecedentes: El trastorno de estrés postraumático (TEPT) suele afectar el funcionamiento de niños y adolescentes en diversos ámbitos de la vida. El deterioro funcional significativo es un criterio diagnóstico para el TEPT tanto en el DSM-5 como en la CIE-11, pero los métodos, en cuanto a los dominios que abarca y las reglas de puntuación para evaluar el deterioro funcional, son bastante inconsistentes. Objetivo: Esta revisión sistemática evalúa instrumentos diseñados específicamente para evaluar los síntomas de estrés postraumático (SEPT), los módulos de SEPT en entrevistas diagnósticas y las medidas genéricas de deterioro funcional utilizadas para capturar el deterioro funcional relacionado con el SEPT en niños y adolescentes. Método: Se realizó una búsqueda sistemática en seis bases de datos de estudios publicados entre enero de 2010 y noviembre de 2025. Los artículos elegibles incluyeron el desarrollo o la evaluación psicométrica de medidas específicas para el SEPT, módulos de SEPT en entrevistas diagnósticas y medidas genéricas de deterioro functional validadas en muestras expuestas a traumas o experiencias adversas en la infancia (ACEs por sus siglas en inglés). Se extrajeron y categorizaron los datos según los dominios de contenido evaluados, los métodos de puntuación y las propiedades psicométricas, con resultados estratificados por grupos de edad (seis años o menos frente a siete años o más). Resultados: De 3.519 registros, 30 artículos cumplieron los criterios de inclusión. Se identificaron trece instrumentos específicos para SEPT, un módulo de entrevista diagnóstica y una medida genérica de deterioro funcional. En conjunto, estos instrumentos evaluaron once dominios de la vida diferentes, aunque existía una variación considerable en los dominios cubiertos entre las distintas herramientas. Los métodos de puntuación también variaron: aproximadamente la mitad utilizó formatos de respuesta dicotómicos y el resto empleó escalas multi-categóricas. Las propiedades psicométricas de las escalas de deterioro funcional se reportaron en solo el 20,7 % de las publicaciones. Conclusión: Las herramientas actuales para evaluar el deterioro funcional relacionado con los síntomas de estrés postraumático en jóvenes carecen de estandarización. Existe una necesidad crítica de instrumentos bien validados que capturen de forma integral la presencia y la gravedad del deterioro funcional relacionado con los SEPT.
+
+---
+
+## 【第3部：候補論文スコア一覧】
+
+| PMID | タイトル | 総合スコア | 役立つか | 短いメモ |
+|---|---|---:|---|---|
+| 42394609 | Digital-Media Use and Mental Health in Children and Adolescents. | **18/20** | 高い | 年齢別のメディア相談、睡眠・発達・精神症状の評価に直接活用可能。 |
+| 42397486 | Family matters? A Systematic review of interventions addressing family-level mechanisms in the treatment of childhood and adolescent obesity. | **17/20** | 高い | 肥満支援を児個人から家族機能・養育行動へ拡張する根拠になる。 |
+| 42411712 | Assessment of functional impairment related to post-traumatic stress in children and adolescents: a systematic review. | **17/20** | 高い | PTSS評価で症状だけでなく生活機能を確認する重要性を示す。 |
+| 42470182 | Unveiling the Digital Maze: A Comprehensive Scoping Review on Problematic Media Use and Psychopathology in Children and Adolescents. | 14/20 | 中等度 | 64件の縦断研究を統合したが、因果方向は不明。42394609と重複するため除外。 |
+| 42450918 | The Impact of Recent Collective Trauma in Israel on Eating Disorders and Disordered Eating: An Overview and Clinical Perspective. | 12/20 | 中等度 | 集団的危機後の摂食障害増加を警告するが、地域特異性が高いナラティブレビュー。 |
+| 42512502 | Global Prevalence of Internet Gaming Disorder: An Umbrella Review of Meta-Analytic Evidence and Implications for Child and Adolescent Psychiatry. | 11/20 | 限定的 | IGDの頻度把握には有用だが、疫学中心で個別診療の変更には直結しない。 |
+| 42526069 | Biological and somatic outcomes of overprotection: A scoping review. | 9/20 | 限定的 | 過保護と身体的指標の関連を概観するが、因果関係は確立していない。 |
+| 42366259 | Prenatal and postnatal maternal obesity and their associations with child nutrition and weight outcomes: A systematic review. | 8/20 | 限定的 | 結果が不均一で、母親BMI単独を用いた診療変更は支持されない。 |
+| 42461702 | The use of Image and Performance-Enhancing Drugs (IPED) in behavioural addictions. | 7/20 | 限定的 | 思春期の身体像問題では参考になるが、小児データと介入エビデンスが乏しい。 |
+| 42494992 | Outcome strategies for clinical trials in Neuropaediatric rare diseases. | 6/20 | 低い | 希少疾患臨床試験の方法論であり、一般外来への直接的影響は小さい。 |
+| 42425118 | Multidisciplinary research priorities for artificial intelligence in mental health: a call to action. | 5/20 | 低い | AI研究・実装のロードマップであり、現時点の患者診療を変える内容ではない。 |
+| 42369196 | Air pollution and adverse birth outcomes: a narrative review of epidemiological and mechanistic findings. | 4/20 | 低い | 周産期・環境保健領域が中心で、小児心身症外来への直接性が低い。 |
+| 42403080 | Brain Aging in Specific Phobia: An ENIGMA-Anxiety Mega-Analysis. | 3/20 | 低い | 成人MRI観察研究で効果も小さく、小児診療への応用は困難。 |

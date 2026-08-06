@@ -1,0 +1,279 @@
+以下では、**小児一般外来での直接的な実用性、診療行動への影響、エビデンスの強さ**を優先し、25件から6件を選定しました。元データの「最終選定」区分でも、専門外来に偏るものや、代替指標のみで診療変更につながりにくいものは順位を下げています。fileciteturn0file0
+
+# 第1部：日本語要約
+
+---
+
+## 1. Canadian Network for Mood and Anxiety Treatments (CANMAT) and International College of Obsessive-Compulsive Spectrum Disorders (ICOCS) 2025 international guidelines for the management of patients with obsessive-compulsive disorder.
+
+**PMID**
+
+42441734
+
+**なぜ重要か**
+
+OCDの診断、心理療法、薬物療法、治療抵抗例を、小児・青年期を含むライフスパン全体で整理した国際診療ガイドラインである。小児科外来で見逃されやすい強迫症状の評価や、専門医紹介前後の治療方針を標準化するうえで重要性が高い。
+
+**臨床への影響**
+
+小児のOCDを疑った際に、曝露反応妨害法を含む認知行動療法、薬物療法、治療抵抗性の判断を系統的に検討できる。単なる不安、こだわり、発達特性として経過観察するのではなく、OCDとして評価・介入する契機になる。
+
+**診療変更の必要性**
+
+**Yes —** OCDのスクリーニング、重症度評価、心理療法への紹介経路を外来内で再確認する価値がある。
+
+---
+
+## 2. Non-surgical treatment for lower limb apophyseal injuries.
+
+**PMID**
+
+42454655
+
+**なぜ重要か**
+
+オスグッド・シュラッター病や踵骨骨端症など、小児科外来で頻繁に相談される下肢アポフィジス障害について、10件のRCTをまとめたコクランレビューである。多くの治療法について、効果の確実性が低いことを明確にした点が重要である。
+
+**臨床への影響**
+
+足底装具、ヒールリフト、テーピング、注射療法などの特定の介入を強く推奨する根拠は乏しい。疼痛に応じた活動調整、運動・ストレッチ、自然経過の説明を基本とし、高額な装具や侵襲的治療を過度に勧めない診療が支持される。
+
+**診療変更の必要性**
+
+**Yes —** 装具や局所治療をルーチンに勧めている場合は、治療効果の不確実性を説明する方針へ見直す。
+
+---
+
+## 3. Reducing Screen Time in Children With Borderline IQ: A Randomized Controlled Trial of a Parent-Mediated Screen Time Usage Module.
+
+**PMID**
+
+42530874
+
+**なぜ重要か**
+
+境界知能の4～12歳児を対象に、親を介した短時間のオンライン介入が、スクリーンタイムだけでなく睡眠、身体活動、行動面にも影響することを示したRCTである。発達・行動相談を扱う一般小児外来で実装しやすい介入である。
+
+**臨床への影響**
+
+単に「画面時間を減らしてください」と指導するより、保護者教育、端末設定、行動的ルール作りを組み合わせた構造化介入が有効である可能性がある。境界知能以外の児への一般化は未確立だが、外来指導の具体化に役立つ。
+
+**診療変更の必要性**
+
+**Yes —** スクリーンタイム指導を、時間制限だけでなく保護者主体の環境調整と行動計画に変更する。
+
+---
+
+## 4. A personalised online parenting intervention for adolescents at high risk of affective disorders: Results from the UK PIPA randomised controlled trial.
+
+**PMID**
+
+42456819
+
+**なぜ重要か**
+
+抑うつリスクの高い11～15歳を対象とした比較的大規模なRCTで、個別化オンライン子育て介入は、親の養育行動や親子関係を改善したものの、青年の抑うつ症状自体は改善しなかった。デジタル介入の限界を示す重要な陰性試験である。
+
+**臨床への影響**
+
+症状が既に強い青年に対して、保護者向けオンライン教育のみで抑うつ症状の改善を期待すべきではない。親支援は補助的介入と位置づけ、本人への評価、心理療法、精神科連携、リスク評価を省略しないことが必要である。
+
+**診療変更の必要性**
+
+**Yes —** 高リスク児では保護者支援だけに依存せず、本人への直接介入と安全性評価を組み合わせる。
+
+---
+
+## 5. Family-Centred Breastfeeding Interventions to Improve Exclusive Breastfeeding: A Systematic Review and Meta-Analysis.
+
+**PMID**
+
+42400223
+
+**なぜ重要か**
+
+19研究の系統的レビュー・メタ解析で、父親や祖父母など家族を含む母乳育児支援が、生後6か月までの完全母乳率を改善する可能性を示した。特に、妊娠期から産後まで継続する多要素介入の効果が大きかった。
+
+**臨床への影響**
+
+授乳指導を母親だけに行うのではなく、家族にも授乳継続の意義、役割分担、補足栄養に関する説明を行うことが有効と考えられる。ただし、完全母乳率のみを目標化し、母親への心理的圧力を強めない配慮が必要である。
+
+**診療変更の必要性**
+
+**Yes —** 乳児健診時の授乳支援に、父親・祖父母を含めた家族単位の説明を取り入れる。
+
+---
+
+## 6. Impact of telemonitoring on glycemic control and quality of life in pediatric patients with type 1 diabetes, single center interventional control study.
+
+**PMID**
+
+42332616
+
+**なぜ重要か**
+
+小児1型糖尿病140例のRCTで、週1回の電話相談を行うテレモニタリングが、通常外来と比較してHbA1c、DKA、QOLを改善した。診察間の継続的支援が臨床転帰を変え得ることを示している。
+
+**臨床への影響**
+
+専門外来中心の知見ではあるが、慢性疾患管理では、定期受診だけでなく電話やオンラインによる短いフォローを組み合わせる意義が示唆される。ただし、単施設・6か月の研究であり、DKA発生率の大きな群間差については再現性の確認が必要である。
+
+**診療変更の必要性**
+
+**Yes —** 糖尿病など高リスク慢性疾患で、受診間の遠隔フォロー体制を導入できるか検討する。
+
+# 第2部：英語Abstract
+
+---
+
+## 1. Canadian Network for Mood and Anxiety Treatments (CANMAT) and International College of Obsessive-Compulsive Spectrum Disorders (ICOCS) 2025 international guidelines for the management of patients with obsessive-compulsive disorder.
+
+**PMID:** 42441734  
+**Journal:** Journal of psychiatric research
+
+**Abstract:**
+
+BACKGROUND: As a joint effort by the Canadian Network for Mood and Anxiety Treatments (CANMAT) and the International College of Obsessive-Compulsive Spectrum Disorders (ICOCS), these treatment guidelines provide an up-to-date synthesis of published literature on the efficacy, safety, and tolerability of the range of interventions available for the management of obsessive-compulsive disorder (OCD) across the lifespan. The primary goal is to provide clear, easy to use recommendations for practicing clinicians.
+
+METHODS: A global group of OCD experts were divided into panels to develop specific sections based on internal group discussions and the evidence extracted from systematic literature searches. CANMAT-defined Levels of Evidence, as well as level of clinical support were used to inform Lines of Treatment and final treatment recommendations. Drafts were revised based on feedback from individuals with lived experience, expert peer review, and a defined expert consensus process.
+
+RESULTS: These OCD Guidelines include seven sections spanning foundations of management and diagnosis, psychological, pharmacological, and neuro-modulation treatment modalities, treatment resistance, children and adolescents, special populations and future directions. Recommendations are summarized in tables for ease of reference and caveats and limitations of the current evidence are discussed.
+
+CONCLUSIONS: The CANMAT/ICOCS 2025 OCD International Guidelines synthesize the evidence on the efficacy, safety, and tolerability of the range of interventions available for the management of OCD. It is anticipated that these new OCD guidelines will enable psychiatrists and other clinicians to provide systematic, evidence-based care for their patients with OCD across the lifespan.
+
+---
+
+## 2. Non-surgical treatment for lower limb apophyseal injuries.
+
+**PMID:** 42454655  
+**Journal:** The Cochrane database of systematic reviews
+
+**Abstract:**
+
+RATIONALE: Lower limb apophyseal injuries are common in children and adolescents. The most common are traction apophysitis of the tibial tubercle and calcaneal apophysis. Various treatments are used for apophyseal conditions. This review provides information for health professionals and families who are deciding on treatment.
+
+OBJECTIVES: To assess the benefits and harms of non-surgical treatment versus placebo, no treatment, or another treatment on overall pain, physical function, or participation in physical activity in children and adolescents with lower limb apophyseal injuries.
+
+SEARCH METHODS: We searched the following databases with no language restrictions up to 4 January 2025: Cochrane Central Register of Controlled Trials (CENTRAL; 2025, Issue 1) via Ovid, MEDLINE Ovid, Embase Ovid, CINAHL Plus, ClinicalTrials.gov (clinicaltrials.gov), and World Health Organization's International Clinical Trials Registry Platform (ICTRP) (www.who.int/ictrp/en/).
+
+ELIGIBILITY CRITERIA: We searched for randomised controlled trials (RCTs) reported in full text, abstract form, or as unpublished data.
+
+OUTCOMES: Our critical outcomes were overall pain, physical function, participation in sport, withdrawals due to adverse events, and serious adverse events. The primary time point was up to three months for overall pain, physical function, and participation in sport (measured in days), and the end of the trial period for adverse event outcomes.
+
+RISK OF BIAS: We assessed the risk of bias (RoB) in the findings using the Cochrane tool RoB 2.
+
+SYNTHESIS METHODS: We calculated the standardised mean difference (SMD) or mean difference (MD) for continuous outcomes. We used the random-effects model to combine data and quantified heterogeneity using the I² statistic. When we were unable to pool data, we described results narratively. We assessed the certainty of the evidence using GRADE.
+
+INCLUDED STUDIES: We included 10 RCTs, seven on calcaneal apophysitis and three on traction apophysitis of the tibial tubercle. The studies involved 654 children, whose mean age was 10.3 to 13.3 years. Most of the participants were male (73%). Six studies compared intervention versus placebo or no treatment (or both), and five studies compared one intervention versus another. In the studies reporting our critical outcomes, there were five intervention groups: pharmaceutical interventions (e.g. dexamethasone), taping, foot orthoses/heel straps, heel lifts, and heel cushioning. Placebo interventions were lidocaine injections, saline via iontophoresis, or non-stretch tape. 'Usual care' comparators were poorly described but included exercise, stretches, nonsteroidal anti-inflammatories, and massage.
+
+SYNTHESIS OF RESULTS: Pharmaceutical intervention versus placebo for children with traction apophysitis of the tibial tubercle Compared to placebo, the evidence is very uncertain about the effects of dexamethasone on overall pain (MD -0.52, 95% CI -1.24 to 0.20; 1 study, 23 participants; very low-certainty evidence), physical function (MD -1.76, 95% CI -16.08 to 12.56; 1 study, 19 participants; very low-certainty evidence), and participation in sport (MD 7.90, 95% CI -0.41 to 16.21; 1 study, 16 participants; very low-certainty evidence) in the short term. The evidence is very uncertain about adverse events in the studies of dexamethasone or dextrose versus placebo (RR 1.31, 95% CI 0.88 to 1.96; 2 studies, 74 participants; very low-certainty evidence). Withdrawals due to adverse events were not measured. Pharmaceutical intervention versus usual care for children with traction apophysitis of the tibial tubercle Compared to usual care, the evidence is very uncertain about the effects of dexamethasone on overall pain (MD -0.80, 95% CI -1.73 to 0.13; 1 study, 21 participants; very low-certainty evidence), physical function (MD 2.68, 95% CI -17.56 to 22.92; 1 study, 16 participants; very low-certainty evidence), and participation in sport (MD 0.85, 95% CI -7.13 to 8.83; 1 study, 11 participants; very low-certainty evidence) in the short term. The evidence is very uncertain about adverse events in the study of dexamethasone versus usual care (RR 1.36, 95% CI 0.88 to 2.10; 1 study, 30 participants; very low-certainty evidence). Withdrawals due to adverse events were not measured. Taping versus placebo for children with calcaneal apophysitis Compared to placebo, the evidence is very uncertain about the effects of Kinesio tape on overall pain (MD 0.10, 95% CI -1.25 to 1.45; 1 study, 22 participants; very low-certainty evidence) and physical function (MD 6.10, 95% CI -0.08 to 12.28; 1 study, 22 participants; very low-certainty evidence) in the short term. Participation in sport, adverse events, and withdrawals due to adverse events were not measured. Foot orthoses versus heel lifts for children with calcaneal apophysitis Compared to heel lifts, foot orthoses likely result in little to no difference in overall pain (MD 0.00, 95% CI -0.44 to 0.44; 1 study, 123 participants; moderate-certainty evidence) or physical function (MD -1.30, 95% CI -7.58 to 4.98; 1 study, 124 participants; moderate-certainty evidence) in the short term. There were no adverse events reported (11 studies, 101 participants; moderate-certainty evidence). Participation in sport and withdrawals due to adverse events were not measured. Heel cushioning versus heel braces for children with calcaneal apophysitis Compared to a heel strap, the evidence is very uncertain about the effect of heel cushioning on physical function in the short term (MD -2.00, 95% CI -12.48 to 8.48; 1 study, 43 participants; very low-certainty evidence) and on adverse events (RR 1.05, 95% CI 0.07 to 15.69; 1 study, 43 participants; very low-certainty evidence). Overall pain, participation in sport, and withdrawals due to adverse events were not measured. Certainty of the evidence We downgraded our certainty level for most of the evidence because of risk of bias, imprecision, and possible publication bias.
+
+AUTHORS' CONCLUSIONS: Evidence for non-surgical treatment of lower limb apophyseal injuries is limited. We rated it mostly low to very low certainty. The studies included in this review had heterogeneous outcomes, which restricted meaningful synthesis. Outcomes were primarily focused on pain, physical function, or activity participation, and the studies did not specifically target children who had persistent symptoms of apophysitis causing functional limitations. None of the trials measured quality of life, even though cohort studies have previously reported that apophyseal injuries can impact this long-term. Nor did the trials examine economic impacts, despite the costs of non-surgical treatments for apophyseal conditions to families and healthcare systems.
+
+FUNDING: None REGISTRATION: Protocol DOI: https://doi.org/10.1002/14651858.CD015156.
+
+---
+
+## 3. Reducing Screen Time in Children With Borderline IQ: A Randomized Controlled Trial of a Parent-Mediated Screen Time Usage Module.
+
+**PMID:** 42530874  
+**Journal:** The primary care companion for CNS disorders
+
+**Abstract:**
+
+Objective: The rapid expansion of mobile technology has significantly altered children's screen time behaviors, contributing to concerns about excessive usage. These changes are particularly relevant for children with borderline intellectual functioning, in whom unmanaged screen time may exacerbate developmental challenges. This study aimed to evaluate the effectiveness of a parent-mediated screen time usage module (PM-STUM) in reducing screen time and improving physical activity levels, sleep quality, and behavioral outcomes in children aged 4-12 years with borderline IQ.
+
+Methods: A randomized controlled trial was conducted with 60 children diagnosed with borderline IQ, recruited from a child and adolescent psychiatry outpatient department at a tertiary care hospital in North India. Participants were randomly allocated to intervention and control groups. The PM-STUM was delivered online to parents through 3 interactive sessions, each lasting 50-60 minutes, addressing the adverse effects of excessive screen time, general guidelines for regulation, technological management, and behavioral strategies for moderating screen time. Screen time was assessed using a 24-hour screen time diary, sleep quality was measured via the Children's Sleep Habits Questionnaire, behavioral outcomes were evaluated using the Strengths and Difficulties Questionnaire, and physical activity was assessed using a standardized physical activity questionnaire. Data were collected between July 15 and September 15, 2023, with outcome assessment conducted 6 weeks postintervention.
+
+Results: Repeated-measures analysis of variance indicated significant reductions in children's screen time (P <.05, η2P=0.4), improvements in physical activity (P <.05, η2P=0.2), enhancements in sleep quality (P <.05, η2P=0.3), and reductions in behavioral difficulties (P <.05, η2P=0.2) in the intervention group compared to controls.
+
+Conclusion: The PM-STUM demonstrated significant efficacy in reducing screen time and improving associated behavioral and health outcomes among children with borderline IQ. These findings underscore the importance of parent-mediated interventions in managing screen time and fostering healthier behavioral patterns in vulnerable pediatric populations.
+
+Trial Registry: Clinical Trials Registry, India: CTRI/2023/08/056180. Prim Care Companion CNS Disord 2026;28(4):25m04135. Author affiliations are listed at the end of this article.
+
+---
+
+## 4. A personalised online parenting intervention for adolescents at high risk of affective disorders: Results from the UK PIPA randomised controlled trial.
+
+**PMID:** 42456819  
+**Journal:** Journal of affective disorders
+
+**Abstract:**
+
+BACKGROUND: Depression and anxiety commonly emerge during adolescence and are associated with substantial personal, social, and economic burden. Parenting practices are well-established modifiable risk and protective factors for adolescent affective disorders, yet many parents lack access to evidence-based guidance. Digital parenting interventions offer a potentially scalable approach, but evidence for their effectiveness in high-risk adolescent populations remains limited.
+
+METHODS: The PIPA Trial was a school-based, UK-wide, two-arm randomised controlled trial evaluating a personalised online parenting programme compared with a standard educational parenting package. Parent-adolescent dyads were eligible if adolescents aged 11-15 years scored ≥7 on the Short Mood and Feelings Questionnaire (SMFQ). The primary outcome was change in parent-reported adolescent depressive symptoms (SMFQ) from baseline to 15 months. Secondary outcomes included parenting practices, parent-child attachment, adolescent anxiety, wellbeing, and parent wellbeing.
+
+RESULTS: A total of 512 dyads were randomised, with 510 included in intention-to-treat analyses. Adolescents presented with elevated baseline depressive symptoms and substantial prior mental health difficulties. Depressive symptoms declined over time in both trial arms, with no significant between-group difference at 15 months (adjusted difference - 0.12 SMFQ points, 95% CI -1.23 to 0.98). In contrast, parents allocated to the personalised programme showed greater improvements in guideline-concordant parenting practices and parent-child attachment. Engagement was modest, and over 40% of adolescents triggered duty-of-care procedures due to elevated risk during the trial.
+
+CONCLUSIONS: In this high-risk UK sample, a personalised digital parenting programme improved parenting practices but did not reduce adolescent depressive symptoms beyond an active educational control. These findings highlight the importance of matching intervention intensity to baseline symptom severity and support the role of digital parenting programmes as part of stepped prevention and early intervention frameworks.
+
+TRIAL REGISTRATION: ISRCTN63358736.
+
+---
+
+## 5. Family-Centred Breastfeeding Interventions to Improve Exclusive Breastfeeding: A Systematic Review and Meta-Analysis.
+
+**PMID:** 42400223  
+**Journal:** Nursing open
+
+**Abstract:**
+
+AIMS: To explore the effects of different family breastfeeding interventions on improving exclusive breastfeeding rates from 0 to 6 months postpartum and to identify the key characteristics of effective interventions.
+
+METHODS: This systematic review and meta-analysis follows the Cochrane Handbook for Systematic Reviews of Interventions. The risk of bias in the included studies was assessed using the Cochrane Risk of Bias 2 (RoB 2) tool.
+
+RESULTS: Nineteen studies were included in this systematic review. Family-based interventions significantly improved exclusive breastfeeding rates at 6 months postpartum compared with routine care (OR = 2.93, 95% CI [1.90, 4.50], p < 0.001). Interventions underpinned by theoretical frameworks enhanced exclusive breastfeeding within 2 months postpartum compared with non-theoretical ones (OR = 5.50, 95% CI [2.30, 13.19], p < 0.001). Multi-component interventions were more effective than single-method approaches (OR = 2.70, 95% CI [2.04, 3.57], p < 0.001). Programmes spanning both prenatal and postnatal periods achieved higher exclusive breastfeeding rates at 4-6 months than those implemented in a single phase (OR = 4.84, 95% CI [2.50, 9.40], p < 0.001).
+
+CONCLUSIONS: Family-based breastfeeding interventions could improve exclusive breastfeeding rates within the first 6 months postpartum. Future breastfeeding interventions should include key family members, consider the guidance of theoretical frameworks on the intervention design, cover both the prenatal and postnatal periods, and use multiple methods to meet the needs of breastfeeding families.
+
+IMPLICATIONS FOR NURSING PRACTICE: Nurses, midwives, lactation nurses, and public health nurses should actively involve fathers, grandparents, and other key family members in breastfeeding education and support. Family-centred breastfeeding interventions may help improve exclusive breastfeeding outcomes and strengthen family support for breastfeeding.
+
+REGISTRATION: Not registered.
+
+---
+
+## 6. Impact of telemonitoring on glycemic control and quality of life in pediatric patients with type 1 diabetes, single center interventional control study.
+
+**PMID:** 42332616  
+**Journal:** BMC pediatrics
+
+**Abstract:**
+
+BACKGROUND: Telehealth initiatives offer valuable alternatives for enhancing diabetes management and clinician-patient engagement. This study compared two diabetes education approaches for glycemic outcomes: standard method includes regular physical visits at outpatient clinic versus telemonitoring.
+
+METHODS: We conducted an interventional trial involving 140 pediatric patients with Type 1 diabetes (T1D), who were equally randomized into a telecounseling group (Intervention group, n = 70) and a standard care group (Control group, n = 70). Participants in Intervention group received weekly telephone consultations from diabetes educators, during which glucose records, dietary patterns, and insulin dose adjustments were reviewed. Control group received diabetes education during routine outpatient clinic visits. Both groups were followed up initially at the start of the study and at 6 months. Socioeconomic status and quality of life (QoL) were assessed in all participants.
+
+RESULTS: Glycemic control differed significantly between groups. Mean HbA1c values were 8.21 ± 1.82 SDS (Intervention group) versus 9.25 ± 2.22 SDS (Control group). Diabetic ketoacidosis (DKA) episodes were higher in Control group (18%) vs. (1.7%) in Intervention group, p = 0.001. Complication rates (lipodystrophy, proteinuria, dyslipidemia) were elevated in Control group (37.7%) vs. (15.5%) in Intervention group, p = 0.01. Intervention group demonstrated significantly improved QoL scores (p = 0.002).
+
+CONCLUSION: The telemedicine strategy helped to achieve significantly greater HbA1c reductions and fewer diabetes-related complications versus conventional care.
+
+# 第3部：候補論文スコア一覧
+
+| PMID | タイトル | 総合スコア | 役立つか | 短いメモ |
+|---|---|---:|---|---|
+| 42332616 | Impact of telemonitoring on glycemic control and quality of life in pediatric patients with type 1 diabetes | 20 | 高い | 遠隔継続支援でHbA1c・DKA・QOL改善。単施設で要検証 |
+| 42333002 | The impact of topical or oral antibiotics in children with acute otitis media on their microbiomes | 13 | 限定的 | 微生物叢の差が中心で、症状改善や治療失敗の比較が不十分 |
+| 42335182 | Improving the field accuracy of a malaria diagnostic algorithm | 11 | 国内では低い | 流行地域では有用だが、日本の一般小児外来への適用性が低い |
+| 42336388 | 2026 BSR guideline for systemic lupus erythematosus | 16 | 専門外来向け | 高品質ガイドラインだが、一般外来での使用頻度は低い |
+| 42350025 | Guided self-determination intervention in type 2 diabetes | 5 | 低い | 成人2型糖尿病研究で小児への直接性なし |
+| 42369372 | Propofol with or without esketamine for flexible bronchoscopy | 6 | 低い | 成人処置鎮静であり、小児一般外来には適用困難 |
+| 42379707 | Economic evaluation protocol of the healthy life trajectories initiative | 5 | 低い | プロトコルで結果未報告 |
+| 42392357 | Blood-based microRNAs as biomarkers of insulin resistance in childhood obesity | 11 | 将来的 | バイオマーカー候補だが臨床導入段階ではない |
+| 42400223 | Family-Centred Breastfeeding Interventions | 19 | 高い | 家族参加・多要素・妊娠期からの継続支援を支持 |
+| 42418203 | Intermittent Theta-Burst Stimulation in major depressive disorder | 5 | 低い | 成人研究で効果持続も不明確 |
+| 42428256 | Prenatal Smoking Exposures and Epigenome-Wide Methylation | 10 | 限定的 | 禁煙指導を補強するが、直接的な診療変更は少ない |
+| 42430720 | Emerging Biologics in Osteogenesis Imperfecta | 12 | 専門外来向け | BMD改善はあるが骨折減少未証明。稀少疾患・異質性大 |
+| 42431662 | Collaboration model for trauma-exposed children | 8 | 将来的 | 重要なテーマだが研究プロトコルで結果未報告 |
+| 42441734 | CANMAT/ICOCS OCD international guidelines | 22 | 非常に高い | 小児OCDの診断・心理療法・薬物療法を包括 |
+| 42454655 | Non-surgical treatment for lower limb apophyseal injuries | 21 | 非常に高い | 頻度の高い疾患で、装具等の効果が不確実と整理 |
+| 42456819 | Personalised online parenting intervention for high-risk adolescents | 20 | 高い | 親支援だけでは抑うつ改善せず。介入強度の判断に重要 |
+| 42475133 | Delivery Model Matters for Digital Interventions in Pain Self-Management | 6 | 低い | 成人慢性疼痛研究。支援付きデジタル介入の概念は参考 |
+| 42476581 | BSR guideline for pain management in inflammatory arthritis | 14 | 専門外来向け | 包括的だが炎症性関節炎患者に限定 |
+| 42479237 | Intranasal dexmedetomidine vs nitrous oxide in JIA | 13 | 限定的 | 小児処置鎮静として興味深いが実施施設が限定 |
+| 42487142 | Psychotherapeutic group intervention for Post-COVID-19 condition | 4 | 低い | 成人・小規模の陰性試験 |
+| 42489742 | Vitamin D supplementation for depression and anxiety | 13 | 中等度 | 全体の抑うつ改善なし。サブグループ所見は探索的 |
+| 42503908 | APASL chronic hepatitis B guideline 2026 | 14 | 中等度 | アジア地域で重要だが小児推奨の詳細が抄録から不明 |
+| 42520034 | Pilot RCT of RICAP for child conduct problems | 12 | 将来的 | 親・教師評価が不一致。パイロット段階 |
+| 42530874 | Reducing Screen Time in Children With Borderline IQ | 20 | 高い | 保護者介入で画面時間・睡眠・行動改善。短期小規模 |
+| 42533012 | Pilates and breastfeeding positioning in women | 6 | 低い | 母体理学療法が中心で小児外来への直接性が低い |

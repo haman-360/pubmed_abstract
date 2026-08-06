@@ -1,0 +1,88 @@
+# 第1部：日本語要約
+
+---
+
+① Expert consensus on the management of nocturnal enuresis in children.
+
+② PMID
+
+42432408
+
+③なぜ重要か
+
+夜尿症の診断、単一症候性・非単一症候性の分類、排尿日誌、初期治療、難治例対応までを18の推奨として整理した実践的コンセンサスです。外来における評価と治療手順の標準化に最も直結します。
+
+④臨床への影響
+
+昼間の下部尿路症状を確認してMNEとNMNEを区別し、夜間多尿ではデスモプレシン、膀胱容量低下ではアラーム療法を選択するという病態別アプローチを再確認できます。NMNEでは夜尿そのものより昼間症状を先に治療する方針が明確です。
+
+⑤診療変更の必要性
+
+**Yes — 初診時の分類、排尿日誌、病態別第一選択治療を診療フローとして統一する価値があります。**
+
+---
+
+① Second- and third-line treatment options for refractory monosymptomatic enuresis in children: a scoping review.
+
+② PMID
+
+42472999
+
+③なぜ重要か
+
+第一選択治療に反応しない単一症候性夜尿症について、17研究・計1,348例を対象に二次・三次治療を整理したレビューです。難治例で安易に薬剤を追加する前に、現在のエビデンスの限界を把握するうえで重要です。
+
+④臨床への影響
+
+抗コリン薬、β3受容体作動薬、イミプラミン、バイオフィードバック、神経刺激などに一定の反応が報告されていますが、研究の異質性とバイアスが大きく、特定の治療アルゴリズムを支持できません。難治例では診断・アドヒアランス・夜間多尿・膀胱容量・昼間症状を再評価し、専門医紹介を含めて慎重に対応すべきことを示します。
+
+⑤診療変更の必要性
+
+**Yes — 難治例に対する経験的な多剤追加を避け、再評価と専門診療への移行を重視します。**
+
+---
+
+# 第2部：英語Abstract
+
+---
+
+1. Expert consensus on the management of nocturnal enuresis in children.
+
+PMID: 42432408
+
+Journal: World journal of pediatrics : WJP
+
+Abstract:
+
+BACKGROUND: Nocturnal enuresis (NE) is a common condition in childhood that can adversely affect children's physical and psychological health. Since the publication of the "Expert Consensus on the Management of Monosymptomatic Nocturnal Enuresis in Chinese Children" in 2014, substantial clinical experience has been accumulated and international guidelines have been updated, necessitating a revision to standardize and improve clinical management.
+
+METHODS: This consensus was developed by the Chinese Cooperative Group for the Management of Pediatric Nocturnal Enuresis, the Pediatric Nephrology Committee of the Chinese Medical Doctor Association using the Delphi method. A core writing group of nine experts drafted statements based on a synthesis of current evidence. These were subjected to iterative voting by 42 multidisciplinary panelists to achieve consensus, defined as ≥ 90% agreement.
+
+RESULTS: The consensus provides 18 key recommendations. It updates the diagnostic criteria for children aged ≥ 5 years with at least one involuntary void per month for three months. It emphasizes classification into monosymptomatic (MNE) or nonmonosymptomatic (NMNE) NE based on daytime lower urinary tract symptoms. Recommendations cover comprehensive evaluation (history, physical exam, voiding diary), basic management (education, lifestyle), and first-line treatment (desmopressin for nocturnal polyuria, alarm therapy for reduced bladder capacity). Strategies for treatment-resistant cases, management of NMNE (prioritizing daytime symptoms), and the role of primary care and traditional Chinese medicine are outlined.
+
+CONCLUSIONS: This expert consensus provides an updated, evidence-based, and practical framework for the diagnosis and management of childhood NE. It aims to harmonize clinical practice, promote individualized care, and improve patient outcomes through standardized recommendations.
+
+---
+
+2. Second- and third-line treatment options for refractory monosymptomatic enuresis in children: a scoping review.
+
+PMID: 42472999
+
+Journal: European journal of pediatrics
+
+Abstract:
+
+Around one-third of patients with monosymptomatic nocturnal enuresis (MNE) do not respond to conventional first-line treatments. Although international guidelines outline second- and third-line treatment options, these recommendations may not fully address the needs of every case encountered in daily practice. Therefore, the question of which treatment strategy should be used for refractory cases remains unanswered. We conducted a scoping review (PROSPERO CRD420251171197) following PRISMA Extension for Scoping Reviews (PRISMA-ScR), searching the PubMed, Embase, Ovid MEDLINE, Scopus, Web of Science, Google Scholar, CINAHL and the Cochrane Library databases to identify all published reports of treatment for refractory MNE in paediatric patients up to March 2026. Eligible studies included randomized controlled trials and prospective or retrospective observational cohort studies written in English. The primary outcome was the number of wet nights (classified as complete, partial or no response according to the ICCS criteria). Secondary outcomes included a comparison of the efficacy of second- and third-line treatment options if enough data could be found. The Cochrane RoB 2 tool was used to assess the risk of bias in randomized clinical trials, and the Methodological Index for Non-Randomized Studies (MINORS) was used for non-randomized cohort studies. Following screening and eligibility assessment, 17 out of 2578 articles met the PICO inclusion criteria. The included studies enrolled a total of 1348 children and adolescents with mean ages ranging from approximately 8 to 17 years. Many of the second- or third-line treatments described in the literature were excluded due to incorrect methodology, study design or patient population. The results showed that, following first-line treatment, a combination of biofeedback, electrical nerve stimulations, anticholinergics (e.g. oxybutynin, tolterodine, solifenacin), β3-adrenoceptor agonists (e.g. vibegron), tricyclic antidepressants (e.g. imipramine) and selective serotonin reuptake inhibitor (e.g. fluoxetine) improved both partial response (PR) and complete response (CR) at varying rates across highly heterogeneous interventions and study populations. However, the evidence does not strongly support a treatment algorithm. Furthermore, reports on electro-acupuncture, furosemide, onabotulinumtoxin A injections or the herbal medicine 'shokenchuto' were considered unreliable for pure refractory MNE, despite improvements in PR and CR occurring at different rates. Conclusion: The question of which treatment strategy should be used for refractory cases remains unanswered due to a lack of sufficiently unbiased, prospective, randomized, controlled studies involving long-term follow-up. Some second- and third-line treatment options may improve PR and CR rates, despite the limited available evidence to support a treatment algorithm. However, further research is needed to confirm these benefits.
+
+---
+
+# 第3部：候補論文スコア一覧
+
+| PMID | タイトル | 総合スコア | 役立つか | 短いメモ |
+|---|---|---:|---|---|
+| 42432408 | Expert consensus on the management of nocturnal enuresis in children. | 20/25 | 非常に役立つ | 診断、MNE/NMNE分類、排尿日誌、第一選択治療、難治例対応を包括的に整理。中国の専門家コンセンサスである点には留意。 |
+| 42472999 | Second- and third-line treatment options for refractory monosymptomatic enuresis in children: a scoping review. | 18/25 | 役立つ | 難治性MNEの治療選択肢を整理。エビデンス不足を明確に示し、安易な治療追加を抑制する実践的価値がある。 |
+| 42453518 | Modern management of pediatric nocturnal enuresis: Evidence-based treatment and practical guidance. | 16/25 | 役立つが次点 | 病態に基づく実践的レビューだが、選定したコンセンサスと内容が重複し、抄録だけでは具体的推奨やエビデンス確実性が不明。 |
+| 42484710 | Genetic and biological mechanisms of pediatric enuresis: integrating pathophysiology, GWAS associations, and multi-omics research. | 11/25 | 現時点では限定的 | 病態理解には有用だが、GWAS・多層オミックスは研究段階で、一般外来の検査・治療変更には直結しない。 |
+
+出典：アップロードされたPubMed全件アーカイブ。fileciteturn0file0

@@ -1,0 +1,56 @@
+今回の8報では、**外来小児腎臓診療を直ちに変更する論文はありません**。その中で、疾患特異性と将来の治療試験への重要性から、ARPKDのMRIレビュー1報のみを選定しました。入力データに含まれる情報だけで評価しています。fileciteturn0file0
+
+:::writing{variant="document" id="68314"}
+# 第1部：日本語要約
+
+---
+
+## ① Advanced MRI methods for children and young adults with autosomal recessive polycystic kidney disease (ARPKD) to support future multi-center clinical trials.
+
+②PMID
+
+42517885
+
+③なぜ重要か
+
+ARPKDでは、腎機能や肝病変の進行を早期かつ非侵襲的に捉えるバイオマーカーが不足しており、治療介入試験の大きな障壁となっています。本レビューは、被曝や造影剤を避けながら腎・肝の構造と機能を定量化できる新しいMRI手法を整理しています。
+
+④臨床への影響
+
+現時点で一般外来の検査手順を変更する段階ではありませんが、ARPKD患者を専門施設で長期フォローする際の画像評価や、将来の疾患修飾薬の臨床試験設計を理解するうえで重要です。高度MRIを通常診療に導入するには、施設間での撮像・解析手法の標準化が必要です。
+
+⑤診療変更の必要性
+
+No ― 現時点では研究用画像バイオマーカーの位置づけであり、通常の外来フォローを変更する根拠はありません。
+
+---
+
+# 第2部：英語Abstract
+
+---
+
+## 1. Advanced MRI methods for children and young adults with autosomal recessive polycystic kidney disease (ARPKD) to support future multi-center clinical trials.
+
+PMID: 42517885
+
+Journal: Pediatric radiology
+
+Abstract:
+
+Autosomal recessive polycystic kidney disease (ARPKD) is a rare, genetic ciliopathy with significant associated morbidity and mortality. ARPKD kidney disease is characterized by diffuse kidney fusiform collecting duct dilatations (microcysts) leading to progressive kidney dysfunction. Patients with ARPKD can also develop clinically-significant congenital hepatic fibrosis and portal hypertension. Despite advances in clinical management, there are currently no disease-modifying therapies approved for ARPKD, and the development of clinical trials has been limited by the lack of sensitive, non-invasive biomarkers capable of detecting early disease progression in both the kidney and liver. MRI provides a unique opportunity to address this gap by offering multiparametric, quantitative assessments of tissue structure and function without ionizing radiation or, in many cases, contrast agents. This review summarizes emerging quantitative MRI-based techniques that show promise as imaging biomarkers for children and young adults with ARPKD. These advanced MRI approaches enable comprehensive characterization of the multi-faceted structural and functional changes in the kidney and liver associated with ARPKD. Continued development and harmonization of these quantitative imaging biomarkers across institutions will be critical for enabling multi-center studies and supporting future therapeutic trials aimed at improving outcomes for children and young adults with ARPKD.
+
+---
+
+# 第3部：候補論文スコア一覧
+
+| PMID | タイトル | 総合スコア | 役立つか | 短いメモ |
+|---|---|---:|---|---|
+| 42517885 | Advanced MRI methods for children and young adults with autosomal recessive polycystic kidney disease (ARPKD) to support future multi-center clinical trials. | 11/20 | 中 | **選定。** ARPKDに直接関連する小児レビュー。将来の臨床試験には重要だが、現時点で通常診療への導入は困難。 |
+| 42521825 | Epigenetic regulation of kidney development. | 5/20 | 低 | 腎発生の基礎的理解には有用だが、エピジェネティクスを中心とした基礎研究レビューで、外来診療への直接的影響はない。 |
+| 42525046 | Continuous renal replacement therapy for septic shock: practicalities for a pediatric intensivist. | 8/20 | 低 | HVHFの安易な導入に注意を促す点は重要。ただし対象はPICUの敗血症性ショックであり、外来小児腎臓との関連は小さい。 |
+| 42526992 | Beyond Glycemia in T1D: The Hidden Burden of Insulin Resistance and Cardiorenal Risk in Type 1 Diabetes-Part 1. | 6/20 | 低 | 1型糖尿病の心腎リスクを扱う概念的レビュー。小児に限定されず、具体的な検査・治療変更の提案に乏しい。 |
+| 42526993 | Beyond Glycemia in T1D: Insulin Resistance and Multiorgan Injury in Type 1 Diabetes-Part 2. | 8/20 | 低～中 | 心血管・腎・代謝を統合した評価を提唱するが、具体的な小児スクリーニング基準や介入効果は示されていない。 |
+| 42532550 | Anakinra for intravenous immunoglobulin-resistant Kawasaki disease: a systematic literature review. | 9/20 | 中 | 系統的レビューだが、根拠は主に症例報告・小規模集積。難治性川崎病としては重要だが、小児腎臓領域から外れる。 |
+| 42534990 | Post-quantum cryptography for healthcare: securing medical data, connected devices, and digital health infrastructure. | 2/20 | 低 | 医療情報セキュリティのレビューであり、腎疾患および臨床診療との直接的関連がない。 |
+| 42535642 | Empirical antibiotic use in nonsurgical patients with indwelling urinary catheters: a systematic review. | 5/20 | 低 | 対象が主に成人の留置カテーテル患者で、小児データが示されていない。エビデンスも4研究のみで結論不十分。 |
+:::

@@ -1,0 +1,98 @@
+# 第1部：日本語要約
+
+---
+
+## 1. Electronic Cigarettes: A Comprehensive Review for Primary Care Providers.
+
+**PMID**
+
+42521372
+
+**なぜ重要か**
+
+電子タバコは、従来の喫煙歴がない思春期・若年成人にも普及しており、ニコチン依存、他の物質使用、気分障害、呼吸器・循環器への悪影響が懸念される。本レビューは、プライマリケア医が把握すべきリスクと介入の基本を簡潔に整理している。
+
+**臨床への影響**
+
+思春期診療では、紙巻きタバコだけでなく、電子タバコやvapingについても明示的に問診する必要がある。「紙巻きタバコより安全」という認識を修正し、使用中の患者には依存や健康影響について助言することが推奨される。
+
+**診療変更の必要性**
+
+**Yes — 思春期の生活歴・HEADSS問診に電子タバコ使用を独立項目として追加する。**
+
+---
+
+## 2. Promoting Early Relational Health in Primary Care: A Scoping Review of Interventions and Evidence Gaps.
+
+**PMID**
+
+42532375
+
+**なぜ重要か**
+
+養育者と子どもの応答的な関係性は、言語、社会情緒発達、長期的なウェルビーイングの基盤となる。本レビューは、小児プライマリケアに組み込まれた早期関係性健康への介入18研究を整理し、通常診療への実装可能性を示している。
+
+**臨床への影響**
+
+乳幼児健診や一般外来で、養育者の応答性、育児自己効力感、親子の相互作用を意識して評価し、肯定的なフィードバックや地域資源への接続を行う根拠になる。ただし、小規模研究、親報告中心、短期間の追跡が多く、特定の介入プログラムを標準診療として採用するには根拠が不十分である。
+
+**診療変更の必要性**
+
+**Yes — 乳幼児健診に親子関係性の観察と短い養育支援を組み込む。ただし特定プログラムの一律導入までは不要。**
+
+---
+
+# 第2部：英語Abstract
+
+---
+
+## 1. Electronic Cigarettes: A Comprehensive Review for Primary Care Providers.
+
+**PMID:**
+42521372
+
+**Journal:**
+Primary care
+
+**Abstract:**
+Elecronic cigarettes (e-cigarettes), initially marketed as a safer smoking alternative, have gained widespread use, especially among adolescents and young adults who did not previously smoke. While our understanding of long-term risks is still emerging, vaping carries significant concerns for adolescents, including nicotine dependence, increased risk of substance use disorders and mood disorders, and potential cardiovascular and pulmonary harm. Primary care clinicians should routinely screen for e-cigarette use in adolescents and young adults and counsel patients on associated risks, emphasizing that safer doesn't mean safe.
+
+---
+
+## 2. Promoting Early Relational Health in Primary Care: A Scoping Review of Interventions and Evidence Gaps.
+
+**PMID:**
+42532375
+
+**Journal:**
+Academic pediatrics
+
+**Abstract:**
+BACKGROUND: Early relational health - the quality of caregiver-child interactions - is foundational for socio-emotional development and long-term wellbeing. The American Academy of Pediatrics has called for a paradigm shift toward relationship-centered care in pediatric primary care, yet a gap remains between this vision and real-world implementation.
+
+OBJECTIVES: To map early relational health interventions implemented in pediatric primary care, summarize reported outcomes and identify implementation strategies, barriers, and facilitators.
+
+DATA SOURCES: PubMed, CINAHL, and PsycINFO were searched for studies published between 2014 and 2024, supplemented by backward citation searching.
+
+STUDY ELIGIBILITY CRITERIA, PARTICIPANTS, AND INTERVENTIONS: A scoping review methodology following PRISMA-ScR guidelines was used. Data were charted and synthesized using descriptive and thematic analysis.
+
+RESULTS: Eighteen studies met inclusion criteria. Interventions were delivered in clinic, home, or hybrid settings and were commonly integrated into routine workflows. Reported outcomes included improvements in caregiver responsiveness, parenting self-efficacy, and child language and socio-emotional development. Implementation strategies included staff training, workflow integration, fidelity monitoring, and community partnerships. Key facilitators were contextual responsiveness, strong relational supports, and alignment with clinical processes. Barriers included small or homogeneous samples, reliance on parent-report outcomes, short follow-up periods, and resource constraints.
+
+CONCLUSIONS AND IMPLICATIONS OF KEY FINDINGS: Early relational health interventions are feasible and show promise in pediatric primary care when embedded into routine care and adapted to context. Addressing methodological and implementation challenges is essential to advancing relationship-centered pediatric practice.
+
+SCOPING REVIEW REGISTRATION: Open Science Framework (OSF) DOI: https://doi.org/10.17605/OSF.IO/ZCGVA.
+
+---
+
+# 第3部：候補論文スコア一覧
+
+| PMID     | タイトル                                                                                                                                                       | 総合スコア | 役立つか   | 短いメモ                                                    |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: | ------ | ------------------------------------------------------- |
+| 42521372 | Electronic Cigarettes: A Comprehensive Review for Primary Care Providers.                                                                                  | 18/20 | 高い・選定  | 思春期問診に電子タバコ使用を追加する直接的な実践性がある。ナラティブレビューでありエビデンス強度は中等度以下。 |
+| 42532375 | Promoting Early Relational Health in Primary Care: A Scoping Review of Interventions and Evidence Gaps.                                                    | 17/20 | 高い・選定  | 乳幼児健診・育児支援の診療設計に有用。実装可能性は示されるが、介入効果の確実性はまだ限定的。          |
+| 42536257 | From Data to Early Diagnosis: Artificial Intelligence as a Tool to Support Screening and Detection of Autism Spectrum Disorder in Childhood.               | 14/20 | 中等度・次点 | AIによるASDスクリーニングは有望だが、小規模・実験的研究が中心で、現時点では臨床評価の代替にならない。   |
+| 42520752 | Exploring the physical contexts of physical activity in children and adolescents across countries using GPS, GIS, and accelerometry - a systematic review. | 12/20 | 中等度以下  | 身体活動指導の背景知識にはなるが、個々の患者への具体的な介入方法や有効性を検討したレビューではない。      |
+| 42527768 | Cost Effectiveness of Interventions for Perinatal Anxiety and/or Depression: A Systematic Review of Global Evidence.                                       | 11/20 | 限定的    | CBT、対人関係療法などの費用対効果を支持するが、妊産婦医療が主対象で、小児一般外来への直接性が低い。     |
+| 42524993 | Leprosy in the Brazilian Amazon: Four Decades of Progress, Scientific Advances and Future Challenges.                                                      |  7/20 | 低い     | 地域疫学・公衆衛生として重要だが、日本の小児一般外来で診療を変更する可能性は低い。               |
+| 42531714 | A scoping review on community health care centers: Evidence in support of Italian policymakers to redesign the Italian primary care system.                |  6/20 | 低い     | イタリアの医療制度・組織設計が中心で、小児診療への直接的示唆は乏しい。                     |
+| 42533729 | A systematic review of the current prognostic tools used to predict the survival length of people living with advanced dementia.                           |  3/20 | ほぼない   | 成人の進行認知症を対象とした予後予測研究で、小児外来の対象外。                         |

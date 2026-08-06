@@ -1,0 +1,275 @@
+添付された全23件を、外来での即時有用性、診療変更可能性、研究デザイン、小児への直接性で再評価しました。今回は、**実際の診療方針や患者説明に影響しやすい7論文**を最終選定しました。元データに付された「最終選定」区分から、稀少アレルゲンや口腔症状中心の論文は優先度を下げ、アナフィラキシー、OIT、FPIES、早期アレルゲン導入、AD児の検査適正化を重視しています。fileciteturn0file0
+
+# 第1部：日本語要約
+
+---
+
+① Oral immunotherapy for peanut allergy: a systematic review and meta-analysis.
+
+②PMID
+
+42433751
+
+③なぜ重要か
+
+20件の二重盲検RCT、計2,161例を統合し、ピーナッツOITの有効性だけでなく、アナフィラキシーやエピネフリン使用増加を定量的に示したメタ解析です。脱感作率だけを見て治療を推奨することの危険性を明確にしています。
+
+④臨床への影響
+
+ピーナッツOITでは脱感作の可能性が大きく上昇する一方、アナフィラキシー、エピネフリン使用、消化器・呼吸器症状、治療中止も増加します。患者選択と家族への説明では、「治癒」ではなく、治療継続中の防御効果と治療自体のリスクを併記する必要があります。
+
+⑤診療変更の必要性
+
+Yes ― OITを一律に有効な治療として説明せず、明確なリスク・ベネフィット評価と専門施設での管理を前提とする。
+
+---
+
+① Biologic-assisted immunotherapy for pediatric food allergy: a systematic review.
+
+②PMID
+
+42440561
+
+③なぜ重要か
+
+小児食物アレルギーに対する生物学的製剤併用免疫療法を、17件の介入研究から系統的に整理しています。特にオマリズマブ併用OITが、OIT単独より脱感作率と忍容性を改善する可能性を示しています。
+
+④臨床への影響
+
+重症例、多種食物アレルギー例、OITで反応を繰り返す症例では、オマリズマブ併用が将来的な選択肢になります。ただし、長期寛解、治療終了後の持続効果、費用対効果は不確実で、現時点では専門施設への紹介を検討するための情報と位置付けるのが妥当です。
+
+⑤診療変更の必要性
+
+Yes ― 難治例や高リスク例では、生物学的製剤を含む専門的治療の適応評価を紹介理由に加える。
+
+---
+
+① Oral food challenges in FPIES: A narrative review and proposals for emergency and home-based management of acute FPIES reaction.
+
+②PMID
+
+42473072
+
+③なぜ重要か
+
+FPIESの経口負荷試験方法と急性反応への対応を、2017～2025年の知見と専門家コンセンサスに基づいて具体化しています。負荷量、観察時間、補液、オンダンセトロン、アドレナリンの適応が実務的に整理されています。
+
+④臨床への影響
+
+負荷試験では年齢相応量の25％を単回投与し、1～4時間観察する方法が提案されています。軽症から中等症では経口・舌下オンダンセトロンと経口補水、中等症以上では静脈路確保と10 mL/kgの補液を行い、IgE介在症状がなければアドレナリンは通常不要としています。
+
+⑤診療変更の必要性
+
+Yes ― FPIESの家庭用緊急計画、受診基準、負荷試験手順を具体化する際に参照すべき内容。
+
+---
+
+① Early Peanut Introduction for Allergy Prevention: Evidence and Practical Implementation in Pediatric Practice.
+
+②PMID
+
+42495456
+
+③なぜ重要か
+
+乳児期の早期ピーナッツ導入について、LEAP試験を中心とした主要エビデンス、長期追跡結果、実装上の注意点を外来向けに整理したレビューです。旧来の「アレルゲン食品を遅らせる」方針を明確に否定する内容です。
+
+④臨床への影響
+
+特に湿疹や卵アレルギーを有する高リスク乳児では、離乳初期からの安全なピーナッツ導入を検討する必要があります。導入を遅らせるのではなく、リスク層別化を行い、必要に応じて事前評価または医療機関内導入につなげる方針が支持されます。
+
+⑤診療変更の必要性
+
+Yes ― 乳児健診や離乳食相談で、ピーナッツを含むアレルゲン食品の不必要な導入延期を避ける。
+
+---
+
+① The Role of Food Allergy in Atopic Dermatitis.
+
+②PMID
+
+42425623
+
+③なぜ重要か
+
+乳幼児アトピー性皮膚炎と食物アレルギーの関係を整理し、AD児で頻繁にみられる食物感作と、実際の臨床的食物アレルギーを区別する必要性を再確認するレビューです。
+
+④臨床への影響
+
+AD児、特に重症例では食物アレルギーのリスクは高いものの、広範な特異的IgE陽性のみで除去食を開始すべきではありません。湿疹コントロール不良を理由に網羅的検査を行うことは、偽陽性、不要な除去、栄養障害、経口耐性獲得機会の喪失につながり得ます。
+
+⑤診療変更の必要性
+
+Yes ― AD児への無差別な食物特異的IgE検査と、検査陽性だけに基づく除去食を避ける。
+
+---
+
+① Gastrointestinal manifestations during oral immunotherapy: A guide for pediatric allergists.
+
+②PMID
+
+42430571
+
+③なぜ重要か
+
+OIT中の消化器症状を、即時型IgE介在反応から遅発性反応、好酸球関連疾患、好酸球性食道炎まで体系的に整理しています。消化器症状がOIT中止の主要原因である点を重視した実臨床向けレビューです。
+
+④臨床への影響
+
+OIT中の腹痛、嘔吐、嚥下困難、食事遷延、食物つかえ感を単なる軽微な副作用として扱わず、投与量、摂取条件、症状出現時期を確認する必要があります。遷延する症状や嚥下症状では、OITの休止・減量とEoE評価を検討します。
+
+⑤診療変更の必要性
+
+Yes ― OITフォロー時には、アナフィラキシーだけでなく消化器症状とEoE徴候を定型的に確認する。
+
+---
+
+① Anaphylaxis Clinical Care Pathway: Incorporating Intranasal Epinephrine (Adrenaline).
+
+②PMID
+
+42447993
+
+③なぜ重要か
+
+アナフィラキシー対応に鼻腔内エピネフリンを組み込んだ臨床ケア経路を提示し、筋肉内投与と並ぶ初期治療の選択肢として整理しています。投与間隔や難治例への対応も具体的です。
+
+④臨床への影響
+
+持続するアナフィラキシーでは、筋肉内または鼻腔内エピネフリンを5～15分ごとに反復し、重症・難治例では5分間隔で投与しながらABC管理を行うとしています。ただし、小児における年齢・体重別製剤選択、日本国内での承認・供給状況は別途確認が必要です。
+
+⑤診療変更の必要性
+
+No ― 現段階では日本の小児外来で直ちに標準対応を変更するというより、鼻腔内製剤導入後に備えて院内手順を見直すための重要情報。
+
+---
+
+# 第2部：英語Abstract
+
+---
+
+1. Oral immunotherapy for peanut allergy: a systematic review and meta-analysis.
+
+PMID: 42433751
+
+Journal: Annals of medicine and surgery (2012)
+
+Abstract:
+
+BACKGROUND AND OBJECTIVES: Food allergy, particularly peanut allergy, is a significant and growing health concern, especially in high-income countries. Affecting 2% of children and 1% of adults, peanut allergy is a chronic condition that severely impacts quality of life. The standard treatment remains allergen avoidance, though oral immunotherapy (OIT) has emerged as a potential strategy for desensitization. This systematic review and meta-analysis aims to evaluate the efficacy and safety of peanut oral immunotherapy (POIT) based on randomized controlled trials (RCTs).
+
+METHODS: A systematic review and meta-analyses were conducted following PRISMA guidelines. Eligible studies included double-blind RCTs evaluating POIT versus placebo or avoidance. Databases such as PubMed, Google Scholar, Cochrane-Controlled Register of Trials, and ClinicalTrials.gov were searched. Risk of bias was assessed using the Cochrane Risk of Bias tool (ROB2), and statistical analysis was performed using the RevMan software.
+
+RESULTS: A total of 20 studies with 2161 participants (median age: 8.6 years) were included. POIT demonstrated a significant increase in desensitization rates (RR = 7.25, 95% CI: 2.66-19.79, P = 0.0001). However, POIT was also associated with increased risks of anaphylaxis (RR = 2.27, 95% CI: 1.48-3.47, P = 0.0002) and epinephrine use (RR = 2.05, 95% CI: 1.35-3.12, P = 0.0008). Adverse effects such as gastrointestinal symptoms, respiratory events, and skin abnormalities were more frequent in the POIT group, leading to a higher treatment discontinuation rate (RR = 2.50, 95% CI: 1.20-5.21, P = 0.01).
+
+CONCLUSION: POIT is effective in inducing desensitization in peanut-allergic individuals but carries significant risks, including an increased likelihood of anaphylaxis and adverse events. These findings reinforce previous meta-analyses and highlight the need for individualized risk-benefit assessments in clinical practice. Further research is required to optimize treatment protocols and improve patient safety.
+
+---
+
+2. Biologic-assisted immunotherapy for pediatric food allergy: a systematic review.
+
+PMID: 42440561
+
+Journal: Frontiers in allergy
+
+Abstract:
+
+BACKGROUND: Food allergies affect up to 8% of children and are a major cause of anaphylaxis, reduced quality of life, and healthcare use. Oral immunotherapy (OIT) can induce desensitization but is limited by adverse reactions, tolerability challenges, and variable long-term outcomes. Emerging biologic therapies- particularly omalizumab and dupilumab- may improve the safety and efficiency of desensitization when used alone or with immunotherapy.
+
+OBJECTIVE: To systematically review evidence on biologic-assisted immunotherapy and alternative desensitization approaches in pediatric food allergy, focusing on efficacy, sustained unresponsiveness, safety, treatment efficiency, and clinical applicability.
+
+METHODS: A systematic review following PRISMA 2020 guidelines was conducted using PubMed, with supplementary searches of Google Scholar and SciSpace (2015-2025), to identify interventional studies of biologic therapies, OIT, sublingual immunotherapy (SLIT), epicutaneous immunotherapy (EPIT), and combination approaches in children < 18 years with IgE-mediated food allergy. Studies were synthesized using a narrative qualitative approach. Desensitization was defined as increased tolerated dose during active therapy; reaction threshold as the dose provoking symptoms; sustained unresponsiveness (SU) as absence of symptoms after treatment cessation; and tolerance as durable long-term nonreactivity independent of therapy. Risk of bias for randomized trials was assessed using the Cochrane Risk of Bias 2 (RoB2) tool.
+
+RESULTS: Of 505 records, 17 studies met inclusion criteria. Omalizumab-assisted OIT demonstrated higher desensitization rates (approximately 67%-85%) and fewer adverse events compared with OIT alone (approximately 30%-40%), though effect sizes varied. Dupilumab showed modest improvements in tolerability with smaller effects on desensitization. Omalizumab monotherapy increased reaction thresholds across multiple allergens. SLIT and EPIT demonstrated favorable safety with moderate efficacy, particularly in younger children.
+
+CONCLUSION: Evidence suggests biologic-assisted immunotherapy- particularly omalizumab with OIT- may improve desensitization and safety in pediatric food allergy, though findings are limited by heterogeneity, sample size, and risk of bias. Larger trials are needed to confirm long-term durability, optimize protocols, and assess cost-effectiveness. SLIT and EPIT may offer safer alternatives for selected high-risk populations.
+
+---
+
+3. Oral food challenges in FPIES: A narrative review and proposals for emergency and home-based management of acute FPIES reaction.
+
+PMID: 42473072
+
+Journal: Pediatric allergy and immunology : official publication of the European Society of Pediatric Allergy and Immunology
+
+Abstract:
+
+Food Protein-Induced Enterocolitis Syndrome (FPIES) is a non-IgE-mediated food allergy marked by delayed vomiting and potential hypovolemic shock. This review by the French FPIES working group (SFA, GFRUP, Sp2A, SFP) analyzes recent literature on oral food challenges (OFC) adverse reactions and proposes a standardized protocol for OFC and emergency management. Early consensus OFC protocols from 2017 showed limitations-mainly short intervals between doses during OFC and high hospitalization burdens-leading to inconsistent practices. This narrative review of 2017-2025 studies shows that a single 25% age-appropriate portion generally suffices to trigger symptoms, typically within 1-4 h. This approach balances safety and feasibility while reducing hospital time. As part of the French FPIES monitoring register, and to easily apply this portion, the serving size for each food has been established with specialized dieticians. According to severity, acute reactions require prompt rehydration and ondansetron. Oral or sublingual ondansetron, effective for mild to moderate reactions, can limit dehydration and hospital transfers. In a hospital setting, oral rehydration is indicated in mild reactions, whereas vascular hydration (10 mL/kg over 5-20 min) is required for moderate to severe reactions. Corticosteroids may be added in severe cases. Adrenaline is unnecessary unless associated IgE-mediated symptoms are observed. The working group also proposes including oral rehydration solution and ondansetron in every home emergency kit. These proposals provide a national consensus on the management of FPIES by standardizing French practice from the OFC to the acute management of allergic reaction both in hospitals and at home.
+
+---
+
+4. Early Peanut Introduction for Allergy Prevention: Evidence and Practical Implementation in Pediatric Practice.
+
+PMID: 42495456
+
+Journal: Cureus
+
+Abstract:
+
+Peanut allergy is one of the most common and potentially life-threatening food allergies in children. It frequently persists into adulthood and imposes significant burdens on affected families, including dietary vigilance, social restrictions, and the constant risk of anaphylaxis. For many years, clinical guidelines recommended delaying the introduction of allergenic foods during infancy, based on the assumption that limiting early exposure would reduce the risk of sensitization and subsequent development of allergy. However, accumulating epidemiological observations and rigorous clinical trial data have fundamentally reversed this paradigm, demonstrating that early oral exposure to peanut protein during a critical window in infancy promotes immune tolerance rather than sensitization. This narrative review synthesizes the key evidence underpinning this paradigm shift, beginning with the epidemiological observations that prompted investigation and centering on the landmark Learning Early About Peanut Allergy randomized controlled trial, which demonstrated a substantial relative risk reduction in peanut allergy among high-risk infants who consumed peanut regularly during early infancy through early childhood. The review also examines long-term follow-up data through adolescence confirming the durability of this protective effect, supporting evidence from the Enquiring About Tolerance trial and pooled analyses, and the biological rationale for early oral tolerance induction. Finally, it provides practical, risk-stratified guidance aligned with current recommendations from the National Institute of Allergy and Infectious Diseases, the American Academy of Pediatrics, and other major medical organizations, addressing clinical implementation strategies, safety considerations, and barriers to adoption in routine pediatric care.
+
+---
+
+5. The Role of Food Allergy in Atopic Dermatitis.
+
+PMID: 42425623
+
+Journal: Immunology and allergy clinics of North America
+
+Abstract:
+
+Atopic dermatitis (AD) and food allergies are 2 atopic conditions that tend to develop early in life. Their interrelationship has been a topic of controversy and many studies. The presence of atopic dermatitis in infancy and early childhood, particularly if severe, is a risk factor for the development of immunoglobulin E (IgE) -mediated food allergies. While it is common for children with AD to demonstrate extensive sensitization to foods, serum IgE testing is not always indicative of clinical allergy.
+
+---
+
+6. Gastrointestinal manifestations during oral immunotherapy: A guide for pediatric allergists.
+
+PMID: 42430571
+
+Journal: Pediatric allergy and immunology : official publication of the European Society of Pediatric Allergy and Immunology
+
+Abstract:
+
+Oral immunotherapy (OIT) is a promising therapeutic strategy for desensitizing patients with immunoglobulin E (IgE)-mediated food allergies. Although effective, OIT is frequently associated with adverse events (AEs), and gastrointestinal (GI) manifestations are among the most common and challenging AEs, which are the leading cause of OIT discontinuation. These reactions range from immediate IgE-mediated signs and symptoms to delayed, non-IgE-mediated, eosinophil-associated disorders, including eosinophilic esophagitis (EoE). While systemic reactions, such as anaphylaxis, are well-known concerns, GI manifestations are frequently encountered, although they are often less severe than systemic reactions. A thorough understanding of GI signs and symptoms is therefore essential for patients and clinicians to navigate OIT effectively. This narrative review provides a comprehensive overview of GI AEs observed during OIT, detailing their clinical presentation, underlying pathophysiology, and evidence-based management approaches. A clear understanding of these manifestations and their management is essential for optimizing patient safety and treatment adherence in the era of OIT.
+
+---
+
+7. Anaphylaxis Clinical Care Pathway: Incorporating Intranasal Epinephrine (Adrenaline).
+
+PMID: 42447993
+
+Journal: The journal of allergy and clinical immunology. In practice
+
+Abstract:
+
+Healthcare providers across settings must be trained to manage anaphylaxis by 1) removing the offending allergen if still present, 2) positioning the patient with legs elevated; if respiratory distress is present, allow the patient to sit upright with legs extended and elevated, 3) immediately administering epinephrine (adrenaline) intramuscularly (IM) or intranasally (IN) every 5-15 minutes for persistent anaphylaxis, and 4) optimizing airway, breathing, and circulatory (ABC) resuscitation. This may include supplemental oxygen, noninvasive or invasive positive-pressure ventilation, and intravenous fluid resuscitation. For life-threatening or refractory presentations, 5) IM/IN epinephrine should be administered every 5 minutes while addressing ABC derangements; this includes aggressive intravenous fluid resuscitation for patients in anaphylactic shock. Providers may continue IM or IN epinephrine or switch to the other, as both routes are considered equally efficacious based on pharmacokinetic data. An intravenous epinephrine infusion should be prepared for patients with persistent anaphylaxis after two doses of IM/IN epinephrine and initiated after the third dose, or earlier at the provider's discretion. In settings without epinephrine infusions, repeat IM/IN epinephrine should be administered every 5 minutes, along with other ABC interventions, and the patient should be transferred quickly to a setting equipped to provide advanced resuscitative care.
+
+---
+
+# 第3部：候補論文スコア一覧
+
+| PMID | タイトル | 総合スコア | 役立つか | 短いメモ |
+|---|---|---:|---|---|
+| 42433751 | Oral immunotherapy for peanut allergy: a systematic review and meta-analysis. | 20 | 非常に役立つ | 20 RCTのメタ解析。脱感作増加とアナフィラキシー増加を定量化。 |
+| 42440561 | Biologic-assisted immunotherapy for pediatric food allergy: a systematic review. | 19 | 非常に役立つ | オマリズマブ併用OITの有効性・安全性改善を示唆。 |
+| 42473072 | Oral food challenges in FPIES: A narrative review and proposals for emergency and home-based management of acute FPIES reaction. | 19 | 非常に役立つ | 負荷試験、補液、オンダンセトロン、家庭対応が具体的。 |
+| 42495456 | Early Peanut Introduction for Allergy Prevention: Evidence and Practical Implementation in Pediatric Practice. | 19 | 非常に役立つ | 乳児健診・離乳食指導に直接反映可能。 |
+| 42425623 | The Role of Food Allergy in Atopic Dermatitis. | 18 | 非常に役立つ | AD児の過剰検査と不要な除去食を避ける根拠。 |
+| 42430571 | Gastrointestinal manifestations during oral immunotherapy: A guide for pediatric allergists. | 18 | 非常に役立つ | OIT中の消化器症状とEoE評価を実務的に整理。 |
+| 42447993 | Anaphylaxis Clinical Care Pathway: Incorporating Intranasal Epinephrine (Adrenaline). | 17 | 役立つ | 鼻腔内エピネフリンを含む将来の対応経路。国内適用には確認が必要。 |
+| 42481097 | Current Management of Food Allergies in Pediatric Patients. | 16 | 役立つ | 診断、回避、救急対応、OITの全体像を短く整理。新規性は限定的。 |
+| 42514315 | Pollen-Food Allergy Syndrome in Children: Global Prevalence and Pathogenesis. | 16 | 役立つ | PFASの鑑別・患者説明に有用だが、診療変更は小さい。 |
+| 42358594 | Innovative diagnostic techniques and their clinical implications in food allergy: current clinical practice and future perspectives. | 15 | やや役立つ | CRD、BAT、MATを整理。現時点では専門施設・研究段階。 |
+| 42512080 | Emerging Biomarkers in Pediatric Food Allergy: From Mechanistic Endotyping to Precision Diagnosis and Therapeutic Monitoring. | 15 | やや役立つ | BATなどの将来性を整理するが、標準化・外部検証不足。 |
+| 42514286 | The Basophil Activation Test in the Diagnosis of Cow's Milk Allergy in Children: A Narrative Review. | 15 | やや役立つ | OFC削減の可能性はあるが、一般外来では利用困難。 |
+| 42498123 | Achieving disease modification with food allergy therapies: An international perspective. | 15 | やや役立つ | 脱感作、持続的無反応、寛解、耐性の概念整理に有用。 |
+| 42494273 | Microbiota Signatures in Early Life and Their Association With Food Allergy: A Systematic Review. | 14 | 限定的 | 40研究を統合したが、観察研究中心で具体的介入につながらない。 |
+| 42348246 | Prevalence of Feeding Difficulties in Children With Non-IgE Mediated Food Allergies: A Systematic Review. | 14 | 評価困難 | 重要なテーマだがAbstractがなく、結果と臨床的含意を評価できない。 |
+| 42332742 | From systemic immune dysregulation to oral disease: evidence linking food allergies and oral manifestations—a systematic review. | 14 | やや役立つ | 口腔症状の認識には有用だが、PFASレビューとの重複が多い。 |
+| 42343505 | Immunoglobulin E-mediated pumpkin seed allergy in children: Case series and narrative review with a structured literature search. | 13 | 限定的 | アナフィラキシー率は高いが、稀少アレルゲンの単施設25例。 |
+| 42337920 | Emerging Paediatric Uses of Dupilumab Beyond Approvals. | 13 | 限定的 | 食物アレルギーへの応用は症例報告・小規模研究中心。 |
+| 42454297 | Food allergy in the Saudi population: trends, triggers, and strategies for care—a systematic review. | 12 | 限定的 | 地域疫学と栄養管理が中心で、日本の診療変更には直結しにくい。 |
+| 42519315 | Cumin anaphylaxis and allergy to spices in pediatrics: a case report and literature review. | 12 | 限定的 | 原因不明アナフィラキシーの鑑別には有用だが単一症例。 |
+| 42535448 | The National Allergy Centre of Excellence—Addressing Australia's Allergy Burden. | 11 | 限定的 | 研究・診療基盤の事業報告で、個別診療への影響は小さい。 |
+| 42418362 | Beyond the Neutrophil Count: Functional Profiling and Targeted Modulation of Neutrophils in Paediatric Care. | 9 | 役立ちにくい | 基礎・病態生理中心で、食物アレルギー外来への直接性が低い。 |
+| 42437846 | The inhibition of pathological IgE in allergic diseases by natural compounds. | 8 | 役立ちにくい | 動物・細胞研究が多く、自然化合物を臨床使用する根拠は不足。 |

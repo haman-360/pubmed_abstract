@@ -1,0 +1,174 @@
+## 第1部：日本語要約
+
+---
+
+### ① Intervention effects of long-term exercise on executive function in children and adolescents with attention-deficit hyperactivity disorder: a three-level meta-analysis of randomised controlled trials.
+
+### ② PMID
+
+42396898
+
+### ③ なぜ重要か
+
+ADHD児・青年を対象としたRCT 15研究の統合で、継続的な運動介入が実行機能を中等度改善する可能性が示された。薬物療法や行動療法に追加できる、比較的安全で実行可能な介入である。
+
+### ④ 臨床への影響
+
+外来では、運動を漠然と勧めるのではなく、一定期間継続する構造化された運動プログラムを補助療法として提案する根拠になる。ただしエビデンスの確実性は低く、薬物療法の代替とは位置づけられない。
+
+### ⑤ 診療変更の必要性
+
+**Yes — ADHD診療に継続的な運動介入を明示的に組み込む価値がある。**
+
+---
+
+### ① Baseline omega-3 nutritional status and supplementation response in pediatric attention-deficit/hyperactivity disorder: a systematic review and biomarker-stratified meta-analysis.
+
+### ② PMID
+
+42433395
+
+### ③ なぜ重要か
+
+オメガ3補充の効果が一様でない理由として、補充前のオメガ3栄養状態が低い児では効果が大きい可能性を示した。これまでの「ADHDにオメガ3は効くか」という一律の議論を、栄養状態による層別化へ進める研究である。
+
+### ④ 臨床への影響
+
+オメガ3をADHD児全員へ漫然と勧める根拠は乏しく、通常値または未評価の集団では有意な効果がなかった。一方、食事歴などから不足が疑われる児では、今後バイオマーカーに基づく個別化介入の対象となる可能性がある。
+
+### ⑤ 診療変更の必要性
+
+**No — 現段階ではオメガ3測定や補充のルーチン導入を支持しない。**
+
+---
+
+### ① Probiotic Supplementation in Children and Adolescents with ADHD: A Systematic Review and Meta-Analysis of ADHD-Related and Emotional-Behavioral Outcomes.
+
+### ② PMID
+
+42514426
+
+### ③ なぜ重要か
+
+小児・青年ADHDを対象とした9件のRCTを統合したが、プロバイオティクスによるADHD中核症状の明確な改善は認められなかった。保護者から相談されやすいサプリメントについて、現時点の限界を説明するために有用である。
+
+### ④ 臨床への影響
+
+ADHDの不注意・多動衝動性を改善する目的でプロバイオティクスを積極的に推奨する根拠はない。保護者評価による一部の行動尺度には小さな改善がみられたが、少数かつ異質な研究に基づく探索的結果である。
+
+### ⑤ 診療変更の必要性
+
+**No — ADHD治療としてのプロバイオティクスの定型的な推奨は行わない。**
+
+---
+
+### ① Mapping the association between cognitive disengagement syndrome and internalizing disorders: A systematic scoping review with meta-analysis and meta-regression.
+
+### ② PMID
+
+42341946
+
+### ③ なぜ重要か
+
+Cognitive Disengagement Syndrome（CDS）はADHDの不注意とは異なる概念であり、抑うつ、不安、内在化症状との中等度から強い関連が示された。特に抑うつとの関連は大きく、ADHD様の不注意としてのみ扱うことへの注意を促す。
+
+### ④ 臨床への影響
+
+空想にふける、思考や行動が遅い、ぼんやりしているといった症状が目立つ児では、ADHD評価だけでなく、抑うつや不安、心理社会的機能を併せて確認する必要がある。ただしCDS自体の診断基準や治療法を確立する研究ではない。
+
+### ⑤ 診療変更の必要性
+
+**Yes — CDS様症状を認める児では内在化症状のスクリーニングを追加する。**
+
+---
+
+## 第2部：英語Abstract
+
+---
+
+### 1. Intervention effects of long-term exercise on executive function in children and adolescents with attention-deficit hyperactivity disorder: a three-level meta-analysis of randomised controlled trials.
+
+**PMID:** 42396898
+
+**Journal:** Journal of global health (2026/Jul)
+
+**Abstract:**
+
+BACKGROUND: Attention-deficit hyperactivity disorder (ADHD) is a common neurodevelopmental disorder in children and is often associated with executive function impairments. We aimed to examine the effects of long-term exercise on executive function in children and adolescents with ADHD using a three-level meta-analysis.
+
+METHODS: We searched five databases (Embase, The Cochrane Library, PubMed, Web of Science, and China National Knowledge Infrastructure) from inception to 7 June 2025, for randomised controlled trials on long-term exercise and executive function in children and adolescents with ADHD. We used ROB 2 to assess the risk of bias. We used a three-level meta-analysis with restricted maximum likelihood as the primary model to synthesise non-independent effect sizes. We conducted influence analysis to identify influential cases, and sensitivity analyses using an aggregated two-level random-effects model and robust variance estimation. We assessed evidence quality with GRADEpro.
+
+RESULTS: We included 15 studies. We derived the primary estimate from the outlier-removed three-level model because three influential effect sizes were identified, and we conducted subsequent secondary analyses on the same data set. The results showed that long-term exercise may improve executive function in children and adolescents with ADHD (Hedges' g = -0.52; 95% confidence interval = -0.87, -0.18; P = 0.003), with low-certainty evidence. Sensitivity analyses yielded effects in a similar direction and of comparable magnitude. Intervention duration (F = 4.72; P = 0.033) and age (F = 5.36; P = 0.023) were identified as moderating factors for the improvement of executive function in children and adolescents with ADHD through long-term exercise.
+
+CONCLUSIONS: Long-term exercise may benefit executive function in children and adolescents with ADHD, although the certainty of the evidence was low. Findings on age and intervention duration should be interpreted cautiously because some subgroup strata included only a small number of effect sizes.
+
+REGISTRATION: PROSPERO: CRD42024627175.
+
+---
+
+### 2. Baseline omega-3 nutritional status and supplementation response in pediatric attention-deficit/hyperactivity disorder: a systematic review and biomarker-stratified meta-analysis.
+
+**PMID:** 42433395
+
+**Journal:** Frontiers in public health (2026)
+
+**Abstract:**
+
+INTRODUCTION: High heterogeneity characterizes the efficacy of omega-3 polyunsaturated fatty acid (PUFA) supplementation for attention-deficit/hyperactivity disorder (ADHD). This study aimed to examine whether baseline omega-3 nutritional status may partly explain variability in supplementation response.
+
+METHODS: We conducted a PRISMA-compliant systematic review and meta-analysis registered in PROSPERO (CRD420251218861). PubMed, Embase, PsycINFO, and CENTRAL were searched from inception to December 2025. Eligible studies were randomized controlled trials (RCTs) of omega-3 supplementation in children and adolescents with ADHD that reported baseline nutritional biomarkers, such as erythrocyte EPA/DHA, and efficacy outcomes stratified or otherwise separable according to baseline biomarker status. Data were synthesized using random-effects meta-analysis of standardized mean differences (SMDs), with a prespecified categorical subgroup analysis comparing low-baseline versus normal/high or unstratified baseline estimates.
+
+RESULTS: Seven RCTs, contributing 10 analytical estimates, were included. The overall pooled analysis showed a small statistically significant effect of omega-3 supplementation (SMD = 0.21, 95% CI: 0.04-0.38; p= 0.017), with moderate heterogeneity (I 2 = 38.7%). Stratification by baseline biomarkers was associated with lower within-subgroup heterogeneity and suggested differential treatment effects by baseline status (χ2 = 10.44, df = 1, p = 0.0012). The low-baseline subgroup (k = 4) showed a larger estimated effect (SMD = 0.52, 95% CI: 0.28-0.76; p < 0.001; I 2 = 0%), whereas the normal/high or unstratified baseline subgroup (k = 6) did not show a statistically significant effect (SMD = 0.03, 95% CI: -0.15-0.21; p = 0.77; I 2 =).
+
+DISCUSSION: Omega-3 supplementation response in pediatric ADHD may vary according to baseline nutritional status. However, the evidence base remains limited to seven RCTs, and definitions of low baseline status differed across trials according to biomarker matrix and study-specific thresholds. These findings should therefore be interpreted as preliminary and hypothesis-generating. Larger, prospectively stratified RCTs using harmonized biomarker assessments and standardized baseline cut-offs are needed before biomarker-guided omega-3 supplementation can be recommended for clinical nutritional guidance.
+
+SYSTEMATIC REVIEW REGISTRATION: PROSPERO https://www.crd.york.ac.uk/PROSPERO/view/CRD420251218861, identifier CRD420251218861.
+
+---
+
+### 3. Probiotic Supplementation in Children and Adolescents with ADHD: A Systematic Review and Meta-Analysis of ADHD-Related and Emotional-Behavioral Outcomes.
+
+**PMID:** 42514426
+
+**Journal:** Nutrients (2026/Jul)
+
+**Abstract:**
+
+BACKGROUND: Dysregulation of the microbiota-gut-brain axis has been implicated in attention-deficit/hyperactivity disorder (ADHD), but randomized controlled trial evidence for probiotic supplementation remains inconsistent.
+
+OBJECTIVE: This systematic review and meta-analysis evaluated the effects of probiotic supplementation on ADHD-related clinical outcomes and emotional-behavioral outcomes in children and adolescents.
+
+METHODS: PubMed, Embase, Cochrane CENTRAL, Web of Science, PsycINFO, and EBSCO were searched from database inception to October 2025. Randomized controlled trials including participants under 18 years of age with DSM-defined ADHD were eligible. Pooled effects were calculated using standardized mean differences (SMDs) or mean differences (MDs) with 95% confidence intervals (CIs) under random-effects models.
+
+RESULTS: Nine RCTs involving 482 participants were included, with intervention durations ranging from 8 to 12 weeks. In the broad exploratory synthesis of ADHD-related clinical outcomes, probiotic supplementation did not show a clear benefit (SMD = -0.25, 95% CI: -0.57 to 0.07; p = 0.131). Because this analysis combined conceptually heterogeneous instruments, greater interpretive weight was placed on domain-specific analyses. No clear effects were observed for more specific core symptom-related measures, including SNAP-IV inattention scores and CPT-derived attention-related performance measures. In domain-specific exploratory analyses, CPRS total scores showed a small reduction following probiotic supplementation (SMD = -0.33, 95% CI: -0.65 to -0.01; p = 0.041), whereas CBCL total scores did not show a statistically significant effect under the random-effects model (MD = -1.93, 95% CI: -6.30 to 2.44; p = 0.386). The SNAP-IV hyperactivity finding was statistically significant but was largely driven by a single study and should be interpreted cautiously.
+
+CONCLUSIONS: Current 8-12-week RCT evidence does not demonstrate a clear benefit of probiotic supplementation for ADHD core symptom-related measures. However, exploratory findings suggest that probiotic supplementation may have potential for improving broad parent-reported emotional-behavioral outcomes, particularly CPRS-assessed behavioral symptoms. This potential benefit should be interpreted cautiously because it was based on a small number of heterogeneous trials and was not consistently supported by CBCL outcomes. Larger, rigorously designed trials are needed to confirm these broad parent-reported behavioral and emotional findings and clarify their clinical relevance.
+
+---
+
+### 4. Mapping the association between cognitive disengagement syndrome and internalizing disorders: A systematic scoping review with meta-analysis and meta-regression.
+
+**PMID:** 42341946
+
+**Journal:** Journal of affective disorders (2026/Nov)
+
+**Abstract:**
+
+Cognitive Disengagement Syndrome (CDS), previously known as Sluggish Cognitive Tempo, has increasingly been recognized as a construct distinct from ADHD inattention yet strongly associated with internalizing disorders. This scoping review synthesized evidence from 82 studies published between 2002 and 2025, combining narrative synthesis with three-level meta-analysis and meta-regression. Across healthy and clinical samples, individuals with elevated CDS consistently showed higher rates of depression and anxiety, with more than one-third reaching clinical thresholds. Associations remained significant after controlling for ADHD inattention and were observed in children, adolescents, and adults. Longitudinal evidence suggested that CDS may operate as a developmental risk factor for later depression, though findings for anxiety were less consistent. Despite robust evidence of comorbidity, very few studies examined the functional consequences of CDS-internalizing overlap, and none employed analytic strategies to address symptom overlap, despite substantial phenomenological similarities. Meta-analyses confirmed moderate-to-strong associations, with the strongest link for depression (r = 0.56), followed by anxiety (r = 0.46) and broader internalizing symptoms (r = 0.44). Meta-regression identified depression as a significant moderator and revealed inflated effect sizes in same-informant studies, while demographic factors such as age, sex, population type, and sample size did not significantly account for variability. These findings support the conceptualization of CDS as a structurally distinct yet transdiagnostic construct, particularly tied to depressive symptomatology. However, methodological limitations, including scarce longitudinal and multi-informant studies, lack of symptom-overlap controls, and limited evidence on functional outcomes, constrain clinical interpretation and highlight the need for more rigorous, developmentally informed research.
+
+---
+
+## 第3部：候補論文スコア一覧
+
+| PMID | タイトル | 総合スコア | 役立つか | 短いメモ |
+|---|---|---:|---|---|
+| 42396898 | Intervention effects of long-term exercise on executive function in children and adolescents with ADHD | **18/20** | 高い | 継続的運動をADHDの補助療法として提案する根拠。ただし確実性は低い。 |
+| 42433395 | Baseline omega-3 nutritional status and supplementation response in pediatric ADHD | **17/20** | 高い | 一律のオメガ3補充を否定し、低栄養状態での個別化可能性を示す。 |
+| 42514426 | Probiotic Supplementation in Children and Adolescents with ADHD | **17/20** | 高い | 中核症状への有効性は不明確。サプリ相談への説明に直接使える。 |
+| 42341946 | Mapping the association between cognitive disengagement syndrome and internalizing disorders | **16/20** | 中～高 | CDS様症状がある児で抑うつ・不安評価を忘れないという臨床的示唆。 |
+| 42490572 | Effects of Virtual Reality-Based Physical Exercise Interventions in Children and Adolescents With ASD | **15/20** | 中等度 | 実行機能改善の可能性はあるが、小規模かつ介入の異質性が大きい。 |
+| 42348958 | Are children and adolescents with ADHD less physically fit? | **13/20** | 中等度 | フィールドテストでは心肺体力低下を示すが、直接的な治療変更にはつながりにくい。 |
+| 42500177 | Prenatal exposure to paracetamol and risk of autism spectrum disorder | **11/20** | 限定的 | 観察研究による小さな関連。交絡が強く、妊娠中の解熱鎮痛薬選択を変更できない。 |
+| 42490257 | A meta-analysis of heart rate variability and psychopathology | **8/20** | 低い | 成人を多く含む横断的研究で、小児発達外来におけるHRV測定を支持しない。 |
+
+今回の8候補では、**運動介入、オメガ3、プロバイオティクス、CDSと内在化症状の4論文**を選定しました。VR介入は興味深いものの、現段階では専門的リハビリテーション領域の補助療法にとどまり、一般小児外来への波及性がやや低いと判断しました。fileciteturn0file0

@@ -1,0 +1,56 @@
+# 第1部：日本語要約
+
+---
+
+## 1
+
+①タイトル
+
+**Diagnostic performance of point-of-care ultrasound for pediatric skull fractures: A systematic review and meta-analysis.**  
+（小児頭蓋骨骨折に対するポイントオブケア超音波検査の診断性能：系統的レビュー・メタ解析）
+
+②PMID
+
+**42339785**
+
+③なぜ重要か
+
+小児頭部外傷における頭蓋骨骨折の検出について、POCUSは感度90％、特異度98％と高い診断精度を示した。CTによる放射線被曝を避けたい軽症例で、診察所見や頭部外傷診療アルゴリズムを補完する検査として重要である。fileciteturn0file0
+
+④臨床への影響
+
+低～中リスクの軽症頭部外傷で、局所の腫脹や圧痛部位にPOCUSを実施することにより、頭蓋骨骨折の可能性をベッドサイドで層別化できる。ただし頭蓋内損傷は評価できないため、陰性であってもPECARNなどの臨床判断ルールや神経学的所見に基づくCT・紹介判断を変更してはならない。
+
+⑤診療変更の必要性
+
+**Yes — POCUSを使用できる施設では、軽症頭部外傷の補助的評価として導入を検討する価値がある。ただしCTの代替検査ではない。**
+
+---
+
+# 第2部：英語Abstract
+
+---
+
+## 1. Diagnostic performance of point-of-care ultrasound for pediatric skull fractures: A systematic review and meta-analysis.
+
+**PMID:** 42339785
+
+**Journal:** The Journal of international medical research
+
+**Abstract:**
+
+ObjectivePediatric head trauma is common, but computed tomography exposes children to ionizing radiation. This systematic review and meta-analysis evaluated the diagnostic accuracy of point-of-care ultrasound for pediatric skull fractures and clarified its role as an adjunct to clinical assessment rather than a replacement for computed tomography when intracranial injury is suspected.
+
+MethodsWe conducted a systematic review and bivariate random-effects diagnostic test meta-analysis guided by the Preferred Reporting Items for Systematic Reviews and Meta-Analyses 2020 statement and registered in the International Prospective Register of Systematic Reviews (Registration Number: CRD420251139217). PubMed, Embase, the Cochrane Library, and Web of Science were searched from inception through 3 September 2025. Two reviewers independently screened studies, extracted 2 × 2 diagnostic data, and assessed risk of bias using the Quality Assessment of Diagnostic Accuracy Studies-2 tool.
+
+ResultsNine studies conducted in emergency department settings met the inclusion criteria. Point-of-care ultrasound demonstrated a pooled sensitivity of 0.90 (95% confidence interval: 0.84-0.94), specificity of 0.98 (95% confidence interval: 0.94-0.99), and an area under the summary receiver operating characteristic curve of 0.96 (95% confidence interval: 0.94-0.97). The summary positive likelihood ratio was 41.73 (95% confidence interval: 15.85-109.87), and the negative likelihood ratio was 0.10 (95% confidence interval: 0.07-0.17). Deeks' funnel plot showed no evidence of small-study effects (P = 0.80).
+
+ConclusionsPoint-of-care ultrasound shows high diagnostic accuracy for detecting pediatric skull fractures and may support bedside risk stratification in selected children with low- or intermediate-risk mild head trauma. However, most isolated linear skull fractures are managed conservatively, and point-of-care ultrasound does not evaluate intracranial injury. Computed tomography decisions should therefore remain anchored in neurological status, injury mechanism, validated pediatric head injury decision rules, and clinician judgment.
+
+---
+
+# 第3部：候補論文スコア一覧
+
+| PMID | タイトル | 総合スコア | 役立つか | 短いメモ |
+|---|---|---:|---|---|
+| 42339785 | Diagnostic performance of point-of-care ultrasound for pediatric skull fractures: A systematic review and meta-analysis. | **18/20** | **高い** | 9研究の診断精度メタ解析。POCUSは感度90％、特異度98％。軽症頭部外傷の補助的リスク層別化には有用だが、頭蓋内損傷を評価できずCT判断の代替にはならない。 |
