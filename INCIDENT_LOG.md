@@ -1,6 +1,6 @@
 # PubMed automation 障害・運用確認履歴
 
-最終更新: 2026-08-07 JST
+最終更新: 2026-08-08 JST
 
 このファイルは、PubMed automationで発生した障害、GitHubから届いた失敗通知、調査結果、対処、再発時の判断材料を時系列で残すための記録である。
 
@@ -17,9 +17,65 @@ GitHubから件名`Run failed: PubMed automation`で届くメールは、GitHub 
 
 | 日時（JST） | 事象 | 原因 | 影響 | 状態 |
 |---|---|---|---|---|
+| 2026-08-08 06:54以降 | 完了メールのCURRENTリンクを開くと「ファイルはゴミ箱にあります」と表示 | 重複に見えた文書を整理した際、Drive台帳が参照する固定CURRENT文書も手動でゴミ箱へ移動していた。workflowはゴミ箱状態を確認せず、同じIDの文書を更新した | abstract生成と文書更新は完了したが、メールのリンク先を通常閲覧できなかった | 原因特定。固定CURRENTをゴミ箱から復元予定。恒久対策は課題として保留 |
 | 2026-08-07 01:58–02:14、03:39–03:54 | 定期`poll`が2回キャンセル | GitHub Hosted Runnerを複数回試行しても確保できなかった | Runner上の処理は開始されず、PubMed、OpenAI、Google Drive、Gmailへのアクセスなし | 自然復旧、対応不要 |
 | 2026-08-04 23:40–2026-08-05 21:14 | 定期`poll`が連続失敗 | Google OAuth refresh tokenの失効（`invalid_grant`） | Google Driveへの最初のアクセスで停止。新規文献検索を行う`dispatch`ではないためbackfill不要 | 再認証とGitHub Secret更新で復旧 |
 | 2026-07-28 | Drive検索結果が空の場合の処理不備を修正 | 空の`files`配列を想定していなかった | 実運用上の発生日時・影響は記録からは確認できない | 修正・回帰テスト追加済み |
+
+## 2026-08-08: 完了メールのCURRENTリンクがゴミ箱状態
+
+### 利用者が確認した現象
+
+`PubMed最新論文ダイジェスト scheduled-2026-08-08`は2026-08-08 06:54 JSTに正常に届いた。メールでは4テーマすべてが`COMPLETED`、`失敗テーマ: なし`、`CURRENT更新未完了: なし`となっていた。
+
+しかし、メール内のCURRENTリンクを開くと、Google Docsに「ファイルはゴミ箱にあります」と表示された。Driveのゴミ箱には、同じテーマ名を持つ次のような文書が複数あり、画面上の名前だけではメールのリンク先を区別しにくい状態だった。
+
+- 固定文書: `<テーマ>_NotebookLM_CURRENT`
+- 旧手動run: `<テーマ>_manual-<ID>_NotebookLM`
+- 旧手動run: `<テーマ>_manual-<ID>_全件アーカイブ`
+- 同名に見える過去のCURRENT文書
+
+### 調査結果
+
+メール内のリンク先IDと、Driveの`automation_ledger.json`に保存された`current_file_id`は一致していた。対象は次の4文書だった。
+
+- 小児感染症: `1c1v9_lIMl_-FlwdNLBkeSgdqsrE7GNTBCDEGOKxVtzY`
+- 小児腎臓: `1vcjrXe7XRORJIIcKxKlhh4pRwqH-3qkOWCKTYetIk7A`
+- 小児喘息: `1sr3JaTLtndOD3Y_U_8y49e08vS7ZCsHlsbl7DZ7nv5g`
+- プライマリケア・レビュー: `1DjGkN5oTlmXCEn5hG82sjxeZD0pH_2J5UmpS1UKUvxM`
+
+各文書には`scheduled-2026-08-08`の内容が書き込まれており、abstract生成とCURRENT更新そのものは成功していた。メールも台帳に記録された正しいIDを使用していたため、ファイル名の重複やメールリンク生成の誤りではなかった。
+
+利用者が、以前生成されたCURRENT、NotebookLM、全件アーカイブのうち内容が同じに見える文書を整理してゴミ箱へ移動した際、現在の自動処理が継続使用する固定CURRENT文書も一緒に移動していたことが原因と判明した。
+
+現在の実装は、台帳に`current_file_id`がある場合、そのIDを指定してGoogle Docs本文を更新する。更新前後にDriveの`trashed`状態を確認していないため、ゴミ箱内の文書でも本文更新が成功し、`current_doc: COMPLETED`として通知メールを送信できてしまう。
+
+### 影響
+
+- PubMed検索、OpenAI Batch、abstract生成は正常に完了した。
+- 4テーマのCURRENT本文は2026-08-08分へ更新された。
+- メール送信も正常に完了した。
+- 問題は、リンク先の固定CURRENT文書がゴミ箱状態で、通常閲覧に警告と復元操作が必要だったことに限定される。
+- 再検索、Batch再実行、文書再生成、メール再送は不要である。
+
+### 今回の対処
+
+メールの各リンクまたはDriveのゴミ箱から、上記の固定CURRENT文書を「ゴミ箱の外に移動」して同じファイルIDのまま復元する。旧`manual-*`文書など、台帳が参照していない文書まで復元する必要はない。
+
+生成日時をCURRENTのファイル名に加えて毎回新規作成する方法は採用しない。CURRENTはNotebookLMの参照先を変えずに済むよう、同じファイルIDを継続更新することが目的である。
+
+### 次回に残す課題
+
+不要な旧文書を安全に整理でき、管理対象CURRENTを誤って削除しにくくする方法を検討する。候補は次のとおり。
+
+- CURRENT更新前にDriveメタデータの`trashed`を確認する。
+- `trashed: true`なら自動復元してから更新する、または更新失敗として通知を保留する。
+- 更新後にも`trashed: false`を検証し、ゴミ箱内の文書を`COMPLETED`と扱わない。
+- Driveの`description`または`appProperties`に「自動処理が管理する固定CURRENT」であることを記録する。
+- 管理対象の固定CURRENT IDと、削除可能な旧`manual-*`・旧アーカイブを一覧化する。
+- 安全な整理手順または専用cleanupコマンドを用意し、台帳参照中のIDは削除対象から除外する。
+
+この時点ではコード変更を行わず、課題として記録する。
 
 ## 2026-08-07: GitHub Hosted Runnerを確保できず`poll`がキャンセル
 
@@ -140,4 +196,3 @@ Google Driveで対象名の子ファイルが見つからず、APIが空の`file
 - backfillまたは通知再送の要否:
 - 今後の再発防止:
 ```
-
