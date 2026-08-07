@@ -2,6 +2,8 @@
 
 最終更新: 2026-08-05 22:16 JST
 
+全体の障害・運用確認履歴は[INCIDENT_LOG.md](INCIDENT_LOG.md)を参照する。本書は2026-08-04〜05のGoogle OAuth障害に関する詳細記録である。
+
 ## 結論
 
 - Google OAuthの再認証とGitHub Secretの更新が完了した。

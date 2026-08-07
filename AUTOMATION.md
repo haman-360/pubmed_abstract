@@ -2,6 +2,8 @@
 
 既存のMacアプリ、`pubmed_fetch.py`、`pubmed_ai_select.py`による手動運用はそのまま残し、GitHub Actions用の非同期パイプラインを追加しています。定期実行は初期状態では無効です。
 
+障害、GitHubからの失敗通知、復旧作業の履歴は[INCIDENT_LOG.md](INCIDENT_LOG.md)に記録します。
+
 ## 処理の流れ
 
 1. 毎週土曜05:00 JSTに14テーマをEDATで検索し、テーマ別PMIDインデックスで重複を除きます。
