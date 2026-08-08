@@ -4,13 +4,14 @@ on:
   schedule:
     - cron: "0 20 * * 5"  # Saturday 05:00 JST: dispatcher
     - cron: "17 * * * *"  # Hourly poller, offset from the top of the hour
+    - cron: "30 20 1 * *" # Monthly 2nd 05:30 JST: missed-paper backfill
   workflow_dispatch:
     inputs:
       action:
         description: Action
         required: true
         type: choice
-        options: [dispatch, poll, retry-notification, validate]
+        options: [dispatch, poll, retry-notification, missed-papers, validate]
         default: poll
       topic:
         description: Internal topic name (optional)
@@ -113,3 +114,25 @@ jobs:
           python-version: "3.12"
       - run: python pubmed_automation.py validate
       - run: python -m unittest discover -s tests -v
+
+  missed-papers:
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '30 20 1 * *' &&
+       vars.AUTOMATION_ENABLED == 'true') ||
+      (github.event_name == 'workflow_dispatch' && inputs.action == 'missed-papers')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-automation.txt
+      - run: pip install -r requirements-automation.txt
+      - name: Find and notify missed high-value PMIDs
+        env:
+          GOOGLE_AUTHORIZED_USER_JSON: ${{ secrets.GOOGLE_AUTHORIZED_USER_JSON }}
+          GOOGLE_DRIVE_ROOT_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_ROOT_FOLDER_ID }}
+          GMAIL_NOTIFY_TO: ${{ secrets.GMAIL_NOTIFY_TO }}
+        run: python missed_papers.py --days 365 --top 30 --include-drive --publish

@@ -10,4 +10,5 @@ __pycache__/
 *.pyc
 vendor/
 screen_captures/
+missed_papers/
 .DS_Store

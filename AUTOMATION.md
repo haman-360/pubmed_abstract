@@ -70,6 +70,51 @@ python3 pubmed_automation.py poll
 python3 pubmed_automation.py retry-notification --cycle-id manual-12345
 ```
 
+## 過去の見逃し候補を再検索
+
+通常監視とは別に、発行日ベースで広く検索し直し、既存のPMIDとの差分だけを
+論文単位の引用指標・研究デザイン・14領域への一致で順位付けできます。
+雑誌Impact FactorはPubMedの検索項目ではなく、雑誌単位の指標でもあるため、
+この順位には使用しません。
+
+初回は2年、以後は月1回で直近1年を推奨します。
+GitHub Actionsでは毎月2日05:30 JSTに直近1年を自動再検索し、
+上位30件のPMIDをGmail通知します。Markdown/JSONはDriveの
+`PubMed_Automation/missed_papers`に保存します。
+
+```bash
+# 初回: Google Docs本文と既存台帳からPMIDデータベースを作成
+python3 missed_papers.py --known-only --include-drive-docs
+
+# 日常: 14テーマのPMID正本台帳だけを高速に更新
+python3 missed_papers.py --known-only --include-drive
+
+# 初回（ローカルの既存論文集を既知PMIDとして使用）
+python3 missed_papers.py --days 730 --top 30
+
+# Drive正本も含める（既存OAuthのdrive.file権限で見えるルート配下だけ）
+python3 missed_papers.py --days 730 --top 30 --include-drive
+
+# 2回目以降の月次確認
+python3 missed_papers.py --days 365 --top 30 --include-drive
+
+# 作成済みの既知DBを再利用して、Drive読み取りと検索を分離
+python3 missed_papers.py --days 365 --top 30 --known-file missed_papers/known_pmids.json
+
+# ローカルからDrive保存・Gmail通知まで確認
+python3 missed_papers.py --days 365 --top 30 --include-drive --publish
+```
+
+`GOOGLE_DRIVE_ROOT_FOLDER_ID`がないローカル環境でも実行できます。
+`--include-drive`は`drive.file`権限で見える`pmid_index.json`だけを直接検索します。
+初回にGoogle Docs本文そのものも全抽出する場合は`--include-drive-docs`を使います。
+どちらも過去runの大量の生データは走査しません。
+
+`missed_papers/YYYY-MM-DD_missed_pmids.md`に、コピー用PMIDと確認用の短い表を出します。
+同名のJSONは検索期間、既知PMID数、指標を含む監査用です。候補出力そのものは
+自動的に既知扱いしないため、「候補に出ただけで翌月から消える」ことはありません。
+抽出した既知PMIDそのものは`missed_papers/known_pmids.json`に保存します。
+
 ## Driveの正本
 
 - `system/automation_ledger.json`: 軽量台帳。設定ハッシュ、EDAT、固定file ID、run manifest参照、状態だけ
