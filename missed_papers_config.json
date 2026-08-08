@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "umbrella_signal_query": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (guideline[Publication Type] OR practice guideline[Publication Type] OR meta-analysis[Publication Type] OR systematic review[Publication Type] OR randomized controlled trial[Publication Type] OR multicenter study[Publication Type])",
+  "topics": {
+    "primary_care": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (\"primary care\"[Title/Abstract] OR \"ambulatory care\"[Title/Abstract] OR outpatient*[Title/Abstract])",
+    "sleep": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (sleep[Title/Abstract] OR \"sleep wake disorders\"[MeSH Terms])",
+    "psychosomatic": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (psychosomatic[Title/Abstract] OR \"internet addiction\"[Title/Abstract] OR \"gaming disorder\"[Title/Abstract])",
+    "trauma": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (\"febrile seizure\"[Title/Abstract] OR \"febrile seizures\"[Title/Abstract] OR \"head injury\"[Title/Abstract] OR \"head injuries\"[Title/Abstract] OR trauma[Title/Abstract])",
+    "vaccine": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (vaccine*[Title/Abstract] OR vaccination[MeSH Terms])",
+    "nephrology": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (\"kidney disease\"[Title/Abstract] OR \"kidney diseases\"[Title/Abstract] OR nephrology[Title/Abstract] OR \"nephrotic syndrome\"[Title/Abstract] OR \"IgA nephropathy\"[Title/Abstract])",
+    "constipation": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND constipation[Title/Abstract]",
+    "enuresis": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND enuresis[Title/Abstract]",
+    "infection": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (infection*[Title/Abstract] OR pneumonia[Title/Abstract] OR \"otitis media\"[Title/Abstract] OR pharyngitis[Title/Abstract] OR \"urinary tract infection\"[Title/Abstract] OR influenza[Title/Abstract] OR RSV[Title/Abstract] OR \"respiratory syncytial virus\"[Title/Abstract] OR \"antimicrobial stewardship\"[Title/Abstract] OR \"acute gastroenteritis\"[Title/Abstract])",
+    "food_allergy": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND \"food allergy\"[Title/Abstract]",
+    "atopic_dermatitis": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (\"atopic dermatitis\"[Title/Abstract] OR eczema[Title/Abstract])",
+    "asthma": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND asthma[Title/Abstract]",
+    "development": "(infant[MeSH Terms] OR child[MeSH Terms] OR adolescent[MeSH Terms] OR pediatric*[Title/Abstract] OR paediatric*[Title/Abstract]) AND (ADHD[Title/Abstract] OR \"autism spectrum disorder\"[Title/Abstract] OR \"orthostatic dysregulation\"[Title/Abstract])"
+  },
+  "known_local_globs": [
+    "chatgpt_outputs/**/*abstract10本.*",
+    "archive/processed/**/*abstract10本.*"
+  ],
+  "ranking": {
+    "detail_pool_size": 1000,
+    "default_output_n": 30
+  }
+}

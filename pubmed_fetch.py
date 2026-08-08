@@ -15,9 +15,10 @@ PubMed Monthly Abstract Fetcher
 
 import urllib.request
 import urllib.parse
+import urllib.error
 import json
 import xml.etree.ElementTree as ET
-from datetime import datetime
+from datetime import date, datetime, timedelta
 import time
 import os
 import argparse
@@ -176,8 +177,45 @@ EFETCH_URL  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 
 def fetch_url(url):
     req = urllib.request.Request(url, headers={"User-Agent": "pubmed_fetch/1.0"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read()
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as exc:
+            if exc.code != 429 and not 500 <= exc.code < 600:
+                raise
+            if attempt == 3:
+                raise
+            retry_after = exc.headers.get("Retry-After") if exc.headers else None
+            delay = float(retry_after) if retry_after and retry_after.isdigit() else 2**attempt
+            time.sleep(max(1.0, delay))
+        except urllib.error.URLError:
+            if attempt == 3:
+                raise
+            time.sleep(2**attempt)
+    raise RuntimeError("PubMed APIの再試行上限に達しました。")
+
+
+def fetch_json(url):
+    """一時的に壊れたJSONが返る場合も再試行する。"""
+    for attempt in range(4):
+        raw = fetch_url(url)
+        try:
+            return json.loads(raw)
+        except json.JSONDecodeError:
+            # ESearchがquerytranslation等の文字列内に未エスケープの
+            # 制御文字を返すことがある。構造が完全なら緩和解析で読める。
+            try:
+                return json.loads(raw, strict=False)
+            except json.JSONDecodeError:
+                pass
+        except UnicodeDecodeError:
+            pass
+        if attempt < 3:
+            time.sleep(2**attempt)
+        else:
+            raise RuntimeError("PubMed APIから有効なJSONを取得できませんでした。")
+    raise RuntimeError("PubMed APIのJSON再試行上限に達しました。")
 
 
 def search_pubmed(query, reldate=0, retmax=100):
@@ -192,7 +230,7 @@ def search_pubmed(query, reldate=0, retmax=100):
         params["datetype"] = "pdat"
         params["reldate"]  = reldate
 
-    data = json.loads(fetch_url(f"{ESEARCH_URL}?{urllib.parse.urlencode(params)}"))
+    data = fetch_json(f"{ESEARCH_URL}?{urllib.parse.urlencode(params)}")
     ids   = data.get("esearchresult", {}).get("idlist", [])
     count = data.get("esearchresult", {}).get("count", "0")
     return ids, int(count)
@@ -240,7 +278,7 @@ def search_pubmed_edat(
             "retmode": "json",
             "sort": "pub date",
         }
-        data = json.loads(fetch_url(f"{ESEARCH_URL}?{urllib.parse.urlencode(params)}"))
+        data = fetch_json(f"{ESEARCH_URL}?{urllib.parse.urlencode(params)}")
         result = data.get("esearchresult", {})
         total = int(result.get("count", "0"))
         page_ids = result.get("idlist", [])
@@ -256,6 +294,85 @@ def search_pubmed_edat(
             "取りこぼしを防ぐため上限を増やして再実行してください。"
         )
     # ページ境界などで重複しても入力順を保って一意化する。
+    return list(dict.fromkeys(ids)), int(total or 0)
+
+
+def search_pubmed_date_range(
+    query,
+    start_date,
+    end_date,
+    datetype="pdat",
+    page_size=500,
+    max_records=10000,
+    request_interval=REQUEST_INTERVAL,
+):
+    """任意の日付フィールドの範囲でESearchをページングする。
+
+    見逃し再検索では、PubMedへの収載日ではなく論文の発行日（pdat）を使う。
+    通常監視のEDAT検索とは目的が異なるため、明示的に別関数としている。
+    """
+    if datetype not in {"pdat", "edat", "mdat"}:
+        raise ValueError(f"未対応の日付フィールドです: {datetype}")
+    start_value = (
+        start_date if isinstance(start_date, date) else date.fromisoformat(str(start_date))
+    )
+    end_value = end_date if isinstance(end_date, date) else date.fromisoformat(str(end_date))
+    if start_value > end_value:
+        raise ValueError("検索開始日は終了日以前にしてください。")
+    start_term = str(start_value).replace("-", "/")
+    end_term = str(end_value).replace("-", "/")
+    term = f"({query}) AND ({start_term}[{datetype}] : {end_term}[{datetype}])"
+    ids = []
+    total = None
+    retstart = 0
+    while total is None or retstart < min(total, max_records):
+        retmax = min(page_size, max_records - retstart)
+        if retmax <= 0:
+            break
+        params = {
+            "db": "pubmed",
+            "term": term,
+            "retstart": retstart,
+            "retmax": retmax,
+            "retmode": "json",
+            "sort": "pub date",
+        }
+        data = fetch_json(f"{ESEARCH_URL}?{urllib.parse.urlencode(params)}")
+        result = data.get("esearchresult", {})
+        total = int(result.get("count", "0"))
+        if total > max_records:
+            if start_value == end_value:
+                raise RuntimeError(
+                    f"{start_value.isoformat()}だけでPubMed検索結果{total}件が"
+                    f"max_records={max_records}を超えました。"
+                )
+            midpoint = start_value + (end_value - start_value) // 2
+            left_ids, left_total = search_pubmed_date_range(
+                query,
+                start_value,
+                midpoint,
+                datetype=datetype,
+                page_size=page_size,
+                max_records=max_records,
+                request_interval=request_interval,
+            )
+            right_ids, right_total = search_pubmed_date_range(
+                query,
+                midpoint + timedelta(days=1),
+                end_value,
+                datetype=datetype,
+                page_size=page_size,
+                max_records=max_records,
+                request_interval=request_interval,
+            )
+            return list(dict.fromkeys(left_ids + right_ids)), left_total + right_total
+        page_ids = result.get("idlist", [])
+        ids.extend(page_ids)
+        if not page_ids:
+            break
+        retstart += len(page_ids)
+        if retstart < min(total, max_records):
+            time.sleep(request_interval)
     return list(dict.fromkeys(ids)), int(total or 0)
 
 
