@@ -1,6 +1,7 @@
 import json
 import unittest
 import urllib.parse
+from datetime import datetime, timezone
 from unittest.mock import patch
 
 import missed_papers
@@ -8,6 +9,12 @@ import pubmed_fetch
 
 
 class PmidExtractionTests(unittest.TestCase):
+    def test_default_date_uses_tokyo_timezone(self):
+        utc_time = datetime(2026, 8, 8, 23, 30, tzinfo=timezone.utc)
+        self.assertEqual(
+            missed_papers.local_today(now=utc_time).isoformat(), "2026-08-09"
+        )
+
     def test_extracts_only_explicit_pmid_forms(self):
         text = (
             "PMID: 12345678 / PMID：42 / https://pubmed.ncbi.nlm.nih.gov/11223344/ "

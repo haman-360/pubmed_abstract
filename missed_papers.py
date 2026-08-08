@@ -16,6 +16,7 @@ from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterable
+from zoneinfo import ZoneInfo
 
 from pubmed_fetch import fetch_abstracts, search_pubmed_date_range
 
@@ -56,6 +57,13 @@ def parse_args() -> argparse.Namespace:
         help="結果Markdown/JSONをDriveへ保存し、GmailでPMID一覧を通知",
     )
     return parser.parse_args()
+
+
+def local_today(timezone_name: str = "Asia/Tokyo", now: datetime | None = None) -> date:
+    current = now or datetime.now(timezone.utc)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=timezone.utc)
+    return current.astimezone(ZoneInfo(timezone_name)).date()
 
 
 def extract_pmids(text: str) -> set[str]:
@@ -338,7 +346,7 @@ def publish_report(
 def main() -> int:
     args = parse_args()
     config = json.loads(Path(args.config).read_text(encoding="utf-8"))
-    end = date.fromisoformat(args.end_date) if args.end_date else date.today()
+    end = date.fromisoformat(args.end_date) if args.end_date else local_today()
     if args.days <= 0:
         raise ValueError("--daysは1以上にしてください。")
     start = end - timedelta(days=args.days - 1)
