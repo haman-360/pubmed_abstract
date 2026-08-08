@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import MagicMock, call
 
 from automation_core import load_config
-from automation_services import GoogleWorkspaceClient
+from automation_services import GoogleWorkspaceClient, split_score_table
 from pubmed_automation import DriveStore, create_documents, maybe_notify
 
 
@@ -61,6 +61,60 @@ class CurrentDocumentIdempotencyTests(unittest.TestCase):
         self.assertEqual(result["id"], "fixed-current-id")
         client.replace_doc_text.assert_called_once_with("fixed-current-id", "latest")
         client.drive.files.return_value.create.assert_not_called()
+
+
+class NativeScoreTableTests(unittest.TestCase):
+    def test_score_section_is_split_into_five_column_rows(self):
+        text = (
+            "【第1部：日本語要約】\n本文\n\n"
+            "【第3部：候補論文スコア一覧】\n\n"
+            "PMID | タイトル | 総合スコア | 役立つか | 短いメモ\n"
+            "123 | A title | 18 | Yes (4/5) | useful"
+        )
+
+        body, rows = split_score_table(text)
+
+        self.assertEqual(body, "【第1部：日本語要約】\n本文\n\n【第3部：候補論文スコア一覧】\n")
+        self.assertEqual(rows, [
+            ["PMID", "タイトル", "総合スコア", "役立つか", "短いメモ"],
+            ["123", "A title", "18", "Yes (4/5)", "useful"],
+        ])
+
+    def test_replace_doc_text_creates_and_populates_native_table(self):
+        client = GoogleWorkspaceClient.__new__(GoogleWorkspaceClient)
+        client.docs = MagicMock()
+        empty_table = {
+            "startIndex": 25,
+            "table": {
+                "tableRows": [
+                    {"tableCells": [
+                        {"content": [{"startIndex": 30 + row * 20 + column * 3}]}
+                        for column in range(5)
+                    ]}
+                    for row in range(2)
+                ]
+            },
+        }
+        client.docs.documents.return_value.get.return_value.execute.side_effect = [
+            {"body": {"content": [{"endIndex": 8}]}},
+            {"body": {"content": [empty_table]}},
+        ]
+        text = (
+            "【第3部：候補論文スコア一覧】\n\n"
+            "PMID | タイトル | 総合スコア | 役立つか | 短いメモ\n"
+            "123 | A title | 18 | Yes (4/5) | useful"
+        )
+
+        client.replace_doc_text("doc-id", text)
+
+        updates = client.docs.documents.return_value.batchUpdate.call_args_list
+        first_requests = updates[0].kwargs["body"]["requests"]
+        self.assertIn("insertTable", first_requests[-1])
+        self.assertEqual(first_requests[-1]["insertTable"]["rows"], 2)
+        self.assertEqual(first_requests[-1]["insertTable"]["columns"], 5)
+        table_requests = updates[1].kwargs["body"]["requests"]
+        self.assertEqual(sum("insertText" in request for request in table_requests), 10)
+        self.assertIn("updateTableCellStyle", table_requests[-1])
 
 
 class DriveLookupTests(unittest.TestCase):

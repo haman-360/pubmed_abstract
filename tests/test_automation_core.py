@@ -186,6 +186,14 @@ class DocumentAndLedgerTests(unittest.TestCase):
         self.assertNotIn("SECRET ABSTRACT 3", text)
         self.assertIn("3 | Title 3 | 17 | 要検討 (3/5) | 評価", text)
 
+    def test_score_table_cells_cannot_break_the_five_column_transport(self):
+        self.articles[2]["title"] = "Title | with\nline break"
+        self.scores[2]["one_line_assessment"] = "memo | note"
+
+        text = render_notebook_doc("テーマ", "run", self.articles, self.scores, self.final)
+
+        self.assertIn("3 | Title ｜ with line break | 17 | 要検討 (3/5) | memo ｜ note", text)
+
     def test_ledger_is_lightweight(self):
         ledger = new_ledger(self.config)
         assert_lightweight_ledger(ledger)

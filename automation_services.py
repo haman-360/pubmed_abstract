@@ -14,6 +14,48 @@ from email.message import EmailMessage
 from typing import Any
 
 
+SCORE_TABLE_HEADING = "【第3部：候補論文スコア一覧】"
+SCORE_TABLE_HEADERS = ["PMID", "タイトル", "総合スコア", "役立つか", "短いメモ"]
+
+
+def split_score_table(text: str) -> tuple[str, list[list[str]] | None]:
+    """Separate the final score section into Google Docs table data."""
+    lines = text.splitlines()
+    try:
+        heading_index = lines.index(SCORE_TABLE_HEADING)
+        header_index = next(
+            index
+            for index in range(heading_index + 1, len(lines))
+            if lines[index].strip()
+        )
+    except (ValueError, StopIteration):
+        return text, None
+
+    header = [cell.strip() for cell in lines[header_index].split(" | ")]
+    if header != SCORE_TABLE_HEADERS:
+        return text, None
+
+    rows = [header]
+    for line in lines[header_index + 1:]:
+        if not line.strip():
+            continue
+        cells = [cell.strip() for cell in line.split(" | ")]
+        if len(cells) != len(SCORE_TABLE_HEADERS):
+            return text, None
+        rows.append(cells)
+
+    # Keep the heading in the ordinary text flow and place the native table below it.
+    prefix = "\n".join(lines[:header_index]).rstrip() + "\n"
+    return prefix, rows
+
+
+def _table_cells(table_element: dict[str, Any]) -> list[list[dict[str, Any]]]:
+    return [
+        row.get("tableCells", [])
+        for row in table_element.get("table", {}).get("tableRows", [])
+    ]
+
+
 class OpenAIBatchClient:
     API_ROOT = "https://api.openai.com/v1"
 
@@ -172,12 +214,70 @@ class GoogleWorkspaceClient:
         document = self.docs.documents().get(documentId=file_id).execute()
         content = document.get("body", {}).get("content", [])
         end_index = max((item.get("endIndex", 1) for item in content), default=1)
+        body_text, score_table = split_score_table(text)
         requests = []
         if end_index > 2:
             requests.append({"deleteContentRange": {"range": {"startIndex": 1, "endIndex": end_index - 1}}})
-        requests.append({"insertText": {"location": {"index": 1}, "text": text}})
+        requests.append({"insertText": {"location": {"index": 1}, "text": body_text}})
+        if score_table:
+            requests.append({
+                "insertTable": {
+                    "rows": len(score_table),
+                    "columns": len(SCORE_TABLE_HEADERS),
+                    "location": {"index": len(body_text) + 1},
+                }
+            })
         self.docs.documents().batchUpdate(
             documentId=file_id, body={"requests": requests}
+        ).execute()
+
+        if not score_table:
+            return
+
+        # Cell indexes are assigned by Google Docs, so read them after creating the table.
+        updated = self.docs.documents().get(documentId=file_id).execute()
+        tables = [item for item in updated.get("body", {}).get("content", []) if "table" in item]
+        if not tables:
+            raise RuntimeError("第3部のGoogle Docs表を作成できませんでした。")
+        table = tables[-1]
+        cells = _table_cells(table)
+        if len(cells) != len(score_table) or any(
+            len(row) != len(SCORE_TABLE_HEADERS) for row in cells
+        ):
+            raise RuntimeError("第3部のGoogle Docs表の行列数が一致しません。")
+
+        table_requests = []
+        # Work backwards so text inserted into a cell never invalidates an earlier index.
+        for row_index in range(len(score_table) - 1, -1, -1):
+            for column_index in range(len(SCORE_TABLE_HEADERS) - 1, -1, -1):
+                cell = cells[row_index][column_index]
+                cell_content = cell.get("content", [])
+                if not cell_content:
+                    raise RuntimeError("第3部のGoogle Docs表セル位置を取得できませんでした。")
+                table_requests.append({
+                    "insertText": {
+                        "location": {"index": cell_content[0]["startIndex"]},
+                        "text": score_table[row_index][column_index],
+                    }
+                })
+        table_requests.append({
+            "updateTableCellStyle": {
+                "tableStartLocation": {"index": table["startIndex"]},
+                "tableRange": {
+                    "tableCellLocation": {"rowIndex": 0, "columnIndex": 0},
+                    "rowSpan": 1,
+                    "columnSpan": len(SCORE_TABLE_HEADERS),
+                },
+                "tableCellStyle": {
+                    "backgroundColor": {
+                        "color": {"rgbColor": {"red": 0.9, "green": 0.92, "blue": 0.94}}
+                    }
+                },
+                "fields": "backgroundColor",
+            }
+        })
+        self.docs.documents().batchUpdate(
+            documentId=file_id, body={"requests": table_requests}
         ).execute()
 
     def get_file(self, file_id: str) -> dict[str, Any]:

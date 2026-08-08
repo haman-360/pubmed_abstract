@@ -23,6 +23,8 @@ SCREEN_RESCUE_TYPES = {
     "rct",
 }
 
+SCORE_TABLE_HEADERS = ["PMID", "タイトル", "総合スコア", "役立つか", "短いメモ"]
+
 
 def utc_now() -> datetime:
     return datetime.now(timezone.utc)
@@ -362,6 +364,11 @@ def _clinic_usefulness_label(score: dict[str, Any]) -> str:
     return f"No ({value}/5)"
 
 
+def _score_table_cell(value: Any) -> str:
+    """Keep the plain-text transport format to exactly one physical table cell."""
+    return re.sub(r"\s+", " ", str(value)).strip().replace("|", "｜")
+
+
 def render_notebook_doc(
     theme: str,
     run_id: str,
@@ -424,16 +431,20 @@ def render_notebook_doc(
         "",
         "【第3部：候補論文スコア一覧】",
         "",
-        "PMID | タイトル | 総合スコア | 役立つか | 短いメモ",
+        " | ".join(SCORE_TABLE_HEADERS),
     ])
     for article in articles:
         score = score_by_pmid.get(article["pmid"], {})
         total = score.get("total_score", "未評価")
         memo = score.get("one_line_assessment", "一次評価を取得できませんでした")
-        lines.append(
-            f"{article['pmid']} | {article['title']} | {total} | "
-            f"{_clinic_usefulness_label(score)} | {memo}"
-        )
+        row = [
+            article["pmid"],
+            article["title"],
+            total,
+            _clinic_usefulness_label(score),
+            memo,
+        ]
+        lines.append(" | ".join(_score_table_cell(value) for value in row))
     return "\n".join(lines)
 
 
