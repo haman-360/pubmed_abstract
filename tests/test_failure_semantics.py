@@ -95,9 +95,27 @@ class NativeScoreTableTests(unittest.TestCase):
                 ]
             },
         }
+        populated_table = {
+            "startIndex": 25,
+            "table": {
+                "tableRows": [
+                    {"tableCells": [
+                        {"content": [{"paragraph": {"elements": [{
+                            "textRun": {"content": value + "\n"}
+                        }]}}]}
+                        for value in row
+                    ]}
+                    for row in [
+                        ["PMID", "タイトル", "総合スコア", "役立つか", "短いメモ"],
+                        ["123", "A title", "18", "Yes (4/5)", "useful"],
+                    ]
+                ]
+            },
+        }
         client.docs.documents.return_value.get.return_value.execute.side_effect = [
             {"body": {"content": [{"endIndex": 8}]}},
             {"body": {"content": [empty_table]}},
+            {"body": {"content": [populated_table]}},
         ]
         text = (
             "【第3部：候補論文スコア一覧】\n\n"
@@ -114,7 +132,43 @@ class NativeScoreTableTests(unittest.TestCase):
         self.assertEqual(first_requests[-1]["insertTable"]["columns"], 5)
         table_requests = updates[1].kwargs["body"]["requests"]
         self.assertEqual(sum("insertText" in request for request in table_requests), 10)
-        self.assertIn("updateTableCellStyle", table_requests[-1])
+        style_requests = updates[2].kwargs["body"]["requests"]
+        style = style_requests[0]["updateTableCellStyle"]
+        self.assertNotIn("tableStartLocation", style)
+        self.assertEqual(
+            style["tableRange"]["tableCellLocation"]["tableStartLocation"],
+            {"index": 25},
+        )
+        self.assertIn("pinTableHeaderRows", style_requests[1])
+
+    def test_population_is_verified_before_table_styling(self):
+        client = GoogleWorkspaceClient.__new__(GoogleWorkspaceClient)
+        client.docs = MagicMock()
+        empty_table = {
+            "startIndex": 25,
+            "table": {"tableRows": [
+                {"tableCells": [{"content": [{"startIndex": 30 + row * 20 + col * 3}]} for col in range(5)]}
+                for row in range(2)
+            ]},
+        }
+        client.docs.documents.return_value.get.return_value.execute.side_effect = [
+            {"body": {"content": [{"endIndex": 8}]}},
+            {"body": {"content": [empty_table]}},
+            {"body": {"content": [empty_table]}},
+        ]
+        text = (
+            "【第3部：候補論文スコア一覧】\n\n"
+            "PMID | タイトル | 総合スコア | 役立つか | 短いメモ\n"
+            "123 | A title | 18 | Yes (4/5) | useful"
+        )
+
+        with self.assertRaisesRegex(RuntimeError, "全データ"):
+            client.replace_doc_text("doc-id", text)
+
+        self.assertEqual(
+            client.docs.documents.return_value.batchUpdate.call_count,
+            2,
+        )
 
 
 class DriveLookupTests(unittest.TestCase):

@@ -56,6 +56,23 @@ def _table_cells(table_element: dict[str, Any]) -> list[list[dict[str, Any]]]:
     ]
 
 
+def _structural_text(content: list[dict[str, Any]]) -> str:
+    """Return plain text from Google Docs structural elements."""
+    parts: list[str] = []
+    for item in content:
+        paragraph = item.get("paragraph", {})
+        for element in paragraph.get("elements", []):
+            parts.append(element.get("textRun", {}).get("content", ""))
+    return "".join(parts).rstrip("\n")
+
+
+def _table_text_rows(table_element: dict[str, Any]) -> list[list[str]]:
+    return [
+        [_structural_text(cell.get("content", [])) for cell in row]
+        for row in _table_cells(table_element)
+    ]
+
+
 class OpenAIBatchClient:
     API_ROOT = "https://api.openai.com/v1"
 
@@ -260,11 +277,28 @@ class GoogleWorkspaceClient:
                         "text": score_table[row_index][column_index],
                     }
                 })
-        table_requests.append({
+        # Populate first. A later formatting error must never roll back cell text.
+        self.docs.documents().batchUpdate(
+            documentId=file_id, body={"requests": table_requests}
+        ).execute()
+
+        populated = self.docs.documents().get(documentId=file_id).execute()
+        populated_tables = [
+            item for item in populated.get("body", {}).get("content", []) if "table" in item
+        ]
+        if not populated_tables or _table_text_rows(populated_tables[-1]) != score_table:
+            raise RuntimeError("第3部のGoogle Docs表へ全データを入力できませんでした。")
+
+        # Apply presentation only after content has been verified.
+        table_start_index = populated_tables[-1]["startIndex"]
+        style_requests = [{
             "updateTableCellStyle": {
-                "tableStartLocation": {"index": table["startIndex"]},
                 "tableRange": {
-                    "tableCellLocation": {"rowIndex": 0, "columnIndex": 0},
+                    "tableCellLocation": {
+                        "tableStartLocation": {"index": table_start_index},
+                        "rowIndex": 0,
+                        "columnIndex": 0,
+                    },
                     "rowSpan": 1,
                     "columnSpan": len(SCORE_TABLE_HEADERS),
                 },
@@ -275,9 +309,14 @@ class GoogleWorkspaceClient:
                 },
                 "fields": "backgroundColor",
             }
-        })
+        }, {
+            "pinTableHeaderRows": {
+                "tableStartLocation": {"index": table_start_index},
+                "pinnedHeaderRowsCount": 1,
+            }
+        }]
         self.docs.documents().batchUpdate(
-            documentId=file_id, body={"requests": table_requests}
+            documentId=file_id, body={"requests": style_requests}
         ).execute()
 
     def get_file(self, file_id: str) -> dict[str, Any]:
