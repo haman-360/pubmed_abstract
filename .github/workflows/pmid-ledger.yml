@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   sync:
-    if: vars.PMID_LEDGER_ENABLED == 'true' && vars.PMID_LEDGER_SHEET_ID != ''
+    if: vars.PMID_LEDGER_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -30,6 +30,6 @@ jobs:
         env:
           GOOGLE_AUTHORIZED_USER_JSON: ${{ secrets.GOOGLE_AUTHORIZED_USER_JSON }}
           GOOGLE_DRIVE_ROOT_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_ROOT_FOLDER_ID }}
-          PMID_LEDGER_SHEET_ID: ${{ vars.PMID_LEDGER_SHEET_ID }}
+          PMID_LEDGER_SHEET_ID: ${{ secrets.PMID_LEDGER_SHEET_ID }}
         run: python -m pmid_ledger sync --include-drive
       # No OpenAI key, PubMed call, Gmail notification or existing poll command.

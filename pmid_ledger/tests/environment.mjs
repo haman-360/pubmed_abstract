@@ -80,14 +80,16 @@ export function environment(opts = {}) {
     insertRowsAfter() {},
     getRange: (r, c, nr, nc) => {
       const range = {
-        getDisplayValues: () =>
-          tables[name]
+        getDisplayValues: () => {
+          if (opts.onRead) opts.onRead(name, tables);
+          return tables[name]
             .slice(r - 1, r - 1 + nr)
             .map((row) =>
               Array.from({ length: nc }, (_, i) =>
                 String(row[c - 1 + i] ?? ""),
               ),
-            ),
+            );
+        },
         setNumberFormat: () => range,
         setValues: (rows) => {
           if (opts.failWrite) throw new Error("save failed");

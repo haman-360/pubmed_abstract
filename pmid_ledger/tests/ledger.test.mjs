@@ -145,6 +145,15 @@ test("5000 papers paginated without returning summary text", () => {
   assert.equal(r.items[0].appearances, undefined);
   assert.ok(performance.now() - start < 2000);
 });
+test("backup rejects metadata changing while tables are read", () => {
+  const e = environment({
+    onRead(name, tables) {
+      if (name === "Texts")
+        tables.Settings.find((r) => r[0] === "revision")[1] = "two";
+    },
+  });
+  assert.throws(() => e.ctx.exportData({ format: "backup" }), /同期中/);
+});
 test("all inline scripts parse and production has no AI/network clients", () => {
   const html = fs.readFileSync(
     new URL("../gas/Index.html", import.meta.url),
