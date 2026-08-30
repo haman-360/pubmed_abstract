@@ -20,6 +20,8 @@ def main():
     parser.add_argument("--include-docs", action="store_true")
     parser.add_argument("--output", default="ledger_private")
     args = parser.parse_args()
+    if args.command == "sync" and (not args.sheet_id or not args.include_drive):
+        parser.error("sync requires --sheet-id and --include-drive")
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
     google = None
@@ -60,8 +62,6 @@ def main():
         destination.chmod(0o600)
     print(json.dumps({k: v for k, v in data.report().items() if k not in ("sources", "warnings")}, ensure_ascii=False))
     if args.command == "sync":
-        if not args.sheet_id or not args.include_drive:
-            parser.error("sync requires --sheet-id and --include-drive")
         # Serialize local invocations. Actions uses the shared workflow concurrency group.
         import fcntl
         with (output / "sync.lock").open("w") as lock:

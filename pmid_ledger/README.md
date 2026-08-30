@@ -48,9 +48,9 @@ python -m pmid_ledger sync --include-drive --include-docs
 GitHubの設定：
 
 - `GOOGLE_DRIVE_ROOT_FOLDER_ID` とSecret `GOOGLE_AUTHORIZED_USER_JSON` は既存値を使います。
-- Variable `PMID_LEDGER_SHEET_ID`：本番台帳ID。
+- Secret `PMID_LEDGER_SHEET_ID`：本番台帳ID。公開リポジトリのVariablesには保存しません。
 - Variable `PMID_LEDGER_ENABLED=true`：同期の有効化。falseで同期のみ停止できます。
-- Variable `PMID_LEDGER_WEB_URL`：本人限定WebアプリURL。設定後に生成する文書へPMID指定の確認リンクを追加します。既存文書の再生成は行いません。
+- Secret `PMID_LEDGER_WEB_URL`：本人限定WebアプリURL。設定後に生成する文書へPMID指定の確認リンクを追加します。既存文書の再生成は行いません。
 
 自動メタデータ書き込みはこのworkflow一つに限定し、既存pipelineと同じconcurrency groupで直列化します。本番台帳へのローカル再同期は通常拒否します。保守が必要なときだけ、同期workflowを無効化し実行中ジョブの終了を確認してから `PMID_LEDGER_MAINTENANCE=1` を明示してください。GASからの手動状態変更は、別シートなので停止不要です。
 
