@@ -607,7 +607,8 @@ def create_documents(
     final = store.load_json(manifest["artifacts"]["final_evaluation"]["file_id"])
     folders = store.document_folders(manifest["topic"])
     notebook_text = render_notebook_doc(
-        manifest["display_name"], manifest["run_id"], raw["articles"], scores, final
+        manifest["display_name"], manifest["run_id"], raw["articles"], scores, final,
+        ledger_url=os.environ.get("PMID_LEDGER_WEB_URL", ""),
     )
 
     # 旧manifestが未完了のまま残っていても、過去の成果物は削除せず、
@@ -644,6 +645,7 @@ def create_documents(
         current_file = store.google.get_file(current_id)
         current_component.update({
             "state": "COMPLETED",
+            "completed_at": iso_z(),
             "file_id": current_id,
             "url": current_file.get("webViewLink") or f"https://docs.google.com/document/d/{current_id}/edit",
             "sha256": content_hash(notebook_text),
@@ -672,7 +674,8 @@ def retry_current_if_needed(
     raw = store.load_json(manifest["artifacts"]["all_abstracts"]["file_id"])
     scores = store.load_json(manifest["artifacts"]["screen_evaluations"]["file_id"])
     text = render_notebook_doc(
-        manifest["display_name"], manifest["run_id"], raw["articles"], scores, final
+        manifest["display_name"], manifest["run_id"], raw["articles"], scores, final,
+        ledger_url=os.environ.get("PMID_LEDGER_WEB_URL", ""),
     )
     topic_ledger = ledger["topics"][manifest["topic"]]
     try:
@@ -688,6 +691,7 @@ def retry_current_if_needed(
             store.google.replace_doc_text(current_id, text)
         component.update({
             "state": "COMPLETED",
+            "completed_at": iso_z(),
             "file_id": current_id,
             "url": f"https://docs.google.com/document/d/{current_id}/edit",
             "sha256": content_hash(text),
