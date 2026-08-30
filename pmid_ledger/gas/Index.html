@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PMID論文確認台帳</title>
+    <style>
+      :root {
+        font:
+          16px/1.65 system-ui,
+          sans-serif;
+        color: #20313b;
+        background: #f5f7f8;
+        color-scheme: light;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      main {
+        max-width: 1120px;
+        margin: auto;
+        padding: 22px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin: 0;
+      }
+      h2 {
+        font-size: 1.15rem;
+      }
+      h3 {
+        font-size: 1rem;
+      }
+      button,
+      select,
+      input,
+      .download {
+        min-height: 48px;
+        padding: 10px 12px;
+        font: inherit;
+        border: 1px solid #acbbc1;
+        border-radius: 8px;
+        background: white;
+        color: #20313b;
+      }
+      button,
+      .download {
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.55;
+        cursor: wait;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      select:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 3px solid #b45900;
+        outline-offset: 3px;
+      }
+      .primary,
+      nav button[aria-pressed="true"] {
+        background: #126c62;
+        color: white;
+        border-color: #126c62;
+      }
+      .toolbar,
+      .actions,
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+      .toolbar {
+        margin: 16px 0;
+      }
+      nav {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+        margin: 18px 0;
+      }
+      nav button {
+        text-align: left;
+      }
+      nav strong {
+        display: block;
+        font-size: 1.3rem;
+      }
+      form {
+        background: #eaf1f2;
+        border-radius: 10px;
+        padding: 14px;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      input[type="checkbox"] {
+        width: 24px;
+        height: 24px;
+        min-height: 24px;
+      }
+      label.check {
+        flex-direction: row;
+        align-items: center;
+        min-height: 48px;
+      }
+      #query {
+        width: 300px;
+        max-width: 100%;
+      }
+      .muted {
+        color: #53616a;
+        font-size: 0.9rem;
+      }
+      #feedback {
+        min-height: 32px;
+        white-space: pre-wrap;
+      }
+      .error {
+        color: #a5201c;
+      }
+      .success {
+        color: #0c655c;
+      }
+      article {
+        background: white;
+        border: 1px solid #d8e0e4;
+        border-radius: 12px;
+        padding: 18px;
+        margin: 12px 0;
+        overflow-wrap: anywhere;
+      }
+      article h2 {
+        margin: 5px 0 12px;
+      }
+      .badge {
+        display: inline-block;
+        background: #edf4f2;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+      }
+      a {
+        color: #075f92;
+      }
+      .links a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 48px;
+      }
+      .note {
+        width: 100%;
+        min-height: 64px;
+        font: inherit;
+        border: 1px solid #acbbc1;
+        border-radius: 8px;
+        padding: 8px;
+      }
+      .note.dirty {
+        border: 2px solid #b45900;
+      }
+      dialog {
+        width: min(800px, calc(100% - 24px));
+        max-height: 90dvh;
+        border: 1px solid #acbbc1;
+        border-radius: 12px;
+        padding: 20px;
+      }
+      dialog::backdrop {
+        background: #172e3e77;
+      }
+      .detail-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .detail-text {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+      #export-area {
+        background: white;
+        padding: 16px;
+        border-radius: 10px;
+      }
+      #export-text {
+        width: 100%;
+        min-height: 100px;
+        font: 16px monospace;
+      }
+      .notice {
+        background: #fff4d6;
+        border-radius: 8px;
+        padding: 12px;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      @media (max-width: 720px) {
+        main {
+          padding: 12px;
+        }
+        nav {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        nav button:last-child {
+          grid-column: 1/-1;
+        }
+        article {
+          padding: 12px;
+        }
+        .actions select {
+          width: 100%;
+        }
+        .toolbar > label {
+          max-width: 100%;
+        }
+        #query {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body data-pmid="<?= initialPmid ?>">
+    <main>
+      <h1>PMID 論文確認台帳</h1>
+      <p class="muted">
+        iPadで「原文入手希望に追加」→
+        Macで希望PMIDをまとめて取得。状態・メモ・要約履歴を保存します。AIの追加呼び出しはありません。
+      </p>
+      <p id="test-notice" class="notice" hidden>
+        統合TEST：架空データです。TXTを原文取得アプリへ投入しないでください。
+      </p>
+      <p id="sync" class="muted"></p>
+      <nav id="tabs" aria-label="確認状況"></nav>
+      <form id="filters">
+        <div class="toolbar">
+          <label
+            >PMID・タイトル<input
+              id="query"
+              type="search"
+              placeholder="PMIDまたはタイトルの一部"
+          /></label>
+          <label
+            >表示期間<select id="scope">
+              <option value="recent">最近の未確認</option>
+              <option value="want">原文入手待ち</option>
+              <option value="obtained">原文入手済み・未読</option>
+              <option value="old">過去の未確認</option>
+              <option value="done">確認完了</option>
+              <option value="active">未確認・対応中（全期間）</option>
+              <option value="all">すべて</option>
+              <option value="archive">3か月より古い論文</option>
+            </select></label
+          >
+          <label
+            >分野<select id="topic">
+              <option value="">すべて</option>
+            </select></label
+          ><label
+            >状態<select id="status">
+              <option value="">すべて</option>
+            </select></label
+          >
+          <label>配信日：開始<input id="from" type="date" /></label
+          ><label>終了<input id="to" type="date" /></label>
+          <label
+            >並べ替え<select id="sort">
+              <option value="delivery_desc">
+                配信日の新しい順（不明は末尾）
+              </option>
+              <option value="delivery_asc">配信日の古い順（不明は末尾）</option>
+              <option value="pmid_asc">PMID 昇順</option>
+              <option value="pmid_desc">PMID 降順</option>
+              <option value="updated_desc">状態更新日の新しい順</option>
+            </select></label
+          >
+          <button class="primary" type="submit">検索・絞り込み</button
+          ><button id="reset-filters" type="button">条件をリセット</button>
+        </div>
+        <p class="muted">
+          PMID・タイトル検索は全期間へ切り替えます。配信日不明の履歴は、配信日による絞り込みには含みません。
+        </p>
+      </form>
+      <div class="toolbar">
+        <button id="reload">再読み込み</button
+        ><button id="export-all">希望PMIDをすべてTXT出力</button
+        ><button id="csv">表示条件のCSV出力</button
+        ><button id="backup">全台帳バックアップ（JSON）</button>
+      </div>
+      <div id="feedback" role="status" aria-live="polite">
+        画面を起動しています。表示が変わらなければ再読み込みしてください。
+      </div>
+      <div class="toolbar">
+        <label class="check"
+          ><input id="select-page" type="checkbox" />このページを選択</label
+        ><span id="selected-count">選択0件</span
+        ><button id="clear-selection">選択解除</button
+        ><button id="export-selected">選択した希望PMIDをTXT出力</button
+        ><select id="bulk-status" aria-label="一括変更する状態"></select
+        ><button id="bulk-save">選択した論文の状態を変更</button>
+      </div>
+      <p id="range" class="muted"></p>
+      <section id="papers" aria-label="論文一覧"></section>
+      <div class="toolbar">
+        <button id="prev">前のページ</button
+        ><button id="next">次のページ</button>
+      </div>
+      <section id="export-area" hidden>
+        <h2>ファイルの準備ができました</h2>
+        <p id="export-info"></p>
+        <a id="download" class="download primary">ファイルをダウンロード</a>
+        <p class="muted">
+          状態の保存とは別の操作です。TXTはUTF-8・BOMなし・数字のみ1行1件。取得アプリでは
+          #
+          で始まる行は無視されます。ダウンロードしても原文入手済みには変更しません。
+        </p>
+        <textarea id="export-text" readonly aria-label="出力内容"></textarea>
+      </section>
+      <dialog id="detail" aria-labelledby="detail-title">
+        <div class="detail-heading">
+          <h2 id="detail-title">掲載履歴</h2>
+          <button id="close-detail">閉じる</button>
+        </div>
+        <div id="detail-body"></div>
+      </dialog>
+    </main>
+    <script>
+      (function () {
+        function fail(message) {
+          var status = document.getElementById("feedback");
+          status.className = "error";
+          status.textContent =
+            "画面の処理に失敗しました。保存結果は不明です。再読み込みしてください。詳細：" +
+            message;
+        }
+        window.addEventListener("error", function (e) {
+          fail(e.message);
+        });
+        window.addEventListener("unhandledrejection", function (e) {
+          fail((e.reason && e.reason.message) || "処理を完了できませんでした");
+        });
+      })();
+    </script>
+    <script>
+      "use strict";
+      const el = (id) => document.getElementById(id),
+        node = (tag, text, cls) => {
+          const n = document.createElement(tag);
+          if (text !== undefined) n.textContent = text;
+          if (cls) n.className = cls;
+          return n;
+        };
+      const statuses = {
+          unreviewed: "未確認",
+          reviewed_no_fulltext: "確認済み・原文不要",
+          want_fulltext: "原文入手希望",
+          fulltext_obtained: "原文入手済み・未読",
+          read: "読了",
+        },
+        tabOrder = ["recent", "want", "obtained", "old", "done"];
+      let current = null,
+        offset = 0,
+        busy = false,
+        exportUrl = null,
+        activeFilter = { tab: "recent" };
+      const selected = new Map(),
+        drafts = new Map(),
+        attempts = new Map();
+      function feedback(text, kind = "") {
+        el("feedback").textContent = text;
+        el("feedback").className = kind;
+      }
+      function setBusy(value) {
+        busy = value;
+        document
+          .querySelectorAll("main button,main select,main input,main textarea")
+          .forEach((n) => {
+            if (n.id !== "close-detail") n.disabled = value;
+          });
+        if (!value && current) {
+          el("prev").disabled = offset === 0;
+          el("next").disabled = offset + 50 >= current.total;
+        }
+      }
+      function rpc(name, arg) {
+        return new Promise((resolve, reject) => {
+          let done = false;
+          const timer = setTimeout(() => {
+            done = true;
+            reject(
+              new Error(
+                "応答を確認できません。保存結果は不明です。再読み込み、または同じ操作の再試行で確認してください。",
+              ),
+            );
+          }, 30000);
+          const finish = (fn) => (result) => {
+            if (done) return;
+            done = true;
+            clearTimeout(timer);
+            fn(result);
+          };
+          google.script.run
+            .withSuccessHandler(finish(resolve))
+            .withFailureHandler(
+              finish((e) => reject(new Error(e.message || String(e)))),
+            )
+            [name](arg);
+        });
+      }
+      function safeLink(url, label, kind) {
+        try {
+          const u = new URL(url),
+            valid =
+              u.protocol === "https:" &&
+              (kind === "pubmed"
+                ? u.hostname === "pubmed.ncbi.nlm.nih.gov"
+                : kind === "doi"
+                  ? u.hostname === "doi.org"
+                  : u.hostname === "docs.google.com" &&
+                    /^\/document\/d\/[A-Za-z0-9_-]+\//.test(u.pathname));
+          if (!valid) return node("span", "リンクなし", "muted");
+          const a = node("a", label);
+          a.href = u.href;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          return a;
+        } catch {
+          return node("span", "リンクなし", "muted");
+        }
+      }
+      function options(select, items, blank = false) {
+        select.replaceChildren();
+        if (blank) {
+          const o = node("option", "すべて");
+          o.value = "";
+          select.append(o);
+        }
+        for (const [value, label] of Object.entries(items)) {
+          const o = node("option", label);
+          o.value = value;
+          select.append(o);
+        }
+      }
+      options(el("status"), statuses, true);
+      options(el("bulk-status"), statuses);
+      el("bulk-status").value = "want_fulltext";
+      function selectionInfo() {
+        el("selected-count").textContent =
+          "選択" +
+          selected.size +
+          "件（ページをまたいで保持・一括保存は100件まで）";
+        el("select-page").checked =
+          !!current &&
+          current.items.length > 0 &&
+          current.items.every((p) => selected.has(p.pmid));
+      }
+      async function load(clear = true) {
+        setBusy(true);
+        if (clear) feedback("読み込み中…");
+        try {
+          current = await rpc("listPapers", { ...activeFilter, offset });
+          offset = current.offset;
+          render();
+          if (clear) feedback("");
+        } catch (e) {
+          feedback(e.message, "error");
+        } finally {
+          setBusy(false);
+        }
+      }
+      function render() {
+        el("test-notice").hidden = !String(
+          current.environment || "",
+        ).startsWith("test-");
+        el("sync").textContent =
+          "台帳最終同期：" +
+          (current.synced_at || "未同期") +
+          " ｜ 欠損した要約は再生成しません。";
+        el("tabs").replaceChildren();
+        for (const key of tabOrder) {
+          const b = node("button", current.tabs[key]);
+          b.append(node("strong", String(current.counts[key])));
+          b.setAttribute("aria-pressed", String(activeFilter.tab === key));
+          b.onclick = () => {
+            activeFilter = { tab: key };
+            el("filters").reset();
+            el("scope").value = key;
+            offset = 0;
+            load();
+          };
+          el("tabs").append(b);
+        }
+        const prior = el("topic").value;
+        options(
+          el("topic"),
+          Object.fromEntries(current.topics.map((t) => [t, t])),
+          true,
+        );
+        el("topic").value = prior;
+        el("range").textContent =
+          current.total +
+          "件中 " +
+          (current.total ? offset + 1 : 0) +
+          "〜" +
+          Math.min(offset + 50, current.total) +
+          "件 ｜ 直近3か月：" +
+          current.boundary +
+          "〜" +
+          current.today +
+          "。日付不明の未確認は「過去の未確認」に含みます。";
+        el("papers").replaceChildren();
+        if (!current.items.length)
+          el("papers").append(node("p", "この条件の論文はありません。"));
+        for (const p of current.items) {
+          const card = node("article"),
+            check = node("input");
+          check.type = "checkbox";
+          check.checked = selected.has(p.pmid);
+          check.setAttribute("aria-label", "PMID " + p.pmid + "を選択");
+          check.onchange = () => {
+            if (check.checked) selected.set(p.pmid, p);
+            else selected.delete(p.pmid);
+            selectionInfo();
+          };
+          card.append(
+            check,
+            node(
+              "div",
+              "PMID " +
+                p.pmid +
+                " ｜ " +
+                (p.reference_date
+                  ? p.reference_date + " " + p.date_kind
+                  : "日付不明"),
+              "muted",
+            ),
+            node("h2", p.title || "タイトル不明"),
+            node("p", p.topics.join(" / ")),
+            node("span", statuses[p.review.status], "badge"),
+          );
+          const actions = node("div", undefined, "actions"),
+            select = node("select");
+          options(select, statuses);
+          select.value = p.review.status;
+          select.setAttribute("aria-label", "PMID " + p.pmid + "の状態");
+          const save = node("button", "状態・メモを保存");
+          save.onclick = () =>
+            saveChanges([
+              {
+                pmid: p.pmid,
+                status: select.value,
+                note: drafts.has(p.pmid) ? drafts.get(p.pmid) : p.review.note,
+                expected_version: p.review.version,
+              },
+            ]);
+          actions.append(select, save);
+          if (
+            ["unreviewed", "reviewed_no_fulltext"].includes(p.review.status)
+          ) {
+            const want = node("button", "原文入手希望に追加", "primary");
+            want.onclick = () =>
+              saveChanges([
+                {
+                  pmid: p.pmid,
+                  status: "want_fulltext",
+                  note: drafts.has(p.pmid) ? drafts.get(p.pmid) : p.review.note,
+                  expected_version: p.review.version,
+                },
+              ]);
+            actions.append(want);
+          }
+          card.append(actions);
+          const note = node("textarea");
+          note.className = "note";
+          note.maxLength = 2000;
+          note.value = drafts.has(p.pmid) ? drafts.get(p.pmid) : p.review.note;
+          note.setAttribute("aria-label", "PMID " + p.pmid + "のメモ");
+          note.placeholder = "メモ（2000文字以内）";
+          if (drafts.has(p.pmid)) note.classList.add("dirty");
+          note.oninput = () => {
+            drafts.set(p.pmid, note.value);
+            note.classList.add("dirty");
+          };
+          card.append(
+            node(
+              "p",
+              "メモ：変更後は「状態・メモを保存」を押してください。",
+              "muted",
+            ),
+            note,
+          );
+          const links = node("div", undefined, "links"),
+            detail = node(
+              "button",
+              "配信時の要約・掲載履歴（" + p.appearance_count + "）",
+            );
+          detail.onclick = () => showDetail(p.pmid);
+          links.append(detail, safeLink(p.pubmed_url, "PubMed ↗", "pubmed"));
+          for (const url of p.doc_links.slice(0, 2))
+            links.append(
+              safeLink(url, "Googleドキュメント（現在版）↗", "doc"),
+            );
+          card.append(links);
+          el("papers").append(card);
+        }
+        selectionInfo();
+      }
+      async function saveChanges(changes) {
+        if (busy) return;
+        if (!changes.length) {
+          feedback("論文を選択してください。", "error");
+          return;
+        }
+        if (changes.length > 100) {
+          feedback(
+            "一括保存は100件までです。選択を減らしてください。",
+            "error",
+          );
+          return;
+        }
+        setBusy(true);
+        feedback("保存中…");
+        const key = JSON.stringify(changes);
+        if (!attempts.has(key)) attempts.set(key, crypto.randomUUID());
+        try {
+          const result = await rpc("saveReviews", {
+            changes,
+            operation_id: attempts.get(key),
+          });
+          if (!result || result.saved !== true)
+            throw new Error("保存を確認できません。再読み込みしてください。");
+          attempts.delete(key);
+          changes.forEach((c) => {
+            drafts.delete(c.pmid);
+            selected.delete(c.pmid);
+          });
+          el("export-area").hidden = true;
+          feedback(result.count + "件を保存しました。", "success");
+          await load(false);
+        } catch (e) {
+          feedback(e.message, "error");
+        } finally {
+          setBusy(false);
+        }
+      }
+      async function showDetail(pmid) {
+        if (busy) return;
+        setBusy(true);
+        feedback("掲載履歴を読み込み中…");
+        try {
+          const result = await rpc("getPaperDetail", pmid),
+            p = result.paper;
+          el("detail-title").textContent = "PMID " + pmid + "：配信時の内容";
+          el("detail-body").replaceChildren(
+            node("h3", p.title || "タイトル不明"),
+            node(
+              "p",
+              [p.journal, p.publication_date].filter(Boolean).join(" / "),
+            ),
+            node(
+              "p",
+              "初回検出：" +
+                (p.first_seen || "不明") +
+                " / 最終検出：" +
+                (p.last_seen || "不明"),
+            ),
+          );
+          if (p.doi)
+            el("detail-body").append(
+              safeLink(
+                p.doi.startsWith("https://doi.org/")
+                  ? p.doi
+                  : "https://doi.org/" + p.doi,
+                "DOI / 原文 ↗",
+                "doi",
+              ),
+            );
+          for (const h of result.appearances) {
+            const article = node("article");
+            article.append(
+              node("h3", (h.delivered_date || "配信日不明") + " ｜ " + h.topic),
+              node("p", "配信ID：" + h.issue_id),
+              node(
+                "p",
+                "選定区分：" +
+                  ({
+                    selected: "選定論文",
+                    candidate: "候補表",
+                    alternate_candidate: "次点・候補表",
+                    unknown: "不明",
+                  }[h.selection] || h.selection),
+              ),
+              node(
+                "p",
+                "当時のタイトル：" + (h.title_at_delivery || "不明"),
+                "detail-text",
+              ),
+            );
+            for (const [key, label] of [
+              ["summary_ja", "日本語要約"],
+              ["one_line_assessment", "一行評価"],
+              ["why_important", "評価理由"],
+              ["importance", "重要度"],
+              ["outpatient_usefulness", "外来での有用性"],
+            ])
+              article.append(
+                node("h3", label),
+                node(
+                  "p",
+                  h.text[key] || "保存なし（再生成はしません）",
+                  "detail-text",
+                ),
+              );
+            article.append(node("p", "復元元：" + h.source, "muted"));
+            if (h.current_doc_url)
+              article.append(
+                safeLink(
+                  h.current_doc_url,
+                  "Googleドキュメント（現在版）↗",
+                  "doc",
+                ),
+                node(
+                  "p",
+                  "CURRENTは上書きされます。リンク先は当時の掲載内容を保証しません。上の文章は保存済みの履歴です。",
+                  "notice",
+                ),
+              );
+            el("detail-body").append(article);
+          }
+          if (!result.appearances.length)
+            el("detail-body").append(
+              node(
+                "p",
+                "掲載時の要約は復元できていません。PMIDは保持しています。",
+              ),
+            );
+          el("detail").showModal();
+          feedback("");
+        } catch (e) {
+          feedback(e.message, "error");
+        } finally {
+          setBusy(false);
+        }
+      }
+      async function prepareExport(format, ids) {
+        if (busy) return;
+        if (ids && ids.length === 0) {
+          feedback("論文を選択してください。", "error");
+          return;
+        }
+        setBusy(true);
+        feedback("ファイルを準備中…");
+        el("export-area").hidden = true;
+        try {
+          const result = await rpc("exportData", {
+            format,
+            ids,
+            filter: activeFilter,
+          });
+          if (exportUrl) URL.revokeObjectURL(exportUrl);
+          exportUrl = URL.createObjectURL(
+            new Blob([result.text], {
+              type:
+                format === "backup"
+                  ? "application/json;charset=utf-8"
+                  : format === "csv"
+                    ? "text/csv;charset=utf-8"
+                    : "text/plain;charset=utf-8",
+            }),
+          );
+          el("download").href = exportUrl;
+          el("download").download = result.filename;
+          el("download").textContent = result.filename + " をダウンロード";
+          el("export-info").textContent =
+            result.count +
+            "件。出力準備時点のデータです。TXTは希望状態の論文だけを含みます。";
+          el("export-text").value =
+            result.text.length > 10000
+              ? result.text.slice(0, 10000) +
+                "\n（表示のみ省略。ファイルには全文を含みます）"
+              : result.text;
+          el("export-area").hidden = false;
+          el("export-area").scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+          feedback("ダウンロードリンクをタップしてください。");
+        } catch (e) {
+          feedback(e.message, "error");
+        } finally {
+          setBusy(false);
+        }
+      }
+      el("filters").onsubmit = (e) => {
+        e.preventDefault();
+        if (busy) return;
+        activeFilter = {
+          tab: el("scope").value,
+          query: el("query").value,
+          topic: el("topic").value,
+          status: el("status").value,
+          from: el("from").value,
+          to: el("to").value,
+          sort: el("sort").value,
+        };
+        if (activeFilter.query.trim()) {
+          activeFilter.tab = "all";
+          el("scope").value = "all";
+        }
+        offset = 0;
+        load();
+      };
+      el("reset-filters").onclick = () => {
+        el("filters").reset();
+        activeFilter = { tab: "recent" };
+        offset = 0;
+        load();
+      };
+      el("reload").onclick = () => load();
+      el("prev").onclick = () => {
+        offset = Math.max(0, offset - 50);
+        load();
+      };
+      el("next").onclick = () => {
+        offset += 50;
+        load();
+      };
+      el("close-detail").onclick = () => el("detail").close();
+      el("select-page").onchange = () => {
+        current.items.forEach((p) => {
+          if (el("select-page").checked) selected.set(p.pmid, p);
+          else selected.delete(p.pmid);
+        });
+        render();
+      };
+      el("clear-selection").onclick = () => {
+        selected.clear();
+        render();
+      };
+      el("bulk-save").onclick = () => {
+        if (!selected.size) {
+          feedback("論文を選択してください。", "error");
+          return;
+        }
+        if (
+          !confirm(
+            selected.size +
+              "件を「" +
+              statuses[el("bulk-status").value] +
+              "」へ変更します。よろしいですか？",
+          )
+        )
+          return;
+        saveChanges(
+          Array.from(selected.values()).map((p) => ({
+            pmid: p.pmid,
+            status: el("bulk-status").value,
+            note: drafts.has(p.pmid) ? drafts.get(p.pmid) : p.review.note,
+            expected_version: p.review.version,
+          })),
+        );
+      };
+      el("export-all").onclick = () => prepareExport("txt");
+      el("export-selected").onclick = () =>
+        prepareExport("txt", Array.from(selected.keys()));
+      el("csv").onclick = () => prepareExport("csv");
+      el("backup").onclick = () => prepareExport("backup");
+      window.addEventListener("beforeunload", (e) => {
+        if (drafts.size) {
+          e.preventDefault();
+          e.returnValue = "";
+        }
+      });
+      const initial = document.body.dataset.pmid;
+      if (/^[1-9][0-9]{0,8}$/.test(initial || "")) {
+        el("query").value = initial;
+        el("scope").value = "all";
+        activeFilter = { tab: "all", query: initial };
+        load().then(() => showDetail(initial));
+      } else load();
+    </script>
+  </body>
+</html>

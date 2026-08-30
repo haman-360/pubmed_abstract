@@ -1,0 +1,95 @@
+# PMID論文確認台帳
+
+Python＋GitHub Actionsの配信処理を保ち、本人限定のGoogleスプレッドシート＋GAS Webアプリで、人の確認状態を管理します。台帳の移行・同期・検索・状態変更・メモ・TXT/CSV・バックアップでは、OpenAI APIもPubMed APIも呼びません。
+
+## 構成と安全性
+
+| シート | 内容 | 書き込み担当 |
+|---|---|---|
+| Papers | PMID主キー、書誌情報、分野、初回/最終検出日、出典 | Python同期のみ |
+| Appearances | 配信ID・分野・PMIDごとの当時タイトル、選定区分、配信日、CURRENTリンク、本文参照 | Python同期のみ |
+| Texts | 生成済み日本語要約・一行評価・理由・重要度のJSON。長文は2万文字ずつ分割 | Python同期のみ |
+| Reviews | 状態・メモの追記式操作履歴。PMID、版数、操作ID、要求ハッシュ、更新日時 | GASのみ |
+| Settings | スキーマ、環境識別子、同期版数、最終同期日時 | Python同期のみ |
+
+レビュー履歴がないPMIDは未確認です。移行時に未確認の行を書き込むことはありません。自動処理の `delivery_state` はレビュー状態に転用しません。
+
+Pythonは既存データと新しいデータの和集合を作り、Reviewsを対象に含めず、Sheetsの1回の原子的batchUpdateで書誌・掲載履歴・本文・同期版数を更新します。更新前にはローカルJSONとDrive上の台帳コピーを保存します。変更がなければ書き込みもコピーも行いません。履歴の本文が異なる場合は旧本文を残し、別の訂正版履歴として保存します。
+
+GASはScriptLock、期待版数、操作ID/要求ハッシュを使い、最大100件の状態・メモを一括検証後、1回の書き込みで追記します。保存後に読み戻して確認できた場合だけ成功を返します。応答不明時は同じ操作を再試行でき、競合時は再読み込みを促します。シートの直接手編集はこの保護を迂回するため、通常の状態・メモ変更はWebアプリから行ってください。
+
+## Google設定
+
+1. 既存OAuthのGoogle CloudプロジェクトでSheets APIを有効にします。Pythonのスコープは既存の `drive.file` だけで足ります。
+2. そのOAuthクライアント自身で新しい台帳を作成します。他のコネクターで作ったSheetが同じOAuthから見えるとは限りません。
+3. GASへ `gas/Code.gs`、`gas/Index.html`、`gas/appsscript.json` を配置します。
+4. Script Propertiesに `OWNER_EMAIL`、`LEDGER_SHEET_ID`、`LEDGER_INSTANCE` を設定します。通常の本番識別子は `pubmed-review-production-v1`、TESTは `test-` で始めます。
+5. Webアプリは**自分のみ／アクセスしているユーザーとして実行**でデプロイします。必要なGASスコープは `spreadsheets` と `userinfo.email` の2つです。Googleの承認は本人が行います。匿名公開にはしません。
+
+実環境の接続ID、移行データ、メモを含むバックアップは `ledger_private/` に保存し、Gitには含めません。公開リポジトリに認証JSONや個人の台帳内容を追加しないでください。
+
+## 移行と同期
+
+初回は読み取り専用の棚卸しを実行し、`report.json` の入力元別件数、復元件数、不明項目を確認します。
+
+```bash
+python -m pmid_ledger inventory --include-drive --include-docs
+python -m pmid_ledger create --drive-root "$GOOGLE_DRIVE_ROOT_FOLDER_ID"
+# createが返したIDをPMID_LEDGER_SHEET_IDに設定
+python -m pmid_ledger sync --include-drive --include-docs
+```
+
+ローカルの既存OAuth JSON、または環境変数 `GOOGLE_AUTHORIZED_USER_JSON` を使用します。コードは既存のDriveStoreを生成しないので、読み取り専用棚卸しがDriveフォルダーや自動検索台帳を作成・更新することはありません。
+
+取り込み元は、既存のPMIDインデックス、raw scan、run manifest、生成済み評価JSON、保存済みTXT/Markdown/HTML、既知PMID集合、初回に指定したCURRENT文書の読み取りです。候補表のPMIDも保存します。過去の配信日がない場合は空欄で、ファイル更新時刻や月単位のファイル名を配信日に変換しません。CURRENTのコピーは `current_copy:` という復元元付き履歴で、過去の特定配信の本文と断定しません。
+
+今後の文書作成では `current_doc.completed_at` を保存します。過去のrunは再実行・再要約しません。新しい独立workflow `PMID review ledger sync (no AI)` が毎時43分に既存成果物を読み取り、台帳だけへ同期します。完了済みrunも対象なので、同期失敗は次回または手動実行で回復できます。既存pollの成否と台帳同期の成否は分離しています。
+
+GitHubの設定：
+
+- `GOOGLE_DRIVE_ROOT_FOLDER_ID` とSecret `GOOGLE_AUTHORIZED_USER_JSON` は既存値を使います。
+- Variable `PMID_LEDGER_SHEET_ID`：本番台帳ID。
+- Variable `PMID_LEDGER_ENABLED=true`：同期の有効化。falseで同期のみ停止できます。
+- Variable `PMID_LEDGER_WEB_URL`：本人限定WebアプリURL。設定後に生成する文書へPMID指定の確認リンクを追加します。既存文書の再生成は行いません。
+
+自動メタデータ書き込みはこのworkflow一つに限定し、既存pipelineと同じconcurrency groupで直列化します。本番台帳へのローカル再同期は通常拒否します。保守が必要なときだけ、同期workflowを無効化し実行中ジョブの終了を確認してから `PMID_LEDGER_MAINTENANCE=1` を明示してください。GASからの手動状態変更は、別シートなので停止不要です。
+
+## iPad・Macでの操作
+
+初期表示は「最近の未確認」です。原文入手待ち・原文入手済み未読は全期間のまま残ります。日付不明の未確認は過去タブへ含め、物理移動はしません。1ページ50件で、一覧には要約全文を転送せず、詳細を開いたときだけ本文を取得します。
+
+- PMID/タイトル検索、分野、状態、配信日の範囲、数値順PMID、配信日順、状態更新日順に対応します。分野と配信日を指定した場合は、同一掲載履歴で両条件を満たす必要があります。
+- 「原文入手希望に追加」はワンタップ保存です。メモは2000文字以内で「状態・メモを保存」を押します。未保存メモは画面内の切り替えで保持し、ページを離れる際に警告します。
+- ページをまたいで選択でき、一括状態変更は100件までです。TXTは全期間の希望全件、または選択した希望PMIDだけを出力します。ファイル名は `pmids.txt`、UTF-8・BOMなし・数字だけ1行1件・数値順・重複なしです。
+- `pubmed-pdf-fetcher` と `pubmed-grarec-notion` の入力に使えます。`#` は付けません。TXT取得だけで原文入手済みにはしません。既存入力の未処理PMIDを消さないよう、無断で既存ファイルを上書きする連携はありません。
+- CSVは現在の表示条件、JSONバックアップは台帳全体です。CSVでは数式として解釈される文字列をエスケープします。正確な復元にはJSONを使用します。
+- 台帳URLの `?pmid=12345678` で対象論文を検索・詳細表示できます。リンクを開くだけでは保存しません。
+
+## バックアップと復元
+
+Webアプリの「全台帳バックアップ（JSON）」、または次のCLIで、手動メモ・操作履歴・要約も含めて保存できます。
+
+```bash
+python -m pmid_ledger backup
+python -m pmid_ledger restore-copy \
+  --backup-file ledger_private/backup.json \
+  --drive-root "$GOOGLE_DRIVE_ROOT_FOLDER_ID" \
+  --title PMID台帳_復元確認 \
+  --instance restore-unique-identifier
+```
+
+復元は**新しい識別子の空の別台帳へだけ**行います。本番台帳を上書きしません。復元内容を確認後、必要な場合のみGASの接続先・GitHubの台帳IDを切り替えます。誤操作を隠すためにReviewsの行を削除せず、Webアプリで正しい状態へ変更してください。
+
+## 検証
+
+```bash
+python3 -m unittest discover -s tests -v
+node --test pmid_ledger/tests/*.test.mjs
+node pmid_ledger/preview.mjs  # localhost:8766、架空データ、メモリ保存のみ
+```
+
+実装検証では冪等移行、履歴の訂正版保持、長文分割/復元、単一掲載履歴での絞り込み、5000件ページ分割、保存競合、同一操作再試行、メモ保護、TXT/CSV、本人拒否、将来文書のリンク範囲を確認します。Google上の保存試験とiPad実機試験は別途記録します。
+
+運用上の制限：Google権限と通信が必要で、オフライン保存はしません。メタデータの1回の同期は18MBで安全停止します。現状の約1000件ではこの上限を下回りますが、数万件や非常に長い全文を蓄積する場合は保存方式の再検討が必要です。将来AIによる再評価を追加する場合も、台帳と分離し、費用提示と承認なしに実行しません。
+
+Google仕様の確認先：[Sheets batchUpdateと原子的更新](https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets/batchUpdate)、[drive.fileスコープ](https://developers.google.com/workspace/sheets/api/scopes)、[GASの非同期画面通信](https://developers.google.com/apps-script/guides/html/communication)。

@@ -7,6 +7,7 @@ import base64
 import json
 import mimetypes
 import os
+import re
 import urllib.error
 import urllib.request
 import uuid
@@ -241,9 +242,15 @@ class GoogleWorkspaceClient:
                 "insertTable": {
                     "rows": len(score_table),
                     "columns": len(SCORE_TABLE_HEADERS),
-                    "location": {"index": len(body_text) + 1},
+                    "location": {"index": len(body_text.encode("utf-16-le")) // 2 + 1},
                 }
             })
+        # Docs indexes are UTF-16 units. Explicit hyperlinks also work in the iPad Docs app.
+        for match in re.finditer(r"https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec\?pmid=[1-9][0-9]{0,8}(?!\d)", body_text):
+            start = len(body_text[:match.start()].encode("utf-16-le")) // 2 + 1
+            end = start + len(match[0])
+            requests.append({"updateTextStyle": {"range": {"startIndex": start, "endIndex": end},
+                "textStyle": {"link": {"url": match[0]}}, "fields": "link"}})
         self.docs.documents().batchUpdate(
             documentId=file_id, body={"requests": requests}
         ).execute()
