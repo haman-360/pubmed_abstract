@@ -375,6 +375,7 @@ def render_notebook_doc(
     articles: list[dict[str, Any]],
     scores: list[dict[str, Any]],
     final: dict[str, Any],
+    ledger_url: str = "",
 ) -> str:
     article_by_pmid, score_by_pmid = _paper_lookup(articles, scores)
     selected = final.get("selected", [])
@@ -425,6 +426,13 @@ def render_notebook_doc(
             article.get("abstract") or "(abstract not available)",
             "",
         ])
+
+    # Only future documents receive these links. Merely opening them never changes state.
+    if re.fullmatch(r"https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec", ledger_url):
+        lines.extend(["---", "", "【台帳で確認・原文入手希望に追加】", ""])
+        for article in articles:
+            lines.append(f"PMID {article['pmid']}：{ledger_url}?pmid={article['pmid']}")
+        lines.append("")
 
     lines.extend([
         "---",

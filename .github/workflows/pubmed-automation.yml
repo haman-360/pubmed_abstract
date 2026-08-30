@@ -90,6 +90,7 @@ jobs:
       - run: pip install -r requirements-automation.txt
       - name: Poll batches and continue pipeline
         env:
+      PMID_LEDGER_WEB_URL: ${{ secrets.PMID_LEDGER_WEB_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GOOGLE_AUTHORIZED_USER_JSON: ${{ secrets.GOOGLE_AUTHORIZED_USER_JSON }}
           GOOGLE_DRIVE_ROOT_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_ROOT_FOLDER_ID }}

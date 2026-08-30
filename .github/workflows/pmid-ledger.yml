@@ -1,0 +1,35 @@
+name: PMID review ledger sync (no AI)
+
+on:
+  schedule:
+    - cron: "43 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Same mutex as the existing pipeline; never read artifacts halfway through a run write.
+concurrency:
+  group: pubmed-drive-ledger-and-current
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: vars.PMID_LEDGER_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-automation.txt
+      - run: pip install -r requirements-automation.txt
+      - name: Copy existing metadata and summaries, retaining all human review state
+        env:
+          GOOGLE_AUTHORIZED_USER_JSON: ${{ secrets.GOOGLE_AUTHORIZED_USER_JSON }}
+          GOOGLE_DRIVE_ROOT_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_ROOT_FOLDER_ID }}
+          PMID_LEDGER_SHEET_ID: ${{ secrets.PMID_LEDGER_SHEET_ID }}
+        run: python -m pmid_ledger sync --include-drive
+      # No OpenAI key, PubMed call, Gmail notification or existing poll command.
