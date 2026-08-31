@@ -5,7 +5,8 @@ import { environment } from "./tests/environment.mjs";
 const env = environment();
 const page = fs
   .readFileSync(new URL("./gas/Index.html", import.meta.url), "utf8")
-  .replace("<?= initialPmid ?>", "");
+  .replace("<?= initialPmid ?>", "")
+  .replace("<?= initialIssue ?>", "");
 const bridge = `<script>window.google={script:{run:new Proxy({}, {get(target,name){if(name==='withSuccessHandler')return fn=>{target.success=fn;return new Proxy(target,this);};if(name==='withFailureHandler')return fn=>{target.failure=fn;return new Proxy(target,this);};return arg=>{const ok=target.success,fail=target.failure;fetch('/rpc',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,arg})}).then(r=>r.json()).then(r=>r.error?fail({message:r.error}):ok(r.value)).catch(fail);};}})}};</script>`;
 const server = http.createServer(async (req, res) => {
   if (req.method === "GET") {
@@ -26,9 +27,14 @@ const server = http.createServer(async (req, res) => {
     }
     const { name, arg } = JSON.parse(body);
     if (
-      !["listPapers", "getPaperDetail", "saveReviews", "exportData"].includes(
-        name,
-      )
+      ![
+        "listPapers",
+        "getPaperDetail",
+        "saveReviews",
+        "exportData",
+        "listIssues",
+        "saveIssueReview",
+      ].includes(name)
     )
       throw new Error("Unknown method");
     res.setHeader("Content-Type", "application/json");
@@ -37,6 +43,6 @@ const server = http.createServer(async (req, res) => {
     res.end(JSON.stringify({ error: e.message }));
   }
 });
-server.listen(8766, "127.0.0.1", () =>
+server.listen(Number(process.env.PORT || 8766), "127.0.0.1", () =>
   console.log("Synthetic-only preview: http://127.0.0.1:8766"),
 );

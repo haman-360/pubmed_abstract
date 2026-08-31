@@ -55,6 +55,15 @@ var Ledger = (function () {
       "request_hash",
     ],
     Settings: ["key", "value"],
+    IssueReviews: [
+      "operation_id",
+      "issue_key",
+      "version",
+      "status",
+      "content_version",
+      "updated_at",
+      "request_hash",
+    ],
   };
   function assert(ok, msg) {
     if (!ok) throw new Error(msg);
@@ -183,6 +192,13 @@ var Ledger = (function () {
     });
     assert(!r.from || !r.to || r.from <= r.to, "日付の範囲が逆です");
     var rows = papers.filter(function (p) {
+      if (
+        r.issue_key &&
+        !p.appearances.some(function (a) {
+          return issueKey_(a) === r.issue_key;
+        })
+      )
+        return false;
       var c = category(p, boundary, today);
       if (
         tab === "active" &&
@@ -365,6 +381,8 @@ function book_() {
 }
 function read_(book, name) {
   var sheet = book.getSheetByName(name);
+  if (name === "IssueReviews" && (!sheet || sheet.getLastRow() === 0))
+    return [];
   Ledger.assert(sheet, "必要なシートがありません：" + name);
   return Ledger.records(
     sheet
@@ -418,6 +436,10 @@ function doGet(e) {
     e && e.parameter && /^[1-9][0-9]{0,8}$/.test(e.parameter.pmid || "")
       ? e.parameter.pmid
       : "";
+  template.initialIssue =
+    e && e.parameter && e.parameter.issue
+      ? validateIssueKey_(e.parameter.issue)
+      : "";
   return template
     .evaluate()
     .setTitle("PMID論文確認台帳")
@@ -425,7 +447,34 @@ function doGet(e) {
 }
 function listPapers(request) {
   var ctx = state_(),
-    q = Ledger.query(ctx.papers, request, today_()),
+    scoped = ctx.papers,
+    issue = null;
+  if (request && request.issue_key) {
+    validateIssueKey_(request.issue_key);
+    issue = issueState_(ctx).find(function (i) {
+      return i.issue_key === request.issue_key;
+    });
+    Ledger.assert(issue, "配信が見つかりません");
+    scoped = ctx.papers
+      .filter(function (p) {
+        return p.appearances.some(function (a) {
+          return issueKey_(a) === request.issue_key;
+        });
+      })
+      .map(function (p) {
+        var copy = Object.assign({}, p);
+        copy.appearances = p.appearances.filter(function (a) {
+          return issueKey_(a) === request.issue_key;
+        });
+        copy.topics = [issue.topic];
+        copy.title = copy.appearances[0].title_at_delivery || p.title;
+        copy.delivery_date = issue.delivered_date;
+        copy.reference_date = issue.delivered_date;
+        copy.date_kind = issue.delivered_date ? "配信" : "日付不明";
+        return copy;
+      });
+  }
+  var q = Ledger.query(scoped, request, today_()),
     offset = (request && request.offset) || 0;
   Ledger.assert(
     Number.isInteger(offset) && offset >= 0,
@@ -462,15 +511,22 @@ function listPapers(request) {
     synced_at: ctx.settings.synced_at,
     revision: ctx.settings.revision,
     environment: ctx.settings.instance,
+    issue: issue,
   };
 }
-function getPaperDetail(pmid) {
+function getPaperDetail(request) {
+  var pmid = typeof request === "string" ? request : request.pmid;
+  var issueKey = typeof request === "string" ? "" : request.issue_key;
   Ledger.pmid(pmid);
   var ctx = state_(),
     p = ctx.papers.find(function (x) {
       return x.pmid === pmid;
     });
   Ledger.assert(p, "論文が見つかりません");
+  if (issueKey)
+    p.appearances = p.appearances.filter(function (a) {
+      return issueKey_(a) === issueKey;
+    });
   var ids = new Set(
       p.appearances.map(function (a) {
         return a.text_id;
@@ -674,6 +730,10 @@ function exportData(request) {
         tables = {};
       Object.keys(Ledger.headers).forEach(function (name) {
         var sheet = b.book.getSheetByName(name);
+        if (name === "IssueReviews" && (!sheet || sheet.getLastRow() === 0)) {
+          tables[name] = [Ledger.headers[name]];
+          return;
+        }
         tables[name] = sheet
           .getRange(
             1,
@@ -703,4 +763,241 @@ function exportData(request) {
     });
   }
   throw new Error("出力形式が不正です");
+}
+
+// A delivery is (issue_id, topic), never the mutable CURRENT document ID.
+function issueKey_(a) {
+  return JSON.stringify([a.issue_id, a.topic]);
+}
+function validateIssueKey_(key) {
+  Ledger.assert(
+    typeof key === "string" && key.length <= 1200,
+    "配信キーが不正です",
+  );
+  var pair = JSON.parse(key);
+  Ledger.assert(
+    Array.isArray(pair) &&
+      pair.length === 2 &&
+      pair[0] &&
+      pair.every(function (v) {
+        return typeof v === "string" && v.length <= 500;
+      }) &&
+      JSON.stringify(pair) === key,
+    "配信キーが不正です",
+  );
+  return key;
+}
+function hashIssue_(value) {
+  return Utilities.base64EncodeWebSafe(
+    Utilities.computeDigest(
+      Utilities.DigestAlgorithm.SHA_256,
+      JSON.stringify(value),
+    ),
+  );
+}
+function issueState_(ctx) {
+  var groups = {},
+    states = {};
+  read_(ctx.book, "IssueReviews").forEach(function (e) {
+    validateIssueKey_(e.issue_key);
+    Ledger.assert(
+      ["unreviewed", "in_progress", "completed"].includes(e.status),
+      "配信の状態が不正です",
+    );
+    Ledger.assert(
+      Number(e.version) ===
+        (states[e.issue_key] ? Number(states[e.issue_key].version) : 0) + 1,
+      "配信の操作履歴が不完全です",
+    );
+    states[e.issue_key] = e;
+  });
+  ctx.papers.forEach(function (p) {
+    p.appearances.forEach(function (a) {
+      var key = issueKey_(a),
+        g = groups[key];
+      if (!g)
+        g = groups[key] = {
+          issue_key: key,
+          issue_id: a.issue_id,
+          topic: a.topic,
+          dates: [],
+          doc_links: [],
+          snapshots: [],
+          papers: {},
+        };
+      if (a.delivered_date) g.dates.push(a.delivered_date);
+      if (a.current_doc_url) g.doc_links.push(a.current_doc_url);
+      g.snapshots.push(a.snapshot_id);
+      g.papers[p.pmid] = p.review.status;
+    });
+  });
+  return Object.keys(groups).map(function (key) {
+    var g = groups[key],
+      review = states[key],
+      ids = Object.keys(g.papers);
+    var content = hashIssue_(Array.from(new Set(g.snapshots)).sort());
+    var changed =
+      !!review &&
+      review.status === "completed" &&
+      review.content_version !== content;
+    return {
+      issue_key: key,
+      issue_id: g.issue_id,
+      topic: g.topic,
+      delivered_date: g.dates.sort().slice(-1)[0] || "",
+      doc_links: Array.from(new Set(g.doc_links)),
+      total: ids.length,
+      unreviewed: ids.filter(function (id) {
+        return g.papers[id] === "unreviewed";
+      }).length,
+      status: changed ? "in_progress" : review ? review.status : "unreviewed",
+      content_changed: changed,
+      version: review ? Number(review.version) : 0,
+      content_version: content,
+      updated_at: review ? review.updated_at : "",
+      recovered: /^(local:|current_copy:)/.test(g.issue_id),
+    };
+  });
+}
+function listIssues(request) {
+  request = request || {};
+  var ctx = state_(),
+    all = issueState_(ctx),
+    counts = { unreviewed: 0, in_progress: 0, completed: 0 };
+  all.forEach(function (i) {
+    counts[i.status]++;
+  });
+  var filter = request.status || "open";
+  Ledger.assert(
+    ["all", "open", "unreviewed", "in_progress", "completed"].includes(filter),
+    "配信の絞り込みが不正です",
+  );
+  ["from", "to"].forEach(function (k) {
+    Ledger.assert(
+      !request[k] || /^\d{4}-\d{2}-\d{2}$/.test(request[k]),
+      "配信日の形式が不正です",
+    );
+  });
+  Ledger.assert(
+    !request.from || !request.to || request.from <= request.to,
+    "日付の範囲が逆です",
+  );
+  var rows = all.filter(function (i) {
+    return (
+      (filter === "all" ||
+        (filter === "open" ? i.status !== "completed" : i.status === filter)) &&
+      (!request.topic || request.topic === i.topic) &&
+      (!request.from ||
+        (i.delivered_date && i.delivered_date >= request.from)) &&
+      (!request.to || (i.delivered_date && i.delivered_date <= request.to))
+    );
+  });
+  rows.sort(function (a, b) {
+    return (
+      b.delivered_date.localeCompare(a.delivered_date) ||
+      b.issue_id.localeCompare(a.issue_id) ||
+      a.topic.localeCompare(b.topic)
+    );
+  });
+  var offset = request.offset || 0;
+  Ledger.assert(
+    Number.isInteger(offset) && offset >= 0,
+    "ページ指定が不正です",
+  );
+  if (offset >= rows.length)
+    offset = Math.max(0, Math.floor((rows.length - 1) / 50) * 50);
+  return {
+    environment: ctx.settings.instance,
+    synced_at: ctx.settings.synced_at,
+    items: rows.slice(offset, offset + 50),
+    total: rows.length,
+    offset: offset,
+    counts: counts,
+    topics: Array.from(
+      new Set(
+        all.map(function (i) {
+          return i.topic;
+        }),
+      ),
+    ).sort(),
+  };
+}
+function saveIssueReview(request) {
+  return locked_(function () {
+    Ledger.assert(
+      request && /^[A-Za-z0-9-]{16,80}$/.test(request.operation_id || ""),
+      "操作IDが不正です",
+    );
+    validateIssueKey_(request.issue_key);
+    Ledger.assert(
+      ["unreviewed", "in_progress", "completed"].includes(request.status) &&
+        Number.isInteger(request.expected_version) &&
+        typeof request.content_version === "string",
+      "配信の更新内容が不正です",
+    );
+    var ctx = state_(),
+      events = read_(ctx.book, "IssueReviews");
+    var hash = hashIssue_([
+      request.issue_key,
+      request.status,
+      request.expected_version,
+      request.content_version,
+    ]);
+    var prior = events.filter(function (e) {
+      return e.operation_id === request.operation_id;
+    });
+    if (prior.length) {
+      Ledger.assert(
+        prior.length === 1 && prior[0].request_hash === hash,
+        "操作IDが別の内容に再利用されています",
+      );
+      return { saved: true, replayed: true };
+    }
+    var issue = issueState_(ctx).find(function (i) {
+      return i.issue_key === request.issue_key;
+    });
+    Ledger.assert(issue, "配信が見つかりません");
+    Ledger.assert(
+      issue.version === request.expected_version &&
+        issue.content_version === request.content_version,
+      "配信内容または確認状態が更新されています。再読み込みしてください。",
+    );
+    Ledger.assert(
+      request.status !== "completed" || issue.unreviewed === 0,
+      "未確認のPMIDが残っています。この配信の論文を振り分けてから確認済みにしてください。",
+    );
+    Ledger.assert(
+      !request.simulate_failure,
+      "TEST：保存前の失敗を発生させました",
+    );
+    var sheet = ctx.book.getSheetByName("IssueReviews");
+    if (!sheet) {
+      sheet = ctx.book.insertSheet("IssueReviews");
+      sheet.getRange(1, 1, 1, 7).setValues([Ledger.headers.IssueReviews]);
+      sheet.setFrozenRows(1);
+    }
+    // Recover only an empty sheet left by interrupted first-time setup.
+    if (sheet.getLastRow() === 0)
+      sheet.getRange(1, 1, 1, 7).setValues([Ledger.headers.IssueReviews]);
+    var row = [
+      request.operation_id,
+      request.issue_key,
+      String(issue.version + 1),
+      request.status,
+      issue.content_version,
+      new Date().toISOString(),
+      hash,
+    ];
+    var start = sheet.getLastRow() + 1;
+    if (start > sheet.getMaxRows())
+      sheet.insertRowsAfter(sheet.getMaxRows(), 1000);
+    sheet.getRange(start, 1, 1, 7).setNumberFormat("@").setValues([row]);
+    SpreadsheetApp.flush();
+    Ledger.assert(
+      JSON.stringify(sheet.getRange(start, 1, 1, 7).getDisplayValues()) ===
+        JSON.stringify([row]),
+      "保存結果を確認できません。再読み込みしてください。",
+    );
+    return { saved: true };
+  });
 }

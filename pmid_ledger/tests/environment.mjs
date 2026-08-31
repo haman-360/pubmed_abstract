@@ -74,40 +74,44 @@ export function environment(opts = {}) {
     ["t2", "0", JSON.stringify({ one_line_assessment: "一行評価" })],
   );
   let writes = 0;
-  const sheet = (name) => ({
-    getLastRow: () => tables[name].length,
-    getMaxRows: () => 10000,
-    insertRowsAfter() {},
-    getRange: (r, c, nr, nc) => {
-      const range = {
-        getDisplayValues: () => {
-          if (opts.onRead) opts.onRead(name, tables);
-          return tables[name]
-            .slice(r - 1, r - 1 + nr)
-            .map((row) =>
-              Array.from({ length: nc }, (_, i) =>
-                String(row[c - 1 + i] ?? ""),
-              ),
-            );
-        },
-        setNumberFormat: () => range,
-        setValues: (rows) => {
-          if (opts.failWrite) throw new Error("save failed");
-          writes++;
-          for (let i = 0; i < rows.length; i++) {
-            tables[name][r - 1 + i] ??= [];
-            rows[i].forEach((v, j) => {
-              tables[name][r - 1 + i][c - 1 + j] = v.startsWith("'")
-                ? v.slice(1)
-                : v;
-            });
-          }
-          return range;
-        },
-      };
-      return range;
-    },
-  });
+  const sheet = (name) =>
+    !tables[name]
+      ? null
+      : {
+          getLastRow: () => tables[name].length,
+          getMaxRows: () => 10000,
+          insertRowsAfter() {},
+          setFrozenRows() {},
+          getRange: (r, c, nr, nc) => {
+            const range = {
+              getDisplayValues: () => {
+                if (opts.onRead) opts.onRead(name, tables);
+                return tables[name]
+                  .slice(r - 1, r - 1 + nr)
+                  .map((row) =>
+                    Array.from({ length: nc }, (_, i) =>
+                      String(row[c - 1 + i] ?? ""),
+                    ),
+                  );
+              },
+              setNumberFormat: () => range,
+              setValues: (rows) => {
+                if (opts.failWrite) throw new Error("save failed");
+                writes++;
+                for (let i = 0; i < rows.length; i++) {
+                  tables[name][r - 1 + i] ??= [];
+                  rows[i].forEach((v, j) => {
+                    tables[name][r - 1 + i][c - 1 + j] = v.startsWith("'")
+                      ? v.slice(1)
+                      : v;
+                  });
+                }
+                return range;
+              },
+            };
+            return range;
+          },
+        };
   ctx.PropertiesService = {
     getScriptProperties: () => ({
       getProperty: (k) =>
@@ -128,7 +132,13 @@ export function environment(opts = {}) {
   ctx.SpreadsheetApp = {
     openById: (id) => {
       if (id !== "test") throw new Error("wrong id");
-      return { getSheetByName: sheet };
+      return {
+        getSheetByName: sheet,
+        insertSheet: (name) => {
+          tables[name] = [];
+          return sheet(name);
+        },
+      };
     },
     flush: () => {
       if (opts.failFlush) throw new Error("flush failed");

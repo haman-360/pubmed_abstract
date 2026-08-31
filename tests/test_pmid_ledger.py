@@ -88,8 +88,8 @@ Do not mix this abstract with the Japanese summary.
     def test_publish_never_targets_reviews_and_backs_up_before_atomic_update(self):
         store = GoogleStore.__new__(GoogleStore)
         empty = Dataset().payload()
-        current = dict(to_tables(empty), Reviews=[HEADERS['Reviews'], ['operation-1','123','1','read','','private note','','hash']], Settings=[HEADERS['Settings'], ['schema',SCHEMA], ['instance','test']])
-        published = dict(to_tables(self.dataset().payload()), Reviews=current['Reviews'], Settings=current['Settings'])
+        current = dict(to_tables(empty), Reviews=[HEADERS['Reviews'], ['operation-1','123','1','read','','private note','','hash']], Settings=[HEADERS['Settings'], ['schema',SCHEMA], ['instance','test']], IssueReviews=[HEADERS['IssueReviews'], ['issue-operation','["issue","topic"]','1','completed','body','now','hash']])
+        published = dict(to_tables(self.dataset().payload()), Reviews=current['Reviews'], Settings=current['Settings'], IssueReviews=current['IssueReviews'])
         store.read = MagicMock(side_effect=[current,published])
         store.verify = MagicMock(return_value={'parents':['parent']})
         store.drive = MagicMock()
@@ -101,11 +101,27 @@ Do not mix this abstract with the Japanese summary.
             self.assertTrue(result['changed'])
             backup = json.loads(next(Path(temp).glob('*.json')).read_text())
             self.assertEqual(backup['tables']['Reviews'],current['Reviews'])
+            self.assertEqual(backup['tables']['IssueReviews'],current['IssueReviews'])
         requests = store.sheets.spreadsheets.return_value.batchUpdate.call_args.kwargs['body']['requests']
         review_id = list(HEADERS).index('Reviews')
+        issue_id = list(HEADERS).index('IssueReviews')
         for request in requests:
             self.assertNotIn('"sheetId": '+str(review_id),json.dumps(request))
+            self.assertNotIn('"sheetId": '+str(issue_id),json.dumps(request))
         self.assertEqual(store.sheets.spreadsheets.return_value.batchUpdate.call_count,1)
+
+    def test_old_ledger_read_without_optional_issue_sheet(self):
+        store = GoogleStore.__new__(GoogleStore)
+        store.verify = MagicMock()
+        store.sheets = MagicMock()
+        names = [n for n in HEADERS if n != 'IssueReviews']
+        tables = {n:[HEADERS[n]] for n in names}
+        tables['Settings'] += [['schema',SCHEMA],['instance','test']]
+        store.sheets.spreadsheets.return_value.get.return_value.execute.return_value = {'sheets':[{'properties':{'title':n}} for n in names]}
+        store.sheets.spreadsheets.return_value.values.return_value.batchGet.return_value.execute.return_value = {'valueRanges':[{'values':tables[n]} for n in names]}
+        result = store.read('sheet','test')
+        self.assertEqual(result['IssueReviews'],[HEADERS['IssueReviews']])
+        self.assertEqual(store.sheets.spreadsheets.return_value.values.return_value.batchGet.call_args.kwargs['ranges'],names)
 
     def test_no_new_ai_client_imports(self):
         for path in Path('pmid_ledger').glob('*.py'):
@@ -120,6 +136,8 @@ Do not mix this abstract with the Japanese summary.
         url = 'https://script.google.com/macros/s/deployment/exec'
         text = render_notebook_doc('分野', 'r', [{'pmid':'123','title':'😀 Test'}], [], {'selected':[]}, ledger_url=url)
         self.assertIn(url+'?pmid=123',text)
+        from urllib.parse import quote
+        self.assertIn(url+'?issue='+quote('["r","分野"]',safe=''), text)
         body, rows = split_score_table(text)
         self.assertEqual(len(rows[0]), 5)
         client = GoogleWorkspaceClient.__new__(GoogleWorkspaceClient)

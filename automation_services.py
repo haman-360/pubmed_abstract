@@ -246,7 +246,7 @@ class GoogleWorkspaceClient:
                 }
             })
         # Docs indexes are UTF-16 units. Explicit hyperlinks also work in the iPad Docs app.
-        for match in re.finditer(r"https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec\?pmid=[1-9][0-9]{0,8}(?!\d)", body_text):
+        for match in re.finditer(r"https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec\?(?:pmid=[1-9][0-9]{0,8}(?!\d)|issue=[A-Za-z0-9%_.~-]+)", body_text):
             start = len(body_text[:match.start()].encode("utf-16-le")) // 2 + 1
             end = start + len(match[0])
             requests.append({"updateTextStyle": {"range": {"startIndex": start, "endIndex": end},
