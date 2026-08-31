@@ -235,14 +235,14 @@
   <body data-pmid="<?= initialPmid ?>" data-issue="<?= initialIssue ?>">
     <main>
       <h1>PMID 論文確認台帳</h1>
-      <p class="muted">
-        iPadで「原文入手希望に追加」→
-        Macで希望PMIDをまとめて取得。状態・メモ・要約履歴を保存します。AIの追加呼び出しはありません。
-      </p>
+
       <p id="test-notice" class="notice" hidden>
         統合TEST：架空データです。TXTを原文取得アプリへ投入しないでください。
       </p>
-      <p id="sync" class="muted"></p>
+      <details>
+        <summary>同期情報</summary>
+        <p id="sync" class="muted"></p>
+      </details>
       <div class="toolbar" aria-label="確認対象">
         <button id="view-issues" class="primary">配信ごとの確認</button>
         <button id="view-papers">PMID台帳</button>
@@ -250,9 +250,7 @@
       <div id="feedback" role="status" aria-live="polite">読み込み中…</div>
       <section id="issue-view" aria-label="配信一覧">
         <h2>どの配信まで確認しましたか？</h2>
-        <p>
-          分野・配信IDごとに管理します。PMIDの振り分けが終わったら「この配信を確認済みにする」を押してください。原文入手や読了の完了を待つ必要はありません。
-        </p>
+        <p>論文を振り分けたら、その配信を確認済みにします。</p>
         <p id="issue-counts"></p>
         <form id="issue-filters">
           <div class="toolbar">
@@ -270,15 +268,12 @@
                 <option value="">すべて</option>
               </select></label
             >
-            <label>配信日：開始<input type="date" id="issue-from" /></label>
-            <label>配信日：終了<input type="date" id="issue-to" /></label>
+
             <button type="submit">配信を絞り込む</button
             ><button type="button" id="issue-refresh">再読み込み</button>
           </div>
         </form>
-        <p class="muted">
-          日付不明は末尾に表示し、日付範囲を指定した検索には含みません。過去ファイル・CURRENT復元分は同じ配信と断定できないため別表示です。
-        </p>
+
         <p id="issue-range"></p>
         <div id="issue-cards"></div>
         <div class="toolbar">
@@ -387,7 +382,7 @@
           var status = document.getElementById("feedback");
           status.className = "error";
           status.textContent =
-            "画面の処理に失敗しました。保存結果は不明です。再読み込みしてください。詳細：" +
+            "画面の処理に失敗しました。再読み込みしてください。詳細：" +
             message;
         }
         window.addEventListener("error", function (e) {
@@ -442,7 +437,8 @@
         }
         if (!value && issuePage) {
           el("issue-prev").disabled = issueOffset === 0;
-          el("issue-next").disabled = issueOffset + 50 >= issuePage.total;
+          el("issue-next").disabled =
+            issueOffset + issuePage.page_size >= issuePage.total;
         }
         if (!value)
           document
@@ -456,7 +452,9 @@
             done = true;
             reject(
               new Error(
-                "応答を確認できません。保存結果は不明です。再読み込み、または同じ操作の再試行で確認してください。",
+                name.startsWith("save")
+                  ? "保存の応答を確認できません。同じ操作を再試行するか、再読み込みして状態を確認してください。"
+                  : "読み込みが時間内に完了しませんでした。少し待って再読み込みしてください。",
               ),
             );
           }, 30000);
@@ -596,10 +594,9 @@
               "div",
               "PMID " +
                 p.pmid +
-                " ｜ " +
                 (p.reference_date
-                  ? p.reference_date + " " + p.date_kind
-                  : "日付不明"),
+                  ? " ｜ " + p.reference_date + " " + p.date_kind
+                  : ""),
               "muted",
             ),
             node("h2", p.title || "タイトル不明"),
@@ -664,10 +661,6 @@
             );
           detail.onclick = () => showDetail(p.pmid);
           links.append(detail, safeLink(p.pubmed_url, "PubMed ↗", "pubmed"));
-          for (const url of p.doc_links.slice(0, 2))
-            links.append(
-              safeLink(url, "Googleドキュメント（現在版）↗", "doc"),
-            );
           card.append(links);
           el("papers").append(card);
         }
@@ -749,7 +742,10 @@
           for (const h of result.appearances) {
             const article = node("article");
             article.append(
-              node("h3", (h.delivered_date || "配信日不明") + " ｜ " + h.topic),
+              node(
+                "h3",
+                [h.delivered_date, h.topic].filter(Boolean).join(" ｜ "),
+              ),
               node("p", "配信ID：" + h.issue_id),
               node(
                 "p",
@@ -783,19 +779,6 @@
                 ),
               );
             article.append(node("p", "復元元：" + h.source, "muted"));
-            if (h.current_doc_url)
-              article.append(
-                safeLink(
-                  h.current_doc_url,
-                  "Googleドキュメント（現在版）↗",
-                  "doc",
-                ),
-                node(
-                  "p",
-                  "CURRENTは上書きされます。リンク先は当時の掲載内容を保証しません。上の文章は保存済みの履歴です。",
-                  "notice",
-                ),
-              );
             el("detail-body").append(article);
           }
           if (!result.appearances.length)
@@ -975,12 +958,7 @@
       function issueHeading(issue) {
         const box = node("div");
         box.append(
-          node(
-            "h2",
-            (issue.delivered_date || "配信日不明") +
-              " ｜ " +
-              (issue.topic || "分野不明"),
-          ),
+          node("h2", issue.topic || "分野不明"),
           node("p", "配信ID：" + issue.issue_id, "detail-text"),
           node(
             "strong",
@@ -992,17 +970,6 @@
               "件",
           ),
         );
-        if (issue.updated_at)
-          box.append(
-            node(
-              "p",
-              "配信の状態更新：" +
-                new Date(issue.updated_at).toLocaleString("ja-JP", {
-                  timeZone: "Asia/Tokyo",
-                }),
-              "muted",
-            ),
-          );
         if (issue.content_changed)
           box.append(
             node(
@@ -1012,23 +979,7 @@
             ),
           );
         if (issue.recovered)
-          box.append(
-            node(
-              "p",
-              "保存ファイル／CURRENTからの復元分です。配信日や他の配信との対応は未確定です。",
-              "muted",
-            ),
-          );
-        for (const url of issue.doc_links)
-          box.append(safeLink(url, "Googleドキュメント（現在版）↗", "doc"));
-        if (issue.doc_links.length)
-          box.append(
-            node(
-              "p",
-              "CURRENTは上書きされます。当時の内容は「この配信の論文を確認」から保存済み要約をご覧ください。",
-              "muted",
-            ),
-          );
+          box.append(node("p", "保存ファイルからの復元分", "muted"));
         return box;
       }
       function renderIssueContext() {
@@ -1056,8 +1007,6 @@
           issuePage = await rpc("listIssues", {
             status: el("issue-status").value,
             topic: el("issue-topic").value,
-            from: el("issue-from").value,
-            to: el("issue-to").value,
             offset: issueOffset,
           });
           issueOffset = issuePage.offset;
@@ -1083,7 +1032,7 @@
             "配信中 " +
             (issuePage.total ? issueOffset + 1 : 0) +
             "〜" +
-            Math.min(issueOffset + 50, issuePage.total);
+            Math.min(issueOffset + issuePage.page_size, issuePage.total);
           el("issue-cards").replaceChildren();
           for (const issue of issuePage.items) {
             const card = node("article");
@@ -1183,11 +1132,14 @@
       };
       el("issue-refresh").onclick = loadIssues;
       el("issue-prev").onclick = () => {
-        issueOffset = Math.max(0, issueOffset - 50);
+        issueOffset = Math.max(
+          0,
+          issueOffset - (issuePage ? issuePage.page_size : 20),
+        );
         loadIssues();
       };
       el("issue-next").onclick = () => {
-        issueOffset += 50;
+        issueOffset += issuePage ? issuePage.page_size : 20;
         loadIssues();
       };
       const initial = document.body.dataset.pmid,

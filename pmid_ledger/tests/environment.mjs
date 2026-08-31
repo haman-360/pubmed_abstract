@@ -85,7 +85,8 @@ export function environment(opts = {}) {
           getRange: (r, c, nr, nc) => {
             const range = {
               getDisplayValues: () => {
-                if (opts.onRead) opts.onRead(name, tables);
+                if (opts.onRead)
+                  opts.onRead(name, tables, { row: r, count: nr });
                 return tables[name]
                   .slice(r - 1, r - 1 + nr)
                   .map((row) =>
@@ -151,7 +152,70 @@ export function environment(opts = {}) {
     formatDate: () => "2026-08-30",
     DigestAlgorithm: { SHA_256: "sha256" },
     computeDigest: (type, s) => crypto.createHash(type).update(s).digest(),
-    base64EncodeWebSafe: (s) => s.toString("base64url"),
+    base64EncodeWebSafe: (s) =>
+      s.toString("base64").replaceAll("+", "-").replaceAll("/", "_"),
   };
-  return { ctx, tables, writes: () => writes, plain };
+  function reindex() {
+    const appearances = plain(
+      ctx.Ledger.records(tables.Appearances, "Appearances"),
+    );
+    const groups = new Map();
+    for (const a of appearances) {
+      const key = ctx.issueKey_(a);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(a);
+    }
+    tables.Issues = [
+      plain(ctx.Ledger.headers.Issues),
+      ...Array.from(groups, ([key, rows]) => [
+        key,
+        rows[0].issue_id,
+        rows[0].topic,
+        rows
+          .map((a) => a.delivered_date)
+          .sort()
+          .at(-1),
+        JSON.stringify(
+          [...new Set(rows.map((a) => a.pmid))].sort(
+            (a, b) => Number(a) - Number(b),
+          ),
+        ),
+        ctx.hashIssue_([...new Set(rows.map((a) => a.snapshot_id))].sort()),
+      ]),
+    ];
+    const ranges = new Map();
+    tables.Texts.slice(1).forEach((row, index) => {
+      if (!ranges.has(row[0])) ranges.set(row[0], [String(index + 2), 0]);
+      ranges.get(row[0])[1]++;
+    });
+    tables.TextRows = [
+      plain(ctx.Ledger.headers.TextRows),
+      ...Array.from(ranges, ([id, [start, count]]) => [
+        id,
+        start,
+        String(count),
+      ]),
+    ];
+  }
+  if (opts.indexed) reindex();
+  else {
+    delete tables.Issues;
+    delete tables.TextRows;
+  }
+  if (opts.cache)
+    ctx.CacheService = {
+      getUserCache: () => ({
+        get: (k) => opts.cache.get(k) ?? null,
+        getAll: (keys) =>
+          Object.fromEntries(
+            keys
+              .filter((k) => opts.cache.has(k))
+              .map((k) => [k, opts.cache.get(k)]),
+          ),
+        put: (k, v) => opts.cache.set(k, v),
+        putAll: (values) =>
+          Object.entries(values).forEach(([k, v]) => opts.cache.set(k, v)),
+      }),
+    };
+  return { ctx, tables, reindex, writes: () => writes, plain };
 }
