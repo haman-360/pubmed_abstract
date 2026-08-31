@@ -9,6 +9,7 @@ import re
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import quote
 
 from pubmed_fetch import SEARCHES
 
@@ -429,7 +430,9 @@ def render_notebook_doc(
 
     # Only future documents receive these links. Merely opening them never changes state.
     if re.fullmatch(r"https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec", ledger_url):
-        lines.extend(["---", "", "【台帳で確認・原文入手希望に追加】", ""])
+        issue_key = json.dumps([run_id, theme], ensure_ascii=False, separators=(",", ":"))
+        lines.extend(["---", "", "【この配信の確認状況】", f"この配信を確認する：{ledger_url}?issue={quote(issue_key, safe='')}", "",
+                      "【台帳で確認・原文入手希望に追加】", ""])
         for article in articles:
             lines.append(f"PMID {article['pmid']}：{ledger_url}?pmid={article['pmid']}")
         lines.append("")

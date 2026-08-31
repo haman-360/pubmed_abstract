@@ -15,6 +15,7 @@ HEADERS = {
     # Only GAS appends Reviews; Python synchronization MUST NOT write this sheet.
     "Reviews": ["operation_id", "pmid", "version", "status", "status_updated_at", "note", "updated_at", "request_hash"],
     "Settings": ["key", "value"],
+    "IssueReviews": ["operation_id", "issue_key", "version", "status", "content_version", "updated_at", "request_hash"],
 }
 STATUSES = {"unreviewed", "reviewed_no_fulltext", "want_fulltext", "fulltext_obtained", "read"}
 

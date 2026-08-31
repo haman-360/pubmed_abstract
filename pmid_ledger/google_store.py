@@ -103,9 +103,14 @@ class GoogleStore:
 
     def read(self, sheet_id, instance):
         self.verify(sheet_id, instance)
+        metadata = self.sheets.spreadsheets().get(spreadsheetId=sheet_id, fields="sheets.properties.title").execute(num_retries=3)
+        available = {s["properties"]["title"] for s in metadata["sheets"]}
+        names = [n for n in HEADERS if n != "IssueReviews" or n in available]
         response = self.sheets.spreadsheets().values().batchGet(spreadsheetId=sheet_id,
-            ranges=list(HEADERS), valueRenderOption="UNFORMATTED_VALUE").execute(num_retries=3)
-        tables = {name: part.get("values", []) for name, part in zip(HEADERS, response["valueRanges"])}
+            ranges=names, valueRenderOption="UNFORMATTED_VALUE").execute(num_retries=3)
+        tables = {name: part.get("values", []) for name, part in zip(names, response["valueRanges"])}
+        # Older ledgers/backups remain readable; only GAS creates the optional event sheet.
+        tables.setdefault("IssueReviews", [HEADERS["IssueReviews"]])
         for name, headers in HEADERS.items():
             if not tables[name] or tables[name][0] != headers:
                 raise ValueError("Unexpected schema: " + name)
@@ -169,13 +174,22 @@ class GoogleStore:
             if identifier not in ids or row[3] not in STATUSES or version != versions.get(identifier, 0)+1:
                 raise ValueError("Invalid review event sequence")
             versions[identifier] = version
+        issue_rows = tables.get("IssueReviews", [HEADERS["IssueReviews"]])
+        if not issue_rows or issue_rows[0] != HEADERS["IssueReviews"]:
+            raise ValueError("Invalid issue review schema")
+        issue_keys = {canonical([a["issue_id"], a["topic"]]) for a in payload["appearances"]}
+        issue_versions = {}
+        for row in issue_rows[1:]:
+            if len(row) != 7 or row[1] not in issue_keys or row[3] not in ("unreviewed", "in_progress", "completed") or int(row[2]) != issue_versions.get(row[1], 0)+1:
+                raise ValueError("Invalid issue review event sequence")
+            issue_versions[row[1]] = int(row[2])
         sheet_id = self.create(parent, title, instance)
         current = self.read(sheet_id, instance)
-        if any(len(current[n]) != 1 for n in ("Papers","Appearances","Texts","Reviews")):
+        if any(len(current[n]) != 1 for n in ("Papers","Appearances","Texts","Reviews","IssueReviews")):
             raise ValueError("Restore target is not empty; no writes performed")
         metadata = self.sheets.spreadsheets().get(spreadsheetId=sheet_id, fields="sheets.properties").execute()
         by_name = {s["properties"]["title"]: s["properties"] for s in metadata["sheets"]}
-        restore = dict(to_tables(payload), Reviews=tables["Reviews"], Settings=[HEADERS["Settings"],
+        restore = dict(to_tables(payload), Reviews=tables["Reviews"], IssueReviews=issue_rows, Settings=[HEADERS["Settings"],
             ["schema",SCHEMA],["instance",instance],["revision",digest(payload)],
             ["synced_at",datetime.now(timezone.utc).isoformat()]])
         requests = []
@@ -189,6 +203,6 @@ class GoogleStore:
             raise ValueError("Restore verification failed")
         def padded(rows):
             return [list(r)+[""]*(8-len(r)) for r in rows]
-        if padded(verified["Reviews"]) != padded(tables["Reviews"]):
+        if padded(verified["Reviews"]) != padded(tables["Reviews"]) or verified["IssueReviews"] != issue_rows:
             raise ValueError("Review restore verification failed")
         return sheet_id
