@@ -13,6 +13,9 @@
         background: #f5f7f8;
         color-scheme: light;
       }
+      [hidden] {
+        display: none !important;
+      }
       * {
         box-sizing: border-box;
       }
@@ -229,7 +232,7 @@
       }
     </style>
   </head>
-  <body data-pmid="<?= initialPmid ?>">
+  <body data-pmid="<?= initialPmid ?>" data-issue="<?= initialIssue ?>">
     <main>
       <h1>PMID 論文確認台帳</h1>
       <p class="muted">
@@ -240,80 +243,125 @@
         統合TEST：架空データです。TXTを原文取得アプリへ投入しないでください。
       </p>
       <p id="sync" class="muted"></p>
-      <nav id="tabs" aria-label="確認状況"></nav>
-      <form id="filters">
-        <div class="toolbar">
-          <label
-            >PMID・タイトル<input
-              id="query"
-              type="search"
-              placeholder="PMIDまたはタイトルの一部"
-          /></label>
-          <label
-            >表示期間<select id="scope">
-              <option value="recent">最近の未確認</option>
-              <option value="want">原文入手待ち</option>
-              <option value="obtained">原文入手済み・未読</option>
-              <option value="old">過去の未確認</option>
-              <option value="done">確認完了</option>
-              <option value="active">未確認・対応中（全期間）</option>
-              <option value="all">すべて</option>
-              <option value="archive">3か月より古い論文</option>
-            </select></label
-          >
-          <label
-            >分野<select id="topic">
-              <option value="">すべて</option>
-            </select></label
-          ><label
-            >状態<select id="status">
-              <option value="">すべて</option>
-            </select></label
-          >
-          <label>配信日：開始<input id="from" type="date" /></label
-          ><label>終了<input id="to" type="date" /></label>
-          <label
-            >並べ替え<select id="sort">
-              <option value="delivery_desc">
-                配信日の新しい順（不明は末尾）
-              </option>
-              <option value="delivery_asc">配信日の古い順（不明は末尾）</option>
-              <option value="pmid_asc">PMID 昇順</option>
-              <option value="pmid_desc">PMID 降順</option>
-              <option value="updated_desc">状態更新日の新しい順</option>
-            </select></label
-          >
-          <button class="primary" type="submit">検索・絞り込み</button
-          ><button id="reset-filters" type="button">条件をリセット</button>
-        </div>
-        <p class="muted">
-          PMID・タイトル検索は全期間へ切り替えます。配信日不明の履歴は、配信日による絞り込みには含みません。
+      <div class="toolbar" aria-label="確認対象">
+        <button id="view-issues" class="primary">配信ごとの確認</button>
+        <button id="view-papers">PMID台帳</button>
+      </div>
+      <div id="feedback" role="status" aria-live="polite">読み込み中…</div>
+      <section id="issue-view" aria-label="配信一覧">
+        <h2>どの配信まで確認しましたか？</h2>
+        <p>
+          分野・配信IDごとに管理します。PMIDの振り分けが終わったら「この配信を確認済みにする」を押してください。原文入手や読了の完了を待つ必要はありません。
         </p>
-      </form>
-      <div class="toolbar">
-        <button id="reload">再読み込み</button
-        ><button id="export-all">希望PMIDをすべてTXT出力</button
-        ><button id="csv">表示条件のCSV出力</button
-        ><button id="backup">全台帳バックアップ（JSON）</button>
-      </div>
-      <div id="feedback" role="status" aria-live="polite">
-        画面を起動しています。表示が変わらなければ再読み込みしてください。
-      </div>
-      <div class="toolbar">
-        <label class="check"
-          ><input id="select-page" type="checkbox" />このページを選択</label
-        ><span id="selected-count">選択0件</span
-        ><button id="clear-selection">選択解除</button
-        ><button id="export-selected">選択した希望PMIDをTXT出力</button
-        ><select id="bulk-status" aria-label="一括変更する状態"></select
-        ><button id="bulk-save">選択した論文の状態を変更</button>
-      </div>
-      <p id="range" class="muted"></p>
-      <section id="papers" aria-label="論文一覧"></section>
-      <div class="toolbar">
-        <button id="prev">前のページ</button
-        ><button id="next">次のページ</button>
-      </div>
+        <p id="issue-counts"></p>
+        <form id="issue-filters">
+          <div class="toolbar">
+            <label
+              >配信の状態<select id="issue-status">
+                <option value="open">未確認・確認中</option>
+                <option value="all">すべて</option>
+                <option value="unreviewed">未確認</option>
+                <option value="in_progress">確認中</option>
+                <option value="completed">確認済み</option>
+              </select></label
+            >
+            <label
+              >配信の分野<select id="issue-topic">
+                <option value="">すべて</option>
+              </select></label
+            >
+            <label>配信日：開始<input type="date" id="issue-from" /></label>
+            <label>配信日：終了<input type="date" id="issue-to" /></label>
+            <button type="submit">配信を絞り込む</button
+            ><button type="button" id="issue-refresh">再読み込み</button>
+          </div>
+        </form>
+        <p class="muted">
+          日付不明は末尾に表示し、日付範囲を指定した検索には含みません。過去ファイル・CURRENT復元分は同じ配信と断定できないため別表示です。
+        </p>
+        <p id="issue-range"></p>
+        <div id="issue-cards"></div>
+        <div class="toolbar">
+          <button id="issue-prev">前の配信ページ</button
+          ><button id="issue-next">次の配信ページ</button>
+        </div>
+      </section>
+      <section id="paper-view" hidden>
+        <section id="issue-context" hidden></section>
+        <nav id="tabs" aria-label="確認状況"></nav>
+        <form id="filters">
+          <div class="toolbar">
+            <label
+              >PMID・タイトル<input
+                id="query"
+                type="search"
+                placeholder="PMIDまたはタイトルの一部"
+            /></label>
+            <label
+              >表示期間<select id="scope">
+                <option value="recent">最近の未確認</option>
+                <option value="want">原文入手待ち</option>
+                <option value="obtained">原文入手済み・未読</option>
+                <option value="old">過去の未確認</option>
+                <option value="done">確認完了</option>
+                <option value="active">未確認・対応中（全期間）</option>
+                <option value="all">すべて</option>
+                <option value="archive">3か月より古い論文</option>
+              </select></label
+            >
+            <label
+              >分野<select id="topic">
+                <option value="">すべて</option>
+              </select></label
+            ><label
+              >状態<select id="status">
+                <option value="">すべて</option>
+              </select></label
+            >
+            <label>配信日：開始<input id="from" type="date" /></label
+            ><label>終了<input id="to" type="date" /></label>
+            <label
+              >並べ替え<select id="sort">
+                <option value="delivery_desc">
+                  配信日の新しい順（不明は末尾）
+                </option>
+                <option value="delivery_asc">
+                  配信日の古い順（不明は末尾）
+                </option>
+                <option value="pmid_asc">PMID 昇順</option>
+                <option value="pmid_desc">PMID 降順</option>
+                <option value="updated_desc">状態更新日の新しい順</option>
+              </select></label
+            >
+            <button class="primary" type="submit">検索・絞り込み</button
+            ><button id="reset-filters" type="button">条件をリセット</button>
+          </div>
+          <p class="muted">
+            PMID・タイトル検索は全期間へ切り替えます。配信日不明の履歴は、配信日による絞り込みには含みません。
+          </p>
+        </form>
+        <div class="toolbar">
+          <button id="reload">再読み込み</button
+          ><button id="export-all">希望PMIDをすべてTXT出力</button
+          ><button id="csv">表示条件のCSV出力</button
+          ><button id="backup">全台帳バックアップ（JSON）</button>
+        </div>
+        <div class="toolbar">
+          <label class="check"
+            ><input id="select-page" type="checkbox" />このページを選択</label
+          ><span id="selected-count">選択0件</span
+          ><button id="clear-selection">選択解除</button
+          ><button id="export-selected">選択した希望PMIDをTXT出力</button
+          ><select id="bulk-status" aria-label="一括変更する状態"></select
+          ><button id="bulk-save">選択した論文の状態を変更</button>
+        </div>
+        <p id="range" class="muted"></p>
+        <section id="papers" aria-label="論文一覧"></section>
+        <div class="toolbar">
+          <button id="prev">前のページ</button
+          ><button id="next">次のページ</button>
+        </div>
+      </section>
       <section id="export-area" hidden>
         <h2>ファイルの準備ができました</h2>
         <p id="export-info"></p>
@@ -372,6 +420,8 @@
         busy = false,
         exportUrl = null,
         activeFilter = { tab: "recent" };
+      let issuePage = null,
+        issueOffset = 0;
       const selected = new Map(),
         drafts = new Map(),
         attempts = new Map();
@@ -390,6 +440,14 @@
           el("prev").disabled = offset === 0;
           el("next").disabled = offset + 50 >= current.total;
         }
+        if (!value && issuePage) {
+          el("issue-prev").disabled = issueOffset === 0;
+          el("issue-next").disabled = issueOffset + 50 >= issuePage.total;
+        }
+        if (!value)
+          document
+            .querySelectorAll('[data-complete-blocked="true"]')
+            .forEach((n) => (n.disabled = true));
       }
       function rpc(name, arg) {
         return new Promise((resolve, reject) => {
@@ -478,6 +536,7 @@
         }
       }
       function render() {
+        renderIssueContext();
         el("test-notice").hidden = !String(
           current.environment || "",
         ).startsWith("test-");
@@ -657,7 +716,10 @@
         setBusy(true);
         feedback("掲載履歴を読み込み中…");
         try {
-          const result = await rpc("getPaperDetail", pmid),
+          const result = await rpc("getPaperDetail", {
+              pmid,
+              issue_key: activeFilter.issue_key || "",
+            }),
             p = result.paper;
           el("detail-title").textContent = "PMID " + pmid + "：配信時の内容";
           el("detail-body").replaceChildren(
@@ -811,6 +873,7 @@
           from: el("from").value,
           to: el("to").value,
           sort: el("sort").value,
+          issue_key: activeFilter.issue_key || "",
         };
         if (activeFilter.query.trim()) {
           activeFilter.tab = "all";
@@ -822,6 +885,8 @@
       el("reset-filters").onclick = () => {
         el("filters").reset();
         activeFilter = { tab: "recent" };
+        let issuePage = null,
+          issueOffset = 0;
         offset = 0;
         load();
       };
@@ -880,13 +945,261 @@
           e.returnValue = "";
         }
       });
-      const initial = document.body.dataset.pmid;
+      const issueLabels = {
+        unreviewed: "未確認",
+        in_progress: "確認中",
+        completed: "確認済み",
+      };
+      function issueControls(issue) {
+        const box = node("div", undefined, "toolbar");
+        for (const [status, label] of [
+          ["in_progress", "確認中にする"],
+          ["completed", "この配信を確認済みにする"],
+          ["unreviewed", "未確認に戻す"],
+        ]) {
+          if (issue.status === status) continue;
+          const b = node(
+            "button",
+            label,
+            status === "completed" ? "primary" : "",
+          );
+          if (status === "completed" && issue.unreviewed > 0) {
+            b.disabled = true;
+            b.dataset.completeBlocked = "true";
+          }
+          b.onclick = () => saveIssue(issue, status);
+          box.append(b);
+        }
+        return box;
+      }
+      function issueHeading(issue) {
+        const box = node("div");
+        box.append(
+          node(
+            "h2",
+            (issue.delivered_date || "配信日不明") +
+              " ｜ " +
+              (issue.topic || "分野不明"),
+          ),
+          node("p", "配信ID：" + issue.issue_id, "detail-text"),
+          node(
+            "strong",
+            issueLabels[issue.status] +
+              " ｜ 振り分け済み " +
+              (issue.total - issue.unreviewed) +
+              " / " +
+              issue.total +
+              "件",
+          ),
+        );
+        if (issue.updated_at)
+          box.append(
+            node(
+              "p",
+              "配信の状態更新：" +
+                new Date(issue.updated_at).toLocaleString("ja-JP", {
+                  timeZone: "Asia/Tokyo",
+                }),
+              "muted",
+            ),
+          );
+        if (issue.content_changed)
+          box.append(
+            node(
+              "p",
+              "確認後に掲載内容が追加・更新されました。もう一度ご確認ください。",
+              "notice",
+            ),
+          );
+        if (issue.recovered)
+          box.append(
+            node(
+              "p",
+              "保存ファイル／CURRENTからの復元分です。配信日や他の配信との対応は未確定です。",
+              "muted",
+            ),
+          );
+        for (const url of issue.doc_links)
+          box.append(safeLink(url, "Googleドキュメント（現在版）↗", "doc"));
+        if (issue.doc_links.length)
+          box.append(
+            node(
+              "p",
+              "CURRENTは上書きされます。当時の内容は「この配信の論文を確認」から保存済み要約をご覧ください。",
+              "muted",
+            ),
+          );
+        return box;
+      }
+      function renderIssueContext() {
+        el("issue-context").hidden = !current.issue;
+        el("tabs").hidden = !!current.issue;
+        el("issue-context").replaceChildren();
+        if (!current.issue) return;
+        el("issue-context").append(
+          issueHeading(current.issue),
+          node(
+            "p",
+            "未確認の論文を振り分けてください。不要なものは「確認済み・原文不要」にできます。配信の確認完了は、PMIDの読了状態を変更しません。",
+          ),
+          issueControls(current.issue),
+        );
+        const back = node("button", "配信一覧に戻る");
+        back.onclick = showIssues;
+        el("issue-context").append(back);
+      }
+      async function loadIssues() {
+        if (busy) return;
+        setBusy(true);
+        feedback("配信一覧を読み込み中…");
+        try {
+          issuePage = await rpc("listIssues", {
+            status: el("issue-status").value,
+            topic: el("issue-topic").value,
+            from: el("issue-from").value,
+            to: el("issue-to").value,
+            offset: issueOffset,
+          });
+          issueOffset = issuePage.offset;
+          el("test-notice").hidden = !String(
+            issuePage.environment || "",
+          ).startsWith("test-");
+          el("sync").textContent =
+            "台帳最終同期：" + (issuePage.synced_at || "未同期");
+          const topic = el("issue-topic").value;
+          options(
+            el("issue-topic"),
+            Object.fromEntries(
+              issuePage.topics.map((t) => [t, t || "分野不明"]),
+            ),
+            true,
+          );
+          el("issue-topic").value = topic;
+          el("issue-counts").textContent = Object.entries(issuePage.counts)
+            .map(([k, n]) => issueLabels[k] + " " + n + "配信")
+            .join(" ｜ ");
+          el("issue-range").textContent =
+            issuePage.total +
+            "配信中 " +
+            (issuePage.total ? issueOffset + 1 : 0) +
+            "〜" +
+            Math.min(issueOffset + 50, issuePage.total);
+          el("issue-cards").replaceChildren();
+          for (const issue of issuePage.items) {
+            const card = node("article");
+            card.append(issueHeading(issue));
+            const open = node("button", "この配信の論文を確認", "primary");
+            open.onclick = () => openIssue(issue.issue_key);
+            card.append(open, issueControls(issue));
+            el("issue-cards").append(card);
+          }
+          if (!issuePage.items.length)
+            el("issue-cards").append(node("p", "この条件の配信はありません。"));
+          feedback("");
+        } catch (e) {
+          feedback(e.message, "error");
+        } finally {
+          setBusy(false);
+        }
+      }
+      function switchView(issues) {
+        el("issue-view").hidden = !issues;
+        el("paper-view").hidden = issues;
+        el("view-issues").classList.toggle("primary", issues);
+        el("view-papers").classList.toggle("primary", !issues);
+        el("export-area").hidden = true;
+      }
+      function showIssues() {
+        if (busy) return;
+        switchView(true);
+        loadIssues();
+      }
+      function openIssue(key) {
+        if (busy) return;
+        selected.clear();
+        switchView(false);
+        el("filters").reset();
+        el("scope").value = "all";
+        activeFilter = { tab: "all", issue_key: key };
+        offset = 0;
+        load();
+      }
+      async function saveIssue(issue, status) {
+        if (busy) return;
+        if (status === "completed" && drafts.size) {
+          feedback(
+            "未保存のメモがあります。保存してから配信の確認を完了してください。",
+            "error",
+          );
+          return;
+        }
+        setBusy(true);
+        feedback("配信の確認状態を保存中…");
+        const value = {
+          issue_key: issue.issue_key,
+          status,
+          expected_version: issue.version,
+          content_version: issue.content_version,
+        };
+        const key = "issue:" + JSON.stringify(value);
+        if (!attempts.has(key)) attempts.set(key, crypto.randomUUID());
+        try {
+          const result = await rpc("saveIssueReview", {
+            ...value,
+            operation_id: attempts.get(key),
+          });
+          if (!result || !result.saved)
+            throw new Error("保存を確認できません。再読み込みしてください。");
+          attempts.delete(key);
+          setBusy(false);
+          feedback(
+            "この配信を「" +
+              issueLabels[status] +
+              "」にしました。PMIDの状態は変更していません。",
+            "success",
+          );
+          if (!el("issue-view").hidden) await loadIssues();
+          else await load(false);
+        } catch (e) {
+          feedback(e.message, "error");
+        } finally {
+          setBusy(false);
+        }
+      }
+      el("view-issues").onclick = showIssues;
+      el("view-papers").onclick = () => {
+        if (busy) return;
+        selected.clear();
+        switchView(false);
+        el("filters").reset();
+        activeFilter = { tab: "recent" };
+        offset = 0;
+        load();
+      };
+      el("issue-filters").onsubmit = (e) => {
+        e.preventDefault();
+        issueOffset = 0;
+        loadIssues();
+      };
+      el("issue-refresh").onclick = loadIssues;
+      el("issue-prev").onclick = () => {
+        issueOffset = Math.max(0, issueOffset - 50);
+        loadIssues();
+      };
+      el("issue-next").onclick = () => {
+        issueOffset += 50;
+        loadIssues();
+      };
+      const initial = document.body.dataset.pmid,
+        initialIssue = document.body.dataset.issue;
       if (/^[1-9][0-9]{0,8}$/.test(initial || "")) {
+        switchView(false);
         el("query").value = initial;
         el("scope").value = "all";
         activeFilter = { tab: "all", query: initial };
         load().then(() => showDetail(initial));
-      } else load();
+      } else if (initialIssue) openIssue(initialIssue);
+      else showIssues();
     </script>
   </body>
 </html>
