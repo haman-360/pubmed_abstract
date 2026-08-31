@@ -1,6 +1,7 @@
 """Deterministic, offline metadata migration and immutable delivery snapshots."""
 from __future__ import annotations
 
+import base64
 import hashlib
 import json
 import re
@@ -16,6 +17,8 @@ HEADERS = {
     "Reviews": ["operation_id", "pmid", "version", "status", "status_updated_at", "note", "updated_at", "request_hash"],
     "Settings": ["key", "value"],
     "IssueReviews": ["operation_id", "issue_key", "version", "status", "content_version", "updated_at", "request_hash"],
+    "Issues": ["issue_key", "issue_id", "topic", "delivered_date", "pmids", "content_version"],
+    "TextRows": ["text_id", "first_row", "row_count"],
 }
 STATUSES = {"unreviewed", "reviewed_no_fulltext", "want_fulltext", "fulltext_obtained", "read"}
 
@@ -160,7 +163,7 @@ def merge_payload(existing, incoming):
 
 
 def to_tables(payload):
-    tables = {name: [headers] for name, headers in HEADERS.items() if name in ("Papers", "Appearances", "Texts")}
+    tables = {name: [headers] for name, headers in HEADERS.items() if name in ("Papers", "Appearances", "Texts", "Issues", "TextRows")}
     texts = {}
     for p in payload["papers"]:
         pmid(p["pmid"])
@@ -171,9 +174,21 @@ def to_tables(payload):
         texts[text_id] = text
         tables["Appearances"].append([text_id if h == "text_id" else a.get(h, "") for h in HEADERS["Appearances"]])
     for key, text in sorted(texts.items()):
+        tables["TextRows"].append([key, str(len(tables["Texts"])+1), str((len(text)+19999)//20000)])
         # 20k Unicode codepoints <=40k UTF-16 units, below Sheets' 50k cell limit.
         for i in range(0, len(text), 20000):
             tables["Texts"].append([key, str(i // 20000), text[i:i + 20000]])
+    issues = {}
+    for a in payload["appearances"]:
+        key = canonical([a["issue_id"], a["topic"]])
+        g = issues.setdefault(key, {"issue_id":a["issue_id"], "topic":a["topic"], "dates":[], "pmids":set(), "snapshots":set()})
+        if a["delivered_date"]:
+            g["dates"].append(a["delivered_date"])
+        g["pmids"].add(a["pmid"])
+        g["snapshots"].add(a["snapshot_id"])
+    for key, g in sorted(issues.items()):
+        content = base64.urlsafe_b64encode(hashlib.sha256(canonical(sorted(g["snapshots"])).encode()).digest()).decode()
+        tables["Issues"].append([key,g["issue_id"],g["topic"],max(g["dates"],default=""),canonical(sorted(g["pmids"],key=int)),content])
     for rows in tables.values():
         for row in rows:
             if any(len(str(v).encode("utf-16-le")) // 2 > 49000 for v in row):

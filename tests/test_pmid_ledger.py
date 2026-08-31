@@ -23,6 +23,45 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(day('2026-08'), '')
         self.assertEqual(day('2026-08-20T23:59:00Z'), '2026-08-21')
 
+    def test_derived_indexes_match_snapshot_content_and_text_ranges(self):
+        import base64, hashlib
+        payload = self.dataset().payload()
+        tables = to_tables(payload)
+        issue = tables['Issues'][1]
+        self.assertEqual(json.loads(issue[0]), ['issue1','感染症'])
+        self.assertEqual(json.loads(issue[4]), ['123'])
+        snapshots = sorted({a['snapshot_id'] for a in payload['appearances']})
+        self.assertEqual(issue[5], base64.urlsafe_b64encode(hashlib.sha256(canonical(snapshots).encode()).digest()).decode())
+        for text_id, start, count in tables['TextRows'][1:]:
+            rows = tables['Texts'][int(start)-1:int(start)-1+int(count)]
+            self.assertTrue(all(r[0] == text_id for r in rows))
+            self.assertEqual([int(r[1]) for r in rows], list(range(int(count))))
+        self.assertNotIn('Reviews', tables)
+        self.assertNotIn('IssueReviews', tables)
+
+    def test_index_upgrade_without_metadata_change_preserves_reviews_and_is_idempotent(self):
+        store = GoogleStore.__new__(GoogleStore)
+        expected = dict(to_tables(self.dataset().payload()),
+            Reviews=[HEADERS['Reviews'], ['op','123','1','read','now','keep','now','hash']],
+            IssueReviews=[HEADERS['IssueReviews']],
+            Settings=[HEADERS['Settings'], ['schema',SCHEMA], ['instance','test-index']])
+        old = {n:rows for n,rows in expected.items() if n not in ('Issues','TextRows')}
+        store.read = MagicMock(side_effect=[old, expected, expected])
+        store.verify = MagicMock(return_value={'parents':['parent']})
+        store.drive = MagicMock()
+        store.drive.files.return_value.copy.return_value.execute.return_value={'id':'backup'}
+        store.sheets = MagicMock()
+        props = [{'properties':{'title':n,'sheetId':i,'gridProperties':{'rowCount':1000}}} for i,n in enumerate(old)]
+        store.sheets.spreadsheets.return_value.get.return_value.execute.return_value = {'sheets':props}
+        with tempfile.TemporaryDirectory() as temp:
+            self.assertTrue(store.publish('sheet','test-index',self.dataset().payload(),temp)['changed'])
+            self.assertFalse(store.publish('sheet','test-index',self.dataset().payload(),temp)['changed'])
+        reqs=store.sheets.spreadsheets.return_value.batchUpdate.call_args.kwargs['body']['requests']
+        self.assertEqual({r['addSheet']['properties']['title'] for r in reqs if 'addSheet' in r}, {'Issues','TextRows'})
+        review_ids={p['properties']['sheetId'] for p in props if p['properties']['title'] in ('Reviews','IssueReviews')}
+        self.assertTrue(all(r['updateCells'].get('start',r['updateCells'].get('range',{})).get('sheetId') not in review_ids for r in reqs if 'updateCells' in r))
+        self.assertEqual(store.sheets.spreadsheets.return_value.batchUpdate.call_count, 1)
+
     def test_migration_idempotent_and_preserves_revised_snapshot(self):
         p = self.dataset().payload()
         self.assertEqual(merge_payload(p, p), p)
@@ -114,7 +153,7 @@ Do not mix this abstract with the Japanese summary.
         store = GoogleStore.__new__(GoogleStore)
         store.verify = MagicMock()
         store.sheets = MagicMock()
-        names = [n for n in HEADERS if n != 'IssueReviews']
+        names = [n for n in HEADERS if n not in ('IssueReviews','Issues','TextRows')]
         tables = {n:[HEADERS[n]] for n in names}
         tables['Settings'] += [['schema',SCHEMA],['instance','test']]
         store.sheets.spreadsheets.return_value.get.return_value.execute.return_value = {'sheets':[{'properties':{'title':n}} for n in names]}

@@ -105,12 +105,13 @@ class GoogleStore:
         self.verify(sheet_id, instance)
         metadata = self.sheets.spreadsheets().get(spreadsheetId=sheet_id, fields="sheets.properties.title").execute(num_retries=3)
         available = {s["properties"]["title"] for s in metadata["sheets"]}
-        names = [n for n in HEADERS if n != "IssueReviews" or n in available]
+        names = [n for n in HEADERS if n not in ("IssueReviews", "Issues", "TextRows") or n in available]
         response = self.sheets.spreadsheets().values().batchGet(spreadsheetId=sheet_id,
             ranges=names, valueRenderOption="UNFORMATTED_VALUE").execute(num_retries=3)
         tables = {name: part.get("values", []) for name, part in zip(names, response["valueRanges"])}
         # Older ledgers/backups remain readable; only GAS creates the optional event sheet.
-        tables.setdefault("IssueReviews", [HEADERS["IssueReviews"]])
+        for name in ("IssueReviews", "Issues", "TextRows"):
+            tables.setdefault(name, [HEADERS[name]])
         for name, headers in HEADERS.items():
             if not tables[name] or tables[name][0] != headers:
                 raise ValueError("Unexpected schema: " + name)
@@ -123,7 +124,8 @@ class GoogleStore:
         current = self.read(sheet_id, instance)
         existing = from_tables(current)
         merged = merge_payload(existing, incoming)
-        if digest(existing) == digest(merged):
+        tables = to_tables(merged)
+        if digest(existing) == digest(merged) and all(current.get(n) == tables[n] for n in ("Issues", "TextRows")):
             return {"changed": False, "papers": len(merged["papers"]), "appearances": len(merged["appearances"])}
         if existing["papers"] and not instance.startswith("test-") and os.environ.get("GITHUB_ACTIONS") != "true" and os.environ.get("PMID_LEDGER_MAINTENANCE") != "1":
             raise ValueError("Production metadata has one writer: use the GitHub sync workflow. For local maintenance, disable that workflow first and set PMID_LEDGER_MAINTENANCE=1.")
@@ -136,11 +138,17 @@ class GoogleStore:
         metadata = self.verify(sheet_id, instance)
         backup = self.drive.files().copy(fileId=sheet_id, body={"name": "PMID台帳_BACKUP_" + now,
             "parents": metadata.get("parents", []), "appProperties": {"pmidLedgerInstance": instance + ":backup"}}, fields="id").execute()
-        tables = to_tables(merged)
         props = self.sheets.spreadsheets().get(spreadsheetId=sheet_id, fields="sheets.properties").execute()
         by_name = {s["properties"]["title"]: s["properties"] for s in props["sheets"]}
         requests = []
+        next_id = max(p["sheetId"] for p in by_name.values()) + 1
         for name, rows in tables.items():
+            if name not in by_name:
+                if name not in ("Issues", "TextRows"):
+                    raise ValueError("Missing core sheet; refusing rebuild")
+                by_name[name] = {"sheetId":next_id, "gridProperties":{"rowCount":max(1000,len(rows))}}
+                requests.append({"addSheet":{"properties":{"sheetId":next_id,"title":name,"gridProperties":{"rowCount":max(1000,len(rows)),"columnCount":max(10,len(HEADERS[name])),"frozenRowCount":1}}}})
+                next_id += 1
             p = by_name[name]
             needed = max(len(rows), p["gridProperties"]["rowCount"])
             requests.append({"updateSheetProperties": {"properties": {"sheetId": p["sheetId"], "gridProperties": {"rowCount": needed}}, "fields": "gridProperties.rowCount"}})
@@ -152,8 +160,9 @@ class GoogleStore:
         if len(canonical(body).encode()) > 18000000:
             raise ValueError("Metadata exceeds 18MB atomic sync safety limit; use a larger storage design")
         self.sheets.spreadsheets().batchUpdate(spreadsheetId=sheet_id, body=body).execute()
-        verified = from_tables(self.read(sheet_id, instance))
-        if digest(verified) != digest(merged):
+        verified_tables = self.read(sheet_id, instance)
+        verified = from_tables(verified_tables)
+        if digest(verified) != digest(merged) or any(verified_tables[n] != tables[n] for n in ("Issues", "TextRows")):
             raise ValueError("Published metadata verification failed; review state was not written")
         return {"changed": True, "papers": len(merged["papers"]), "appearances": len(merged["appearances"]), "backup_file_id": backup["id"]}
 

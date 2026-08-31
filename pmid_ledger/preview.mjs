@@ -2,7 +2,7 @@
 import http from "node:http";
 import fs from "node:fs";
 import { environment } from "./tests/environment.mjs";
-const env = environment();
+const env = environment({ indexed: true, cache: new Map() });
 const page = fs
   .readFileSync(new URL("./gas/Index.html", import.meta.url), "utf8")
   .replace("<?= initialPmid ?>", "")
@@ -44,5 +44,5 @@ const server = http.createServer(async (req, res) => {
   }
 });
 server.listen(Number(process.env.PORT || 8766), "127.0.0.1", () =>
-  console.log("Synthetic-only preview: http://127.0.0.1:8766"),
+  console.log(`Synthetic-only preview: http://127.0.0.1:${process.env.PORT || 8766}`),
 );
