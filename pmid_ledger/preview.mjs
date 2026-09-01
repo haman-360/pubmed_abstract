@@ -3,6 +3,12 @@ import http from "node:http";
 import fs from "node:fs";
 import { environment } from "./tests/environment.mjs";
 const env = environment({ indexed: true, cache: new Map() });
+// A second paper in one delivery demonstrates per-paper edits followed by one save.
+env.tables.Appearances.push([
+  "preview-s3", "10", "issue1", "感染症", "2026-08-20",
+  "Second paper in the same delivery", "candidate", "", "test", "t2",
+]);
+env.reindex();
 const page = fs
   .readFileSync(new URL("./gas/Index.html", import.meta.url), "utf8")
   .replace("<?= initialPmid ?>", "")

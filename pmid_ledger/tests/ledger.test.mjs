@@ -78,6 +78,36 @@ test("bulk validates every version before any append and rejects reused operatio
     /操作ID/,
   );
 });
+test("one request atomically saves different status and note choices for a delivery", () => {
+  const e = environment();
+  const before = e.writes();
+  e.ctx.saveReviews({
+    operation_id: "operation-delivery-batch",
+    changes: [
+      {
+        pmid: "1",
+        status: "want_fulltext",
+        note: "原文希望",
+        expected_version: 0,
+      },
+      {
+        pmid: "10",
+        status: "reviewed_no_fulltext",
+        note: "確認したが不要",
+        expected_version: 0,
+      },
+    ],
+  });
+  assert.equal(e.writes() - before, 1);
+  const rows = e.ctx.listPapers({ tab: "all" }).items;
+  assert.deepEqual(
+    e.plain(rows.map((p) => [p.pmid, p.review.status, p.review.note]).sort()),
+    [
+      ["1", "want_fulltext", "原文希望"],
+      ["10", "reviewed_no_fulltext", "確認したが不要"],
+    ],
+  );
+});
 test("same appearance date and topic filters; blank dates; numeric sort and old pending", () => {
   const e = environment();
   assert.equal(
