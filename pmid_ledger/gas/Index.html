@@ -366,7 +366,7 @@
               id="bulk-status"
               aria-label="一括変更する状態"
             ></select></label
-          ><button id="bulk-save">同じ状態へ一括変更・保存</button>
+          ><button id="bulk-save">チェックした論文へ適用（未保存）</button>
         </div>
         <p id="range" class="muted"></p>
         <section id="papers" aria-label="論文一覧"></section>
@@ -514,7 +514,7 @@
         const footer = el("draft-save-footer");
         if (!footer) return;
         const count = draftChanges().length;
-        footer.hidden = !current;
+        footer.hidden = !current || count === 0;
         el("draft-count").textContent = "未保存の変更 " + count + "件";
         el("save-drafts").disabled = busy || count === 0;
       }
@@ -967,29 +967,45 @@
         selected.clear();
         render();
       };
-      el("bulk-save").onclick = () => {
+      function stageSelectedStatus() {
         if (!selected.size) {
-          feedback("論文を選択してください。", "error");
+          feedback(
+            "先に状態を変更する論文へチェックを付けてください。",
+            "error",
+          );
           return;
         }
-        if (
-          !confirm(
+        if (selected.size > 100) {
+          feedback(
+            "一括保存は100件までです。選択を減らしてください。",
+            "error",
+          );
+          return;
+        }
+        const status = el("bulk-status").value;
+        Array.from(selected.values()).forEach((p) =>
+          rememberDraft(p, status, draftValue(p).note),
+        );
+        if (draftChanges().length) {
+          feedback(
             selected.size +
               "件を「" +
-              statuses[el("bulk-status").value] +
-              "」へ変更します。よろしいですか？",
-          )
-        )
-          return;
-        saveChanges(
-          Array.from(selected.values()).map((p) => ({
-            pmid: p.pmid,
-            status: el("bulk-status").value,
-            note: draftValue(p).note,
-            expected_version: p.review.version,
-          })),
-        );
+              statuses[status] +
+              "」に設定しました。まだ保存されていません。",
+          );
+        } else {
+          feedback(
+            "選択した論文はすでに「" +
+              statuses[status] +
+              "」です。保存する変更はありません。",
+          );
+        }
+        render();
+      }
+      el("bulk-status").onchange = () => {
+        if (selected.size) stageSelectedStatus();
       };
+      el("bulk-save").onclick = stageSelectedStatus;
       el("save-drafts").onclick = () => {
         const changes = draftChanges();
         if (!changes.length) {
