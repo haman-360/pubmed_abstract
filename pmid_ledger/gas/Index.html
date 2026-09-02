@@ -203,7 +203,11 @@
         background: #e1f0ed;
         border: 1px solid #9bbdb7;
         border-radius: 10px;
+        bottom: 12px;
+        box-shadow: 0 4px 16px #172e3e33;
         padding: 14px;
+        position: sticky;
+        z-index: 2;
       }
       select.dirty,
       .note.dirty {
@@ -357,16 +361,21 @@
           ><span id="selected-count">選択0件</span
           ><button id="clear-selection">選択解除</button
           ><button id="export-selected">選択した希望PMIDをTXT出力</button
-          ><select id="bulk-status" aria-label="一括変更する状態"></select
-          ><button id="bulk-save">選択した論文の状態を変更</button>
+          ><label
+            >チェック済みを<select
+              id="bulk-status"
+              aria-label="一括変更する状態"
+            ></select></label
+          ><button id="bulk-save">同じ状態へ一括変更・保存</button>
         </div>
         <p id="range" class="muted"></p>
         <section id="papers" aria-label="論文一覧"></section>
-        <div id="issue-save-footer" class="toolbar save-bar" hidden>
-          <button id="save-issue-edits" class="primary">
-            この配信の変更をまとめて保存
+        <div id="draft-save-footer" class="toolbar save-bar" hidden>
+          <button id="save-drafts" class="primary">
+            画面上の変更をまとめて保存
           </button>
-          <strong id="issue-draft-count">未保存の変更 0件</strong>
+          <strong id="draft-count">未保存の変更 0件</strong>
+          <span class="muted">状態・メモの変更を1回の通信で保存します。</span>
         </div>
         <div class="toolbar">
           <button id="prev">前のページ</button
@@ -460,7 +469,7 @@
           document
             .querySelectorAll('[data-complete-blocked="true"]')
             .forEach((n) => (n.disabled = true));
-        updateIssueSaveBar();
+        updateDraftSaveBar();
       }
       function draftValue(p) {
         return (
@@ -480,7 +489,7 @@
             expected_version: p.review.version,
             issue_key: current && current.issue ? current.issue.issue_key : "",
           });
-        updateIssueSaveBar();
+        updateDraftSaveBar();
       }
       function issueDraftChanges() {
         if (!current || !current.issue) return [];
@@ -493,13 +502,21 @@
             expected_version,
           }));
       }
-      function updateIssueSaveBar() {
-        const footer = el("issue-save-footer");
+      function draftChanges() {
+        return Array.from(drafts, ([pmid, draft]) => ({
+          pmid,
+          status: draft.status,
+          note: draft.note,
+          expected_version: draft.expected_version,
+        }));
+      }
+      function updateDraftSaveBar() {
+        const footer = el("draft-save-footer");
         if (!footer) return;
-        const count = issueDraftChanges().length;
-        footer.hidden = !(current && current.issue);
-        el("issue-draft-count").textContent = "未保存の変更 " + count + "件";
-        el("save-issue-edits").disabled = busy || count === 0;
+        const count = draftChanges().length;
+        footer.hidden = !current;
+        el("draft-count").textContent = "未保存の変更 " + count + "件";
+        el("save-drafts").disabled = busy || count === 0;
       }
       function rpc(name, arg) {
         return new Promise((resolve, reject) => {
@@ -672,17 +689,7 @@
             select.classList.toggle("dirty", drafts.has(p.pmid));
             note.classList.toggle("dirty", drafts.has(p.pmid));
           };
-          const save = node("button", "状態・メモを保存");
-          save.onclick = () =>
-            saveChanges([
-              {
-                pmid: p.pmid,
-                status: select.value,
-                note: note.value,
-                expected_version: p.review.version,
-              },
-            ]);
-          actions.append(select, save);
+          actions.append(select);
           if (
             ["unreviewed", "reviewed_no_fulltext"].includes(p.review.status)
           ) {
@@ -714,7 +721,7 @@
           card.append(
             node(
               "p",
-              "メモ：変更後は「状態・メモを保存」を押してください。",
+              "状態・メモを変更したら、一覧下の「画面上の変更をまとめて保存」を押してください。",
               "muted",
             ),
             note,
@@ -730,7 +737,7 @@
           el("papers").append(card);
         }
         selectionInfo();
-        updateIssueSaveBar();
+        updateDraftSaveBar();
       }
       async function saveChanges(changes) {
         if (busy) return;
@@ -983,10 +990,10 @@
           })),
         );
       };
-      el("save-issue-edits").onclick = () => {
-        const changes = issueDraftChanges();
+      el("save-drafts").onclick = () => {
+        const changes = draftChanges();
         if (!changes.length) {
-          feedback("この配信に未保存の変更はありません。", "error");
+          feedback("未保存の変更はありません。", "error");
           return;
         }
         saveChanges(changes);
@@ -1065,7 +1072,7 @@
           issueHeading(current.issue),
           node(
             "p",
-            "各論文の状態・メモを編集し、画面下の「この配信の変更をまとめて保存」で一度に保存できます。",
+            "各論文の状態・メモを編集し、画面下の「画面上の変更をまとめて保存」で一度に保存できます。",
           ),
           issueControls(current.issue),
         );
