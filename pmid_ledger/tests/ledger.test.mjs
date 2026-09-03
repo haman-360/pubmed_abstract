@@ -198,3 +198,14 @@ test("all inline scripts parse and production has no AI/network clients", () => 
   );
   assert.doesNotMatch(source, /UrlFetchApp|GmailApp|DriveApp|api\.openai/);
 });
+test("checked-paper status changes are staged before the single save call", () => {
+  const html = fs.readFileSync(
+    new URL("../gas/Index.html", import.meta.url),
+    "utf8",
+  );
+  assert.match(html, /function stageSelectedStatus\(\)/);
+  assert.match(html, /rememberDraft\(p, status, draftValue\(p\)\.note\)/);
+  assert.match(html, /el\("bulk-status"\)\.onchange/);
+  assert.match(html, /footer\.hidden = !current \|\| count === 0/);
+  assert.match(html, /el\("save-drafts"\)\.onclick/);
+});
