@@ -30,6 +30,10 @@ on:
         description: Existing/idempotent cycle ID (optional)
         required: false
         type: string
+      run_date:
+        description: JST run date YYYY-MM-DD (optional, for recovery)
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -63,12 +67,14 @@ jobs:
           INPUT_TOPIC: ${{ inputs.topic }}
           INPUT_LIMIT: ${{ inputs.limit }}
           INPUT_CYCLE_ID: ${{ inputs.cycle_id }}
+          INPUT_RUN_DATE: ${{ inputs.run_date }}
           INPUT_TEST: ${{ inputs.test }}
         run: |
           args=(dispatch)
           if [[ -n "$INPUT_TOPIC" ]]; then args+=(--topic "$INPUT_TOPIC" --force); fi
           if [[ -n "$INPUT_LIMIT" ]]; then args+=(--limit "$INPUT_LIMIT"); fi
           if [[ -n "$INPUT_CYCLE_ID" ]]; then args+=(--cycle-id "$INPUT_CYCLE_ID"); fi
+          if [[ -n "$INPUT_RUN_DATE" ]]; then args+=(--run-date "$INPUT_RUN_DATE"); fi
           if [[ "$INPUT_TEST" == "true" ]]; then args+=(--test); fi
           python pubmed_automation.py "${args[@]}"
 
@@ -90,7 +96,7 @@ jobs:
       - run: pip install -r requirements-automation.txt
       - name: Poll batches and continue pipeline
         env:
-      PMID_LEDGER_WEB_URL: ${{ secrets.PMID_LEDGER_WEB_URL }}
+          PMID_LEDGER_WEB_URL: ${{ secrets.PMID_LEDGER_WEB_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GOOGLE_AUTHORIZED_USER_JSON: ${{ secrets.GOOGLE_AUTHORIZED_USER_JSON }}
           GOOGLE_DRIVE_ROOT_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_ROOT_FOLDER_ID }}
