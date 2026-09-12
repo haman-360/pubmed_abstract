@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from datetime import date, datetime, timezone
@@ -109,7 +110,7 @@ class DriveStore:
     def document_folders(self, topic_name: str) -> dict[str, str]:
         topic = self.google.ensure_folder(self.documents_id, safe_drive_name(topic_name))
         return {
-            "current": self.google.ensure_folder(topic, "current"),
+            "editions": self.google.ensure_folder(topic, "editions"),
         }
 
     def save_manifest(self, manifest: dict[str, Any]) -> None:
@@ -289,6 +290,7 @@ def new_manifest(
     display_name: str,
     articles: list[dict[str, Any]],
     test: bool,
+    delivery_date: date,
 ) -> dict[str, Any]:
     run_id = f"{cycle_id}:{topic_name}"
     run_folder = store.run_folder(cycle_id, topic_name)
@@ -300,6 +302,7 @@ def new_manifest(
         "cycle_id": cycle_id,
         "topic": topic_name,
         "display_name": display_name,
+        "delivery_date": delivery_date.isoformat(),
         "test": test,
         "state": "SCREEN_BATCH_PENDING",
         "created_at": iso_z(),
@@ -396,7 +399,13 @@ def command_dispatch(args: argparse.Namespace, config: dict[str, Any], store: Dr
             cycle["topics"][name] = {"state": "EMPTY", "run_manifest_file_id": None}
             continue
         manifest = new_manifest(
-            store, cycle_id, name, config["topics"][name]["display_name"], articles, args.test
+            store,
+            cycle_id,
+            name,
+            config["topics"][name]["display_name"],
+            articles,
+            args.test,
+            today,
         )
         store.save_manifest(manifest)
         lines = screen_batch_lines(manifest["run_id"], articles, config)
@@ -624,23 +633,16 @@ def create_documents(
     current_component = manifest["components"]["current_doc"]
     topic_ledger = ledger["topics"][manifest["topic"]]
     try:
-        current_id = topic_ledger.get("current_file_id")
-        if not current_id:
-            doc = store.google.create_doc(
-                folders["current"],
-                config["topics"][manifest["topic"]]["current_name"],
-                notebook_text,
-            )
-            current_id = doc["id"]
-            topic_ledger["current_file_id"] = current_id
-        else:
-            store.google.replace_doc_text(current_id, notebook_text)
-        # 縦切りでは同一内容でもう一度更新し、ID不変を明示的に検証する。
+        edition_name = edition_document_name(manifest)
+        doc = store.google.create_doc(folders["editions"], edition_name, notebook_text)
+        current_id = doc["id"]
+        topic_ledger["latest_file_id"] = current_id
+        # 縦切りでは同じ日付・同じ名前でもう一度保存し、再試行で重複しないことを検証する。
         if manifest["test"]:
             before_id = current_id
-            store.google.replace_doc_text(current_id, notebook_text)
-            if current_id != before_id:
-                raise RuntimeError("CURRENTのfile IDが変化しました。")
+            retry_doc = store.google.create_doc(folders["editions"], edition_name, notebook_text)
+            if retry_doc["id"] != before_id:
+                raise RuntimeError("同じ配信の再試行でGoogle Documentが重複作成されました。")
             current_component["stability_verified"] = True
         current_file = store.google.get_file(current_id)
         current_component.update({
@@ -656,6 +658,19 @@ def create_documents(
         current_component["last_error"] = str(exc)
     store.save_manifest(manifest)
     store.save_ledger(ledger)
+
+
+def edition_document_name(manifest: dict[str, Any]) -> str:
+    """Return a stable per-delivery name, including for older unfinished manifests."""
+    delivery_date = manifest.get("delivery_date")
+    if not delivery_date:
+        match = re.search(r"\d{4}-\d{2}-\d{2}", manifest.get("cycle_id", ""))
+        if match:
+            delivery_date = match.group(0)
+        else:
+            created = datetime.fromisoformat(manifest["created_at"].replace("Z", "+00:00"))
+            delivery_date = created.astimezone(ZoneInfo("Asia/Tokyo")).date().isoformat()
+    return safe_drive_name(f"{delivery_date}_{manifest['display_name']}_NotebookLM")
 
 
 def retry_current_if_needed(
@@ -679,16 +694,12 @@ def retry_current_if_needed(
     )
     topic_ledger = ledger["topics"][manifest["topic"]]
     try:
-        current_id = topic_ledger.get("current_file_id")
-        if not current_id:
-            folders = store.document_folders(manifest["topic"])
-            doc = store.google.create_doc(
-                folders["current"], config["topics"][manifest["topic"]]["current_name"], text
-            )
-            current_id = doc["id"]
-            topic_ledger["current_file_id"] = current_id
-        else:
-            store.google.replace_doc_text(current_id, text)
+        folders = store.document_folders(manifest["topic"])
+        doc = store.google.create_doc(
+            folders["editions"], edition_document_name(manifest), text
+        )
+        current_id = doc["id"]
+        topic_ledger["latest_file_id"] = current_id
         component.update({
             "state": "COMPLETED",
             "completed_at": iso_z(),
@@ -843,7 +854,7 @@ def digest_body(cycle: dict[str, Any], manifests: list[dict[str, Any]]) -> str:
             f"■ {manifest['display_name']}",
             f"状態: {manifest['state']}",
             f"新着: {manifest['article_count']}件 / 選定: {final_count}件",
-            "NotebookLM用3部構成Document: "
+            "NotebookLM用3部構成Document（配信日別）: "
             f"{manifest['components']['current_doc'].get('url', manifest['components']['current_doc']['state'])}",
             f"評価失敗PMID: {', '.join(manifest.get('failed_pmids', [])) or 'なし'}",
             "API使用量: "
@@ -869,7 +880,7 @@ def digest_body(cycle: dict[str, Any], manifests: list[dict[str, Any]]) -> str:
     ]
     lines.extend([
         f"失敗テーマ: {', '.join(failed) or 'なし'}",
-        f"CURRENT更新未完了: {', '.join(current_failed) or 'なし'}",
+        f"配信日別Document作成未完了: {', '.join(current_failed) or 'なし'}",
         f"通知試行回数: {cycle['notification']['attempts'] + 1}",
     ])
     return "\n".join(lines)

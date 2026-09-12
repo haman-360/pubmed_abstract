@@ -3,7 +3,7 @@ from unittest.mock import MagicMock, call
 
 from automation_core import load_config
 from automation_services import GoogleWorkspaceClient, split_score_table
-from pubmed_automation import DriveStore, create_documents, maybe_notify
+from pubmed_automation import DriveStore, create_documents, edition_document_name, maybe_notify
 
 
 class FailingGoogle:
@@ -52,12 +52,12 @@ class CurrentDocumentIdempotencyTests(unittest.TestCase):
         client = GoogleWorkspaceClient.__new__(GoogleWorkspaceClient)
         client.find_child = MagicMock(return_value={
             "id": "fixed-current-id",
-            "name": "小児腎臓_NotebookLM_CURRENT",
+            "name": "2026-09-05_小児腎臓_NotebookLM",
             "webViewLink": "https://docs.google.com/document/d/fixed-current-id/edit",
         })
         client.replace_doc_text = MagicMock()
         client.drive = MagicMock()
-        result = client.create_doc("folder", "小児腎臓_NotebookLM_CURRENT", "latest")
+        result = client.create_doc("folder", "2026-09-05_小児腎臓_NotebookLM", "latest")
         self.assertEqual(result["id"], "fixed-current-id")
         client.replace_doc_text.assert_called_once_with("fixed-current-id", "latest")
         client.drive.files.return_value.create.assert_not_called()
@@ -183,28 +183,53 @@ class DriveLookupTests(unittest.TestCase):
 
 
 class DocumentFolderTests(unittest.TestCase):
-    def test_only_current_folder_is_created(self):
+    def test_only_editions_folder_is_created(self):
         store = DriveStore.__new__(DriveStore)
         store.documents_id = "documents"
         store.google = MagicMock()
         store.google.ensure_folder.side_effect = [
             "topic-folder",
-            "current-folder",
+            "editions-folder",
         ]
 
         result = store.document_folders("topic")
 
         self.assertEqual(result, {
-            "current": "current-folder",
+            "editions": "editions-folder",
         })
         self.assertEqual(store.google.ensure_folder.call_args_list, [
             call("documents", "topic"),
-            call("topic-folder", "current"),
+            call("topic-folder", "editions"),
         ])
 
 
+class EditionDocumentNameTests(unittest.TestCase):
+    def test_each_delivery_date_gets_a_distinct_document_name(self):
+        first = edition_document_name({
+            "delivery_date": "2026-09-05",
+            "display_name": "小児腎臓",
+        })
+        second = edition_document_name({
+            "delivery_date": "2026-09-12",
+            "display_name": "小児腎臓",
+        })
+
+        self.assertEqual(first, "2026-09-05_小児腎臓_NotebookLM")
+        self.assertEqual(second, "2026-09-12_小児腎臓_NotebookLM")
+        self.assertNotEqual(first, second)
+
+    def test_old_manifest_uses_date_from_cycle_id(self):
+        name = edition_document_name({
+            "cycle_id": "scheduled-2026-09-05",
+            "created_at": "2026-09-06T01:00:00Z",
+            "display_name": "小児腎臓",
+        })
+
+        self.assertEqual(name, "2026-09-05_小児腎臓_NotebookLM")
+
+
 class IntegratedDocumentTests(unittest.TestCase):
-    def test_create_documents_creates_only_one_integrated_google_doc(self):
+    def test_create_documents_creates_a_dated_integrated_google_doc(self):
         store = MagicMock()
         store.load_json.side_effect = [
             {
@@ -237,7 +262,7 @@ class IntegratedDocumentTests(unittest.TestCase):
                 "alternates": [],
             },
         ]
-        store.document_folders.return_value = {"current": "current-folder"}
+        store.document_folders.return_value = {"editions": "editions-folder"}
         store.google.create_doc.return_value = {
             "id": "integrated-id",
             "webViewLink": "https://docs.google.com/document/d/integrated-id/edit",
@@ -249,7 +274,7 @@ class IntegratedDocumentTests(unittest.TestCase):
         ledger = {
             "topics": {
                 "topic": {
-                    "current_file_id": None,
+                    "latest_file_id": None,
                 }
             }
         }
@@ -257,6 +282,8 @@ class IntegratedDocumentTests(unittest.TestCase):
             "topic": "topic",
             "display_name": "テーマ",
             "run_id": "run",
+            "cycle_id": "scheduled-2026-09-05",
+            "delivery_date": "2026-09-05",
             "test": False,
             "artifacts": {
                 "all_abstracts": {"file_id": "raw"},
@@ -267,21 +294,16 @@ class IntegratedDocumentTests(unittest.TestCase):
                 "current_doc": {"state": "PENDING", "attempts": 0},
             },
         }
-        config = {
-            "topics": {
-                "topic": {
-                    "current_name": "テーマ_NotebookLM_CURRENT",
-                }
-            }
-        }
+        config = {"topics": {"topic": {}}}
 
         create_documents(store, ledger, manifest, config)
 
         store.google.create_doc.assert_called_once()
         self.assertEqual(
             store.google.create_doc.call_args.args[:2],
-            ("current-folder", "テーマ_NotebookLM_CURRENT"),
+            ("editions-folder", "2026-09-05_テーマ_NotebookLM"),
         )
+        self.assertEqual(ledger["topics"]["topic"]["latest_file_id"], "integrated-id")
         uploaded_text = store.google.create_doc.call_args.args[2]
         self.assertIn("【第1部：日本語要約】", uploaded_text)
         self.assertIn("【第2部：英語Abstract】", uploaded_text)

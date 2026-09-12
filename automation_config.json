@@ -46,73 +46,59 @@
   "topics": {
     "ped_nephrology_update": {
       "display_name": "小児腎臓",
-      "frequency": "weekly",
-      "current_name": "小児腎臓_NotebookLM_CURRENT"
+      "frequency": "weekly"
     },
     "peds_asthma_update": {
       "display_name": "小児喘息",
-      "frequency": "weekly",
-      "current_name": "小児喘息_NotebookLM_CURRENT"
+      "frequency": "weekly"
     },
     "ped_infection_1w_update": {
       "display_name": "小児感染症",
-      "frequency": "weekly",
-      "current_name": "小児感染症_NotebookLM_CURRENT"
+      "frequency": "weekly"
     },
     "primary_care_review": {
       "display_name": "プライマリケア・レビュー",
-      "frequency": "weekly",
-      "current_name": "プライマリケア・レビュー_NotebookLM_CURRENT"
+      "frequency": "weekly"
     },
     "Pediatric_Primary_Care_High_Impact": {
       "display_name": "小児プライマリケア高インパクト",
-      "frequency": "biweekly",
-      "current_name": "小児プライマリケア高インパクト_NotebookLM_CURRENT"
+      "frequency": "biweekly"
     },
     "ped_atopic_update": {
       "display_name": "アトピー性皮膚炎",
-      "frequency": "biweekly",
-      "current_name": "アトピー性皮膚炎_NotebookLM_CURRENT"
+      "frequency": "biweekly"
     },
     "ped_development_update": {
       "display_name": "発達障害",
-      "frequency": "biweekly",
-      "current_name": "発達障害_NotebookLM_CURRENT"
+      "frequency": "biweekly"
     },
     "ped_food_update": {
       "display_name": "食物アレルギー",
-      "frequency": "biweekly",
-      "current_name": "食物アレルギー_NotebookLM_CURRENT"
+      "frequency": "biweekly"
     },
     "ped_psycho_update": {
       "display_name": "小児心身症",
-      "frequency": "biweekly",
-      "current_name": "小児心身症_NotebookLM_CURRENT"
+      "frequency": "biweekly"
     },
     "ped_constipation_update": {
       "display_name": "小児便秘",
-      "frequency": "biweekly",
-      "current_name": "小児便秘_NotebookLM_CURRENT"
+      "frequency": "biweekly"
     },
     "ped_vaccine_update": {
       "display_name": "ワクチン",
-      "frequency": "biweekly",
-      "current_name": "ワクチン_NotebookLM_CURRENT"
+      "frequency": "biweekly"
     },
     "ped_enuresis_update": {
       "display_name": "夜尿症",
-      "frequency": "monthly",
-      "current_name": "夜尿症_NotebookLM_CURRENT"
+      "frequency": "monthly"
     },
     "ped_sleep_update": {
       "display_name": "小児睡眠",
-      "frequency": "monthly",
-      "current_name": "小児睡眠_NotebookLM_CURRENT"
+      "frequency": "monthly"
     },
     "ped_trauma_update": {
       "display_name": "小児外傷等",
-      "frequency": "monthly",
-      "current_name": "小児外傷等_NotebookLM_CURRENT"
+      "frequency": "monthly"
     }
   }
 }

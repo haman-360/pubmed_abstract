@@ -62,8 +62,8 @@ def validate_config(config: dict[str, Any]) -> None:
     for name, topic in config["topics"].items():
         if topic["frequency"] not in {"weekly", "biweekly", "monthly"}:
             raise ValueError(f"{name}: 未対応のfrequencyです。")
-        if not topic["display_name"] or not topic["current_name"]:
-            raise ValueError(f"{name}: 表示名とCURRENT名が必要です。")
+        if not topic["display_name"]:
+            raise ValueError(f"{name}: 表示名が必要です。")
     selection = config["selection"]
     if selection["base_candidate_n"] + selection["rescue_max"] > selection["final_candidate_max"]:
         raise ValueError("候補上限の設定が矛盾しています。")
@@ -467,7 +467,7 @@ def new_ledger(config: dict[str, Any]) -> dict[str, Any]:
         "topics": {
             name: {
                 "last_success_edat": None,
-                "current_file_id": None,
+                "latest_file_id": None,
                 "pmid_index_file_id": None,
                 "last_run_manifest_file_id": None,
                 "component_states": {},
