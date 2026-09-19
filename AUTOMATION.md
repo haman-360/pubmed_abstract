@@ -68,7 +68,18 @@ python3 pubmed_automation.py poll
 
 # 特定cycleの通知だけを手動再試行
 python3 pubmed_automation.py retry-notification --cycle-id manual-12345
+
+# FAILEDになったテーマだけを、保存済み入力から安全に復旧
+python3 pubmed_automation.py recover-failed \
+  --cycle-id scheduled-2026-09-19 \
+  --topic peds_asthma_update
 ```
+
+`recover-failed`は`FAILED`のテーマだけを対象にします。一次評価と最終候補が保存済みなら
+最終Batchだけを再投入し、それ以前で失敗していれば同じAbstractから一次Batchを再投入します。
+新しいPubMed検索は行わず、元のcycle、run、配信日別Document名を維持します。復旧前の状態と
+失敗理由はmanifestの`recovery_history`へ記録します。すでに完了メールを送信済みの場合は、
+復旧完了後に件名へ`[復旧]`を付けた更新メールを送ります。
 
 ## 過去の見逃し候補を再検索
 

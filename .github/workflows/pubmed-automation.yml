@@ -11,7 +11,7 @@ on:
         description: Action
         required: true
         type: choice
-        options: [dispatch, poll, retry-notification, missed-papers, validate]
+        options: [dispatch, poll, recover-failed, retry-notification, missed-papers, validate]
         default: poll
       topic:
         description: Internal topic name (optional)
@@ -83,7 +83,8 @@ jobs:
       (github.event_name == 'schedule' && github.event.schedule == '17 * * * *' &&
        vars.AUTOMATION_ENABLED == 'true') ||
       (github.event_name == 'workflow_dispatch' &&
-       (inputs.action == 'poll' || inputs.action == 'retry-notification'))
+       (inputs.action == 'poll' || inputs.action == 'recover-failed' ||
+        inputs.action == 'retry-notification'))
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -103,11 +104,13 @@ jobs:
           GMAIL_NOTIFY_TO: ${{ secrets.GMAIL_NOTIFY_TO }}
           INPUT_ACTION: ${{ inputs.action }}
           INPUT_CYCLE_ID: ${{ inputs.cycle_id }}
+          INPUT_TOPIC: ${{ inputs.topic }}
           INPUT_TEST: ${{ inputs.test }}
         run: |
           command="${INPUT_ACTION:-poll}"
           args=("$command")
           if [[ -n "$INPUT_CYCLE_ID" ]]; then args+=(--cycle-id "$INPUT_CYCLE_ID"); fi
+          if [[ -n "$INPUT_TOPIC" ]]; then args+=(--topic "$INPUT_TOPIC"); fi
           if [[ "$INPUT_TEST" == "true" ]]; then args+=(--test); fi
           python pubmed_automation.py "${args[@]}"
 

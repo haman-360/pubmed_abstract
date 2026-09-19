@@ -46,7 +46,10 @@ LEDGER_NAME = "automation_ledger.json"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="PubMed自動選定・Google Drive配信")
-    parser.add_argument("command", choices=["dispatch", "poll", "retry-notification", "validate"])
+    parser.add_argument(
+        "command",
+        choices=["dispatch", "poll", "recover-failed", "retry-notification", "validate"],
+    )
     parser.add_argument("--config", default=str(CONFIG_PATH))
     parser.add_argument("--topic", action="append", help="テーマ内部名。複数指定可")
     parser.add_argument("--test", action="store_true", help="専用TEST領域で小児腎臓5件を縦切り試験")
@@ -427,6 +430,113 @@ def command_dispatch(args: argparse.Namespace, config: dict[str, Any], store: Dr
         cycle["notification"]["state"] = "NOT_REQUIRED"
     store.save_ledger(ledger)
     print(f"dispatch完了: {cycle_id}, 配信run={sum(v['state'] == 'RUNNING' for v in cycle['topics'].values())}")
+
+
+def recover_failed_manifest(
+    openai: OpenAIBatchClient,
+    store: DriveStore,
+    manifest: dict[str, Any],
+    config: dict[str, Any],
+) -> str:
+    """Reopen one failed run while preserving its inputs and audit history."""
+    if manifest["state"] != "FAILED":
+        raise ValueError(
+            f"復旧対象はFAILEDである必要があります: {manifest['display_name']}={manifest['state']}"
+        )
+
+    screen_ready = (
+        manifest["components"]["screen"]["state"] == "COMPLETED"
+        and bool(manifest.get("artifacts", {}).get("final_candidates", {}).get("file_id"))
+    )
+    restart_stage = "final" if screen_ready else "screen"
+    manifest.setdefault("recovery_history", []).append({
+        "requested_at": iso_z(),
+        "restart_stage": restart_stage,
+        "previous_state": manifest["state"],
+        "previous_failure_reason": manifest.get("failure_reason"),
+        "previous_screen_state": manifest["components"]["screen"]["state"],
+        "previous_screen_attempts": len(manifest["components"]["screen"].get("attempts", [])),
+        "previous_final_state": manifest["components"]["final"]["state"],
+        "previous_final_attempts": len(manifest["components"]["final"].get("attempts", [])),
+        "previous_component": json.loads(json.dumps(manifest["components"][restart_stage])),
+    })
+    manifest.pop("failure_reason", None)
+    manifest.get("artifacts", {}).pop("final_evaluation", None)
+    manifest.pop("selected_count", None)
+    manifest.pop("alternate_count", None)
+    manifest["components"]["current_doc"] = {"state": "PENDING", "attempts": 0}
+
+    raw = store.load_json(manifest["artifacts"]["all_abstracts"]["file_id"])
+    if restart_stage == "final":
+        candidates = store.load_json(manifest["artifacts"]["final_candidates"]["file_id"])
+        manifest["components"]["final"] = {"state": "PENDING", "attempts": []}
+        line = final_batch_line(
+            manifest["run_id"], manifest["display_name"], candidates, raw["articles"], config
+        )
+        submit_batch(openai, store, manifest, "final", [line], config)
+        manifest["state"] = "FINAL_BATCH_RESUBMITTED"
+    else:
+        manifest.get("artifacts", {}).pop("screen_evaluations", None)
+        manifest.get("artifacts", {}).pop("final_candidates", None)
+        manifest["failed_pmids"] = []
+        manifest["components"]["screen"] = {"state": "PENDING", "attempts": []}
+        manifest["components"]["final"] = {"state": "PENDING", "attempts": []}
+        lines = screen_batch_lines(manifest["run_id"], raw["articles"], config)
+        submit_batch(openai, store, manifest, "screen", lines, config)
+        manifest["state"] = "SCREEN_BATCH_RESUBMITTED"
+    store.save_manifest(manifest)
+    return restart_stage
+
+
+def command_recover_failed(
+    args: argparse.Namespace,
+    config: dict[str, Any],
+    store: DriveStore,
+    ledger: dict[str, Any],
+) -> None:
+    if not args.cycle_id:
+        raise ValueError("recover-failedには--cycle-idが必要です。")
+    if not args.topic:
+        raise ValueError("recover-failedには1件以上の--topicが必要です。")
+    cycle = ledger.get("cycles", {}).get(args.cycle_id)
+    if not cycle:
+        raise ValueError(f"cycleが見つかりません: {args.cycle_id}")
+
+    requested = list(dict.fromkeys(args.topic))
+    unknown = [name for name in requested if name not in cycle.get("topics", {})]
+    if unknown:
+        raise ValueError(f"cycle内にテーマが見つかりません: {unknown}")
+
+    targets = []
+    for name in requested:
+        topic_state = cycle["topics"][name]
+        manifest_id = topic_state.get("run_manifest_file_id")
+        if not manifest_id:
+            raise ValueError(f"復旧対象のmanifestがありません: {name}")
+        manifest = store.load_json(manifest_id)
+        if manifest["state"] != "FAILED":
+            raise ValueError(f"復旧対象はFAILEDである必要があります: {name}={manifest['state']}")
+        targets.append((name, topic_state, manifest))
+
+    openai = OpenAIBatchClient()
+    recovered = []
+    for name, topic_state, manifest in targets:
+        restart_stage = recover_failed_manifest(openai, store, manifest, config)
+        topic_state["state"] = manifest["state"]
+        recovered.append(f"{name}:{restart_stage}")
+
+    notification = cycle.setdefault(
+        "notification", {"state": "PENDING", "attempts": 0, "message_id": None}
+    )
+    if notification.get("state") == "SENT":
+        cycle["notification_generation"] = cycle.get("notification_generation", 0) + 1
+    notification.update({"state": "PENDING", "attempts": 0, "message_id": None})
+    notification.pop("sent_at", None)
+    notification.pop("last_error", None)
+    notification.pop("last_attempt_at", None)
+    cycle["state"] = "RUNNING"
+    store.save_ledger(ledger)
+    print(f"復旧Batch投入完了: {args.cycle_id}, {', '.join(recovered)}")
 
 
 def load_attempt_outputs(
@@ -841,7 +951,11 @@ def poll_manifest(
 
 def digest_body(cycle: dict[str, Any], manifests: list[dict[str, Any]]) -> str:
     lines = [
-        f"PubMed自動選定が完了しました。",
+        (
+            "PubMed自動選定の復旧処理が終了しました。"
+            if cycle.get("notification_generation", 0)
+            else "PubMed自動選定が完了しました。"
+        ),
         f"処理回: {cycle['cycle_id']}",
         "",
     ]
@@ -905,8 +1019,15 @@ def maybe_notify(
     if not force and notification["attempts"] >= config["retry"]["notification_max_attempts"]:
         notification["state"] = "NOTIFICATION_FAILED_RETRYABLE"
         return
-    subject = f"{'[TEST] ' if cycle['test'] else ''}PubMed最新論文ダイジェスト {cycle['cycle_id']}"
+    recovery_prefix = "[復旧] " if cycle.get("notification_generation", 0) else ""
+    subject = (
+        f"{'[TEST] ' if cycle['test'] else ''}{recovery_prefix}"
+        f"PubMed最新論文ダイジェスト {cycle['cycle_id']}"
+    )
     body = digest_body(cycle, manifests)
+    message_identity = {"cycle_id": cycle["cycle_id"]}
+    if cycle.get("notification_generation", 0):
+        message_identity["notification_generation"] = cycle["notification_generation"]
     notification["attempts"] += 1
     try:
         recipient = os.environ.get("GMAIL_NOTIFY_TO", "").strip()
@@ -916,7 +1037,7 @@ def maybe_notify(
             recipient,
             subject,
             body,
-            deterministic_message_id=content_hash({"cycle_id": cycle["cycle_id"]})[:32],
+            deterministic_message_id=content_hash(message_identity)[:32],
         )
         notification.update({"state": "SENT", "message_id": result["id"], "sent_at": iso_z()})
     except Exception as exc:
@@ -978,6 +1099,8 @@ def main() -> int:
     ledger = store.load_ledger(config)
     if args.command == "dispatch":
         command_dispatch(args, config, store, ledger)
+    elif args.command == "recover-failed":
+        command_recover_failed(args, config, store, ledger)
     elif args.command == "poll":
         command_poll(args, config, store, ledger)
     else:
