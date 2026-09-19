@@ -28,6 +28,7 @@ from automation_core import (
     iso_z,
     load_config,
     new_ledger,
+    normalize_final_result,
     parse_jsonl,
     render_notebook_doc,
     safe_drive_name,
@@ -893,6 +894,17 @@ def poll_manifest(
             return
         final = extract_response_json(lines[0])
         candidates = store.load_json(manifest["artifacts"]["final_candidates"]["file_id"])
+        final, normalization_warnings = normalize_final_result(
+            final,
+            {item["pmid"] for item in candidates},
+            config["selection"]["selected_n"],
+            config["selection"]["alternate_n"],
+        )
+        if normalization_warnings:
+            manifest["final_normalization"] = {
+                "at": iso_z(),
+                "removed": normalization_warnings,
+            }
         try:
             validate_final_result(
                 final,

@@ -12,6 +12,7 @@ from automation_core import (
     final_batch_line,
     is_due,
     load_config,
+    normalize_final_result,
     new_ledger,
     render_notebook_doc,
     screen_batch_lines,
@@ -163,6 +164,38 @@ class BatchAndSelectionTests(unittest.TestCase):
             "alternates": [],
         }
         validate_final_result(result, {"1", "2", "3"}, 10, 5)
+
+    def test_final_result_normalization_removes_duplicates_without_reordering(self):
+        result = {
+            "selection_summary": "summary",
+            "selected": [final_item(1, 1), final_item(2, 2), final_item(1, 3)],
+            "alternates": [final_item(2, 4), final_item(3, 5), final_item(99, 6)],
+        }
+
+        normalized, warnings = normalize_final_result(
+            result, {"1", "2", "3"}, selected_n=10, alternate_n=5
+        )
+
+        self.assertEqual([item["pmid"] for item in normalized["selected"]], ["1", "2"])
+        self.assertEqual([item["pmid"] for item in normalized["alternates"]], ["3"])
+        self.assertEqual(warnings, [
+            {"group": "selected", "pmid": "1", "reason": "duplicate"},
+            {"group": "alternates", "pmid": "2", "reason": "duplicate"},
+            {"group": "alternates", "pmid": "99", "reason": "outside_candidates"},
+        ])
+        validate_final_result(normalized, {"1", "2", "3"}, 10, 5)
+
+    def test_final_result_normalization_does_not_mutate_raw_response(self):
+        result = {
+            "selection_summary": "summary",
+            "selected": [final_item(1, 1), final_item(1, 2)],
+            "alternates": [],
+        }
+
+        normalized, _ = normalize_final_result(result, {"1"}, 10, 5)
+
+        self.assertEqual(len(result["selected"]), 2)
+        self.assertEqual(len(normalized["selected"]), 1)
 
 
 class DocumentAndLedgerTests(unittest.TestCase):

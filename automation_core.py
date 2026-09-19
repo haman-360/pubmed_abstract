@@ -347,6 +347,42 @@ def validate_final_result(result: dict[str, Any], candidate_pmids: set[str], sel
         raise ValueError("最終結果に重複または候補外PMIDがあります。")
 
 
+def normalize_final_result(
+    result: dict[str, Any],
+    candidate_pmids: set[str],
+    selected_n: int,
+    alternate_n: int,
+) -> tuple[dict[str, Any], list[dict[str, str]]]:
+    """Remove unsafe duplicate/out-of-candidate entries while preserving model order."""
+    normalized = dict(result)
+    warnings: list[dict[str, str]] = []
+    seen: set[str] = set()
+
+    def keep(items: list[dict[str, Any]], group: str, maximum: int) -> list[dict[str, Any]]:
+        kept = []
+        for item in items:
+            pmid = item.get("pmid")
+            if pmid not in candidate_pmids:
+                warnings.append({"group": group, "pmid": str(pmid), "reason": "outside_candidates"})
+                continue
+            if pmid in seen:
+                warnings.append({"group": group, "pmid": pmid, "reason": "duplicate"})
+                continue
+            if len(kept) >= maximum:
+                warnings.append({"group": group, "pmid": pmid, "reason": "over_limit"})
+                continue
+            kept.append(item)
+            seen.add(pmid)
+        return kept
+
+    selected = keep(result.get("selected", []), "selected", min(selected_n, len(candidate_pmids)))
+    alternate_max = min(alternate_n, max(0, len(candidate_pmids) - len(selected)))
+    alternates = keep(result.get("alternates", []), "alternates", alternate_max)
+    normalized["selected"] = selected
+    normalized["alternates"] = alternates
+    return normalized, warnings
+
+
 def _paper_lookup(articles: list[dict[str, Any]], scores: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str, Any]]:
     return (
         {item["pmid"]: item for item in articles},

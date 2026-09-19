@@ -81,6 +81,10 @@ python3 pubmed_automation.py recover-failed \
 失敗理由はmanifestの`recovery_history`へ記録します。すでに完了メールを送信済みの場合は、
 復旧完了後に件名へ`[復旧]`を付けた更新メールを送ります。
 
+最終AI応答で同じPMIDが選定内に重複した場合や、選定と次点の両方へ入った場合は、
+最初の出現を残して後続を除去します。候補外PMIDも除外し、除去内容をmanifestの
+`final_normalization`へ記録します。AIが返した元応答はBatch出力ファイルへそのまま残します。
+
 ## 過去の見逃し候補を再検索
 
 通常監視とは別に、発行日ベースで広く検索し直し、既存のPMIDとの差分だけを
