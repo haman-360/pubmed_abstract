@@ -15,9 +15,11 @@
 
 GitHub Actionsのpollerは毎時17分に動きます。各Batchの`completion_window`は24時間で、一次と最終を直列に行うため最大約48時間を想定しています。
 
-Batch応答のinput/cached input/output/total tokenは段階別にmanifestへ記録し、Gmailにもtotal tokenと推定USDを載せます。`automation_config.json`には2026-07-28時点の公式通常単価へBatchの50%割引を適用した単価を設定しています。価格改定時は`input_usd_per_million`、`cached_input_usd_per_million`、`output_usd_per_million`を変更できます。単価を`null`にすると、推定費用を出さずトークン数だけを記録します。
+Batch応答のinput/cached input/cache write/output/total tokenは段階別にmanifestへ記録し、Gmailにもtotal tokenと推定USDを載せます。`automation_config.json`には2026-09-23確認時点の公式Batch単価を設定しています。価格改定時は`input_usd_per_million`、`cached_input_usd_per_million`、`cache_write_usd_per_million`、`output_usd_per_million`を変更できます。単価を`null`にすると、推定費用を出さずトークン数だけを記録します。
 
-仕様照合先: [Batch API](https://developers.openai.com/api/docs/guides/batch)、[Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs)、[GPT-5.6 Luna](https://developers.openai.com/api/docs/models/gpt-5.6-luna)、[GPT-5.6 Terra](https://developers.openai.com/api/docs/models/gpt-5.6-terra)
+一次評価は`gpt-6-luna / low`、最終評価は`gpt-6-sol / medium`です。手動選定CLIの既定値も同じ組み合わせです。
+
+仕様照合先: [Batch API](https://developers.openai.com/api/docs/guides/batch)、[Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs)、[GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna)、[GPT-6 Sol](https://developers.openai.com/api/docs/models/gpt-6-sol)、[料金表](https://developers.openai.com/api/docs/pricing)
 
 ## Google認証の初回設定
 
@@ -88,8 +90,8 @@ python3 pubmed_automation.py recover-failed \
 ## モデル比較TEST
 
 手動専用Actions `PubMed model comparison TEST` は、2026-09-12〜23の小児喘息の
-同じPubMed Abstractを使用して、現行の一次 `gpt-5.6-luna / low`・最終
-`gpt-5.6-terra / medium` と、候補の一次 `gpt-6-luna / low`・最終
+同じPubMed Abstractを使用して、旧設定の一次 `gpt-5.6-luna / low`・最終
+`gpt-5.6-terra / medium` と、新設定の一次 `gpt-6-luna / low`・最終
 `gpt-6-sol / medium` をBatchで比較します。一次の各モデルで作った候補を
 それぞれの最終評価に渡し、実際の二段階処理を比較します。結果はActions artifact
 `model-comparison-test/model_comparison_test.json`に保存します。成功率、PMID整合、
@@ -100,8 +102,12 @@ Batch単価による推定費用を記録します。
 このTESTは本番Drive台帳、TEST Drive台帳、配信Document、Gmailに触れません。
 Batchが6時間以内に終わらない場合はActionがタイムアウトするため、ログに残る
 Batch IDから状態を確認してください。両モデルの費用はTESTスクリプト内の
-2026-09-23確認時点の公式Batch単価で推定します。本番設定ファイルの古い単価は
-この比較には使いません。
+2026-09-23確認時点の公式Batch単価で推定します。比較用モデル名と単価は
+本番設定と独立して固定し、移行後も旧・新系列を比較できます。
+
+## モデル設定の変更履歴
+
+- 2026-09-23: [小児喘息26件の比較TEST](MODEL_COMPARISON_2026-09-23.md)で、旧・新系列とも一次26/26、最終1/1のStructured Outputs成功を確認。新系列は合計tokenを3.6%、現行Batch単価での推定費用を28.4%削減。一次・最終の本番設定と手動選定CLIの既定値を`gpt-6-luna / low`、`gpt-6-sol / medium`に変更し、本番の費用計算へcache write tokenを追加。変更後の定期dispatchは2026-09-26（土）05:00 JSTを予定。
 
 ## 過去の見逃し候補を再検索
 

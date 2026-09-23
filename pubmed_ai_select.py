@@ -27,8 +27,8 @@ from pubmed_fetch import (
 
 
 OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses"
-DEFAULT_SCREEN_MODEL = "gpt-5.4-mini"
-DEFAULT_FINAL_MODEL = "gpt-5.5"
+DEFAULT_SCREEN_MODEL = "gpt-6-luna"
+DEFAULT_FINAL_MODEL = "gpt-6-sol"
 
 
 def load_dotenv(path):
@@ -57,7 +57,7 @@ def parse_args():
     parser.add_argument("--screen-model", default=DEFAULT_SCREEN_MODEL, help="一次スコアリング用モデル")
     parser.add_argument("--final-model", default=DEFAULT_FINAL_MODEL, help="最終選定・要約用モデル")
     parser.add_argument("--screen-effort", default="low", help="一次スコアリング用reasoning effort")
-    parser.add_argument("--final-effort", default="high", help="最終選定用reasoning effort")
+    parser.add_argument("--final-effort", default="medium", help="最終選定用reasoning effort")
     parser.add_argument("--output-dir", default=os.path.dirname(os.path.abspath(__file__)))
     parser.add_argument("--duplicate-extra-n", type=int, default=3, help="他テーマと重複した重要論文がある場合に追加する最大枠数")
     parser.add_argument("--selection-history", default="selected_pmids_history.json", help="選定PMID履歴ファイル")

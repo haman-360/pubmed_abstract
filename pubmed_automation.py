@@ -578,6 +578,41 @@ def load_attempt_outputs(
     return successes, errors
 
 
+def summarize_batch_usage(lines: list[dict[str, Any]], prices: dict[str, Any]) -> dict[str, Any]:
+    input_tokens = cached_input_tokens = cache_write_tokens = output_tokens = total_tokens = 0
+    for line in lines:
+        usage = line.get("response", {}).get("body", {}).get("usage") or {}
+        details = usage.get("input_tokens_details") or {}
+        input_tokens += usage.get("input_tokens", 0) or 0
+        cached_input_tokens += details.get("cached_tokens", 0) or 0
+        cache_write_tokens += details.get("cache_write_tokens", 0) or 0
+        output_tokens += usage.get("output_tokens", 0) or 0
+        total_tokens += usage.get("total_tokens", 0) or 0
+
+    price_keys = (
+        "input_usd_per_million",
+        "cached_input_usd_per_million",
+        "cache_write_usd_per_million",
+        "output_usd_per_million",
+    )
+    estimated_cost = None
+    if all(prices.get(key) is not None for key in price_keys):
+        estimated_cost = (
+            (input_tokens - cached_input_tokens - cache_write_tokens) * prices["input_usd_per_million"]
+            + cached_input_tokens * prices["cached_input_usd_per_million"]
+            + cache_write_tokens * prices["cache_write_usd_per_million"]
+            + output_tokens * prices["output_usd_per_million"]
+        ) / 1_000_000
+    return {
+        "input_tokens": input_tokens,
+        "cached_input_tokens": cached_input_tokens,
+        "cache_write_tokens": cache_write_tokens,
+        "output_tokens": output_tokens,
+        "total_tokens": total_tokens or input_tokens + output_tokens,
+        "estimated_cost_usd": estimated_cost,
+    }
+
+
 def poll_batch_stage(
     openai: OpenAIBatchClient,
     store: DriveStore,
@@ -636,38 +671,9 @@ def poll_batch_stage(
         list(success_by_id.values()),
     )
     component["result_file_id"] = result_ref["id"]
-    input_tokens = cached_input_tokens = output_tokens = total_tokens = 0
-    for line in success_by_id.values():
-        usage = line.get("response", {}).get("body", {}).get("usage", {})
-        input_tokens += usage.get("input_tokens", 0) or 0
-        cached_input_tokens += (
-            usage.get("input_tokens_details", {}).get("cached_tokens", 0) or 0
-        )
-        output_tokens += usage.get("output_tokens", 0) or 0
-        total_tokens += usage.get("total_tokens", 0) or 0
-    prices = config["models"][stage]
-    estimated_cost = None
-    if all(
-        prices.get(key) is not None
-        for key in (
-            "input_usd_per_million",
-            "cached_input_usd_per_million",
-            "output_usd_per_million",
-        )
-    ):
-        # Batch APIは通常料金から割引されるため、設定値にはBatch適用後単価を入れる。
-        estimated_cost = (
-            (input_tokens - cached_input_tokens) * prices["input_usd_per_million"]
-            + cached_input_tokens * prices["cached_input_usd_per_million"]
-            + output_tokens * prices["output_usd_per_million"]
-        ) / 1_000_000
-    component["usage"] = {
-        "input_tokens": input_tokens,
-        "cached_input_tokens": cached_input_tokens,
-        "output_tokens": output_tokens,
-        "total_tokens": total_tokens or input_tokens + output_tokens,
-        "estimated_cost_usd": estimated_cost,
-    }
+    component["usage"] = summarize_batch_usage(
+        list(success_by_id.values()), config["models"][stage]
+    )
     component["failed_custom_ids"] = remaining
     component["state"] = "COMPLETED" if success_by_id else "FAILED"
     store.save_manifest(manifest)

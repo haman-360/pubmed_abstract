@@ -57,6 +57,15 @@ def usage_and_cost(lines: list[dict], prices: tuple[float, float, float, float])
     return {**counts, "estimated_cost_usd": round(cost, 6)}
 
 
+def comparison_arms(config: dict) -> dict[str, dict]:
+    arms = {label: json.loads(json.dumps(config)) for label in ("old", "new")}
+    arms["old"]["models"]["screen"].update(name="gpt-5.6-luna", reasoning_effort="low")
+    arms["old"]["models"]["final"].update(name="gpt-5.6-terra", reasoning_effort="medium")
+    arms["new"]["models"]["screen"].update(name="gpt-6-luna", reasoning_effort="low")
+    arms["new"]["models"]["final"].update(name="gpt-6-sol", reasoning_effort="medium")
+    return arms
+
+
 def submit(client: OpenAIBatchClient, label: str, stage: str, lines: list[dict]) -> dict:
     uploaded = client.upload_jsonl(f"test_{label}_{stage}.jsonl", dump_jsonl(lines))
     batch = client.create_batch(uploaded["id"], "24h", {"purpose": "model-comparison-test", "arm": label, "stage": stage})
@@ -129,12 +138,7 @@ def main() -> int:
     if not articles:
         raise RuntimeError("No abstracts available for comparison")
     print(f"{args.topic}: PubMed matches={count}; abstracts={len(articles)}", flush=True)
-    arms = {
-        "old": config,
-        "new": json.loads(json.dumps(config)),
-    }
-    arms["new"]["models"]["screen"].update(name="gpt-6-luna", reasoning_effort="low")
-    arms["new"]["models"]["final"].update(name="gpt-6-sol", reasoning_effort="medium")
+    arms = comparison_arms(config)
     client = OpenAIBatchClient()
     deadline = time.monotonic() + args.max_wait_minutes * 60
     report = {"test": True, "topic": args.topic, "edat_start": args.start, "edat_end": args.end,

@@ -11,6 +11,7 @@ from pubmed_automation import (
     edition_document_name,
     maybe_notify,
     recover_failed_manifest,
+    summarize_batch_usage,
 )
 
 
@@ -92,6 +93,29 @@ class NotificationFailureTests(unittest.TestCase):
                 "notification_generation": 1,
             })[:32],
         )
+
+
+class BatchUsageTests(unittest.TestCase):
+    def test_cache_write_uses_its_own_batch_price(self):
+        prices = load_config("automation_config.json")["models"]["final"]
+        lines = [{"response": {"body": {"usage": {
+            "input_tokens": 1000,
+            "input_tokens_details": {"cached_tokens": 200, "cache_write_tokens": 100},
+            "output_tokens": 400,
+            "total_tokens": 1400,
+        }}}}]
+        result = summarize_batch_usage(lines, prices)
+        self.assertEqual(result["cache_write_tokens"], 100)
+        self.assertEqual(result["total_tokens"], 1400)
+        self.assertAlmostEqual(result["estimated_cost_usd"], 0.002845)
+
+    def test_missing_cache_write_usage_is_zero(self):
+        prices = load_config("automation_config.json")["models"]["screen"]
+        result = summarize_batch_usage([{"response": {"body": {"usage": {
+            "input_tokens": 100, "output_tokens": 20,
+        }}}}], prices)
+        self.assertEqual(result["cache_write_tokens"], 0)
+        self.assertAlmostEqual(result["estimated_cost_usd"], 0.00001)
 
 
 class FailedRunRecoveryTests(unittest.TestCase):

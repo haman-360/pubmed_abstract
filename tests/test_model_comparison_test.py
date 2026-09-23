@@ -2,6 +2,8 @@ import importlib.util
 import unittest
 from pathlib import Path
 
+from automation_core import load_config
+
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts" / "model_comparison_test.py"
 SPEC = importlib.util.spec_from_file_location("model_comparison_test", MODULE_PATH)
@@ -10,6 +12,15 @@ SPEC.loader.exec_module(comparison)
 
 
 class ModelComparisonTest(unittest.TestCase):
+    def test_comparison_keeps_old_and_new_models_after_production_migration(self):
+        config = load_config("automation_config.json")
+        arms = comparison.comparison_arms(config)
+        self.assertEqual(arms["old"]["models"]["screen"]["name"], "gpt-5.6-luna")
+        self.assertEqual(arms["old"]["models"]["final"]["name"], "gpt-5.6-terra")
+        self.assertEqual(arms["new"]["models"]["screen"]["name"], "gpt-6-luna")
+        self.assertEqual(arms["new"]["models"]["final"]["name"], "gpt-6-sol")
+        self.assertEqual(config["models"]["screen"]["name"], "gpt-6-luna")
+
     def test_usage_and_cost_separates_cached_tokens(self):
         lines = [{"response": {"body": {"usage": {
             "input_tokens": 1000,
