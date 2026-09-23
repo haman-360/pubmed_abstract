@@ -26,24 +26,33 @@ from automation_services import OpenAIBatchClient  # noqa: E402
 from pubmed_fetch import fetch_abstracts, search_pubmed_edat  # noqa: E402
 
 
-NEW_PRICES = {
-    "screen": (0.05, 0.005, 0.25),  # GPT-6 Luna Batch, USD / million tokens
-    "final": (1.0, 0.10, 5.0),      # GPT-6 Sol Batch, USD / million tokens
+TEST_PRICES = {
+    "old": {
+        "screen": (0.10, 0.01, 0.125, 0.60),  # GPT-5.6 Luna Batch
+        "final": (1.0, 0.10, 1.25, 6.0),     # GPT-5.6 Terra Batch
+    },
+    "new": {
+        "screen": (0.05, 0.005, 0.0625, 0.25),  # GPT-6 Luna Batch
+        "final": (1.0, 0.10, 1.25, 5.0),       # GPT-6 Sol Batch
+    },
 }
 TERMINAL = {"completed", "failed", "expired", "cancelled"}
 
 
-def usage_and_cost(lines: list[dict], prices: tuple[float, float, float]) -> dict:
+def usage_and_cost(lines: list[dict], prices: tuple[float, float, float, float]) -> dict:
     counts = Counter()
     for line in lines:
         usage = (line.get("response") or {}).get("body", {}).get("usage") or {}
         counts["input_tokens"] += usage.get("input_tokens", 0) or 0
-        counts["cached_input_tokens"] += (usage.get("input_tokens_details") or {}).get("cached_tokens", 0) or 0
+        details = usage.get("input_tokens_details") or {}
+        counts["cached_input_tokens"] += details.get("cached_tokens", 0) or 0
+        counts["cache_write_tokens"] += details.get("cache_write_tokens", 0) or 0
         counts["output_tokens"] += usage.get("output_tokens", 0) or 0
         counts["total_tokens"] += usage.get("total_tokens", 0) or 0
-    inp, cached, out = prices
-    cost = ((counts["input_tokens"] - counts["cached_input_tokens"]) * inp
+    inp, cached, write, out = prices
+    cost = ((counts["input_tokens"] - counts["cached_input_tokens"] - counts["cache_write_tokens"]) * inp
             + counts["cached_input_tokens"] * cached
+            + counts["cache_write_tokens"] * write
             + counts["output_tokens"] * out) / 1_000_000
     return {**counts, "estimated_cost_usd": round(cost, 6)}
 
@@ -141,8 +150,7 @@ def main() -> int:
         collect(client, screen_batches, deadline, args.poll_seconds)
         final_batches = {}
         for label, arm in arms.items():
-            prices = tuple(arm["models"]["screen"][k] for k in
-                           ("input_usd_per_million", "cached_input_usd_per_million", "output_usd_per_million")) if label == "old" else NEW_PRICES["screen"]
+            prices = TEST_PRICES[label]["screen"]
             scores, metrics = structured_results(screen_batches[label], set(report["pmids"]))
             metrics["usage"] = usage_and_cost(screen_batches[label]["output"], prices)
             report["arms"][label] = {"screen_model": arm["models"]["screen"]["name"],
@@ -159,8 +167,7 @@ def main() -> int:
             collect(client, final_batches, deadline, args.poll_seconds)
         for label, batch in final_batches.items():
             arm = arms[label]
-            prices = tuple(arm["models"]["final"][k] for k in
-                           ("input_usd_per_million", "cached_input_usd_per_million", "output_usd_per_million")) if label == "old" else NEW_PRICES["final"]
+            prices = TEST_PRICES[label]["final"]
             results, metrics = structured_results(batch)
             metrics["usage"] = usage_and_cost(batch["output"], prices)
             if results:

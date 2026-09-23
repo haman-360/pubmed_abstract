@@ -13,13 +13,14 @@ class ModelComparisonTest(unittest.TestCase):
     def test_usage_and_cost_separates_cached_tokens(self):
         lines = [{"response": {"body": {"usage": {
             "input_tokens": 1000,
-            "input_tokens_details": {"cached_tokens": 200},
+            "input_tokens_details": {"cached_tokens": 200, "cache_write_tokens": 100},
             "output_tokens": 400,
             "total_tokens": 1400,
         }}}}]
-        result = comparison.usage_and_cost(lines, (1.0, 0.1, 5.0))
+        result = comparison.usage_and_cost(lines, (1.0, 0.1, 1.25, 5.0))
         self.assertEqual(result["total_tokens"], 1400)
-        self.assertEqual(result["estimated_cost_usd"], 0.00282)
+        self.assertEqual(result["cache_write_tokens"], 100)
+        self.assertEqual(result["estimated_cost_usd"], 0.002845)
 
     def test_structured_results_rejects_wrong_pmid_and_invalid_json(self):
         info = {"expected": 3, "output": [

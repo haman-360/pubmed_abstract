@@ -93,14 +93,15 @@ python3 pubmed_automation.py recover-failed \
 `gpt-6-sol / medium` をBatchで比較します。一次の各モデルで作った候補を
 それぞれの最終評価に渡し、実際の二段階処理を比較します。結果はActions artifact
 `model-comparison-test/model_comparison_test.json`に保存します。成功率、PMID整合、
-最終選定の正規化前後の妥当性、token数、Batch単価による推定費用を記録します。
+最終選定の正規化前後の妥当性、token数（キャッシュ書き込みを含む）、
+Batch単価による推定費用を記録します。
 品質判断には、選定論文と各論文の日本語説明を元Abstractと照合する人手確認も必要です。
 
 このTESTは本番Drive台帳、TEST Drive台帳、配信Document、Gmailに触れません。
 Batchが6時間以内に終わらない場合はActionがタイムアウトするため、ログに残る
-Batch IDから状態を確認してください。現行モデル側の費用は
-`automation_config.json`に保存された単価、新モデル側はTESTスクリプト内の
-2026-09-23確認時点の公式Batch単価で推定します。
+Batch IDから状態を確認してください。両モデルの費用はTESTスクリプト内の
+2026-09-23確認時点の公式Batch単価で推定します。本番設定ファイルの古い単価は
+この比較には使いません。
 
 ## 過去の見逃し候補を再検索
 
