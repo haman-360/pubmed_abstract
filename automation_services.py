@@ -215,9 +215,16 @@ class GoogleWorkspaceClient:
     def download_blob(self, file_id: str) -> bytes:
         return self.drive.files().get_media(fileId=file_id).execute()
 
-    def create_doc(self, parent_id: str, name: str, text: str) -> dict[str, Any]:
+    def create_doc(
+        self, parent_id: str, name: str, text: str,
+        legacy_names: tuple[str, ...] = (),
+    ) -> dict[str, Any]:
         mime = "application/vnd.google-apps.document"
         result = self.find_child(parent_id, name, mime)
+        for legacy_name in legacy_names:
+            if result:
+                break
+            result = self.find_child(parent_id, legacy_name, mime)
         if not result:
             result = self.drive.files().create(
                 body={"name": name, "mimeType": mime, "parents": [parent_id]},

@@ -159,9 +159,9 @@ python3 missed_papers.py --days 365 --top 30 --include-drive --publish
 - `system/automation_ledger.json`: 軽量台帳。設定ハッシュ、EDAT、最新配信file ID、run manifest参照、状態だけ
 - `topics/{topic}/pmid_index.json`: PMID、初回取得、raw参照、run、配信状態
 - `runs/{cycle}/{topic}/`: Abstract JSON、Batch JSONL、生出力、評価、候補、manifest
-- `documents/{topic}/editions/`: 第1部「日本語要約」、第2部「選定論文の英語AbstractとPMID」、第3部「全候補のスコア一覧」を含む、NotebookLMへ登録する配信日別文書
+- `documents/{topic}/editions/`: 第1部「日本語要約」、第2部「選定論文の英語AbstractとPMID」、第3部「全候補のスコア一覧」を含む、Gemini Notebookへ登録する配信日別文書
 
-文書名は`YYYY-MM-DD_テーマ名_NotebookLM`です。異なる配信日は異なるGoogle Drive file IDになるため、NotebookLMへ毎回追加しても過去号は書き換わりません。同一日・同一テーマの再試行では同名文書を再利用し、重複を防ぎます。従来の`current/`配下の文書は削除・更新しません。
+文書名は`YYYY-MM-DD_テーマ名_GeminiNotebook`です。異なる配信日は異なるGoogle Drive file IDになるため、Gemini Notebookへ毎回追加しても過去号は書き換わりません。同一日・同一テーマの再試行では同名文書を再利用し、重複を防ぎます。従来の`current/`配下の文書は削除・更新しません。変更前に作成した`_NotebookLM`文書の名前はそのまま残します。
 
 Gmailだけが失敗してもrunと文書は完了状態のままです。通知は最大5回自動再試行し、その後も手動再試行できます。送信済み応答IDを台帳に保存し、同じcycleの通常再実行では再送しません。ネットワーク切断がGmail側の受付直後に起きたという判定不能ケースに備え、メールにはcycle内容由来の固定Message-IDも付けます。
 
@@ -171,4 +171,4 @@ Gmailだけが失敗してもrunと文書は完了状態のままです。通知
 PYTHONPYCACHEPREFIX=/tmp/pubmed-pycache python3 -m unittest discover -s tests -v
 ```
 
-外部認証を使わないテストでは、14テーマ対応、頻度、EDATページング、救済、候補上限、選定・次点分離、NotebookLM用文書の3部構成、軽量台帳、Gmail失敗時の非ロールバックを確認します。実APIの縦切りはSecretsを設定した後に行います。
+外部認証を使わないテストでは、14テーマ対応、頻度、EDATページング、救済、候補上限、選定・次点分離、Gemini Notebook用文書の3部構成、軽量台帳、Gmail失敗時の非ロールバックを確認します。実APIの縦切りはSecretsを設定した後に行います。

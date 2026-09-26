@@ -874,7 +874,7 @@ def main():
         print("処理したいテーマのプロンプトをコピーしてClaudeに貼り付けてください。")
         if topic_doc_paths:
             print("または google_docs フォルダ内のHTMLをGoogle Driveへアップロードすると、")
-            print("テーマ別のGoogle DocとしてNotebookLMに取り込めます。")
+            print("テーマ別のGoogle DocとしてGemini Notebookに取り込めます。")
         print()
         print("作成されるテーマ別HTMLの例:")
         print(f"  {now.strftime('%Y-%m')}_気管支喘息_PubMed抽出.html")

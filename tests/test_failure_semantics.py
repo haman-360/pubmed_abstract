@@ -229,14 +229,29 @@ class CurrentDocumentIdempotencyTests(unittest.TestCase):
         client = GoogleWorkspaceClient.__new__(GoogleWorkspaceClient)
         client.find_child = MagicMock(return_value={
             "id": "fixed-current-id",
-            "name": "2026-09-05_小児腎臓_NotebookLM",
+            "name": "2026-09-05_小児腎臓_GeminiNotebook",
             "webViewLink": "https://docs.google.com/document/d/fixed-current-id/edit",
         })
         client.replace_doc_text = MagicMock()
         client.drive = MagicMock()
-        result = client.create_doc("folder", "2026-09-05_小児腎臓_NotebookLM", "latest")
+        result = client.create_doc("folder", "2026-09-05_小児腎臓_GeminiNotebook", "latest")
         self.assertEqual(result["id"], "fixed-current-id")
         client.replace_doc_text.assert_called_once_with("fixed-current-id", "latest")
+        client.drive.files.return_value.create.assert_not_called()
+
+    def test_legacy_name_is_reused_after_rename(self):
+        client = GoogleWorkspaceClient.__new__(GoogleWorkspaceClient)
+        client.find_child = MagicMock(side_effect=[None, {"id": "legacy-id"}])
+        client.replace_doc_text = MagicMock()
+        client.drive = MagicMock()
+
+        result = client.create_doc(
+            "folder", "2026-09-05_小児腎臓_GeminiNotebook", "latest",
+            legacy_names=("2026-09-05_小児腎臓_NotebookLM",),
+        )
+
+        self.assertEqual(result["id"], "legacy-id")
+        client.replace_doc_text.assert_called_once_with("legacy-id", "latest")
         client.drive.files.return_value.create.assert_not_called()
 
 
@@ -391,8 +406,8 @@ class EditionDocumentNameTests(unittest.TestCase):
             "display_name": "小児腎臓",
         })
 
-        self.assertEqual(first, "2026-09-05_小児腎臓_NotebookLM")
-        self.assertEqual(second, "2026-09-12_小児腎臓_NotebookLM")
+        self.assertEqual(first, "2026-09-05_小児腎臓_GeminiNotebook")
+        self.assertEqual(second, "2026-09-12_小児腎臓_GeminiNotebook")
         self.assertNotEqual(first, second)
 
     def test_old_manifest_uses_date_from_cycle_id(self):
@@ -402,7 +417,7 @@ class EditionDocumentNameTests(unittest.TestCase):
             "display_name": "小児腎臓",
         })
 
-        self.assertEqual(name, "2026-09-05_小児腎臓_NotebookLM")
+        self.assertEqual(name, "2026-09-05_小児腎臓_GeminiNotebook")
 
 
 class IntegratedDocumentTests(unittest.TestCase):
@@ -478,10 +493,11 @@ class IntegratedDocumentTests(unittest.TestCase):
         store.google.create_doc.assert_called_once()
         self.assertEqual(
             store.google.create_doc.call_args.args[:2],
-            ("editions-folder", "2026-09-05_テーマ_NotebookLM"),
+            ("editions-folder", "2026-09-05_テーマ_GeminiNotebook"),
         )
         self.assertEqual(ledger["topics"]["topic"]["latest_file_id"], "integrated-id")
         uploaded_text = store.google.create_doc.call_args.args[2]
+        self.assertIn("テーマ Gemini Notebook用文献", uploaded_text)
         self.assertIn("【第1部：日本語要約】", uploaded_text)
         self.assertIn("【第2部：英語Abstract】", uploaded_text)
         self.assertIn("FULL ABSTRACT", uploaded_text)

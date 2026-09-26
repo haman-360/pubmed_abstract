@@ -200,7 +200,7 @@ selectedは診療への直接性とエビデンスを重視して順位付けし
 ガイドライン、systematic review、meta-analysis、RCT、実臨床で使いやすいreviewを高く評価し、
 外来で明日から役立つか、治療・検査方針の変更、新しい治療選択肢、既存診療の見直しにつながるかを重視してください。
 単なる疫学・頻度調査、基礎・動物研究、特殊領域、症例報告、診療変更インパクトの小さい論文は優先度を下げてください。
-why_importantとclinical_impactは各1〜2文で、NotebookLMの音声解説に適した簡潔で具体的な日本語にしてください。
+why_importantとclinical_impactは各1〜2文で、Gemini Notebookの音声解説に適した簡潔で具体的な日本語にしてください。
 practice_change_neededはYes / Noと短い理由を明記してください。
 診療判断ではなく文献キュレーションであり、限界も簡潔に明記してください。"""
 
@@ -417,7 +417,7 @@ def render_notebook_doc(
     article_by_pmid, score_by_pmid = _paper_lookup(articles, scores)
     selected = final.get("selected", [])
     lines = [
-        f"{theme} NotebookLM用文献",
+        f"{theme} Gemini Notebook用文献",
         f"Run ID: {run_id}",
         f"選定数: {len(selected)}",
         "",

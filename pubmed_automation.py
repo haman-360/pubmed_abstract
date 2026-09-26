@@ -751,13 +751,21 @@ def create_documents(
     topic_ledger = ledger["topics"][manifest["topic"]]
     try:
         edition_name = edition_document_name(manifest)
-        doc = store.google.create_doc(folders["editions"], edition_name, notebook_text)
+        # 改名前に作成済みの同日文書は再利用し、配信履歴を重複させない。
+        legacy_name = edition_name.removesuffix("_GeminiNotebook") + "_NotebookLM"
+        doc = store.google.create_doc(
+            folders["editions"], edition_name, notebook_text,
+            legacy_names=(legacy_name,),
+        )
         current_id = doc["id"]
         topic_ledger["latest_file_id"] = current_id
         # 縦切りでは同じ日付・同じ名前でもう一度保存し、再試行で重複しないことを検証する。
         if manifest["test"]:
             before_id = current_id
-            retry_doc = store.google.create_doc(folders["editions"], edition_name, notebook_text)
+            retry_doc = store.google.create_doc(
+                folders["editions"], edition_name, notebook_text,
+                legacy_names=(legacy_name,),
+            )
             if retry_doc["id"] != before_id:
                 raise RuntimeError("同じ配信の再試行でGoogle Documentが重複作成されました。")
             current_component["stability_verified"] = True
@@ -787,7 +795,7 @@ def edition_document_name(manifest: dict[str, Any]) -> str:
         else:
             created = datetime.fromisoformat(manifest["created_at"].replace("Z", "+00:00"))
             delivery_date = created.astimezone(ZoneInfo("Asia/Tokyo")).date().isoformat()
-    return safe_drive_name(f"{delivery_date}_{manifest['display_name']}_NotebookLM")
+    return safe_drive_name(f"{delivery_date}_{manifest['display_name']}_GeminiNotebook")
 
 
 def retry_current_if_needed(
@@ -812,8 +820,10 @@ def retry_current_if_needed(
     topic_ledger = ledger["topics"][manifest["topic"]]
     try:
         folders = store.document_folders(manifest["topic"])
+        edition_name = edition_document_name(manifest)
         doc = store.google.create_doc(
-            folders["editions"], edition_document_name(manifest), text
+            folders["editions"], edition_name, text,
+            legacy_names=(edition_name.removesuffix("_GeminiNotebook") + "_NotebookLM",),
         )
         current_id = doc["id"]
         topic_ledger["latest_file_id"] = current_id
@@ -986,7 +996,7 @@ def digest_body(cycle: dict[str, Any], manifests: list[dict[str, Any]]) -> str:
             f"■ {manifest['display_name']}",
             f"状態: {manifest['state']}",
             f"新着: {manifest['article_count']}件 / 選定: {final_count}件",
-            "NotebookLM用3部構成Document（配信日別）: "
+            "Gemini Notebook用3部構成Document（配信日別）: "
             f"{manifest['components']['current_doc'].get('url', manifest['components']['current_doc']['state'])}",
             f"評価失敗PMID: {', '.join(manifest.get('failed_pmids', [])) or 'なし'}",
             "API使用量: "
