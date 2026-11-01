@@ -144,6 +144,15 @@
       article h2 {
         margin: 5px 0 12px;
       }
+      article.want-fulltext {
+        background: #fff4bf;
+        border: 2px solid #9b6900;
+      }
+      article.want-fulltext .badge {
+        background: #735000;
+        color: white;
+        font-weight: 700;
+      }
       .badge {
         display: inline-block;
         background: #edf4f2;
@@ -377,7 +386,12 @@
           <strong id="draft-count">未保存の変更 0件</strong>
           <span class="muted">状態・メモの変更を1回の通信で保存します。</span>
         </div>
-        <div class="toolbar">
+        <section
+          id="issue-footer"
+          aria-label="配信の確認状況と操作"
+          hidden
+        ></section>
+        <div id="paper-pagination" class="toolbar" hidden>
           <button id="prev">前のページ</button
           ><button id="next">次のページ</button>
         </div>
@@ -486,10 +500,12 @@
           drafts.set(p.pmid, {
             status,
             note,
+            original_status: p.review.status,
             expected_version: p.review.version,
             issue_key: current && current.issue ? current.issue.issue_key : "",
           });
         updateDraftSaveBar();
+        updateIssueProgress();
       }
       function issueDraftChanges() {
         if (!current || !current.issue) return [];
@@ -608,6 +624,7 @@
       }
       function render() {
         renderIssueContext();
+        el("paper-pagination").hidden = current.total <= current.page_size;
         el("test-notice").hidden = !String(
           current.environment || "",
         ).startsWith("test-");
@@ -674,12 +691,24 @@
             ),
             node("h2", p.title || "タイトル不明"),
             node("p", p.topics.join(" / ")),
-            node("span", statuses[p.review.status], "badge"),
           );
+          const badge = node("span", undefined, "badge");
+          card.append(badge);
           const actions = node("div", undefined, "actions"),
             select = node("select");
           options(select, statuses);
           const draft = draftValue(p);
+          function updateStatusAppearance() {
+            const value = draftValue(p);
+            card.classList.toggle(
+              "want-fulltext",
+              value.status === "want_fulltext",
+            );
+            badge.textContent =
+              statuses[value.status] +
+              (drafts.has(p.pmid) ? "（未保存）" : "");
+          }
+          updateStatusAppearance();
           select.value = draft.status;
           if (drafts.has(p.pmid)) select.classList.add("dirty");
           select.setAttribute("aria-label", "PMID " + p.pmid + "の状態");
@@ -688,6 +717,7 @@
             rememberDraft(p, select.value, note.value);
             select.classList.toggle("dirty", drafts.has(p.pmid));
             note.classList.toggle("dirty", drafts.has(p.pmid));
+            updateStatusAppearance();
           };
           actions.append(select);
           if (
@@ -717,6 +747,7 @@
             rememberDraft(p, select.value, note.value);
             select.classList.toggle("dirty", drafts.has(p.pmid));
             note.classList.toggle("dirty", drafts.has(p.pmid));
+            updateStatusAppearance();
           };
           card.append(
             node(
@@ -1052,19 +1083,43 @@
         }
         return box;
       }
-      function issueHeading(issue) {
+      function issueProgressText(issue, includeDrafts = false) {
+        let classified = issue.total - issue.unreviewed;
+        const changes = includeDrafts
+          ? Array.from(drafts.values()).filter(
+              (d) => d.issue_key === issue.issue_key,
+            )
+          : [];
+        for (const draft of changes) {
+          classified +=
+            Number(draft.status !== "unreviewed") -
+            Number(draft.original_status !== "unreviewed");
+        }
+        return (
+          issueLabels[issue.status] +
+          " ｜ 振り分け済み " + classified + " / " + issue.total + "件" +
+          (changes.length
+            ? "（未保存の変更 " + changes.length + "件を含む）"
+            : "")
+        );
+      }
+      function updateIssueProgress() {
+        if (!current || !current.issue) return;
+        document
+          .querySelectorAll("#issue-context .issue-progress, #issue-footer .issue-progress")
+          .forEach((n) => {
+            n.textContent = issueProgressText(current.issue, true);
+          });
+      }
+      function issueHeading(issue, includeDrafts = false) {
         const box = node("div");
         box.append(
           node("h2", issue.topic || "分野不明"),
           node("p", "配信ID：" + issue.issue_id, "detail-text"),
           node(
             "strong",
-            issueLabels[issue.status] +
-              " ｜ 振り分け済み " +
-              (issue.total - issue.unreviewed) +
-              " / " +
-              issue.total +
-              "件",
+            issueProgressText(issue, includeDrafts),
+            "issue-progress",
           ),
         );
         if (issue.content_changed)
@@ -1081,11 +1136,13 @@
       }
       function renderIssueContext() {
         el("issue-context").hidden = !current.issue;
+        el("issue-footer").hidden = !current.issue;
         el("tabs").hidden = !!current.issue;
         el("issue-context").replaceChildren();
+        el("issue-footer").replaceChildren();
         if (!current.issue) return;
         el("issue-context").append(
-          issueHeading(current.issue),
+          issueHeading(current.issue, true),
           node(
             "p",
             "各論文の状態・メモを編集し、画面下の「画面上の変更をまとめて保存」で一度に保存できます。",
@@ -1095,6 +1152,18 @@
         const back = node("button", "配信一覧に戻る");
         back.onclick = showIssues;
         el("issue-context").append(back);
+        const footerBack = node("button", "配信一覧に戻る");
+        footerBack.onclick = showIssues;
+        el("issue-footer").append(
+          issueHeading(current.issue, true),
+          node(
+            "p",
+            "未保存の変更は「画面上の変更をまとめて保存」で保存してから、この配信を確認済みにしてください。",
+            "muted",
+          ),
+          issueControls(current.issue),
+          footerBack,
+        );
       }
       async function loadIssues() {
         if (busy) return;
