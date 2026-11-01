@@ -144,6 +144,15 @@
       article h2 {
         margin: 5px 0 12px;
       }
+      article.want-fulltext {
+        background: #fff4bf;
+        border: 2px solid #9b6900;
+      }
+      article.want-fulltext .badge {
+        background: #735000;
+        color: white;
+        font-weight: 700;
+      }
       .badge {
         display: inline-block;
         background: #edf4f2;
@@ -199,6 +208,22 @@
         min-height: 100px;
         font: 16px monospace;
       }
+      summary { cursor: pointer; min-height: 44px; padding: 8px 0; }
+      .score-line { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 10px 0; }
+      .score-line strong { font-size: 1.08rem; }
+      .ai-memo { white-space: pre-wrap; margin: 8px 0 14px; }
+      .paper-extra { margin-top: 8px; }
+      .paper-extra > .actions { margin: 8px 0; }
+      .quick-choices { margin-top: 12px; }
+      .quick-choices button[aria-pressed="true"] { box-shadow: inset 0 0 0 2px currentColor; font-weight: 700; }
+      .quick-choices .want-choice { border-color: #9b6900; color: #694800; }
+      .quick-choices .want-choice[aria-pressed="true"] { background: #f8dc70; }
+      article.no-fulltext { background: #f0f3f4; }
+      .paper-title { font-size: 1.2rem; line-height: 1.5; }
+      #issue-footer { border-top: 2px solid #c6d9d6; margin-top: 20px; padding-top: 12px; }
+      #issue-feedback { white-space: pre-wrap; }
+      #paper-view.issue-mode .general-filter { display: none; }
+      #advanced-controls[open] { margin-bottom: 20px; }
       .save-bar {
         background: #e1f0ed;
         border: 1px solid #9bbdb7;
@@ -298,6 +323,8 @@
       <section id="paper-view" hidden>
         <section id="issue-context" hidden></section>
         <nav id="tabs" aria-label="確認状況"></nav>
+        <details id="advanced-controls">
+          <summary>詳細操作（検索・一括変更・出力）</summary>
         <form id="filters">
           <div class="toolbar">
             <label
@@ -306,7 +333,7 @@
                 type="search"
                 placeholder="PMIDまたはタイトルの一部"
             /></label>
-            <label
+            <label class="general-filter"
               >表示期間<select id="scope">
                 <option value="recent">最近の未確認</option>
                 <option value="want">原文入手待ち</option>
@@ -318,7 +345,7 @@
                 <option value="archive">3か月より古い論文</option>
               </select></label
             >
-            <label
+            <label class="general-filter"
               >分野<select id="topic">
                 <option value="">すべて</option>
               </select></label
@@ -327,9 +354,9 @@
                 <option value="">すべて</option>
               </select></label
             >
-            <label>配信日：開始<input id="from" type="date" /></label
-            ><label>終了<input id="to" type="date" /></label>
-            <label
+            <label class="general-filter">配信日：開始<input id="from" type="date" /></label
+            ><label class="general-filter">終了<input id="to" type="date" /></label>
+            <label class="general-filter"
               >並べ替え<select id="sort">
                 <option value="delivery_desc">
                   配信日の新しい順（不明は末尾）
@@ -345,7 +372,7 @@
             <button class="primary" type="submit">検索・絞り込み</button
             ><button id="reset-filters" type="button">条件をリセット</button>
           </div>
-          <p class="muted">
+          <p class="muted general-filter">
             PMID・タイトル検索は全期間へ切り替えます。配信日不明の履歴は、配信日による絞り込みには含みません。
           </p>
         </form>
@@ -368,6 +395,7 @@
             ></select></label
           ><button id="bulk-save">チェックした論文へ適用（未保存）</button>
         </div>
+        </details>
         <p id="range" class="muted"></p>
         <section id="papers" aria-label="論文一覧"></section>
         <div id="draft-save-footer" class="toolbar save-bar" hidden>
@@ -375,9 +403,14 @@
             画面上の変更をまとめて保存
           </button>
           <strong id="draft-count">未保存の変更 0件</strong>
-          <span class="muted">状態・メモの変更を1回の通信で保存します。</span>
+          <span id="draft-help" class="muted">状態・メモの変更を1回の通信で保存します。</span>
         </div>
-        <div class="toolbar">
+        <section
+          id="issue-footer"
+          aria-label="配信の確認状況と操作"
+          hidden
+        ></section>
+        <div id="paper-pagination" class="toolbar" hidden>
           <button id="prev">前のページ</button
           ><button id="next">次のページ</button>
         </div>
@@ -444,10 +477,14 @@
         issueOffset = 0;
       const selected = new Map(),
         drafts = new Map(),
-        attempts = new Map();
+        attempts = new Map(),
+        paperViews = new Map();
+      let completing = false;
       function feedback(text, kind = "") {
         el("feedback").textContent = text;
         el("feedback").className = kind;
+        const bottom = el("issue-feedback");
+        if (bottom) { bottom.textContent = text; bottom.className = kind; }
       }
       function setBusy(value) {
         busy = value;
@@ -470,6 +507,7 @@
             .querySelectorAll('[data-complete-blocked="true"]')
             .forEach((n) => (n.disabled = true));
         updateDraftSaveBar();
+        updateCompletionButtons();
       }
       function draftValue(p) {
         return (
@@ -486,10 +524,13 @@
           drafts.set(p.pmid, {
             status,
             note,
+            original_status: p.review.status,
             expected_version: p.review.version,
             issue_key: current && current.issue ? current.issue.issue_key : "",
           });
         updateDraftSaveBar();
+        updateIssueProgress();
+        updateCompletionButtons();
       }
       function issueDraftChanges() {
         if (!current || !current.issue) return [];
@@ -513,10 +554,15 @@
       function updateDraftSaveBar() {
         const footer = el("draft-save-footer");
         if (!footer) return;
-        const count = draftChanges().length;
+        const count = visibleDraftChanges().length;
         footer.hidden = !current || count === 0;
         el("draft-count").textContent = "未保存の変更 " + count + "件";
         el("save-drafts").disabled = busy || count === 0;
+        el("save-drafts").textContent = current && current.issue ? "途中まで保存" : "画面上の変更をまとめて保存";
+        el("save-drafts").classList.toggle("primary", !(current && current.issue));
+        el("draft-help").textContent = count >= 90
+          ? "100件まで保存できます。続ける前に途中まで保存してください。"
+          : "状態・メモの変更をまとめて保存します。";
       }
       function rpc(name, arg) {
         return new Promise((resolve, reject) => {
@@ -596,7 +642,7 @@
         setBusy(true);
         if (clear) feedback("読み込み中…");
         try {
-          current = await rpc("listPapers", { ...activeFilter, offset });
+          current = await rpc(activeFilter.issue_key ? "listIssuePapers" : "listPapers", { ...activeFilter, offset });
           offset = current.offset;
           render();
           if (clear) feedback("");
@@ -608,6 +654,7 @@
       }
       function render() {
         renderIssueContext();
+        el("paper-pagination").hidden = current.total <= current.page_size;
         el("test-notice").hidden = !String(
           current.environment || "",
         ).startsWith("test-");
@@ -647,97 +694,103 @@
           "〜" +
           current.today +
           "。日付不明の未確認は「過去の未確認」に含みます。";
+        if (current.issue) {
+          el("range").textContent = current.total + "件中 " + (current.total ? offset + 1 : 0) + "〜" +
+            Math.min(offset + current.page_size, current.total) + "件" +
+            (current.scores_available === false ? " ｜ この配信のスコア一覧は未提供です。" : "");
+        }
         el("papers").replaceChildren();
+        paperViews.clear();
         if (!current.items.length)
           el("papers").append(node("p", "この条件の論文はありません。"));
-        for (const p of current.items) {
-          const card = node("article"),
-            check = node("input");
-          check.type = "checkbox";
-          check.checked = selected.has(p.pmid);
-          check.setAttribute("aria-label", "PMID " + p.pmid + "を選択");
-          check.onchange = () => {
-            if (check.checked) selected.set(p.pmid, p);
-            else selected.delete(p.pmid);
-            selectionInfo();
-          };
-          card.append(
-            check,
-            node(
-              "div",
-              "PMID " +
-                p.pmid +
-                (p.reference_date
-                  ? " ｜ " + p.reference_date + " " + p.date_kind
-                  : ""),
-              "muted",
-            ),
-            node("h2", p.title || "タイトル不明"),
-            node("p", p.topics.join(" / ")),
-            node("span", statuses[p.review.status], "badge"),
-          );
-          const actions = node("div", undefined, "actions"),
-            select = node("select");
-          options(select, statuses);
-          const draft = draftValue(p);
-          select.value = draft.status;
-          if (drafts.has(p.pmid)) select.classList.add("dirty");
-          select.setAttribute("aria-label", "PMID " + p.pmid + "の状態");
-          let note;
-          select.onchange = () => {
-            rememberDraft(p, select.value, note.value);
-            select.classList.toggle("dirty", drafts.has(p.pmid));
-            note.classList.toggle("dirty", drafts.has(p.pmid));
-          };
-          actions.append(select);
-          if (
-            ["unreviewed", "reviewed_no_fulltext"].includes(p.review.status)
-          ) {
-            const want = node("button", "原文入手希望に追加", "primary");
-            want.onclick = () =>
-              saveChanges([
-                {
-                  pmid: p.pmid,
-                  status: "want_fulltext",
-                  note: note.value,
-                  expected_version: p.review.version,
-                },
-              ]);
-            actions.append(want);
-          }
-          card.append(actions);
-          note = node("textarea");
-          note.className = "note";
-          note.maxLength = 2000;
-          note.value = draft.note;
-          note.setAttribute("aria-label", "PMID " + p.pmid + "のメモ");
-          note.placeholder = "メモ（2000文字以内）";
-          if (drafts.has(p.pmid)) note.classList.add("dirty");
-          note.oninput = () => {
-            rememberDraft(p, select.value, note.value);
-            select.classList.toggle("dirty", drafts.has(p.pmid));
-            note.classList.toggle("dirty", drafts.has(p.pmid));
-          };
-          card.append(
-            node(
-              "p",
-              "状態・メモを変更したら、一覧下の「画面上の変更をまとめて保存」を押してください。",
-              "muted",
-            ),
-            note,
-          );
-          const links = node("div", undefined, "links"),
-            detail = node(
-              "button",
-              "配信時の要約・掲載履歴（" + p.appearance_count + "）",
-            );
-          detail.onclick = () => showDetail(p.pmid);
-          links.append(detail, safeLink(p.pubmed_url, "PubMed ↗", "pubmed"));
-          card.append(links);
-          el("papers").append(card);
-        }
+        for (const p of current.items) el("papers").append(paperCard(p));
         selectionInfo();
         updateDraftSaveBar();
+      }
+      function paperCard(p) {
+        const card = node("article"), badge = node("span", "", "badge");
+        const title = node("h2", p.title || "タイトル不明", "paper-title");
+        card.append(node("div", "PMID " + p.pmid, "muted"), title);
+        if (current.issue) {
+          const score = p.score || { total: "未評価", usefulness: "未評価", memo: "保存なし" };
+          const line = node("div", undefined, "score-line");
+          line.append(node("span", "総合スコア "), node("strong", score.total),
+            node("span", "役立つか "), node("strong", score.usefulness));
+          card.append(line, node("div", "AIの短いメモ", "muted"), node("p", score.memo, "ai-memo"));
+        }
+        card.append(badge);
+        const choices = node("div", undefined, "actions quick-choices");
+        const want = node("button", "原文入手希望", "want-choice");
+        const no = node("button", "確認済み・原文不要");
+        choices.append(want, no);
+        card.append(choices);
+        const extra = node("details", undefined, "paper-extra");
+        extra.open = !current.issue;
+        extra.append(node("summary", "その他の状態・自分用メモ・要約"));
+        const check = node("input");
+        check.type = "checkbox"; check.checked = selected.has(p.pmid);
+        check.setAttribute("aria-label", "PMID " + p.pmid + "を一括操作の対象にする");
+        check.onchange = () => {
+          if (check.checked) selected.set(p.pmid, p); else selected.delete(p.pmid);
+          selectionInfo();
+        };
+        const checkLabel = node("label", undefined, "check");
+        checkLabel.append(check, node("span", "一括操作の対象にする"));
+        extra.append(checkLabel);
+        const actions = node("div", undefined, "actions"), select = node("select");
+        options(select, statuses);
+        select.setAttribute("aria-label", "PMID " + p.pmid + "の状態");
+        actions.append(select); extra.append(actions);
+        const note = node("textarea", undefined, "note");
+        note.maxLength = 2000; note.placeholder = "自分用メモ（2000文字以内）";
+        note.setAttribute("aria-label", "PMID " + p.pmid + "のメモ");
+        extra.append(node("div", "自分用メモ", "muted"), note);
+        const detail = node("button", "配信時の要約・掲載履歴");
+        detail.onclick = () => showDetail(p.pmid);
+        const links = node("div", undefined, "links");
+        links.append(detail, safeLink(p.pubmed_url, "PubMed ↗", "pubmed")); extra.append(links);
+        card.append(extra);
+        function update() {
+          const value = draftValue(p), dirty = drafts.has(p.pmid);
+          card.classList.toggle("want-fulltext", value.status === "want_fulltext");
+          card.classList.toggle("no-fulltext", value.status === "reviewed_no_fulltext");
+          badge.textContent = statuses[value.status] + (dirty ? "（未保存）" : "");
+          select.value = value.status;
+          if (note.value !== value.note) note.value = value.note;
+          select.classList.toggle("dirty", dirty); note.classList.toggle("dirty", dirty);
+          want.setAttribute("aria-pressed", String(value.status === "want_fulltext"));
+          no.setAttribute("aria-pressed", String(value.status === "reviewed_no_fulltext"));
+          choices.hidden = ["fulltext_obtained", "read"].includes(value.status);
+        }
+        function stage(status) {
+          if (busy) return;
+          if (!drafts.has(p.pmid) && visibleDraftChanges().length >= 100) {
+            feedback("未保存の変更が100件あります。途中まで保存してから続けてください。", "error");
+            update(); return;
+          }
+          rememberDraft(p, status, note.value); update();
+        }
+        select.onchange = () => stage(select.value);
+        note.oninput = () => stage(select.value);
+        want.onclick = () => stage("want_fulltext"); no.onclick = () => stage("reviewed_no_fulltext");
+        paperViews.set(p.pmid, { update }); update();
+        return card;
+      }
+      function visibleDraftChanges() {
+        return current && current.issue ? issueDraftChanges() : draftChanges();
+      }
+      function applySaveResult(result, changes) {
+        if (!Array.isArray(result.reviews)) return false;
+        const reviews = new Map(result.reviews.map((r) => [r.pmid, r.review]));
+        if (!changes.every((c) => reviews.has(c.pmid))) return false;
+        changes.forEach((c) => drafts.delete(c.pmid));
+        current.items.forEach((p) => { if (reviews.has(p.pmid)) p.review = reviews.get(p.pmid); });
+        selected.forEach((p) => { if (reviews.has(p.pmid)) p.review = reviews.get(p.pmid); });
+        if (result.issue && current.issue && result.issue.issue_key === current.issue.issue_key) current.issue = result.issue;
+        current.revision = result.revision || current.revision;
+        paperViews.forEach((v) => v.update());
+        renderIssueContext(); updateDraftSaveBar(); selectionInfo();
+        return true;
       }
       async function saveChanges(changes) {
         if (busy) return;
@@ -759,20 +812,23 @@
         try {
           const result = await rpc("saveReviews", {
             changes,
+            issue_key: current && current.issue ? current.issue.issue_key : "",
             operation_id: attempts.get(key),
           });
           if (!result || result.saved !== true)
             throw new Error("保存を確認できません。再読み込みしてください。");
           attempts.delete(key);
-          changes.forEach((c) => {
-            drafts.delete(c.pmid);
-            selected.delete(c.pmid);
-          });
+          if (!current.issue || !applySaveResult(result, changes)) {
+            changes.forEach((c) => drafts.delete(c.pmid));
+            await load(false);
+          }
           el("export-area").hidden = true;
-          feedback(result.count + "件を保存しました。", "success");
-          await load(false);
+          feedback(result.count + "件を保存しました。" +
+            (activeFilter.status ? "表示中の論文は再検索までこの一覧に残ります。" : ""), "success");
+          return true;
         } catch (e) {
           feedback(e.message, "error");
+          return false;
         } finally {
           setBusy(false);
         }
@@ -940,9 +996,7 @@
       };
       el("reset-filters").onclick = () => {
         el("filters").reset();
-        activeFilter = { tab: "recent" };
-        let issuePage = null,
-          issueOffset = 0;
+        activeFilter = activeFilter.issue_key ? { tab: "all", issue_key: activeFilter.issue_key } : { tab: "recent" };
         offset = 0;
         load();
       };
@@ -1007,12 +1061,12 @@
       };
       el("bulk-save").onclick = stageSelectedStatus;
       el("save-drafts").onclick = () => {
-        const changes = draftChanges();
+        const changes = visibleDraftChanges();
         if (!changes.length) {
           feedback("未保存の変更はありません。", "error");
           return;
         }
-        saveChanges(changes);
+        return saveChanges(changes);
       };
       el("export-all").onclick = () => prepareExport("txt");
       el("export-selected").onclick = () =>
@@ -1032,6 +1086,8 @@
       };
       function issueControls(issue) {
         const box = node("div", undefined, "toolbar");
+        const secondary = node("details");
+        secondary.append(node("summary", "配信状態を変更"));
         for (const [status, label] of [
           ["in_progress", "確認中にする"],
           ["completed", "この配信を確認済みにする"],
@@ -1043,30 +1099,103 @@
             label,
             status === "completed" ? "primary" : "",
           );
-          if (status === "completed" && issue.unreviewed > 0) {
+          const isDetail = current && current.issue && current.issue.issue_key === issue.issue_key && el("issue-view").hidden;
+          if (status === "completed" && isDetail) {
+            b.textContent = "保存して確認完了";
+            b.dataset.completeIssue = "true";
+          }
+          if (status === "completed" && !isDetail && issue.unreviewed > 0) {
             b.disabled = true;
             b.dataset.completeBlocked = "true";
           }
-          b.onclick = () => saveIssue(issue, status);
-          box.append(b);
+          b.onclick = () => status === "completed" && isDetail ? completeIssue() : saveIssue(issue, status);
+          if (isDetail && status !== "completed") secondary.append(b);
+          else box.append(b);
         }
+        if (secondary.children.length > 1) box.append(secondary);
         return box;
       }
-      function issueHeading(issue) {
+      function remainingUnreviewed() {
+        if (!current || !current.issue) return 0;
+        let count = current.issue.unreviewed;
+        for (const d of drafts.values()) if (d.issue_key === current.issue.issue_key) {
+          count += Number(d.status === "unreviewed") - Number(d.original_status === "unreviewed");
+        }
+        return count;
+      }
+      function updateCompletionButtons() {
+        document.querySelectorAll('[data-complete-issue="true"]').forEach((b) => {
+          b.disabled = busy || completing || remainingUnreviewed() > 0 || visibleDraftChanges().length > 100;
+        });
+      }
+      async function completeIssue() {
+        if (busy || completing || !current || !current.issue) return;
+        if (remainingUnreviewed() > 0) { feedback("未確認の論文が残っています。", "error"); return; }
+        completing = true; updateCompletionButtons();
+        const contentVersion = current.issue.content_version;
+        let saved = false;
+        try {
+          const changes = issueDraftChanges();
+          if (changes.length) {
+            saved = await saveChanges(changes);
+            if (!saved) return;
+          }
+          if (current.issue.content_version !== contentVersion) {
+            feedback("編集は保存済みですが、配信内容が更新されました。再読み込みして確認してください。", "error"); return;
+          }
+          const completed = await saveIssue(current.issue, "completed");
+          if (!completed && saved) feedback("編集は保存済み・配信確認は未完了です。「保存して確認完了」で再試行できます。\n" + el("feedback").textContent, "error");
+        } finally { completing = false; updateCompletionButtons(); }
+      }
+      function issueProgressText(issue, includeDrafts = false) {
+        let classified = issue.total - issue.unreviewed;
+        const changes = includeDrafts
+          ? Array.from(drafts.values()).filter(
+              (d) => d.issue_key === issue.issue_key,
+            )
+          : [];
+        for (const draft of changes) {
+          classified +=
+            Number(draft.status !== "unreviewed") -
+            Number(draft.original_status !== "unreviewed");
+        }
+        return (
+          issueLabels[issue.status] +
+          " ｜ 振り分け済み " + classified + " / " + issue.total + "件" +
+          (changes.length
+            ? "（未保存の変更 " + changes.length + "件を含む）"
+            : "")
+        );
+      }
+      function issueHint() {
+        if (current.issue.status === "completed") return "この配信は確認済みです。配信一覧から次の配信を開けます。";
+        return remainingUnreviewed() > 0
+          ? "未確認の論文を振り分けると、保存して確認完了できます。"
+          : "すべて振り分けました。編集を保存して、この配信の確認を完了できます。";
+      }
+      function updateIssueProgress() {
+        if (!current || !current.issue) return;
+        document
+          .querySelectorAll("#issue-context .issue-progress, #issue-footer .issue-progress")
+          .forEach((n) => {
+            n.textContent = issueProgressText(current.issue, true);
+          });
+        document.querySelectorAll(".issue-hint").forEach((n) => { n.textContent = issueHint(); });
+      }
+      function issueHeading(issue, includeDrafts = false) {
         const box = node("div");
         box.append(
           node("h2", issue.topic || "分野不明"),
-          node("p", "配信ID：" + issue.issue_id, "detail-text"),
+          node("p", issue.delivered_date ? "配信日：" + issue.delivered_date : "配信日不明", "muted"),
           node(
             "strong",
-            issueLabels[issue.status] +
-              " ｜ 振り分け済み " +
-              (issue.total - issue.unreviewed) +
-              " / " +
-              issue.total +
-              "件",
+            issueProgressText(issue, includeDrafts),
+            "issue-progress",
           ),
         );
+        const identity = node("details");
+        identity.append(node("summary", "配信情報"), node("p", "配信ID：" + issue.issue_id, "detail-text"));
+        box.append(identity);
         if (issue.content_changed)
           box.append(
             node(
@@ -1080,21 +1209,41 @@
         return box;
       }
       function renderIssueContext() {
+        el("paper-view").classList.toggle("issue-mode", !!current.issue);
+        el("advanced-controls").open = current.issue ? el("advanced-controls").open : true;
         el("issue-context").hidden = !current.issue;
+        el("issue-footer").hidden = !current.issue;
         el("tabs").hidden = !!current.issue;
         el("issue-context").replaceChildren();
+        el("issue-footer").replaceChildren();
         if (!current.issue) return;
         el("issue-context").append(
-          issueHeading(current.issue),
+          issueHeading(current.issue, true),
           node(
             "p",
-            "各論文の状態・メモを編集し、画面下の「画面上の変更をまとめて保存」で一度に保存できます。",
+            "上から論文を振り分け、最後に「保存して確認完了」を押してください。",
           ),
           issueControls(current.issue),
         );
         const back = node("button", "配信一覧に戻る");
         back.onclick = showIssues;
         el("issue-context").append(back);
+        const footerBack = node("button", "配信一覧に戻る");
+        footerBack.onclick = showIssues;
+        el("issue-footer").append(
+          issueHeading(current.issue, true),
+          node(
+            "p",
+            issueHint(),
+            "muted issue-hint",
+          ),
+          issueControls(current.issue),
+          footerBack,
+        );
+        const bottom = node("div"); bottom.id = "issue-feedback"; bottom.setAttribute("role", "status");
+        bottom.textContent = el("feedback").textContent; bottom.className = el("feedback").className;
+        el("issue-footer").append(bottom);
+        updateCompletionButtons();
       }
       async function loadIssues() {
         if (busy) return;
@@ -1170,6 +1319,9 @@
       function openIssue(key) {
         if (busy) return;
         selected.clear();
+        current = null; paperViews.clear(); el("papers").replaceChildren();
+        el("issue-context").replaceChildren(); el("issue-footer").replaceChildren();
+        el("advanced-controls").open = false;
         switchView(false);
         el("filters").reset();
         el("scope").value = "all";
@@ -1208,11 +1360,13 @@
           feedback(
             "この配信を「" +
               issueLabels[status] +
-              "」にしました。PMIDの状態は変更していません。",
+              "」にしました。",
             "success",
           );
           if (!el("issue-view").hidden) await loadIssues();
+          else if (result.issue) { current.issue = result.issue; renderIssueContext(); }
           else await load(false);
+          return result.issue ? result.issue.status === status : true;
         } catch (e) {
           feedback(e.message, "error");
         } finally {

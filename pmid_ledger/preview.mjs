@@ -2,12 +2,22 @@
 import http from "node:http";
 import fs from "node:fs";
 import { environment } from "./tests/environment.mjs";
-const env = environment({ indexed: true, cache: new Map() });
-// A second paper in one delivery demonstrates per-paper edits followed by one save.
+const env = environment({ indexed: true, candidates: true, cache: new Map() });
+// Synthetic delivery sizes exercise iPad review and pagination (PREVIEW_PAPERS=51).
 env.tables.Appearances.push([
   "preview-s3", "10", "issue1", "感染症", "2026-08-20",
   "Second paper in the same delivery", "candidate", "", "test", "t2",
 ]);
+for (let index = 2; index < Number(process.env.PREVIEW_PAPERS || 15); index++) {
+  const id = String(100 + index);
+  const paper = [...env.tables.Papers[1]];
+  paper[0] = id; paper[1] = "架空の候補論文 " + (index + 1);
+  env.tables.Papers.push(paper);
+  env.tables.Appearances.push([
+    "preview-" + id, id, "issue1", "感染症", "2026-08-20",
+    "架空の候補論文 " + (index + 1) + "：日常診療での判断に関する研究の評価", "candidate", "", "test", "t2",
+  ]);
+}
 env.reindex();
 const page = fs
   .readFileSync(new URL("./gas/Index.html", import.meta.url), "utf8")
@@ -35,6 +45,7 @@ const server = http.createServer(async (req, res) => {
     if (
       ![
         "listPapers",
+        "listIssuePapers",
         "getPaperDetail",
         "saveReviews",
         "exportData",

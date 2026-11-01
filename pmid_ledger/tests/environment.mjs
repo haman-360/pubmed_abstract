@@ -4,7 +4,7 @@ import crypto from "node:crypto";
 export function environment(opts = {}) {
   const ctx = vm.createContext({});
   vm.runInContext(
-    fs.readFileSync(new URL("../gas/Code.gs", import.meta.url), "utf8"),
+    opts.source || fs.readFileSync(new URL("../gas/Code.gs", import.meta.url), "utf8"),
     ctx,
   );
   const plain = (v) => JSON.parse(JSON.stringify(v));
@@ -183,6 +183,20 @@ export function environment(opts = {}) {
         ctx.hashIssue_([...new Set(rows.map((a) => a.snapshot_id))].sort()),
       ]),
     ];
+    if (opts.candidates) {
+      tables.IssueCandidates = [plain(ctx.Ledger.headers.IssueCandidates)];
+      tables.IssueCandidateRows = [plain(ctx.Ledger.headers.IssueCandidateRows)];
+      for (const [key, rows] of groups) {
+        const start = tables.IssueCandidates.length + 1;
+        const unique = [...new Map(rows.map((r) => [r.pmid, r])).values()];
+        unique.forEach((r, index) => {
+          tables.IssueCandidates.push([key, r.pmid, r.snapshot_id, String(index), r.title_at_delivery,
+            index === 0 ? "0" : "21", index === 0 ? "No (0/5)" : "Yes (5/5)",
+            "架空データ：外来での判断に役立つかを検討するための短い評価。", r.text_id]);
+        });
+        tables.IssueCandidateRows.push([key, String(start), String(unique.length)]);
+      }
+    }
     const ranges = new Map();
     tables.Texts.slice(1).forEach((row, index) => {
       if (!ranges.has(row[0])) ranges.set(row[0], [String(index + 2), 0]);

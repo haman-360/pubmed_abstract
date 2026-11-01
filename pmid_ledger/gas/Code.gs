@@ -64,6 +64,8 @@ var Ledger = (function () {
       "content_version",
     ],
     TextRows: ["text_id", "first_row", "row_count"],
+    IssueCandidates: ["issue_key", "pmid", "snapshot_id", "position", "title", "total_score", "usefulness", "ai_memo", "text_id"],
+    IssueCandidateRows: ["issue_key", "first_row", "row_count"],
     IssueReviews: [
       "operation_id",
       "issue_key",
@@ -406,13 +408,14 @@ function read_(book, name) {
   );
 }
 // Cache immutable metadata by spreadsheet revision only. Never cache manual review events.
-function cachedRead_(ctx, name) {
+function cachedRead_(ctx, name, loader) {
   Ledger.assert(
-    ["Papers", "Appearances", "Issues", "TextRows"].includes(name),
+    ["Papers", "Appearances", "Issues", "TextRows", "IssueCandidateRows"].includes(name) ||
+      (name.indexOf("IssueCandidates:") === 0 && typeof loader === "function"),
     "手動状態はキャッシュしません",
   );
   var key =
-    "meta-v4:" +
+    "meta-v5:" +
     ctx.sheet_id +
     ":" +
     ctx.settings.instance +
@@ -447,7 +450,7 @@ function cachedRead_(ctx, name) {
       /* An optional/evicted cache must not prevent a real read. */
     }
   }
-  var rows = read_(ctx.book, name);
+  var rows = loader ? loader() : read_(ctx.book, name);
   if (cache && key.length < 220)
     (ctx.cacheWrites || (ctx.cacheWrites = [])).push({
       cache: cache,
@@ -485,10 +488,11 @@ function verifyRevision_(ctx) {
 }
 function state_(ctx) {
   ctx = ctx || book_();
+  ctx.reviewEvents = ctx.reviewEvents || read_(ctx.book, "Reviews");
   ctx.papers = Ledger.enrich(
     cachedRead_(ctx, "Papers"),
     cachedRead_(ctx, "Appearances"),
-    read_(ctx.book, "Reviews"),
+    ctx.reviewEvents,
   );
   verifyRevision_(ctx);
   return ctx;
@@ -497,7 +501,8 @@ function issuesContext_() {
   var ctx = book_();
   if (!ctx.book.getSheetByName("Issues")) return state_(ctx);
   ctx.issueIndex = cachedRead_(ctx, "Issues");
-  ctx.reviewStates = Ledger.reviews(read_(ctx.book, "Reviews"));
+  ctx.reviewEvents = read_(ctx.book, "Reviews");
+  ctx.reviewStates = Ledger.reviews(ctx.reviewEvents);
   ctx.issueEvents = read_(ctx.book, "IssueReviews");
   verifyRevision_(ctx);
   return ctx;
@@ -604,6 +609,73 @@ function listPapers(request) {
     issue: issue,
   };
 }
+function defaultReview_() {
+  return { status: "unreviewed", version: 0, note: "", status_updated_at: "", updated_at: "" };
+}
+function currentIssue_(ctx, key) {
+  return issueState_(ctx).find(function (i) { return i.issue_key === key; }) || null;
+}
+function listIssuePapers(request) {
+  request = request || {};
+  validateIssueKey_(request.issue_key);
+  var ctx = issuesContext_(), issue = currentIssue_(ctx, request.issue_key);
+  Ledger.assert(issue, "この配信は台帳へ未同期の可能性があります。毎時43分の同期完了後に再読み込みしてください。");
+  function legacy() {
+    var page = listPapers(Object.assign({}, request, { tab: "all" }));
+    page.scores_available = false;
+    page.items.forEach(function (p) { p.score = null; });
+    return page;
+  }
+  if (!ctx.issueIndex || !ctx.book.getSheetByName("IssueCandidates") || !ctx.book.getSheetByName("IssueCandidateRows")) return legacy();
+  var index = cachedRead_(ctx, "IssueCandidateRows").find(function (r) { return r.issue_key === request.issue_key; });
+  if (!index) return legacy();
+  var rows = cachedRead_(ctx, "IssueCandidates:" + request.issue_key, function () {
+    var start = Number(index.first_row), count = Number(index.row_count);
+    Ledger.assert(Number.isInteger(start) && start >= 2 && Number.isInteger(count) && count > 0, "候補一覧の索引が不正です");
+    return Ledger.records([Ledger.headers.IssueCandidates].concat(
+      ctx.book.getSheetByName("IssueCandidates").getRange(start, 1, count, Ledger.headers.IssueCandidates.length).getDisplayValues()
+    ), "IssueCandidates");
+  });
+  Ledger.assert(rows.every(function (r) { return r.issue_key === request.issue_key; }), "候補一覧と配信が一致しません");
+  Ledger.assert(new Set(rows.map(function (r) { return r.pmid; })).size === rows.length, "候補一覧のPMIDが重複しています");
+  var ids = JSON.parse(ctx.issueIndex.find(function (r) { return r.issue_key === request.issue_key; }).pmids);
+  // Old retained snapshots can include papers absent from a revised candidate table.
+  if (new Set(rows.map(function (r) { return r.pmid; })).size !== ids.length ||
+      !ids.every(function (id) { return rows.some(function (r) { return r.pmid === id; }); })) return legacy();
+  Ledger.assert(!request.status || Object.prototype.hasOwnProperty.call(Ledger.statuses, request.status), "状態の指定が不正です");
+  var query = String(request.query || "").trim().toLowerCase();
+  var papers = rows.slice().sort(function (a, b) { return Number(a.position) - Number(b.position); }).map(function (r) {
+    return {
+      pmid: r.pmid, title: r.title, topics: [issue.topic], reference_date: issue.delivered_date,
+      date_kind: "配信", pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/" + r.pmid + "/",
+      appearance_count: 1, snapshot_id: r.snapshot_id, text_id: r.text_id,
+      score: { total: r.total_score, usefulness: r.usefulness, memo: r.ai_memo },
+      review: ctx.reviewStates[r.pmid] || defaultReview_()
+    };
+  }).filter(function (p) {
+    return (!query || p.pmid.indexOf(query) !== -1 || p.title.toLowerCase().indexOf(query) !== -1) &&
+      (!request.status || p.review.status === request.status);
+  });
+  var offset = request.offset || 0;
+  Ledger.assert(Number.isInteger(offset) && offset >= 0, "ページ指定が不正です");
+  if (offset >= papers.length) offset = Math.max(0, Math.floor((papers.length - 1) / 50) * 50);
+  verifyRevision_(ctx);
+  return {
+    items: papers.slice(offset, offset + 50), total: papers.length, offset: offset, page_size: 50,
+    issue: issue, scores_available: true, environment: ctx.settings.instance, revision: ctx.settings.revision,
+    synced_at: ctx.settings.synced_at, topics: [issue.topic], tabs: Ledger.tabs, counts: {},
+    boundary: Ledger.cutoff(today_()), today: today_()
+  };
+}
+function reviewSaveResult_(ctx, changes, issueKey, replayed) {
+  var states = ctx.reviewStates || Ledger.reviews(ctx.reviewEvents);
+  verifyRevision_(ctx);
+  return {
+    saved: true, replayed: !!replayed, count: changes.length, revision: ctx.settings.revision,
+    reviews: changes.map(function (c) { return { pmid: c.pmid, review: states[c.pmid] || defaultReview_() }; }),
+    issue: issueKey ? currentIssue_(ctx, issueKey) : null
+  };
+}
 function getPaperDetail(request) {
   var pmid = typeof request === "string" ? request : request.pmid;
   var issueKey = typeof request === "string" ? "" : request.issue_key;
@@ -708,10 +780,21 @@ function saveReviews(request) {
       /^[A-Za-z0-9-]{16,80}$/.test(request.operation_id || ""),
       "操作IDが不正です",
     );
-    var ctx = state_(),
-      events = read_(ctx.book, "Reviews"),
+    if (request.issue_key) validateIssueKey_(request.issue_key);
+    var ctx = request.issue_key ? issuesContext_() : state_(),
+      events = ctx.reviewEvents,
       changes = request.changes,
       ids = new Set();
+    if (request.issue_key && ctx.issueIndex) {
+      var entry = ctx.issueIndex.find(function (r) { return r.issue_key === request.issue_key; });
+      Ledger.assert(entry, "配信が見つかりません");
+      ctx.papers = JSON.parse(entry.pmids).map(function (id) {
+        return { pmid: id, review: ctx.reviewStates[id] || defaultReview_() };
+      });
+    }
+    Ledger.assert(!request.issue_key || changes.every(function (c) {
+      return ctx.papers.some(function (p) { return p.pmid === c.pmid && (ctx.issueIndex || p.appearances.some(function (a) { return issueKey_(a) === request.issue_key; })); });
+    }), "対象配信に含まれない論文があります");
     changes.forEach(function (c) {
       Ledger.pmid(c.pmid);
       Ledger.assert(!ids.has(c.pmid), "更新対象が重複しています");
@@ -741,7 +824,7 @@ function saveReviews(request) {
           }),
         "操作IDが別の内容に再利用されています",
       );
-      return { saved: true, replayed: true, count: prior.length };
+      return reviewSaveResult_(ctx, changes, request.issue_key, true);
     }
     var now = new Date().toISOString(),
       rows = changes.map(function (c) {
@@ -791,7 +874,10 @@ function saveReviews(request) {
       JSON.stringify(saved) === JSON.stringify(rows),
       "保存結果を確認できません。再読み込みして状態をご確認ください。",
     );
-    return { saved: true, count: rows.length };
+    ctx.reviewEvents = events.concat(Ledger.records([Ledger.headers.Reviews].concat(saved), "Reviews"));
+    ctx.reviewStates = Ledger.reviews(ctx.reviewEvents);
+    if (!ctx.issueIndex) ctx.papers.forEach(function (p) { p.review = ctx.reviewStates[p.pmid] || defaultReview_(); });
+    return reviewSaveResult_(ctx, changes, request.issue_key, false);
   });
 }
 function exportData(request) {
@@ -860,7 +946,7 @@ function exportData(request) {
       Object.keys(Ledger.headers).forEach(function (name) {
         var sheet = b.book.getSheetByName(name);
         if (
-          ["IssueReviews", "Issues", "TextRows"].includes(name) &&
+          ["IssueReviews", "Issues", "TextRows", "IssueCandidates", "IssueCandidateRows"].includes(name) &&
           (!sheet || sheet.getLastRow() === 0)
         ) {
           tables[name] = [Ledger.headers[name]];
@@ -1113,7 +1199,7 @@ function saveIssueReview(request) {
         prior.length === 1 && prior[0].request_hash === hash,
         "操作IDが別の内容に再利用されています",
       );
-      return { saved: true, replayed: true };
+      return { saved: true, replayed: true, issue: currentIssue_(ctx, request.issue_key), revision: ctx.settings.revision };
     }
     var issue = issueState_(ctx).find(function (i) {
       return i.issue_key === request.issue_key;
@@ -1160,6 +1246,8 @@ function saveIssueReview(request) {
         JSON.stringify([row]),
       "保存結果を確認できません。再読み込みしてください。",
     );
-    return { saved: true };
+    ctx.issueEvents = events.concat(Ledger.records([Ledger.headers.IssueReviews, row], "IssueReviews"));
+    verifyRevision_(ctx);
+    return { saved: true, issue: currentIssue_(ctx, request.issue_key), revision: ctx.settings.revision };
   });
 }

@@ -105,12 +105,12 @@ class GoogleStore:
         self.verify(sheet_id, instance)
         metadata = self.sheets.spreadsheets().get(spreadsheetId=sheet_id, fields="sheets.properties.title").execute(num_retries=3)
         available = {s["properties"]["title"] for s in metadata["sheets"]}
-        names = [n for n in HEADERS if n not in ("IssueReviews", "Issues", "TextRows") or n in available]
+        names = [n for n in HEADERS if n not in ("IssueReviews", "Issues", "TextRows", "IssueCandidates", "IssueCandidateRows") or n in available]
         response = self.sheets.spreadsheets().values().batchGet(spreadsheetId=sheet_id,
             ranges=names, valueRenderOption="UNFORMATTED_VALUE").execute(num_retries=3)
         tables = {name: part.get("values", []) for name, part in zip(names, response["valueRanges"])}
         # Older ledgers/backups remain readable; only GAS creates the optional event sheet.
-        for name in ("IssueReviews", "Issues", "TextRows"):
+        for name in ("IssueReviews", "Issues", "TextRows", "IssueCandidates", "IssueCandidateRows"):
             tables.setdefault(name, [HEADERS[name]])
         for name, headers in HEADERS.items():
             if not tables[name] or tables[name][0] != headers:
@@ -125,7 +125,7 @@ class GoogleStore:
         existing = from_tables(current)
         merged = merge_payload(existing, incoming)
         tables = to_tables(merged)
-        if digest(existing) == digest(merged) and all(current.get(n) == tables[n] for n in ("Issues", "TextRows")):
+        if digest(existing) == digest(merged) and all(current.get(n) == tables[n] for n in ("Issues", "TextRows", "IssueCandidates", "IssueCandidateRows")):
             return {"changed": False, "papers": len(merged["papers"]), "appearances": len(merged["appearances"])}
         if existing["papers"] and not instance.startswith("test-") and os.environ.get("GITHUB_ACTIONS") != "true" and os.environ.get("PMID_LEDGER_MAINTENANCE") != "1":
             raise ValueError("Production metadata has one writer: use the GitHub sync workflow. For local maintenance, disable that workflow first and set PMID_LEDGER_MAINTENANCE=1.")
@@ -144,7 +144,7 @@ class GoogleStore:
         next_id = max(p["sheetId"] for p in by_name.values()) + 1
         for name, rows in tables.items():
             if name not in by_name:
-                if name not in ("Issues", "TextRows"):
+                if name not in ("Issues", "TextRows", "IssueCandidates", "IssueCandidateRows"):
                     raise ValueError("Missing core sheet; refusing rebuild")
                 by_name[name] = {"sheetId":next_id, "gridProperties":{"rowCount":max(1000,len(rows))}}
                 requests.append({"addSheet":{"properties":{"sheetId":next_id,"title":name,"gridProperties":{"rowCount":max(1000,len(rows)),"columnCount":max(10,len(HEADERS[name])),"frozenRowCount":1}}}})
@@ -162,7 +162,7 @@ class GoogleStore:
         self.sheets.spreadsheets().batchUpdate(spreadsheetId=sheet_id, body=body).execute()
         verified_tables = self.read(sheet_id, instance)
         verified = from_tables(verified_tables)
-        if digest(verified) != digest(merged) or any(verified_tables[n] != tables[n] for n in ("Issues", "TextRows")):
+        if digest(verified) != digest(merged) or any(verified_tables[n] != tables[n] for n in ("Issues", "TextRows", "IssueCandidates", "IssueCandidateRows")):
             raise ValueError("Published metadata verification failed; review state was not written")
         return {"changed": True, "papers": len(merged["papers"]), "appearances": len(merged["appearances"]), "backup_file_id": backup["id"]}
 
@@ -208,7 +208,9 @@ class GoogleStore:
             requests.append(self.cells(p["sheetId"], rows))
         self.sheets.spreadsheets().batchUpdate(spreadsheetId=sheet_id, body={"requests":requests}).execute()
         verified = self.read(sheet_id,instance)
-        if digest(from_tables(verified)) != digest(payload):
+        if digest(from_tables(verified)) != digest(payload) or any(
+            verified[n] != restore[n] for n in ("Issues", "TextRows", "IssueCandidates", "IssueCandidateRows")
+        ):
             raise ValueError("Restore verification failed")
         def padded(rows):
             return [list(r)+[""]*(8-len(r)) for r in rows]
