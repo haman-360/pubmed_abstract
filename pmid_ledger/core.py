@@ -7,6 +7,7 @@ import json
 import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from candidate_scores import candidate_score_rows
 
 SCHEMA = "PMID_LEDGER_V1"
 HEADERS = {
@@ -19,6 +20,8 @@ HEADERS = {
     "IssueReviews": ["operation_id", "issue_key", "version", "status", "content_version", "updated_at", "request_hash"],
     "Issues": ["issue_key", "issue_id", "topic", "delivered_date", "pmids", "content_version"],
     "TextRows": ["text_id", "first_row", "row_count"],
+    "IssueCandidates": ["issue_key", "pmid", "snapshot_id", "position", "title", "total_score", "usefulness", "ai_memo", "text_id"],
+    "IssueCandidateRows": ["issue_key", "first_row", "row_count"],
 }
 STATUSES = {"unreviewed", "reviewed_no_fulltext", "want_fulltext", "fulltext_obtained", "read"}
 
@@ -59,6 +62,7 @@ class Dataset:
         self.topic_aliases = topic_aliases or {}
         self.papers = {}
         self.appearances = {}
+        self.issue_candidates = {}
         self.warnings = []
         self.source_counts = {}
 
@@ -96,6 +100,7 @@ class Dataset:
             self.warnings.append("snapshot revision preserved: " + issue + ":" + identifier)
             key += ":" + digest(value)[:16]
         self.appearances[key] = value
+        return key
 
     def run(self, manifest, articles, scores, final, source):
         if manifest.get("test"):
@@ -107,7 +112,9 @@ class Dataset:
         score_map = {str(x["pmid"]): x for x in scores}
         # Old manifests did not persist document completion time. Leave date unknown.
         delivered = doc.get("completed_at", "")
-        for article in articles:
+        candidate_rows = []
+        display_rows = candidate_score_rows(articles, scores) if doc.get("state") == "COMPLETED" else []
+        for position, article in enumerate(articles):
             identifier = pmid(article["pmid"])
             self.paper(identifier, source, topic, title=article.get("title", ""), journal=article.get("journal", ""),
                        publication_date=article.get("publication_date") or "/".join(str(article.get(x) or "") for x in ("year", "month")).rstrip("/"), doi=article.get("doi", ""))
@@ -118,15 +125,22 @@ class Dataset:
             summary = "\n\n".join(label + "\n" + chosen[key] for key, label in [
                 ("why_important", "なぜ重要か"), ("clinical_impact", "臨床への影響"),
                 ("practice_change_needed", "診療変更の必要性")] if chosen.get(key))
-            self.snapshot(identifier, manifest["run_id"], topic, source, delivered, article.get("title", ""),
+            snapshot_id = self.snapshot(identifier, manifest["run_id"], topic, source, delivered, article.get("title", ""),
                           "selected" if chosen else "alternate_candidate" if identifier in alternates else "candidate",
                           doc.get("url") or ("https://docs.google.com/document/d/" + doc["file_id"] + "/edit" if doc.get("file_id") else ""),
                           summary_ja=summary, one_line_assessment=s.get("one_line_assessment", ""),
                           why_important=chosen.get("why_important", ""), importance=s.get("total_score", ""),
                           outpatient_usefulness=s.get("outpatient_usefulness", ""))
+            display = display_rows[position]
+            candidate_rows.append(dict(pmid=identifier, snapshot_id=snapshot_id, position=position,
+                                       title=display[1], total_score=display[2], usefulness=display[3], ai_memo=display[4]))
+        if candidate_rows:
+            self.issue_candidates[canonical([manifest["run_id"], self.topic_aliases.get(topic, topic)])] = candidate_rows
+
 
     def payload(self):
-        return {"schema": SCHEMA, "papers": sorted(self.papers.values(), key=lambda p: int(p["pmid"])),
+        return {**({"issue_candidates": self.issue_candidates} if self.issue_candidates else {}),
+                "schema": SCHEMA, "papers": sorted(self.papers.values(), key=lambda p: int(p["pmid"])),
                 "appearances": [dict(snapshot_id=k, **v) for k, v in sorted(self.appearances.items())]}
 
     def report(self):
@@ -151,6 +165,7 @@ def merge_payload(existing, incoming):
             result.paper(p["pmid"], "", seen=p.get("last_seen"))
             for topic in p["topics"]:
                 result.paper(p["pmid"], "", topic)
+        remapped = {}
         for a in payload["appearances"]:
             value = dict(a)
             key = value.pop("snapshot_id")
@@ -159,11 +174,14 @@ def merge_payload(existing, incoming):
                 # Enrichment never destroys the original historical snapshot.
                 key += ":" + digest(value)[:16]
             result.appearances[key] = value
+            remapped[a["snapshot_id"]] = key
+        for issue_key, rows in payload.get("issue_candidates", {}).items():
+            result.issue_candidates[issue_key] = [dict(r, snapshot_id=remapped[r["snapshot_id"]]) for r in rows]
     return result.payload()
 
 
 def to_tables(payload):
-    tables = {name: [headers] for name, headers in HEADERS.items() if name in ("Papers", "Appearances", "Texts", "Issues", "TextRows")}
+    tables = {name: [headers] for name, headers in HEADERS.items() if name in ("Papers", "Appearances", "Texts", "Issues", "TextRows", "IssueCandidates", "IssueCandidateRows")}
     texts = {}
     for p in payload["papers"]:
         pmid(p["pmid"])
@@ -189,6 +207,18 @@ def to_tables(payload):
     for key, g in sorted(issues.items()):
         content = base64.urlsafe_b64encode(hashlib.sha256(canonical(sorted(g["snapshots"])).encode()).digest()).decode()
         tables["Issues"].append([key,g["issue_id"],g["topic"],max(g["dates"],default=""),canonical(sorted(g["pmids"],key=int)),content])
+    appearances = {a["snapshot_id"]: a for a in payload["appearances"]}
+    for key, candidates in sorted(payload.get("issue_candidates", {}).items()):
+        start = len(tables["IssueCandidates"]) + 1
+        seen = set()
+        for candidate in candidates:
+            a = appearances[candidate["snapshot_id"]]
+            if canonical([a["issue_id"], a["topic"]]) != key or a["pmid"] != candidate["pmid"] or a["pmid"] in seen:
+                raise ValueError("Candidate snapshot does not match delivery")
+            seen.add(a["pmid"])
+            row = dict(candidate, issue_key=key, text_id=digest(a["text"]))
+            tables["IssueCandidates"].append([str(row[h]) for h in HEADERS["IssueCandidates"]])
+        tables["IssueCandidateRows"].append([key, str(start), str(len(candidates))])
     for rows in tables.values():
         for row in rows:
             if any(len(str(v).encode("utf-16-le")) // 2 > 49000 for v in row):
@@ -219,4 +249,17 @@ def from_tables(tables):
         p["sources"] = json.loads(p["sources"])
     if len({p["pmid"] for p in records["Papers"]}) != len(records["Papers"]):
         raise ValueError("Duplicate PMID")
-    return {"schema": SCHEMA, "papers": records["Papers"], "appearances": records["Appearances"]}
+    result = {"schema": SCHEMA, "papers": records["Papers"], "appearances": records["Appearances"]}
+    candidates = tables.get("IssueCandidates", [HEADERS["IssueCandidates"]])
+    if not candidates or candidates[0] != HEADERS["IssueCandidates"]:
+        raise ValueError("Unexpected columns: IssueCandidates")
+    groups = {}
+    for row in candidates[1:]:
+        value = dict(zip(HEADERS["IssueCandidates"], row + [""] * (len(HEADERS["IssueCandidates"]) - len(row))))
+        key = value.pop("issue_key")
+        value.pop("text_id")
+        value["position"] = int(value["position"])
+        groups.setdefault(key, []).append(value)
+    if groups:
+        result["issue_candidates"] = groups
+    return result
