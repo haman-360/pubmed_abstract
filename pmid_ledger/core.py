@@ -109,6 +109,9 @@ class Dataset:
         topic = manifest.get("display_name") or manifest.get("topic", "")
         selected = {str(x["pmid"]): x for x in final.get("selected", [])}
         alternates = {str(x["pmid"]): x for x in final.get("alternates", [])}
+        # Missed-paper editions import Part 3 only; full summaries remain in Docs.
+        if manifest.get("delivery_mode") == "all":
+            selected, alternates = {}, {}
         score_map = {str(x["pmid"]): x for x in scores}
         # Old manifests did not persist document completion time. Leave date unknown.
         delivered = doc.get("completed_at", "")

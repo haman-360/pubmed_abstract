@@ -472,7 +472,8 @@ def recover_failed_manifest(
         candidates = store.load_json(manifest["artifacts"]["final_candidates"]["file_id"])
         manifest["components"]["final"] = {"state": "PENDING", "attempts": []}
         line = final_batch_line(
-            manifest["run_id"], manifest["display_name"], candidates, raw["articles"], config
+            manifest["run_id"], manifest["display_name"], candidates, raw["articles"], config,
+            include_all=manifest.get("delivery_mode") == "all",
         )
         submit_batch(openai, store, manifest, "final", [line], config)
         manifest["state"] = "FINAL_BATCH_RESUBMITTED"
@@ -482,7 +483,8 @@ def recover_failed_manifest(
         manifest["failed_pmids"] = []
         manifest["components"]["screen"] = {"state": "PENDING", "attempts": []}
         manifest["components"]["final"] = {"state": "PENDING", "attempts": []}
-        lines = screen_batch_lines(manifest["run_id"], raw["articles"], config)
+        lines = screen_batch_lines(manifest["run_id"], raw["articles"], config,
+                                   include_all=manifest.get("delivery_mode") == "all")
         submit_batch(openai, store, manifest, "screen", lines, config)
         manifest["state"] = "SCREEN_BATCH_RESUBMITTED"
     store.save_manifest(manifest)
@@ -633,11 +635,15 @@ def poll_batch_stage(
         return False
 
     successes, errors = load_attempt_outputs(openai, store, manifest, stage, attempt)
+    submitted_ids = {custom_id for a in component["attempts"] for custom_id in a["custom_ids"]}
     def valid_success(line: dict[str, Any]) -> bool:
         if line.get("response", {}).get("status_code") != 200:
             return False
         try:
-            extract_response_json(line)
+            result = extract_response_json(line)
+            if manifest.get("delivery_mode") == "all" and stage == "screen":
+                return line.get("custom_id") in submitted_ids and (
+                    result.get("pmid") == line["custom_id"].rsplit(":", 1)[-1])
             return True
         except Exception:
             return False
@@ -703,7 +709,19 @@ def process_screen_result(
     manifest["failed_pmids"] = sorted({
         custom_id.rsplit(":", 1)[-1] for custom_id in failed_ids
     })
-    candidates = choose_final_candidates(scores, config)
+    include_all = manifest.get("delivery_mode") == "all"
+    if include_all:
+        by_pmid = {item["pmid"]: item for item in scores}
+        expected = manifest["article_pmids"]
+        if manifest["failed_pmids"] or len(scores) != len(expected) or set(by_pmid) != set(expected):
+            manifest["components"]["screen"]["state"] = "FAILED"
+            manifest["state"] = "FAILED"
+            manifest["failure_reason"] = "読み忘れ候補の全件評価が揃っていません。全件を保持して復旧待ちにします。"
+            store.save_manifest(manifest)
+            return
+        candidates = [by_pmid[pmid] for pmid in expected]
+    else:
+        candidates = choose_final_candidates(scores, config)
     candidate_ref = store.put_json(manifest["run_folder_id"], "final_candidates.json", candidates)
     manifest["artifacts"]["final_candidates"] = {
         "file_id": candidate_ref["id"], "sha256": content_hash(candidates)
@@ -715,7 +733,8 @@ def process_screen_result(
         return
     raw = store.load_json(manifest["artifacts"]["all_abstracts"]["file_id"])
     line = final_batch_line(
-        manifest["run_id"], manifest["display_name"], candidates, raw["articles"], config
+        manifest["run_id"], manifest["display_name"], candidates, raw["articles"], config,
+        include_all=include_all,
     )
     submit_batch(openai, store, manifest, "final", [line], config)
     manifest["state"] = "FINAL_BATCH_SUBMITTED"
@@ -735,6 +754,7 @@ def create_documents(
     notebook_text = render_notebook_doc(
         manifest["display_name"], manifest["run_id"], raw["articles"], scores, final,
         ledger_url=os.environ.get("PMID_LEDGER_WEB_URL", ""),
+        include_all=manifest.get("delivery_mode") == "all",
     )
 
     # 旧manifestが未完了のまま残っていても、過去の成果物は削除せず、
@@ -816,6 +836,7 @@ def retry_current_if_needed(
     text = render_notebook_doc(
         manifest["display_name"], manifest["run_id"], raw["articles"], scores, final,
         ledger_url=os.environ.get("PMID_LEDGER_WEB_URL", ""),
+        include_all=manifest.get("delivery_mode") == "all",
     )
     topic_ledger = ledger["topics"][manifest["topic"]]
     try:
@@ -851,11 +872,20 @@ def finish_run(
         return
     warning = current_state != "COMPLETED" or bool(manifest["failed_pmids"])
     manifest["state"] = "COMPLETED_WITH_WARNINGS" if warning else "COMPLETED"
+    if manifest.get("delivery_mode") == "all" and current_state != "COMPLETED":
+        manifest["state"] = "FAILED"
+        manifest["failure_reason"] = "読み忘れ候補の全件文書を作成できませんでした。復旧待ちです。"
     index = load_topic_index(store, ledger, manifest["topic"])
+    if manifest.get("delivery_mode") == "all" and current_state == "COMPLETED":
+        for pmid in manifest["article_pmids"]:
+            index["papers"].setdefault(pmid, dict(
+                pmid=pmid, first_seen_at=manifest["created_at"],
+                raw_file_id=manifest["artifacts"]["all_abstracts"]["file_id"],
+                run_id=manifest["run_id"], delivery_state="PENDING"))
     failed = set(manifest["failed_pmids"])
     for pmid in manifest["article_pmids"]:
         paper = index["papers"].get(pmid)
-        if not paper:
+        if not paper or (manifest.get("delivery_mode") == "all" and current_state != "COMPLETED"):
             continue
         if pmid in failed:
             paper["delivery_state"] = "PENDING"
@@ -872,6 +902,19 @@ def finish_run(
     }
     store.save_manifest(manifest)
     store.save_ledger(ledger)
+
+
+def validate_all_papers_result(final: dict[str, Any], pmids: list[str]) -> None:
+    """Never publish a shortened missed-paper edition after a model omission."""
+    selected = final.get("selected", [])
+    if (len(selected) != len(pmids) or {item.get("pmid") for item in selected} != set(pmids)
+            or final.get("alternates")):
+        raise ValueError("読み忘れ候補は全PMIDの要約が必要です。再選抜・重複・欠落は認めません。")
+    if any(not isinstance(item.get(key), str) or not item[key].strip() for item in selected
+           for key in ("japanese_summary", "why_important", "clinical_impact", "limitations", "practice_change_needed")):
+        raise ValueError("読み忘れ候補の要約項目が空です。")
+    by_pmid = {item["pmid"]: item for item in selected}
+    final["selected"] = [dict(by_pmid[pmid], rank=rank) for rank, pmid in enumerate(pmids, 1)]
 
 
 def poll_manifest(
@@ -910,7 +953,10 @@ def poll_manifest(
             return
         final = extract_response_json(lines[0])
         candidates = store.load_json(manifest["artifacts"]["final_candidates"]["file_id"])
-        final, normalization_warnings = normalize_final_result(
+        include_all = manifest.get("delivery_mode") == "all"
+        selected_n = len(candidates) if include_all else config["selection"]["selected_n"]
+        alternate_n = 0 if include_all else config["selection"]["alternate_n"]
+        final, normalization_warnings = (final, []) if include_all else normalize_final_result(
             final,
             {item["pmid"] for item in candidates},
             config["selection"]["selected_n"],
@@ -925,9 +971,11 @@ def poll_manifest(
             validate_final_result(
                 final,
                 {item["pmid"] for item in candidates},
-                config["selection"]["selected_n"],
-                config["selection"]["alternate_n"],
+                selected_n,
+                alternate_n,
             )
+            if include_all:
+                validate_all_papers_result(final, manifest["article_pmids"])
         except ValueError as exc:
             attempts = manifest["components"]["final"]["attempts"]
             last_attempt = attempts[-1]
@@ -982,6 +1030,7 @@ def digest_body(cycle: dict[str, Any], manifests: list[dict[str, Any]]) -> str:
         (
             "PubMed自動選定の復旧処理が終了しました。"
             if cycle.get("notification_generation", 0)
+            else "PubMed読み忘れ候補の全件配信処理が終了しました。" if cycle.get("delivery_mode") == "all"
             else "PubMed自動選定が完了しました。"
         ),
         f"処理回: {cycle['cycle_id']}",
@@ -1050,7 +1099,7 @@ def maybe_notify(
     recovery_prefix = "[復旧] " if cycle.get("notification_generation", 0) else ""
     subject = (
         f"{'[TEST] ' if cycle['test'] else ''}{recovery_prefix}"
-        f"PubMed最新論文ダイジェスト {cycle['cycle_id']}"
+        f"PubMed{'読み忘れ候補ダイジェスト' if cycle.get('delivery_mode') == 'all' else '最新論文ダイジェスト'} {cycle['cycle_id']}"
     )
     body = digest_body(cycle, manifests)
     message_identity = {"cycle_id": cycle["cycle_id"]}
