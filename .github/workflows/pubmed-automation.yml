@@ -31,7 +31,7 @@ on:
         required: false
         type: string
       run_date:
-        description: JST run date YYYY-MM-DD (optional, for recovery)
+        description: JST date YYYY-MM-DD (missed-papers reuses the saved report for this date)
         required: false
         type: string
 
@@ -140,9 +140,23 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-automation.txt
       - run: pip install -r requirements-automation.txt
-      - name: Find and notify missed high-value PMIDs
+      - name: Find missed PMIDs and dispatch complete ten-paper editions
         env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GOOGLE_AUTHORIZED_USER_JSON: ${{ secrets.GOOGLE_AUTHORIZED_USER_JSON }}
           GOOGLE_DRIVE_ROOT_FOLDER_ID: ${{ vars.GOOGLE_DRIVE_ROOT_FOLDER_ID }}
           GMAIL_NOTIFY_TO: ${{ secrets.GMAIL_NOTIFY_TO }}
-        run: python missed_papers.py --days 365 --top 30 --include-drive --publish
+          INPUT_RUN_DATE: ${{ inputs.run_date }}
+          INPUT_TEST: ${{ inputs.test }}
+        run: |
+          if [[ -n "$INPUT_RUN_DATE" ]]; then
+            args=(--drive-report-date "$INPUT_RUN_DATE" --publish)
+            if [[ "$INPUT_TEST" == "true" ]]; then args+=(--test); fi
+          else
+            if [[ "$INPUT_TEST" == "true" ]]; then
+              echo "TEST requires run_date for an existing report" >&2
+              exit 1
+            fi
+            args=(--days 365 --top 30 --include-drive --publish)
+          fi
+          python missed_papers.py "${args[@]}"

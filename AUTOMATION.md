@@ -118,8 +118,25 @@ Batch IDから状態を確認してください。両モデルの費用はTEST�
 
 初回は2年、以後は月1回で直近1年を推奨します。
 GitHub Actionsでは毎月2日05:30 JSTに直近1年を自動再検索し、
-上位30件のPMIDをGmail通知します。Markdown/JSONはDriveの
+上位30件を**再選抜せず10件ずつ、3本のGoogle Document**にします。
+月次の検索頻度は維持し、同じ回の分冊はまとめて作成します。Markdown/JSONもDriveの
 `PubMed_Automation/missed_papers`に保存します。
+
+各分冊は全件について、第1部「日本語要約（目的・対象・主要結果を3〜5文）と重要性・臨床への影響・限界」、
+第2部「PubMedの英語Abstract」、第3部「PMID・タイトル・総合スコア・役立つか・短いメモ」を含みます。
+Abstractがない場合はその旨を表示し、結果を補完しないよう指示します。スコアの低い論文も除外しません。
+第3部は通常配信と同じAI評価（0〜25点）であり、元の読み忘れ検索の引用・研究デザインによる順位スコアとは別です。
+元の順位・PMID順・検索指標は `runs/missed-YYYY-MM-DD/missed_source.json` に保存します。
+
+既存の一次・最終Batchと毎時17分のpollを使うため、完成まで最大約48時間が目安です。
+終了時は3分冊へのリンクをまとめた通知を1通送ります。失敗時は完成済み分冊と失敗分冊を明記します。
+候補が0件なら従来どおり該当なしを通知します。全件の評価・要約が揃わない分冊は配信完了にせず、
+自動再試行後も失敗すれば `recover-failed --cycle-id missed-YYYY-MM-DD --topic missed_papers_01` などで復旧します。
+投入途中で失敗した場合は、同じ保存済みレポートを再指定して投入を再開します。
+
+PMID論文確認台帳には、完成済み分冊の**第3部だけ（短いメモには日本語の内容要約）**と文書リンクを取り込みます。
+第1部の要約全文・第2部のAbstractは台帳へ複製しません。同期は従来どおり毎時43分、AIの再実行なしです。
+通常配信の10本選定・次点・スケジュールは変更しません。
 
 ```bash
 # 初回: Google Docs本文と既存台帳からPMIDデータベースを作成
@@ -140,9 +157,25 @@ python3 missed_papers.py --days 365 --top 30 --include-drive
 # 作成済みの既知DBを再利用して、Drive読み取りと検索を分離
 python3 missed_papers.py --days 365 --top 30 --known-file missed_papers/known_pmids.json
 
-# ローカルからDrive保存・Gmail通知まで確認
+# ローカルからDrive保存・全件文書化のBatch投入（完成後に通知）
 python3 missed_papers.py --days 365 --top 30 --include-drive --publish
+
+# 添付の保存済み候補を確認（API呼び出し・書き込みなし）
+python3 missed_papers.py --input-report /path/to/2026-11-02_missed_pmids.md
+
+# 同じ候補を再検索せずに投入。JSONも使用可
+python3 missed_papers.py --input-report /path/to/2026-11-02_missed_pmids.md --publish
+
+# Driveに保存済みの今回の30件を再検索せず投入
+python3 missed_papers.py --drive-report-date 2026-11-02 --publish
 ```
+
+GitHub Actionsから今回分を作る場合は、変更をmainへ反映した後に「PubMed automation」を
+`action=missed-papers`、`run_date=2026-11-02` で手動実行します。
+Driveの同日JSONを読み直すため、後日実行しても今回の30件を保持します。
+`test=true`なら元のレポートは読み取りだけ行い、投入先はTESTです。その場合はpollも `test=true` で手動実行します。
+同じ日・同じPMID順の再投入は既存cycleを再利用します。異なるPMID集合・順序は上書きを拒否します。
+ローカル投入・pollは、Actionsを同時実行しない保守時間に限定してください（Drive台帳の同時書き込みを防ぐため）。
 
 `GOOGLE_DRIVE_ROOT_FOLDER_ID`がないローカル環境でも実行できます。
 `--include-drive`は`drive.file`権限で見える`pmid_index.json`だけを直接検索します。
@@ -152,7 +185,15 @@ python3 missed_papers.py --days 365 --top 30 --include-drive --publish
 `missed_papers/YYYY-MM-DD_missed_pmids.md`に、コピー用PMIDと確認用の短い表を出します。
 同名のJSONは検索期間、既知PMID数、指標を含む監査用です。候補出力そのものは
 自動的に既知扱いしないため、「候補に出ただけで翌月から消える」ことはありません。
+3部構成の文書を作成できた論文は既知PMIDインデックスへ登録し、次回の読み忘れ再検索から除外します。
 抽出した既知PMIDそのものは`missed_papers/known_pmids.json`に保存します。
+
+### 2026-11-02: 読み忘れ候補の全件配信
+
+- 月次の候補を最大10件ずつに分冊し、全件の日本語要約・英語Abstract・スコア表を保存する経路を追加。
+- 候補の再選抜を行わず、PMIDの欠落・重複・空の要約を検証。保存済み候補からの投入再開・既存poll・失敗復旧・通知再試行を利用する。
+- 台帳は既存の同期と第3部の共通表示処理を使用し、人の確認状態を更新しない。GASソースの変更は不要。
+- Python 69件・台帳UIのNode.js 29件が成功。30件→10件×3分冊、端数、本文と台帳の一致、再試行、TEST隔離を確認。実APIによる文書作成・本番同期は別途確認が必要。
 
 ## Driveの正本
 

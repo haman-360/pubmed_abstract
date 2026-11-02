@@ -37,6 +37,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--top", type=int, help="出力する候補数")
     parser.add_argument("--config", default="missed_papers_config.json")
     parser.add_argument("--output", help="Markdown出力先")
+    inputs = parser.add_mutually_exclusive_group()
+    inputs.add_argument("--input-report", help="保存済みmissed_pmids.md/JSONを再検索せず全件文書化（--publishで投入）")
+    inputs.add_argument("--drive-report-date", help="Driveの保存済み候補を検索日 YYYY-MM-DD で指定（再検索なし）")
+    parser.add_argument("--test", action="store_true", help="保存済みレポートの配信をTEST領域へ投入")
     parser.add_argument("--known-file", action="append", default=[], help="既知PMIDを含む追加ファイル")
     parser.add_argument("--known-only", action="store_true", help="既知PMIDデータベースの更新だけを行う")
     parser.add_argument("--known-db", default="missed_papers/known_pmids.json", help="既知PMIDデータベース出力先")
@@ -54,7 +58,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--publish",
         action="store_true",
-        help="結果Markdown/JSONをDriveへ保存し、GmailでPMID一覧を通知",
+        help="結果をDriveへ保存し、全件を10件ずつ3部構成DocsにするBatchを投入。完成後に通知",
     )
     return parser.parse_args()
 
@@ -320,6 +324,9 @@ def publish_report(
     google.create_or_update_blob(
         folder, json_path.name, json_path.read_bytes(), "application/json"
     )
+    if ranked:
+        enqueue_delivery(google, root_id, ranked, end)
+        return
     recipient = os.environ.get("GMAIL_NOTIFY_TO", "").strip()
     if not recipient:
         raise RuntimeError("--publishにはGMAIL_NOTIFY_TOが必要です。")
@@ -343,14 +350,62 @@ def publish_report(
     )
 
 
+def enqueue_delivery(google, root_id, ranked, end, test=False):
+    from automation_core import load_config
+    from automation_services import OpenAIBatchClient
+    from missed_delivery import dispatch_missed_editions
+
+    cycle_id = dispatch_missed_editions(google, OpenAIBatchClient(), root_id, ranked, end,
+                                       load_config("automation_config.json"), test=test)
+    print(f"読み忘れ候補の全件配信を投入: {cycle_id}（{len(ranked)}件、最大10件/文書）", flush=True)
+    print("既存のpollで処理を継続し、完成したGoogle Docsへのリンクを通知します。", flush=True)
+
+
 def main() -> int:
     args = parse_args()
+    if args.test and not (args.input_report or args.drive_report_date):
+        raise ValueError("--testは保存済みレポートの指定と併用してください。")
+    if args.input_report or args.drive_report_date:
+        from missed_delivery import load_report, load_drive_report
+        google = None
+        root_id = args.drive_root or os.environ.get("GOOGLE_DRIVE_ROOT_FOLDER_ID", "")
+        if args.drive_report_date:
+            from automation_services import GoogleWorkspaceClient
+            if not root_id:
+                raise RuntimeError("--drive-report-dateにはGOOGLE_DRIVE_ROOT_FOLDER_IDが必要です。")
+            end = date.fromisoformat(args.drive_report_date)
+            google = GoogleWorkspaceClient(_authorized_user_json(args.authorized_user_file))
+            ranked = load_drive_report(google, root_id, end)
+        else:
+            ranked, end = load_report(args.input_report)
+        print(f"保存済み候補: {len(ranked)}件、文書数: {(len(ranked) + 9) // 10}（再検索・再選抜なし）")
+        if args.publish:
+            from automation_services import GoogleWorkspaceClient
+            if not root_id:
+                raise RuntimeError("--publishにはGOOGLE_DRIVE_ROOT_FOLDER_IDが必要です。")
+            google = google or GoogleWorkspaceClient(_authorized_user_json(args.authorized_user_file))
+            enqueue_delivery(google, root_id, ranked, end, test=args.test)
+        return 0
     config = json.loads(Path(args.config).read_text(encoding="utf-8"))
     end = date.fromisoformat(args.end_date) if args.end_date else local_today()
     if args.days <= 0:
         raise ValueError("--daysは1以上にしてください。")
     start = end - timedelta(days=args.days - 1)
     output_n = args.top or config["ranking"]["default_output_n"]
+
+    # A monthly retry must not re-search after its delivered PMIDs became known.
+    # Otherwise the same date could overwrite the original report with the next 30.
+    if args.publish and not args.known_only:
+        from automation_services import GoogleWorkspaceClient
+        from missed_delivery import load_drive_report
+        root_id = args.drive_root or os.environ.get("GOOGLE_DRIVE_ROOT_FOLDER_ID", "")
+        if not root_id:
+            raise RuntimeError("--publishにはGOOGLE_DRIVE_ROOT_FOLDER_IDが必要です。")
+        google = GoogleWorkspaceClient(_authorized_user_json(args.authorized_user_file))
+        ranked = load_drive_report(google, root_id, end, required=False)
+        if ranked:
+            enqueue_delivery(google, root_id, ranked, end)
+            return 0
 
     known, source_counts = collect_local_known(config, args.known_file)
     if args.include_drive or args.include_drive_docs:
