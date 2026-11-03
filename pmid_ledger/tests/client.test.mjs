@@ -6,7 +6,7 @@ import crypto from "node:crypto";
 import { environment } from "./environment.mjs";
 
 // Exercise the delivered client and its event handlers against the GAS fixture.
-function client(count = 15) {
+function client(count = 15, profiling = false, profileWrites = false) {
   const e = environment({ indexed: true, candidates: true });
   for (let id = 100; id < 100 + count - 1; id++) {
     const paper = [...e.tables.Papers[1]];
@@ -44,7 +44,7 @@ function client(count = 15) {
   };
   const walk = (n) => [n, ...n.children.flatMap(walk)];
   const document = {
-    body: { dataset: {} }, getElementById: get, createElement: element,
+    body: { dataset: { profile: profiling ? "1" : "", profileWrites: profileWrites ? "1" : "" } }, getElementById: get, createElement: element,
     querySelectorAll(selector) {
       const all = [...nodes.values()].flatMap(walk);
       if (selector === ".issue-hint") return all.filter((n) => n.classList.contains("issue-hint"));
@@ -63,7 +63,7 @@ function client(count = 15) {
     setTimeout: () => 0, clearTimeout() {}, confirm: () => true,
     google: { script: { run: {
       withSuccessHandler() { return this; }, withFailureHandler() { return this; },
-      listIssues() {},
+      listIssues() {}, profileLedger() {},
     } } },
   });
   const html = fs.readFileSync(new URL("../gas/Index.html", import.meta.url), "utf8");
@@ -71,7 +71,7 @@ function client(count = 15) {
   vm.runInContext(scripts[1][1], ctx);
   const calls = [];
   ctx.callServer = (name, arg) => { calls.push(name); return e.ctx[name](arg); };
-  vm.runInContext(`rpc = async (name, arg) => callServer(name, arg);
+  vm.runInContext(`var rawRpc = rpc; rpc = async (name, arg) => callServer(name, arg);
     busy = false; switchView(false);
     activeFilter = {tab: "all", issue_key: '["issue1","感染症"]'};`, ctx);
   const run = (code) => vm.runInContext(code, ctx);
@@ -201,4 +201,53 @@ test("a delivery content change after paper saving prevents automatic completion
   assert.deepEqual(c.calls,["saveReviews"]);
   assert.match(c.get("feedback").textContent,/配信内容が更新/);
   assert.equal(c.e.tables.IssueReviews.length,1);
+});
+
+
+test("client timing separates RPC/server/frame time and never records request or response content", async () => {
+  const c = client(2, true, true);
+  c.run(`var frameQueue = [], testClock = 0;
+    performance = { now: () => testClock };
+    requestAnimationFrame = fn => frameQueue.push(fn);
+    google.script.run = {
+      withSuccessHandler(fn) { this.success = fn; return this; },
+      withFailureHandler(fn) { this.failure = fn; return this; },
+      profileLedger(request) { testClock = 120; this.success({ok: true, value: {secret: 'PRIVATE RESPONSE'},
+        profile: {schema: 'PMID_TIMING_V1', request_id: request.request_id, method: request.method, total_ms: 40, spans: []}}); }
+    };`);
+  const result = await c.run(`rawRpc('listIssues', {query: 'PRIVATE QUERY'})`);
+  assert.equal(result.secret, 'PRIVATE RESPONSE');
+  let samples = JSON.parse(c.run('JSON.stringify(timingSamples)'));
+  assert.equal(samples[0].roundtrip_ms, 120);
+  assert.equal(samples[0].outside_server_ms, 80);
+  assert.equal(samples[0].response_to_frame_ms, null);
+  c.run('testClock = 125; frameQueue.shift()(); testClock = 140; frameQueue.shift()();');
+  samples = JSON.parse(c.run('JSON.stringify(timingSamples)'));
+  assert.equal(samples[0].response_to_frame_ms, 20);
+  assert.doesNotMatch(JSON.stringify(samples), /PRIVATE/);
+});
+
+test("production diagnostic client blocks saves before sending an RPC", async () => {
+  const c = client(2, true, false);
+  c.run(`google.script.run = { withSuccessHandler() { throw new Error('unexpected network'); } };`);
+  await assert.rejects(c.run(`rawRpc('saveReviews', {note: 'PRIVATE'})`), /本番台帳の計測モード/);
+  assert.equal(c.run('timingSamples.length'), 0);
+});
+
+test("client timeout and failed response record outcome, retain original retry behavior and ignore late replies", async () => {
+  const c = client(2, true, true);
+  c.run(`var timeoutCallback, lateSuccess;
+    setTimeout = fn => { timeoutCallback = fn; return 1; };
+    clearTimeout = () => {};
+    google.script.run = {
+      withSuccessHandler(fn) { lateSuccess = fn; return this; },
+      withFailureHandler() { return this; }, profileLedger() {}
+    };`);
+  const pending = c.run(`rawRpc('saveReviews', {operation_id: 'same-operation-id'})`);
+  c.run('timeoutCallback();');
+  await assert.rejects(pending, /保存の応答を確認できません/);
+  c.run('lateSuccess({ok: true, profile: {request_id: timingSamples[0].request_id, total_ms: 31000, spans: []}});');
+  assert.equal(c.run('timingSamples.length'), 1);
+  assert.equal(c.run('timingSamples[0].outcome'), 'timeout');
+  assert.equal(c.run('timingSamples[0].late_server.total_ms'), 31000);
 });

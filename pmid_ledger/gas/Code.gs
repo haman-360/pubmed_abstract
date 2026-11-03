@@ -360,25 +360,78 @@ var Ledger = (function () {
   };
 })();
 
+// Timing is opt-in and returned to the authenticated caller only. No request data is logged.
+var ledgerTiming_ = null;
+function timingStep_(name, fn) {
+  if (!ledgerTiming_) return fn();
+  var profile = ledgerTiming_, started = Date.now(), parent = profile.active;
+  var span = { name: name, elapsed_ms: 0, self_ms: 0, child_ms: 0 };
+  profile.active = span;
+  try { return fn(); }
+  finally {
+    span.elapsed_ms = Date.now() - started;
+    span.self_ms = Math.max(0, span.elapsed_ms - span.child_ms);
+    if (parent) parent.child_ms += span.elapsed_ms;
+    delete span.child_ms;
+    profile.active = parent;
+    profile.spans.push(span);
+  }
+}
+function timingCount_(name, count) {
+  if (ledgerTiming_) ledgerTiming_.counts[name] = (ledgerTiming_.counts[name] || 0) + count;
+}
+function profileLedger(request) {
+  var methods = {
+    listIssues: listIssues, listIssuePapers: listIssuePapers, listPapers: listPapers,
+    getPaperDetail: getPaperDetail, saveReviews: saveReviews, saveIssueReview: saveIssueReview
+  };
+  var started = Date.now(), previous = ledgerTiming_;
+  var profile = { schema: "PMID_TIMING_V1", request_id: "", method: "", spans: [], counts: {}, active: null };
+  ledgerTiming_ = profile;
+  try {
+    var props = timingStep_("diagnostic.guard", authorize_);
+    Ledger.assert(request && Object.prototype.hasOwnProperty.call(methods, request.method), "計測対象の操作が不正です");
+    Ledger.assert(/^[A-Za-z0-9-]{16,80}$/.test(request.request_id || ""), "計測IDが不正です");
+    profile.request_id = request.request_id;
+    profile.method = request.method;
+    // Production profiling is read-only, even if a caller bypasses the diagnostic UI.
+    Ledger.assert(!request.method.startsWith("save") ||
+      String(props.getProperty("LEDGER_INSTANCE") || "").startsWith("test-"),
+      "本番台帳の計測モードでは保存できません。保存の計測にはTEST台帳を使用してください。");
+    var handlerStarted = Date.now(), value;
+    try { value = methods[request.method](request.arg); }
+    finally { profile.handler_ms = Date.now() - handlerStarted; }
+    return { ok: true, value: value, profile: profile };
+  } catch (e) {
+    return { ok: false, error: String(e.message || e), profile: profile };
+  } finally {
+    profile.total_ms = Date.now() - started;
+    delete profile.active;
+    ledgerTiming_ = previous;
+  }
+}
+
 function authorize_() {
-  var p = PropertiesService.getScriptProperties(),
-    owner = p.getProperty("OWNER_EMAIL");
-  Ledger.assert(
-    owner &&
-      Session.getActiveUser().getEmail().toLowerCase() ===
-        owner.toLowerCase() &&
-      Session.getEffectiveUser().getEmail().toLowerCase() ===
-        owner.toLowerCase(),
-    "本人認証を確認できません。ご本人のGoogleアカウントで開いてください。",
-  );
-  return p;
+  return timingStep_("auth", function () {
+    var p = PropertiesService.getScriptProperties(),
+      owner = p.getProperty("OWNER_EMAIL");
+    Ledger.assert(
+      owner &&
+        Session.getActiveUser().getEmail().toLowerCase() ===
+          owner.toLowerCase() &&
+        Session.getEffectiveUser().getEmail().toLowerCase() ===
+          owner.toLowerCase(),
+      "本人認証を確認できません。ご本人のGoogleアカウントで開いてください。",
+    );
+    return p;
+  });
 }
 function book_() {
   var props = authorize_(),
     id = props.getProperty("LEDGER_SHEET_ID"),
     instance = props.getProperty("LEDGER_INSTANCE");
   Ledger.assert(id && instance, "本番台帳の設定が必要です");
-  var book = SpreadsheetApp.openById(id),
+  var book = timingStep_("sheets.open", function () { return SpreadsheetApp.openById(id); }),
     settings = read_(book, "Settings"),
     map = {};
   settings.forEach(function (r) {
@@ -391,121 +444,139 @@ function book_() {
   return { book: book, settings: map, sheet_id: id };
 }
 function read_(book, name) {
-  var sheet = book.getSheetByName(name);
-  if (name === "IssueReviews" && (!sheet || sheet.getLastRow() === 0))
-    return [];
-  Ledger.assert(sheet, "必要なシートがありません：" + name);
-  return Ledger.records(
-    sheet
-      .getRange(
-        1,
-        1,
-        Math.max(1, sheet.getLastRow()),
-        Ledger.headers[name].length,
-      )
-      .getDisplayValues(),
-    name,
-  );
+  return timingStep_("sheets.read." + name, function () {
+    var sheet = book.getSheetByName(name);
+    if (name === "IssueReviews" && (!sheet || sheet.getLastRow() === 0))
+      return [];
+    Ledger.assert(sheet, "必要なシートがありません：" + name);
+    var rowCount = Math.max(1, sheet.getLastRow());
+    timingCount_("sheet_reads", 1);
+    timingCount_("rows_requested", rowCount);
+    return Ledger.records(
+      sheet
+        .getRange(
+          1,
+          1,
+          rowCount,
+          Ledger.headers[name].length,
+        )
+        .getDisplayValues(),
+      name,
+    );
+  });
 }
 // Cache immutable metadata by spreadsheet revision only. Never cache manual review events.
 function cachedRead_(ctx, name, loader) {
-  Ledger.assert(
-    ["Papers", "Appearances", "Issues", "TextRows", "IssueCandidateRows"].includes(name) ||
-      (name.indexOf("IssueCandidates:") === 0 && typeof loader === "function"),
-    "手動状態はキャッシュしません",
-  );
-  var key =
-    "meta-v5:" +
-    ctx.sheet_id +
-    ":" +
-    ctx.settings.instance +
-    ":" +
-    ctx.settings.revision +
-    ":" +
-    name;
-  var cache =
-    typeof CacheService !== "undefined" ? CacheService.getUserCache() : null;
-  if (cache && key.length < 220) {
-    try {
-      var count = Number(cache.get(key));
-      if (Number.isInteger(count) && count > 0 && count <= 100) {
-        var keys = Array.from({ length: count }, function (_, i) {
-          return key + ":" + i;
-        });
-        var parts = cache.getAll(keys);
-        if (
-          keys.every(function (k) {
-            return typeof parts[k] === "string";
-          })
-        )
-          return JSON.parse(
-            keys
-              .map(function (k) {
-                return parts[k];
-              })
-              .join(""),
-          );
+  return timingStep_("cache.metadata", function () {
+    Ledger.assert(
+      ["Papers", "Appearances", "Issues", "TextRows", "IssueCandidateRows"].includes(name) ||
+        (name.indexOf("IssueCandidates:") === 0 && typeof loader === "function"),
+      "手動状態はキャッシュしません",
+    );
+    var key =
+      "meta-v5:" +
+      ctx.sheet_id +
+      ":" +
+      ctx.settings.instance +
+      ":" +
+      ctx.settings.revision +
+      ":" +
+      name;
+    var cache =
+      typeof CacheService !== "undefined" ? CacheService.getUserCache() : null;
+    if (cache && key.length < 220) {
+      try {
+        var count = Number(cache.get(key));
+        if (Number.isInteger(count) && count > 0 && count <= 100) {
+          var keys = Array.from({ length: count }, function (_, i) {
+            return key + ":" + i;
+          });
+          var parts = cache.getAll(keys);
+          if (
+            keys.every(function (k) {
+              return typeof parts[k] === "string";
+            })
+          ) {
+            timingCount_("cache_hits", 1);
+            return JSON.parse(
+              keys
+                .map(function (k) {
+                  return parts[k];
+                })
+                .join(""),
+            );
+          }
+        }
+      } catch (e) {
+        /* An optional/evicted cache must not prevent a real read. */
       }
-    } catch (e) {
-      /* An optional/evicted cache must not prevent a real read. */
     }
-  }
-  var rows = loader ? loader() : read_(ctx.book, name);
-  if (cache && key.length < 220)
-    (ctx.cacheWrites || (ctx.cacheWrites = [])).push({
-      cache: cache,
-      key: key,
-      rows: rows,
-    });
-  return rows;
+    timingCount_("cache_misses", 1);
+    var rows = loader ? loader() : read_(ctx.book, name);
+    if (cache && key.length < 220)
+      (ctx.cacheWrites || (ctx.cacheWrites = [])).push({
+        cache: cache,
+        key: key,
+        rows: rows,
+      });
+    return rows;
+  });
 }
 function verifyRevision_(ctx) {
-  var latest = {};
-  read_(ctx.book, "Settings").forEach(function (r) {
-    latest[r.key] = r.value;
+  return timingStep_("revision.check", function () {
+    var latest = {};
+    read_(ctx.book, "Settings").forEach(function (r) {
+      latest[r.key] = r.value;
+    });
+    Ledger.assert(
+      latest.revision === ctx.settings.revision,
+      "台帳の同期中です。再読み込みしてください。",
+    );
+    if ((ctx.cacheWrites || []).length) timingStep_("cache.publish", function () {
+      (ctx.cacheWrites || []).forEach(function (write) {
+        try {
+          var points = Array.from(JSON.stringify(write.rows)),
+            values = {},
+            count = Math.ceil(points.length / 16000);
+          if (count > 100) return;
+          for (var i = 0; i < count; i++)
+            values[write.key + ":" + i] = points
+              .slice(i * 16000, (i + 1) * 16000)
+              .join("");
+          write.cache.putAll(values, 300);
+          write.cache.put(write.key, String(count), 300);
+        } catch (e) {
+          /* Cache quotas do not affect correctness. */
+        }
+      });
+    });
+    ctx.cacheWrites = [];
   });
-  Ledger.assert(
-    latest.revision === ctx.settings.revision,
-    "台帳の同期中です。再読み込みしてください。",
-  );
-  (ctx.cacheWrites || []).forEach(function (write) {
-    try {
-      var points = Array.from(JSON.stringify(write.rows)),
-        values = {},
-        count = Math.ceil(points.length / 16000);
-      if (count > 100) return;
-      for (var i = 0; i < count; i++)
-        values[write.key + ":" + i] = points
-          .slice(i * 16000, (i + 1) * 16000)
-          .join("");
-      write.cache.putAll(values, 300);
-      write.cache.put(write.key, String(count), 300);
-    } catch (e) {
-      /* Cache quotas do not affect correctness. */
-    }
-  });
-  ctx.cacheWrites = [];
 }
 function state_(ctx) {
-  ctx = ctx || book_();
-  ctx.reviewEvents = ctx.reviewEvents || read_(ctx.book, "Reviews");
-  ctx.papers = Ledger.enrich(
-    cachedRead_(ctx, "Papers"),
-    cachedRead_(ctx, "Appearances"),
-    ctx.reviewEvents,
-  );
-  verifyRevision_(ctx);
-  return ctx;
+  return timingStep_("compute.paperContext", function () {
+    ctx = ctx || book_();
+    ctx.reviewEvents = ctx.reviewEvents || read_(ctx.book, "Reviews");
+    ctx.papers = Ledger.enrich(
+      cachedRead_(ctx, "Papers"),
+      cachedRead_(ctx, "Appearances"),
+      ctx.reviewEvents,
+    );
+    verifyRevision_(ctx);
+    return ctx;
+  });
 }
 function issuesContext_() {
-  var ctx = book_();
-  if (!ctx.book.getSheetByName("Issues")) return state_(ctx);
-  ctx.issueIndex = cachedRead_(ctx, "Issues");
-  ctx.reviewEvents = read_(ctx.book, "Reviews");
-  ctx.reviewStates = Ledger.reviews(ctx.reviewEvents);
-  ctx.issueEvents = read_(ctx.book, "IssueReviews");
-  verifyRevision_(ctx);
-  return ctx;
+  return timingStep_("compute.issueContext", function () {
+    var ctx = book_();
+    if (!ctx.book.getSheetByName("Issues")) return state_(ctx);
+    ctx.issueIndex = cachedRead_(ctx, "Issues");
+    ctx.reviewEvents = read_(ctx.book, "Reviews");
+    ctx.reviewStates = Ledger.reviews(ctx.reviewEvents);
+    ctx.issueEvents = read_(ctx.book, "IssueReviews");
+    verifyRevision_(ctx);
+    return ctx;
+  });
 }
 function today_() {
   return Utilities.formatDate(new Date(), "Asia/Tokyo", "yyyy-MM-dd");
@@ -514,7 +585,7 @@ function locked_(fn) {
   authorize_();
   var lock = LockService.getScriptLock();
   Ledger.assert(
-    lock.tryLock(10000),
+    timingStep_("lock.wait", function () { return lock.tryLock(10000); }),
     "別の操作を保存中です。少し待って再試行してください。",
   );
   try {
@@ -524,8 +595,10 @@ function locked_(fn) {
   }
 }
 function doGet(e) {
-  authorize_();
+  var props = authorize_();
   var template = HtmlService.createTemplateFromFile("Index");
+  template.profiling = e && e.parameter && e.parameter.profile === "1" ? "1" : "";
+  template.profileWrites = String(props.getProperty("LEDGER_INSTANCE") || "").startsWith("test-") ? "1" : "";
   template.initialPmid =
     e && e.parameter && /^[1-9][0-9]{0,8}$/.test(e.parameter.pmid || "")
       ? e.parameter.pmid
@@ -633,7 +706,10 @@ function listIssuePapers(request) {
     var start = Number(index.first_row), count = Number(index.row_count);
     Ledger.assert(Number.isInteger(start) && start >= 2 && Number.isInteger(count) && count > 0, "候補一覧の索引が不正です");
     return Ledger.records([Ledger.headers.IssueCandidates].concat(
-      ctx.book.getSheetByName("IssueCandidates").getRange(start, 1, count, Ledger.headers.IssueCandidates.length).getDisplayValues()
+      timingStep_("sheets.read.IssueCandidates", function () {
+        timingCount_("sheet_reads", 1); timingCount_("rows_requested", count);
+        return ctx.book.getSheetByName("IssueCandidates").getRange(start, 1, count, Ledger.headers.IssueCandidates.length).getDisplayValues();
+      })
     ), "IssueCandidates");
   });
   Ledger.assert(rows.every(function (r) { return r.issue_key === request.issue_key; }), "候補一覧と配信が一致しません");
@@ -726,7 +802,10 @@ function getPaperDetail(request) {
       textRows = textRows.concat(
         Ledger.records(
           [Ledger.headers.Texts].concat(
-            textSheet.getRange(r.start, 1, r.count, 3).getDisplayValues(),
+            timingStep_("sheets.read.Texts", function () {
+              timingCount_("sheet_reads", 1); timingCount_("rows_requested", r.count);
+              return textSheet.getRange(r.start, 1, r.count, 3).getDisplayValues();
+            }),
           ),
           "Texts",
         ),
@@ -858,7 +937,8 @@ function saveReviews(request) {
     if (start + rows.length - 1 > sheet.getMaxRows())
       sheet.insertRowsAfter(sheet.getMaxRows(), Math.max(1000, rows.length));
     // Prefix formula-like inputs for SpreadsheetApp; displayed values retain the user's exact text.
-    sheet
+    timingStep_("sheets.write.Reviews", function () {
+      return sheet
       .getRange(start, 1, rows.length, 8)
       .setNumberFormat("@")
       .setValues(
@@ -868,8 +948,12 @@ function saveReviews(request) {
           });
         }),
       );
-    SpreadsheetApp.flush();
-    var saved = sheet.getRange(start, 1, rows.length, 8).getDisplayValues();
+    });
+    timingStep_("sheets.flush", function () { SpreadsheetApp.flush(); });
+    var saved = timingStep_("sheets.readback.Reviews", function () {
+      timingCount_("sheet_reads", 1); timingCount_("rows_requested", rows.length);
+      return sheet.getRange(start, 1, rows.length, 8).getDisplayValues();
+    });
     Ledger.assert(
       JSON.stringify(saved) === JSON.stringify(rows),
       "保存結果を確認できません。再読み込みして状態をご確認ください。",
@@ -1014,96 +1098,98 @@ function hashIssue_(value) {
   );
 }
 function issueState_(ctx) {
-  var groups = {},
-    states = {};
-  (ctx.issueEvents || read_(ctx.book, "IssueReviews")).forEach(function (e) {
-    validateIssueKey_(e.issue_key);
-    Ledger.assert(
-      ["unreviewed", "in_progress", "completed"].includes(e.status),
-      "配信の状態が不正です",
-    );
-    Ledger.assert(
-      Number(e.version) ===
-        (states[e.issue_key] ? Number(states[e.issue_key].version) : 0) + 1,
-      "配信の操作履歴が不完全です",
-    );
-    states[e.issue_key] = e;
-  });
-  if (ctx.issueIndex)
-    return ctx.issueIndex.map(function (i) {
-      var review = states[i.issue_key],
-        ids = JSON.parse(i.pmids);
+  return timingStep_("compute.issueProgress", function () {
+    var groups = {},
+      states = {};
+    (ctx.issueEvents || read_(ctx.book, "IssueReviews")).forEach(function (e) {
+      validateIssueKey_(e.issue_key);
+      Ledger.assert(
+        ["unreviewed", "in_progress", "completed"].includes(e.status),
+        "配信の状態が不正です",
+      );
+      Ledger.assert(
+        Number(e.version) ===
+          (states[e.issue_key] ? Number(states[e.issue_key].version) : 0) + 1,
+        "配信の操作履歴が不完全です",
+      );
+      states[e.issue_key] = e;
+    });
+    if (ctx.issueIndex)
+      return ctx.issueIndex.map(function (i) {
+        var review = states[i.issue_key],
+          ids = JSON.parse(i.pmids);
+        var changed =
+          !!review &&
+          review.status === "completed" &&
+          review.content_version.replace(/=+$/, "") !==
+            i.content_version.replace(/=+$/, "");
+        return {
+          issue_key: i.issue_key,
+          issue_id: i.issue_id,
+          topic: i.topic,
+          delivered_date: i.delivered_date,
+          total: ids.length,
+          unreviewed: ids.filter(function (id) {
+            return (
+              !ctx.reviewStates[id] ||
+              ctx.reviewStates[id].status === "unreviewed"
+            );
+          }).length,
+          status: changed ? "in_progress" : review ? review.status : "unreviewed",
+          content_changed: changed,
+          version: review ? Number(review.version) : 0,
+          content_version: i.content_version,
+          updated_at: review ? review.updated_at : "",
+          recovered: /^(local:|current_copy:)/.test(i.issue_id),
+        };
+      });
+    ctx.papers.forEach(function (p) {
+      p.appearances.forEach(function (a) {
+        var key = issueKey_(a),
+          g = groups[key];
+        if (!g)
+          g = groups[key] = {
+            issue_key: key,
+            issue_id: a.issue_id,
+            topic: a.topic,
+            dates: [],
+            doc_links: [],
+            snapshots: [],
+            papers: {},
+          };
+        if (a.delivered_date) g.dates.push(a.delivered_date);
+        if (a.current_doc_url) g.doc_links.push(a.current_doc_url);
+        g.snapshots.push(a.snapshot_id);
+        g.papers[p.pmid] = p.review.status;
+      });
+    });
+    return Object.keys(groups).map(function (key) {
+      var g = groups[key],
+        review = states[key],
+        ids = Object.keys(g.papers);
+      var content = hashIssue_(Array.from(new Set(g.snapshots)).sort());
       var changed =
         !!review &&
         review.status === "completed" &&
-        review.content_version.replace(/=+$/, "") !==
-          i.content_version.replace(/=+$/, "");
+        review.content_version !== content;
       return {
-        issue_key: i.issue_key,
-        issue_id: i.issue_id,
-        topic: i.topic,
-        delivered_date: i.delivered_date,
+        issue_key: key,
+        issue_id: g.issue_id,
+        topic: g.topic,
+        delivered_date: g.dates.sort().slice(-1)[0] || "",
+        doc_links: Array.from(new Set(g.doc_links)),
         total: ids.length,
         unreviewed: ids.filter(function (id) {
-          return (
-            !ctx.reviewStates[id] ||
-            ctx.reviewStates[id].status === "unreviewed"
-          );
+          return g.papers[id] === "unreviewed";
         }).length,
         status: changed ? "in_progress" : review ? review.status : "unreviewed",
         content_changed: changed,
         version: review ? Number(review.version) : 0,
-        content_version: i.content_version,
+        content_version: content,
         updated_at: review ? review.updated_at : "",
-        recovered: /^(local:|current_copy:)/.test(i.issue_id),
+        recovered: /^(local:|current_copy:)/.test(g.issue_id),
       };
     });
-  ctx.papers.forEach(function (p) {
-    p.appearances.forEach(function (a) {
-      var key = issueKey_(a),
-        g = groups[key];
-      if (!g)
-        g = groups[key] = {
-          issue_key: key,
-          issue_id: a.issue_id,
-          topic: a.topic,
-          dates: [],
-          doc_links: [],
-          snapshots: [],
-          papers: {},
-        };
-      if (a.delivered_date) g.dates.push(a.delivered_date);
-      if (a.current_doc_url) g.doc_links.push(a.current_doc_url);
-      g.snapshots.push(a.snapshot_id);
-      g.papers[p.pmid] = p.review.status;
-    });
-  });
-  return Object.keys(groups).map(function (key) {
-    var g = groups[key],
-      review = states[key],
-      ids = Object.keys(g.papers);
-    var content = hashIssue_(Array.from(new Set(g.snapshots)).sort());
-    var changed =
-      !!review &&
-      review.status === "completed" &&
-      review.content_version !== content;
-    return {
-      issue_key: key,
-      issue_id: g.issue_id,
-      topic: g.topic,
-      delivered_date: g.dates.sort().slice(-1)[0] || "",
-      doc_links: Array.from(new Set(g.doc_links)),
-      total: ids.length,
-      unreviewed: ids.filter(function (id) {
-        return g.papers[id] === "unreviewed";
-      }).length,
-      status: changed ? "in_progress" : review ? review.status : "unreviewed",
-      content_changed: changed,
-      version: review ? Number(review.version) : 0,
-      content_version: content,
-      updated_at: review ? review.updated_at : "",
-      recovered: /^(local:|current_copy:)/.test(g.issue_id),
-    };
   });
 }
 function listIssues(request) {
@@ -1239,10 +1325,15 @@ function saveIssueReview(request) {
     var start = sheet.getLastRow() + 1;
     if (start > sheet.getMaxRows())
       sheet.insertRowsAfter(sheet.getMaxRows(), 1000);
-    sheet.getRange(start, 1, 1, 7).setNumberFormat("@").setValues([row]);
-    SpreadsheetApp.flush();
+    timingStep_("sheets.write.IssueReviews", function () {
+      sheet.getRange(start, 1, 1, 7).setNumberFormat("@").setValues([row]);
+    });
+    timingStep_("sheets.flush", function () { SpreadsheetApp.flush(); });
     Ledger.assert(
-      JSON.stringify(sheet.getRange(start, 1, 1, 7).getDisplayValues()) ===
+      JSON.stringify(timingStep_("sheets.readback.IssueReviews", function () {
+        timingCount_("sheet_reads", 1); timingCount_("rows_requested", 1);
+        return sheet.getRange(start, 1, 1, 7).getDisplayValues();
+      })) ===
         JSON.stringify([row]),
       "保存結果を確認できません。再読み込みしてください。",
     );

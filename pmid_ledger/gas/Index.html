@@ -271,7 +271,7 @@
       }
     </style>
   </head>
-  <body data-pmid="<?= initialPmid ?>" data-issue="<?= initialIssue ?>">
+  <body data-pmid="<?= initialPmid ?>" data-issue="<?= initialIssue ?>" data-profile="<?= profiling ?>" data-profile-writes="<?= profileWrites ?>">
     <main>
       <h1>PMID 論文確認台帳</h1>
 
@@ -281,6 +281,13 @@
       <details>
         <summary>同期情報</summary>
         <p id="sync" class="muted"></p>
+      </details>
+      <details id="timing-panel" hidden>
+        <summary>速度計測（診断用）</summary>
+        <p id="timing-notice" class="notice"></p>
+        <p class="muted">往復時間は画面からの要求〜応答、GAS外は往復時間−GAS内です。GAS外には通信・Google側の待機・転送処理などが含まれます。画面更新後のフレーム到達時間は描画機会の目安です。</p>
+        <button id="timing-download">計測結果をJSONで保存</button>
+        <pre id="timing-output" class="detail-text" aria-live="polite"></pre>
       </details>
       <div class="toolbar" aria-label="確認対象">
         <button id="view-issues" class="primary">配信ごとの確認</button>
@@ -564,31 +571,101 @@
           ? "100件まで保存できます。続ける前に途中まで保存してください。"
           : "状態・メモの変更をまとめて保存します。";
       }
+      const profilingEnabled = document.body.dataset.profile === "1";
+      const profilingWrites = document.body.dataset.profileWrites === "1";
+      const timingSamples = [];
+      const timedMethods = ["listIssues", "listIssuePapers", "listPapers", "getPaperDetail", "saveReviews", "saveIssueReview"];
+      const clockNow = () => typeof performance !== "undefined" ? performance.now() : Date.now();
+      const roundedMs = (n) => Math.round(n * 10) / 10;
+      function renderTimings() {
+        el("timing-output").textContent = timingSamples.map((s) => {
+          const phases = s.server && s.server.spans ? s.server.spans : [];
+          const grouped = {};
+          phases.forEach((p) => { grouped[p.name] = (grouped[p.name] || 0) + p.self_ms; });
+          return s.method + " [" + s.outcome + "]\n" +
+            "往復 " + s.roundtrip_ms + " ms / GAS内 " + (s.server ? s.server.total_ms : "不明") +
+            " ms / GAS外 " + (s.outside_server_ms ?? "不明") + " ms / 応答→フレーム " +
+            (s.response_to_frame_ms ?? "未測定") + " ms\n" +
+            Object.entries(grouped).map(([name, ms]) => "  " + name + ": " + ms + " ms").join("\n") +
+            (s.late_server ? "\n遅延応答 " + s.late_roundtrip_ms + " ms / GAS内 " + s.late_server.total_ms + " ms" : "");
+        }).join("\n\n");
+      }
+      function recordTiming(name, requestId, started, outcome, server) {
+        const responded = clockNow();
+        const sample = {
+          request_id: requestId, method: name, outcome,
+          roundtrip_ms: roundedMs(responded - started), server: server || null,
+          outside_server_ms: server ? roundedMs(Math.max(0, responded - started - server.total_ms)) : null,
+          response_to_frame_ms: null,
+        };
+        timingSamples.push(sample);
+        if (timingSamples.length > 100) timingSamples.shift();
+        renderTimings();
+        if (typeof requestAnimationFrame === "function") requestAnimationFrame(() => requestAnimationFrame(() => {
+          sample.response_to_frame_ms = roundedMs(clockNow() - responded);
+          renderTimings();
+        }));
+      }
+      if (profilingEnabled) {
+        el("timing-panel").hidden = false;
+        el("timing-panel").open = true;
+        el("timing-notice").textContent = profilingWrites
+          ? "TEST台帳の計測モードです。保存の計測は架空データだけで行ってください。"
+          : "本番台帳の読み取り専用計測です。このモードでは状態・メモ・確認完了を保存できません。";
+        el("timing-download").onclick = () => {
+          const url = URL.createObjectURL(new Blob([JSON.stringify({
+            schema: "PMID_CLIENT_TIMING_V1", samples: timingSamples,
+          }, null, 2)], { type: "application/json" }));
+          const link = node("a"); link.href = url; link.download = "pmid-timing.json";
+          link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+        };
+      }
       function rpc(name, arg) {
+        if (profilingEnabled && name.startsWith("save") && !profilingWrites)
+          return Promise.reject(new Error("本番台帳の計測モードでは保存できません。通常のURLで開き直してください。"));
+        const timed = profilingEnabled && timedMethods.includes(name);
+        const started = timed ? clockNow() : 0;
+        const requestId = timed ? crypto.randomUUID() : "";
         return new Promise((resolve, reject) => {
           let done = false;
+          const record = (outcome, server) => {
+            if (timed) recordTiming(name, requestId, started, outcome, server);
+          };
           const timer = setTimeout(() => {
             done = true;
-            reject(
-              new Error(
-                name.startsWith("save")
-                  ? "保存の応答を確認できません。同じ操作を再試行するか、再読み込みして状態を確認してください。"
-                  : "読み込みが時間内に完了しませんでした。少し待って再読み込みしてください。",
-              ),
-            );
+            record("timeout");
+            reject(new Error(name.startsWith("save")
+              ? "保存の応答を確認できません。同じ操作を再試行するか、再読み込みして状態を確認してください。"
+              : "読み込みが時間内に完了しませんでした。少し待って再読み込みしてください。"));
           }, 30000);
-          const finish = (fn) => (result) => {
-            if (done) return;
+          const finish = (fn, late) => (result) => {
+            if (done) { if (late) late(result); return; }
             done = true;
             clearTimeout(timer);
             fn(result);
           };
-          google.script.run
-            .withSuccessHandler(finish(resolve))
-            .withFailureHandler(
-              finish((e) => reject(new Error(e.message || String(e)))),
-            )
-            [name](arg);
+          const runner = google.script.run
+            .withSuccessHandler(finish((result) => {
+              if (!timed) { resolve(result); return; }
+              if (!result || !result.profile || result.profile.request_id !== requestId) {
+                record("invalid_response"); reject(new Error("計測応答を確認できません。")); return;
+              }
+              record(result.ok ? "success" : "server_error", result.profile);
+              if (result.ok) resolve(result.value);
+              else reject(new Error(result.error || "処理を完了できませんでした。"));
+            }, (result) => {
+              if (!timed || !result || !result.profile || result.profile.request_id !== requestId) return;
+              const sample = timingSamples.find((s) => s.request_id === requestId && s.outcome === "timeout");
+              if (!sample) return;
+              sample.late_roundtrip_ms = roundedMs(clockNow() - started);
+              sample.late_server = result.profile;
+              renderTimings();
+            }))
+            .withFailureHandler(finish((e) => {
+              record("transport_error"); reject(new Error(e.message || String(e)));
+            }));
+          if (timed) runner.profileLedger({ method: name, arg, request_id: requestId });
+          else runner[name](arg);
         });
       }
       function safeLink(url, label, kind) {

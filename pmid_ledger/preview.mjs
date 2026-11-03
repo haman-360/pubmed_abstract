@@ -22,7 +22,9 @@ env.reindex();
 const page = fs
   .readFileSync(new URL("./gas/Index.html", import.meta.url), "utf8")
   .replace("<?= initialPmid ?>", "")
-  .replace("<?= initialIssue ?>", "");
+  .replace("<?= initialIssue ?>", "")
+  .replace("<?= profiling ?>", process.env.PREVIEW_PROFILE === "1" ? "1" : "")
+  .replace("<?= profileWrites ?>", "1");
 const bridge = `<script>window.google={script:{run:new Proxy({}, {get(target,name){if(name==='withSuccessHandler')return fn=>{target.success=fn;return new Proxy(target,this);};if(name==='withFailureHandler')return fn=>{target.failure=fn;return new Proxy(target,this);};return arg=>{const ok=target.success,fail=target.failure;fetch('/rpc',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,arg})}).then(r=>r.json()).then(r=>r.error?fail({message:r.error}):ok(r.value)).catch(fail);};}})}};</script>`;
 const server = http.createServer(async (req, res) => {
   if (req.method === "GET") {
@@ -51,6 +53,7 @@ const server = http.createServer(async (req, res) => {
         "exportData",
         "listIssues",
         "saveIssueReview",
+        "profileLedger",
       ].includes(name)
     )
       throw new Error("Unknown method");
