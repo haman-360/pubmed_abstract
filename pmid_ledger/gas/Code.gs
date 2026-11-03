@@ -543,8 +543,9 @@ function verifyRevision_(ctx) {
             values[write.key + ":" + i] = points
               .slice(i * 16000, (i + 1) * 16000)
               .join("");
+          // The reader requires every part; partial eviction still falls back to Sheets.
+          values[write.key] = String(count);
           write.cache.putAll(values, 300);
-          write.cache.put(write.key, String(count), 300);
         } catch (e) {
           /* Cache quotas do not affect correctness. */
         }
@@ -553,7 +554,7 @@ function verifyRevision_(ctx) {
     ctx.cacheWrites = [];
   });
 }
-function state_(ctx) {
+function state_(ctx, deferRevision) {
   return timingStep_("compute.paperContext", function () {
     ctx = ctx || book_();
     ctx.reviewEvents = ctx.reviewEvents || read_(ctx.book, "Reviews");
@@ -562,19 +563,19 @@ function state_(ctx) {
       cachedRead_(ctx, "Appearances"),
       ctx.reviewEvents,
     );
-    verifyRevision_(ctx);
+    if (!deferRevision) verifyRevision_(ctx);
     return ctx;
   });
 }
-function issuesContext_() {
+function issuesContext_(deferRevision) {
   return timingStep_("compute.issueContext", function () {
     var ctx = book_();
-    if (!ctx.book.getSheetByName("Issues")) return state_(ctx);
+    if (!ctx.book.getSheetByName("Issues")) return state_(ctx, deferRevision);
     ctx.issueIndex = cachedRead_(ctx, "Issues");
     ctx.reviewEvents = read_(ctx.book, "Reviews");
     ctx.reviewStates = Ledger.reviews(ctx.reviewEvents);
     ctx.issueEvents = read_(ctx.book, "IssueReviews");
-    verifyRevision_(ctx);
+    if (!deferRevision) verifyRevision_(ctx);
     return ctx;
   });
 }
@@ -613,7 +614,7 @@ function doGet(e) {
     .addMetaTag("viewport", "width=device-width, initial-scale=1");
 }
 function listPapers(request) {
-  var ctx = state_(),
+  var ctx = state_(null, true),
     scoped = ctx.papers,
     issue = null;
   if (request && request.issue_key) {
@@ -691,9 +692,11 @@ function currentIssue_(ctx, key) {
 function listIssuePapers(request) {
   request = request || {};
   validateIssueKey_(request.issue_key);
-  var ctx = issuesContext_(), issue = currentIssue_(ctx, request.issue_key);
+  var ctx = issuesContext_(true), issue = currentIssue_(ctx, request.issue_key);
   Ledger.assert(issue, "この配信は台帳へ未同期の可能性があります。毎時43分の同期完了後に再読み込みしてください。");
   function legacy() {
+    // Publish only a verified snapshot before the legacy path opens its own context.
+    verifyRevision_(ctx);
     var page = listPapers(Object.assign({}, request, { tab: "all" }));
     page.scores_available = false;
     page.items.forEach(function (p) { p.score = null; });
@@ -746,7 +749,10 @@ function listIssuePapers(request) {
 function reviewSaveResult_(ctx, changes, issueKey, replayed) {
   var states = ctx.reviewStates || Ledger.reviews(ctx.reviewEvents);
   verifyRevision_(ctx);
+  var today = today_();
   return {
+    counts: issueKey ? null : Ledger.query(ctx.papers, { tab: "all" }, today).counts,
+    today: today, boundary: Ledger.cutoff(today),
     saved: true, replayed: !!replayed, count: changes.length, revision: ctx.settings.revision,
     reviews: changes.map(function (c) { return { pmid: c.pmid, review: states[c.pmid] || defaultReview_() }; }),
     issue: issueKey ? currentIssue_(ctx, issueKey) : null
@@ -756,7 +762,7 @@ function getPaperDetail(request) {
   var pmid = typeof request === "string" ? request : request.pmid;
   var issueKey = typeof request === "string" ? "" : request.issue_key;
   Ledger.pmid(pmid);
-  var ctx = state_(),
+  var ctx = state_(null, true),
     p = ctx.papers.find(function (x) {
       return x.pmid === pmid;
     });

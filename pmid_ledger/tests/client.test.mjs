@@ -251,3 +251,70 @@ test("client timeout and failed response record outcome, retain original retry b
   assert.equal(c.run('timingSamples[0].outcome'), 'timeout');
   assert.equal(c.run('timingSamples[0].late_server.total_ms'), 31000);
 });
+
+test('normal PMID save applies confirmed states and counts without refetching or rebuilding cards', async () => {
+  const c=client(2);
+  await c.run("activeFilter={tab:'all',status:'unreviewed'}; load()");
+  const card=c.get('papers').children[0];
+  const note=c.all('papers').find(n=>n.tag==='textarea');note.value='retain note';note.oninput();
+  c.choose(0,'want_fulltext');c.calls.length=0;
+  await c.get('save-drafts').onclick();await new Promise(setImmediate);
+  assert.deepEqual(c.calls,['saveReviews']);
+  assert.equal(c.get('papers').children[0],card);assert.equal(note.value,'retain note');
+  assert.equal(c.run('current.counts.want'),1);assert.equal(c.run('current.list_stale'),true);
+  assert.match(c.get('range').textContent,/再読み込みで更新/);
+  assert.equal(c.run('drafts.size'),0);
+  c.calls.length=0;await c.run('load()');assert.deepEqual(c.calls,['listPapers']);
+  assert.equal(c.run('current.list_stale'),undefined);
+});
+
+test('return reuses only a recent unchanged matching delivery list; opening and explicit reload fetch fresh data', async () => {
+  const c=client(2);
+  c.get('issue-status').value='open';
+  await c.run('switchView(true); loadIssues()');
+  await c.run(`openIssue('["issue1","感染症"]')`);await new Promise(setImmediate);
+  c.calls.length=0;c.run('showIssues()');await new Promise(setImmediate);
+  assert.deepEqual(c.calls,[]);assert.match(c.get('feedback').textContent,/直前に取得/);
+  c.run(`openIssue('["issue1","感染症"]')`);await new Promise(setImmediate);
+  assert.deepEqual(c.calls,['listIssuePapers']);
+  c.run('showIssues()');await new Promise(setImmediate);c.calls.length=0;
+  await c.get('issue-refresh').onclick();assert.deepEqual(c.calls,['listIssues']);
+  c.run(`openIssue('["issue1","感染症"]')`);await new Promise(setImmediate);
+  c.run('issueListLoadedAt-=61000');c.calls.length=0;c.run('showIssues()');await new Promise(setImmediate);
+  assert.deepEqual(c.calls,['listIssues']);
+});
+
+test('delivery list cannot be reused after saves, failed saves, changed filters, or failed fetches', async () => {
+  for(const mode of ['save','failed-save','filter','failed-fetch']){
+    const c=client(2);c.get('issue-status').value='open';
+    await c.run('switchView(true); loadIssues()');
+    c.run(`openIssue('["issue1","感染症"]')`);await new Promise(setImmediate);
+    if(mode.includes('save')){
+      c.choose(0,'want_fulltext');
+      if(mode==='failed-save')c.e.ctx.saveReviews=()=>{throw new Error('unknown response');};
+      await c.get('save-drafts').onclick();await new Promise(setImmediate);
+    }else if(mode==='filter')c.get('issue-status').value='all';
+    else{
+      const list=c.e.ctx.listIssues;c.e.ctx.listIssues=()=>{throw new Error('service unavailable');};
+      await c.run('loadIssues()');c.e.ctx.listIssues=list;
+    }
+    c.calls.length=0;c.run('showIssues()');await new Promise(setImmediate);
+    assert.deepEqual(c.calls,['listIssues'],mode);
+  }
+});
+
+test('normal-save lost response retries the same operation and applies newer confirmed state and counts', async () => {
+  const c=client(2);await c.run("activeFilter={tab:'all'}; load()");
+  const card=c.get('papers').children[0];c.choose(0,'want_fulltext');
+  const original=c.e.ctx.saveReviews;let lose=true;
+  c.e.ctx.saveReviews=arg=>{const result=original(arg);if(lose){lose=false;throw new Error('response lost');}return result;};
+  await c.get('save-drafts').onclick();await new Promise(setImmediate);
+  assert.equal(c.run('drafts.size'),1);
+  original({operation_id:'other-client-newer-save',changes:[{pmid:'1',status:'read',note:'newer confirmed note',expected_version:1}]});
+  c.calls.length=0;await c.get('save-drafts').onclick();await new Promise(setImmediate);
+  assert.deepEqual(c.calls,['saveReviews']);assert.equal(c.e.tables.Reviews.length,3);
+  assert.equal(c.get('papers').children[0],card);assert.equal(c.run('drafts.size'),0);
+  assert.equal(c.run("current.items.find(p=>p.pmid==='1').review.status"),'read');
+  assert.equal(c.run('current.counts.want'),0);assert.equal(c.run('current.counts.done'),1);
+  assert.ok(c.all('papers').some(n=>n.tag==='textarea'&&n.value==='newer confirmed note'));
+});

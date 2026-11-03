@@ -481,7 +481,11 @@
         exportUrl = null,
         activeFilter = { tab: "recent" };
       let issuePage = null,
-        issueOffset = 0;
+        issueOffset = 0,
+        issueListLoadedAt = 0,
+        issueListKey = "",
+        issueListDirty = false;
+      const tabCountNodes = new Map();
       const selected = new Map(),
         drafts = new Map(),
         attempts = new Map(),
@@ -740,9 +744,11 @@
           (current.synced_at || "未同期") +
           " ｜ 欠損した要約は再生成しません。";
         el("tabs").replaceChildren();
+        tabCountNodes.clear();
         for (const key of tabOrder) {
           const b = node("button", current.tabs[key]);
-          b.append(node("strong", String(current.counts[key])));
+          const countNode = node("strong", String(current.counts[key]));
+          b.append(countNode); tabCountNodes.set(key, countNode);
           b.setAttribute("aria-pressed", String(activeFilter.tab === key));
           b.onclick = () => {
             activeFilter = { tab: key };
@@ -760,6 +766,16 @@
           true,
         );
         el("topic").value = prior;
+        renderPaperRange();
+        el("papers").replaceChildren();
+        paperViews.clear();
+        if (!current.items.length)
+          el("papers").append(node("p", "この条件の論文はありません。"));
+        for (const p of current.items) el("papers").append(paperCard(p));
+        selectionInfo();
+        updateDraftSaveBar();
+      }
+      function renderPaperRange() {
         el("range").textContent =
           current.total +
           "件中 " +
@@ -776,13 +792,8 @@
             Math.min(offset + current.page_size, current.total) + "件" +
             (current.scores_available === false ? " ｜ この配信のスコア一覧は未提供です。" : "");
         }
-        el("papers").replaceChildren();
-        paperViews.clear();
-        if (!current.items.length)
-          el("papers").append(node("p", "この条件の論文はありません。"));
-        for (const p of current.items) el("papers").append(paperCard(p));
-        selectionInfo();
-        updateDraftSaveBar();
+        if (current.list_stale) el("range").textContent +=
+          " ｜ 保存結果を反映済みです。一覧の対象・件数・並び順は再読み込みで更新します。";
       }
       function paperCard(p) {
         const card = node("article"), badge = node("span", "", "badge");
@@ -857,7 +868,7 @@
         return current && current.issue ? issueDraftChanges() : draftChanges();
       }
       function applySaveResult(result, changes) {
-        if (!Array.isArray(result.reviews)) return false;
+        if (!Array.isArray(result.reviews) || (!current.issue && !result.counts)) return false;
         const reviews = new Map(result.reviews.map((r) => [r.pmid, r.review]));
         if (!changes.every((c) => reviews.has(c.pmid))) return false;
         changes.forEach((c) => drafts.delete(c.pmid));
@@ -865,6 +876,14 @@
         selected.forEach((p) => { if (reviews.has(p.pmid)) p.review = reviews.get(p.pmid); });
         if (result.issue && current.issue && result.issue.issue_key === current.issue.issue_key) current.issue = result.issue;
         current.revision = result.revision || current.revision;
+        if (!current.issue) {
+          current.counts = result.counts;
+          current.today = result.today || current.today;
+          current.boundary = result.boundary || current.boundary;
+          current.list_stale = true;
+          tabCountNodes.forEach((n, key) => { n.textContent = String(current.counts[key]); });
+          renderPaperRange();
+        }
         paperViews.forEach((v) => v.update());
         renderIssueContext(); updateDraftSaveBar(); selectionInfo();
         return true;
@@ -887,6 +906,7 @@
         const key = JSON.stringify(changes);
         if (!attempts.has(key)) attempts.set(key, crypto.randomUUID());
         try {
+          issueListDirty = true;
           const result = await rpc("saveReviews", {
             changes,
             issue_key: current && current.issue ? current.issue.issue_key : "",
@@ -895,13 +915,13 @@
           if (!result || result.saved !== true)
             throw new Error("保存を確認できません。再読み込みしてください。");
           attempts.delete(key);
-          if (!current.issue || !applySaveResult(result, changes)) {
+          if (!applySaveResult(result, changes)) {
             changes.forEach((c) => drafts.delete(c.pmid));
             await load(false);
           }
           el("export-area").hidden = true;
           feedback(result.count + "件を保存しました。" +
-            (activeFilter.status ? "表示中の論文は再検索までこの一覧に残ります。" : ""), "success");
+            (!current.issue ? "一覧の対象・件数・並び順は再読み込みで更新します。" : ""), "success");
           return true;
         } catch (e) {
           feedback(e.message, "error");
@@ -1322,16 +1342,21 @@
         el("issue-footer").append(bottom);
         updateCompletionButtons();
       }
+      function issueListRequestKey() {
+        return JSON.stringify([el("issue-status").value, el("issue-topic").value, issueOffset]);
+      }
       async function loadIssues() {
         if (busy) return;
         setBusy(true);
         feedback("配信一覧を読み込み中…");
+        issueListLoadedAt = 0;
         try {
-          issuePage = await rpc("listIssues", {
+          const request = {
             status: el("issue-status").value,
             topic: el("issue-topic").value,
             offset: issueOffset,
-          });
+          };
+          issuePage = await rpc("listIssues", request);
           issueOffset = issuePage.offset;
           el("test-notice").hidden = !String(
             issuePage.environment || "",
@@ -1367,6 +1392,9 @@
           }
           if (!issuePage.items.length)
             el("issue-cards").append(node("p", "この条件の配信はありません。"));
+          issueListKey = JSON.stringify([request.status, request.topic, issuePage.offset]);
+          issueListLoadedAt = Date.now();
+          issueListDirty = false;
           feedback("");
         } catch (e) {
           feedback(e.message, "error");
@@ -1390,8 +1418,13 @@
         )
           return;
         changes.forEach((change) => drafts.delete(change.pmid));
+        const returning = el("issue-view").hidden;
         switchView(true);
-        loadIssues();
+        if (returning && issuePage && !issueListDirty && issueListLoadedAt &&
+            Date.now() - issueListLoadedAt < 60000 && issueListKey === issueListRequestKey()) {
+          feedback("直前に取得した配信一覧です。最新の状態は「再読み込み」で確認できます。");
+          setBusy(false);
+        } else loadIssues();
       }
       function openIssue(key) {
         if (busy) return;
@@ -1426,6 +1459,7 @@
         const key = "issue:" + JSON.stringify(value);
         if (!attempts.has(key)) attempts.set(key, crypto.randomUUID());
         try {
+          issueListDirty = true;
           const result = await rpc("saveIssueReview", {
             ...value,
             operation_id: attempts.get(key),
