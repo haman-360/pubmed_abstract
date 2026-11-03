@@ -163,7 +163,7 @@ test("one click saves and completes without reloading cards or clearing selectio
   c.calls.length = 0;
   const done = c.button("issue-footer","保存して確認完了");
   await Promise.all([done.onclick(), done.onclick()]);
-  assert.deepEqual(c.calls, ["saveReviews","saveIssueReview"]);
+  assert.deepEqual(c.calls, ["saveAndCompleteIssue"]);
   assert.equal(c.get("papers").children[0],card);
   assert.equal(note.value,"自分用メモ"); assert.equal(check.checked,true);
   assert.match(c.progress("issue-footer"), /^確認済み/);
@@ -171,38 +171,48 @@ test("one click saves and completes without reloading cards or clearing selectio
   assert.equal(c.e.tables.IssueReviews.length,2);
 });
 
-test("completion failure retries completion only; save-response loss reuses the operation", async () => {
+test("partial completion failure retries the original combined request without duplicating paper saves", async () => {
   const c = client(2); await c.run("load()");
   c.choose(0,"want_fulltext"); c.choose(1,"reviewed_no_fulltext");
-  const save = c.e.ctx.saveReviews;
-  let lose = true;
-  c.e.ctx.saveReviews = arg => { const result = save(arg); if (lose) { lose=false; throw new Error("response lost"); } return result; };
-  await c.button("issue-footer","保存して確認完了").onclick();
-  assert.match(c.progress("issue-footer"), /未保存/);
-  const complete = c.e.ctx.saveIssueReview;
-  c.e.ctx.saveIssueReview = () => { throw new Error("completion failed"); };
+  const complete = c.e.ctx.saveIssueReviewInContext_;
+  c.e.ctx.saveIssueReviewInContext_ = () => { throw new Error("completion failed"); };
   await c.button("issue-footer","保存して確認完了").onclick();
   assert.equal(c.e.tables.Reviews.length,3);
   assert.doesNotMatch(c.progress("issue-footer"),/未保存/);
-  assert.match(c.get("feedback").textContent,/編集は保存済み・配信確認は未完了/);
-  c.e.ctx.saveIssueReview = complete; c.calls.length = 0;
+  assert.match(c.get("feedback").textContent,/編集は保存済み・配信の確認完了は確認できません/);
+  const packet = c.run('JSON.stringify(completionAttempt.request)');
+  c.e.ctx.saveIssueReviewInContext_ = complete; c.calls.length = 0;
   await c.button("issue-footer","保存して確認完了").onclick();
-  assert.deepEqual(c.calls,["saveIssueReview"]);
+  assert.deepEqual(c.calls,["saveAndCompleteIssue"]);
+  assert.equal(c.e.tables.Reviews.length,3);assert.equal(c.e.tables.IssueReviews.length,2);
+  assert.equal(c.run('completionAttempt'),null);
   assert.match(c.progress("issue-footer"),/^確認済み/);
+  assert.ok(packet.includes('review_operation_id'));
 });
 
-test("a delivery content change after paper saving prevents automatic completion", async () => {
+test("lost combined response reuses both IDs and cannot append the completion twice", async () => {
   const c = client(2); await c.run("load()");
   c.choose(0,"want_fulltext"); c.choose(1,"reviewed_no_fulltext");
-  const save = c.e.ctx.saveReviews;
-  c.e.ctx.saveReviews = arg => { const result = save(arg); result.issue.content_version = "changed"; return result; };
-  c.calls.length = 0;
-  await c.button("issue-footer","保存して確認完了").onclick();
-  assert.deepEqual(c.calls,["saveReviews"]);
-  assert.match(c.get("feedback").textContent,/配信内容が更新/);
-  assert.equal(c.e.tables.IssueReviews.length,1);
+  const save=c.e.ctx.saveAndCompleteIssue;let lose=true;const packets=[];
+  c.e.ctx.saveAndCompleteIssue=request=>{packets.push(JSON.stringify(request));const result=save(request);if(lose){lose=false;throw new Error('response lost');}return result;};
+  await c.button('issue-footer','保存して確認完了').onclick();
+  assert.match(c.progress('issue-footer'),/未保存/);
+  await c.button('issue-footer','保存して確認完了').onclick();
+  assert.equal(packets[0],packets[1]);assert.equal(c.e.tables.Reviews.length,3);
+  assert.equal(c.e.tables.IssueReviews.length,2);assert.match(c.progress('issue-footer'),/^確認済み/);
 });
 
+test("metadata changes between the two save stages retain confirmed edits and block completion", async () => {
+  const c = client(2); await c.run("load()");
+  c.choose(0,"want_fulltext"); c.choose(1,"reviewed_no_fulltext");
+  const save=c.e.ctx.saveReviewsInContext_;
+  c.e.ctx.saveReviewsInContext_=(...args)=>{const result=save(...args);c.e.tables.Settings.find(r=>r[0]==='revision')[1]='changed';return result;};
+  c.calls.length=0;await c.button('issue-footer','保存して確認完了').onclick();
+  assert.deepEqual(c.calls,['saveAndCompleteIssue']);
+  assert.doesNotMatch(c.progress('issue-footer'),/未保存/);
+  assert.match(c.get('feedback').textContent,/編集は保存済み/);
+  assert.equal(c.e.tables.IssueReviews.length,1);
+});
 
 test("client timing separates RPC/server/frame time and never records request or response content", async () => {
   const c = client(2, true, true);
@@ -317,4 +327,28 @@ test('normal-save lost response retries the same operation and applies newer con
   assert.equal(c.run("current.items.find(p=>p.pmid==='1').review.status"),'read');
   assert.equal(c.run('current.counts.want'),0);assert.equal(c.run('current.counts.done'),1);
   assert.ok(c.all('papers').some(n=>n.tag==='textarea'&&n.value==='newer confirmed note'));
+});
+
+
+test('all 51 edits across two pages save and complete through one request', async () => {
+  const c=client(51);await c.run('load()');
+  for(let i=0;i<50;i++)c.choose(i,'want_fulltext');
+  c.get('next').onclick();await new Promise(setImmediate);c.choose(0,'reviewed_no_fulltext');
+  c.calls.length=0;await c.button('issue-footer','保存して確認完了').onclick();
+  assert.deepEqual(c.calls,['saveAndCompleteIssue']);assert.equal(c.e.tables.Reviews.length,52);
+  assert.equal(c.e.tables.IssueReviews.length,2);assert.equal(c.run('drafts.size'),0);
+  assert.match(c.progress('issue-footer'),/^確認済み.*51 \/ 51件/);
+});
+
+test('new edits after a confirmed paper-only save receive new operation IDs', async () => {
+  const c=client(2);await c.run('load()');c.choose(0,'want_fulltext');c.choose(1,'reviewed_no_fulltext');
+  const complete=c.e.ctx.saveIssueReviewInContext_;c.e.ctx.saveIssueReviewInContext_=()=>{throw new Error('unavailable');};
+  await c.button('issue-footer','保存して確認完了').onclick();
+  const first=JSON.parse(c.run('JSON.stringify(completionAttempt.request)'));
+  c.choose(0,'read');c.e.ctx.saveIssueReviewInContext_=complete;
+  const combined=c.e.ctx.saveAndCompleteIssue;let second;
+  c.e.ctx.saveAndCompleteIssue=request=>{second=JSON.parse(JSON.stringify(request));return combined(request);};
+  await c.button('issue-footer','保存して確認完了').onclick();
+  assert.notEqual(first.operation_id,second.operation_id);assert.notEqual(first.review_operation_id,second.review_operation_id);
+  assert.equal(c.e.tables.Reviews.length,4);assert.match(c.progress('issue-footer'),/^確認済み/);
 });

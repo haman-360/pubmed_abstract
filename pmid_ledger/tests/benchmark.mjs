@@ -34,12 +34,18 @@ function measure(source, candidates) {
       if (operation.endsWith("list")) {page=e.list();rpc++;}
       else {
         const changes=page.items.map(p=>({pmid:p.pmid,status:"reviewed_no_fulltext",note:"",expected_version:0}));
+        if (operation==="save_and_complete" && candidates && typeof e.ctx.saveAndCompleteIssue==="function") {
+          e.ctx.saveAndCompleteIssue({issue_key:issueKey, changes,
+            review_operation_id:"benchmark-save-"+n,operation_id:"benchmark-complete-"+n,
+            expected_version:page.issue.version,content_version:page.issue.content_version}); rpc++;
+        } else {
         const saved=e.ctx.saveReviews({changes,operation_id:"benchmark-save-"+n, ...(candidates?{issue_key:issueKey}:{})});rpc++;
         if (!candidates){page=e.list();rpc++;}
         if (operation==="save_and_complete") {
           const issue=candidates?saved.issue:page.issue;
           e.ctx.saveIssueReview({issue_key:issueKey,status:"completed",operation_id:"benchmark-complete-"+n,expected_version:issue.version,content_version:issue.content_version});rpc++;
           if (!candidates){e.list();rpc++;}
+        }
         }
       }
       times.push(performance.now()-started); calls.push(rpc);ranges.push(e.reads.length);rows.push(e.reads.reduce((n,r)=>n+r.count,0));

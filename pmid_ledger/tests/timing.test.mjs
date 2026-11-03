@@ -36,7 +36,7 @@ test('production timing rejects writes and unknown endpoints even when client pr
   const e = environment({ indexed: true, candidates: true });
   const get = e.ctx.PropertiesService.getScriptProperties;
   e.ctx.PropertiesService.getScriptProperties = () => ({ getProperty: name => name === 'LEDGER_INSTANCE' ? 'production' : get().getProperty(name) });
-  for (const method of ['saveReviews', 'saveIssueReview']) {
+  for (const method of ['saveReviews', 'saveIssueReview', 'saveAndCompleteIssue']) {
     const result = e.ctx.profileLedger(request(method, save));
     assert.equal(result.ok, false);
     assert.match(result.error, /本番台帳/);

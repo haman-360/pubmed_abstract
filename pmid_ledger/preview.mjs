@@ -54,6 +54,7 @@ const server = http.createServer(async (req, res) => {
         "listIssues",
         "saveIssueReview",
         "profileLedger",
+        "saveAndCompleteIssue",
       ].includes(name)
     )
       throw new Error("Unknown method");

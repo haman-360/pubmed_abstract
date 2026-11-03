@@ -490,7 +490,7 @@
         drafts = new Map(),
         attempts = new Map(),
         paperViews = new Map();
-      let completing = false;
+      let completing = false, completionAttempt = null, completionNeedsReload = false;
       function feedback(text, kind = "") {
         el("feedback").textContent = text;
         el("feedback").className = kind;
@@ -578,7 +578,7 @@
       const profilingEnabled = document.body.dataset.profile === "1";
       const profilingWrites = document.body.dataset.profileWrites === "1";
       const timingSamples = [];
-      const timedMethods = ["listIssues", "listIssuePapers", "listPapers", "getPaperDetail", "saveReviews", "saveIssueReview"];
+      const timedMethods = ["listIssues", "listIssuePapers", "listPapers", "getPaperDetail", "saveReviews", "saveIssueReview", "saveAndCompleteIssue"];
       const clockNow = () => typeof performance !== "undefined" ? performance.now() : Date.now();
       const roundedMs = (n) => Math.round(n * 10) / 10;
       function renderTimings() {
@@ -725,6 +725,7 @@
         try {
           current = await rpc(activeFilter.issue_key ? "listIssuePapers" : "listPapers", { ...activeFilter, offset });
           offset = current.offset;
+          completionAttempt = null; completionNeedsReload = false;
           render();
           if (clear) feedback("");
         } catch (e) {
@@ -1222,27 +1223,47 @@
       }
       function updateCompletionButtons() {
         document.querySelectorAll('[data-complete-issue="true"]').forEach((b) => {
-          b.disabled = busy || completing || remainingUnreviewed() > 0 || visibleDraftChanges().length > 100;
+          b.disabled = busy || completing || completionNeedsReload || remainingUnreviewed() > 0 || visibleDraftChanges().length > 100;
         });
       }
       async function completeIssue() {
         if (busy || completing || !current || !current.issue) return;
+        if (completionNeedsReload) { feedback("最新の状態を再読み込みして確認してください。", "error"); return; }
         if (remainingUnreviewed() > 0) { feedback("未確認の論文が残っています。", "error"); return; }
-        completing = true; updateCompletionButtons();
-        const contentVersion = current.issue.content_version;
-        let saved = false;
+        const changes = issueDraftChanges(), changesKey = JSON.stringify(changes);
+        if (changes.length > 100) { feedback("一括保存は100件までです。", "error"); return; }
+        // Keep the exact envelope across unknown outcomes or a paper-only success.
+        if (!completionAttempt || completionAttempt.request.issue_key !== current.issue.issue_key ||
+            (changes.length && completionAttempt.changesKey !== changesKey)) {
+          completionAttempt = { changesKey, request: {
+            issue_key: current.issue.issue_key, changes,
+            review_operation_id: changes.length ? crypto.randomUUID() : "",
+            operation_id: crypto.randomUUID(), expected_version: current.issue.version,
+            content_version: current.issue.content_version,
+          } };
+        }
+        const request = completionAttempt.request;
+        completing = true; setBusy(true); issueListDirty = true;
+        feedback("編集を保存して配信の確認を完了しています…");
         try {
-          const changes = issueDraftChanges();
-          if (changes.length) {
-            saved = await saveChanges(changes);
-            if (!saved) return;
+          const result = await rpc("saveAndCompleteIssue", request);
+          if (!result || result.saved !== true || !applySaveResult(result, request.changes))
+            throw new Error("保存の応答を確認できません。同じ操作を再試行してください。");
+          el("export-area").hidden = true;
+          if (result.completion_recorded) {
+            completionAttempt = null;
+            completionNeedsReload = !result.completed || !!result.needs_reload;
+            feedback(result.completed
+              ? "編集を保存し、この配信を確認済みにしました。"
+              : "この操作の確認完了は保存済みです。再読み込みして現在の状態を確認してください。",
+              result.completed ? "success" : "error");
+          } else {
+            completionNeedsReload = !!result.needs_reload;
+            feedback((request.changes.length ? "編集は保存済み・配信の確認完了は確認できません。" : "配信の確認完了を確認できません。") +
+              (completionNeedsReload ? "再読み込みして現在の内容を確認してください。\n" : "「保存して確認完了」で同じ操作を再試行できます。\n") + (result.error || ""), "error");
           }
-          if (current.issue.content_version !== contentVersion) {
-            feedback("編集は保存済みですが、配信内容が更新されました。再読み込みして確認してください。", "error"); return;
-          }
-          const completed = await saveIssue(current.issue, "completed");
-          if (!completed && saved) feedback("編集は保存済み・配信確認は未完了です。「保存して確認完了」で再試行できます。\n" + el("feedback").textContent, "error");
-        } finally { completing = false; updateCompletionButtons(); }
+        } catch (e) { feedback(e.message, "error"); }
+        finally { completing = false; setBusy(false); }
       }
       function issueProgressText(issue, includeDrafts = false) {
         let classified = issue.total - issue.unreviewed;
