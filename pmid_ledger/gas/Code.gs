@@ -616,13 +616,16 @@ function doGet(e) {
     .addMetaTag("viewport", "width=device-width, initial-scale=1");
 }
 function listPapers(request) {
-  var ctx = state_(null, true),
-    scoped = ctx.papers,
+  return listPapersInContext_(request, state_(null, true));
+}
+function listPapersInContext_(request, ctx) {
+  if (!ctx.papers) state_(ctx, true);
+  var scoped = ctx.papers,
     issue = null;
   if (request && request.issue_key) {
     validateIssueKey_(request.issue_key);
     if (ctx.book.getSheetByName("Issues")) {
-      ctx.issueIndex = cachedRead_(ctx, "Issues");
+      ctx.issueIndex = ctx.issueIndex || cachedRead_(ctx, "Issues");
       ctx.reviewStates = Object.fromEntries(
         ctx.papers.map(function (p) {
           return [p.pmid, p.review];
@@ -697,9 +700,8 @@ function listIssuePapers(request) {
   var ctx = issuesContext_(true), issue = currentIssue_(ctx, request.issue_key);
   Ledger.assert(issue, "この配信は台帳へ未同期の可能性があります。毎時43分の同期完了後に再読み込みしてください。");
   function legacy() {
-    // Publish only a verified snapshot before the legacy path opens its own context.
-    verifyRevision_(ctx);
-    var page = listPapers(Object.assign({}, request, { tab: "all" }));
+    // Reuse this request's snapshot; the shared reader verifies it before publishing.
+    var page = listPapersInContext_(Object.assign({}, request, { tab: "all" }), ctx);
     page.scores_available = false;
     page.items.forEach(function (p) { p.score = null; });
     return page;
@@ -1112,7 +1114,7 @@ function issueState_(ctx) {
   return timingStep_("compute.issueProgress", function () {
     var groups = {},
       states = {};
-    (ctx.issueEvents || read_(ctx.book, "IssueReviews")).forEach(function (e) {
+    (ctx.issueEvents || (ctx.issueEvents = read_(ctx.book, "IssueReviews"))).forEach(function (e) {
       validateIssueKey_(e.issue_key);
       Ledger.assert(
         ["unreviewed", "in_progress", "completed"].includes(e.status),

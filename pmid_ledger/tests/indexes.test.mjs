@@ -168,3 +168,49 @@ test('cache publishes all parts and count together without a separate put', () =
   e.ctx.listIssues({});assert.equal(batches,1);assert.equal(puts,0);
   e.ctx.listIssues({});assert.equal(batches,1);
 });
+
+test('legacy delivery paths reuse one snapshot and keep the normal list result', () => {
+  const key = '["issue1","感染症"]';
+  for (const mode of ['no-indexes', 'no-candidates', 'no-candidate-range', 'retained-snapshot']) {
+    const reads = [], cache = new Map();
+    const e = environment({indexed: mode !== 'no-indexes', candidates: true, cache,
+      onRead: (name) => reads.push(name)});
+    if (mode === 'no-candidates') delete e.tables.IssueCandidates;
+    if (mode === 'no-candidate-range') e.tables.IssueCandidateRows.splice(1);
+    if (mode === 'retained-snapshot') e.tables.IssueCandidates[1][1] = '10';
+    e.ctx.saveReviews({operation_id:'legacy-fresh-review-001',changes:[
+      {pmid:'1',status:'want_fulltext',note:'keep this note',expected_version:0}
+    ]});
+    const request = {issue_key:key, query:'Old title', offset:50};
+    const expected = e.plain(e.ctx.listPapers({...request,tab:'all'}));
+    expected.scores_available = false;
+    expected.items.forEach(p => {p.score = null;});
+    let opens = 0;
+    const open = e.ctx.SpreadsheetApp.openById;
+    e.ctx.SpreadsheetApp.openById = (...args) => {opens++;return open(...args);};
+    cache.clear();
+    for (const temperature of ['cold','warm']) {
+      reads.length = 0; opens = 0;
+      assert.deepEqual(e.plain(e.ctx.listIssuePapers(request)),expected,mode+' '+temperature);
+      assert.equal(opens,1,mode+' opens');
+      for (const [name,count] of [['Settings',2],['Reviews',1],['IssueReviews',1]])
+        assert.equal(reads.filter(n=>n===name).length,count,mode+' '+temperature+' '+name);
+    }
+    assert.equal(e.writes(),1,'only the setup review was written');
+  }
+});
+
+test('legacy delivery fallback never publishes a snapshot changed during its additional reads', () => {
+  const key = '["issue1","感染症"]';
+  for (const indexed of [false,true]) {
+    for (const changedDuring of ['Papers','Appearances']) {
+      const cache = new Map();
+      const e = environment({indexed, cache, onRead:(name,tables)=>{
+        if(name===changedDuring)tables.Settings.find(r=>r[0]==='revision')[1]='changed';
+      }});
+      assert.throws(()=>e.ctx.listIssuePapers({issue_key:key}),/同期中/);
+      assert.equal(cache.size,0);
+      assert.equal(e.writes(),0);
+    }
+  }
+});
