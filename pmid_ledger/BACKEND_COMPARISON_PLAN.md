@@ -19,7 +19,7 @@ SQLは掲載履歴と手動履歴の分離、検索、版数の条件付き保�
 | 対象 | 保持する性質 | 主なコード・テスト |
 | --- | --- | --- |
 | 所有関係 | Pythonは書誌・掲載履歴・候補評価・本文・同期版を更新。手動の状態・メモ・配信確認履歴を同期で上書きしない | `GoogleStore.publish`、`core.HEADERS` |
-| PMIDの状態 | `unreviewed`、`reviewed_no_fulltext`、`want_fulltext`、`fulltext_obtained`、`read`。履歴がなければ未確認・版0。状態は配信横断で共通 | `Ledger.reviews`、`defaultReview_`、`ledger.test.mjs` |
+| PMIDの状態 | `unreviewed`、`reviewed_no_fulltext`、`want_fulltext`、`fulltext_obtained`、`read`。履歴がなければ未確認・版0。新しい試作UIは「未確認・原本不要・入手希望」の3択（2026-11-04利用者指定）。旧2状態は履歴互換のため保持。状態は配信横断で共通 | `Ledger.reviews`、`defaultReview_`、`ledger.test.mjs` |
 | 配信の識別 | `JSON.stringify([issue_id, topic])`相当の組で区別。同じDocsリンクやPMIDでも別配信の確認完了を引き継がない | `issueKey_`、`issues.test.mjs` |
 | 掲載内容の版 | 現行`core.to_tables`のsnapshot_id集合から作る`content_version`を保持。完了時の版と異なれば`content_changed`を示して再確認対象にする。単なる同期時刻変更で再確認にはしない | `to_tables`、`issueState_` |
 | 過去の内容 | 配信当時タイトル・評価・本文、訂正版snapshot、候補順、選定区分、CURRENTリンクを保持。別配信の評価で欠損を埋めない | `Dataset.snapshot`、`merge_payload`、`candidates.test.mjs` |
@@ -165,7 +165,7 @@ D1は検索結果が少なくても広い走査が読取量になる。無料枠
 
 ## 採否と次の成果物
 
-共通fixture・GASとの主要結果の比較、BのローカルD1の保存／rollback／再送・世代公開試験と小さな画面を実装した。次はローカルで検索のSQL化・バックアップ復元・Python同期adapterを進め、無料プラン適合に必要な読取量・CPUを評価できる形へ近づける。AのRules成立性の比較も残る。片方の成立性で問題が見つかったら、その制約を記録してから比較範囲を見直す。
+共通fixture・GASとの主要結果の比較、BのローカルD1の保存／rollback／再送・世代公開試験と小さな画面を実装した。ローカルで検索のSQL化・バックアップ復元も実装した。次はPythonのHTTP同期adapterと負荷試験を進め、無料プラン適合に必要な読取量・CPUを評価できる形へ近づける。AのRules成立性の比較も残る。片方の成立性で問題が見つかったら、その制約を記録してから比較範囲を見直す。
 
 まず追加支出0円で継続できることを採用の必須条件として確認し、満たさない構成は速度に関係なく除外する。そのうえで契約適合、Mac／iPad本人ログイン、Pythonの無人同期、バックアップ復元、低頻度利用時の待ち時間、保守の手間を同じ表で判定する。現時点では実測欄は両案とも未測定。無料構成で改善が成立しなければ現行GASの継続も結論として認める。設定作業と未解決点も成果物に残す。
 

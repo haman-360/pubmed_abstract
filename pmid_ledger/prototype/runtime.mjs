@@ -2,6 +2,7 @@ import {Miniflare} from 'miniflare';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {backfillLists} from './worker.mjs';
 
 export function fixture(revised = false) {
   return JSON.parse(execFileSync('python3', ['-m', 'pmid_ledger.prototype.fixture', ...(revised ? ['--revised'] : [])],
@@ -19,6 +20,7 @@ export async function runtime({persist = false, port = 0, local = true} = {}) {
     const db = await mf.getD1Database('DB');
     const statements = fs.readFileSync(new URL('./schema.sql', import.meta.url), 'utf8').split('\n-- statement\n');
     for (const sql of statements) await db.prepare(sql).run();
+    await backfillLists(db);
     return {mf, db};
   } catch (e) { await mf.dispose(); throw e; }
 }

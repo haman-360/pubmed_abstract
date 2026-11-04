@@ -1,2 +1,4 @@
 node_modules/
 .local-d1/
+.backups/
+.restored-d1/

@@ -58,6 +58,25 @@ CREATE TABLE IF NOT EXISTS issue_current (
 -- statement
 CREATE TABLE IF NOT EXISTS publish_guard (ok INTEGER CHECK(ok=1));
 -- statement
+CREATE TABLE IF NOT EXISTS issue_lists (
+  generation TEXT, issue_key TEXT, info_json TEXT NOT NULL, items_json TEXT NOT NULL,
+  PRIMARY KEY(generation,issue_key),
+  FOREIGN KEY(generation,issue_key) REFERENCES issues(generation,issue_key)
+);
+-- statement
+CREATE VIEW IF NOT EXISTS issue_states AS
+SELECT s.generation AS revision,l.issue_key,
+  json_patch(l.info_json,json_object(
+    'unreviewed',(SELECT count(*) FROM members m LEFT JOIN review_current p ON p.pmid=m.pmid
+      WHERE m.generation=s.generation AND m.issue_key=l.issue_key AND COALESCE(p.status,'unreviewed')='unreviewed'),
+    'status',CASE WHEN r.status='completed' AND rtrim(r.content_version,'=')<>rtrim(i.content_version,'=')
+      THEN 'in_progress' ELSE COALESCE(r.status,'unreviewed') END,
+    'content_changed',json(CASE WHEN r.status='completed' AND rtrim(r.content_version,'=')<>rtrim(i.content_version,'=') THEN 'true' ELSE 'false' END),
+    'version',COALESCE(r.version,0),'updated_at',COALESCE(r.updated_at,''))) AS item_json
+FROM settings s JOIN issue_lists l ON l.generation=s.generation
+JOIN issues i ON i.generation=l.generation AND i.issue_key=l.issue_key
+LEFT JOIN issue_current r ON r.issue_key=l.issue_key WHERE s.id=1;
+-- statement
 CREATE TRIGGER IF NOT EXISTS operation_hash_guard BEFORE INSERT ON operations
 WHEN EXISTS(SELECT 1 FROM operations WHERE id=NEW.id AND request_hash<>NEW.request_hash)
 BEGIN
