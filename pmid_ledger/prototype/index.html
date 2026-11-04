@@ -12,6 +12,7 @@ header{border-left:5px solid #277a69;padding:12px;background:white}button,select
 <h2 id="heading">配信一覧</h2><div id="list"></div>
 <nav id="controls" hidden><span id="progress"></span><button id="previous">前へ</button><button id="next">次へ</button><button id="save">途中まで保存</button><button id="complete">保存して確認完了</button><button id="retry" hidden>同じ要求を再試行</button></nav>
 <script type="module">
+import {downloadBackup} from '/backup-client.mjs';
 const $=id=>document.getElementById(id);
 const labels={unreviewed:'未確認',reviewed_no_fulltext:'原本不要',want_fulltext:'入手希望'};
 const legacyLabels={fulltext_obtained:'原文入手済み未読',read:'読了'};
@@ -59,7 +60,7 @@ $('back').onclick=()=>{if(discard()){key=null;current=null;offset=0;$('query').v
 $('reload').onclick=()=>{if(discard())load();};
 $('search').onsubmit=e=>{e.preventDefault();offset=0;load();};
 $('clear').onclick=()=>{$('query').value='';offset=0;load();};
-$('backup').onclick=async()=>{lock(true);try{const data=await rpc('backup',{}),url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='synthetic-ledger-backup-'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message('保存済みデータのバックアップを出力しました。未保存の編集は含みません。');}catch(e){message(e.message);}finally{lock(false);if(pending)for(const el of document.querySelectorAll('select,textarea,#save,#complete,#previous,#next'))el.disabled=true;}};
+$('backup').onclick=async()=>{lock(true);try{const parts=[];for await(const line of downloadBackup(rpc))parts.push(line+'\n');const url=URL.createObjectURL(new Blob(parts,{type:'application/x-ndjson'}));const link=document.createElement('a');link.href=url;link.download='synthetic-ledger-backup-'+new Date().toISOString().replace(/[:.]/g,'-')+'.ndjson';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message('保存済みデータのバックアップを出力しました。未保存の編集は含みません。');}catch(e){message(e.message);}finally{lock(false);}};
 addEventListener('beforeunload',e=>{if(drafts.size||pending){e.preventDefault();e.returnValue='';}});
 await load();
 </script></html>

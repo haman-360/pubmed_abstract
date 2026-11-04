@@ -1,6 +1,10 @@
 // A fixed, local-only format. No SQL, paths or credentials are read from the backup.
+import {FORMAT,validateManifest} from './chunked.mjs';
 export const backupColumns = {
   generations:['id','payload_hash','tables_json'],
+  metadata_chunks:['generation','table_name','chunk_index','chunk_hash','row_offset','row_count'],
+  metadata_records:['generation','table_name','row_index','chunk_index','row_json','entity_key','parent_key'],
+  generation_ready:['generation','manifest_hash'],
   papers:['generation','pmid','title'],
   issues:['generation','issue_key','content_version'],
   members:['generation','issue_key','pmid'],
@@ -19,23 +23,40 @@ export async function digestBackup(value) {
   return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(stable(value))))].map(n=>n.toString(16).padStart(2,'0')).join('');
 }
 function check(ok,code) {if(!ok)throw Object.assign(new Error(code),{status:400});}
-export async function exportBackup(db) {
-  const selects=names.map(n=>`(SELECT json_group_array(json_array(${backupColumns[n].join(',')})) FROM ${n}) AS ${n}`);
+export async function exportBackup(db,{format='LOCAL_SYNTHETIC_D1_BACKUP_V2'}={}) {
+  const size=await db.prepare(`SELECT (SELECT COALESCE(sum(length(CAST(row_json AS BLOB))),0) FROM metadata_records)
+    +(SELECT COALESCE(sum(length(CAST(tables_json AS BLOB))),0) FROM generations)
+    +(SELECT COALESCE(sum(length(CAST(note AS BLOB))),0) FROM review_events) bytes`).first();
+  check(size.bytes<750000,'use_stream_backup');
+  const selected=format.endsWith('_V1')?names.filter(n=>!['metadata_chunks','metadata_records','generation_ready'].includes(n)):names;
+  const selects=selected.map(n=>`(SELECT json_group_array(json_array(${backupColumns[n].join(',')})) FROM ${n}) AS ${n}`);
   const row=await db.prepare(`SELECT generation AS active_revision,${selects.join(',')} FROM settings WHERE id=1`).first();
-  const tables=Object.fromEntries(names.map(n=>[n,JSON.parse(row[n]).map(r=>[stable(r),r]).sort((a,b)=>a[0]<b[0]?-1:a[0]>b[0]?1:0).map(x=>x[1])]));
-  const payload={format:'LOCAL_SYNTHETIC_D1_BACKUP_V1',synthetic:true,active_revision:row.active_revision,tables};
+  const tables=Object.fromEntries(selected.map(n=>[n,JSON.parse(row[n]).map(r=>[stable(r),r]).sort((a,b)=>a[0]<b[0]?-1:a[0]>b[0]?1:0).map(x=>x[1])]));
+  const payload={format,synthetic:true,active_revision:row.active_revision,tables};
   return {payload,sha256:await digestBackup(payload)};
 }
 export async function validateBackup(backup) {
   const p=backup?.payload;
-  check(p?.format==='LOCAL_SYNTHETIC_D1_BACKUP_V1'&&p.synthetic===true,'invalid_backup_format');
+  check(['LOCAL_SYNTHETIC_D1_BACKUP_V1','LOCAL_SYNTHETIC_D1_BACKUP_V2'].includes(p?.format)&&p.synthetic===true,'invalid_backup_format');
   check(await digestBackup(p)===backup.sha256,'backup_checksum_mismatch');
-  check(p.tables&&Object.keys(p.tables).length===names.length&&names.every(n=>Array.isArray(p.tables[n])),'invalid_backup_tables');
-  for(const n of names)for(const row of p.tables[n])check(Array.isArray(row)&&row.length===backupColumns[n].length&&row.every(v=>typeof v==='string'||Number.isSafeInteger(v)),'invalid_backup_row');
+  const selected=p.format.endsWith('_V1')?names.filter(n=>!['metadata_chunks','metadata_records','generation_ready'].includes(n)):names;
+  check(p.tables&&Object.keys(p.tables).length===selected.length&&selected.every(n=>Array.isArray(p.tables[n])),'invalid_backup_tables');
+  for(const n of selected)for(const row of p.tables[n])check(Array.isArray(row)&&row.length===backupColumns[n].length&&row.every(v=>typeof v==='string'||Number.isSafeInteger(v)),'invalid_backup_row');
   const objects=n=>p.tables[n].map(r=>Object.fromEntries(backupColumns[n].map((k,i)=>[k,r[i]])));
   const generations=objects('generations');
   check(p.active_revision===null||generations.some(g=>g.id===p.active_revision),'invalid_active_revision');
   for(const g of generations)check(await digestBackup(JSON.parse(g.tables_json))===g.payload_hash,'invalid_metadata_hash');
+  for(const g of generations){const manifest=JSON.parse(g.tables_json);if(manifest.format!==FORMAT)continue;
+    check(!p.format.endsWith('_V1'),'chunked_backup_requires_v2');validateManifest(manifest);
+    const chunks=objects('metadata_chunks').filter(c=>c.generation===g.id),rows=objects('metadata_records').filter(r=>r.generation===g.id),ready=objects('generation_ready').find(r=>r.generation===g.id);
+    if(ready)check(ready.manifest_hash===g.payload_hash&&chunks.length===Object.values(manifest.tables).reduce((n,s)=>n+s.chunks.length,0),'invalid_ready_generation');
+    check(rows.length===chunks.reduce((n,c)=>n+c.row_count,0),'invalid_chunk_record_count');
+    for(const c of chunks){const expected=manifest.tables[c.table_name]?.chunks[c.chunk_index];
+      check(expected&&c.chunk_hash===expected.sha256&&c.row_count===expected.count&&c.row_offset===expected.offset,'invalid_chunk_descriptor');
+      const data=rows.filter(r=>r.table_name===c.table_name&&r.chunk_index===c.chunk_index).sort((a,b)=>a.row_index-b.row_index);
+      check(data.length===expected.count&&data.every((r,i)=>r.row_index===expected.offset+i)&&await digestBackup(data.map(r=>JSON.parse(r.row_json)))===expected.sha256,'invalid_chunk_data');
+    }
+  }
   const operations=objects('operations'),opMap=new Map(operations.map(o=>[o.id,o]));
   check(opMap.size===operations.length,'duplicate_operation');
   const expectedIds=[];
@@ -69,7 +90,7 @@ export async function restoreBackup(db,backup,triggerStatements,{simulateFailure
   const empty=names.map(n=>`(SELECT count(*) FROM ${n})`).join('+');
   const statements=[db.prepare(`INSERT INTO publish_guard VALUES((SELECT CASE WHEN generation IS NULL AND (${empty})=0 THEN 1 ELSE 0 END FROM settings WHERE id=1))`),
     db.prepare('DROP TRIGGER apply_operation'),db.prepare('DROP TRIGGER operation_hash_guard')];
-  for(const n of names){
+  for(const n of names.filter(n=>p.tables[n])){
     const cols=backupColumns[n];
     statements.push(db.prepare(`INSERT INTO ${n} (${cols.join(',')}) SELECT ${cols.map((_,i)=>`json_extract(value,'$[${i}]')`).join(',')} FROM json_each(?)`).bind(JSON.stringify(p.tables[n])));
   }
@@ -77,7 +98,7 @@ export async function restoreBackup(db,backup,triggerStatements,{simulateFailure
     ...triggerStatements.map(sql=>db.prepare(sql)),db.prepare('DELETE FROM publish_guard'));
   if(simulateFailure)statements.push(db.prepare('INSERT INTO publish_guard VALUES(0)'));
   await db.batch(statements);
-  const verified=await exportBackup(db);
+  const verified=await exportBackup(db,{format:p.format});
   check(verified.sha256===backup.sha256,'restore_readback_mismatch');
   return {restored:true,revision:p.active_revision};
 }

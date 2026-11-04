@@ -1,87 +1,24 @@
 // Local experiment only. No production authentication or external service calls.
 import {exportBackup} from './backup-data.mjs';
 import {profiledDatabase,newProfile} from './profile.mjs';
-const statuses = new Set(['unreviewed', 'reviewed_no_fulltext', 'want_fulltext', 'fulltext_obtained', 'read']);
-const metadataNames = ['Papers', 'Appearances', 'Texts', 'Issues', 'TextRows', 'IssueCandidates', 'IssueCandidateRows'];
-const defaultReview = () => ({status: 'unreviewed', version: 0, note: '', status_updated_at: '', updated_at: ''});
-function requireThat(ok, code, status = 400) {
-  if (!ok) throw Object.assign(new Error(code), {status});
-}
-function canonical(value) {
-  if (Array.isArray(value)) return '[' + value.map(canonical).join(',') + ']';
-  if (value && typeof value === 'object') return '{' + Object.keys(value).sort().map(k => JSON.stringify(k) + ':' + canonical(value[k])).join(',') + '}';
-  return JSON.stringify(value);
-}
-async function hash(value) {
-  const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical(value)));
-  return [...new Uint8Array(bytes)].map(x => x.toString(16).padStart(2, '0')).join('');
-}
-function records(rows) {
-  return rows.slice(1).map(row => Object.fromEntries(rows[0].map((key, i) => [key, row[i] ?? ''])));
-}
-function validKey(key) {
-  let parsed;
-  try { parsed = JSON.parse(key); } catch { /* validated below */ }
-  requireThat(Array.isArray(parsed) && parsed.length === 2 && parsed.every(x => typeof x === 'string' && x.length > 0), 'invalid_issue_key');
-  requireThat(JSON.stringify(parsed) === key, 'noncanonical_issue_key');
-}
-function operationRequest(body, kind) {
-  const r = {kind, operation_id: body.operation_id, revision: body.revision, changes: body.changes ?? []};
-  requireThat(/^[A-Za-z0-9-]{16,80}$/.test(r.operation_id ?? ''), 'invalid_operation_id');
-  requireThat(typeof r.revision === 'string' && /^[a-f0-9]{64}$/.test(r.revision), 'invalid_revision');
-  requireThat(Array.isArray(r.changes) && r.changes.length <= 100 && (kind !== 'reviews' || r.changes.length > 0), 'invalid_change_count');
-  const ids = new Set();
-  r.changes = r.changes.map(c => {
-    requireThat(c && typeof c.pmid === 'string' && /^[1-9][0-9]{0,8}$/.test(c.pmid) && !ids.has(c.pmid), 'invalid_or_duplicate_pmid');
-    ids.add(c.pmid);
-    requireThat(statuses.has(c.status) && typeof c.note === 'string' && c.note.length <= 2000 && Number.isSafeInteger(c.expected_version) && c.expected_version >= 0, 'invalid_review');
-    return {pmid: c.pmid, status: c.status, note: c.note, expected_version: c.expected_version};
-  });
-  if (body.issue_key !== undefined || kind !== 'reviews') {
-    validKey(body.issue_key);
-    r.issue_key = body.issue_key;
-  }
-  if (kind !== 'reviews') {
-    requireThat(Number.isSafeInteger(body.expected_version) && body.expected_version >= 0 && typeof body.content_version === 'string', 'invalid_issue_version');
-    r.expected_version = body.expected_version;
-    r.content_version = body.content_version;
-    r.status = kind === 'complete' ? 'completed' : body.status;
-    requireThat(['unreviewed', 'in_progress', 'completed'].includes(r.status), 'invalid_issue_status');
-  }
-  if (kind === 'issue') requireThat(r.changes.length === 0, 'issue_changes_forbidden');
-  if (kind === 'complete' && r.changes.length) {
-    requireThat(/^[A-Za-z0-9-]{16,80}$/.test(body.review_operation_id ?? '') && body.review_operation_id !== r.operation_id, 'invalid_review_operation_id');
-    r.review_operation_id = body.review_operation_id;
-  } else requireThat(!body.review_operation_id, 'unexpected_review_operation_id');
-  return r;
-}
+import {metadataNames,requireThat,hash,records,validKey,projectionStatements} from './metadata.mjs';
+import {operationRequest,statuses} from './operations.mjs';
+import {FORMAT,begin,upload,buildPage,finish,readChunk,chunkedDetail,buildIssue} from './chunked.mjs';
+import {startBackup,backupPage} from './backup-pages.mjs';
 
-// Body-free projections are built once at sync time, including Unicode case folding.
-function listProjection(t, raw) {
-  const apps = records(t.Appearances).filter(a => JSON.stringify([a.issue_id,a.topic]) === raw.issue_key);
-  const ids = JSON.parse(raw.pmids);
-  const candidates = records(t.IssueCandidates).filter(c => c.issue_key === raw.issue_key);
-  const scored = candidates.length === ids.length && new Set(candidates.map(c => c.pmid)).size === ids.length && candidates.every(c => ids.includes(c.pmid));
-  const rows = scored ? candidates.sort((a,b) => Number(a.position)-Number(b.position))
-    : records(t.Papers).filter(p => ids.includes(p.pmid)).sort((a,b) => Number(a.pmid)-Number(b.pmid));
-  const items = rows.map(p => {
-    const title = scored ? p.title : apps.find(a => a.pmid === p.pmid)?.title_at_delivery || p.title;
-    return {pmid:p.pmid,title,search_title:title.toLowerCase(),score:scored ? {total:p.total_score,usefulness:p.usefulness,memo:p.ai_memo} : null};
-  });
-  return {info:{issue_key:raw.issue_key,issue_id:raw.issue_id,topic:raw.topic,delivered_date:raw.delivered_date,
-    total:ids.length,content_version:raw.content_version,recovered:/^(local:|current_copy:)/.test(raw.issue_id),scores_available:scored},items};
-}
-function projectionStatements(db,g,t) {
-  return records(t.Issues).map(raw => {
-    const {info,items}=listProjection(t,raw);
-    return db.prepare('INSERT OR IGNORE INTO issue_lists VALUES(?,?,?,?)').bind(g,raw.issue_key,JSON.stringify(info),JSON.stringify(items));
-  });
-}
 export async function backfillLists(db) {
   const {results}=await db.prepare(`SELECT g.id,g.tables_json FROM generations g WHERE EXISTS(
     SELECT 1 FROM issues i WHERE i.generation=g.id AND NOT EXISTS(
       SELECT 1 FROM issue_lists l WHERE l.generation=i.generation AND l.issue_key=i.issue_key))`).all();
-  for(const g of results) await db.batch(projectionStatements(db,g.id,JSON.parse(g.tables_json)));
+  for(const g of results){
+    if(JSON.parse(g.tables_json).format===FORMAT){
+      // Interrupted uploads resume through /sync/build; startup must not project incomplete sources.
+      if(!await db.prepare('SELECT generation FROM generation_ready WHERE generation=?').bind(g.id).first())continue;
+      const keys=(await db.prepare('SELECT issue_key FROM issues WHERE generation=?').bind(g.id).all()).results;
+      for(const row of keys)await buildIssue(db,g.id,row.issue_key);
+    }
+    else await db.batch(projectionStatements(db,g.id,JSON.parse(g.tables_json)));
+  }
 }
 async function listIssues(db,r) {
   const {results}=await db.prepare(`SELECT revision,item_json FROM issue_states ORDER BY
@@ -124,6 +61,8 @@ async function issuePapers(db,r) {
 async function detail(db,r) {
   requireThat(/^[1-9][0-9]{0,8}$/.test(r.pmid??''),'invalid_pmid');
   if(r.issue_key)validKey(r.issue_key);
+  const storage=await db.prepare("SELECT json_extract(g.tables_json,'$.format') format FROM generations g JOIN settings s ON s.generation=g.id").first();
+  if(storage?.format===FORMAT)return chunkedDetail(db,r);
   const row=await db.prepare(`WITH g AS (SELECT g.id,g.tables_json FROM generations g JOIN settings s ON s.generation=g.id),
     appearances AS (SELECT a.value FROM g,json_each(g.tables_json,'$.Appearances') a
       WHERE a.key>0 AND json_extract(a.value,'$[1]')=? AND (?='' OR
@@ -171,7 +110,8 @@ async function publish(db, body) {
   requireThat(typeof body.generation === 'string' && (body.expected_revision === null || typeof body.expected_revision === 'string'), 'invalid_publish');
   await db.batch([
     db.prepare(`INSERT INTO publish_guard VALUES((SELECT CASE WHEN (generation IS ? OR generation=?) AND EXISTS(
-      SELECT 1 FROM generations WHERE id=?) THEN 1 ELSE 0 END FROM settings WHERE id=1))`).bind(body.expected_revision, body.generation, body.generation),
+      SELECT 1 FROM generations g WHERE id=? AND (json_extract(g.tables_json,'$.format') IS NOT 'LOCAL_D1_CHUNKS_V2'
+      OR EXISTS(SELECT 1 FROM generation_ready r WHERE r.generation=g.id AND r.manifest_hash=g.payload_hash))) THEN 1 ELSE 0 END FROM settings WHERE id=1))`).bind(body.expected_revision, body.generation, body.generation),
     db.prepare('UPDATE settings SET generation=? WHERE id=1').bind(body.generation),
     db.prepare('DELETE FROM publish_guard')
   ]);
@@ -208,6 +148,7 @@ export default {
     try {
       requireThat(env.LOCAL_PROTOTYPE === '1' && ['127.0.0.1', 'localhost'].includes(url.hostname), 'local_only', 403);
       if (request.method === 'GET' && url.pathname === '/') return new Response(env.LOCAL_HTML, {headers: {'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store'}});
+      if(request.method==='GET'&&['/backup-client.mjs','/metadata.mjs'].includes(url.pathname))return new Response(url.pathname==='/metadata.mjs'?env.LOCAL_METADATA:env.LOCAL_BACKUP_CLIENT,{headers:{'Content-Type':'text/javascript; charset=utf-8','Cache-Control':'no-store'}});
       requireThat(request.method === 'POST', 'post_required', 405);
       const origin = request.headers.get('Origin');
       requireThat(!origin || origin === url.origin, 'origin_denied', 403);
@@ -224,14 +165,23 @@ export default {
       if(url.pathname==='/sync/status') {
         const row=await db.prepare(`SELECT s.generation revision,g.payload_hash,g.tables_json
           FROM settings s LEFT JOIN generations g ON g.id=s.generation WHERE s.id=1`).first();
-        value={revision:row.revision,payload_hash:row.payload_hash,tables:row.tables_json?JSON.parse(row.tables_json):null};
+        const stored=row.tables_json?JSON.parse(row.tables_json):null;
+        value={revision:row.revision,payload_hash:row.payload_hash,tables:stored?.format===FORMAT?null:stored,
+          ...(stored?.format===FORMAT?{manifest:stored}:{})};
       }
+      else if(url.pathname==='/sync/begin')value=await begin(db,body);
+      else if(url.pathname==='/sync/chunk')value=await upload(db,body);
+      else if(url.pathname==='/sync/build')value=await buildPage(db,body);
+      else if(url.pathname==='/sync/finish')value=await finish(db,body);
+      else if(url.pathname==='/sync/read')value=await readChunk(db,body);
       else if (url.pathname === '/sync/stage') value = await stage(db, body);
       else if (url.pathname === '/sync/publish') value = await publish(db, body);
       else if (url.pathname === '/api/saveReviews') value = await save(db, body, 'reviews', request.headers.get('X-Local-Fault'));
       else if (url.pathname === '/api/saveAndCompleteIssue') value = await save(db, body, 'complete', request.headers.get('X-Local-Fault'));
       else if (url.pathname === '/api/saveIssueReview') value = await save(db, body, 'issue', request.headers.get('X-Local-Fault'));
       else if(url.pathname==='/api/backup') value=await exportBackup(db);
+      else if(url.pathname==='/api/backupStart')value=await startBackup(db);
+      else if(url.pathname==='/api/backupPage')value=await backupPage(db,body);
       else if(url.pathname==='/api/listIssues') value=await listIssues(db,body);
       else if(url.pathname==='/api/listIssuePapers') value=await issuePapers(db,body);
       else if(url.pathname==='/api/getPaperDetail') value=await detail(db,body);

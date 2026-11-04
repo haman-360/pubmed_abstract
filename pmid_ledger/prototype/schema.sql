@@ -9,6 +9,27 @@ CREATE TABLE IF NOT EXISTS settings (
 -- statement
 INSERT OR IGNORE INTO settings VALUES(1,NULL);
 -- statement
+CREATE TABLE IF NOT EXISTS metadata_chunks (
+  generation TEXT REFERENCES generations(id), table_name TEXT, chunk_index INTEGER,
+  chunk_hash TEXT NOT NULL, row_offset INTEGER NOT NULL, row_count INTEGER NOT NULL,
+  PRIMARY KEY(generation,table_name,chunk_index)
+);
+-- statement
+CREATE TABLE IF NOT EXISTS metadata_records (
+  generation TEXT, table_name TEXT, row_index INTEGER, chunk_index INTEGER,
+  row_json TEXT NOT NULL, entity_key TEXT NOT NULL, parent_key TEXT NOT NULL,
+  PRIMARY KEY(generation,table_name,row_index),
+  FOREIGN KEY(generation,table_name,chunk_index) REFERENCES metadata_chunks(generation,table_name,chunk_index)
+);
+-- statement
+CREATE INDEX IF NOT EXISTS metadata_entity ON metadata_records(generation,table_name,entity_key);
+-- statement
+CREATE INDEX IF NOT EXISTS metadata_parent ON metadata_records(generation,table_name,parent_key);
+-- statement
+CREATE TABLE IF NOT EXISTS generation_ready (
+  generation TEXT PRIMARY KEY REFERENCES generations(id), manifest_hash TEXT NOT NULL
+);
+-- statement
 CREATE TABLE IF NOT EXISTS papers (
   generation TEXT REFERENCES generations(id), pmid TEXT, title TEXT NOT NULL,
   PRIMARY KEY(generation,pmid)

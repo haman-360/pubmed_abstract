@@ -18,18 +18,22 @@ class SyncLocalTests(unittest.TestCase):
         with self.assertRaises(SyncError):
             check_fixture(data)
 
-    def test_5000_fixture_has_expected_relations_and_exposes_storage_limit(self):
+    def test_5000_fixture_has_expected_relations_and_uses_bounded_chunks(self):
         stats = fixture_stats(scale_fixture())
         self.assertEqual((stats["papers"], stats["issues"], stats["appearances"]), (5000, 200, 10000))
-        self.assertFalse(stats["fits_current_sync"])
-        self.assertTrue(stats["exceeds_d1_row_limit"])
+        self.assertTrue(stats["fits_current_sync"])
+        self.assertTrue(stats["exceeds_legacy_row_limit"])
+        self.assertLessEqual(stats["max_chunk_bytes"], 196608)
+        self.assertGreater(stats["chunks"], 7)
 
-    def test_oversized_fixture_is_rejected_before_any_http(self):
+    def test_oversized_individual_row_is_rejected_before_any_http(self):
         class NoHTTP:
             def post(self, *args):
                 raise AssertionError("HTTP must not be called")
-        with self.assertRaisesRegex(SyncError, "chunked storage"):
-            sync_metadata(scale_fixture(1000, 40), NoHTTP())
+        value = fixture()
+        value["tables"]["Papers"][1][1] = "a" * 180001
+        with self.assertRaisesRegex(SyncError, "metadata_row_too_large"):
+            sync_metadata(value, NoHTTP())
 
     def test_current_supported_fixture_size(self):
         self.assertTrue(fixture_stats(scale_fixture(500, 20))["fits_current_sync"])

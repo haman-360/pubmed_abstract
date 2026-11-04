@@ -13,7 +13,10 @@ from urllib.request import Request, build_opener, ProxyHandler, HTTPRedirectHand
 from pmid_ledger.core import canonical, digest, from_tables, merge_payload, to_tables
 from .fixture import fixture, scale_fixture
 
-MAX_BYTES = 1_900_000  # D1 row limit is 2,000,000 bytes; keep room for IDs and hashes.
+MAX_BYTES = 1_900_000  # Per HTTP request, not the size of the complete dataset.
+CHUNK_BYTES = 196608
+ROW_BYTES = 180000
+FORMAT = "LOCAL_D1_CHUNKS_V2"
 
 
 class SyncError(Exception):
@@ -44,7 +47,7 @@ class LocalTransport:
         self.opener = build_opener(ProxyHandler({}), NoRedirect())
 
     def post(self, action, value):
-        if action not in ("status", "stage", "publish"):
+        if action not in ("status", "begin", "chunk", "build", "finish", "read", "publish"):
             raise SyncError("Metadata sync action required")
         body = canonical(value).encode("utf-8")
         if len(body) > MAX_BYTES:
@@ -80,45 +83,103 @@ def check_fixture(value):
     names = {"Papers", "Appearances", "Texts", "Issues", "TextRows", "IssueCandidates", "IssueCandidateRows"}
     if value.get("synthetic") is not True or set(value.get("tables", {})) != names:
         raise SyncError("Synthetic metadata tables only; reviews are forbidden")
-    if len(canonical(value).encode("utf-8")) > MAX_BYTES:
-        raise SyncError("metadata_exceeds_local_sync_limit: chunked storage is required")
+    chunk_plan(value["tables"])
     return from_tables(value["tables"])
+
+
+def chunk_plan(tables):
+    manifest = {"format": FORMAT, "tables": {}}
+    chunks = []
+    for name, table in tables.items():
+        spec = {"header": table[0], "count": len(table) - 1, "chunks": []}
+        manifest["tables"][name] = spec
+        rows, size, offset = [], 2, 0
+        def flush():
+            nonlocal rows, size, offset
+            if not rows:
+                return
+            spec["chunks"].append({"index": len(spec["chunks"]), "offset": offset, "count": len(rows),
+                                   "bytes": len(canonical(rows).encode("utf-8")), "sha256": digest(rows)})
+            chunks.append({"table_name": name, "index": len(spec["chunks"]) - 1, "rows": rows})
+            offset += len(rows)
+            rows, size = [], 2
+        for row in table[1:]:
+            length = len(canonical(row).encode("utf-8"))
+            if length > ROW_BYTES:
+                raise SyncError("metadata_row_too_large")
+            if rows and size + length + 1 > CHUNK_BYTES:
+                flush()
+            rows.append(row)
+            size += length + (1 if len(rows) > 1 else 0)
+        flush()
+    if len(canonical(manifest).encode("utf-8")) > CHUNK_BYTES:
+        raise SyncError("manifest_too_large")
+    return manifest, chunks
 
 
 def fixture_stats(value):
     tables = value["tables"]
-    wire = len(canonical(value).encode("utf-8"))
+    manifest, chunks = chunk_plan(tables)
     stored = len(canonical(tables).encode("utf-8"))
     return {"papers": len(tables["Papers"]) - 1, "issues": len(tables["Issues"]) - 1,
-            "appearances": len(tables["Appearances"]) - 1, "wire_bytes": wire,
-            "metadata_json_bytes": stored, "fits_current_sync": wire <= MAX_BYTES,
-            "exceeds_d1_row_limit": stored + 128 > 2_000_000}
+            "appearances": len(tables["Appearances"]) - 1,
+            "wire_bytes": len(canonical(value).encode("utf-8")), "metadata_json_bytes": stored,
+            "chunks": len(chunks), "max_chunk_bytes": max((len(canonical(c["rows"]).encode("utf-8")) for c in chunks), default=0),
+            "manifest_bytes": len(canonical(manifest).encode("utf-8")), "fits_current_sync": True,
+            "exceeds_legacy_row_limit": stored + 128 > 2_000_000}
+
+
+def read_tables(current, transport):
+    if current["tables"] is not None:
+        return current["tables"]
+    manifest = current["manifest"]
+    if digest(manifest) != current["payload_hash"] or manifest.get("format") != FORMAT:
+        raise SyncError("Invalid published manifest")
+    tables = {}
+    for name, spec in manifest["tables"].items():
+        rows = [spec["header"]]
+        for descriptor in spec["chunks"]:
+            part = transport.post("read", {"generation": current["revision"], "table_name": name, "index": descriptor["index"]})["rows"]
+            if len(part) != descriptor["count"] or digest(part) != descriptor["sha256"]:
+                raise SyncError("Published chunk readback mismatch")
+            rows.extend(part)
+        if len(rows) - 1 != spec["count"]:
+            raise SyncError("Published row count mismatch")
+        tables[name] = rows
+    return tables
 
 
 def sync_metadata(incoming, transport, stop_after_stage=False):
     payload = check_fixture(incoming)
+    initial_manifest, _ = chunk_plan(incoming["tables"])
     current = transport.post("status", {})
     expected = current["revision"]
-    if current["tables"] is not None:
-        payload = merge_payload(from_tables(current["tables"]), payload)
+    def result(changed):
+        return {"changed": changed, "verified": True, "papers": len(payload["papers"]),
+                "appearances": len(payload["appearances"]), "requests": transport.requests}
+    if current.get("payload_hash") in (digest(initial_manifest), digest(incoming["tables"])):
+        return result(False)
+    if expected is not None:
+        payload = merge_payload(from_tables(read_tables(current, transport)), payload)
     tables = to_tables(payload)
     generation = digest(payload)
-    value = dict(synthetic=True, generation=generation, tables=tables)
-    check_fixture(value)  # Also cap the merged result before writing.
-    table_hash = digest(tables)
-    if current.get("payload_hash") == table_hash:
-        return {"changed": False, "verified": True, "papers": len(payload["papers"]),
-                "appearances": len(payload["appearances"]), "requests": transport.requests}
-    transport.post("stage", value)
+    manifest, chunks = chunk_plan(tables)
+    root_hash = digest(manifest)
+    if current.get("payload_hash") == root_hash:
+        return result(False)
+    transport.post("begin", {"synthetic": True, "generation": generation, "manifest": manifest})
+    for chunk in chunks:
+        transport.post("chunk", {"generation": generation, **chunk})
+    for offset in range(0, manifest["tables"]["Issues"]["count"], 5):
+        transport.post("build", {"generation": generation, "offset": offset})
+    transport.post("finish", {"generation": generation})
     if stop_after_stage:
         return {"staged": True, "published": False, "requests": transport.requests}
-    # A timeout resends this same CAS request. A metadata conflict never adopts a new expected revision.
     transport.post("publish", {"generation": generation, "expected_revision": expected})
     verified = transport.post("status", {})
-    if verified["revision"] != generation or digest(verified["tables"]) != table_hash:
+    if verified["revision"] != generation or verified["payload_hash"] != root_hash or digest(verified["manifest"]) != root_hash:
         raise SyncError("Published metadata could not be verified; reload before retry")
-    return {"changed": True, "verified": True, "papers": len(payload["papers"]),
-            "appearances": len(payload["appearances"]), "requests": transport.requests}
+    return result(True)
 
 
 def main():
