@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>架空台帳：ローカルD1試作</title>
+<style>
+body{font:16px system-ui;margin:24px auto;padding:0 16px;max-width:960px;background:#f5f7fa;color:#203046}
+header{border-left:5px solid #277a69;padding:12px;background:white}button,select,textarea,input{font:inherit;padding:10px;max-width:100%;box-sizing:border-box}button{cursor:pointer;margin:4px}article{background:white;border:1px solid #ccd6df;border-radius:8px;padding:16px;margin:12px 0}textarea{display:block;width:100%;margin-top:8px}nav{position:sticky;bottom:0;background:#e5eeeccc;padding:10px;backdrop-filter:blur(8px)}#message{white-space:pre-wrap}h2{font-size:20px}small{display:block}button:disabled{opacity:.5}
+</style>
+<header><h1>架空台帳 · ローカルD1試作</h1><p>追加費用0円／このMac内だけで動作。実データ・Google・Cloudflareのクラウドへ接続しません。</p><small>仮認証。クラウド速度・無料プランのCPU制限・本人ログインは未検証です。</small></header>
+<p id="message" role="status"></p>
+<button id="back">配信一覧</button><button id="reload">再読み込み</button>
+<h2 id="heading">配信一覧</h2><div id="list"></div>
+<nav id="controls" hidden><span id="progress"></span><button id="previous">前へ</button><button id="next">次へ</button><button id="save">途中まで保存</button><button id="complete">保存して確認完了</button><button id="retry" hidden>同じ要求を再試行</button></nav>
+<script type="module">
+const $=id=>document.getElementById(id);
+const labels={unreviewed:'未確認',reviewed_no_fulltext:'確認済み・原文不要',want_fulltext:'原文入手希望',fulltext_obtained:'原文入手済み未読',read:'読了'};
+let key=null,offset=0,current=null,pending=null,busy=false;
+const drafts=new Map();
+function message(text){$('message').textContent=text;}
+function lock(value){busy=value;for(const el of document.querySelectorAll('button,select,textarea'))el.disabled=value;}
+async function rpc(name,body){const response=await fetch('/api/'+name,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer local-synthetic-owner'},body:JSON.stringify(body)});const data=await response.json();if(!response.ok)throw new Error(data.error);return data.value;}
+function progress(){if(current)$('progress').textContent=`${current.issue.total}件中 未確認${current.issue.unreviewed}件／未保存${drafts.size}件 `;}
+async function load(){
+  lock(true);
+  try{
+    const data=await rpc(key?'listIssuePapers':'listIssues',key?{issue_key:key,offset}:{});
+    $('list').replaceChildren();$('controls').hidden=!key;
+    if(!key){$('heading').textContent='配信一覧';for(const issue of data.items){const card=document.createElement('article'),button=document.createElement('button');button.textContent=`${issue.issue_id} · ${issue.topic} — 未確認${issue.unreviewed}/${issue.total} · ${issue.status}`;button.onclick=()=>{key=issue.issue_key;offset=0;load();};card.append(button);$('list').append(card);}}
+    else{current=data;offset=data.offset;$('heading').textContent=`${data.issue.issue_id} · ${data.issue.topic}`;
+      for(const row of data.items){const card=document.createElement('article'),title=document.createElement('h2'),select=document.createElement('select'),note=document.createElement('textarea'),detail=document.createElement('button');
+        title.textContent=`PMID ${row.pmid} — ${row.title}`;select.setAttribute('aria-label',`PMID ${row.pmid} 状態`);note.setAttribute('aria-label',`PMID ${row.pmid} メモ`);note.maxLength=2000;
+        for(const [value,label]of Object.entries(labels)){const option=document.createElement('option');option.value=value;option.textContent=label;select.append(option);}
+        const draft=drafts.get(row.pmid);select.value=draft?.status??row.review.status;note.value=draft?.note??row.review.note;
+        const edit=()=>{if(select.value===row.review.status&&note.value===row.review.note)drafts.delete(row.pmid);else drafts.set(row.pmid,{pmid:row.pmid,status:select.value,note:note.value,expected_version:drafts.get(row.pmid)?.expected_version??row.review.version});progress();};select.onchange=edit;note.oninput=edit;
+        detail.textContent='架空本文';detail.onclick=async()=>{try{const result=await rpc('getPaperDetail',{pmid:row.pmid,issue_key:key});const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=result.appearances.map(a=>a.text.summary_ja??'').join('\n').slice(0,2000);detail.replaceWith(pre);}catch(e){message(e.message);}};
+        card.append(title,select,note,detail);$('list').append(card);
+      }progress();
+    }
+    message('ローカルD1から取得しました。');
+  }catch(e){message(e.message);}finally{lock(false);$('retry').hidden=!pending;}
+}
+async function submit(complete=false){
+  if(!pending){if(!complete&&!drafts.size){message('変更はありません。');return;}
+    const changes=[...drafts.values()];pending={name:complete?'saveAndCompleteIssue':'saveReviews',body:{operation_id:crypto.randomUUID(),revision:current.revision,issue_key:key,changes,
+      ...(complete?{expected_version:current.issue.version,content_version:current.issue.content_version,...(changes.length?{review_operation_id:crypto.randomUUID()}:{})}:{})}};}
+  lock(true);
+  try{const result=await rpc(pending.name,pending.body);pending=null;drafts.clear();await load();message(result.completed?'保存し、配信確認を完了しました。':'保存しました。');}
+  catch(e){message(`保存を確認できません: ${e.message}\n再試行は同じ操作ID・内容で送ります。競合の場合は再読み込みしてください。`);}
+  finally{lock(false);$('retry').hidden=!pending;if(pending)for(const el of document.querySelectorAll('select,textarea,#save,#complete,#previous,#next'))el.disabled=true;}
+}
+$('save').onclick=()=>submit();$('complete').onclick=()=>submit(true);$('retry').onclick=()=>submit();
+$('previous').onclick=()=>{offset=Math.max(0,offset-50);load();};$('next').onclick=()=>{if(offset+50<current.total){offset+=50;load();}};
+function discard(){if((drafts.size||pending)&&!confirm('未保存の編集と再試行要求を破棄しますか？'))return false;drafts.clear();pending=null;return true;}
+$('back').onclick=()=>{if(discard()){key=null;current=null;offset=0;load();}};
+$('reload').onclick=()=>{if(discard())load();};
+addEventListener('beforeunload',e=>{if(drafts.size||pending){e.preventDefault();e.returnValue='';}});
+await load();
+</script></html>
