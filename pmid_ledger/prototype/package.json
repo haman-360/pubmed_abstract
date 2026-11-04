@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "start": "node local.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "benchmark": "node benchmark.mjs"
   },
   "engines": { "node": ">=22" },
   "devDependencies": { "miniflare": "4.20260730.0" }

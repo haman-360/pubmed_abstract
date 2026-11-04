@@ -24,10 +24,10 @@ export async function runtime({persist = false, port = 0, local = true} = {}) {
     return {mf, db};
   } catch (e) { await mf.dispose(); throw e; }
 }
-export async function call(mf, name, body = {}, {sync = false, token, fault, origin} = {}) {
+export async function call(mf, name, body = {}, {sync = false, token, fault, origin, profile = false} = {}) {
   const response = await mf.dispatchFetch('http://127.0.0.1/' + (sync ? 'sync/' : 'api/') + name, {
     method: 'POST', headers: {'Content-Type': 'application/json', Authorization: token ?? (sync ? 'Bearer local-synthetic-sync' : 'Bearer local-synthetic-owner'),
-      ...(fault ? {'X-Local-Fault': fault} : {}), ...(origin ? {Origin: origin} : {})}, body: JSON.stringify(body)});
+      ...(fault ? {'X-Local-Fault': fault} : {}), ...(origin ? {Origin: origin} : {}), ...(profile?{'X-Local-Profile':'1'}:{})}, body: JSON.stringify(body)});
   return {status: response.status, ...await response.json()};
 }
 export async function seed(mf, data = fixture(), expected_revision = null) {

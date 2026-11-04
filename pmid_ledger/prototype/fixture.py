@@ -33,6 +33,36 @@ def fixture(revised=False):
     return dict(synthetic=True, generation=digest(payload), tables=to_tables(payload))
 
 
+def scale_fixture(papers=5000, issues=200):
+    """Two appearances per PMID, with unique synthetic summaries and candidate rows."""
+    if not (1 <= papers <= 5000 and 1 <= issues <= 200 and 2 * papers % issues == 0):
+        raise ValueError("Invalid synthetic scale")
+    data = Dataset()
+    for n in range(1, papers + 1):
+        data.paper(str(n), "synthetic-scale", "感染症", seen="2026-08-20",
+                   title=f"架空 Scale Clinical Study {n}: 日本語・100%_評価🧪")
+    for i in range(issues):
+        issue = f"synthetic-scale-{i:03d}"
+        rows = []
+        for position in range(2 * papers // issues):
+            identifier = str((i * (2 * papers // issues) + position) % papers + 1)
+            title = data.papers[identifier]["title"]
+            snapshot = data.snapshot(identifier, issue, "感染症", "synthetic-scale", "2026-08-20",
+                                     title, "candidate", "", summary_ja=f"架空論文{identifier}：" + "架空の本文。" * 100)
+            rows.append(dict(pmid=identifier, snapshot_id=snapshot, position=position, title=title,
+                             total_score=str(position % 30), usefulness="未評価", ai_memo="架空の評価"))
+        data.issue_candidates[json.dumps([issue, "感染症"], ensure_ascii=False, separators=(",", ":"))] = rows
+    payload = data.payload()
+    return dict(synthetic=True, generation=digest(payload), tables=to_tables(payload))
+
+
 if __name__ == "__main__":
-    import sys
-    print(json.dumps(fixture("--revised" in sys.argv), ensure_ascii=False))
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--revised", action="store_true")
+    parser.add_argument("--scale", action="store_true")
+    parser.add_argument("--papers", type=int, default=5000)
+    parser.add_argument("--issues", type=int, default=200)
+    args = parser.parse_args()
+    value = scale_fixture(args.papers, args.issues) if args.scale else fixture(args.revised)
+    print(json.dumps(value, ensure_ascii=False, separators=(",", ":")))

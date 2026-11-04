@@ -56,6 +56,10 @@ CREATE TABLE IF NOT EXISTS issue_current (
   content_version TEXT NOT NULL, updated_at TEXT NOT NULL
 );
 -- statement
+CREATE INDEX IF NOT EXISTS review_events_operation ON review_events(operation_id);
+-- statement
+CREATE INDEX IF NOT EXISTS issue_events_operation ON issue_events(operation_id);
+-- statement
 CREATE TABLE IF NOT EXISTS publish_guard (ok INTEGER CHECK(ok=1));
 -- statement
 CREATE TABLE IF NOT EXISTS issue_lists (

@@ -1,5 +1,6 @@
 // Local experiment only. No production authentication or external service calls.
 import {exportBackup} from './backup-data.mjs';
+import {profiledDatabase,newProfile} from './profile.mjs';
 const statuses = new Set(['unreviewed', 'reviewed_no_fulltext', 'want_fulltext', 'fulltext_obtained', 'read']);
 const metadataNames = ['Papers', 'Appearances', 'Texts', 'Issues', 'TextRows', 'IssueCandidates', 'IssueCandidateRows'];
 const defaultReview = () => ({status: 'unreviewed', version: 0, note: '', status_updated_at: '', updated_at: ''});
@@ -152,8 +153,10 @@ async function stage(db, body) {
   for (const i of records(t.Issues)) validKey(i.issue_key);
   const digest = await hash(t);
   const g = body.generation;
+  const tablesJson=JSON.stringify(t);
+  requireThat(new TextEncoder().encode(tablesJson).byteLength<=1900000,'metadata_requires_chunked_storage',413);
   await db.batch([
-    db.prepare('INSERT INTO generations VALUES(?,?,?) ON CONFLICT(id) DO NOTHING').bind(g, digest, JSON.stringify(t)),
+    db.prepare('INSERT INTO generations VALUES(?,?,?) ON CONFLICT(id) DO NOTHING').bind(g, digest, tablesJson),
     db.prepare('INSERT INTO publish_guard SELECT CASE WHEN payload_hash=? THEN 1 ELSE 0 END FROM generations WHERE id=?').bind(digest, g),
     db.prepare(`INSERT OR IGNORE INTO papers SELECT ?,json_extract(value,'$[0]'),json_extract(value,'$[1]') FROM json_each(?)`).bind(g, JSON.stringify(t.Papers.slice(1))),
     db.prepare(`INSERT OR IGNORE INTO issues SELECT ?,json_extract(value,'$[0]'),json_extract(value,'$[5]') FROM json_each(?)`).bind(g, JSON.stringify(t.Issues.slice(1))),
@@ -199,6 +202,7 @@ async function save(db, body, kind, fault) {
 
 export default {
   async fetch(request, env) {
+    const started=performance.now();let profile=null;
     const url = new URL(request.url);
     const headers = {'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff'};
     try {
@@ -212,20 +216,28 @@ export default {
       const syncing = url.pathname.startsWith('/sync/');
       requireThat(token === (syncing ? 'Bearer local-synthetic-sync' : 'Bearer local-synthetic-owner'), 'local_identity_denied', 403);
       const text = await request.text();
-      requireThat(text.length <= 2000000, 'request_too_large', 413);
+      requireThat(new TextEncoder().encode(text).byteLength <= 2000000, 'request_too_large', 413);
       const body = JSON.parse(text);
+      profile=request.headers.get('X-Local-Profile')==='1'?newProfile():null;
+      const db=profile?profiledDatabase(env.DB,profile):env.DB;
       let value;
-      if (url.pathname === '/sync/stage') value = await stage(env.DB, body);
-      else if (url.pathname === '/sync/publish') value = await publish(env.DB, body);
-      else if (url.pathname === '/api/saveReviews') value = await save(env.DB, body, 'reviews', request.headers.get('X-Local-Fault'));
-      else if (url.pathname === '/api/saveAndCompleteIssue') value = await save(env.DB, body, 'complete', request.headers.get('X-Local-Fault'));
-      else if (url.pathname === '/api/saveIssueReview') value = await save(env.DB, body, 'issue', request.headers.get('X-Local-Fault'));
-      else if(url.pathname==='/api/backup') value=await exportBackup(env.DB);
-      else if(url.pathname==='/api/listIssues') value=await listIssues(env.DB,body);
-      else if(url.pathname==='/api/listIssuePapers') value=await issuePapers(env.DB,body);
-      else if(url.pathname==='/api/getPaperDetail') value=await detail(env.DB,body);
+      if(url.pathname==='/sync/status') {
+        const row=await db.prepare(`SELECT s.generation revision,g.payload_hash,g.tables_json
+          FROM settings s LEFT JOIN generations g ON g.id=s.generation WHERE s.id=1`).first();
+        value={revision:row.revision,payload_hash:row.payload_hash,tables:row.tables_json?JSON.parse(row.tables_json):null};
+      }
+      else if (url.pathname === '/sync/stage') value = await stage(db, body);
+      else if (url.pathname === '/sync/publish') value = await publish(db, body);
+      else if (url.pathname === '/api/saveReviews') value = await save(db, body, 'reviews', request.headers.get('X-Local-Fault'));
+      else if (url.pathname === '/api/saveAndCompleteIssue') value = await save(db, body, 'complete', request.headers.get('X-Local-Fault'));
+      else if (url.pathname === '/api/saveIssueReview') value = await save(db, body, 'issue', request.headers.get('X-Local-Fault'));
+      else if(url.pathname==='/api/backup') value=await exportBackup(db);
+      else if(url.pathname==='/api/listIssues') value=await listIssues(db,body);
+      else if(url.pathname==='/api/listIssuePapers') value=await issuePapers(db,body);
+      else if(url.pathname==='/api/getPaperDetail') value=await detail(db,body);
       else throw Object.assign(new Error('unknown_endpoint'),{status:404});
-      return new Response(JSON.stringify({value}), {headers});
+      if(profile)profile.worker_wall_ms=performance.now()-started;
+      return new Response(JSON.stringify({value,...(profile?{profile}:{})}), {headers});
     } catch (e) {
       const status = e.status ?? (/operation_id_reused|UNIQUE|conflict|remaining|CHECK|missing/.test(e.message) ? 409 : 400);
       return new Response(JSON.stringify({error: e.status ? e.message : status === 409 ? 'conflict_or_invalid_atomic_operation' : 'invalid_request_or_database_failure'}), {status, headers});
