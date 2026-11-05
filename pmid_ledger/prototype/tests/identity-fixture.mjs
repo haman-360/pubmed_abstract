@@ -1,8 +1,8 @@
 // Public fixture identifiers only. Private keys/tokens are created in memory for each test run.
 import {generateKeyPair,exportJWK,SignJWT} from 'jose';
 export const now=new Date('2026-11-05T03:00:00.000Z'),seconds=Math.floor(now.getTime()/1000);
-export async function identityFixture(){
-  const owner=await generateKeyPair('RS256'),sync=await generateKeyPair('RS256');
+export async function identityFixture({extractable=false}={}){
+  const owner=await generateKeyPair('RS256',{extractable}),sync=await generateKeyPair('RS256',{extractable});
   const ownerJwk={...await exportJWK(owner.publicKey),kid:'synthetic-owner',alg:'RS256',use:'sig'};
   const syncJwk={...await exportJWK(sync.publicKey),kid:'synthetic-sync',alg:'RS256',use:'sig'};
   const config={projectId:'synthetic-ledger-auth',ownerUid:'synthetic-owner-uid',accessIssuer:'https://synthetic-ledger.cloudflareaccess.com',accessAudience:'a'.repeat(64),syncClientId:'synthetic-sync.access'};

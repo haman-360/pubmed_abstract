@@ -1,5 +1,14 @@
 # PMID論文確認台帳 開発・調査ログ
 
+## 2026-11-05 JST：Cloudflareアカウントありを確認、公開鍵取得・キャッシュ更新を検証
+
+- 利用者の回答で、既にあるのはCloudflareのアカウントと確認した。Workers／AccessのプランとFirebase利用状況は未確認。追加費用0円のまま、実ログインに先立つ鍵取得部分を実装し、Firebase Sparkの準備手順を[認証検証記録](prototype/IDENTITY_VALIDATION.md)へ追記。アカウント・契約・課金・クラウド環境は変更していない。
+- `identity-keys.mjs`でGoogle公式X509証明書と、信頼した設定のAccess team JWKSだけを取得する。GETへtokenを付けず、リダイレクトを追わない。workerdでredirect:errorが非対応と分かり、manual＋HTTP 200確認へ修正した。64KiB・16鍵・5秒で取得を制限し、不正な応答は拒否する。
+- max-ageからAgeを引き、最長24時間で公開鍵だけをメモリキャッシュ。並行更新を1取得へまとめ、期限内キャッシュの未知kid更新は30秒空ける。期限切れ更新に失敗した場合、古い鍵で許可しない。使わない日の定期通信は追加していない。
+- 追加7件を含むNode.js全53件が成功。自動試験の公開鍵HTTPは架空応答で、X509／JWKS・期限・入替・no-cache・HTTP失敗・過大応答・通信拒否を確認。workerdで更新失敗時の保存は履歴0件、復帰後の同一操作は履歴1件。テスト証明書はメモリ内鍵をopensslのstdinへ渡して生成し、秘密鍵・tokenはファイル／Gitへ保存しない。
+- Google公式公開証明書は認証情報なしで別途1回実HTTP取得し、200応答・2証明書・RSA公開鍵読込を確認。取得時max-age 18,894秒／Age 56秒で、同じ公開応答の鍵解決2回はメモリ内読込1回だった。これは公開鍵の形式確認で、Google本人ログインの証拠ではない。実Access team・クラウドCPUは未確認。
+- 通常のnpm startと利用中DB・サーバーは変更せず、仮認証と外向き拒否を維持。次はFirebase無料プロジェクトの設定確認・実Googleログイン画面とtoken更新／ログアウト、その後にFree上のCPU・Mac／iPad往復。②アプリ化・③オフラインは後。GAS同期・deployment・有料APIは未実施。
+
 ## 2026-11-05 JST：本人限定の署名JWTと同期権限分離をローカルで検証
 
 - 利用者の継続指定により、追加費用0円で認証検証を実施。[認証検証記録](prototype/IDENTITY_VALIDATION.md)へ範囲・結果・未確認点を記録。実Googleアカウント・APIキー・クラウド作成・課金・有料API・本番GASは使用／変更していない。

@@ -2,15 +2,20 @@
 import {createLocalJWKSet} from 'jose';
 import {createIdentityVerifier,verifyIdentityRequest} from './identity.mjs';
 import ledger from './worker.mjs';
+import {createPublicKeySources} from './identity-keys.mjs';
 let cached;
 function verifier(env){
   if(cached?.source===env.LOCAL_IDENTITY_FIXTURE)return cached.value;
   const fixture=JSON.parse(env.LOCAL_IDENTITY_FIXTURE);
-  for(const set of [fixture.ownerJwks,fixture.syncJwks]){
-    if(!Array.isArray(set?.keys)||!set.keys.length||set.keys.length>8||set.keys.some(k=>k.kty!=='RSA'||!k.kid||['d','p','q','dp','dq','qi','oth'].some(n=>n in k)))throw new Error('invalid_public_keys');
+  let keys;
+  if(fixture.remoteKeys)keys=createPublicKeySources(fixture.config);
+  else{
+    for(const set of [fixture.ownerJwks,fixture.syncJwks]){
+      if(!Array.isArray(set?.keys)||!set.keys.length||set.keys.length>8||set.keys.some(k=>k.kty!=='RSA'||!k.kid||['d','p','q','dp','dq','qi','oth'].some(n=>n in k)))throw new Error('invalid_public_keys');
+    }
+    keys={ownerKeys:createLocalJWKSet(fixture.ownerJwks),syncKeys:createLocalJWKSet(fixture.syncJwks)};
   }
-  const value=createIdentityVerifier(fixture.config,{ownerKeys:createLocalJWKSet(fixture.ownerJwks),syncKeys:createLocalJWKSet(fixture.syncJwks),
-    now:()=>env.LOCAL_NOW?new Date(env.LOCAL_NOW):new Date()});
+  const value=createIdentityVerifier(fixture.config,{...keys,now:()=>env.LOCAL_NOW?new Date(env.LOCAL_NOW):new Date()});
   cached={source:env.LOCAL_IDENTITY_FIXTURE,value};return value;
 }
 export default {

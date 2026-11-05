@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node local.mjs",
     "test": "node --test tests/*.test.mjs",
-    "test:identity": "node --test tests/identity.test.mjs",
+    "test:identity": "node --test tests/identity*.test.mjs",
     "benchmark": "node benchmark.mjs",
     "preflight": "node free-plan.mjs"
   },

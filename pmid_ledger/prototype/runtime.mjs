@@ -9,7 +9,7 @@ export function fixture(revised = false) {
   return JSON.parse(execFileSync('python3', ['-m', 'pmid_ledger.prototype.fixture', ...(revised ? ['--revised'] : [])],
     {cwd: fileURLToPath(new URL('../../', import.meta.url)), encoding: 'utf8', maxBuffer: 4000000}));
 }
-export async function runtime({persist = false, port = 0, local = true, now, identityFixture} = {}) {
+export async function runtime({persist = false, port = 0, local = true, now, identityFixture, identityKeyResponses} = {}) {
   let entry={scriptPath:fileURLToPath(new URL('./worker.mjs',import.meta.url))};
   if(identityFixture){
     // Bundle only the JWT test entry; normal npm start and its data are unchanged.
@@ -24,7 +24,14 @@ export async function runtime({persist = false, port = 0, local = true, now, ide
       LOCAL_METADATA:fs.readFileSync(new URL('./metadata.mjs',import.meta.url),'utf8'),
       LOCAL_BACKUP_CLIENT:fs.readFileSync(new URL('./backup-client.mjs',import.meta.url),'utf8')},
     // Deny outbound HTTP from the Worker, including accidental future fetch() additions.
-    outboundService: () => new Response('Local prototype: outbound access disabled', {status: 403})});
+    outboundService: request => {
+      // Only tests can supply these in-memory public responses; no real outbound fetch is performed here.
+      const allowed=identityFixture?.remoteKeys&&request.method==='GET'&&[
+        'https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com',
+        identityFixture.config.accessIssuer+'/cdn-cgi/access/certs'].includes(request.url);
+      if(allowed&&identityKeyResponses)return identityKeyResponses(request);
+      return new Response('Local prototype: outbound access disabled',{status:403});
+    }});
   try {
     await mf.ready;
     const db = await mf.getD1Database('DB');

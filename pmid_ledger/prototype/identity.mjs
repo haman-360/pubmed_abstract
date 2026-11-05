@@ -1,12 +1,14 @@
 // JWT policy only. Keys come from trusted configuration/providers, never token URLs or claims.
 import {decodeProtectedHeader,jwtVerify} from 'jose';
 function deny(ok){if(!ok)throw new Error('identity_denied');}
-export function createIdentityVerifier(config,{ownerKeys,syncKeys,now=()=>new Date()}){
+export function validateIdentityConfig(config){
   deny(config&&/^[a-z][a-z0-9-]{4,28}[a-z0-9]$/.test(config.projectId??''));
   deny(typeof config.ownerUid==='string'&&config.ownerUid.length>0&&config.ownerUid.length<=128);
   deny(/^https:\/\/[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.cloudflareaccess\.com$/.test(config.accessIssuer??''));
   deny(/^[a-f0-9]{64}$/.test(config.accessAudience??'')&&/^[A-Za-z0-9._-]{1,240}\.access$/.test(config.syncClientId??''));
-  deny(typeof ownerKeys==='function'&&typeof syncKeys==='function');
+}
+export function createIdentityVerifier(config,{ownerKeys,syncKeys,now=()=>new Date()}){
+  validateIdentityConfig(config);deny(typeof ownerKeys==='function'&&typeof syncKeys==='function');
   const ownerIssuer='https://securetoken.google.com/'+config.projectId;
   async function verify(token,role){
     deny(typeof token==='string'&&token.length>0&&token.length<=16384);

@@ -1,6 +1,6 @@
 # 本人限定認証のローカル検証：2026-11-05 JST
 
-**署名付きJWTによる本人限定判定と権限分離を、Node.jsとworkerdのAPIで検証した。追加費用0円。** 実際のGoogleログイン、Firebase／Cloudflareの設定、公開鍵の外部取得、クラウドCPU・iPad実機は未確認。現在地は①「遅さの調査・改善」の後半で、認証方式の成立性を確かめている。
+**署名付きJWTによる本人限定判定と権限分離を、Node.jsとworkerdのAPIで検証した。追加費用0円。** 実際のGoogleログイン、Firebase／Cloudflareの設定、実Access teamの公開鍵取得、クラウドCPU・iPad実機は未確認。Google公式の公開証明書取得は後続試験で確認した。現在地は①「遅さの調査・改善」の後半で、認証方式の成立性を確かめている。
 
 ## 実装
 
@@ -39,9 +39,46 @@ Access側は人のログインtokenを同期権限に流用せず、署名済み
 
 全体の`npm test`は46件成功し、直近2か月・過去月・上限案内・保存・同期・復元の既存試験も通った。新しい認証UIや実Googleアカウントを使ったブラウザー試験は行っていない。
 
+## 公開鍵の取得・更新を追加検証
+
+利用者からCloudflareアカウントがあると確認した。Workers／Accessの契約状態とFirebase利用状況は未確認で、こちらでは設定を変更していない。
+
+`identity-keys.mjs`はFirebaseの公式X509証明書URLと、信頼した設定のAccess teamのcerts URLだけを取得対象にする。GETにはtoken・Authorizationを付けず、リダイレクトを追わない。workerdは`redirect: error`を受け付けなかったため、`manual`＋HTTP 200の確認にした。[Firebaseの鍵とキャッシュ条件](https://firebase.google.com/docs/auth/admin/verify-id-tokens)、[Accessの鍵取得先](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/)
+
+- `Cache-Control: max-age`から`Age`を引いた期間、公開鍵をメモリだけに保持する。最長24時間で更新し、no-store／no-cache／期限指定なしは継続利用しない。tokenを保存するキャッシュではない。
+- 並行した更新は1取得にまとめる。期限内キャッシュの未知kidによる更新は30秒以上空ける。期限切れの鍵を更新できない場合、古い鍵へ戻して許可しない。
+- JSONは64KiB・16鍵まで、取得は5秒で打ち切る。不正なHTTP／JSON／証明書・秘密鍵入りJWKS・過大応答を拒否する。利用していない間の定期更新は追加していない。
+- 自動試験ではworkerdの公開鍵HTTPをメモリ内の架空応答へ差し替える。対象以外の通信は拒否し、通常のnpm startは外向き拒否を維持する。証明書作成は標準の`/usr/bin/openssl`を使い、試験用秘密鍵はstdinで渡してファイルへ書かない。
+
+公開鍵の追加7件が成功し、認証関連は14件、Node.js全体は53件成功した。実Googleログインと実Access teamは未使用。
+
+| 確認したケース | 結果 |
+| --- | --- |
+| Firebase X509／Access JWKS→署名JWT検証 | 両方成功。取得要求にtokenなし |
+| max-age／Age・並行取得・no-cache | 期限と1取得への集約が一致 |
+| 未知kid・新旧鍵の入替 | 再取得後に新鍵を許可、除外された旧鍵を拒否 |
+| 期限切れ後のHTTP失敗・不正／過大応答 | 認証を拒否 |
+| workerdで鍵更新不可→保存 | 履歴0件。復帰後の同じ操作は履歴1件 |
+| 通常の外向き拒否 | 維持 |
+
+さらに、Googleの公式公開証明書を認証情報なしで1回だけ実HTTP取得し、HTTP 200・2証明書・RSA公開鍵の読込を確認した。その時点のCache-Controlはmax-age 18,894秒、Age 56秒。読み戻した公開応答で2回鍵を解決し、メモリ内の読込は1回だった。これは公開情報の取得・形式確認であり、Google本人ログイン成功の証拠ではない。証明書やtokenはGitへ保存していない。Cloudflareのアカウント・チームにはアクセスしていない。
+
+## Firebase無料設定の準備手順（未実施）
+
+Cloudflareは既存アカウントを使う。Firebase側は[コンソール](https://console.firebase.google.com/)で利用状況を確認し、実ログイン試験用の専用プロジェクトを用意する。既存GASのGoogleプロジェクトへ無条件に追加しない。
+
+1. FirebaseコンソールへGoogleでログインする。
+2. 台帳検証用プロジェクトを用意し、**Spark（無料）・請求先未リンク**を確認する。Blazeへの変更や支払方法登録は行わない。Analyticsは今回不要。
+3. AuthenticationのSign-in methodでGoogleを有効にして保存する。電話／SMSは使わない。
+4. Webアプリを登録してFirebaseのWeb設定を確認する。Hosting／Firestore作成は今回のログイン試験に不要。localhostでのログインを試す段階では、Authorized domainsへlocalhostを明示追加する。新しいプロジェクトでは既定で追加されない。
+
+[Firebase料金](https://firebase.google.com/pricing)、[Web設定の公式手順](https://firebase.google.com/docs/web/setup)、[Googleログイン設定](https://firebase.google.com/docs/auth/web/google-signin)、[localhostの注意](https://firebase.google.com/docs/auth/faq-and-troubleshooting)。Sparkは支払方法不要と案内されている。本人の実際の設定は未確認なので、既存の有料Google Cloud請求先がつながっているプロジェクトを無料と判断しない。
+
+実ログイン画面は次の作業。パスワード・秘密鍵・ログインtokenをチャットへ送らない。設定情報はローカルで扱い、実UIDや接続設定を公開Gitへ追加しない。
+
 ## 次に確認すること
 
-- Googleの公式公開鍵取得とCache-Controlに沿った更新、Accessのteam公開鍵取得、kid更新、通信失敗時の拒否をクラウド用入口へ接続する。今回の公開鍵fixtureを本番鍵に流用しない。
+- 今回の公開鍵loaderをクラウド用入口へ接続し、本人の実Access teamでも取得・更新を確認する。今回の公開鍵fixtureを本番鍵に流用しない。
 - 本人のCloudflare Workers Free／Firebase Sparkの状態、既存の課金リンク、AccessのFree設定を確認する。Zero Trustの初期設定は公式案内上Freeでも支払情報が必要で、こちらでは登録していない。[Zero Trust初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)
 - 実Googleログイン→token取得／更新→ログアウトの流れを確認する。署名・期限の検証だけでは、有効期限前のtokenの失効・盗難対策まで確認したことにはならない。クライアントでのログアウト後も既発行tokenの扱いを決める。[Firebaseセッション管理](https://firebase.google.com/docs/auth/admin/manage-sessions)
 - クラウド用入口では検証済みidentityを直接保存APIへ渡し、固定テストtoken・障害注入・ローカル鍵fixtureを含めない。本人以外を拒否する状態を確かめた後、別TESTで実際のCPU・Mac／iPad往復を測る。
