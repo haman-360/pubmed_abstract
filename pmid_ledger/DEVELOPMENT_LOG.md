@@ -361,3 +361,8 @@ GASを再変更する場合は既存の同期先を確認し、隔離したフ�
 - [Cloudflare D1のWorker API](https://developers.cloudflare.com/d1/worker-api/d1-database/)
 
 本ログの追加では業務コード・GASソース・本番deployment・台帳データは変更しない。
+
+
+## 2026-11-06 JST：開発ログ正本の移行・職場Macの再開記録
+
+利用者の開発ログ方針に従い、以後の記録は [docs/DEVELOPMENT_LOG.md](../docs/DEVELOPMENT_LOG.md) へ末尾追記する。本ファイルの過去記録は保持する。職場Macでのブランチ取得・TEST接続設定／固定本人UIDの復元・bundle再生成・65件＋19件の試験成功と、Worker専用tokenの非表示入力待ちは正本へ記録した。冒頭の引継ぎは当時の状態であり、再開時は正本の最新記録も読む。

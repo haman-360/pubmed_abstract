@@ -1,0 +1,16 @@
+# 開発ログ
+
+今後の開発記録の正本。過去の台帳開発・調査記録は [pmid_ledger/DEVELOPMENT_LOG.md](../pmid_ledger/DEVELOPMENT_LOG.md) に保持し、書き換えない。
+
+## 2026-11-06 JST：職場MacへTEST設定を復元（台帳コード反映待ち）
+
+- 未コミット変更のないmainから `origin/codex/ledger-candidate-review` をfetchし、追跡ブランチへ切替。取得時HEADは指定の `dc90053`。mainへの統合は行わない。
+- 引継ぎ冒頭、試作README、認証検証記録を確認。既存Cloudflareの `pmid-ledger-test` Workerと同名D1への `DB` binding、全通信の既存Service Auth保護を管理画面で確認。作成し直していない。認証なしの実HTTP要求1回は403。既存FirebaseはSpark（無料）と既登録の本人アカウント1件を確認した。
+- 接続IDと固定済み本人UIDを既存管理画面から確認し、Git対象外の `ledger_private/cloud-test-resources.json` と `cloud-test-owner.json` を0600で復元。実値・tokenは文書へ転記しない。最初にログインした人の自動登録は行わない。Webログイン試験はまだ再開していないため `firebase-web.json` は未復元。
+- 本人UIDの非表示転記に127.0.0.1限定の一時フォームを使用。保存後に専用タブを閉じ、サーバーを停止し、一時スクリプトを削除した。既存ローカルDB・他サーバーは変更していない。
+- `npm ci --no-audit --no-fund` でlockfile固定の32パッケージを取得。sandbox内の初回取得は失敗したため、許可した環境と一時npmキャッシュで再取得した。依存バージョン・lockfileの変更なし。
+- `npm run build:cloud-test` が成功。生成bundleは92,665バイト、SHA-256は `5875d8d6ea974bf99bf81a8e31ecf2b62525b635b09194f40b82ed2fbc3cbb8d`。`deploy_cloud_test.py` のHTTPなし準備確認も成功。生成物はGit対象外。
+- 検証：試作Node.js 65件、専用Python 19件がすべて成功。架空同期の `--inspect` はHTTPなしで120件・6配信・7チャンク。設定の0600、Git除外、`git diff --check` を確認。既存業務コードは変更していない。
+- 職場MacでもCloudflareコードエディターの読込が完了せず、専用CLIへ移行。Worker専用APIトークンは利用者が発行し、実ターミナルの `getpass` へ非表示入力する必要がある。値をチャット・引数・環境変数・ファイルへ求めない。現在は入力待ちで、台帳コード反映・クラウド読戻し一致は未確認。同期用Client ID／Secretも未入力。
+- 次：リポジトリのルートから `python3 pmid_ledger/prototype/deploy_cloud_test.py --upload` を利用者が実行し、秘密値を含まない `.cloud-test/deployment-verification.json` を確認する。全通信Accessを維持し、反映・読戻し一致後に本人APIと同期経路の分離を検討する。架空120件のクラウド同期・実Google tokenでの保存・CPU測定・Mac／iPad往復は未実施。
+- 追加費用0円。本番GAS・実台帳・既存Pages・既存workflow・課金設定の変更なし。TESTの新規作成、APIトークン発行、Access変更も行っていない。GAS変更なし、`clasp push` 不要、GAS deploy未実施。TEST Workerのアップロードも本記録時点では未実施。
