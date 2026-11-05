@@ -1,6 +1,6 @@
 # Workers＋D1 ローカル試作
 
-**追加費用0円・架空データ専用。** Miniflare 4のworkerd／D1 bindingで動作する。通常の試作ではCloudflareアカウント・APIキー・Google認証・OpenAI APIは不要。別途、本人のFirebase無料プロジェクトを使うログイン専用試験を追加した。クラウドへの作成・公開・課金は行わない。
+**追加費用0円・架空データ専用。** Miniflare 4のworkerd／D1 bindingで動作する。通常の試作ではCloudflareアカウント・APIキー・Google認証・OpenAI APIは不要。別途、本人のFirebase無料プロジェクトを使うログイン専用試験と、未公開の[クラウドTEST用API](#クラウドtest用apiの準備)を追加した。クラウドへの作成・公開・課金は行っていない。
 
 ## 起動
 
@@ -43,7 +43,7 @@ D1の日次無料枠の上限に達した場合は、画面に「24時間後に�
 npm test
 ```
 
-ローカルポートの使用を許可した環境で実行する。Miniflareの実D1 bindingとPython HTTP同期に対する58個のテストで、次を確認する。
+ローカルポートの使用を許可した環境で実行する。Miniflareの実D1 bindingとPython HTTP同期に対する65個のテストで、次を確認する。
 
 - 同じPython架空データをGASの既存Node VMへ入れ、6配信の一覧、候補、検索、ページ、本文と、100件保存後の状態・メモ・版を照合する。実行時刻、内部履歴フィールドは比較対象から分離する。
 - 100件の最後の1件の競合、101件、不正状態、メモ長、所属外PMID、誤った配信版で追記がない。
@@ -93,6 +93,42 @@ node login-local.mjs --owner '<画面で確認した本人UID>'
 認証は初期化時から`inMemoryPersistence`とし、tokenをファイル・localStorage・sessionStorage・URL・ログへ保存しない。再読み込み後は再度ログインする。サインアウト直後は表示を消し、遅れて届いた応答も反映しない。これは画面のサインアウトであり、発行済みtokenのサーバー失効まで実装したものではない。[認証の永続化](https://firebase.google.com/docs/auth/web/auth-state-persistence)
 
 実ChromeでSDK読込・初期画面・ログインボタン有効・横はみ出しなしを確認した後、利用者がログインしたアプリ内ブラウザーで実Google署名検証・本人UID固定・実token更新・認証付き一覧取得（空結果）・画面サインアウトを確認した。実tokenによる保存と既発行tokenのサーバー失効は未確認。Firebaseの公開設定APIはHTTP 200で、localhostが承認済み。秘密情報をチャットへ送る必要はない。詳細は[認証検証記録](IDENTITY_VALIDATION.md)を参照。
+
+## クラウドTEST用APIの準備
+
+2026-11-06、利用者がCloudflareへ再ログインした後、管理画面でD1未作成（0/10、表示上の読書き0）とZero Trust初期設定前を確認した。Worker／D1・Accessアプリ・service tokenは作成していない。Workers Freeは前日の実画面確認を引き継ぐ。Zero Trust Freeは公式手順上、支払情報の入力が必要だが課金されないと案内されている。初期設定・契約・支払情報入力は利用者の操作が必要。[公式初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)
+
+`cloud-worker.mjs`は`worker.mjs`とは別のAPI専用入口。共有するD1処理だけを`ledger-api.mjs`へ分離した。本人のFirebase JWTを検証し、同期を明示的に有効にした場合だけAccessの署名済みJWTを検証する。検証前にはDBへ触れない。固定テストtoken、UIDの自動登録、ローカル鍵fixture、HTTPの障害注入コードはbundleへ含めない。通常の8787／8788番の起動方法・DBは従来どおり。
+
+```bash
+# 試作ディレクトリで実行。外向き通信・アップロード・deployなし
+npm run build:cloud-test
+```
+
+生成先はGit対象外の`.cloud-test/worker.mjs`。設定例`cloud-test.wrangler.example.json`は`workers_dev: false`・`preview_urls: false`・ログ収集無効で、DB IDとサブドメインも未設定。実行用のWrangler設定やdeployコマンドは追加していない。設定例を使う段階では専用TESTのDBとWorkerだけを対象にし、既存Pagesへbindingを追加しない。
+
+| 設定 | 条件 |
+| --- | --- |
+| `DB` | 新規TEST専用のD1。別途`schema.sql`の初期適用が必要。要求ごとの自動migrationなし |
+| `LEDGER_TEST_ONLY` | `synthetic`に固定。実データを受け付ける移行機能ではない |
+| `LEDGER_ORIGIN` | 正確な`https://pmid-ledger-test.<subdomain>.workers.dev`だけ。別host、HTTP、query、他Originを拒否 |
+| `LEDGER_IDENTITY` | JSON文字列。`projectId`と固定済み`ownerUid`が必須。Gitへ実値を置かず、Workerのsecret設定として渡す |
+| `LEDGER_SYNC_ENABLED` | 既定無効。`1`時はidentity設定へ`accessIssuer`・`accessAudience`・`syncClientId`も必要 |
+| `LEDGER_TEST_DIAGNOSTICS` | `1`時、認証成功後の応答へD1の読書き行数・呼出し数・経過時間だけを追加。CPU時間ではない |
+
+Accessを用意する場合は`/sync/*`だけを専用Service Authポリシーで保護し、`/api/*`のFirebase認証と混ぜない。Worker全体をAccessで保護すると本人要求にもAccess assertionが付き、この入口は二重の認証ヘッダーを拒否する。workers.dev上でこのパス分離を設定できるかは実設定時の確認項目。成立しなければ同期を無効のまま止め、認証を緩めて進めない。[Accessのパス](https://developers.cloudflare.com/cloudflare-one/access-controls/policies/app-paths/)、[service tokenの接続](https://developers.cloudflare.com/cloudflare-one/access-controls/service-credentials/service-tokens/)
+
+Pythonの`sync_cloud_test.py`も通常の`sync_local.py`とは別入口。内蔵の架空120件のみで、実台帳やファイル入力・5,000件同期・既存workflowへの接続はない。次はHTTPを使わない確認だけを実行できる。
+
+```bash
+# リポジトリのルートから。認証設定不要・HTTPなし
+python3 -m pmid_ledger.prototype.sync_cloud_test --inspect
+python3 -m unittest pmid_ledger.prototype.tests.test_sync_local pmid_ledger.prototype.tests.test_sync_cloud_test -v
+```
+
+クラウド接続は、TEST公開・Access設定後に対象URLを明示し、`LEDGER_TEST_ACCESS_CLIENT_ID`／`LEDGER_TEST_ACCESS_CLIENT_SECRET`をプロセス環境から渡す。実値をコマンド履歴・Git・ログ・チャットへ貼らない。既定の動作は同期状態の読取のみ。`--sync-synthetic`と、管理画面で確認した残枠以内の`--write-budget`（64〜80,000）の両方を指定した時だけ転送する。これは1回の見積予算で、日次累積や他用途の消費を自動管理しない。redirect・proxy・自動再送はなく、429／応答不明では停止する。中断後は残枠を再確認してから同じfixtureで再開する。
+
+追加7件を含むNode.js 65件とPython専用13件が成功。クラウド用bundleをworkerd＋一時D1で動かし、本人役の保存・再送、同期役の分割公開・手動履歴保持、他UID・偽認証・期限・二重ヘッダー・Origin・容量超過の拒否を確認した。公開鍵は架空応答に差し替え、実Accessへの接続はしていない。クラウド用ログイン画面、実token保存、FreeのCPU、Mac／iPad往復はこれから。外部公開前に、新規TESTの対象と認証・公開設定を確定する。
 
 ## Python同期と負荷試験
 
@@ -174,5 +210,5 @@ POST JSON。閲覧・保存は`Authorization: Bearer local-synthetic-owner`、�
 - 一覧は本文なし投影をSQLで検索する。5,000件・5万行履歴のローカル試験と別DB復元まで成功したが、実際のクラウド読取量・CPU評価は未実施で、無料枠適合の証拠にはしない。
 - 分割前の約16.8MBを小さな論理行として保存できた。表示期間の制限は通常の読取を減らすもので、全件の初期同期・バックアップを省略する機能ではない。1論理行180,000バイト、1転送チャンク196,608バイト、1配信用一覧投影196,608バイトの上限を設けるため、件数だけで扱える範囲は決まらない。世代の無期限蓄積・自動削除・実データ移行は未実装。
 - 通常PMID台帳、分野・状態など残る絞り込みと並び順、TXT／CSV、GASバックアップとの相互変換は未実装。ローカルD1用の分割NDJSONバックアップ・空DB復元と旧V1 JSON互換は実装・検証済み。
-- Firebase形式／Access形式の署名JWTのローカル検証は実装した。実Firebaseログイン、Service Authの外部接続、ネイティブログイン、FreeプランのCPU・保存容量・要求上限、クラウド往復・失敗率は未検証。ローカルの経過秒数をGAS本番との改善率に換算しない。
-- deployment用設定・remote D1 binding・クラウド資格情報は置いていない。追加費用0円を維持し、無料プラン適合・本人認証を確認してからクラウド試験へ進む。FirestoreのRules成立性の比較は別の作業。
+- Firebase形式／Access形式の署名JWTと実Firebaseログインのローカル検証は実装した。Service Authの外部接続、ネイティブログイン、FreeプランのCPU・保存容量・要求上限、クラウド往復・失敗率は未検証。ローカルの経過秒数をGAS本番との改善率に換算しない。
+- クラウドTEST用API・非公開が既定の設定例・架空データ専用同期を準備した。実行用のdeployment設定・remote D1 binding・クラウド資格情報は置いていない。追加費用0円を維持し、本人のFree設定・対象と認証を確認してからクラウド試験へ進む。FirestoreのRules成立性の比較は別の作業。

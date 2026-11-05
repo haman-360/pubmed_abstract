@@ -29,20 +29,13 @@ class NoRedirect(HTTPRedirectHandler):
         return None
 
 
-class LocalTransport:
-    def __init__(self, base_url, attempts=3):
-        try:
-            url = urlsplit(base_url)
-            valid = (url.scheme == "http" and url.hostname == "127.0.0.1" and url.port is not None
-                     and 1 <= url.port <= 65535 and not url.username and not url.password
-                     and url.path in ("", "/") and not url.query and not url.fragment)
-        except ValueError:
-            valid = False
-        if not valid:
-            raise SyncError("Only http://127.0.0.1:<port> is allowed")
+class JsonSyncTransport:
+    """Bounded metadata requests; subclasses validate the destination and credentials."""
+    def __init__(self, base_url, headers, attempts):
         if not 1 <= attempts <= 3:
             raise SyncError("Invalid retry count")
         self.base_url = base_url.rstrip("/")
+        self.headers = {"Content-Type": "application/json", **headers}
         self.attempts = attempts
         self.requests = 0
         self.opener = build_opener(ProxyHandler({}), NoRedirect())
@@ -55,8 +48,7 @@ class LocalTransport:
             raise SyncError("metadata_exceeds_local_sync_limit: chunked storage is required")
         for attempt in range(self.attempts):
             self.requests += 1
-            req = Request(self.base_url + "/sync/" + action, data=body, method="POST", headers={
-                "Content-Type": "application/json", "Authorization": "Bearer local-synthetic-sync"})
+            req = Request(self.base_url + "/sync/" + action, data=body, method="POST", headers=self.headers)
             retry = False
             try:
                 with self.opener.open(req, timeout=10) as response:
@@ -78,6 +70,20 @@ class LocalTransport:
             if not retry or attempt + 1 == self.attempts:
                 raise SyncError(reason)
             time.sleep(0.05 * (attempt + 1))
+
+
+class LocalTransport(JsonSyncTransport):
+    def __init__(self, base_url, attempts=3):
+        try:
+            url = urlsplit(base_url)
+            valid = (url.scheme == "http" and url.hostname == "127.0.0.1" and url.port is not None
+                     and 1 <= url.port <= 65535 and not url.username and not url.password
+                     and url.path in ("", "/") and not url.query and not url.fragment)
+        except ValueError:
+            valid = False
+        if not valid:
+            raise SyncError("Only http://127.0.0.1:<port> is allowed")
+        super().__init__(base_url, {"Authorization": "Bearer local-synthetic-sync"}, attempts)
 
 
 def check_fixture(value):

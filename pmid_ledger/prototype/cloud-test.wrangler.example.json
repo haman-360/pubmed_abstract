@@ -1,0 +1,15 @@
+{
+  "name": "pmid-ledger-test",
+  "main": ".cloud-test/worker.mjs",
+  "compatibility_date": "2026-07-30",
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": {"enabled": false},
+  "d1_databases": [{"binding": "DB", "database_name": "pmid-ledger-test", "database_id": "REPLACE_WITH_NEW_TEST_DATABASE_ID"}],
+  "vars": {
+    "LEDGER_TEST_ONLY": "synthetic",
+    "LEDGER_ORIGIN": "https://pmid-ledger-test.REPLACE_WITH_ACCOUNT_SUBDOMAIN.workers.dev",
+    "LEDGER_SYNC_ENABLED": "0",
+    "LEDGER_TEST_DIAGNOSTICS": "1"
+  }
+}

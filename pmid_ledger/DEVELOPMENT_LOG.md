@@ -1,5 +1,17 @@
 # PMID論文確認台帳 開発・調査ログ
 
+## 2026-11-06 JST：D1・Accessの準備状況を確認し、未公開のクラウドTEST入口を実装
+
+- 利用者の継続依頼により、追加費用0円のまま再開。利用者がCloudflareへ再ログインした後、D1管理画面でDB未作成（0/10、表示上の読書き0）、Zero Trust概要で初期設定前を確認した。Worker／D1・Accessアプリ・service tokenは作成していない。Workers Free確認は前日の記録を引き継ぐ。
+- 公式のD1無料枠・Workers CPU・Access初期設定とservice token接続手順を再確認。Zero Trust Freeも公式手順上は支払情報の入力が必要だが課金されないと案内されている。契約・請求・支払情報・権限・公開設定は変更せず、初期設定は利用者側の操作を要する。[公式初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)
+- `cloud-worker.mjs`をAPI専用の別入口として追加。共有D1操作を`ledger-api.mjs`へ分離し、検証済みFirebase本人JWT／Access同期JWTから直接呼ぶ。固定テストtoken、ローカル鍵fixture、障害注入コードをcloud bundleへ含めないことを検査する。設定不足・他UID・偽認証・期限・二重ヘッダー・他Origin・大きすぎる本文は拒否。既定は同期無効で、本人UIDを固定した閲覧／保存だけを許可する。
+- `npm run build:cloud-test`はローカルbundle（92,665バイト）をGit対象外の`.cloud-test/`へ生成するだけ。設定例はworkers.dev／preview公開無効・DB ID未指定・ログ収集無効。実行用Wrangler設定・deployコマンドは追加せず、クラウド用ログイン画面もこれから。Accessを`/sync/*`へ限定し、本人APIと分離できることは実設定時に要確認。
+- `sync_cloud_test.py`は内蔵の架空120件だけを対象とし、正確なTESTのHTTPS originとプロセス環境のAccess資格情報を使う。既定は状態読取のみ。転送には明示オプションと残枠確認後の書込予算が必要。redirect・proxy・自動再送を使わず、日次上限や応答不明で停止する。実クラウドへ接続しておらず、日次累積の自動管理・実データ同期・既存workflow接続は未実装。
+- Node.js試作65件（追加7件）・Python専用13件（追加6件）、既存Node.js 54件・Python 69件が成功。workerd＋一時D1で本人保存／再送、同期の分割公開と手動履歴保持、拒否条件を検証した。公開鍵HTTPは架空応答。`--inspect`のHTTPなし・120件／6配信／7チャンクとbundle除外検査・差分検査も成功。最初のsandbox内試験はlocalhost待受が禁止されていたため、許可した環境で全件を再実行した。
+- 試作README・無料枠記録・台帳READMEと本ログを更新。開始前からあった本ログの休憩引継ぎ32行と認証検証記録の変更、無関係な未追跡ファイルは保持し、今回のcommitへ混ぜない。通常8787／8788番の利用中サーバー・DBは再起動／変更していない。
+- 次は本人によるZero Trust Free初期設定の可否を確認し、Access service token・パス分離とTEST専用D1／Workerの対象・公開条件を確定してからクラウド試験へ進む。実Google tokenでのクラウド保存、実CPU・読書き量・Mac／iPad往復は未検証。方式採用は未決定で、②アプリ化・③オフラインは未着手。
+- 追加費用0円、有料API呼出し・クラウド作成／公開・本番台帳変更なし。GAS変更なし、clasp push不要、deployment未実施。
+
 ## 2026-11-05 JST：実Googleログイン・本人UID固定・token更新・認証付き一覧取得を確認
 
 - 利用者が専用画面へログインし、アプリ内ブラウザーでGoogle署名・発行元・期限の検証成功とUID表示を確認した。以前に開いたChromeタブは未ログインだったため、利用者が実際にログインしたタブで検証した。

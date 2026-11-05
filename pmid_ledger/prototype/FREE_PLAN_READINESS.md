@@ -2,6 +2,8 @@
 
 **判定：クラウド採用はまだ未確定。追加支出0円のままローカル検証を継続する。** 5,000件の同期・保存・復元は成立したが、処理量を測ると無料枠へ合わせる修正が必要だった。今回、索引利用・バックアップ走査を修正し、同期を予算内で中断・再開する仕組みを加えた。クラウド環境・本人認証・課金設定はまだ作成していない。
 
+2026-11-06更新：上記は初回調査時の記録。実Google本人認証とFirebase Spark、Workers Freeは前日までに確認済み。同日のCloudflare管理画面ではD1未作成（0/10、表示上の読書き0）・Zero Trust初期設定前だった。[クラウドTEST用APIと同期](README.md#クラウドtest用apiの準備)を未公開のまま準備し、workerd上で本人／同期の権限分離と保存を確認した。Node.js 65件・Python専用13件が成功。実クラウドのCPU・Access接続・Mac／iPad往復は未検証。プラン・請求・公開設定・本番台帳は変更していない。
+
 ## 通常は直近2か月だけを読む（利用者指定を反映）
 
 2026-11-05の追加指定を受け、通常の配信一覧は日本時間の今日から2暦月前までに限定する。過去分は月を指定し、配信日不明は別の選択肢で取得する。古い本文・手動状態・メモを消すのではなく、通常の一覧で過去分の進捗を集計しない。日付索引から必要な20配信のキーを選んでから、対象配信だけを集計する。直近のデータがない場合も空の一覧として正常に返す。テスト／保守の全期間取得は明示的な`scope: all`に限る。
@@ -70,7 +72,7 @@ Node.js 39件・Python専用7件と、Chrome 820×1180で期間切替・過去�
 
 ## 本人認証とクラウドへ進む条件
 
-本人用はFirebase AuthenticationのGoogleログイン（Spark）＋許可した本人UID、Python同期はCloudflare AccessのService Authという既存案を維持する。電話／SMS認証は使わない。Sparkは支払方法不要の無料プランとして案内されているが、本人の対象プロジェクトのプラン・課金リンクは未確認。[Firebase料金](https://firebase.google.com/pricing)
+本人用はFirebase AuthenticationのGoogleログイン（Spark）＋許可した本人UID、Python同期はCloudflare AccessのService Authという既存案を維持する。電話／SMS認証は使わない。Sparkは支払方法不要の無料プランとして案内されている。本人のプロジェクトもSpark表示を確認済みで、課金設定は変更していない。[Firebase料金](https://firebase.google.com/pricing)
 
 Firebase ID tokenはdecodeだけで許可せず、RS256署名・鍵ID・issuer・projectのaudience・期限・発行時刻・auth_time・本人UIDを検証する。公開鍵の取得／更新、鍵取得失敗時の拒否、更新されたtoken、ログアウト後に有効tokenが残る期間も確認する。公開用のJWT検証には既存ライブラリを選び、独自の署名方式は作らない。[Firebase検証条件](https://firebase.google.com/docs/auth/admin/verify-id-tokens)
 
@@ -78,7 +80,7 @@ Firebase ID tokenはdecodeだけで許可せず、RS256署名・鍵ID・issuer�
 
 注意する具体的条件として、Zero Trustの公式初期設定はFreeでも支払情報の入力が必要と案内している。登録済みアカウントの状態は未確認で、こちらで登録・プラン契約は行っていない。支払情報不要と誤認して設定を進めない。[Zero Trust初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)。独自ドメインの購入は前提にせず、TESTには個人用途の`workers.dev`を候補にする。[workers.devとAccess](https://developers.cloudflare.com/workers/configuration/routing/workers-dev/)
 
-JWTのローカル署名／偽造／期限／権限分離試験は[認証検証記録](IDENTITY_VALIDATION.md)のとおり成功した。公開鍵loader・キャッシュ更新の追加試験も成功し、Google公式の公開証明書を実取得した。Cloudflareアカウントの存在は利用者が確認したがプランは未確認。次は実Googleログイン、実Access team、対象アカウントのFree／Spark・日次残枠の確認、その後に本人認証済みの別TESTでCPU・Mac／iPad往復を測ること。現在の固定テストtokenとlocalhost用Workerをそのまま公開しない。設定不足のまま外部公開する変更やdeploymentコマンドは追加していない。方式を決めた後に②アプリ化、その後に③オフライン対応へ進む。
+JWTのローカル署名／偽造／期限／権限分離試験は[認証検証記録](IDENTITY_VALIDATION.md)のとおり成功した。公開鍵loader・キャッシュ更新、Google公式公開証明書の実取得、実Googleログイン、本人のWorkers Free／Firebase Spark表示も確認済み。次は実Access team・Service Authの設定条件と日次残枠を確認し、対象と公開条件を確定した別TESTでCPU・Mac／iPad往復を測ること。固定テストtokenとlocalhost用Workerをそのまま公開しないための専用入口を準備したが、外部公開やdeploymentコマンドは追加していない。方式を決めた後に②アプリ化、その後に③オフライン対応へ進む。
 
 ## 再現
 
