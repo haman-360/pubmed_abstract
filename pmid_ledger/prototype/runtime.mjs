@@ -9,23 +9,28 @@ export function fixture(revised = false) {
   return JSON.parse(execFileSync('python3', ['-m', 'pmid_ledger.prototype.fixture', ...(revised ? ['--revised'] : [])],
     {cwd: fileURLToPath(new URL('../../', import.meta.url)), encoding: 'utf8', maxBuffer: 4000000}));
 }
-export async function runtime({persist = false, port = 0, local = true, now, identityFixture, identityKeyResponses} = {}) {
+export async function runtime({persist = false, port = 0, local = true, now, identityFixture, identityKeyResponses, ownerLogin} = {}) {
   let entry={scriptPath:fileURLToPath(new URL('./worker.mjs',import.meta.url))};
-  if(identityFixture){
-    // Bundle only the JWT test entry; normal npm start and its data are unchanged.
+  if(identityFixture||ownerLogin){
+    // Bundle the optional local JWT/login entry; normal npm start keeps its original entry.
     const {build}=await import('esbuild');
-    const result=await build({entryPoints:[fileURLToPath(new URL('./identity-worker.mjs',import.meta.url))],bundle:true,write:false,format:'esm',platform:'browser',target:'es2022'});
+    const result=await build({entryPoints:[fileURLToPath(new URL(ownerLogin?'./login-worker.mjs':'./identity-worker.mjs',import.meta.url))],bundle:true,write:false,format:'esm',platform:'browser',target:'es2022'});
     entry={script:result.outputFiles[0].text};
   }
   const mf = new Miniflare({modules: true, ...entry,
     compatibilityDate: '2026-07-30', host: '127.0.0.1', port, cf: false,
     d1Databases: {DB: 'local-synthetic-ledger'}, d1Persist: persist,
-    bindings: {LOCAL_PROTOTYPE: local ? '1' : '0', ...(identityFixture?{LOCAL_IDENTITY_FIXTURE:JSON.stringify(identityFixture)}:{}), ...(now?{LOCAL_NOW:now}:{}), LOCAL_HTML: fs.readFileSync(new URL('./index.html', import.meta.url), 'utf8'),
+    serviceBindings:ownerLogin?{LOCAL_LOGIN_SETTINGS:async()=>{try{return new Response(JSON.stringify(await ownerLogin.settings()),{headers:{'Content-Type':'application/json'}});}catch{return new Response('',{status:503});}}}:{},
+    bindings: {...(ownerLogin?{LOCAL_LOGIN_HTML:fs.readFileSync(new URL('./login.html',import.meta.url),'utf8'),LOCAL_LOGIN_CLIENT:fs.readFileSync(new URL('./login-client.mjs',import.meta.url),'utf8'),LOCAL_LOGIN_SDK:"export {initializeApp} from 'https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js';export {initializeAuth,inMemoryPersistence,browserPopupRedirectResolver,GoogleAuthProvider,signInWithPopup,signOut,onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/13.2.0/firebase-auth.js';"}:{}),LOCAL_PROTOTYPE: local ? '1' : '0', ...(identityFixture?{LOCAL_IDENTITY_FIXTURE:JSON.stringify(identityFixture)}:{}), ...(now?{LOCAL_NOW:now}:{}), LOCAL_HTML: fs.readFileSync(new URL('./index.html', import.meta.url), 'utf8'),
       LOCAL_METADATA:fs.readFileSync(new URL('./metadata.mjs',import.meta.url),'utf8'),
       LOCAL_BACKUP_CLIENT:fs.readFileSync(new URL('./backup-client.mjs',import.meta.url),'utf8')},
-    // Deny outbound HTTP from the Worker, including accidental future fetch() additions.
+    // Deny outbound HTTP by default; the explicit login diagnostic can fetch only Google public certificates.
     outboundService: request => {
-      // Only tests can supply these in-memory public responses; no real outbound fetch is performed here.
+      // Tests inject public responses; the live diagnostic opts into the single official public-key URL.
+      if(ownerLogin&&request.method==='GET'&&request.url==='https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com'){
+        if(ownerLogin.keyResponses)return ownerLogin.keyResponses(request);
+        if(ownerLogin.googlePublicKeys)return fetch(request.url,{method:'GET',redirect:'manual',signal:AbortSignal.timeout(5000)});
+      }
       const allowed=identityFixture?.remoteKeys&&request.method==='GET'&&[
         'https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com',
         identityFixture.config.accessIssuer+'/cdn-cgi/access/certs'].includes(request.url);
@@ -58,4 +63,10 @@ export async function seed(mf, data = fixture(), expected_revision = null, {toke
     if (result.status !== 200) throw new Error(JSON.stringify(result));
   }
   return data;
+}
+
+// Initialization is internal to the local process; no unauthenticated seed HTTP route is exposed.
+export async function seedDatabase(db,data=fixture()){
+  const {default:worker}=await import('./worker.mjs');
+  await seed({dispatchFetch:(url,options)=>worker.fetch(new Request(url,options),{LOCAL_PROTOTYPE:'1',DB:db})},data);
 }

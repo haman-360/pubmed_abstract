@@ -12,7 +12,7 @@ Workers＋D1の保存契約を確かめる[ローカル試作](prototype/README.
 
 試作の状態選択は「未確認・原本不要・入手希望」の3択です。SQLによる配信内検索・ページングと、ローカル分割NDJSONバックアップ・別の空DBへの復元を実装しています。試作はGASを介さず、WorkersからD1へ保存します。既存のGAS本番の画面・保存方式は変更していません。
 
-本人限定の署名JWTとPython同期の権限分離は[ローカルで検証済み](prototype/IDENTITY_VALIDATION.md)です。公開鍵loader・キャッシュ更新とGoogle公式公開証明書の取得も確認しました。実Googleログイン・実Access team・クラウド運用は未確認で、通常の試作画面は仮認証のままです。
+本人限定の署名JWTとPython同期の権限分離は[ローカルで検証済み](prototype/IDENTITY_VALIDATION.md)です。公開鍵loader・キャッシュ更新とGoogle公式公開証明書の取得も確認しました。実Googleログイン用の[専用ローカル画面](prototype/README.md#実googleログインの専用試験)を追加しました。利用者のFirebase無料設定とlocalhostの承認は確認済みです。本人の実ログイン・実Access team・クラウド運用は未確認で、通常8787番の画面は仮認証のままです。
 
 2026-11-05：保存・同期・バックアップを分割し、5,000件・200配信・1万掲載履歴・5万行レビューでの[再試験](prototype/LOAD_TEST_RESULTS.md)と別DB復元に成功しました。[無料枠の確認](prototype/FREE_PLAN_READINESS.md)で同期・バックアップの読取量を減らし、書込予算による中断・再開も追加しました。現在は①「遅さの調査・改善」の後半です。次は追加費用0円を保てる無料プラン適合・本人認証を確認し、クラウド往復の検証→方式の採否→②アプリ化→③オフライン対応へ進みます。
 

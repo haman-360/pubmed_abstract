@@ -3,3 +3,5 @@ node_modules/
 .backups/
 .restored-d1/
 .benchmarks/
+
+.login-d1/

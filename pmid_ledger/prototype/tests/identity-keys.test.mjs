@@ -1,22 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spawn} from 'node:child_process';
-import {exportPKCS8,generateKeyPair} from 'jose';
+import {generateKeyPair} from 'jose';
 import {createPublicKeySources,FIREBASE_CERTS} from '../identity-keys.mjs';
 import {createIdentityVerifier} from '../identity.mjs';
 import {runtime,seed,call} from '../runtime.mjs';
-import {identityFixture,now} from './identity-fixture.mjs';
+import {identityFixture,now,certificate} from './identity-fixture.mjs';
 const f=await identityFixture({extractable:true});
-async function certificate(key){
-  const pem=await exportPKCS8(key);
-  return new Promise((resolve,reject)=>{
-    // The test-only private key travels via stdin, never argv or a temporary file.
-    const child=spawn('/usr/bin/openssl',['req','-new','-x509','-key','/dev/stdin','-subj','/CN=synthetic-identity-test','-days','2'],{stdio:['pipe','pipe','ignore']});
-    const output=[];child.stdout.on('data',b=>output.push(b));child.on('error',reject);
-    child.on('close',code=>code===0?resolve(Buffer.concat(output).toString('utf8')):reject(new Error('synthetic certificate generation failed')));
-    child.stdin.end(pem);
-  });
-}
 const cert=await certificate(f.owner.privateKey);
 const reply=(data,policy='public, max-age=60',age=0)=>new Response(JSON.stringify(data),{headers:{'Content-Type':'application/json','Cache-Control':policy,Age:String(age)}});
 const ownerData={[f.ownerJwk.kid]:cert};

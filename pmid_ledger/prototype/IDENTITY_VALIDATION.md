@@ -1,6 +1,6 @@
 # 本人限定認証のローカル検証：2026-11-05 JST
 
-**署名付きJWTによる本人限定判定と権限分離を、Node.jsとworkerdのAPIで検証した。追加費用0円。** 実際のGoogleログイン、Firebase／Cloudflareの設定、実Access teamの公開鍵取得、クラウドCPU・iPad実機は未確認。Google公式の公開証明書取得は後続試験で確認した。現在地は①「遅さの調査・改善」の後半で、認証方式の成立性を確かめている。
+**署名付きJWTによる本人限定判定と権限分離を、Node.jsとworkerdのAPIで検証した。追加費用0円。** 実際のGoogleログイン、実Access teamの公開鍵取得、Cloudflareのプラン、クラウドCPU・iPad実機は未確認。Firebaseは後続の利用者設定と公開APIでSpark・Google provider・Webアプリ・localhostを確認した。Google公式の公開証明書取得は後続試験で確認した。現在地は①「遅さの調査・改善」の後半で、認証方式の成立性を確かめている。
 
 ## 実装
 
@@ -63,7 +63,7 @@ Access側は人のログインtokenを同期権限に流用せず、署名済み
 
 さらに、Googleの公式公開証明書を認証情報なしで1回だけ実HTTP取得し、HTTP 200・2証明書・RSA公開鍵の読込を確認した。その時点のCache-Controlはmax-age 18,894秒、Age 56秒。読み戻した公開応答で2回鍵を解決し、メモリ内の読込は1回だった。これは公開情報の取得・形式確認であり、Google本人ログイン成功の証拠ではない。証明書やtokenはGitへ保存していない。Cloudflareのアカウント・チームにはアクセスしていない。
 
-## Firebase無料設定の準備手順（未実施）
+## Firebase無料設定の準備手順（利用者が設定済み）
 
 Cloudflareは既存アカウントを使う。Firebase側は[コンソール](https://console.firebase.google.com/)で利用状況を確認し、実ログイン試験用の専用プロジェクトを用意する。既存GASのGoogleプロジェクトへ無条件に追加しない。
 
@@ -74,7 +74,20 @@ Cloudflareは既存アカウントを使う。Firebase側は[コンソール](ht
 
 [Firebase料金](https://firebase.google.com/pricing)、[Web設定の公式手順](https://firebase.google.com/docs/web/setup)、[Googleログイン設定](https://firebase.google.com/docs/auth/web/google-signin)、[localhostの注意](https://firebase.google.com/docs/auth/faq-and-troubleshooting)。Sparkは支払方法不要と案内されている。本人の実際の設定は未確認なので、既存の有料Google Cloud請求先がつながっているプロジェクトを無料と判断しない。
 
-実ログイン画面は次の作業。パスワード・秘密鍵・ログインtokenをチャットへ送らない。設定情報はローカルで扱い、実UIDや接続設定を公開Gitへ追加しない。
+実ログイン画面を後続で追加した。パスワード・秘密鍵・ログインtokenをチャットへ送らない。設定情報はローカルで扱い、実UIDや接続設定を公開Gitへ追加しない。
+
+## 実Googleログイン画面の追加（同日）
+
+- 利用者が新規Firebaseプロジェクトを作成し、Google providerとWebアプリを登録した。利用者の画像と実コンソールでSpark（無料）を確認。こちらでは請求設定・権限・providerを変更していない。Cloudflare側のプランは未確認。
+- Web設定をコンソールのDOMから正確に取得し、Git対象外の`ledger_private/firebase-web.json`へmode 0600で保存。Firebase Web API keyはクライアント用設定であり、サービスアカウント秘密鍵ではない。UIDはnullで開始し、実設定値をGit・本記録へ転記しない。
+- 公開設定のGET `/v1/projects`はHTTP 200。承認済みドメインにlocalhostが含まれていたため追加操作は不要だった。[公開プロジェクト設定API](https://docs.cloud.google.com/identity-platform/docs/reference/rest/v1/TopLevel/getProjects)
+- `npm run login`でlocalhost:8788の専用画面を起動。別の`.login-d1/`に架空データだけを保存し、通常の8787番を変更しない。サーバーはGoogle公式公開鍵の取得だけを明示許可。ブラウザーは公式CDNの13.2.0 App/Authを使用し、Analyticsは読み込まない。
+- `/identity/probe`はGoogle署名とclaimsを確認して、そのログインのUID・email・本人設定の一致状態を返す。権限は付与しない。本人アカウント確認後にだけCLIの`--owner`でUIDを固定し、設定一致後に台帳APIを許可する。HTTP登録・同期経路は拒否する。
+- `initializeAuth`は最初からメモリ保持に限定。再確認はtokenの強制更新を要求し、サインアウト時は認証表示を即消去。遅れて返ったprobe／読取を画面へ適用しない。tokenをファイル・URL・ブラウザー永続領域・ログへ保存しない。
+- 追加のworkerd／設定3件と画面処理2件が成功（全体56件＋追加画面2件）。未登録の初回ログインに権限なし、CLIによる固定、他UID拒否、正しい保存の再送1件、Origin・期限・偽認証・HTTP登録拒否、メモリ保持・再確認・サインアウト後の遅延応答・SDK取得失敗を確認。自動試験のtokenは架空のメモリ内署名を使用した。
+- 実Chromeで公式SDKから認証を初期化し、ログインボタンが有効になること、初期画面の横はみ出しがないことを確認。**実Googleログインの成功はまだ未確認。** 本人UID固定・実token更新・実サインアウトは利用者がログインした後の確認事項。
+
+起動・本人UID固定の具体的な手順は[試作README](README.md#実googleログインの専用試験)を参照。追加費用・有料API・クラウド公開・本番データ変更はなし。GASのソース変更・同期・deploymentはない。
 
 ## 次に確認すること
 

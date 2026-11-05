@@ -1,6 +1,6 @@
 # Workers＋D1 ローカル試作
 
-**追加費用0円・架空データ専用。** Miniflare 4のworkerd／D1 bindingで動作する。Cloudflareアカウント・APIキー・Google認証・OpenAI APIは不要。クラウドへの作成・公開・課金は行わない。
+**追加費用0円・架空データ専用。** Miniflare 4のworkerd／D1 bindingで動作する。通常の試作ではCloudflareアカウント・APIキー・Google認証・OpenAI APIは不要。別途、本人のFirebase無料プロジェクトを使うログイン専用試験を追加した。クラウドへの作成・公開・課金は行わない。
 
 ## 起動
 
@@ -43,7 +43,7 @@ D1の日次無料枠の上限に達した場合は、画面に「24時間後に�
 npm test
 ```
 
-ローカルポートの使用を許可した環境で実行する。Miniflareの実D1 bindingとPython HTTP同期に対する53個の統合テストで、次を確認する。
+ローカルポートの使用を許可した環境で実行する。Miniflareの実D1 bindingとPython HTTP同期に対する58個のテストで、次を確認する。
 
 - 同じPython架空データをGASの既存Node VMへ入れ、6配信の一覧、候補、検索、ページ、本文と、100件保存後の状態・メモ・版を照合する。実行時刻、内部履歴フィールドは比較対象から分離する。
 - 100件の最後の1件の競合、101件、不正状態、メモ長、所属外PMID、誤った配信版で追記がない。
@@ -55,7 +55,7 @@ npm test
 - Python同期の再実行・中断再開・応答喪失・競合・redirect拒否、UTF-8容量制限、診断値の内容、履歴増加時の操作ID検索を確認する。
 - 分割転送の欠落・重複・誤った順序、公開前の全件検証、未完了アップロードがあっても起動できること、複数世代・取得中編集の一貫したバックアップ、破損・途中終了した復元を公開しないことを確認する。
 
-2026-11-05に試作Node.js 53件・Python専用7件、既存Node.js 54件・Python 69件が成功した。ローカル負荷試験の方法・集計・容量上限は[試験結果](LOAD_TEST_RESULTS.md)を参照。
+2026-11-05に試作Node.js 58件・Python専用7件（Pythonは前回確認）、既存Node.js 54件・Python 69件が成功した。ローカル負荷試験の方法・集計・容量上限は[試験結果](LOAD_TEST_RESULTS.md)を参照。
 
 2026-11-04に統合テスト16件成功。現行GASのNode.jsテスト54件も成功。MacのChromeで820×1180の画面を開き、保存＋完了、再読み込み後のメモ保持、ページ間編集、異なる状態のまとめ保存、横はみ出し・ブラウザーエラーなしを確認した。commit後503の画面試験でも、編集を固定して同じ要求を再送し、論文履歴・完了履歴が各1件に留まることを確認した。今回の3択・初期値・旧状態を保ったメモ保存・検索・バックアップダウンロードもChromeで確認した。iPad実機の確認ではない。
 
@@ -63,7 +63,36 @@ npm test
 
 `npm run test:identity`で、署名JWTによる本人限定判定・同期権限の分離を試験する。[認証検証記録](IDENTITY_VALIDATION.md)に署名判定7件・公開鍵取得／更新7件と残る条件を記録した。joseで署名とclaimsを検証し、workerdでも不正な要求がDBへ届かないことを確認する。秘密鍵とtokenは試験時にメモリ内で作る。公開鍵のHTTP応答も自動試験では架空の応答へ差し替えるため、クラウドアカウントは不要。証明書生成には標準の`/usr/bin/openssl`を使う。esbuildはJWT試験の入口だけをメモリ内でbundleする。
 
-通常の`npm start`と画面は従来の仮認証のまま。今回の試験入口もlocalhost専用であり、実Googleログインと本人のクラウド設定はまだ接続していない。公開鍵loaderの実装・キャッシュ試験とGoogle公式公開証明書の実取得は確認したが、実Access teamは未確認。クラウドへ公開する設定は追加していない。
+通常の`npm start`と8787番の画面は従来の仮認証のまま。実Googleログイン用の別画面は次の手順で8788番へ起動する。実Access team・クラウドCPUは未確認で、クラウドへ公開する設定は追加していない。
+
+### 実Googleログインの専用試験
+
+利用者がFirebaseの無料Sparkプロジェクト・Google provider・Webアプリを用意した。Web設定はGit対象外の`ledger_private/firebase-web.json`に保存する。公開用Web設定のうち次の4項目だけを使い、Analytics・Hosting・Firestoreは追加しない。
+
+```json
+{"firebase":{"apiKey":"<Firebase Web API key>","authDomain":"<project-id>.firebaseapp.com","projectId":"<project-id>","appId":"<Web app ID>"},"ownerUid":null}
+```
+
+秘密鍵・Googleパスワード・ID tokenはこのファイルへ入れない。別MacにはGit経由で移らない。設定ファイルは所有者のみ読み書きできる権限にする。
+
+```bash
+# pmid_ledger/prototype から
+npm run login
+```
+
+[専用画面](http://localhost:8788/)で「Googleでログイン」を押す。専用の`.login-d1/`へ架空120件を初期化し、8787番のDBは使わない。サーバーはGoogle公式公開証明書のGETだけを許可し、ブラウザーは公式CDNのFirebase SDK 13.2.0（App/Authのみ）とGoogleログインへ接続する。使わない日の定期通信はない。[公式SDK設定](https://firebase.google.com/docs/web/setup)、[Googleログイン](https://firebase.google.com/docs/auth/web/google-signin)
+
+署名・project・Google provider・期限を確認した後、画面へそのログインのUIDを表示する。**最初の利用者を自動で所有者へ登録しない。** 本人のアカウントであることを確認してから、ローカルの別ターミナルでUIDを固定する。
+
+```bash
+node login-local.mjs --owner '<画面で確認した本人UID>'
+```
+
+「認証を再確認」でtokenを更新し、本人UID一致後に「架空データを取得して確認」を押す。設定は要求ごとに読み直すため再起動は不要。固定前や別UIDは台帳APIへ入れない。HTTPの自動登録・同期APIは提供しない。架空の配信日は固定なので、直近2か月の結果が0件でも正常。
+
+認証は初期化時から`inMemoryPersistence`とし、tokenをファイル・localStorage・sessionStorage・URL・ログへ保存しない。再読み込み後は再度ログインする。サインアウト直後は表示を消し、遅れて届いた応答も反映しない。これは画面のサインアウトであり、発行済みtokenのサーバー失効まで実装したものではない。[認証の永続化](https://firebase.google.com/docs/auth/web/auth-state-persistence)
+
+今回、実ChromeでSDK読込・初期画面・ログインボタン有効・横はみ出しなしを確認。実Googleログインの成功、本人UIDの固定、実token更新／サインアウトは利用者のログイン後に確認する。Firebaseの公開設定APIはHTTP 200で、localhostが承認済みであることを確認した。秘密情報をチャットへ送る必要はない。
 
 ## Python同期と負荷試験
 

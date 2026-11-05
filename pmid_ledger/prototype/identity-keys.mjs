@@ -60,3 +60,6 @@ export function createPublicKeySources(config,{fetcher=fetch,now=()=>Date.now()}
   return {ownerKeys:source(FIREBASE_CERTS,'firebase',{fetcher,now}),
     syncKeys:source(config.accessIssuer+'/cdn-cgi/access/certs','access',{fetcher,now})};
 }
+export function createOwnerKeySource({fetcher=fetch,now=()=>Date.now()}={}){
+  return source(FIREBASE_CERTS,'firebase',{fetcher,now});
+}

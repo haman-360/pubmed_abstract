@@ -1,5 +1,14 @@
 # PMID論文確認台帳 開発・調査ログ
 
+## 2026-11-05 JST：Firebase無料設定を確認し、Googleログイン専用のローカル画面を追加
+
+- 利用者がFirebaseプロジェクト・Google provider・Webアプリを登録。コンソールでSpark（無料）とWeb設定を確認し、公式の公開設定GETは200、localhostは承認済みだった。こちらで課金・公開・権限設定は変更していない。Web設定はGit対象外の`ledger_private/firebase-web.json`へ0600で保存し、本人UIDはnullのまま。
+- `npm run login`でlocalhost:8788を起動。既存8787番と別の`.login-d1/`へ架空120件を初期化し、利用中の通常試作DB・サーバーは変更しない。公式CDNのApp/Auth 13.2.0だけを読み込み、サーバー側の外向き通信はGoogle公式公開証明書のGETだけ許可。Analytics・Hosting・Firestoreは追加していない。
+- Google署名・project・Google provider・期限を確認してUIDを表示するprobeを追加。初回ログインで自動登録せず、本人アカウント確認後にローカルCLIでUIDを固定する。固定前・別UIDは台帳APIに入れず、HTTP登録・同期経路は拒否する。設定を動的に読み直し、固定後に再起動せず再確認できる。
+- 認証保持は初期化時からメモリ内のみ。tokenをファイル・Git・ログ・URL・localStorage／sessionStorageへ保存しない。再確認はtoken更新を要求、サインアウト時は表示消去と遅延応答の無効化。発行済みtokenのサーバー失効は別課題。
+- Node全体56件と追加画面処理2件が成功。workerdで未登録／他UID／偽認証／期限／Origin／登録経路の拒否、本人固定後の読取・保存・再送1件、画面でメモリ保持・token再確認・サインアウト後の遅延応答・SDK取得失敗を確認。実ChromeはSDK初期化、初期画面・ログインボタン有効・横はみ出しなしまで確認。実Googleログイン・本人UID固定・実token更新／サインアウトは利用者のログイン待ち。
+- [試作README](prototype/README.md)・[認証検証記録](prototype/IDENTITY_VALIDATION.md)・台帳README・比較計画を更新。現在は①遅さ改善の後半、本人認証の実接続前。次は本人ログイン→UID固定→token更新と架空データ取得、その後にCloudflare Free／Access設定・クラウドCPUと往復。②アプリ化・③オフラインは後。追加費用0円、GAS同期不要、deployment・クラウド公開・有料APIは未実施。
+
 ## 2026-11-05 JST：Cloudflareアカウントありを確認、公開鍵取得・キャッシュ更新を検証
 
 - 利用者の回答で、既にあるのはCloudflareのアカウントと確認した。Workers／AccessのプランとFirebase利用状況は未確認。追加費用0円のまま、実ログインに先立つ鍵取得部分を実装し、Firebase Sparkの準備手順を[認証検証記録](prototype/IDENTITY_VALIDATION.md)へ追記。アカウント・契約・課金・クラウド環境は変更していない。
