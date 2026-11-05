@@ -53,7 +53,7 @@ SQLは掲載履歴と手動履歴の分離、検索、版数の条件付き保�
 
 Firestoreのモバイル／WebアクセスはAuth＋Rules、Python等のサーバーSDKはIAMで制御される。[Firestoreのアクセス制御](https://firebase.google.com/docs/firestore/security/overview)
 
-Workerでの認証は単なるJWTのdecodeで済ませない。Firebase公式の検証条件に従い署名、期限、発行元、対象project、UIDを確認し、本人以外・未認証・別projectのtokenを拒否する。実装時はWorkersで動く検証ライブラリを選定し、鍵取得・更新、token更新・ログアウト後の挙動も試す。ブラウザーからの変更要求は許可OriginとContent-Typeも制限する。Mac／iPadのネイティブログインが成立するかも、アプリ本体の開発前に確認する。[ID token検証](https://firebase.google.com/docs/auth/admin/verify-id-tokens)
+Workerでの認証は単なるJWTのdecodeで済ませない。Firebase公式の検証条件に従い署名、期限、発行元、対象project、UIDを確認し、本人以外・未認証・別projectのtokenを拒否する。ローカルではjoseによる署名・claimsの検証と、workerdでの権限分離を[検証した](prototype/IDENTITY_VALIDATION.md)。公式の鍵取得・更新、実Google tokenの更新・ログアウト後の挙動は引き続き確認する。ブラウザーからの変更要求は許可OriginとContent-Typeも制限する。Mac／iPadのネイティブログインが成立するかも、アプリ本体の開発前に確認する。[ID token検証](https://firebase.google.com/docs/auth/admin/verify-id-tokens)
 
 Python同期には本人ログインのtokenを流用しない。Bの最初の案は同期パスだけをCloudflare AccessのService Authで保護し、Workerでも検証済みのサービス識別を確認する。手動保存パスでは同期資格情報を拒否し、同期パスでは更新可能なメタデータ種別を限定する。ローカル試作の偽認証をクラウドへ持ち出さない。[Service tokens](https://developers.cloudflare.com/cloudflare-one/access-controls/service-credentials/service-tokens/)、[Accessの検証](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/)
 
@@ -167,7 +167,7 @@ D1は検索結果が少なくても広い走査が読取量になる。無料枠
 
 ## 採否と次の成果物
 
-共通fixture・GASとの主要結果の比較、BのローカルD1の保存／rollback／再送・世代公開試験と小さな画面、検索のSQL化・バックアップ復元を実装した。2026-11-05にPythonのHTTP同期と増量試験を実施し、単一行の容量問題を分割保存で解消した。5,000件・200配信・1万掲載履歴・5万行レビューでの一覧・保存と、別DB復元後の内容一致・再送の重複なしを確認。[結果と限界](prototype/LOAD_TEST_RESULTS.md)を参照。[無料枠のローカル確認](prototype/FREE_PLAN_READINESS.md)で走査削減と同期の予算内停止を追加した。5,000件初回同期は依然1日分の書込枠を超えるため、日次残枠と再開の運用確認が必要。次はJWT検証・本人アカウントのプラン確認・クラウドCPUと速度を確認する。AのRules成立性の比較も残る。
+共通fixture・GASとの主要結果の比較、BのローカルD1の保存／rollback／再送・世代公開試験と小さな画面、検索のSQL化・バックアップ復元を実装した。2026-11-05にPythonのHTTP同期と増量試験を実施し、単一行の容量問題を分割保存で解消した。5,000件・200配信・1万掲載履歴・5万行レビューでの一覧・保存と、別DB復元後の内容一致・再送の重複なしを確認。[結果と限界](prototype/LOAD_TEST_RESULTS.md)を参照。[無料枠のローカル確認](prototype/FREE_PLAN_READINESS.md)で走査削減と同期の予算内停止を追加した。5,000件初回同期は依然1日分の書込枠を超えるため、日次残枠と再開の運用確認が必要。JWTのローカル検証は成功。次は公開鍵の外部取得・実Googleログイン・本人アカウントのプラン確認・クラウドCPUと速度を確認する。AのRules成立性の比較も残る。
 
 まず追加支出0円で継続できることを採用の必須条件として確認し、満たさない構成は速度に関係なく除外する。そのうえで契約適合、Mac／iPad本人ログイン、Pythonの無人同期、バックアップ復元、低頻度利用時の待ち時間、保守の手間を同じ表で判定する。現時点ではクラウド上の実測欄は両案とも未測定。無料構成で改善が成立しなければ現行GASの継続も結論として認める。設定作業と未解決点も成果物に残す。
 

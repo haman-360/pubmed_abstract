@@ -78,7 +78,7 @@ Firebase ID tokenはdecodeだけで許可せず、RS256署名・鍵ID・issuer�
 
 注意する具体的条件として、Zero Trustの公式初期設定はFreeでも支払情報の入力が必要と案内している。登録済みアカウントの状態は未確認で、こちらで登録・プラン契約は行っていない。支払情報不要と誤認して設定を進めない。[Zero Trust初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)。独自ドメインの購入は前提にせず、TESTには個人用途の`workers.dev`を候補にする。[workers.devとAccess](https://developers.cloudflare.com/workers/configuration/routing/workers-dev/)
 
-残る順番は、JWTのローカル署名／偽造／期限／権限分離試験→対象アカウントのFree／Spark・日次残枠の確認→本人認証済みの別TESTでCPU・Mac／iPad往復を測ること。現在の固定テストtokenとlocalhost用Workerをそのまま公開しない。設定不足のまま外部公開する変更やdeploymentコマンドは追加していない。方式を決めた後に②アプリ化、その後に③オフライン対応へ進む。
+JWTのローカル署名／偽造／期限／権限分離試験は[認証検証記録](IDENTITY_VALIDATION.md)のとおり成功した。次は公式公開鍵の取得／更新と実Googleログイン、対象アカウントのFree／Spark・日次残枠の確認、その後に本人認証済みの別TESTでCPU・Mac／iPad往復を測ること。現在の固定テストtokenとlocalhost用Workerをそのまま公開しない。設定不足のまま外部公開する変更やdeploymentコマンドは追加していない。方式を決めた後に②アプリ化、その後に③オフライン対応へ進む。
 
 ## 再現
 
