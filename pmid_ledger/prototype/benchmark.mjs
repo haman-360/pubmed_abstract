@@ -52,7 +52,7 @@ for(const config of [{label:'small-120',args:[]},{label:'scale-500',args:['--sca
       if(profile)assert.equal(data.profile.missing_rows_metadata,0);
       return {elapsed_ms,bytes:Buffer.byteLength(text),profile:data.profile,value:data.value};
     }
-    const listed=(await request('listIssues')).value;
+    const listed=(await request('listIssues',{scope:'all'})).value;
     const selected=[...listed.items].sort((a,b)=>b.total-a.total)[0];
     const issueKey=selected.issue_key;
     const first=(await request('listIssuePapers',{issue_key:issueKey})).value;
@@ -60,7 +60,7 @@ for(const config of [{label:'small-120',args:[]},{label:'scale-500',args:['--sca
     for(let offset=50;offset<first.total;offset+=50)members.push(...(await request('listIssuePapers',{issue_key:issueKey,offset})).value.items);
     const revision=first.revision;
     const readCases=async()=>({
-      issues:await measure(()=>request('listIssues')),
+      issues:await measure(()=>request('listIssues',{scope:'all'})),
       papers:await measure(()=>request('listIssuePapers',{issue_key:issueKey})),
       search:await measure(()=>request('listIssuePapers',{issue_key:issueKey,query:'日本語'})),
       detail:await measure(()=>request('getPaperDetail',{issue_key:issueKey,pmid:members[0].pmid}))

@@ -99,7 +99,7 @@ test('opt-in profiles expose only counters and include D1 metadata without chang
   const {mf}=await setup(t);await seed(mf);
   const plain=await call(mf,'listIssues'),profiled=await call(mf,'listIssues',{}, {profile:true});
   assert.deepEqual(profiled.value,plain.value);assert.equal(plain.profile,undefined);
-  assert.equal(profiled.profile.statements,1);assert.equal(profiled.profile.missing_rows_metadata,0);
+  assert(profiled.profile.database_calls<=5);assert.equal(profiled.profile.missing_rows_metadata,0);
   assert(profiled.profile.rows_read>0);assert.equal(profiled.profile.rows_written,0);
   assert(Object.values(profiled.profile).every(v=>typeof v==='number'&&Number.isFinite(v)));
   const status=await call(mf,'status',{}, {sync:true,token:'Bearer local-synthetic-owner'});assert.equal(status.status,403);

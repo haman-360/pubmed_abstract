@@ -89,6 +89,8 @@ CREATE TABLE IF NOT EXISTS issue_lists (
   FOREIGN KEY(generation,issue_key) REFERENCES issues(generation,issue_key)
 );
 -- statement
+CREATE INDEX IF NOT EXISTS issue_lists_date ON issue_lists(generation,json_extract(info_json,'$.delivered_date') DESC,json_extract(info_json,'$.issue_id') DESC,json_extract(info_json,'$.topic'));
+-- statement
 CREATE VIEW IF NOT EXISTS issue_states AS
 SELECT s.generation AS revision,l.issue_key,
   json_patch(l.info_json,json_object(

@@ -39,7 +39,7 @@ function project(items) {return items.map(p=>({pmid:p.pmid,title:p.title,review:
 
 test('Python fixture and D1 lists agree with GAS for six deliveries, pagination, scores and literal search',async t=>{
   const {mf}=await setup(t),e=gas();
-  const listed=await call(mf,'listIssues');
+  const listed=await call(mf,'listIssues',{scope:'all'});
   assert.deepEqual(listed.value.items,e.plain(e.ctx.listIssues({status:'all'}).items));
   for(const i of listed.value.items){
     for(const query of ['','CLINICAL','%','_',"'quote'",'日本語','🧪','İ','2']){
@@ -126,7 +126,7 @@ test('metadata staging stays invisible, publication uses CAS, and sync never rew
   await call(mf,'saveAndCompleteIssue',r);
   const before=await counts(db),revised=fixture(true);
   assert.equal((await call(mf,'stage',revised,{sync:true})).status,200);
-  assert.equal((await call(mf,'listIssues')).value.revision,data.generation);
+  assert.equal((await call(mf,'listIssues',{scope:'all'})).value.revision,data.generation);
   const publish={generation:revised.generation,expected_revision:data.generation};
   assert.equal((await call(mf,'publish',publish,{sync:true})).status,200);
   const issue=(await call(mf,'listIssuePapers',{issue_key:small})).value.issue;

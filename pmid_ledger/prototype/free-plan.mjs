@@ -40,7 +40,7 @@ try{
   }
   assert(completed);window={};const unchanged=await sync();assert.equal(unchanged.requests,1);report.unchanged={result:unchanged,...total(window)};
   async function api(name,body={}){const r=await call(rt.mf,name,body,{profile:true});assert.equal(r.status,200);record(name,r.profile);return r.value;}
-  window={};const list=await api('listIssues'),issue=list.items[0];
+  window={};const list=await api('listIssues',{scope:'all'}),issue=list.items[0];
   const papers=await api('listIssuePapers',{issue_key:issue.issue_key});
   await api('listIssuePapers',{issue_key:issue.issue_key,query:'日本語'});
   await api('getPaperDetail',{issue_key:issue.issue_key,pmid:papers.items[0].pmid});

@@ -197,7 +197,7 @@ def sync_metadata(incoming, transport, stop_after_stage=False, write_budget=DEFA
             return paused(cost)
         transport.post("chunk", {"generation": generation, **chunk})
         used += cost
-    finish_writes = 2 * manifest["tables"]["Issues"]["count"] + 5
+    finish_writes = 3 * manifest["tables"]["Issues"]["count"] + 5
     if used + finish_writes > write_budget:
         return paused(finish_writes)
     for offset in range(0, manifest["tables"]["Issues"]["count"], 5):

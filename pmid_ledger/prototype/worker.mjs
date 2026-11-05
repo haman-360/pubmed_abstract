@@ -5,6 +5,7 @@ import {metadataNames,requireThat,hash,records,validKey,projectionStatements} fr
 import {operationRequest,statuses} from './operations.mjs';
 import {FORMAT,begin,upload,buildPage,finish,readChunk,chunkedDetail,buildIssue} from './chunked.mjs';
 import {startBackup,backupPage} from './backup-pages.mjs';
+import {browseIssues,readLimit} from './browse.mjs';
 
 export async function backfillLists(db) {
   const {results}=await db.prepare(`SELECT g.id,g.tables_json FROM generations g WHERE EXISTS(
@@ -19,19 +20,6 @@ export async function backfillLists(db) {
     }
     else await db.batch(projectionStatements(db,g.id,JSON.parse(g.tables_json)));
   }
-}
-async function listIssues(db,r) {
-  const {results}=await db.prepare(`SELECT revision,item_json FROM issue_states ORDER BY
-    json_extract(item_json,'$.delivered_date') DESC,json_extract(item_json,'$.issue_id') DESC,
-    json_extract(item_json,'$.topic')`).all();
-  requireThat(results.length,'metadata_not_seeded',409);
-  return {...page(results.map(row => {const {scores_available,...i}=JSON.parse(row.item_json);return i;}),r.offset,20),revision:results[0].revision};
-}
-function page(items,offset,size) {
-  offset ??= 0;
-  requireThat(Number.isSafeInteger(offset)&&offset>=0,'invalid_offset');
-  if(offset>=items.length)offset=Math.max(0,Math.floor((items.length-1)/size)*size);
-  return {items:items.slice(offset,offset+size),total:items.length,offset,page_size:size};
 }
 async function issuePapers(db,r) {
   validKey(r.issue_key);
@@ -161,6 +149,7 @@ export default {
       const body = JSON.parse(text);
       profile=request.headers.get('X-Local-Profile')==='1'?newProfile():null;
       const db=profile?profiledDatabase(env.DB,profile):env.DB;
+      if(request.headers.get('X-Local-Fault')==='read-limit')throw new Error("D1_ERROR: Your account has exceeded D1's free tier daily row read limit.");
       let value;
       if(url.pathname==='/sync/status') {
         const row=await db.prepare(`SELECT s.generation revision,g.payload_hash,g.tables_json
@@ -182,13 +171,15 @@ export default {
       else if(url.pathname==='/api/backup') value=await exportBackup(db);
       else if(url.pathname==='/api/backupStart')value=await startBackup(db);
       else if(url.pathname==='/api/backupPage')value=await backupPage(db,body);
-      else if(url.pathname==='/api/listIssues') value=await listIssues(db,body);
+      else if(url.pathname==='/api/listIssues') value=await browseIssues(db,body,env.LOCAL_NOW?new Date(env.LOCAL_NOW):new Date());
       else if(url.pathname==='/api/listIssuePapers') value=await issuePapers(db,body);
       else if(url.pathname==='/api/getPaperDetail') value=await detail(db,body);
       else throw Object.assign(new Error('unknown_endpoint'),{status:404});
       if(profile)profile.worker_wall_ms=performance.now()-started;
       return new Response(JSON.stringify({value,...(profile?{profile}:{})}), {headers});
     } catch (e) {
+      const limited=readLimit(e,env.LOCAL_NOW?new Date(env.LOCAL_NOW):new Date());
+      if(limited)return new Response(JSON.stringify(limited),{status:429,headers:{...headers,'Retry-After':String(limited.retry_after_seconds)}});
       const status = e.status ?? (/operation_id_reused|UNIQUE|conflict|remaining|CHECK|missing/.test(e.message) ? 409 : 400);
       return new Response(JSON.stringify({error: e.status ? e.message : status === 409 ? 'conflict_or_invalid_atomic_operation' : 'invalid_request_or_database_failure'}), {status, headers});
     }

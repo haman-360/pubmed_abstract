@@ -9,11 +9,11 @@ export function fixture(revised = false) {
   return JSON.parse(execFileSync('python3', ['-m', 'pmid_ledger.prototype.fixture', ...(revised ? ['--revised'] : [])],
     {cwd: fileURLToPath(new URL('../../', import.meta.url)), encoding: 'utf8', maxBuffer: 4000000}));
 }
-export async function runtime({persist = false, port = 0, local = true} = {}) {
+export async function runtime({persist = false, port = 0, local = true, now} = {}) {
   const mf = new Miniflare({modules: true, scriptPath: fileURLToPath(new URL('./worker.mjs', import.meta.url)),
     compatibilityDate: '2026-07-30', host: '127.0.0.1', port, cf: false,
     d1Databases: {DB: 'local-synthetic-ledger'}, d1Persist: persist,
-    bindings: {LOCAL_PROTOTYPE: local ? '1' : '0', LOCAL_HTML: fs.readFileSync(new URL('./index.html', import.meta.url), 'utf8'),
+    bindings: {LOCAL_PROTOTYPE: local ? '1' : '0', ...(now?{LOCAL_NOW:now}:{}), LOCAL_HTML: fs.readFileSync(new URL('./index.html', import.meta.url), 'utf8'),
       LOCAL_METADATA:fs.readFileSync(new URL('./metadata.mjs',import.meta.url),'utf8'),
       LOCAL_BACKUP_CLIENT:fs.readFileSync(new URL('./backup-client.mjs',import.meta.url),'utf8')},
     // Deny outbound HTTP from the Worker, including accidental future fetch() additions.

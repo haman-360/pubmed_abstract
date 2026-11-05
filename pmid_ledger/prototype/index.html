@@ -8,6 +8,8 @@ header{border-left:5px solid #277a69;padding:12px;background:white}button,select
 <header><h1>架空台帳 · ローカルD1試作</h1><p>追加費用0円／このMac内だけで動作。実データ・Google・Cloudflareのクラウドへ接続しません。</p><small>仮認証。クラウド速度・無料プランのCPU制限・本人ログインは未検証です。</small></header>
 <p id="message" role="status"></p>
 <button id="back">配信一覧</button><button id="reload">再読み込み</button><button id="backup">JSONバックアップ</button>
+<form id="period"><label>表示期間 <select id="scope"><option value="recent">直近2か月</option><option value="month">過去の月を指定</option><option value="unknown">配信日不明</option></select></label><label id="month-label" hidden>対象月 <input id="month" type="month" min="1900-01" max="9998-12"></label><button>表示</button></form>
+<p id="period-summary"></p><div id="issue-pages"><button id="issues-previous">配信一覧の前へ</button><span id="issue-page"></span><button id="issues-next">配信一覧の次へ</button></div>
 <form id="search" hidden><label>PMID・タイトル検索 <input id="query" maxlength="300" type="search"></label><button>検索</button><button id="clear" type="button">解除</button></form>
 <h2 id="heading">配信一覧</h2><div id="list"></div>
 <nav id="controls" hidden><span id="progress"></span><button id="previous">前へ</button><button id="next">次へ</button><button id="save">途中まで保存</button><button id="complete">保存して確認完了</button><button id="retry" hidden>同じ要求を再試行</button></nav>
@@ -16,18 +18,22 @@ import {downloadBackup} from '/backup-client.mjs';
 const $=id=>document.getElementById(id);
 const labels={unreviewed:'未確認',reviewed_no_fulltext:'原本不要',want_fulltext:'入手希望'};
 const legacyLabels={fulltext_obtained:'原文入手済み未読',read:'読了'};
-let key=null,offset=0,current=null,pending=null,busy=false;
+let key=null,offset=0,current=null,pending=null,busy=false,issueOffset=0,issueTotal=0,issueScope='recent',issueMonth='';
 const drafts=new Map();
 function message(text){$('message').textContent=text;}
 function lock(value){busy=value;for(const el of document.querySelectorAll('button,select,textarea,input'))el.disabled=value;if(!value&&pending)for(const el of document.querySelectorAll('select,textarea,#save,#complete,#previous,#next,#query,#search button'))el.disabled=true;}
-async function rpc(name,body){const response=await fetch('/api/'+name,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer local-synthetic-owner'},body:JSON.stringify(body)});const data=await response.json();if(!response.ok)throw new Error(data.error);return data.value;}
+async function rpc(name,body){const response=await fetch('/api/'+name,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer local-synthetic-owner'},body:JSON.stringify(body)});const data=await response.json();if(!response.ok)throw new Error(data.message??data.error);return data.value;}
 function progress(){if(current)$('progress').textContent=`${current.issue.total}件中 未確認${current.issue.unreviewed}件／未保存${drafts.size}件 `;}
 async function load(){
   lock(true);
   try{
-    const data=await rpc(key?'listIssuePapers':'listIssues',key?{issue_key:key,offset,query:$('query').value}:{});
-    $('list').replaceChildren();$('controls').hidden=!key;$('search').hidden=!key;
-    if(!key){$('heading').textContent='配信一覧';for(const issue of data.items){const card=document.createElement('article'),button=document.createElement('button');button.textContent=`${issue.issue_id} · ${issue.topic} — 未確認${issue.unreviewed}/${issue.total} · ${issue.status}`;button.onclick=()=>{key=issue.issue_key;offset=0;load();};card.append(button);$('list').append(card);}}
+    const data=await rpc(key?'listIssuePapers':'listIssues',key?{issue_key:key,offset,query:$('query').value}:{scope:issueScope,month:issueMonth,offset:issueOffset});
+    $('list').replaceChildren();$('controls').hidden=!key;$('search').hidden=!key;$('period').hidden=!!key;$('issue-pages').hidden=!!key;
+    if(!key){issueOffset=data.offset;issueTotal=data.total;$('heading').textContent='配信一覧';
+      $('period-summary').textContent=data.window.scope==='recent'?`配信日 ${data.window.from}〜${data.window.through}（直近2か月）。過去分は月を指定して開けます。`:data.window.scope==='unknown'?'配信日が不明なデータを表示しています。':`${issueMonth}の配信を表示しています。`;
+      $('issue-page').textContent=data.total?`${data.offset+1}〜${Math.min(data.offset+20,data.total)} / ${data.total}配信`:'該当する配信はありません。';
+      $('issues-previous').hidden=data.offset===0;$('issues-next').hidden=data.offset+20>=data.total;
+      for(const issue of data.items){const card=document.createElement('article'),button=document.createElement('button');button.textContent=`${issue.issue_id} · ${issue.topic} — 未確認${issue.unreviewed}/${issue.total} · ${issue.status}`;button.onclick=()=>{key=issue.issue_key;offset=0;load();};card.append(button);$('list').append(card);}}
     else{current=data;offset=data.offset;$('heading').textContent=`${data.issue.issue_id} · ${data.issue.topic}`;
       for(const row of data.items){const card=document.createElement('article'),title=document.createElement('h2'),select=document.createElement('select'),note=document.createElement('textarea'),detail=document.createElement('button');
         title.textContent=`PMID ${row.pmid} — ${row.title}`;select.setAttribute('aria-label',`PMID ${row.pmid} 状態`);note.setAttribute('aria-label',`PMID ${row.pmid} メモ`);note.maxLength=2000;
@@ -58,6 +64,10 @@ $('previous').onclick=()=>{offset=Math.max(0,offset-50);load();};$('next').oncli
 function discard(){if((drafts.size||pending)&&!confirm('未保存の編集と再試行要求を破棄しますか？'))return false;drafts.clear();pending=null;return true;}
 $('back').onclick=()=>{if(discard()){key=null;current=null;offset=0;$('query').value='';load();}};
 $('reload').onclick=()=>{if(discard())load();};
+$('scope').onchange=()=>{$('month-label').hidden=$('scope').value!=='month';};
+$('period').onsubmit=e=>{e.preventDefault();if(!discard())return;if($('scope').value==='month'&&!/^\d{4}-(0[1-9]|1[0-2])$/.test($('month').value)){message('対象月を選んでください。');return;}issueScope=$('scope').value;issueMonth=$('month').value;issueOffset=0;load();};
+$('issues-previous').onclick=()=>{issueOffset=Math.max(0,issueOffset-20);load();};
+$('issues-next').onclick=()=>{if(issueOffset+20<issueTotal){issueOffset+=20;load();}};
 $('search').onsubmit=e=>{e.preventDefault();offset=0;load();};
 $('clear').onclick=()=>{$('query').value='';offset=0;load();};
 $('backup').onclick=async()=>{lock(true);try{const parts=[];for await(const line of downloadBackup(rpc))parts.push(line+'\n');const url=URL.createObjectURL(new Blob(parts,{type:'application/x-ndjson'}));const link=document.createElement('a');link.href=url;link.download='synthetic-ledger-backup-'+new Date().toISOString().replace(/[:.]/g,'-')+'.ndjson';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message('保存済みデータのバックアップを出力しました。未保存の編集は含みません。');}catch(e){message(e.message);}finally{lock(false);}};
