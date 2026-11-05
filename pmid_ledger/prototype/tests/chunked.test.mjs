@@ -130,3 +130,14 @@ test('paged backup retains completed generations and excludes unfinished uploads
   assert.equal((await target.db.prepare('SELECT count(*) n FROM generations').first()).n,2);
   assert.equal((await call(target.mf,'listIssuePapers',{issue_key:key})).value.items[0].review.note,'snapshot note');
 });
+
+test('metadata backup pages walk a rowid cursor without repeated full-table scans',async t=>{
+  const {mf,db}=await setup(t,true);let reads=0;
+  await consumeBackup(downloadBackup(async(name,body)=>{
+    const r=await call(mf,name,body,{profile:true});assert.equal(r.status,200);
+    if(name==='backupPage'&&body.table==='metadata_records')reads+=r.profile.rows_read;
+    return r.value;
+  }));
+  const rows=(await db.prepare('SELECT count(*) n FROM metadata_records').first()).n;
+  assert(reads<=rows*4+128,`${reads} reads for ${rows} source records`);
+});

@@ -39,6 +39,27 @@ class SyncLocalTests(unittest.TestCase):
         self.assertTrue(fixture_stats(scale_fixture(500, 20))["fits_current_sync"])
         self.assertEqual(len(check_fixture(fixture())["papers"]), 120)
 
+    def test_invalid_write_budget_is_rejected_before_http(self):
+        class NoHTTP:
+            def post(self, *args):
+                raise AssertionError("HTTP must not be called")
+        for budget in (-1, 0, 63, "80000"):
+            with self.subTest(budget=budget), self.assertRaisesRegex(SyncError, "write_budget"):
+                sync_metadata(fixture(), NoHTTP(), write_budget=budget)
+
+    def test_old_local_server_returns_restart_instruction(self):
+        class OldServer:
+            requests = 0
+            def post(self, action, value):
+                self.requests += 1
+                if action == "status":
+                    return {"revision": None, "payload_hash": None, "tables": None}
+                if action == "begin":
+                    return {"begun": True}
+                raise AssertionError("No upload to an incompatible server")
+        with self.assertRaisesRegex(SyncError, "requires_restart"):
+            sync_metadata(fixture(), OldServer())
+
 
 if __name__ == "__main__":
     unittest.main()

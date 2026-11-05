@@ -43,7 +43,8 @@ export async function begin(db,body){
     db.prepare('INSERT INTO generations VALUES(?,?,?) ON CONFLICT(id) DO NOTHING').bind(body.generation,digest,JSON.stringify(body.manifest)),
     db.prepare('INSERT INTO publish_guard SELECT CASE WHEN payload_hash=? THEN 1 ELSE 0 END FROM generations WHERE id=?').bind(digest,body.generation),
     db.prepare('DELETE FROM publish_guard')]);
-  return {begun:true,generation:body.generation,manifest_hash:digest};
+  const uploaded=(await db.prepare('SELECT table_name,chunk_index FROM metadata_chunks WHERE generation=? ORDER BY table_name,chunk_index').bind(body.generation).all()).results;
+  return {begun:true,generation:body.generation,manifest_hash:digest,uploaded};
 }
 export async function generationManifest(db,generation){
   const row=await db.prepare('SELECT tables_json,payload_hash FROM generations WHERE id=?').bind(generation).first();
@@ -89,7 +90,7 @@ export async function readChunk(db,body,{requireReady=true}={}){
   return {table_name:body.table_name,index:body.index,rows};
 }
 async function sourceRows(db,g,name,key,parent=false){
-  const {results}=await db.prepare(`SELECT row_json FROM metadata_records WHERE generation=? AND table_name=? AND ${parent?'parent_key':'entity_key'}=? ORDER BY row_index`).bind(g,name,key).all();
+  const {results}=await db.prepare(`SELECT row_json FROM metadata_records INDEXED BY ${parent?'metadata_parent':'metadata_entity'} WHERE generation=? AND table_name=? AND ${parent?'parent_key':'entity_key'}=? ORDER BY row_index`).bind(g,name,key).all();
   return results.map(r=>JSON.parse(r.row_json));
 }
 export async function buildIssue(db,g,key){
@@ -99,7 +100,7 @@ export async function buildIssue(db,g,key){
   const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(snapshotIds)));
   const content=btoa(String.fromCharCode(...new Uint8Array(digest))).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'');
   requireThat(raw.content_version.replace(/=+$/,'')===content&&ids.length===new Set(apps.map(a=>a[1])).size&&apps.every(a=>ids.includes(a[1])),'issue_content_mismatch',409);
-  const papers=(await db.prepare(`SELECT r.row_json FROM members m JOIN metadata_records r ON r.generation=m.generation
+  const papers=(await db.prepare(`SELECT r.row_json FROM members m CROSS JOIN metadata_records r INDEXED BY metadata_entity ON r.generation=m.generation
     AND r.table_name='Papers' AND r.entity_key=m.pmid WHERE m.generation=? AND m.issue_key=?`).bind(g,key).all()).results.map(r=>JSON.parse(r.row_json));
   requireThat(papers.length===ids.length,'issue_papers_missing',409);
   requireThat(new Set(candidates.map(c=>c[1])).size===candidates.length&&candidates.every(c=>apps.some(a=>a[0]===c[2]&&a[1]===c[1]&&a[9]===c[8])),'candidate_snapshot_mismatch',409);
@@ -124,7 +125,7 @@ export async function finish(db,body){
   const bad=await db.prepare(`SELECT
     (SELECT count(*) FROM metadata_records r WHERE r.generation=? AND r.table_name='Appearances' AND (
       NOT EXISTS(SELECT 1 FROM papers p WHERE p.generation=r.generation AND p.pmid=r.entity_key) OR
-      NOT EXISTS(SELECT 1 FROM metadata_records t WHERE t.generation=r.generation AND t.table_name='Texts' AND t.entity_key=json_extract(r.row_json,'$[9]')) OR
+      NOT EXISTS(SELECT 1 FROM metadata_records t INDEXED BY metadata_entity WHERE t.generation=r.generation AND t.table_name='Texts' AND t.entity_key=json_extract(r.row_json,'$[9]')) OR
       NOT EXISTS(SELECT 1 FROM issues i WHERE i.generation=r.generation AND i.issue_key=r.parent_key))) missing,
     (SELECT count(*) FROM issue_lists WHERE generation=?) projections`).bind(g,g).first();
   requireThat(!bad.missing&&bad.projections===manifest.tables.Issues.count,'generation_relations_incomplete',409);
@@ -139,11 +140,11 @@ export async function finish(db,body){
   requireThat(!duplicates.duplicate&&!duplicates.orphan_candidate,'duplicate_or_orphan_metadata',409);
   const indexes=await db.prepare(`SELECT
     (SELECT count(*) FROM metadata_records r WHERE r.generation=? AND r.table_name='TextRows' AND (
-      CAST(json_extract(r.row_json,'$[1]') AS INTEGER) IS NOT (SELECT min(t.row_index)+2 FROM metadata_records t WHERE t.generation=r.generation AND t.table_name='Texts' AND t.entity_key=r.entity_key) OR
-      CAST(json_extract(r.row_json,'$[2]') AS INTEGER) IS NOT (SELECT count(*) FROM metadata_records t WHERE t.generation=r.generation AND t.table_name='Texts' AND t.entity_key=r.entity_key))) bad_text,
+      CAST(json_extract(r.row_json,'$[1]') AS INTEGER) IS NOT (SELECT min(t.row_index)+2 FROM metadata_records t INDEXED BY metadata_entity WHERE t.generation=r.generation AND t.table_name='Texts' AND t.entity_key=r.entity_key) OR
+      CAST(json_extract(r.row_json,'$[2]') AS INTEGER) IS NOT (SELECT count(*) FROM metadata_records t INDEXED BY metadata_entity WHERE t.generation=r.generation AND t.table_name='Texts' AND t.entity_key=r.entity_key))) bad_text,
     (SELECT count(*) FROM metadata_records r WHERE r.generation=? AND r.table_name='IssueCandidateRows' AND (
-      CAST(json_extract(r.row_json,'$[1]') AS INTEGER) IS NOT (SELECT min(c.row_index)+2 FROM metadata_records c WHERE c.generation=r.generation AND c.table_name='IssueCandidates' AND c.parent_key=r.entity_key) OR
-      CAST(json_extract(r.row_json,'$[2]') AS INTEGER) IS NOT (SELECT count(*) FROM metadata_records c WHERE c.generation=r.generation AND c.table_name='IssueCandidates' AND c.parent_key=r.entity_key))) bad_candidates,
+      CAST(json_extract(r.row_json,'$[1]') AS INTEGER) IS NOT (SELECT min(c.row_index)+2 FROM metadata_records c INDEXED BY metadata_parent WHERE c.generation=r.generation AND c.table_name='IssueCandidates' AND c.parent_key=r.entity_key) OR
+      CAST(json_extract(r.row_json,'$[2]') AS INTEGER) IS NOT (SELECT count(*) FROM metadata_records c INDEXED BY metadata_parent WHERE c.generation=r.generation AND c.table_name='IssueCandidates' AND c.parent_key=r.entity_key))) bad_candidates,
     (SELECT count(DISTINCT entity_key) FROM metadata_records WHERE generation=? AND table_name='Texts') texts,
     (SELECT count(DISTINCT parent_key) FROM metadata_records WHERE generation=? AND table_name='IssueCandidates') candidate_groups`).bind(g,g,g,g).first();
   requireThat(!indexes.bad_text&&!indexes.bad_candidates&&indexes.texts===manifest.tables.TextRows.count&&indexes.candidate_groups===manifest.tables.IssueCandidateRows.count,'metadata_indexes_incomplete',409);

@@ -12,6 +12,14 @@ import assert from 'node:assert/strict';
 const exec=promisify(execFile),root=fileURLToPath(new URL('../../',import.meta.url));
 const quick=process.argv.includes('--quick'),samples=quick?5:30,historyTarget=quick?1000:50000;
 async function python(args){const {stdout}=await exec('python3',['-m','pmid_ledger.prototype.sync_local',...args],{cwd:root,timeout:30000});return JSON.parse(stdout);}
+async function syncAll(args){
+  const runs=[];
+  for(let i=0;i<10;i++){
+    const result=await python(args);runs.push(result);
+    if(!result.paused)return {...result,requests:runs.reduce((n,r)=>n+r.requests,0),local_runs:runs};
+  }
+  throw new Error('Local write-budget rehearsal did not finish');
+}
 const round=n=>Math.round(n*1000)/1000;
 function summary(rows){
   const values=rows.map(r=>r.elapsed_ms).sort((a,b)=>a-b),p=n=>values[Math.ceil(n*values.length)-1];
@@ -35,7 +43,7 @@ for(const config of [{label:'small-120',args:[]},{label:'scale-500',args:['--sca
   const {mf,db}=await runtime();
   try{
     const base=String(await mf.ready),version=new Map();let lastOperation;
-    const syncStart=performance.now();entry.sync=await python(['--base-url',base,...config.args]);entry.sync.elapsed_ms=round(performance.now()-syncStart);
+    const syncStart=performance.now();entry.sync=await syncAll(['--base-url',base,...config.args]);entry.sync.elapsed_ms=round(performance.now()-syncStart);
     entry.unchanged_sync=await python(['--base-url',base,...config.args]);assert.equal(entry.unchanged_sync.changed,false);
     async function request(name,body={},profile=true){
       const start=performance.now();const response=await fetch(new URL('/api/'+name,base),{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer local-synthetic-owner',...(profile?{'X-Local-Profile':'1'}:{})},body:JSON.stringify(body),signal:AbortSignal.timeout(30000)});

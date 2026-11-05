@@ -1,0 +1,79 @@
+# 無料プラン成立性のローカル確認：2026-11-05 JST
+
+**判定：クラウド採用はまだ未確定。追加支出0円のままローカル検証を継続する。** 5,000件の同期・保存・復元は成立したが、処理量を測ると無料枠へ合わせる修正が必要だった。今回、索引利用・バックアップ走査を修正し、同期を予算内で中断・再開する仕組みを加えた。クラウド環境・本人認証・課金設定はまだ作成していない。
+
+## 確認した公式仕様
+
+2026-11-05参照。これらはプラン仕様であり、本人のアカウントの契約状態を確認したものではない。
+
+| 項目 | Freeで確認する上限・条件 | 今回の扱い |
+| --- | --- | --- |
+| D1読取／書込 | 500万行／日、10万行／日。索引更新も書込に含む | 結果件数ではなくローカルD1の走査・書込カウンターで測定 |
+| D1保存 | 1 DB 500MB、アカウント合計5GB | ローカル`size_after`を測定。世代・履歴・索引も保存量へ含める |
+| Workers要求／CPU | 10万要求／日、HTTP要求ごとCPU 10ms | 要求数を記録。DB待ちを含む経過時間でCPU適合を判断しない |
+| D1呼出し | Workerの1要求あたり50。batchは1呼出し | SQL文数とは別に`database_calls`を計測 |
+
+[D1料金・超過時の停止](https://developers.cloudflare.com/d1/platform/pricing/)、[D1の制限](https://developers.cloudflare.com/d1/platform/limits/)、[Workersの制限・CPUの定義](https://developers.cloudflare.com/workers/platform/limits/)。D1 Freeは日次枠超過時にクエリが失敗する。有料プランへ切り替えて回避しない。日次枠はアカウントで共有されるので、この台帳だけの値で残枠を保証しない。
+
+## 読取量の問題と修正
+
+空の一時D1へ5,000 PMID・200配信・10,000掲載履歴を同期した。初回同期だけで変更前は18,820,563行を読み、172,589行を書いた。速く動いても、1日分のFreeに収まる処理ではなかった。
+
+- 掲載履歴・本文の対象別取得が、`ORDER BY row_index`やJOIN順により世代全体の走査へ戻っていた。既存のentity／parent索引を指定し、配信の対象PMIDから書誌を引くJOIN順に固定した。索引を増やして書込を増やす変更ではない。
+- 検証時の本文・候補索引への相関SELECTも同じ索引を使用する。
+- バックアップの`rowid`カーソルが世代索引とソートを選び、ページごとに同じデータを走査していた。`NOT INDEXED`でrowidの範囲を直接進むようにした。
+
+同じfixtureで、初回同期の読取は3分割の合計353,594行へ減った。バックアップは同じ保存1件後の条件で15,499,733→73,082行。クラウド請求値やCPU時間の実測ではなく、ローカルD1の診断カウンターの比較である。
+
+## 書込予算で中断・再開
+
+`sync_local.py`は既定で**1回の実行につき見積8万行**までを書き込み、残りは未公開のまま止める。元の公開世代は維持し、再実行時はサーバーに登録済みチャンクを確認して転送済み部分を飛ばす。最後の配信投影・検証・公開にも書込予算を残す。現在のスキーマの主キー・索引・配信所属行を見積に含め、ローカル実測が見積を超えないことを検証した。スキーマ変更時は再検証が必要。
+
+| ローカルで模擬した枠 | 読取行数 | 書込行数 | HTTP要求数 | 公開状態 |
+| --- | ---: | ---: | ---: | --- |
+| 1 | 40,001 | 79,884 | 46 | 未公開 |
+| 2 | 39,696 | 78,794 | 42 | 未公開 |
+| 3 | 273,897 | 13,915 | 51 | 全件検証後に公開 |
+| 合計 | 353,594 | 172,593 | 139 | 5,000件 |
+
+1要求のD1呼出しは最大27。中断したbeginを再実行するため、書込合計は単発より4行多い。
+
+**これは日次上限を自動管理する機能ではない。** ローカルでは3枠を連続実行して中断・再開を再現した。クラウドで同じ日に繰り返せば累積して上限を超える。他の利用がないと仮定しても、この初期投入を8万行ずつ行うなら少なくとも3日次枠に分ける。無料枠のリセット時刻・同一アカウントの他用途・再試行・DB作成やmigrationの使用量を含む残枠確認は、将来のクラウドadapterで必要。自動スケジュールは作成していない。
+
+`--write-budget`でローカルの見積予算を指定できる。`paused: true`／`published: false`は「途中まで保存して停止」であり、公開完了ではない。小さすぎて1チャンクも進まない場合は`next_writes`を確認する。
+
+## 低頻度利用の試算
+
+同じ5,000件・1世代、履歴は保存1件までの条件。5操作は「配信一覧・配信内一覧・検索・本文・1件保存」の各APIを1回と定義した。実利用のタップ数ではなく、保存後の画面自動再読込・認証要求・通信再試行は別に足す。履歴5万行の時間・復元試験とは条件が異なる。
+
+| 仮定した利用日 | API要求数 | 読取行数 | 書込行数 |
+| --- | ---: | ---: | ---: |
+| 使用しない日 | 0 | 0 | 0 |
+| 上記5操作を1回 | 5 | 42,047 | 9 |
+| 上記5操作を4回 | 20 | 168,188 | 36 |
+| 完全バックアップ1回 | 300 | 73,082 | 0 |
+| 変更なし同期1回 | 1 | 2 | 0 |
+
+利用しない日の0は、別の同期・バックアップ・監視等も起動しない仮定。不要な定期通信は追加していない。ローカルDBの`size_after`は50,872,320バイト（索引を含む）だった。1世代の値なので、全世代・長年の履歴・復元先の蓄積が将来500MBへ収まる保証ではない。旧世代を無断で削除する機能は加えていない。
+
+## 本人認証とクラウドへ進む条件
+
+本人用はFirebase AuthenticationのGoogleログイン（Spark）＋許可した本人UID、Python同期はCloudflare AccessのService Authという既存案を維持する。電話／SMS認証は使わない。Sparkは支払方法不要の無料プランとして案内されているが、本人の対象プロジェクトのプラン・課金リンクは未確認。[Firebase料金](https://firebase.google.com/pricing)
+
+Firebase ID tokenはdecodeだけで許可せず、RS256署名・鍵ID・issuer・projectのaudience・期限・発行時刻・auth_time・本人UIDを検証する。公開鍵の取得／更新、鍵取得失敗時の拒否、更新されたtoken、ログアウト後に有効tokenが残る期間も確認する。公開用のJWT検証には既存ライブラリを選び、独自の署名方式は作らない。[Firebase検証条件](https://firebase.google.com/docs/auth/admin/verify-id-tokens)
+
+同期側はAccessの署名済みJWTを検証し、対象team／AUD／期限とservice tokenのClient ID（`common_name`）を許可する。本人tokenで同期を許可せず、同期資格情報で手動レビューを許可しない。Client ID／Secretの文字列を受け取っただけでは認証済みとはみなさない。[Access検証](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/)、[service tokenのclaims](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/application-token/)
+
+注意する具体的条件として、Zero Trustの公式初期設定はFreeでも支払情報の入力が必要と案内している。登録済みアカウントの状態は未確認で、こちらで登録・プラン契約は行っていない。支払情報不要と誤認して設定を進めない。[Zero Trust初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)。独自ドメインの購入は前提にせず、TESTには個人用途の`workers.dev`を候補にする。[workers.devとAccess](https://developers.cloudflare.com/workers/configuration/routing/workers-dev/)
+
+残る順番は、JWTのローカル署名／偽造／期限／権限分離試験→対象アカウントのFree／Spark・日次残枠の確認→本人認証済みの別TESTでCPU・Mac／iPad往復を測ること。現在の固定テストtokenとlocalhost用Workerをそのまま公開しない。設定不足のまま外部公開する変更やdeploymentコマンドは追加していない。方式を決めた後に②アプリ化、その後に③オフライン対応へ進む。
+
+## 再現
+
+```bash
+cd pmid_ledger/prototype
+npm run preflight
+npm test
+```
+
+毎回新しい一時DB・自動割当ポート・架空データだけを使う。結果はGit対象外の`.benchmarks/free-plan.json`（`LOCAL_D1_FREE_REHEARSAL_V1`）へ出力する。通常の`.local-d1/`、実成果物、クラウド資格情報、有料APIは使用しない。

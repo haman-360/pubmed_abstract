@@ -17,6 +17,7 @@ MAX_BYTES = 1_900_000  # Per HTTP request, not the size of the complete dataset.
 CHUNK_BYTES = 196608
 ROW_BYTES = 180000
 FORMAT = "LOCAL_D1_CHUNKS_V2"
+DEFAULT_WRITE_BUDGET = 80_000  # Local rehearsal per run; not an account-wide daily quota guard.
 
 
 class SyncError(Exception):
@@ -129,6 +130,17 @@ def fixture_stats(value):
             "exceeds_legacy_row_limit": stored + 128 > 2_000_000}
 
 
+def chunk_writes(chunk):
+    # Current schema: chunk + PK (2), record + PK + two lookup indexes (4).
+    rows, name = chunk["rows"], chunk["table_name"]
+    count = 2 + 4 * len(rows)
+    if name in ("Papers", "Issues"):
+        count += 2 * len(rows)
+    if name == "Issues":
+        count += 2 * sum(len(json.loads(row[4])) for row in rows)
+    return count
+
+
 def read_tables(current, transport):
     if current["tables"] is not None:
         return current["tables"]
@@ -149,7 +161,9 @@ def read_tables(current, transport):
     return tables
 
 
-def sync_metadata(incoming, transport, stop_after_stage=False):
+def sync_metadata(incoming, transport, stop_after_stage=False, write_budget=DEFAULT_WRITE_BUDGET):
+    if not isinstance(write_budget, int) or write_budget < 64:
+        raise SyncError("write_budget_must_be_at_least_64")
     payload = check_fixture(incoming)
     initial_manifest, _ = chunk_plan(incoming["tables"])
     current = transport.post("status", {})
@@ -167,9 +181,25 @@ def sync_metadata(incoming, transport, stop_after_stage=False):
     root_hash = digest(manifest)
     if current.get("payload_hash") == root_hash:
         return result(False)
-    transport.post("begin", {"synthetic": True, "generation": generation, "manifest": manifest})
+    started = transport.post("begin", {"synthetic": True, "generation": generation, "manifest": manifest})
+    if not isinstance(started.get("uploaded"), list):
+        raise SyncError("local_server_requires_restart_for_budgeted_sync")
+    uploaded = {(c["table_name"], c["chunk_index"]) for c in started["uploaded"]}
+    used = 4  # Upper bound for inserting generation plus temporary guard writes.
+    def paused(next_writes):
+        return {"paused": True, "published": False, "reason": "local_write_budget",
+                "estimated_writes": used, "next_writes": next_writes, "requests": transport.requests}
     for chunk in chunks:
+        if (chunk["table_name"], chunk["index"]) in uploaded:
+            continue
+        cost = chunk_writes(chunk)
+        if used + cost > write_budget:
+            return paused(cost)
         transport.post("chunk", {"generation": generation, **chunk})
+        used += cost
+    finish_writes = 2 * manifest["tables"]["Issues"]["count"] + 5
+    if used + finish_writes > write_budget:
+        return paused(finish_writes)
     for offset in range(0, manifest["tables"]["Issues"]["count"], 5):
         transport.post("build", {"generation": generation, "offset": offset})
     transport.post("finish", {"generation": generation})
@@ -191,11 +221,13 @@ def main():
     parser.add_argument("--issues", type=int, default=200)
     parser.add_argument("--stop-after-stage", action="store_true")
     parser.add_argument("--inspect", action="store_true", help="Only inspect synthetic size; no HTTP")
+    parser.add_argument("--write-budget", type=int, default=DEFAULT_WRITE_BUDGET,
+                        help="Estimated metadata writes per LOCAL run; does not enforce daily account usage")
     args = parser.parse_args()
     try:
         transport = LocalTransport(args.base_url)
         data = scale_fixture(args.papers, args.issues) if args.scale else fixture(args.revised)
-        result = fixture_stats(data) if args.inspect else sync_metadata(data, transport, args.stop_after_stage)
+        result = fixture_stats(data) if args.inspect else sync_metadata(data, transport, args.stop_after_stage, args.write_budget)
         print(json.dumps(result, ensure_ascii=False))
     except (SyncError, ValueError) as exc:
         print(json.dumps({"error": str(exc)}, ensure_ascii=False))

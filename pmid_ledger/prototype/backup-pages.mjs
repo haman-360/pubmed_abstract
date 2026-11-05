@@ -25,7 +25,8 @@ export async function backupPage(db,body){
   const s=body.snapshot;validateSnapshot(s);const name=body.table;
   requireThat(Object.hasOwn(sourceColumns,name)&&Number.isSafeInteger(body.cursor)&&body.cursor>=0,'invalid_backup_page');
   const f=filter(name,s),limit=['generations','operations'].includes(name)?1:128;
-  const {results}=await db.prepare(`SELECT t.rowid _cursor,${sourceColumns[name].map(c=>'t.'+c).join(',')} FROM ${name} t
+  // Walk rowid directly. A generation index plus ORDER BY rowid can rescan/sort the whole table per page.
+  const {results}=await db.prepare(`SELECT t.rowid _cursor,${sourceColumns[name].map(c=>'t.'+c).join(',')} FROM ${name} t NOT INDEXED
     WHERE t.rowid>? AND ${f.sql} ORDER BY t.rowid LIMIT ?`).bind(body.cursor,...f.args,limit).all();
   const rows=[];let next=body.cursor,size=2;
   for(const result of results){const row=sourceColumns[name].map(c=>result[c]),length=new TextEncoder().encode(JSON.stringify(row)).byteLength;

@@ -49,6 +49,25 @@ test('Python interrupted staging remains invisible and resumes without duplicate
   assert.equal((await db.prepare('SELECT count(*) n FROM generations').first()).n,1);
 });
 
+test('Python write-budget pauses preserve the published version and skip committed chunks on resume',async t=>{
+  const {mf,db}=await setup(t);await seed(mf);const url=String(await mf.ready);
+  const base=(await call(mf,'status',{}, {sync:true})).value.revision;
+  let paused=0,lastCount=0,finished=false;
+  for(let i=0;i<20;i++){
+    const before=(await db.prepare('SELECT count(*) n FROM metadata_chunks').first()).n;
+    const result=await python(url,'--revised','--write-budget','1000');assert.equal(result.code,0);
+    const after=(await db.prepare('SELECT count(*) n FROM metadata_chunks').first()).n;
+    if(result.paused){
+      paused++;assert.equal(result.published,false);assert(result.estimated_writes<=1000);
+      assert.equal((await call(mf,'status',{}, {sync:true})).value.revision,base);
+      assert(after>before);assert(after>lastCount);lastCount=after;
+    }else{assert.equal(result.changed,true);finished=true;break;}
+  }
+  assert(finished);assert(paused>0);
+  assert.equal((await db.prepare('SELECT count(*) n FROM generations').first()).n,2);
+  assert.equal((await python(url,'--revised','--write-budget','1000')).requests,1);
+});
+
 test('Python retries identical publication after a committed response is lost',async t=>{
   const {mf,db}=await setup(t),requests=[];
   const url=await proxy(t,mf,async(path,body,status)=>{if(path==='/sync/publish'){requests.push(body);if(requests.length===1){assert.equal(status,200);return 503;}}});
