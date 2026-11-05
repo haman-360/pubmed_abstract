@@ -98,6 +98,8 @@ node login-local.mjs --owner '<画面で確認した本人UID>'
 
 2026-11-06、利用者がCloudflareへ再ログインした後、管理画面でD1未作成（0/10、表示上の読書き0）とZero Trust初期設定前を確認した。Worker／D1・Accessアプリ・service tokenは作成していない。Workers Freeは前日の実画面確認を引き継ぐ。Zero Trust Freeは公式手順上、支払情報の入力が必要だが課金されないと案内されている。初期設定・契約・支払情報入力は利用者の操作が必要。[公式初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)
 
+同日後続：利用者がZero Trust Freeの初期設定と支払方法登録を完了し、管理画面でもFreeを確認した。利用者が`pmid-ledger-test-sync`（720時間、2026-12-06まで）を発行・保存し、同じトークンだけを対象とするService Authポリシーを作成した。利用者の明示許可後にTEST専用D1と、全通信をこのポリシーで保護した初期Workerを作成した。D1は16テーブル・2トリガー・1ビュー・公開版nullまで照合し、Workerの`DB`へ接続した。認証なしのTEST URLは403。これは台帳APIの実反映・同期・本人保存まで完了したという意味ではない。
+
 `cloud-worker.mjs`は`worker.mjs`とは別のAPI専用入口。共有するD1処理だけを`ledger-api.mjs`へ分離した。本人のFirebase JWTを検証し、同期を明示的に有効にした場合だけAccessの署名済みJWTを検証する。検証前にはDBへ触れない。固定テストtoken、UIDの自動登録、ローカル鍵fixture、HTTPの障害注入コードはbundleへ含めない。通常の8787／8788番の起動方法・DBは従来どおり。
 
 ```bash
@@ -105,7 +107,19 @@ node login-local.mjs --owner '<画面で確認した本人UID>'
 npm run build:cloud-test
 ```
 
-生成先はGit対象外の`.cloud-test/worker.mjs`。設定例`cloud-test.wrangler.example.json`は`workers_dev: false`・`preview_urls: false`・ログ収集無効で、DB IDとサブドメインも未設定。実行用のWrangler設定やdeployコマンドは追加していない。設定例を使う段階では専用TESTのDBとWorkerだけを対象にし、既存Pagesへbindingを追加しない。
+生成先はGit対象外の`.cloud-test/worker.mjs`。設定例`cloud-test.wrangler.example.json`は`workers_dev: false`・`preview_urls: false`・ログ収集無効で、DB IDとサブドメインも未設定。Wrangler設定・Wrangler CLIは実運用に使わず、後述の専用Python経路でコードを反映する。専用TESTのDBとWorkerだけを対象にし、既存Pagesへbindingを追加しない。
+
+Cloudflareのコードエディターが再読み込み後も空白だったため、既存のTEST Workerだけへ直接送る`deploy_cloud_test.py`を追加した。通常実行は準備確認だけでHTTPなし。明示的な`--upload`時だけ、実ターミナルでこのWorker専用のAPIトークンを非表示入力する。同期用service tokenとは別の資格情報。新しい認証情報の発行・入力は利用者が行い、値をチャット・コマンド引数・Git・ログへ置かない。
+
+```bash
+# リポジトリのルートから。HTTPなし
+python3 pmid_ledger/prototype/deploy_cloud_test.py
+# 利用者が実ターミナルで実行。Cloudflare TESTだけを更新する
+python3 /Users/thama/Documents/GitHub/pubmed_abstract/pmid_ledger/prototype/deploy_cloud_test.py --upload
+python3 -m unittest pmid_ledger.prototype.tests.test_deploy_cloud_test -v
+```
+
+接続先はGit対象外・0600の`ledger_private/cloud-test-resources.json`（`accountId`・`workerName`・`origin`・`databaseId`）、本人は`cloud-test-owner.json`（`projectId`・`ownerUid`）から読み、対象名を`pmid-ledger-test`へ限定する。ファイルは同じMacだけに残り、Gitでは別Macへ移らない。アップロードは公式Cloudflare APIへmultipartでコード・TESTのD1 binding・本人限定設定を送る。同期は無効のまま。PUT後にコードをGETし、バイト一致を確認してから、tokenを含まない結果を`.cloud-test/deployment-verification.json`（0600）へ保存する。redirect・proxy・自動再送はしない。失敗・応答不明・読戻し不一致は成功扱いしない。料金プラン・Accessポリシー・本番GASのdeploymentは変更しない。[公式アップロードAPI](https://developers.cloudflare.com/api/resources/workers/subresources/scripts/methods/update/)
 
 | 設定 | 条件 |
 | --- | --- |
@@ -211,4 +225,4 @@ POST JSON。閲覧・保存は`Authorization: Bearer local-synthetic-owner`、�
 - 分割前の約16.8MBを小さな論理行として保存できた。表示期間の制限は通常の読取を減らすもので、全件の初期同期・バックアップを省略する機能ではない。1論理行180,000バイト、1転送チャンク196,608バイト、1配信用一覧投影196,608バイトの上限を設けるため、件数だけで扱える範囲は決まらない。世代の無期限蓄積・自動削除・実データ移行は未実装。
 - 通常PMID台帳、分野・状態など残る絞り込みと並び順、TXT／CSV、GASバックアップとの相互変換は未実装。ローカルD1用の分割NDJSONバックアップ・空DB復元と旧V1 JSON互換は実装・検証済み。
 - Firebase形式／Access形式の署名JWTと実Firebaseログインのローカル検証は実装した。Service Authの外部接続、ネイティブログイン、FreeプランのCPU・保存容量・要求上限、クラウド往復・失敗率は未検証。ローカルの経過秒数をGAS本番との改善率に換算しない。
-- クラウドTEST用API・非公開が既定の設定例・架空データ専用同期を準備した。実行用のdeployment設定・remote D1 binding・クラウド資格情報は置いていない。追加費用0円を維持し、本人のFree設定・対象と認証を確認してからクラウド試験へ進む。FirestoreのRules成立性の比較は別の作業。
+- クラウドTEST用API・非公開が既定の設定例・架空データ専用同期を準備した。利用者の許可後に認証付き初期WorkerとD1を作成し、接続情報はGit対象外へ保存した。TEST専用のコード反映CLIを追加したが、実tokenや実接続IDはGitへ置かない。追加費用0円を維持し、認証とコード反映を確認してからクラウド実測へ進む。FirestoreのRules成立性の比較は別の作業。

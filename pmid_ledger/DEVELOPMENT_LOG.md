@@ -1,5 +1,17 @@
 # PMID論文確認台帳 開発・調査ログ
 
+## 2026-11-06 JST：Access Free・同期用トークン・TEST D1と初期Workerの準備
+
+- 利用者がZero Trust Freeの初期設定と支払方法登録を完了し、管理画面のFree表示を確認した。新しいAccess teamの公式公開鍵を認証情報なしで1回取得し、HTTP 200・RSA公開鍵2本を既存loaderで解決できた。実JWTによる同期成功とは区別する。team名・アカウントID・支払情報は本ログへ転記しない。
+- 利用者が`pmid-ledger-test-sync`を720時間（30日）で発行・保存し、一覧で有効・2026-12-06期限を確認。同じトークンだけを対象とする`pmid-ledger-test-sync-only`のService Authポリシーを保存した。利用者の保存通知後も詳細表示が残り、確認用ツール出力にSecretが入った点は利用者へ説明済み。Secretをファイル・Git・本ログへ転記せず、詳細を閉じた。以後は秘密値の詳細を読まず、一覧と対象名だけで確認する。
+- 利用者が新規TEST D1／Workerと認証付きTEST公開を明示許可。D1 `pmid-ledger-test`をアジア太平洋の配置ヒントで作成し、既存schema.sqlを適用。単一行のコンソールではSQLコメントが全体を覆ったため、コメント除去・改行の空白化後に実行した。16テーブル・2トリガー・1ビュー・公開版nullを読み戻した。架空データの同期はまだしていない。
+- 自動承認レビューは、Hello Worldのままの初期Worker作成を、当初許可の台帳APIと異なるとして拒否した。全通信のAccess保護を付けた案も、台帳コード・D1未設定のため拒否された。その段階を説明して利用者から追加の明示許可を受けた後に、全通信を専用Service Authポリシーで保護した初期Worker `pmid-ledger-test`を作成。認証なしの実URLが403で拒否されることを確認した。既存Pagesは変更していない。
+- 初期WorkerのDB bindingをTEST専用D1へ接続。コードエディターは再読み込み後も空白で、埋込編集ページも表示内容なしだったため台帳コードへ置換できていない。エディターで実コードを貼り付けた、台帳APIが稼働した、とは扱わない。
+- 代替として、このWorkerだけのAPIトークンを実ターミナルで非表示入力し、公式APIでコードとDB・本人限定設定を反映する`deploy_cloud_test.py`を追加。既定はHTTPなしの準備確認、`--upload`時だけPUT後のコードGET・バイト一致を検証し、秘密値を含まない結果をGit対象外の`.cloud-test/deployment-verification.json`へ0600で保存する。同期は無効のまま。tokenを引数・環境変数・ファイル・ログへ保存せず、redirect・proxy・自動再送をしない。
+- 追加6件を含むPython専用19件成功。対象限定・本人固定・multipart形式・TESTのDB binding・同期無効・読戻し一致／不一致・HTTP失敗の停止と情報非出力を確認した。通常実行のHTTPなし・92,665バイトのbundle準備も成功。既存アプリコード・GASには変更なし。
+- 実IDと本人UIDの設定はGit対象外の`ledger_private/cloud-test-resources.json`と`cloud-test-owner.json`へ0600で保存した。API・同期のtokenは含めない。確認済みコード・スキーマと本人設定の転記専用に127.0.0.1へ起動した一時素材ページは、転記後に停止し、専用タブも閉じた。利用中の8787／8788番の試作DB・サーバーは変更していない。
+- 現在は利用者によるTEST Worker限定APIトークンの発行と、ターミナルでのアップロード・読戻し確認待ち。次は実コード反映を確認してから、Accessの`/sync/*`限定と本人APIの分離を確かめ、架空120件の同期・本人保存・実CPU・Mac／iPad往復へ進む。無料プラン適合・方式採用は未決定。追加費用0円、課金変更・有料API・本番台帳変更なし。clasp push不要、GAS deployment未実施。
+
 ## 2026-11-06 JST：D1・Accessの準備状況を確認し、未公開のクラウドTEST入口を実装
 
 - 利用者の継続依頼により、追加費用0円のまま再開。利用者がCloudflareへ再ログインした後、D1管理画面でDB未作成（0/10、表示上の読書き0）、Zero Trust概要で初期設定前を確認した。Worker／D1・Accessアプリ・service tokenは作成していない。Workers Free確認は前日の記録を引き継ぐ。

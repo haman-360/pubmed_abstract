@@ -1,0 +1,97 @@
+import io
+import json
+import unittest
+from email import policy
+from email.parser import BytesParser
+from urllib.error import HTTPError
+
+from pmid_ledger.prototype.deploy_cloud_test import DeployError, downloaded_source, multipart, upload, validate
+
+RESOURCES = {"workerName": "pmid-ledger-test", "accountId": "a" * 32,
+             "databaseId": "11111111-1111-4111-8111-111111111111",
+             "origin": "https://pmid-ledger-test.synthetic.workers.dev"}
+OWNER = {"projectId": "synthetic-ledger-auth", "ownerUid": "synthetic-owner"}
+SOURCE = b"export default {}; // test_configuration_invalid\n"
+TOKEN = "synthetic_worker_token_not_a_real_credential"
+
+
+class Reply(io.BytesIO):
+    def __init__(self, body, mime):
+        super().__init__(body)
+        self.headers = {"Content-Type": mime}
+
+
+class DeployTests(unittest.TestCase):
+    def test_other_resources_incomplete_owner_and_mock_bundles_refused(self):
+        for change in ({"workerName": "existing-app"}, {"accountId": ""}, {"databaseId": ""},
+                       {"origin": RESOURCES["origin"] + "/path"}, {"origin": "http://127.0.0.1:8787"}):
+            with self.assertRaises(DeployError):
+                validate({**RESOURCES, **change}, OWNER, SOURCE)
+        with self.assertRaises(DeployError):
+            validate(RESOURCES, {**OWNER, "ownerUid": None}, SOURCE)
+        for code in (b"", SOURCE + b"local-synthetic-owner", SOURCE + b"X-Local-Fault"):
+            with self.assertRaises(DeployError):
+                validate(RESOURCES, OWNER, code)
+
+    def test_multipart_binds_only_test_db_and_fixed_owner_and_keeps_sync_disabled(self):
+        body, mime = multipart(RESOURCES, OWNER, SOURCE)
+        message = BytesParser(policy=policy.default).parsebytes(b"Content-Type: " + mime.encode() + b"\r\n\r\n" + body)
+        parts = list(message.iter_parts())
+        metadata = json.loads(parts[0].get_payload(decode=True))
+        self.assertEqual(metadata["main_module"], "worker.mjs")
+        bindings = {entry["name"]: entry for entry in metadata["bindings"]}
+        self.assertEqual(bindings["DB"]["id"], RESOURCES["databaseId"])
+        self.assertEqual(bindings["LEDGER_IDENTITY"]["type"], "secret_text")
+        self.assertEqual(json.loads(bindings["LEDGER_IDENTITY"]["text"]), OWNER)
+        self.assertEqual(bindings["LEDGER_SYNC_ENABLED"]["text"], "0")
+        self.assertNotIn("limits", metadata)
+        self.assertEqual(parts[1].get_payload(decode=True), SOURCE)
+        self.assertNotIn(TOKEN.encode(), body)
+
+    def test_upload_uses_exact_cloudflare_target_and_verifies_source_readback(self):
+        class Opener:
+            requests = []
+            def open(self, request, timeout):
+                self.requests.append(request)
+                return Reply(b'{"success":true}', "application/json") if request.method == "PUT" else Reply(SOURCE, "application/javascript")
+        opener = Opener()
+        result = upload(RESOURCES, OWNER, SOURCE, TOKEN, opener)
+        self.assertTrue(result["source_readback_verified"])
+        self.assertFalse(result["metadata_sync_enabled"])
+        self.assertEqual([r.method for r in opener.requests], ["PUT", "GET"])
+        self.assertTrue(all(r.full_url == "https://api.cloudflare.com/client/v4/accounts/" + "a" * 32 + "/workers/scripts/pmid-ledger-test" for r in opener.requests))
+        self.assertNotIn(TOKEN, json.dumps(result))
+
+    def test_readback_mismatch_is_not_retried_or_reported_as_success(self):
+        class Opener:
+            requests = 0
+            def open(self, request, timeout):
+                self.requests += 1
+                return Reply(b'{"success":true}', "application/json") if request.method == "PUT" else Reply(b"different", "application/javascript")
+        opener = Opener()
+        with self.assertRaisesRegex(DeployError, "readback_mismatch"):
+            upload(RESOURCES, OWNER, SOURCE, TOKEN, opener)
+        self.assertEqual(opener.requests, 2)
+
+    def test_http_errors_never_repeat_or_expose_body_or_token(self):
+        for status in (302, 401, 403, 429, 503):
+            class Opener:
+                requests = 0
+                def open(self, request, timeout):
+                    self.requests += 1
+                    raise HTTPError(request.full_url, status, TOKEN, {}, io.BytesIO(TOKEN.encode()))
+            opener = Opener()
+            with self.assertRaises(DeployError) as error:
+                upload(RESOURCES, OWNER, SOURCE, TOKEN, opener)
+            self.assertEqual(str(error.exception), "cloudflare_http_" + str(status))
+            self.assertEqual(opener.requests, 1)
+
+    def test_multipart_download_selects_named_module_and_rejects_missing_module(self):
+        body, mime = multipart(RESOURCES, OWNER, SOURCE)
+        self.assertEqual(downloaded_source(body, mime), SOURCE)
+        with self.assertRaises(DeployError):
+            downloaded_source(body.replace(b"worker.mjs", b"other.mjs"), mime)
+
+
+if __name__ == "__main__":
+    unittest.main()
