@@ -1,6 +1,6 @@
 # 本人限定認証のローカル検証：2026-11-05 JST
 
-**署名付きJWTによる本人限定判定と権限分離を、Node.jsとworkerdのAPIで検証した。追加費用0円。** 実際のGoogleログイン、実Access teamの公開鍵取得、Cloudflareのプラン、クラウドCPU・iPad実機は未確認。Firebaseは後続の利用者設定と公開APIでSpark・Google provider・Webアプリ・localhostを確認した。Google公式の公開証明書取得は後続試験で確認した。現在地は①「遅さの調査・改善」の後半で、認証方式の成立性を確かめている。
+**署名付きJWTによる本人限定判定と権限分離を、Node.jsとworkerdのAPIで検証した。追加費用0円。** 実Googleログイン・本人UID固定・token更新・認証付き一覧取得・画面サインアウトをアプリ内ブラウザーで確認した。実Access teamの公開鍵取得、Cloudflareのプラン、クラウドCPU・iPad実機は未確認。Firebaseは後続の利用者設定と公開APIでSpark・Google provider・Webアプリ・localhostを確認した。Google公式の公開証明書取得は後続試験で確認した。現在地は①「遅さの調査・改善」の後半で、認証方式の成立性を確かめている。
 
 ## 実装
 
@@ -85,18 +85,34 @@ Cloudflareは既存アカウントを使う。Firebase側は[コンソール](ht
 - `/identity/probe`はGoogle署名とclaimsを確認して、そのログインのUID・email・本人設定の一致状態を返す。権限は付与しない。本人アカウント確認後にだけCLIの`--owner`でUIDを固定し、設定一致後に台帳APIを許可する。HTTP登録・同期経路は拒否する。
 - `initializeAuth`は最初からメモリ保持に限定。再確認はtokenの強制更新を要求し、サインアウト時は認証表示を即消去。遅れて返ったprobe／読取を画面へ適用しない。tokenをファイル・URL・ブラウザー永続領域・ログへ保存しない。
 - 追加のworkerd／設定3件と画面処理2件が成功（全体56件＋追加画面2件）。未登録の初回ログインに権限なし、CLIによる固定、他UID拒否、正しい保存の再送1件、Origin・期限・偽認証・HTTP登録拒否、メモリ保持・再確認・サインアウト後の遅延応答・SDK取得失敗を確認。自動試験のtokenは架空のメモリ内署名を使用した。
-- 実Chromeで公式SDKから認証を初期化し、ログインボタンが有効になること、初期画面の横はみ出しがないことを確認。**実Googleログインの成功はまだ未確認。** 本人UID固定・実token更新・実サインアウトは利用者がログインした後の確認事項。
+- 実Chromeで公式SDKから認証を初期化し、ログインボタンが有効になること、初期画面の横はみ出しがないことを確認。画面追加時点では実Googleログインは未確認だった。本人UID固定・実token更新・実サインアウトの後続確認は下記へ記載。
 
 起動・本人UID固定の具体的な手順は[試作README](README.md#実googleログインの専用試験)を参照。追加費用・有料API・クラウド公開・本番データ変更はなし。GASのソース変更・同期・deploymentはない。
+
+## 実アカウントでの確認結果（同日・画面追加後）
+
+利用者がログインしたアプリ内ブラウザーのlocalhost:8788で確認した。実UID・email・tokenの値は記録へ転記しない。
+
+| 確認 | 結果 |
+| --- | --- |
+| Googleログイン→署名／発行元／期限検証 | 成功。本人アカウントとUIDが表示された |
+| ローカルCLIの本人UID固定 | 成功。Git対象外の設定ファイルは0600 |
+| 「認証を再確認」による実token更新 | 更新要求後の署名検証と本人UID一致が成功 |
+| 本人認証付きlistIssues | 成功。直近2か月は固定fixtureの日付により0件の空結果 |
+| 画面サインアウト | UID／email表示消去、再確認／取得の無効化、ログインボタン復帰を確認 |
+
+実tokenを使った保存・空でない配信の取得・サーバー側の既発行token失効・別実アカウント拒否は今回未検証。保存・他UID拒否・再送は前回の架空署名による自動試験の証拠と区別する。今回アプリコードは変更しておらず、自動試験58件は再実行せず、実画面と設定ファイルの読戻しを確認した。画面はサインアウト済みで残し、ローカルサーバーは継続している。
+
+追加費用0円。Firebase／Cloudflareの課金・権限・公開設定、GAS、本番台帳は変更していない。
 
 ## 次に確認すること
 
 - 今回の公開鍵loaderをクラウド用入口へ接続し、本人の実Access teamでも取得・更新を確認する。今回の公開鍵fixtureを本番鍵に流用しない。
 - 本人のCloudflare Workers Free／Firebase Sparkの状態、既存の課金リンク、AccessのFree設定を確認する。Zero Trustの初期設定は公式案内上Freeでも支払情報が必要で、こちらでは登録していない。[Zero Trust初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)
-- 実Googleログイン→token取得／更新→ログアウトの流れを確認する。署名・期限の検証だけでは、有効期限前のtokenの失効・盗難対策まで確認したことにはならない。クライアントでのログアウト後も既発行tokenの扱いを決める。[Firebaseセッション管理](https://firebase.google.com/docs/auth/admin/manage-sessions)
+- 実Googleログイン→token更新→画面サインアウトは上記で確認した。署名・期限の検証だけでは、有効期限前のtokenの失効・盗難対策まで確認したことにはならない。クライアントでのログアウト後も既発行tokenの扱いを決める。[Firebaseセッション管理](https://firebase.google.com/docs/auth/admin/manage-sessions)
 - クラウド用入口では検証済みidentityを直接保存APIへ渡し、固定テストtoken・障害注入・ローカル鍵fixtureを含めない。本人以外を拒否する状態を確かめた後、別TESTで実際のCPU・Mac／iPad往復を測る。
 
-これらは今後の作業で、今回の検証による実ログイン成功や無料運用の保証ではない。本番GAS・実台帳・既存配信workflowは変更していない。GAS同期・deployment・クラウド作成・有料API呼出しは行っていない。
+これらは今後の作業であり、ローカル実ログインの成功だけでクラウドの性能・無料枠適合を保証しない。本番GAS・実台帳・既存配信workflowは変更していない。GAS同期・deployment・クラウド作成・有料API呼出しは行っていない。
 
 依存関係確認：`npm audit`には既存Miniflare系（Miniflare／sharp／undici）のhighが3件残った。新規jose／esbuildは指摘されていない。既存の依存バージョンは変えておらず、`audit fix --force`や古いMiniflareへの切替は実行していない。開発環境の更新は別途必要で、今回のローカル入口を公開用に扱わない。
 

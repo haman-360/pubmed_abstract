@@ -92,7 +92,7 @@ node login-local.mjs --owner '<画面で確認した本人UID>'
 
 認証は初期化時から`inMemoryPersistence`とし、tokenをファイル・localStorage・sessionStorage・URL・ログへ保存しない。再読み込み後は再度ログインする。サインアウト直後は表示を消し、遅れて届いた応答も反映しない。これは画面のサインアウトであり、発行済みtokenのサーバー失効まで実装したものではない。[認証の永続化](https://firebase.google.com/docs/auth/web/auth-state-persistence)
 
-今回、実ChromeでSDK読込・初期画面・ログインボタン有効・横はみ出しなしを確認。実Googleログインの成功、本人UIDの固定、実token更新／サインアウトは利用者のログイン後に確認する。Firebaseの公開設定APIはHTTP 200で、localhostが承認済みであることを確認した。秘密情報をチャットへ送る必要はない。
+実ChromeでSDK読込・初期画面・ログインボタン有効・横はみ出しなしを確認した後、利用者がログインしたアプリ内ブラウザーで実Google署名検証・本人UID固定・実token更新・認証付き一覧取得（空結果）・画面サインアウトを確認した。実tokenによる保存と既発行tokenのサーバー失効は未確認。Firebaseの公開設定APIはHTTP 200で、localhostが承認済み。秘密情報をチャットへ送る必要はない。詳細は[認証検証記録](IDENTITY_VALIDATION.md)を参照。
 
 ## Python同期と負荷試験
 
