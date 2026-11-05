@@ -1,5 +1,69 @@
 # PMID論文確認台帳 開発・調査ログ
 
+## 2026-11-06 JST：職場Macへの引継ぎ（自宅での追加設定はここで中断）
+
+利用者はiPhoneでリモート接続中で、自宅Macを操作できないため、続きは職場MacのCodexで行う。**追加費用0円が最優先。自宅MacでのAPIトークン発行・入力・クラウド追加設定・定期監視は進めない。** 今回は状況整理・文書のcommit・pushだけを行う。
+
+### 現在地
+
+| 項目 | 最後に確認できた状態 |
+| --- | --- |
+| 作業ブランチ | `codex/ledger-candidate-review`。mainへの統合は未実施 |
+| 実装commit | `a931777`：クラウドTEST専用API・架空120件の同期。GitHubへ反映済み |
+| 直前のcommit | `e67639e`：TEST Worker限定アップロードCLIとAccess設定記録。作業開始時は未pushで、remoteは`a931777`だった。前回の通常pushはGitHub側の`fatal error in commit_refs`で失敗。今回の引継ぎcommitと合わせて再送し、最終返答で結果を報告する |
+| 無料プラン | Workers Free・Zero Trust Free・Firebase Sparkの表示を確認済み。利用者がZero Trust Freeの支払方法登録を完了。こちらから有料化・請求設定変更はしていない |
+| 同期用認証 | `pmid-ledger-test-sync`：有効・720時間・2026-12-06期限。利用者がClient ID／Secretを保存。Service Authポリシー`pmid-ledger-test-sync-only`はそのトークン1つだけを対象とする |
+| TEST D1 | `pmid-ledger-test`。アジア太平洋の配置ヒント、16テーブル・2トリガー・1ビュー・公開版nullを実サービスで読み戻した。架空120件の同期はまだ |
+| TEST Worker | `pmid-ledger-test`。利用者が段階作成を明示許可した初期Hello Worldのまま。全通信を専用Service Authポリシーで保護し、認証なし403を確認。`DB` bindingは上記TEST D1へ接続済み |
+| 未完了 | 台帳APIコードのクラウド反映、本人APIと`/sync/*`のAccessパス分離、架空データ同期、実Google tokenによるクラウド保存、CPU／読書き量／Mac・iPad往復 |
+| エディター | 自宅Chromeでは再読み込み後も空白。職場Macで再確認し、開けばUIで台帳コードを反映する。同じ場合は下記のTEST限定CLIを使う |
+| APIトークン／反映 | このWorker限定のデプロイ用APIトークンの発行・入力は未確認。ローカルの`deployment-verification.json`も存在せず、台帳コードの反映成功とは扱わない |
+| 検証 | 試作Node.js 65件・Python専用19件、既存Node.js 54件・Python 69件が成功済み。今回は文書更新のみなので再実行しない |
+| 本番と段階 | 本番GAS・実台帳・既存Pages・既存配信workflowは変更なし。GASソース変更なし、clasp push不要、GAS deployment未実施。①待ち時間改善の比較段階で、方式採用は未決定。②アプリ化・③オフラインは未着手 |
+
+一時素材ページ（51588番）は停止済み。既存の8787／8788番のローカル試作やDBは変更・停止していない。自宅Macのローカルサーバーやブラウザータブは、職場Macへ引き継ぐ条件にしない。
+
+### 職場Macで最初に行うこと
+
+対象リポジトリを開き、未コミット変更を確認して専用ブランチを取得する。mainだけをpullしない。未コミット変更などで切り替えやfast-forwardができなければ、無断でreset・stash・上書きせず状況を確認する。
+
+```bash
+git status --short --branch
+git fetch origin
+git switch codex/ledger-candidate-review
+git pull --ff-only origin codex/ledger-candidate-review
+```
+
+本節・[試作README](prototype/README.md#クラウドtest用apiの準備)・[認証検証記録](prototype/IDENTITY_VALIDATION.md)を読む。Cloudflareの既存アカウントへログインし、**新規に作り直さず**、既存TESTのD1・Worker・Service Authポリシーと認証なし拒否を確認する。Cloudflare管理用のiCloud+メールと台帳用Googleログインは別でよい。
+
+### Gitだけでは移らないもの
+
+| 自宅MacのGit対象外ファイル・状態 | 職場Macでの復元方法 |
+| --- | --- |
+| `ledger_private/cloud-test-resources.json` | 既存Cloudflare管理画面から`accountId`、TEST Workerの`origin`、TEST D1の`databaseId`を確認し、`workerName`を`pmid-ledger-test`として0600で再作成。IDはチャット・Git・文書へ転記しない |
+| `ledger_private/cloud-test-owner.json` | 既存Firebaseプロジェクトの`projectId`と、本人アカウントの固定済み`ownerUid`をFirebase管理画面などで確認して0600で再作成。最初にログインした人を自動登録しない |
+| `ledger_private/firebase-web.json` | ローカルの実Googleログイン試験を再開する場合だけ、既存Firebase Web設定と本人UIDを0600で再設定する。新しいFirebaseプロジェクトや有料プランは作らない |
+| 同期用Client ID／Secret | 利用者が保存したMacの「パスワード」などを職場Macでも利用できるか確認する。iCloud同期は未確認。値をチャットへ貼らず、利用できなければ利用者と保管場所を確認する |
+| Worker限定デプロイ用APIトークン | 必要な場合だけ、当該Workerの設定→ビルド→外部CI/CD用APIトークンから、対象がこのWorkerだけであることを確認し、利用者が発行・非表示入力する。同期用service tokenとは用途が異なる |
+| `.cloud-test/worker.mjs`・`node_modules/` | 下記で再生成できる。自宅Macからのファイル転送は不要 |
+| `.local-d1/`・`.login-d1/`・ブラウザー認証・ローカル実測ファイル | Gitでは移らない。今回のクラウドTEST準備に自宅のDBや認証セッションは必須でない |
+
+```bash
+# 職場Macのリポジトリ内 pmid_ledger/prototype で実行
+npm ci
+npm run build:cloud-test
+```
+
+private設定を確認・再構成してから、リポジトリのルートで`python3 pmid_ledger/prototype/deploy_cloud_test.py`を実行する。既定はHTTPなしの準備確認。実反映が必要な時だけ、実ターミナルで`--upload`を付けて利用者がWorker専用APIトークンを非表示入力する。自宅Macの絶対パスを職場Macへそのまま貼らず、職場のリポジトリパスを使う。
+
+同期用tokenのSecretが以前の確認用ツール出力へ入った経緯は前節に記録済み。職場Macでは秘密値の詳細をAX・スクリーンショット・ログで読み出さず、利用者自身が保存先から安全に入力する。SecretはGitや文書へ保存していない。
+
+台帳コードの反映・読戻し一致を確認するまで、全通信のAccess保護を外さない。次に本人APIと`/sync/*`の分離を確認し、同期権限を明示的に有効化してから架空120件だけで測定する。現在の全通信Service Authのままでは、本人のFirebase tokenだけで台帳APIへ到達できない。Workerのコードにもクラウド用ログイン画面はまだなく、API反映だけで画面完成とは扱わない。
+
+### 職場MacのCodexへ伝える文面
+
+> `codex/ledger-candidate-review`ブランチを取得し、`pmid_ledger/DEVELOPMENT_LOG.md`冒頭の2026-11-06「職場Macへの引継ぎ」と関連READMEを読んで続きを進めてください。追加費用0円が最優先です。Zero Trust Free設定、同期用トークン、TEST専用D1の初期化・DB binding、全通信をService Authで保護した初期Workerまでは完了しています。WorkerはまだHello Worldで、台帳API反映・架空データ同期・クラウド実測は未完了です。自宅Macのprivate設定・認証・生成bundleはGitでは移りません。既存Cloudflare／Firebaseから職場Macの設定を安全に再構成し、TESTコード反映と読戻し確認→本人APIと同期経路の分離→架空120件の検証へ進めてください。既存TESTを作り直さず、本番GAS・実台帳・既存Pages・課金設定は変更しないでください。秘密値はチャットへ求めず、利用者の非表示入力で扱ってください。
+
 ## 2026-11-06 JST：Access Free・同期用トークン・TEST D1と初期Workerの準備
 
 - 利用者がZero Trust Freeの初期設定と支払方法登録を完了し、管理画面のFree表示を確認した。新しいAccess teamの公式公開鍵を認証情報なしで1回取得し、HTTP 200・RSA公開鍵2本を既存loaderで解決できた。実JWTによる同期成功とは区別する。team名・アカウントID・支払情報は本ログへ転記しない。
@@ -23,6 +87,38 @@
 - 試作README・無料枠記録・台帳READMEと本ログを更新。開始前からあった本ログの休憩引継ぎ32行と認証検証記録の変更、無関係な未追跡ファイルは保持し、今回のcommitへ混ぜない。通常8787／8788番の利用中サーバー・DBは再起動／変更していない。
 - 次は本人によるZero Trust Free初期設定の可否を確認し、Access service token・パス分離とTEST専用D1／Workerの対象・公開条件を確定してからクラウド試験へ進む。実Google tokenでのクラウド保存、実CPU・読書き量・Mac／iPad往復は未検証。方式採用は未決定で、②アプリ化・③オフラインは未着手。
 - 追加費用0円、有料API呼出し・クラウド作成／公開・本番台帳変更なし。GAS変更なし、clasp push不要、deployment未実施。
+
+## 2026-11-05 JST：休憩前の引継ぎ・Cloudflare Workers Freeを実画面で確認
+
+**ここで本日の作業を区切る。追加費用0円を最優先のまま継続する。**
+
+- ChromeのCloudflare管理画面で、Workersの「無料プラン」「$0」「現在のプラン」を確認した。既存のPagesアプリがあるため、新しい台帳用TESTを準備する際は既存アプリを変更しない。プラン・請求・公開設定の変更、Worker／D1作成は行っていない。アカウントID・メール全文・サブドメインは本ログへ転記しない。
+- Cloudflareは利用者がiCloud+で作成したメールで登録。台帳のFirebase Googleログインと管理アカウントのメールは異なっていてよい。メール変更やアカウント統合は不要。Workersの無料契約確認と、Zero Trust／Accessの初期設定・無料条件は別の確認項目。Workers画面にはZero Trust設定の案内があり、Accessの実接続は未確認。
+- 現在地：①遅さの調査・改善の後半。GASの待ち時間の調査、Workers＋D1ローカル試作、5,000件の分割同期・履歴保持・復元・無料枠向け処理量削減、実Google本人認証まで確認済み。クラウド上の性能・CPU・実端末往復は未検証で、移行先は未決定。②Mac／iPadアプリ化、③オフライン対応は未着手。
+
+### 明日の再開順序
+
+1. 同じ専用ブランチ`codex/ledger-candidate-review`で`git status`と本ログの最新節を確認する。Cloudflare管理はiCloud+の既存アカウント、台帳ログインは設定済みGoogleアカウントを使う。
+2. D1の準備状況と、Python同期用認証を追加費用0円で使う条件を確認する。本人閲覧／保存と同期の権限分離を維持し、既存Pagesや本番GAS・台帳は変更しない。
+3. クラウド用の入口を整え、架空データだけのTESTでログイン・保存・同期・無料枠のCPUと読書き量・Mac／iPadの往復を検証する。固定テストtokenや障害注入用のローカル入口をそのまま公開しない。Workers Free確認だけでCPU適合や無料運用成立とは判断しない。
+4. 方式の採否を判断した後、オンラインのMac／iPadアプリ、その後にオフライン保存・再接続時の同期へ進む。
+
+### ローカル試作の再起動
+
+同じMacの設定とDBはディスクに残る。8788番のログイン確認は現在サインアウト済み。明日ページが開ければ再起動不要、開けない場合だけ次を実行する。
+
+```bash
+cd /Users/thama/Documents/GitHub/pubmed_abstract/pmid_ledger/prototype
+npm run login
+```
+
+`http://localhost:8788/`で再度Googleログインする。本人UIDの再登録は不要。8787番の通常試作は別の`npm start`と`.local-d1/`を使い、必要のない停止・再起動をしない。使用中ポートの別プロセスを無断で終了しない。
+
+`ledger_private/firebase-web.json`（Web設定・固定した本人UID、0600）と`.login-d1/`はGit対象外。同じMacでは再利用できるが、別MacへGitだけで移らない。ログインtokenはメモリだけで、保存していない。休憩中の追加作業・定期通信・クラウド作成は開始しない。GAS変更なし、clasp push不要、deployment未実施。
+
+再開時の依頼例：
+
+> `pmid_ledger/DEVELOPMENT_LOG.md`を読んで続きを進めてください。追加費用0円が最優先です。Workers Freeと実Google本人認証は確認済みです。次はD1・同期認証の条件確認と、架空データのクラウドTESTの準備からお願いします。
 
 ## 2026-11-05 JST：実Googleログイン・本人UID固定・token更新・認証付き一覧取得を確認
 

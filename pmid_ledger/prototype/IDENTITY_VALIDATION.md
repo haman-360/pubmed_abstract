@@ -1,6 +1,6 @@
 # 本人限定認証のローカル検証：2026-11-05 JST
 
-**署名付きJWTによる本人限定判定と権限分離を、Node.jsとworkerdのAPIで検証した。追加費用0円。** 実Googleログイン・本人UID固定・token更新・認証付き一覧取得・画面サインアウトをアプリ内ブラウザーで確認した。実Access teamの公開鍵取得、Cloudflareのプラン、クラウドCPU・iPad実機は未確認。Firebaseは後続の利用者設定と公開APIでSpark・Google provider・Webアプリ・localhostを確認した。Google公式の公開証明書取得は後続試験で確認した。現在地は①「遅さの調査・改善」の後半で、認証方式の成立性を確かめている。
+**署名付きJWTによる本人限定判定と権限分離を、Node.jsとworkerdのAPIで検証した。追加費用0円。** 実Googleログイン・本人UID固定・token更新・認証付き一覧取得・画面サインアウトをアプリ内ブラウザーで確認した。Cloudflare Workers Free（$0・現在のプラン）は実コンソールで確認済み。Zero Trust Freeも利用者の初期設定後に実画面で確認し、実Access teamの公開鍵2本の取得・読込まで確認した。実Access JWTによる同期・クラウドCPU・iPad実機は未確認。Firebaseは後続の利用者設定と公開APIでSpark・Google provider・Webアプリ・localhostを確認した。Google公式の公開証明書取得は後続試験で確認した。現在地は①「遅さの調査・改善」の後半で、認証方式の成立性を確かめている。
 
 ## 実装
 
@@ -107,8 +107,8 @@ Cloudflareは既存アカウントを使う。Firebase側は[コンソール](ht
 
 ## 次に確認すること
 
-- 今回の公開鍵loaderをクラウド用入口へ接続し、本人の実Access teamでも取得・更新を確認する。今回の公開鍵fixtureを本番鍵に流用しない。
-- 本人のCloudflare Workers Free／Firebase Sparkの状態、既存の課金リンク、AccessのFree設定を確認する。Zero Trustの初期設定は公式案内上Freeでも支払情報が必要で、こちらでは登録していない。[Zero Trust初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)
+- 本人の実Access teamの公開鍵取得・読込は後続で確認済み。実JWTによる同期認証と鍵更新の実接続を確認する。公開鍵fixtureを本番鍵に流用しない。
+- 本人のCloudflare Workers Free（$0・現在のプラン）とFirebase Sparkの表示は実画面で確認済み。Cloudflare管理用のiCloud+メールと台帳Googleログインは別のアカウントを使う。利用者がZero Trust Freeの支払方法登録を完了し、Free表示も確認した。こちらから課金設定は変更していない。[Zero Trust初期設定](https://developers.cloudflare.com/cloudflare-one/setup/)
 - 実Googleログイン→token更新→画面サインアウトは上記で確認した。署名・期限の検証だけでは、有効期限前のtokenの失効・盗難対策まで確認したことにはならない。クライアントでのログアウト後も既発行tokenの扱いを決める。[Firebaseセッション管理](https://firebase.google.com/docs/auth/admin/manage-sessions)
 - クラウド用入口では検証済みidentityを直接保存APIへ渡し、固定テストtoken・障害注入・ローカル鍵fixtureを含めない。本人以外を拒否する状態を確かめた後、別TESTで実際のCPU・Mac／iPad往復を測る。
 
@@ -126,3 +126,9 @@ npm test
 ```
 
 無料の公開npmパッケージを取得した後は、ローカルの一時DBだけで試験できる。Cloudflare／Firebaseのアカウント、実token、APIキーは不要。秘密情報をチャットへ送る必要はない。
+
+## 2026-11-06：職場Macへ引き継ぐ現在地
+
+利用者が同期用service token（720時間・2026-12-06期限）を発行・保存し、その1つだけを対象とするService Authポリシーを作成した。TEST専用D1は初期化・DB binding済み。利用者の段階作成許可後に、全通信を同ポリシーで保護した初期Hello World Workerを作成し、認証なし403を確認した。台帳APIの反映・同期・本人保存は未完了。全通信Service AuthのままではFirebase本人tokenだけで到達できない。
+
+自宅のコードエディターは空白のため、Worker限定APIトークンを非表示入力する専用アップロードCLIを準備したが、実アップロード・読戻し結果はまだない。private設定・認証セッション・生成bundleはGitでは移らない。職場Macでは既存TESTとFirebaseから設定を再構成し、認証保護を維持したまま再開する。具体的な順序と依頼文は[開発ログの職場Mac引継ぎ](../DEVELOPMENT_LOG.md)を参照。
