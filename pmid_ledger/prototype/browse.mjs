@@ -32,12 +32,12 @@ export async function browseIssues(db,r,now=new Date()){
       WHERE generation=(SELECT revision FROM current) AND ${filter}
       ORDER BY ${date} DESC,json_extract(info_json,'$.issue_id') DESC,json_extract(info_json,'$.topic')
       LIMIT 20 OFFSET (SELECT offset FROM paging))
-    SELECT current.revision,paging.total,paging.offset,(SELECT json_group_array(json(item_json)) FROM (
+    SELECT current.revision,(SELECT CASE WHEN json_valid(tables_json) THEN COALESCE(json_extract(tables_json,'$.data_source'),'synthetic') ELSE 'unknown' END FROM generations WHERE id=current.revision) data_source,paging.total,paging.offset,(SELECT json_group_array(json(item_json)) FROM (
       SELECT v.item_json FROM selected k CROSS JOIN issue_states v ON v.issue_key=k.issue_key AND v.revision=current.revision
       ORDER BY json_extract(v.item_json,'$.delivered_date') DESC,json_extract(v.item_json,'$.issue_id') DESC,json_extract(v.item_json,'$.topic'))) items
     FROM current,paging`).bind(...args,offset,offset,...args).first();
   requireThat(row?.revision,'metadata_not_seeded',409);
-  return {items:JSON.parse(row.items).map(({scores_available,...i})=>i),total:row.total,offset:row.offset,page_size:20,revision:row.revision,window:range};
+  return {items:JSON.parse(row.items).map(({scores_available,...i})=>i),total:row.total,offset:row.offset,page_size:20,revision:row.revision,data_source:row.data_source,window:range};
 }
 export function readLimit(error,now=new Date()){
   // Exact D1 quota phrases only. Generic SQL, CPU, syntax or capacity errors are not a daily limit.

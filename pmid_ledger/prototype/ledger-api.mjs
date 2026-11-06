@@ -95,10 +95,14 @@ async function stage(db, body) {
 }
 async function publish(db, body) {
   requireThat(typeof body.generation === 'string' && (body.expected_revision === null || typeof body.expected_revision === 'string'), 'invalid_publish');
+  const sources=(await db.prepare(`SELECT id,json_extract(tables_json,'$.data_source') source FROM generations
+    WHERE id=? OR id=(SELECT generation FROM settings WHERE id=1)`).bind(body.generation).all()).results;
+  const guarded=sources.some(r=>r.source==='real-copy');
+  requireThat(!guarded||(typeof body.expected_revision==='string'&&Number.isSafeInteger(body.backup_cutoff)&&body.backup_cutoff>=0),'verified_backup_boundary_required',409);
   await db.batch([
-    db.prepare(`INSERT INTO publish_guard VALUES((SELECT CASE WHEN (generation IS ? OR generation=?) AND EXISTS(
+    db.prepare(`INSERT INTO publish_guard VALUES((SELECT CASE WHEN (generation IS ? OR generation=?) AND (NOT EXISTS(SELECT 1 FROM generations z WHERE (z.id=settings.generation OR z.id=?) AND json_extract(z.tables_json,'$.data_source')='real-copy') OR (SELECT COALESCE(max(rowid),0) FROM operations)=?) AND EXISTS(
       SELECT 1 FROM generations g WHERE id=? AND (json_extract(g.tables_json,'$.format') IS NOT 'LOCAL_D1_CHUNKS_V2'
-      OR EXISTS(SELECT 1 FROM generation_ready r WHERE r.generation=g.id AND r.manifest_hash=g.payload_hash))) THEN 1 ELSE 0 END FROM settings WHERE id=1))`).bind(body.expected_revision, body.generation, body.generation),
+      OR EXISTS(SELECT 1 FROM generation_ready r WHERE r.generation=g.id AND r.manifest_hash=g.payload_hash))) THEN 1 ELSE 0 END FROM settings WHERE id=1))`).bind(body.expected_revision, body.generation,body.generation,Number.isSafeInteger(body.backup_cutoff)&&body.backup_cutoff>=0?body.backup_cutoff:null, body.generation),
     db.prepare('UPDATE settings SET generation=? WHERE id=1').bind(body.generation),
     db.prepare('DELETE FROM publish_guard')
   ]);

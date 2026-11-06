@@ -1,3 +1,4 @@
+import {browseWindow} from './browse.mjs';
 import {metadataNames,requireThat,hash,records,validKey,listProjection} from './metadata.mjs';
 export const FORMAT='LOCAL_D1_CHUNKS_V2';
 export const CHUNK_BYTES=196608;
@@ -25,8 +26,14 @@ export async function manifestFor(tables){
   }
   return {manifest,chunks};
 }
-export function validateManifest(m){
+export function validateManifest(m,{historical=false}={}){
   requireThat(m?.format===FORMAT&&m.tables&&Object.keys(m.tables).length===metadataNames.length&&bytes(m)<=CHUNK_BYTES,'invalid_manifest');
+  requireThat(m.data_source===undefined||m.data_source==='real-copy','invalid_data_source');
+  if(m.data_source==='real-copy'){
+    const w=m.trial_window,recent=browseWindow();
+    requireThat(w&&/^\d{4}-\d{2}-\d{2}$/.test(w.from)&&/^\d{4}-\d{2}-\d{2}$/.test(w.through)&&w.from<=w.through&&(historical||(w.from>=recent.from&&w.through<=recent.through)),'recent_trial_window_required');
+    requireThat(m.tables.Papers.count>0&&m.tables.Papers.count<=50&&m.tables.Issues.count>0&&m.tables.Issues.count<=3,'small_trial_required');
+  }
   for(const name of metadataNames){const spec=m.tables[name];
     requireThat(spec&&JSON.stringify(spec.header)===JSON.stringify(headers[name])&&Number.isSafeInteger(spec.count)&&spec.count>=0&&Array.isArray(spec.chunks),'invalid_manifest_table');
     let offset=0;
@@ -37,7 +44,7 @@ export function validateManifest(m){
   }
 }
 export async function begin(db,body){
-  requireThat(body.synthetic===true&&/^[a-f0-9]{64}$/.test(body.generation??''),'synthetic_fixture_required');
+  requireThat(/^[a-f0-9]{64}$/.test(body.generation??'')&&((body.synthetic===true&&body.real_copy===undefined&&body.manifest?.data_source===undefined)||(body.real_copy===true&&body.synthetic===undefined&&body.manifest?.data_source==='real-copy')),'explicit_test_data_source_required');
   validateManifest(body.manifest);const digest=await hash(body.manifest);
   await db.batch([
     db.prepare('INSERT INTO generations VALUES(?,?,?) ON CONFLICT(id) DO NOTHING').bind(body.generation,digest,JSON.stringify(body.manifest)),
@@ -48,7 +55,7 @@ export async function begin(db,body){
 }
 export async function generationManifest(db,generation){
   const row=await db.prepare('SELECT tables_json,payload_hash FROM generations WHERE id=?').bind(generation).first();
-  requireThat(row,'generation_missing',404);const manifest=JSON.parse(row.tables_json);validateManifest(manifest);return {manifest,hash:row.payload_hash};
+  requireThat(row,'generation_missing',404);const manifest=JSON.parse(row.tables_json);validateManifest(manifest,{historical:true});return {manifest,hash:row.payload_hash};
 }
 function validateRows(name,rows){
   for(const row of rows){requireThat(Array.isArray(row)&&row.length===headers[name].length&&row.every(v=>typeof v==='string')&&bytes(row)<=ROW_BYTES,'invalid_chunk_row');
@@ -148,6 +155,14 @@ export async function finish(db,body){
     (SELECT count(DISTINCT entity_key) FROM metadata_records WHERE generation=? AND table_name='Texts') texts,
     (SELECT count(DISTINCT parent_key) FROM metadata_records WHERE generation=? AND table_name='IssueCandidates') candidate_groups`).bind(g,g,g,g).first();
   requireThat(!indexes.bad_text&&!indexes.bad_candidates&&indexes.texts===manifest.tables.TextRows.count&&indexes.candidate_groups===manifest.tables.IssueCandidateRows.count,'metadata_indexes_incomplete',409);
+  if(manifest.data_source==='real-copy'){
+    const safety=await db.prepare(`SELECT
+      EXISTS(SELECT 1 FROM papers a JOIN papers b ON a.pmid=b.pmid WHERE a.generation=? AND b.generation<>a.generation) paper_collision,
+      EXISTS(SELECT 1 FROM issues a JOIN issues b ON a.issue_key=b.issue_key WHERE a.generation=? AND b.generation<>a.generation) issue_collision,
+      EXISTS(SELECT 1 FROM metadata_records WHERE generation=? AND table_name='Issues' AND
+        (json_extract(row_json,'$[3]')<? OR json_extract(row_json,'$[3]')>?)) outside_window`).bind(g,g,g,manifest.trial_window.from,manifest.trial_window.through).first();
+    requireThat(!safety.paper_collision&&!safety.issue_collision&&!safety.outside_window,'trial_collision_or_date_mismatch',409);
+  }
   await db.prepare('INSERT INTO generation_ready VALUES(?,?) ON CONFLICT(generation) DO NOTHING').bind(g,root).run();
   return {ready:true,generation:g,manifest_hash:root};
 }
@@ -165,7 +180,7 @@ export async function rebuildGeneration(db,g){
     for(const raw of records(t.Issues)){const {info,items}=listProjection(t,raw);await db.prepare('INSERT INTO issue_lists VALUES(?,?,?,?)').bind(g,raw.issue_key,JSON.stringify(info),JSON.stringify(items)).run();}
     return;
   }
-  validateManifest(stored);
+  validateManifest(stored,{historical:true});
   for(const name of metadataNames)for(const c of stored.tables[name].chunks){
     const registered=await db.prepare('SELECT chunk_hash,row_offset,row_count FROM metadata_chunks WHERE generation=? AND table_name=? AND chunk_index=?').bind(g,name,c.index).first();
     requireThat(registered?.chunk_hash===c.sha256&&registered.row_offset===c.offset&&registered.row_count===c.count,'chunk_descriptor_mismatch');

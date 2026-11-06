@@ -1,6 +1,6 @@
 # Workers＋D1 オンラインTEST／ローカル試作
 
-**追加費用0円・架空データ専用。** Workers＋D1を②オンラインアプリの接続先にする方針を選び、既存TESTへ本人専用Web画面を追加した。通常のローカル試作はMiniflare 4のworkerd／D1 bindingで動作し、Cloudflareアカウント・APIキー・Google認証・OpenAI APIは不要。クラウドTESTには既存FirebaseのGoogle本人認証を使う。架空120件の同期と本人保存・読戻し・再送は確認済み。課金設定・本番GAS・実台帳・既存Pagesは変更していない。本番移行は別作業。
+**追加費用0円・既存TEST専用。** Workers＋D1を②オンラインアプリの接続先にする方針を選び、既存TESTへ本人専用Web画面を追加した。通常のローカル試作はMiniflare 4のworkerd／D1 bindingで動作し、Cloudflareアカウント・APIキー・Google認証・OpenAI APIは不要。クラウドTESTには既存FirebaseのGoogle本人認証を使う。架空120件の同期と本人保存・読戻し・再送は確認済み。課金設定・本番GAS・実台帳・既存Pagesは変更していない。本番移行は別作業。
 
 ## オンライン版（既存TEST）
 
@@ -149,7 +149,7 @@ python3 -m unittest pmid_ledger.prototype.tests.test_deploy_cloud_test -v
 | 設定 | 条件 |
 | --- | --- |
 | `DB` | 新規TEST専用のD1。別途`schema.sql`の初期適用が必要。要求ごとの自動migrationなし |
-| `LEDGER_TEST_ONLY` | `synthetic`に固定。実データを受け付ける移行機能ではない |
+| `LEDGER_TEST_ONLY` | 既存binding名・値 `synthetic` を保持するTEST限定ガード。通常入口は架空専用、実コピーは下記の明示的・少量の別入口だけ |
 | `LEDGER_ORIGIN` | 正確な`https://pmid-ledger-test.<subdomain>.workers.dev`だけ。別host、HTTP、query、他Originを拒否 |
 | `LEDGER_IDENTITY` | JSON文字列。`projectId`と固定済み`ownerUid`が必須。Gitへ実値を置かず、Workerのsecret設定として渡す |
 | `LEDGER_SYNC_ENABLED` | 既定無効。`1`時はidentity設定へ`accessIssuer`・`accessAudience`・`syncClientId`も必要 |
@@ -316,3 +316,21 @@ POST JSON。閲覧・保存は`Authorization: Bearer local-synthetic-owner`、�
 - 通常PMID台帳、分野・状態など残る絞り込みと並び順、TXT／CSV、GASバックアップとの相互変換は未実装。ローカルD1用の分割NDJSONバックアップ・空DB復元と旧V1 JSON互換は実装・検証済み。
 - Firebase形式／Access形式の署名JWTと実Firebaseログインのローカル検証は実装した。Service Authの外部接続、ネイティブログイン、FreeプランのCPU・保存容量・要求上限、クラウド往復・失敗率は未検証。ローカルの経過秒数をGAS本番との改善率に換算しない。
 - クラウドTEST用API・非公開が既定の設定例・架空データ専用同期を準備した。利用者の許可後に認証付き初期WorkerとD1を作成し、接続情報はGit対象外へ保存した。TEST専用のコード反映CLIを追加したが、実tokenや実接続IDはGitへ置かない。追加費用0円を維持し、認証とコード反映を確認してからクラウド実測へ進む。FirestoreのRules成立性の比較は別の作業。
+
+
+## 実データの少量コピー試験（本番への書戻しなし）
+
+2026-11-06、利用者が既存TESTのバックアップ後、直近2か月の実データの一部をコピーすることを指示した。Google Driveの読取機能だけで実台帳から11月3日の3配信・30論文を取得し、Git対象外・0600の `ledger_private/real-trial/source.json` に保存した。本文・評価・AIメモ・現在の確認状態を含む。選択範囲の手動メモは空。元台帳の全履歴やGoogle認証設定は移行しない。公開される静的アプリに実データは含めない。
+
+現在はローカル取込み・保存状態30件・3配信・バックアップ復元の読戻しまで成功。クラウドのバックアップ・反映は本人ログイン待ちで未実施。オンラインTESTは引き続き従来の架空データ。自動同期・本番移行・オフライン化は含めない。
+
+手順（リポジトリのルートから実行）:
+
+1. `python3 -m pmid_ledger.prototype.prepare_real_trial` で読取済みデータから専用planを一度だけ生成する。既存planは上書きしない。配信全体を保持し、最大3配信・50論文、直近2か月、1回10,000書込の見積上限を確認する。今回のメタデータ・状態取込みの見積は保守的に1,802書込。日次残枠を保証するものではない。上限エラー時は停止し、課金・自動再送は行わない。
+2. `node pmid_ledger/prototype/trial-maintenance.mjs` でlocalhost:8791を開き、Google本人認証後「既存TESTをバックアップ・復元検証」。Workerの本人APIから全ての完了世代・操作・履歴をページ取得し、hashと件数を確認する。別の一時ローカルD1へ復元し、再出力のchain一致を確認して初めて `backup-receipt.json` を保存する。UUID付きNDJSONは上書きしない。既存TESTのD1やWorkerは作り直さない。
+3. `npm --prefix pmid_ledger/prototype run build:online-test` 後、`python3 pmid_ledger/prototype/real_trial_session.py --update-and-publish`。Worker専用更新API token、同期用Client ID（末尾.access）、同期用Secretを順に非表示入力する。値は保存・ログ出力しない。旧bundleはprivateに退避し、既存6binding・認証・同期を維持してコード読戻し後に転送する。
+4. 実コピーはmanifestの `data_source: real-copy` と明示的な `real_copy: true` の組だけを受け付ける。既存メタデータとマージせず、別の不変世代へ保存する。旧TESTとPMID／配信キーが重複した場合は拒否する。全7表を公開前・公開後に読戻し比較し、バックアップ時の世代と操作cutoffをatomicに照合して切り替える。途中で他画面が保存したら切替を拒否し、新しいバックアップから再確認する。元の架空世代と手動履歴は保持する。通常の架空syncから実コピーへのマージは禁止。
+5. 保守画面の「コピーした確認状態を反映・読戻し」で、選択範囲の現在状態／手動メモと配信の確認状態をTEST専用の新操作IDで反映する。旧操作ID・版数・更新時刻・全履歴は引き継がず、TESTで版1から開始する。同じplanの再実行は同じ操作を再送する。Mac・iPadは同じ既存オンラインURLで「TEST · 実データのコピー」、直近2か月の一覧、本文・AIメモ・手動メモ欄を確認できる。
+6. 終了時はサインアウトし、8791の保守サーバーを停止する。切戻しが必要なら、先に現在のコピー側を再バックアップ・復元検証し、`python3 pmid_ledger/prototype/real_trial_session.py --rollback` を実行する。最初のバックアップ参照はplanの `baseline_backup`、元世代は `baseline_revision` に保持する。現在の操作cutoffを照合し、表示対象だけを元世代に戻す。TEST側の新しい履歴も削除しない。元台帳への反映経路はない。
+
+保守画面はlocalhost固定・Host/Origin検証・署名済Google本人UID一致が必須。tokenはリクエスト中のメモリ内のみ。原本のバックアップ、実コピー、plan、検証記録、復旧bundleは全てGit対象外のprivate内に置く。バックアップ後に実コピーを含む場合は `synthetic: false, test_only: true` と明示し、従来の架空バックアップも復元できる。新しいクラウド資源・課金設定・Access・Firebase設定・GAS・Pages・既存配信workflowは変更しない。

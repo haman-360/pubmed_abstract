@@ -10,7 +10,7 @@ class Element{
   querySelectorAll(selector){const names=selector.split(',');return this.children.flatMap(n=>typeof n==='object'?[...(names.includes(n.tag)?[n]:[]),...n.querySelectorAll(selector)]:[]);}
 }
 async function setup({loseSave=false,readFailsAfterSave=false}={}){
-  const ids=['login','logout','welcome','workspace','message','back','reload','period','scope','month-label','month','search','query','clear','summary','list','heading','breadcrumb','description','previous','next','page','savebar','draft-status','save','discard','complete','reopen','retry'];
+  const ids=['data-source','login','logout','welcome','workspace','message','back','reload','period','scope','month-label','month','search','query','clear','summary','list','heading','breadcrumb','description','previous','next','page','savebar','draft-status','save','discard','complete','reopen','retry'];
   const elements=Object.fromEntries(ids.map(id=>[id,new Element(['login','logout','back','reload','clear','previous','next','save','discard','complete','reopen','retry'].includes(id)?'button':'div')]));
   elements.workspace.append(...ids.filter(id=>!['login','logout','welcome','workspace','message'].includes(id)).map(id=>elements[id]));
   const events={},requests=[],operations=new Map(),key='["synthetic-small","感染症"]',revision='a'.repeat(64);let version=0,status='unreviewed',note='',changed,lost=false,pendingRead;

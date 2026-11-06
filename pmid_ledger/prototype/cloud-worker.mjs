@@ -1,4 +1,4 @@
-// Synthetic TEST only. Owner APIs require signed Google identity; the app shell contains no ledger data.
+// Existing TEST only: fictional data or an explicitly bounded real-data copy. Owner APIs require signed Google identity.
 import {createIdentityVerifier,createOwnerVerifier,verifyIdentityRequest} from './identity.mjs';
 import {createPublicKeySources,createOwnerKeySource} from './identity-keys.mjs';
 import {runLedgerAction} from './ledger-api.mjs';

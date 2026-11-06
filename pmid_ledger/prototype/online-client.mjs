@@ -27,6 +27,7 @@ const node=(tag,text,className)=>{const n=document.createElement(tag);if(text!==
 function counters(data){$('summary').replaceChildren(...Object.entries(data).map(([name,count])=>node('span',`${name} ${count}`)));}
 function pagination(data){offset=data.offset;total=data.total;$('page').textContent=total?`${offset+1}–${Math.min(offset+data.page_size,total)} / ${total}件`:'0件';$('previous').hidden=offset===0;$('next').hidden=offset+data.page_size>=total;}
 function renderIssues(data){
+  $('data-source').textContent=data.data_source==='real-copy'?'TEST · 実データのコピー':'TEST · 架空データ';
   $('heading').textContent='配信一覧';$('breadcrumb').textContent='研究台帳 / 配信';
   $('description').textContent=data.window.scope==='recent'?`${data.window.from} 〜 ${data.window.through} · 直近2か月`:data.window.scope==='unknown'?'配信日が不明なもの':`${month}の配信`;
   $('list').className='issue-grid';$('list').replaceChildren();counters({'配信':data.total});

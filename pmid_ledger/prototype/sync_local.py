@@ -176,6 +176,8 @@ def sync_metadata(incoming, transport, stop_after_stage=False, write_budget=DEFA
     payload = check_fixture(incoming)
     initial_manifest, _ = chunk_plan(incoming["tables"])
     current = transport.post("status", {})
+    if current.get("manifest", {}).get("data_source") == "real-copy":
+        raise SyncError("real_trial_active_synthetic_merge_forbidden")
     expected = current["revision"]
     def result(changed):
         return {"changed": changed, "verified": True, "papers": len(payload["papers"]),

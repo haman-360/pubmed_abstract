@@ -32,12 +32,13 @@ export async function exportBackup(db,{format='LOCAL_SYNTHETIC_D1_BACKUP_V2'}={}
   const selects=selected.map(n=>`(SELECT json_group_array(json_array(${backupColumns[n].join(',')})) FROM ${n}) AS ${n}`);
   const row=await db.prepare(`SELECT generation AS active_revision,${selects.join(',')} FROM settings WHERE id=1`).first();
   const tables=Object.fromEntries(selected.map(n=>[n,JSON.parse(row[n]).map(r=>[stable(r),r]).sort((a,b)=>a[0]<b[0]?-1:a[0]>b[0]?1:0).map(x=>x[1])]));
-  const payload={format,synthetic:true,active_revision:row.active_revision,tables};
+  const real=tables.generations.some(g=>JSON.parse(g[2]).data_source==='real-copy');
+  const payload={format,synthetic:!real,...(real?{test_only:true}:{}),active_revision:row.active_revision,tables};
   return {payload,sha256:await digestBackup(payload)};
 }
 export async function validateBackup(backup) {
   const p=backup?.payload;
-  check(['LOCAL_SYNTHETIC_D1_BACKUP_V1','LOCAL_SYNTHETIC_D1_BACKUP_V2'].includes(p?.format)&&p.synthetic===true,'invalid_backup_format');
+  check(['LOCAL_SYNTHETIC_D1_BACKUP_V1','LOCAL_SYNTHETIC_D1_BACKUP_V2'].includes(p?.format)&&(p.synthetic===true||(p.synthetic===false&&p.test_only===true)),'invalid_backup_format');
   check(await digestBackup(p)===backup.sha256,'backup_checksum_mismatch');
   const selected=p.format.endsWith('_V1')?names.filter(n=>!['metadata_chunks','metadata_records','generation_ready'].includes(n)):names;
   check(p.tables&&Object.keys(p.tables).length===selected.length&&selected.every(n=>Array.isArray(p.tables[n])),'invalid_backup_tables');
@@ -47,7 +48,7 @@ export async function validateBackup(backup) {
   check(p.active_revision===null||generations.some(g=>g.id===p.active_revision),'invalid_active_revision');
   for(const g of generations)check(await digestBackup(JSON.parse(g.tables_json))===g.payload_hash,'invalid_metadata_hash');
   for(const g of generations){const manifest=JSON.parse(g.tables_json);if(manifest.format!==FORMAT)continue;
-    check(!p.format.endsWith('_V1'),'chunked_backup_requires_v2');validateManifest(manifest);
+    check(!p.format.endsWith('_V1'),'chunked_backup_requires_v2');validateManifest(manifest,{historical:true});
     const chunks=objects('metadata_chunks').filter(c=>c.generation===g.id),rows=objects('metadata_records').filter(r=>r.generation===g.id),ready=objects('generation_ready').find(r=>r.generation===g.id);
     if(ready)check(ready.manifest_hash===g.payload_hash&&chunks.length===Object.values(manifest.tables).reduce((n,s)=>n+s.chunks.length,0),'invalid_ready_generation');
     check(rows.length===chunks.reduce((n,c)=>n+c.row_count,0),'invalid_chunk_record_count');

@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#153d35"><meta name="referrer" content="no-referrer"><title>研究台帳 · TEST</title><link rel="icon" href="./icon.svg"><link rel="apple-touch-icon" href="./icon.svg"><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./app.css"></head><body>
-<header class="topbar"><a class="brand" href="./"><img src="./icon.svg" width="36" height="36" alt=""><span>研究台帳<small>PMID LIBRARY</small></span></a><div class="account"><span class="test-badge">TEST · 架空データ</span><button id="logout" class="quiet" hidden>サインアウト</button></div></header>
+<header class="topbar"><a class="brand" href="./"><img src="./icon.svg" width="36" height="36" alt=""><span>研究台帳<small>PMID LIBRARY</small></span></a><div class="account"><span class="test-badge" id="data-source">TEST</span><button id="logout" class="quiet" hidden>サインアウト</button></div></header>
 <main>
-<section id="welcome" class="welcome"><p class="eyebrow">読む・選ぶ・記録する</p><h1>論文の確認を、<br>ひとつの台帳に。</h1><p>配信された論文を確認し、入手希望やメモを記録できます。<br>このTESTは架空データ専用です。実台帳には接続しません。</p><button id="login" class="primary" disabled>Googleでログイン</button><p class="hint">本人専用 · オンライン接続が必要です</p></section>
+<section id="welcome" class="welcome"><p class="eyebrow">読む・選ぶ・記録する</p><h1>論文の確認を、<br>ひとつの台帳に。</h1><p>配信された論文を確認し、入手希望やメモを記録できます。<br>TEST内のコピーを使用します。ここでの編集は実台帳へ戻りません。</p><button id="login" class="primary" disabled>Googleでログイン</button><p class="hint">本人専用 · オンライン接続が必要です</p></section>
 <p id="message" role="status" aria-live="polite">ログインの準備をしています。</p>
 <section id="workspace" hidden>
 <div class="section-heading"><div><p class="eyebrow" id="breadcrumb">研究台帳 / 配信</p><h1 id="heading" tabindex="-1">配信一覧</h1><p id="description" class="muted"></p></div><div class="toolbar"><button id="back" hidden>配信一覧へ</button><button id="reload">再読み込み</button></div></div>
