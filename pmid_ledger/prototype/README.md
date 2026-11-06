@@ -339,7 +339,7 @@ POST JSON。閲覧・保存は`Authorization: Bearer local-synthetic-owner`、�
 
 ## 直近2か月全件の定期同期
 
-3配信の少量試験から、配信日が直近2か月に入る全配信へ広げる実装を追加した。2026-11-06の対象は70配信・486論文・537掲載。現時点ではローカル検証済み・クラウド反映前。実台帳を読取だけで参照し、Google Drive versionが読取中に変われば停止する。既存の土曜05:00 JSTの配信と毎時の実台帳更新は変更しない。
+3配信の少量試験から、配信日が直近2か月に入る全配信へ広げる実装を追加した。2026-11-06の対象は70配信・486論文・537掲載。既存TESTへ全件反映・全表読戻しが成功し、Macで全70配信の4ページと既存メモ保持・通常配信の本文要約を確認、iPadでも70配信の表示を利用者が確認済み。実台帳を読取だけで参照し、Google Drive versionが読取中に変われば停止する。既存の土曜05:00 JSTの配信と毎時の実台帳更新は変更しない。
 
 `recent_sync.py` の専用経路でTESTへ不変世代を追加し、全7表の公開前後の読戻し後に切り替える。既存TESTのメモ・確認状態・履歴は保持し、元台帳の状態はTESTに状態がない論文／配信だけ初期化する。初回移行は復元検証済みbackupが必須。定期更新時は本人の同時保存を保持し、古い画面の未保存編集には再取得を求める。実台帳への書戻し・原本の変更は行わない。同一メタデータなら新世代やメタデータ書込を増やさない。
 
@@ -347,6 +347,11 @@ POST JSON。閲覧・保存は`Authorization: Bearer local-synthetic-owner`、�
 
 定期実行は独立した `pmid-ledger-test.yml` を毎日12:23／21:23 JST（UTC 03:23／12:23）に設定する。実際の起動にはGitHub側の遅延があり、配信完了後に実台帳へ載ったデータを次回実行で取得する。`main` にはこの新しいworkflowだけを追加し、取得するコードは検証済みcommitへ固定する。既存workflowや本番コードをまとめてmergeしない。新しいTEST有効化変数がtrueになるまではjobを起動しない。
 
-導入用CLIは `python3 pmid_ledger/prototype/recent_sync.py --update-and-sync --configure-actions`。更新用API token、同期用Client ID、同じSecretを非表示入力する。更新用API tokenは保存しない。同期用2値だけをGitHub公開鍵で暗号化して `PMID_TEST_ACCESS_CLIENT_ID`／`PMID_TEST_ACCESS_CLIENT_SECRET` に登録し、既存 `GOOGLE_AUTHORIZED_USER_JSON`／`PMID_LEDGER_SHEET_ID` はそのまま参照する。TEST専用有効化変数を設定し、手動の初回Actionsも要求する。GitHubの既存認証はGit credential helper経由でメモリ内だけに取り込み、チャット・ログ・ファイルへ出力しない。
+導入用CLIは `python3 pmid_ledger/prototype/recent_sync.py --update-and-sync --configure-actions`。2026-11-06に利用者が非表示入力で実行し、70配信・486論文・537掲載の初回同期172要求と、GitHub設定・初回手動Actionsを完了した。更新用API token、同期用Client ID、同じSecretを非表示入力する。更新用API tokenは保存しない。同期用2値だけをGitHub公開鍵で暗号化して `PMID_TEST_ACCESS_CLIENT_ID`／`PMID_TEST_ACCESS_CLIENT_SECRET` に登録し、既存 `GOOGLE_AUTHORIZED_USER_JSON`／`PMID_LEDGER_SHEET_ID` はそのまま参照する。TEST専用有効化変数を設定し、手動の初回Actionsも要求する。GitHubの既存認証はGit credential helper経由でメモリ内だけに取り込み、チャット・ログ・ファイルへ出力しない。
 
 公開repoの標準Ubuntu runnerだけを許可し、private化されるとjobを停止する。大きなrunner、Actions artifact、Actions cache、AI APIを使わない。[GitHubの標準runner料金](https://docs.github.com/en/billing/concepts/product-billing/github-actions)、[scheduleの条件](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)、[D1無料枠](https://developers.cloudflare.com/d1/platform/pricing/)を確認した。課金設定は変更しない。
+
+
+2026-11-06の実稼働確認：TEST専用変数はtrue。既存の配信・実台帳更新の有効化変数もtrueを保持。[初回Actions](https://github.com/haman-360/pubmed_abstract/actions/runs/42176210755) は成功し、既存Google認証で原本を読み取って同じ70配信・486論文を確認した。追加16要求でメタデータ・状態とも変更なし、新世代や重複状態を作らなかった。未認証の本人API・recentStatus・seedReviewsは全て403。全件同期後のバックアップも別DB復元・chain一致に成功（3世代・129操作・144論文履歴・15配信履歴）。元の試験世代と手動履歴を保持している。
+
+同期範囲は常に配信日で直近2か月。範囲外の配信は新しい公開世代へ含めず、画面の過去月指定も現在公開世代の中だけを表示する。保存済みメモ・状態・過去世代は削除しない。原本への書戻し、古い世代を横断する閲覧、ホーム画面での独立起動確認、オフライン対応は別作業。

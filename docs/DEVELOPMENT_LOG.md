@@ -176,3 +176,13 @@
 - GitHubの既存 `AUTOMATION_ENABLED`／`PMID_LEDGER_ENABLED` がどちらもtrueであることを読取確認し、変更しなかった。土曜配信設定の変更は不要。TEST同期の検証済みコードを `16e1b4b7138c6929a74212ff49871e895557f50a` へ固定し、`main` には新規 `.github/workflows/pmid-ledger-test.yml` 1ファイルだけを追加した（`f0793094759687d3c900d58d7b3e962c79ef2c50`）。本番コード・既存workflow全体のmergeは行わない。main commitの差分も新規workflowだけと確認した。
 - TEST専用変数がtrueになるまで新jobは動かない。GitHub APIからmainのworkflowとローカルのレビュー済みファイルが完全一致すること、標準Ubuntu・公開repo限定・artifact／cacheなしを確認。GitHub暗号化公開鍵と必要な既存source secretの名前を確認したが、secret値は取得していない。暗号化ライブラリも架空データの暗号化・復号で確認済み。
 - 現在のTESTを本人認証付きAPIで再バックアップし、2世代・28操作・54論文履歴・4配信履歴を別DB復元・chain一致で保全。現時点のTESTはまだ3配信・30論文。全件反映と定期実行の有効化は、利用者の非表示入力を待つ。同期用2値だけをGitHubのTEST専用Secretsへ暗号化登録し、Worker更新用API tokenは保存しない。課金設定・本番GAS・実台帳・既存Pages・配信設定を変更していない。
+
+### 2026-11-06 — 直近2か月全70配信の公開・定期同期の有効化完了
+
+- 利用者が `recent_sync.py --update-and-sync --configure-actions` を実行し、3値を非表示入力。15:39:10 JST、既存TEST Workerの133,963バイト・SHA-256 `0fa633728e2fd7ea97ade8decc02f3083dbb43155e994c84cc97f4116b2bc35e` のコード・既存binding継承読戻しが成功。15:43:01 JST、70配信・486論文・537掲載を172要求で取込み、公開前後の全7表読戻し一致を確認。source状態120論文・14配信を確認し、TESTに未作成の状態だけを初期化した。原本への書込みはない。
+- 定期同期用Client ID／SecretだけをGitHubのTEST専用Secretsへ公開鍵暗号化して登録し、`PMID_TEST_SYNC_ENABLED` をtrueへ設定。Worker更新用API tokenは保存せず、定期同期でも使わない。既存Google資格情報・原本Sheet IDのSecretはそのまま参照する。既存 `AUTOMATION_ENABLED`／`PMID_LEDGER_ENABLED` は共にtrueを保持し、本番の土曜05:00 JST配信設定も変更していない。
+- [初回Actions手動実行](https://github.com/haman-360/pubmed_abstract/actions/runs/42176210755) は成功。既存Google認証で実台帳を実際に読み取り、同じ70配信・486論文・537掲載を16要求で検証し、メタデータ・状態とも変更なしを確認。これにより2回目の同期で重複世代・状態を作らないことを実環境でも確認できた。cronは毎日12:23／21:23 JSTで有効。今後のcron起動自体は初回手動実行とは区別し、GitHub側の遅延や配信処理の完了時刻に応じて次の実行で新着を取得する。
+- MacのGoogle本人認証付き画面で70配信の4ページ・末尾9月6日まで表示を確認。「読み忘れ候補03」の既存TESTメモと原本不要状態が保持され、通常の10月31日週次配信の評価・AIメモ・本文要約・配信文書リンクも表示できた。利用者のiPad実機でも再読み込み後の「配信70」を確認したと回答。今回はTESTへの新しい手動編集は加えず、元のメモをそのまま検証した。
+- 同期後の実TESTを追加バックアップし、2,360,287バイト・3完了世代・60チャンク・メタデータ3,328行・操作129件・操作ID130件・論文履歴144件・配信履歴15件を別DB復元・再出力chain一致で確認。同期前後の実archiveを比較し、既存31論文・4配信の最新状態（版数・状態・メモ・時刻を含む）、全28操作・29操作ID・旧メタデータ554行が完全に保持されていることも確認した。archiveと集計証跡はGit対象外0600に保存する。
+- 反映後も未認証の本人API、recentStatus、seedReviewsは403。保守画面はサインアウトして閉じ、今回の8791保守サーバーだけを終了。Macのオンライン台帳を利用用に残す。実データ・資格情報はGitやActions artifactへ保存せず、公開ログは集計値のみ。READMEを実稼働状態へ更新し、直近2か月を外れたメモも保持する一方、通常UIは現在公開世代の範囲のみを表示することを明記した。
+- 本段階は前段でNode83件・Python43件成功済みの実装を実環境で検証した運用・記録更新のみ。コード再変更がないためテスト全件の再実行は行わず、実環境の全表読戻し・再同期・メモ保持・Mac／iPad・認証拒否・backup復元で確認。diff／statusを確認して記録をcommit・pushする。追加費用0円の構成、本番GAS・実台帳・既存Pages・既存配信処理・課金設定は変更なし。clasp push・GAS deployなし。公開反映は既存TEST Workerと独立したTEST同期workflowだけ。ホーム画面からの独立起動・オフライン対応は別作業。
