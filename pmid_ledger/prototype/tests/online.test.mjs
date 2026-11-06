@@ -38,6 +38,15 @@ test('public online shell exposes only Firebase Web fields; Google owner API and
   const assets=await onlineAssets(firebase),rt=await runtime({cloudTest:{onlineAssets:assets,bindings:{LEDGER_TEST_ONLY:'synthetic',LEDGER_ORIGIN:origin,LEDGER_SYNC_ENABLED:'0',LEDGER_IDENTITY:JSON.stringify({projectId:firebase.projectId,ownerUid:f.fixture.config.ownerUid})},keyResponses:()=>Response.json({[f.ownerJwk.kid]:cert},{headers:{'Cache-Control':'max-age=60'}})}});t.after(()=>rt.mf.dispose());await seedDatabase(rt.db);
   const page=await rt.mf.dispatchFetch(origin+'/api/app/');assert.equal(page.status,200);assert.match(await page.text(),/直近2か月/);assert.match(page.headers.get('Content-Security-Policy'),/frame-ancestors 'none'/);assert.equal(page.headers.get('Cache-Control'),'no-store');
   const config=await (await rt.mf.dispatchFetch(origin+'/api/app/config.json')).json();assert.deepEqual(config,{firebase});assert(!JSON.stringify(assets).includes(f.fixture.config.ownerUid));
+  const manifest=await (await rt.mf.dispatchFetch(origin+'/api/app/manifest.webmanifest')).json();
+  assert.equal(manifest.id,'/api/app/');assert.equal(manifest.start_url,'/api/app/');assert.equal(manifest.scope,'/api/app/');assert.equal(manifest.display,'standalone');
+  assert.deepEqual(manifest.icons.map(i=>i.sizes),['192x192','512x512','512x512']);assert.equal(manifest.icons[2].purpose,'maskable');
+  for(const [name,size] of [['apple-touch-icon.png',180],['icon-192.png',192],['icon-512.png',512],['icon-maskable-512.png',512]]){
+    const icon=await rt.mf.dispatchFetch(origin+'/api/app/'+name),bytes=Buffer.from(await icon.arrayBuffer());
+    assert.equal(icon.status,200);assert.equal(icon.headers.get('Content-Type'),'image/png');assert.deepEqual([...bytes.subarray(0,8)],[137,80,78,71,13,10,26,10]);
+    assert.equal(bytes.readUInt32BE(16),size);assert.equal(bytes.readUInt32BE(20),size);assert.equal(bytes[25],2); // Opaque RGB, including maskable background.
+  }
+  assert.match(assets[''],/apple-mobile-web-app-capable/);assert.match(assets[''],/sizes="180x180" href="\.\/apple-touch-icon\.png"/);
   assert.equal((await rt.mf.dispatchFetch(origin+'/api/app/unknown')).status,404);
   assert.equal((await rt.mf.dispatchFetch(origin+'/api/app/',{headers:{Origin:'https://evil.invalid'}})).status,403);
   assert.equal((await rt.mf.dispatchFetch(origin+'/api/listIssues',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).status,403);

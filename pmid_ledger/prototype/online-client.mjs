@@ -1,5 +1,8 @@
 import {OnlineEdits} from './state.mjs';
 const $=id=>document.getElementById(id),edits=new OnlineEdits();
+const launchMedia=window.matchMedia?.('(display-mode: standalone)');
+function showLaunchMode(){const label=$('launch-mode');if(label)label.textContent=launchMedia?.matches||window.navigator?.standalone===true?'アプリで起動中':'ブラウザで起動中';}
+showLaunchMode();launchMedia?.addEventListener?.('change',showLaunchMode);
 const statusLabels={unreviewed:'未確認',reviewed_no_fulltext:'原本不要',want_fulltext:'入手希望'},legacyLabels={fulltext_obtained:'原文入手済み未読',read:'読了'};
 const issueLabels={unreviewed:'未確認',in_progress:'確認中',completed:'確認済み'};
 let sdk,auth,user=null,epoch=0,view=0,busy=false,manualSignout=false,key=null,current=null,offset=0,total=0,issueOffset=0,scope='recent',month='';

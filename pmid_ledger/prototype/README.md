@@ -355,3 +355,15 @@ POST JSON。閲覧・保存は`Authorization: Bearer local-synthetic-owner`、�
 2026-11-06の実稼働確認：TEST専用変数はtrue。既存の配信・実台帳更新の有効化変数もtrueを保持。[初回Actions](https://github.com/haman-360/pubmed_abstract/actions/runs/42176210755) は成功し、既存Google認証で原本を読み取って同じ70配信・486論文を確認した。追加16要求でメタデータ・状態とも変更なし、新世代や重複状態を作らなかった。未認証の本人API・recentStatus・seedReviewsは全て403。全件同期後のバックアップも別DB復元・chain一致に成功（3世代・129操作・144論文履歴・15配信履歴）。元の試験世代と手動履歴を保持している。
 
 同期範囲は常に配信日で直近2か月。範囲外の配信は新しい公開世代へ含めず、画面の過去月指定も現在公開世代の中だけを表示する。保存済みメモ・状態・過去世代は削除しない。原本への書戻し、古い世代を横断する閲覧、ホーム画面での独立起動確認、オフライン対応は別作業。
+
+## Dock／ホーム画面から使うオンラインアプリ
+
+既存TESTの同じ `/api/app/` を端末へ追加する。manifestのstandalone指定に加え、PNGアイコン・Apple touch icon・安定idを整備し、画面末尾に追加手順と起動モードを表示する。現在はローカル試験とbundle準備まで完了し、クラウド反映と実機の追加・起動確認はこれから。
+
+- **Mac（macOS Sonoma 14以降）**：Safariでオンライン台帳を開き、「ファイル」→「Dockに追加」。名前は「研究台帳 TEST」。追加後はDockまたはSpotlightから起動する。
+- **iPad**：Safariでオンライン台帳を開き、共有→「ホーム画面に追加」。「Webアプリとして開く」があればオンにして追加し、ホーム画面のアイコンから起動する。
+- 追加したアプリ内でGoogle本人ログインする。画面末尾の「アプリで起動中」で確認できる。メモはサーバーへ保存してから終了する。従来のメモリ内認証を維持するため、終了・再起動後は再ログインが必要。
+
+SafariのWebアプリ機能を使うためApp Store申請や新しいクラウド資源は不要。オフライン・通知・認証の永続保存は追加していない。[AppleのMac手順](https://support.apple.com/ja-jp/104996)、[WebKitのホーム画面Webアプリ仕様](https://webkit.org/blog/17333/webkit-features-in-safari-26-0/)を参照。
+
+アイコンの再生成は `python3 pmid_ledger/prototype/build-app-icons.py`。Pillow 11.3.0が必要で、このMacではprivateのvendor領域へ配置した。既存SVGと同じ図案の座標を描画し、OSに角を処理させる不透明RGBのPNGを出力する。通常のbundle生成はGit管理済みPNGを読むだけで、Pillowを必要としない。
