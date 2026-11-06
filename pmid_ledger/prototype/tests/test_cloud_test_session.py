@@ -75,18 +75,27 @@ class SessionTests(unittest.TestCase):
                 super().__init__(raw)
                 self.headers = {"Content-Type": mime}
         class Opener:
-            def __init__(self, broken=False):
+            def __init__(self, broken=False, large_denial=False, large_owner=False):
                 self.requests = []
                 self.broken = broken
+                self.large_denial = large_denial
+                self.large_owner = large_owner
             def open(self, req, timeout):
                 self.requests.append(req)
                 owner = req.full_url.endswith("/api/listIssues")
                 if self.broken or owner:
+                    if owner and self.large_owner:
+                        return Response(b'{"error":"identity_denied"}' + b" " * 10000, "application/json")
                     return Response(b'{"error":"identity_denied"}', "application/json")
+                if self.large_denial:
+                    return Response(b"<html>Forbidden" + b" " * 12000 + b"</html>", "text/html")
                 return Response(b"Forbidden", "text/plain")
         opener = Opener()
         session.verify_routes(RESOURCES, opener)
         self.assertEqual(len(opener.requests), 4)
+        session.verify_routes(RESOURCES, Opener(large_denial=True))
+        with self.assertRaisesRegex(DeployError, "path_separation"):
+            session.verify_routes(RESOURCES, Opener(large_owner=True))
         with self.assertRaisesRegex(DeployError, "path_separation"):
             session.verify_routes(RESOURCES, Opener(broken=True))
 

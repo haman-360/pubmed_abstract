@@ -65,10 +65,12 @@ def verify_routes(resources, opener=None):
             with response:
                 raw = response.read(8193)
                 is_json = "application/json" in response.headers.get("Content-Type", "")
-                valid = response.code == 403 and len(raw) <= 8192 and raw.strip() != b"error code: 1010"
+                valid = response.code == 403 and raw.strip() != b"error code: 1010"
                 if owner_api:
-                    valid = valid and is_json and json.loads(raw) == {"error": "identity_denied"}
+                    valid = valid and len(raw) <= 8192 and is_json and json.loads(raw) == {"error": "identity_denied"}
                 else:
+                    # Access HTML can exceed 8 KiB. Inspect only this bounded prefix;
+                    # its total length is not evidence of a broken authentication route.
                     valid = valid and not is_json
                 if not valid:
                     raise DeployError("test_access_path_separation_not_verified")

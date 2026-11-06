@@ -161,6 +161,8 @@ python3 pmid_ledger/prototype/cloud_test_session.py --enable-sync --sync-synthet
 
 コード更新前に本人APIと同期・ルート・パス境界の拒否を確認し、同じ既存TEST Workerへ同期を明示有効化した設定を送る。コードGETのバイト一致と、設定GETのTEST D1 binding・同期有効値・本人設定がsecretであることを照合する。secretの値自体は公式APIでは読めないため、続く同期要求で実Access assertionの署名・AUD・Client ID一致が通ることを確認する。[設定読取API](https://developers.cloudflare.com/api/resources/workers/subresources/scripts/subresources/script_and_version_settings/methods/get/)
 
+事前チェックは本文の読取量を制限するが、Cloudflareの拒否HTMLの全体が8KiBを超えること自体は異常と判定しない。本人APIの短いJSON拒否は厳密に照合し、他の経路では403・非JSON・1010でないことを確認する。`test_access_path_separation_not_verified`でトークン入力前に停止した場合、その実行ではWorker更新・同期転送はまだ行われていない。
+
 転送前に既存公開データが未公開または同じ固定fixtureであることを確認し、別の内容があれば上書きせず停止する。転送は既存の予算内・中断再開・公開処理を使い、公開後は7チャンクの内容を固定fixtureと照合し、最後に認証経路を再確認する。redirect・proxy・自動再送・TEST作成・Accessポリシー変更・本番接続は行わない。`--enable-sync`だけなら有効化後の署名付きstatus読取までで、データ転送はしない。
 
 結果はGit対象外`.cloud-test/deployment-verification.json`と`sync-verification.json`へ0600で保存する。新しい更新試行前にセッション結果を未検証へ戻し、古い成功記録を今回の成功と取り違えない。`full_readback_verified: true`は全チャンク一致、`paused: true`は未公開の予算内中断であり成功扱いしない。`wall_seconds`は更新開始から同期・読戻しまでの経過時間で、CPU時間ではない。書込予算は1回の見積上限で、日次累積や管理画面の反映遅延を自動管理しない。失敗・応答不明・429では止め、再実行前に残枠と結果を確認する。
