@@ -55,6 +55,21 @@ class CloudTransportTests(unittest.TestCase):
             self.assertEqual(transport.requests, 1)
         self.assertTrue(any(type(handler).__name__ == "NoRedirect" for handler in CloudTestTransport(ORIGIN, CLIENT_ID, CLIENT_SECRET).opener.handlers))
 
+    def test_workers_dev_request_does_not_use_blocked_default_urllib_signature(self):
+        transport = CloudTestTransport(ORIGIN, CLIENT_ID, CLIENT_SECRET)
+        class Opener:
+            def open(self, req, timeout):
+                agent = req.get_header("User-agent", "Python-urllib/3.9")
+                if agent.startswith("Python-urllib/"):
+                    raise HTTPError(req.full_url, 403, "Forbidden", {}, io.BytesIO(b"error code: 1010\n"))
+                self.agent = agent
+                return io.BytesIO(b'{"value":{"revision":null}}')
+        opener = transport.opener = Opener()
+        self.assertEqual(transport.post("status", {}), {"revision": None})
+        self.assertIn("PMIDLedgerTest", opener.agent)
+        self.assertNotIn(CLIENT_SECRET, opener.agent)
+        self.assertEqual(transport.requests, 1)
+
     def test_inspect_never_constructs_transport_or_reads_credentials(self):
         with patch("sys.argv", ["sync_cloud_test", "--inspect"]), patch("sys.stdout", new_callable=io.StringIO) as output, \
                 patch("pmid_ledger.prototype.sync_cloud_test.CloudTestTransport", side_effect=AssertionError("No HTTP")):

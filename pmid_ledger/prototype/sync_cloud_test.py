@@ -21,8 +21,11 @@ class CloudTestTransport(JsonSyncTransport):
             raise SyncError("A TEST Access Client Secret is required")
         # Access exchanges these headers for a signed assertion at the edge.
         # No Bearer owner token or locally fabricated Access JWT is sent.
+        # workers.dev rejects the default Python urllib signature (Cloudflare 1010).
+        # Identify this approved TEST client without pretending to be a browser.
         super().__init__(base_url, {"CF-Access-Client-Id": client_id,
-                                  "CF-Access-Client-Secret": client_secret}, attempts=1)
+                                  "CF-Access-Client-Secret": client_secret,
+                                  "User-Agent": "PMIDLedgerTest/1.0"}, attempts=1)
 
 
 def main():

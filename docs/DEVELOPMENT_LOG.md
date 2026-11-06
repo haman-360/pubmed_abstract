@@ -26,3 +26,15 @@
 - コンピューター操作ツールの確認規則で、Access保護の一部解除には実行時確認が必要。未認証通信もWorkerへ届くようになる点と、Firebase署名・本人UIDの一致前にはD1へ到達しない点を説明し、保存・検証の確認待ち。既存の全体Service Authや同期設定を先に緩めていない。
 - 検証は前段で成功した65件＋19件と、今回の実コード読戻し・SHA-256照合・反映後の認証なし拒否。コード変更なしのため自動試験の重複実行はしない。
 - 追加費用0円、本番GAS・実台帳・既存Pages・課金設定は変更なし。`clasp push` 不要、GAS deploy未実施。今回は利用者によるTEST Workerだけのコードアップロードを確認した。
+
+## 2026-11-06 JST：本人APIの経路分離とPythonクライアントの1010対策
+
+- 利用者から、TEST本番ホストの `/api/*` だけをAccessのバイパス／全員へ設定し、WorkerのFirebase署名・固定本人UID検証へ委ねる保存・検証の明示承認を受けた。既存Worker全体のService Authは変更せず、ホスト名アプリ `pmid-ledger-test-owner-api` とポリシー `pmid-ledger-test-api-use-firebase` を保存。後者は下書き名から変更し、Access自身がFirebase本人判定を行うと誤解しない名前にした。
+- 保存済み画面を読み戻し、サブドメインがTEST Worker、ドメインが既存workers.dev、パスが `api/*`、アクションBypass、対象全員であることを確認。他のパス・他Worker・既存Pagesを対象に追加していない。既存アプリとService Authポリシーも一覧に残る。
+- WorkerのAccessタブでも、ホスト名ポリシーが当該 `/api/*` のバイパスだけで、既存Workerポリシーは「すべてのTraffic」「すべてのURL（本番とプレビュー）」のService Authのままであることを再確認した。プレビューへの実通信は行っていない。
+- 最初のPython実通信はすべて403だったため成功扱いせず切り分けた。応答はHTMLではなく `text/plain` の `error code: 1010`。Python標準urllibのUser-AgentがCloudflareのBrowser Integrity Checkに拒否されていた。ブラウザーGETではWorkerの `post_required` に到達し、明示したアプリ識別子 `PMIDLedgerTest/1.0` のPOSTでは `identity_denied` を確認した。[公式1010資料](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1010/)
+- 訂正：先の記録の「認証なし403」だけでは、Accessが拒否したのか1010なのかは区別できない。今回の実検証は識別子を明示し、1010がないことと、本人APIのJSON応答／他経路の非JSON応答を区別して判定した。Cloudflareの保護設定は変更・無効化していない。
+- 実TESTへの6要求で、`/api/listIssues` の未認証・偽Bearer・二重認証ヘッダーがいずれも403 JSON `identity_denied`、`/sync/status`・ルート・`/api`境界は非JSONの403、全件1010なしを確認。結果はGit対象外 `.cloud-test/access-verification.json` に0600で保存した。実tokenは使用せず、DB書込APIも呼んでいない。
+- 同期CLI `CloudTestTransport` へアプリ識別ヘッダーを追加し、標準urllib署名が拒否されるケースの回帰試験を追加。専用Python20件が成功。ローカル同期・本番workflow・GAS・Workerの実装bundleは変更していない。試作READMEへ実接続結果と1010の区別を追記した。
+- 同期はまだ無効。既存同期用service tokenのClient ID／Secretを職場Macの保存先から取り出せるか利用者へ確認中。値をチャットへ求めず、見つからない場合も既存TESTやtokenを無断で再作成しない。同期権限の明示的な有効化、架空120件の同期、実Google本人tokenでの保存、CPU・Mac／iPad往復は次の段階。
+- 追加費用0円。本番GAS・実台帳・既存Pages・課金設定は変更なし。`clasp push` 不要、GAS deploy未実施。この段階ではWorkerの再アップロードも行っていない。
