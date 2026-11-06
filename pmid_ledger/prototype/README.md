@@ -375,3 +375,5 @@ SafariのWebアプリ機能を使うためApp Store申請や新しいクラウ�
 Mac・iPadのSafariから追加したアプリでは、Googleログイン初回にFirebase側が「missing initial state」を表示し、2回目は成功するとの利用者報告がある。これは認証ヘルパーの一時状態を読み出せないという表示で、台帳データの欠落を意味しない。既にFirebaseのポップアップ方式を使用しているため、単純なredirectへの切替は行わない。[Firebase公式のブラウザー保存領域の制約と対処](https://firebase.google.com/docs/auth/web/redirect-best-practices)を確認したが、今回の実機での根本原因は未確定。
 
 エラーが出たログイン画面を閉じ、元の台帳からもう一度Googleログインできる。ボタンが押せない場合は、ログイン画面の「ログイン画面でエラーが出るとき」内の「ログイン画面を開き直す」でページを再初期化する。このボタンは未ログイン時だけ有効で、認証済みの編集や結果不明保存を破棄する用途には使えない。自動再試行・端末保存・Google／Access設定変更は追加しない。ログイン中の一時的な未ログイン通知で二重ポップアップを開かない制御と、認証完了直後の台帳読込み中に操作制限を解除しない修正も含む。これらは操作競合の防止・復帰補助であり、Firebase側の初回エラーの根本解消とは区別する。
+
+`deploy_cloud_test.py --update-code-only` は、設定に加えて既存コードを先にGETする。同じコードならPUTを省略し、コード・設定の再読戻し一致で `already_current: true, uploaded: false` を返す。更新中のHTTPエラーには `stage` と `write_attempted` を付ける。`read_existing_settings`／`read_existing_code` かつ `write_attempted: false` ならコード更新前で停止。`upload_code`／`readback_code`／`readback_settings` かつ `write_attempted: true` なら更新が反映された可能性があり、成功とは扱わない。PUTの自動再送は行わず、利用者が同じコマンドを再実行した際にコードを改めて照合する。エラー本文・資格情報・接続IDは表示しない。

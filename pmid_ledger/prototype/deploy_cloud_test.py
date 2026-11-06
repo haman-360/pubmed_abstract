@@ -22,7 +22,10 @@ MAX_BYTES = 2_000_000
 
 
 class DeployError(Exception):
-    pass
+    def __init__(self, message, *, stage=None, write_attempted=False):
+        super().__init__(message)
+        self.stage = stage
+        self.write_attempted = write_attempted
 
 
 def validate(resources, owner, source):
@@ -115,8 +118,15 @@ def upload(resources, owner, source, token, opener=None, *, sync_config=None, pr
         raise DeployError("invalid_worker_scoped_token")
     opener = opener or build_opener(ProxyHandler({}), NoRedirect())
     url = "https://api.cloudflare.com/client/v4/accounts/" + resources["accountId"] + "/workers/scripts/pmid-ledger-test"
+    write_attempted = False
 
     def request(method, data=None, mime=None, suffix=""):
+        nonlocal write_attempted
+        if method == "PUT":
+            write_attempted = True
+            stage = "upload_code"
+        else:
+            stage = ("readback_" if write_attempted else "read_existing_") + ("settings" if suffix == "/settings" else "code")
         headers = {"Authorization": "Bearer " + token}
         if mime:
             headers["Content-Type"] = mime
@@ -129,29 +139,35 @@ def upload(resources, owner, source, token, opener=None, *, sync_config=None, pr
         except HTTPError as exc:
             status = exc.code
             exc.close()
-            raise DeployError("cloudflare_http_" + str(status)) from None
+            raise DeployError("cloudflare_http_" + str(status), stage=stage, write_attempted=write_attempted) from None
         except (URLError, TimeoutError, OSError):
-            raise DeployError("upload_or_readback_result_unknown_no_automatic_retry") from None
+            raise DeployError("upload_or_readback_result_unknown_no_automatic_retry", stage=stage, write_attempted=write_attempted) from None
 
+    already_current = False
     if preserve_bindings:
         raw, _ = request("GET", suffix="/settings")
         before = checked_bindings(resources, raw)
-    raw, _ = request("PUT", body, content_type)
-    try:
-        if json.loads(raw).get("success") is not True:
-            raise ValueError()
-    except (ValueError, AttributeError):
-        raise DeployError("upload_not_confirmed") from None
+        raw, mime = request("GET")
+        already_current = downloaded_source(raw, mime) == source
+    if not already_current:
+        raw, _ = request("PUT", body, content_type)
+        try:
+            if json.loads(raw).get("success") is not True:
+                raise ValueError()
+        except (ValueError, AttributeError):
+            raise DeployError("upload_not_confirmed") from None
     raw, mime = request("GET")
     if downloaded_source(raw, mime) != source:
         raise DeployError("upload_completed_but_source_readback_mismatch")
-    result = {"uploaded": True, "source_readback_verified": True, "bytes": len(source),
+    result = {"uploaded": not already_current, "source_readback_verified": True, "bytes": len(source),
               "sha256": hashlib.sha256(source).hexdigest(), "metadata_sync_enabled": sync_config is not None or preserve_bindings}
     if preserve_bindings:
         raw, _ = request("GET", suffix="/settings")
         if checked_bindings(resources, raw) != before:
             raise DeployError("upload_completed_but_settings_readback_mismatch")
         result.update(bindings_readback_verified=True, existing_bindings_preserved=True)
+        if already_current:
+            result["already_current"] = True
     elif sync_config is not None:
         raw, _ = request("GET", suffix="/settings")
         try:
@@ -208,7 +224,10 @@ def main():
         print(json.dumps(result, ensure_ascii=False))
     except (DeployError, OSError, ValueError) as error:
         # Never print response bodies, config contents, credentials, or a traceback.
-        print(json.dumps({"error": str(error) if isinstance(error, DeployError) else "local_test_settings_or_bundle_unavailable"}, ensure_ascii=False))
+        result = {"error": str(error) if isinstance(error, DeployError) else "local_test_settings_or_bundle_unavailable"}
+        if isinstance(error, DeployError) and error.stage is not None:
+            result.update(stage=error.stage, write_attempted=error.write_attempted)
+        print(json.dumps(result, ensure_ascii=False))
         raise SystemExit(1) from None
 
 

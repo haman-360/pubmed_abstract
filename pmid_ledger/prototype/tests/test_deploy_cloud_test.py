@@ -41,10 +41,10 @@ class DeployTests(unittest.TestCase):
                     metadata = json.loads(list(message.iter_parts())[0].get_payload(decode=True))
                     self.metadata = metadata
                     return Reply(b'{"success":true}', "application/json")
-                return Reply(SOURCE, "application/javascript")
+                return Reply(b"previous" if len(self.requests) == 2 else SOURCE, "application/javascript")
         opener = Opener()
         result = upload(RESOURCES, OWNER, SOURCE, TOKEN, opener, preserve_bindings=True)
-        self.assertEqual([r.method for r in opener.requests], ["GET", "PUT", "GET", "GET"])
+        self.assertEqual([r.method for r in opener.requests], ["GET", "GET", "PUT", "GET", "GET"])
         self.assertNotIn("bindings", opener.metadata)
         self.assertEqual(opener.metadata["keep_bindings"], ["d1", "plain_text", "secret_text"])
         self.assertTrue(result["existing_bindings_preserved"])
@@ -72,12 +72,63 @@ class DeployTests(unittest.TestCase):
                     if self.damage_before or len(self.requests) > 1:
                         entries[0]["id"] = "wrong-database"
                     return Reply(json.dumps({"success": True, "result": {"bindings": entries}}).encode(), "application/json")
-                return Reply(b'{"success":true}', "application/json") if request.method == "PUT" else Reply(SOURCE, "application/javascript")
-        for before, count in [(True, 1), (False, 4)]:
+                return Reply(b'{"success":true}', "application/json") if request.method == "PUT" else Reply(b"previous" if len(self.requests) == 2 else SOURCE, "application/javascript")
+        for before, count in [(True, 1), (False, 5)]:
             opener = Opener(before)
             with self.assertRaises(DeployError):
                 upload(RESOURCES, OWNER, SOURCE, TOKEN, opener, preserve_bindings=True)
             self.assertEqual(len(opener.requests), count)
+
+    def test_code_only_already_current_reads_source_and_settings_without_upload(self):
+        body, mime = multipart(RESOURCES, OWNER, SOURCE, SYNC)
+        message = BytesParser(policy=policy.default).parsebytes(b"Content-Type: " + mime.encode() + b"\r\n\r\n" + body)
+        bindings = json.loads(list(message.iter_parts())[0].get_payload(decode=True))["bindings"]
+        bindings[-1].pop("text")
+        settings = json.dumps({"success": True, "result": {"bindings": bindings}}).encode()
+        class Opener:
+            def __init__(self):
+                self.requests = []
+            def open(self, request, timeout):
+                self.requests.append(request)
+                assert request.method == "GET"
+                return Reply(settings, "application/json") if request.full_url.endswith("/settings") else Reply(SOURCE, "application/javascript")
+        opener = Opener()
+        result = upload(RESOURCES, OWNER, SOURCE, TOKEN, opener, preserve_bindings=True)
+        self.assertEqual(len(opener.requests), 4)
+        self.assertTrue(result["already_current"])
+        self.assertFalse(result["uploaded"])
+        self.assertTrue(result["source_readback_verified"])
+        self.assertTrue(result["existing_bindings_preserved"])
+
+    def test_transient_failures_report_stage_and_never_repeat_a_write(self):
+        body, mime = multipart(RESOURCES, OWNER, SOURCE, SYNC)
+        message = BytesParser(policy=policy.default).parsebytes(b"Content-Type: " + mime.encode() + b"\r\n\r\n" + body)
+        bindings = json.loads(list(message.iter_parts())[0].get_payload(decode=True))["bindings"]
+        bindings[-1].pop("text")
+        settings = json.dumps({"success": True, "result": {"bindings": bindings}}).encode()
+        for fail_at, stage, writes in [(1, "read_existing_settings", 0), (2, "read_existing_code", 0),
+                                       (3, "upload_code", 1), (4, "readback_code", 1), (5, "readback_settings", 1)]:
+            class Opener:
+                def __init__(self):
+                    self.requests = []
+                def open(self, request, timeout):
+                    self.requests.append(request)
+                    if len(self.requests) == fail_at:
+                        raise HTTPError(request.full_url, 503, TOKEN, {}, io.BytesIO(TOKEN.encode()))
+                    if request.full_url.endswith("/settings"):
+                        return Reply(settings, "application/json")
+                    if request.method == "PUT":
+                        return Reply(b'{"success":true}', "application/json")
+                    return Reply(b"previous" if len(self.requests) == 2 else SOURCE, "application/javascript")
+            opener = Opener()
+            with self.assertRaises(DeployError) as caught:
+                upload(RESOURCES, OWNER, SOURCE, TOKEN, opener, preserve_bindings=True)
+            self.assertEqual(str(caught.exception), "cloudflare_http_503")
+            self.assertEqual(caught.exception.stage, stage)
+            self.assertEqual(caught.exception.write_attempted, bool(writes))
+            self.assertEqual(len(opener.requests), fail_at)
+            self.assertEqual(sum(r.method == "PUT" for r in opener.requests), writes)
+            self.assertNotIn(TOKEN, str(vars(caught.exception)))
 
     def test_other_resources_incomplete_owner_and_mock_bundles_refused(self):
         for change in ({"workerName": "existing-app"}, {"accountId": ""}, {"databaseId": ""},
