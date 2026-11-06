@@ -41,6 +41,21 @@ test('Python HTTP sync publishes, verifies, skips unchanged input and never rewr
   assert.equal((await python(url,'--revised')).changed,false);
 });
 
+test('session fixture verifies all seven chunks against D1 and preserves an unchanged second run',async t=>{
+  const {mf,db}=await setup(t),url=String(await mf.ready);
+  const source=`import json,sys
+from pmid_ledger.prototype.cloud_test_session import sync_fixture
+from pmid_ledger.prototype.sync_local import LocalTransport
+t=LocalTransport(sys.argv[1],attempts=1)
+print(json.dumps([sync_fixture(t,10000),sync_fixture(t,10000)]))`;
+  const result=await exec('python3',['-c',source,url],{cwd:root,timeout:20000});
+  const [first,second]=JSON.parse(result.stdout);
+  assert.equal(first.papers,120);assert.equal(first.changed,true);assert.equal(first.full_readback_verified,true);
+  assert.equal(second.changed,false);assert.equal(second.full_readback_verified,true);
+  assert.equal((await db.prepare('SELECT count(*) n FROM generations').first()).n,1);
+  assert.equal((await db.prepare('SELECT count(*) n FROM operations').first()).n,0);
+});
+
 test('Python interrupted staging remains invisible and resumes without duplicate generations',async t=>{
   const {mf,db}=await setup(t),url=String(await mf.ready);
   assert.equal((await python(url,'--stop-after-stage')).published,false);

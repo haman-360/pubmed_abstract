@@ -38,3 +38,14 @@
 - 同期CLI `CloudTestTransport` へアプリ識別ヘッダーを追加し、標準urllib署名が拒否されるケースの回帰試験を追加。専用Python20件が成功。ローカル同期・本番workflow・GAS・Workerの実装bundleは変更していない。試作READMEへ実接続結果と1010の区別を追記した。
 - 同期はまだ無効。既存同期用service tokenのClient ID／Secretを職場Macの保存先から取り出せるか利用者へ確認中。値をチャットへ求めず、見つからない場合も既存TESTやtokenを無断で再作成しない。同期権限の明示的な有効化、架空120件の同期、実Google本人tokenでの保存、CPU・Mac／iPad往復は次の段階。
 - 追加費用0円。本番GAS・実台帳・既存Pages・課金設定は変更なし。`clasp push` 不要、GAS deploy未実施。この段階ではWorkerの再アップロードも行っていない。
+
+## 2026-11-06 JST：非表示入力の同期セッションを準備
+
+- 利用者から、既存同期用 `pmid-ledger-test-sync` のClient ID／Secretを職場Macの保存先から取り出せると回答を受けた。値をチャットへ求めていない。既存Accessアプリのissuer／AUDだけをGit対象外の `cloud-test-access.json` へ0600で復元し、資格情報は保存していない。
+- D1一覧の日次表示（UTC午前0時起点、November 6）を確認：DB総数1/10、読取118/500万行、書込0/10万行、総ストレージ167.94kB/5GB。固定fixtureの初回書込見積は2,167行。今回の実行予算は10,000行以内とし、日次残枠の自動管理や反映遅延を含む料金保証とは区別する。
+- `cloud_test_session.py` を追加。既定はHTTP・入力なしの準備確認。実行には `--enable-sync`、架空120件の転送にはさらに `--sync-synthetic --write-budget` が必要。実ターミナルで既存同期用Client ID・Secret・Worker更新用APIトークンを非表示入力し、値を引数・環境変数・ファイル・ログへ置かない。非表示入力のfallbackも拒否する。
+- 実行順序は既存TESTの経路分離確認、同じWorkerへコード・同期有効設定を送信、コードと非秘密設定の読戻し一致、署名付き同期status、既知fixture以外の公開データ拒否、予算内転送・公開、全7チャンク照合、経路分離の再確認。既存D1・Worker・Access・tokenは作り直さず、本番系へ接続しない。Client SecretをWorkerへ渡さず、固定本人設定と同期JWTの検証情報だけをWorkerのsecretへ送る。
+- `deploy_cloud_test.py` の関数へ明示指定時だけの同期設定を追加。従来CLIの既定は同期無効のまま。同期指定時は `/settings` GETでDB ID・同期有効値・各plain変数・本人設定がsecretであることを照合し、不一致・HTTPエラーで停止。secret値は読み戻せないため、実claims一致は後続の署名付き同期要求で検証する。
+- 結果は既存のGit対象外生成ディレクトリへ0600で保存。新しい試行は未検証状態から始め、古い成功報告を流用しない。失敗時は資格情報の参照を破棄し、自動再送・公開データの自動削除・Access保護変更は行わない。経過秒はCPU時間と区別する。
+- 検証：専用Python31件、同期Node.js10件が成功。署名設定の不正・secret混入・DB binding読戻し不一致・非TTY／echo fallback・フラグ／予算不足・経路誤設定・未知の既存データ・全チャンク不一致・中断・資格情報非出力を確認。一時workerd＋D1で実際の120件同期・全7チャンク照合と2回目の重複なしも成功。HTTPなし準備確認と構文・差分検査も成功。Pythonの通常cacheへの構文検査書込はsandboxで拒否されたため、一時cache先を明示して再実行した。
+- 試作READMEへ職場Macでの実行手順を追記。現時点では利用者の非表示入力待ちで、クラウド同期の有効化・120件の転送はまだ行っていない。追加費用0円。本番GAS・実台帳・既存Pages・課金設定は変更なし。`clasp push` 不要、GAS deploy未実施。

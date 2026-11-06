@@ -40,13 +40,25 @@ def validate(resources, owner, source):
         raise DeployError("cloud_test_bundle_required")
 
 
-def multipart(resources, owner, source):
+def validate_sync_config(config):
+    if not isinstance(config, dict) or set(config) != {"accessIssuer", "accessAudience", "syncClientId"}:
+        raise DeployError("invalid_test_sync_identity")
+    if not re.fullmatch(r"https://[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.cloudflareaccess\.com", config.get("accessIssuer", "")):
+        raise DeployError("invalid_test_sync_identity")
+    if not re.fullmatch(r"[a-f0-9]{64}", config.get("accessAudience", "")) or not re.fullmatch(r"[A-Za-z0-9._-]{1,240}\.access", config.get("syncClientId", "")):
+        raise DeployError("invalid_test_sync_identity")
+
+
+def multipart(resources, owner, source, sync_config=None):
     validate(resources, owner, source)
+    if sync_config is not None:
+        validate_sync_config(sync_config)
+    identity = {"projectId": owner["projectId"], "ownerUid": owner["ownerUid"], **(sync_config or {})}
     bindings = [{"name": "DB", "type": "d1", "id": resources["databaseId"]}]
     for name, value in {"LEDGER_TEST_ONLY": "synthetic", "LEDGER_ORIGIN": resources["origin"],
-                        "LEDGER_SYNC_ENABLED": "0", "LEDGER_TEST_DIAGNOSTICS": "1"}.items():
+                        "LEDGER_SYNC_ENABLED": "1" if sync_config is not None else "0", "LEDGER_TEST_DIAGNOSTICS": "1"}.items():
         bindings.append({"name": name, "type": "plain_text", "text": value})
-    bindings.append({"name": "LEDGER_IDENTITY", "type": "secret_text", "text": json.dumps(owner, separators=(",", ":"))})
+    bindings.append({"name": "LEDGER_IDENTITY", "type": "secret_text", "text": json.dumps(identity, separators=(",", ":"))})
     metadata = {"main_module": "worker.mjs", "compatibility_date": "2026-07-30", "bindings": bindings,
                 "annotations": {"workers/message": "Authenticated synthetic ledger TEST API"}}
     boundary = "ledger-test-" + uuid.uuid4().hex
@@ -72,19 +84,19 @@ def downloaded_source(raw, content_type):
     return raw
 
 
-def upload(resources, owner, source, token, opener=None):
-    body, content_type = multipart(resources, owner, source)
+def upload(resources, owner, source, token, opener=None, *, sync_config=None):
+    body, content_type = multipart(resources, owner, source, sync_config)
     if not isinstance(token, str) or not re.fullmatch(r"[A-Za-z0-9_-]{20,512}", token):
         raise DeployError("invalid_worker_scoped_token")
     opener = opener or build_opener(ProxyHandler({}), NoRedirect())
     url = "https://api.cloudflare.com/client/v4/accounts/" + resources["accountId"] + "/workers/scripts/pmid-ledger-test"
 
-    def request(method, data=None, mime=None):
+    def request(method, data=None, mime=None, suffix=""):
         headers = {"Authorization": "Bearer " + token}
         if mime:
             headers["Content-Type"] = mime
         try:
-            with opener.open(Request(url, data=data, method=method, headers=headers), timeout=30) as response:
+            with opener.open(Request(url + suffix, data=data, method=method, headers=headers), timeout=30) as response:
                 raw = response.read(MAX_BYTES + 1)
                 if len(raw) > MAX_BYTES:
                     raise DeployError("cloudflare_response_too_large")
@@ -105,8 +117,28 @@ def upload(resources, owner, source, token, opener=None):
     raw, mime = request("GET")
     if downloaded_source(raw, mime) != source:
         raise DeployError("upload_completed_but_source_readback_mismatch")
-    return {"uploaded": True, "source_readback_verified": True, "bytes": len(source),
-            "sha256": hashlib.sha256(source).hexdigest(), "metadata_sync_enabled": False}
+    result = {"uploaded": True, "source_readback_verified": True, "bytes": len(source),
+              "sha256": hashlib.sha256(source).hexdigest(), "metadata_sync_enabled": sync_config is not None}
+    if sync_config is not None:
+        raw, _ = request("GET", suffix="/settings")
+        try:
+            settings = json.loads(raw)
+            entries = settings["result"]["bindings"]
+            bindings = {item["name"]: item for item in entries}
+            expected = {"LEDGER_TEST_ONLY": "synthetic", "LEDGER_ORIGIN": resources["origin"],
+                        "LEDGER_SYNC_ENABLED": "1", "LEDGER_TEST_DIAGNOSTICS": "1"}
+            valid = (settings.get("success") is True and len(bindings) == len(entries)
+                     and set(bindings) == set(expected) | {"DB", "LEDGER_IDENTITY"}
+                     and bindings["DB"]["type"] == "d1" and bindings["DB"]["id"] == resources["databaseId"]
+                     and bindings["LEDGER_IDENTITY"]["type"] == "secret_text"
+                     and all(bindings[k]["type"] == "plain_text" and bindings[k]["text"] == v for k, v in expected.items()))
+            if not valid:
+                raise ValueError()
+        except (ValueError, TypeError, KeyError, AttributeError):
+            raise DeployError("upload_completed_but_settings_readback_mismatch") from None
+        # Cloudflare omits secret values; their claims are checked by the live signed status call.
+        result["bindings_readback_verified"] = True
+    return result
 
 
 def main():

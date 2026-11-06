@@ -13,6 +13,8 @@ RESOURCES = {"workerName": "pmid-ledger-test", "accountId": "a" * 32,
 OWNER = {"projectId": "synthetic-ledger-auth", "ownerUid": "synthetic-owner"}
 SOURCE = b"export default {}; // test_configuration_invalid\n"
 TOKEN = "synthetic_worker_token_not_a_real_credential"
+SYNC = {"accessIssuer": "https://synthetic.cloudflareaccess.com", "accessAudience": "b" * 64,
+        "syncClientId": "synthetic-sync.access"}
 
 
 class Reply(io.BytesIO):
@@ -91,6 +93,49 @@ class DeployTests(unittest.TestCase):
         self.assertEqual(downloaded_source(body, mime), SOURCE)
         with self.assertRaises(DeployError):
             downloaded_source(body.replace(b"worker.mjs", b"other.mjs"), mime)
+
+    def test_sync_is_opt_in_and_does_not_allow_client_secret_in_worker_identity(self):
+        body, mime = multipart(RESOURCES, OWNER, SOURCE, SYNC)
+        message = BytesParser(policy=policy.default).parsebytes(b"Content-Type: " + mime.encode() + b"\r\n\r\n" + body)
+        metadata = json.loads(list(message.iter_parts())[0].get_payload(decode=True))
+        bindings = {b["name"]: b for b in metadata["bindings"]}
+        self.assertEqual(bindings["LEDGER_SYNC_ENABLED"]["text"], "1")
+        self.assertEqual(json.loads(bindings["LEDGER_IDENTITY"]["text"]), {**OWNER, **SYNC})
+        for change in ({"clientSecret": TOKEN}, {"accessIssuer": "https://evil.invalid"},
+                       {"accessAudience": ""}, {"syncClientId": "bad\r\n.access"}):
+            with self.assertRaises(DeployError):
+                multipart(RESOURCES, OWNER, SOURCE, {**SYNC, **change})
+
+    def test_sync_upload_requires_settings_readback_and_stops_on_binding_mismatch(self):
+        class Opener:
+            def __init__(self, mismatch=False):
+                self.requests = []
+                self.mismatch = mismatch
+            def open(self, request, timeout):
+                self.requests.append(request)
+                if request.method == "PUT":
+                    message = BytesParser(policy=policy.default).parsebytes(
+                        b"Content-Type: " + request.get_header("Content-type").encode() + b"\r\n\r\n" + request.data)
+                    self.metadata = json.loads(list(message.iter_parts())[0].get_payload(decode=True))
+                    return Reply(b'{"success":true}', "application/json")
+                if request.full_url.endswith("/settings"):
+                    bindings = self.metadata["bindings"]
+                    if self.mismatch:
+                        bindings[0]["id"] = "wrong-database"
+                    # The live API omits secret values.
+                    bindings[-1].pop("text")
+                    return Reply(json.dumps({"success": True, "result": {"bindings": bindings}}).encode(), "application/json")
+                return Reply(SOURCE, "application/javascript")
+        opener = Opener()
+        result = upload(RESOURCES, OWNER, SOURCE, TOKEN, opener, sync_config=SYNC)
+        self.assertTrue(result["bindings_readback_verified"])
+        self.assertTrue(result["metadata_sync_enabled"])
+        self.assertTrue(opener.requests[-1].full_url.endswith("/scripts/pmid-ledger-test/settings"))
+        self.assertNotIn(TOKEN, json.dumps(result))
+        opener = Opener(mismatch=True)
+        with self.assertRaisesRegex(DeployError, "settings_readback_mismatch"):
+            upload(RESOURCES, OWNER, SOURCE, TOKEN, opener, sync_config=SYNC)
+        self.assertEqual(len(opener.requests), 3)
 
 
 if __name__ == "__main__":

@@ -146,6 +146,25 @@ python3 -m unittest pmid_ledger.prototype.tests.test_sync_local pmid_ledger.prot
 
 `workers.dev`はPython標準`urllib`のUser-AgentをCloudflareの`1010`で拒否する場合があるため、同期CLIは自身を`PMIDLedgerTest/1.0`と明示する。実TESTでこの識別子による本人API到達と未認証拒否を確認した。ブラウザーを偽装せず、Browser Integrity Checkも変更しない。403だけでAccess認証の検証成功と判断せず、WorkerのJSONエラーとCloudflare側の拒否を区別する。[公式の1010説明](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1010/)
 
+### 職場Mac：既存トークンの非表示入力による同期セッション
+
+`cloud_test_session.py`は既存TESTの同期有効化と、任意の架空120件の転送・全7チャンク読戻しをまとめて実行する。既定はHTTPなしの準備確認。実行には、0600の既存resources／owner設定に加え、Git対象外の`ledger_private/cloud-test-access.json`（既存Accessアプリの`accessIssuer`・`accessAudience`だけ）が必要。同期用Client ID／SecretやWorker更新用APIトークンをこのファイルへ保存しない。
+
+```bash
+# リポジトリのルートから。HTTP・資格情報入力なし
+python3 pmid_ledger/prototype/cloud_test_session.py
+# 利用者の実ターミナルで実行。残枠を確認した後だけ使用
+python3 pmid_ledger/prototype/cloud_test_session.py --enable-sync --sync-synthetic --write-budget 10000
+```
+
+実行時は既存の同期用Client ID、同期用Client Secret、TEST Worker更新用APIトークンの順に非表示入力する。引数・環境変数・ファイル・ログへ資格情報を置かず、非表示入力が使えなければ停止する。Client SecretはCloudflare Accessへの要求だけに使う。Workerの本人限定secret設定に渡すのは固定本人設定と同期JWTのissuer／AUD／Client IDで、Client Secretは含めない。
+
+コード更新前に本人APIと同期・ルート・パス境界の拒否を確認し、同じ既存TEST Workerへ同期を明示有効化した設定を送る。コードGETのバイト一致と、設定GETのTEST D1 binding・同期有効値・本人設定がsecretであることを照合する。secretの値自体は公式APIでは読めないため、続く同期要求で実Access assertionの署名・AUD・Client ID一致が通ることを確認する。[設定読取API](https://developers.cloudflare.com/api/resources/workers/subresources/scripts/subresources/script_and_version_settings/methods/get/)
+
+転送前に既存公開データが未公開または同じ固定fixtureであることを確認し、別の内容があれば上書きせず停止する。転送は既存の予算内・中断再開・公開処理を使い、公開後は7チャンクの内容を固定fixtureと照合し、最後に認証経路を再確認する。redirect・proxy・自動再送・TEST作成・Accessポリシー変更・本番接続は行わない。`--enable-sync`だけなら有効化後の署名付きstatus読取までで、データ転送はしない。
+
+結果はGit対象外`.cloud-test/deployment-verification.json`と`sync-verification.json`へ0600で保存する。新しい更新試行前にセッション結果を未検証へ戻し、古い成功記録を今回の成功と取り違えない。`full_readback_verified: true`は全チャンク一致、`paused: true`は未公開の予算内中断であり成功扱いしない。`wall_seconds`は更新開始から同期・読戻しまでの経過時間で、CPU時間ではない。書込予算は1回の見積上限で、日次累積や管理画面の反映遅延を自動管理しない。失敗・応答不明・429では止め、再実行前に残枠と結果を確認する。
+
 追加7件を含むNode.js 65件とPython専用13件が成功。クラウド用bundleをworkerd＋一時D1で動かし、本人役の保存・再送、同期役の分割公開・手動履歴保持、他UID・偽認証・期限・二重ヘッダー・Origin・容量超過の拒否を確認した。公開鍵は架空応答に差し替え、実Accessへの接続はしていない。クラウド用ログイン画面、実token保存、FreeのCPU、Mac／iPad往復はこれから。外部公開前に、新規TESTの対象と認証・公開設定を確定する。
 
 ## Python同期と負荷試験
