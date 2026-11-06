@@ -14,3 +14,15 @@
 - 職場MacでもCloudflareコードエディターの読込が完了せず、専用CLIへ移行。Worker専用APIトークンは利用者が発行し、実ターミナルの `getpass` へ非表示入力する必要がある。値をチャット・引数・環境変数・ファイルへ求めない。現在は入力待ちで、台帳コード反映・クラウド読戻し一致は未確認。同期用Client ID／Secretも未入力。
 - 次：リポジトリのルートから `python3 pmid_ledger/prototype/deploy_cloud_test.py --upload` を利用者が実行し、秘密値を含まない `.cloud-test/deployment-verification.json` を確認する。全通信Accessを維持し、反映・読戻し一致後に本人APIと同期経路の分離を検討する。架空120件のクラウド同期・実Google tokenでの保存・CPU測定・Mac／iPad往復は未実施。
 - 追加費用0円。本番GAS・実台帳・既存Pages・既存workflow・課金設定の変更なし。TESTの新規作成、APIトークン発行、Access変更も行っていない。GAS変更なし、`clasp push` 不要、GAS deploy未実施。TEST Workerのアップロードも本記録時点では未実施。
+
+## 2026-11-06 JST：TEST台帳APIの反映・クラウド読戻し一致
+
+- 利用者がWorker限定APIトークンを発行し、専用CLIへ非表示入力してアップロードを完了したと通知。ローカルの `.cloud-test/deployment-verification.json` を直接確認し、`uploaded: true`、`source_readback_verified: true`、92,665バイト、SHA-256が手元のbundleと一致することを検証した。検証時刻は2026-11-06 09:00:33 JST。結果ファイルは0600、Git対象外。tokenの値は読み出していない。
+- 反映したのは既存 `pmid-ledger-test` の台帳APIコード、既存TEST D1 binding、固定本人設定。`metadata_sync_enabled: false`。新規TEST作成・実データ同期・既存Pages変更は行っていない。
+- コード反映後、認証なしPOSTを `/api/listIssues` と `/sync/status` に各1回実行し、両方403を確認。現在もWorker全体の既存Service Auth保護を維持している。
+- 既存TEST D1で集計用SELECTを1回実行し、16テーブル・2トリガー・1ビュー、公開世代null、論文0件・操作0件を再確認。初期化・再作成・データ書込は行っていない。実行前の直近24時間の表示は260行読取・65行書込、168kBだった。これは当該DBの表示値であり、アカウント全体の日次残枠や今後の無料枠適合を保証する値ではない。
+- 次は経路分離。既存の全体保護を維持したまま、TEST本番ホストの `/api/*` だけに優先するホスト名ポリシーを設定し、本人のFirebase署名・固定UID認証へ委ねる案を確認する。`/sync/*`・その他のパス・プレビューの全体保護は維持する。設定保存はまだ行っていない。本人JWTとAccess assertionが同時に付く要求は現コードが拒否するため、全体Service Authのまま本人tokenだけで到達したとは扱わない。
+- [公式のWorker Access優先順](https://developers.cloudflare.com/workers/configuration/cloudflare-access/)と[パス指定](https://developers.cloudflare.com/cloudflare-one/access-controls/policies/app-paths/)を確認。既存Accessアプリの確認用未保存入力はreloadで破棄し、新規Accessアプリ `pmid-ledger-test-owner-api` の下書きでTEST本番ホストの `/api/*` だけを指定。`pmid-ledger-test-firebase-owner-only` の下書きはAccess側のバイパス／全員であり、本人の判定はWorkerの固定UID認証が行う。名前だけでAccess本人判定済みと解釈しない。ポリシー・アプリともまだ保存していない。
+- コンピューター操作ツールの確認規則で、Access保護の一部解除には実行時確認が必要。未認証通信もWorkerへ届くようになる点と、Firebase署名・本人UIDの一致前にはD1へ到達しない点を説明し、保存・検証の確認待ち。既存の全体Service Authや同期設定を先に緩めていない。
+- 検証は前段で成功した65件＋19件と、今回の実コード読戻し・SHA-256照合・反映後の認証なし拒否。コード変更なしのため自動試験の重複実行はしない。
+- 追加費用0円、本番GAS・実台帳・既存Pages・課金設定は変更なし。`clasp push` 不要、GAS deploy未実施。今回は利用者によるTEST Workerだけのコードアップロードを確認した。
