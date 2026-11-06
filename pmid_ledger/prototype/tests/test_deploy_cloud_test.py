@@ -86,7 +86,7 @@ class DeployTests(unittest.TestCase):
                 validate({**RESOURCES, **change}, OWNER, SOURCE)
         with self.assertRaises(DeployError):
             validate(RESOURCES, {**OWNER, "ownerUid": None}, SOURCE)
-        for code in (b"", SOURCE + b"local-synthetic-owner", SOURCE + b"X-Local-Fault"):
+        for code in (b"", SOURCE + b"local-synthetic-owner", SOURCE + b"X-Local-Fault", SOURCE + b"LOCAL_PREVIEW_ONLY"):
             with self.assertRaises(DeployError):
                 validate(RESOURCES, OWNER, code)
 

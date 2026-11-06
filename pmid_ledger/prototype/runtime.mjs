@@ -16,7 +16,7 @@ export async function runtime({persist = false, port = 0, local = true, now, ide
   if(identityFixture||ownerLogin||cloudTest){
     // Bundle the optional local JWT/login entry; normal npm start keeps its original entry.
     const {build}=await import('esbuild');
-    const result=await build({entryPoints:[fileURLToPath(new URL(cloudTest?'./cloud-worker.mjs':ownerLogin?'./login-worker.mjs':'./identity-worker.mjs',import.meta.url))],bundle:true,write:false,format:'esm',platform:'browser',target:'es2022'});
+    const result=await build({entryPoints:[fileURLToPath(new URL(cloudTest?'./cloud-worker.mjs':ownerLogin?'./login-worker.mjs':'./identity-worker.mjs',import.meta.url))],bundle:true,write:false,format:'esm',platform:'browser',target:'es2022',...(cloudTest?.onlineAssets?{define:{__LEDGER_APP_ASSETS__:JSON.stringify(cloudTest.onlineAssets)}}:{})});
     entry={script:result.outputFiles[0].text};
   }
   const mf = new Miniflare({modules: true, ...entry,

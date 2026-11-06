@@ -37,7 +37,7 @@ def validate(resources, owner, source):
         raise DeployError("invalid_test_database") from None
     if not re.fullmatch(r"[a-z][a-z0-9-]{4,28}[a-z0-9]", owner.get("projectId", "")) or not isinstance(owner.get("ownerUid"), str) or not 1 <= len(owner["ownerUid"]) <= 128:
         raise DeployError("fixed_owner_required")
-    if not 1 <= len(source) <= MAX_BYTES or b"test_configuration_invalid" not in source or any(x in source for x in (b"local-synthetic-owner", b"local-synthetic-sync", b"X-Local-Fault")):
+    if not 1 <= len(source) <= MAX_BYTES or b"test_configuration_invalid" not in source or any(x in source for x in (b"local-synthetic-owner", b"local-synthetic-sync", b"X-Local-Fault", b"LOCAL_PREVIEW_ONLY")):
         raise DeployError("cloud_test_bundle_required")
 
 

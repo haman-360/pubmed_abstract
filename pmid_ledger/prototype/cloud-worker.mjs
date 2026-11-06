@@ -1,10 +1,11 @@
-// Separate synthetic TEST API. No mock tokens, automatic enrollment, UI, or scheduled work.
+// Synthetic TEST only. Owner APIs require signed Google identity; the app shell contains no ledger data.
 import {createIdentityVerifier,createOwnerVerifier,verifyIdentityRequest} from './identity.mjs';
 import {createPublicKeySources,createOwnerKeySource} from './identity-keys.mjs';
 import {runLedgerAction} from './ledger-api.mjs';
 import {newProfile,profiledDatabase} from './profile.mjs';
 import {requireThat} from './metadata.mjs';
 import {readLimit} from './browse.mjs';
+import {onlineResponse} from './online-static.mjs';
 
 const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'};
 const json=(value,status=200,extra={})=>new Response(JSON.stringify(value),{status,headers:{...headers,...extra}});
@@ -46,6 +47,7 @@ export default {
       const url=new URL(request.url);
       requireThat(url.origin===env.LEDGER_ORIGIN&&!url.search,'test_origin_required',403);
       requireThat(!request.headers.has('Origin')||request.headers.get('Origin')===url.origin,'origin_denied',403);
+      if(request.method==='GET'&&url.pathname.startsWith('/api/app/'))return onlineResponse(url.pathname,JSON.parse(env.LEDGER_IDENTITY).projectId);
       requireThat(request.method==='POST','post_required',405);
       requireThat(request.headers.get('Content-Type')?.split(';')[0].trim().toLowerCase()==='application/json','json_required',415);
       // Only signature-verified identities reach D1. Client ID/Secret alone never grants permission.

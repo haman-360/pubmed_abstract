@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#153d35"><meta name="referrer" content="no-referrer"><title>研究台帳 · TEST</title><link rel="icon" href="./icon.svg"><link rel="apple-touch-icon" href="./icon.svg"><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./app.css"></head><body>
+<header class="topbar"><a class="brand" href="./"><img src="./icon.svg" width="36" height="36" alt=""><span>研究台帳<small>PMID LIBRARY</small></span></a><div class="account"><span class="test-badge">TEST · 架空データ</span><button id="logout" class="quiet" hidden>サインアウト</button></div></header>
+<main>
+<section id="welcome" class="welcome"><p class="eyebrow">読む・選ぶ・記録する</p><h1>論文の確認を、<br>ひとつの台帳に。</h1><p>配信された論文を確認し、入手希望やメモを記録できます。<br>このTESTは架空データ専用です。実台帳には接続しません。</p><button id="login" class="primary" disabled>Googleでログイン</button><p class="hint">本人専用 · オンライン接続が必要です</p></section>
+<p id="message" role="status" aria-live="polite">ログインの準備をしています。</p>
+<section id="workspace" hidden>
+<div class="section-heading"><div><p class="eyebrow" id="breadcrumb">研究台帳 / 配信</p><h1 id="heading" tabindex="-1">配信一覧</h1><p id="description" class="muted"></p></div><div class="toolbar"><button id="back" hidden>配信一覧へ</button><button id="reload">再読み込み</button></div></div>
+<form id="period" class="filterbar"><label>表示期間<select id="scope"><option value="recent">直近2か月</option><option value="month">過去の月を指定</option><option value="unknown">配信日不明</option></select></label><label id="month-label" hidden>対象月<input id="month" type="month" min="1900-01" max="9998-12"></label><button type="submit">表示する</button></form>
+<form id="search" class="filterbar" hidden><label class="search-label">PMID・タイトル検索<input id="query" type="search" maxlength="300" placeholder="PMID またはタイトルの一部"></label><button type="submit">検索</button><button id="clear" type="button" class="quiet">解除</button></form>
+<div id="summary" class="summary"></div><div id="list" class="issue-grid"></div>
+<div class="pagination"><button id="previous">前のページ</button><span id="page"></span><button id="next">次のページ</button></div>
+<nav id="savebar" aria-label="編集の保存" hidden><p id="draft-status">未保存の変更はありません</p><div><button id="discard">編集を破棄して再取得</button><button id="save">途中まで保存</button><button id="complete" class="primary">保存して確認完了</button><button id="reopen" hidden>配信を未確認に戻す</button><button id="retry" class="primary" hidden>同じ操作を再確認</button></div></nav>
+</section>
+<footer>TEST · 追加費用0円の構成で検証中 <span>認証・編集は画面のメモリ内のみ。オフライン保存には未対応です。</span></footer>
+</main><script type="module" src="./app.mjs"></script></body></html>
