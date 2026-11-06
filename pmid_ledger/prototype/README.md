@@ -418,7 +418,7 @@ Node全92件・Python全50件成功。5,000論文・200配信のうち199配信�
 この変更ではdeploy・クラウド同期・main workflow更新を実行していない。既存TESTは従来コードで動作中。順序は次の通り。
 
 1. `npm run build:online-test` で準備済みbundleを確認し、利用者が従来の `python3 deploy_cloud_test.py --update-code-only` で既存TESTだけを更新する。新規DBやスキーマ変更は不要。
-2. mainの `.github/workflows/pmid-ledger-test.yml` に、この変更の固定コードcommit参照を反映する。現在のremote作業branchにレビュー用workflowを置き、mainの既存スケジュールは変更しない。**コード反映より先にworkflowを切り替えない。**
+2. mainの `.github/workflows/pmid-ledger-test.yml` に、固定コードcommit `dd7e0c1f6f8248337d3e1fb5b5f9459ae474e1c7` へのcheckout参照を反映する。現在のremote作業branchに、このrefを設定したレビュー用workflowを置いた。mainの既存スケジュールは変更していない。**コード反映より先にworkflowを切り替えない。**
 3. TEST同期workflowを手動実行するか次回定期実行を待つ。成功後、アプリを再読み込みし、過去の未確認が表示されることと保存済みメモを確認する。
 4. Mac用 `.command` で希望PMIDを出力する。
 
