@@ -167,6 +167,17 @@ python3 pmid_ledger/prototype/cloud_test_session.py --enable-sync --sync-synthet
 
 結果はGit対象外`.cloud-test/deployment-verification.json`と`sync-verification.json`へ0600で保存する。新しい更新試行前にセッション結果を未検証へ戻し、古い成功記録を今回の成功と取り違えない。`full_readback_verified: true`は全チャンク一致、`paused: true`は未公開の予算内中断であり成功扱いしない。`wall_seconds`は更新開始から同期・読戻しまでの経過時間で、CPU時間ではない。書込予算は1回の見積上限で、日次累積や管理画面の反映遅延を自動管理しない。失敗・応答不明・429では止め、再実行前に残枠と結果を確認する。
 
+既に同期有効設定のコード・binding読戻しを検証できたWorkerには、`--use-existing-worker`で再アップロードせず接続できる。ローカルの検証結果とbundleハッシュが一致することを確認してから、同期用Client ID／Secretの2つだけを非表示入力する。更新用APIトークンは求めず、`--enable-sync`とは同時指定できない。
+
+```bash
+# status読取のみ。Worker更新・メタデータ転送なし
+python3 pmid_ledger/prototype/cloud_test_session.py --use-existing-worker
+# 読取診断後、残枠と結果を確認してから架空120件を転送する場合
+python3 pmid_ledger/prototype/cloud_test_session.py --use-existing-worker --sync-synthetic --write-budget 10000
+```
+
+読取だけの結果は`.cloud-test/sync-diagnostic.json`へ0600で保存する。HTTPエラー時はステータス・固定分類（`worker_identity_denied`、`worker_configuration_invalid`、`access_or_edge`、`cloudflare_1010`、`other_json`、`unknown`）・失敗action・要求数だけを追加し、応答本文・ヘッダー・資格情報を出力しない。分類は403の発生箇所を切り分ける手掛かりで、署名拒否の詳細原因を特定した証拠ではない。認証条件の緩和や自動再送は行わない。
+
 追加7件を含むNode.js 65件とPython専用13件が成功。クラウド用bundleをworkerd＋一時D1で動かし、本人役の保存・再送、同期役の分割公開・手動履歴保持、他UID・偽認証・期限・二重ヘッダー・Origin・容量超過の拒否を確認した。公開鍵は架空応答に差し替え、実Accessへの接続はしていない。クラウド用ログイン画面、実token保存、FreeのCPU、Mac／iPad往復はこれから。外部公開前に、新規TESTの対象と認証・公開設定を確定する。
 
 ## Python同期と負荷試験

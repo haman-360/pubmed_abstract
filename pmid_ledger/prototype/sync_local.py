@@ -40,6 +40,9 @@ class JsonSyncTransport:
         self.requests = 0
         self.opener = build_opener(ProxyHandler({}), NoRedirect())
 
+    def http_error_reason(self, error):
+        return "sync_http_" + str(error.code)
+
     def post(self, action, value):
         if action not in ("status", "begin", "chunk", "build", "finish", "read", "publish"):
             raise SyncError("Metadata sync action required")
@@ -61,7 +64,7 @@ class JsonSyncTransport:
                 return result["value"]
             except HTTPError as exc:
                 retry = exc.code in (429, 500, 502, 503, 504)
-                reason = "sync_http_" + str(exc.code)
+                reason = self.http_error_reason(exc)
                 exc.close()
             except (URLError, TimeoutError, socket.timeout, ConnectionError, OSError, IncompleteRead):
                 retry, reason = True, "sync_transport_result_unknown"

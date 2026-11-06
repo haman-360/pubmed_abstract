@@ -1,6 +1,7 @@
 import io
 import json
 import tempfile
+import hashlib
 import unittest
 import warnings
 from pathlib import Path
@@ -151,6 +152,58 @@ class SessionTests(unittest.TestCase):
         self.assertEqual(transport.headers, {})
         self.assertNotIn(SECRET, output.getvalue())
         self.assertFalse(json.loads((self.output / "sync-verification.json").read_text())["session_verified"])
+
+    def existing_deployment(self):
+        (self.output / "deployment-verification.json").write_text(json.dumps({
+            "source_readback_verified": True, "bindings_readback_verified": True, "metadata_sync_enabled": True,
+            "sha256": hashlib.sha256(SOURCE).hexdigest()}))
+
+    def test_existing_worker_status_only_prompts_for_two_values_and_never_updates_worker(self):
+        self.existing_deployment()
+        transport = Mock(headers={"secret": SECRET}, requests=1, last_http_error=None)
+        transport.post.return_value = {"revision": None}
+        with patch("sys.argv", ["session", "--use-existing-worker"]), patch("sys.stdin.isatty", return_value=True), \
+                patch("sys.stdout", new_callable=io.StringIO) as output, patch.object(session, "verify_routes"), \
+                patch.object(session, "hidden_input", side_effect=[SYNC["syncClientId"], SECRET]) as prompt, \
+                patch.object(session, "CloudTestTransport", return_value=transport), patch.object(session, "upload") as upload:
+            session.main(self.root)
+        self.assertEqual(prompt.call_count, 2)
+        upload.assert_not_called()
+        transport.post.assert_called_once_with("status", {})
+        result = json.loads(output.getvalue())
+        self.assertFalse(result["writes_requested"])
+        self.assertFalse(result["worker_updated"])
+        self.assertTrue((self.output / "sync-diagnostic.json").exists())
+        self.assertEqual(transport.headers, {})
+
+    def test_existing_worker_requires_verified_bundle_before_any_credentials_or_http(self):
+        self.existing_deployment()
+        (self.output / "worker.mjs").write_bytes(SOURCE + b" changed")
+        with patch("sys.argv", ["session", "--use-existing-worker"]), patch("sys.stdout", new_callable=io.StringIO) as output, \
+                patch.object(session, "verify_routes") as routes, patch.object(session, "hidden_input") as prompt, self.assertRaises(SystemExit):
+            session.main(self.root)
+        routes.assert_not_called()
+        prompt.assert_not_called()
+        self.assertIn("verified_existing_sync_deployment_required", output.getvalue())
+
+    def test_status_rejection_keeps_only_safe_diagnostics_in_output_and_report(self):
+        self.existing_deployment()
+        transport = Mock(headers={"secret": SECRET}, requests=1,
+                         last_http_error={"status": 403, "response_kind": "worker_identity_denied", "action": "status"})
+        transport.post.side_effect = SyncError("sync_http_403")
+        with patch("sys.argv", ["session", "--use-existing-worker"]), patch("sys.stdin.isatty", return_value=True), \
+                patch("sys.stdout", new_callable=io.StringIO) as output, patch.object(session, "verify_routes"), \
+                patch.object(session, "hidden_input", side_effect=[SYNC["syncClientId"], SECRET]), \
+                patch.object(session, "CloudTestTransport", return_value=transport), patch.object(session, "upload") as upload, self.assertRaises(SystemExit):
+            session.main(self.root)
+        upload.assert_not_called()
+        result = json.loads(output.getvalue())
+        self.assertEqual(result["http_diagnostic"]["response_kind"], "worker_identity_denied")
+        report = (self.output / "sync-diagnostic.json").read_text()
+        self.assertFalse(json.loads(report)["session_verified"])
+        for secret in (SECRET, TOKEN, SYNC["syncClientId"]):
+            self.assertNotIn(secret, report + output.getvalue())
+        self.assertEqual(transport.headers, {})
 
 
 if __name__ == "__main__":

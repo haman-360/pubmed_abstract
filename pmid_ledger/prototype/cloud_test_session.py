@@ -104,20 +104,29 @@ def write_report(root, name, result):
 
 def main(root=ROOT):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--enable-sync", action="store_true", help="Explicitly update only TEST and verify signed sync status")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--enable-sync", action="store_true", help="Explicitly update only TEST and verify signed sync status")
+    mode.add_argument("--use-existing-worker", action="store_true", help="Use the verified existing deployment; no API token or update")
     parser.add_argument("--sync-synthetic", action="store_true", help="Also transfer only the built-in 120 fictional papers")
     parser.add_argument("--write-budget", type=int, help="Confirmed remaining D1 write quota per run, 64..80000")
     args = parser.parse_args()
+    failure_details = None
+    report_name = "sync-diagnostic.json" if args.use_existing_worker and not args.sync_synthetic else "sync-verification.json"
     try:
-        if args.sync_synthetic and (not args.enable_sync or args.write_budget is None or not 64 <= args.write_budget <= 80000):
-            raise DeployError("synthetic_sync_requires_enable_flag_and_verified_write_budget_64_80000")
+        if args.sync_synthetic and (not (args.enable_sync or args.use_existing_worker) or args.write_budget is None or not 64 <= args.write_budget <= 80000):
+            raise DeployError("synthetic_sync_requires_explicit_mode_and_verified_write_budget_64_80000")
         resources, owner, access, source = load_local(root)
         data = fixture()
         manifest, chunks = chunk_plan(data["tables"])
-        if not args.enable_sync:
+        if not (args.enable_sync or args.use_existing_worker):
             result = {"prepared": True, "http": False, "source_sha256": hashlib.sha256(source).hexdigest(),
                       **fixture_stats(data), "estimated_initial_writes": 4 + sum(map(chunk_writes, chunks)) + 3 * manifest["tables"]["Issues"]["count"] + 5}
         else:
+            if args.use_existing_worker:
+                previous = json.loads((root / "pmid_ledger/prototype/.cloud-test/deployment-verification.json").read_text())
+                if not (previous.get("source_readback_verified") is True and previous.get("bindings_readback_verified") is True
+                        and previous.get("metadata_sync_enabled") is True and previous.get("sha256") == hashlib.sha256(source).hexdigest()):
+                    raise DeployError("verified_existing_sync_deployment_required")
             if not sys.stdin.isatty():
                 raise DeployError("interactive_terminal_required_for_credentials")
             verify_routes(resources)
@@ -128,32 +137,43 @@ def main(root=ROOT):
                 sync_config = {**access, "syncClientId": client_id}
                 validate_sync_config(sync_config)
                 transport = CloudTestTransport(resources["origin"], client_id, client_secret)
-                api_token = hidden_input("TEST Worker更新用APIトークン（非表示・保存しません）: ")
+                if args.enable_sync:
+                    api_token = hidden_input("TEST Worker更新用APIトークン（非表示・保存しません）: ")
                 started = time.monotonic()
                 # Invalidate an earlier successful session report before this attempt can mutate TEST.
-                write_report(root, "sync-verification.json", {"phase": "started", "session_verified": False})
-                deployment = upload(resources, owner, source, api_token, sync_config=sync_config)
-                api_token = None
-                write_report(root, "deployment-verification.json", deployment)
+                write_report(root, report_name, {"phase": "started", "session_verified": False})
+                if args.enable_sync:
+                    deployment = upload(resources, owner, source, api_token, sync_config=sync_config)
+                    api_token = None
+                    write_report(root, "deployment-verification.json", deployment)
                 if args.sync_synthetic:
                     result = sync_fixture(transport, args.write_budget)
                 else:
                     state = transport.post("status", {})
                     result = {"published": state.get("revision") is not None, "writes_requested": False, "requests": transport.requests}
                 result = {**result, "session_verified": True, "sync_enabled": True, "signed_access_verified": True,
+                          "worker_updated": args.enable_sync,
                           "wall_seconds": round(time.monotonic() - started, 3)}
                 verify_routes(resources)
                 result["path_separation_verified_after_sync"] = True
-                write_report(root, "sync-verification.json", result)
+                write_report(root, report_name, result)
             finally:
                 if transport is not None:
+                    if isinstance(transport.last_http_error, dict):
+                        failure_details = {**transport.last_http_error, "requests": transport.requests}
                     transport.headers.clear()
                 client_id = client_secret = api_token = transport = None
         print(json.dumps(result, ensure_ascii=False))
     except (DeployError, SyncError, OSError, ValueError, TypeError, KeyError, EOFError, KeyboardInterrupt) as exc:
         # Config, HTTP bodies, credentials, and tracebacks must never be printed.
         safe = str(exc) if isinstance(exc, (DeployError, SyncError)) else "local_settings_or_session_unavailable"
-        print(json.dumps({"error": safe}, ensure_ascii=False))
+        result = {"error": safe, **({"http_diagnostic": failure_details} if failure_details else {})}
+        if failure_details:
+            try:
+                write_report(root, report_name, {**result, "session_verified": False})
+            except OSError:
+                pass
+        print(json.dumps(result, ensure_ascii=False))
         raise SystemExit(1) from None
 
 

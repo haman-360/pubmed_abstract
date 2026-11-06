@@ -70,6 +70,24 @@ class CloudTransportTests(unittest.TestCase):
         self.assertNotIn(CLIENT_SECRET, opener.agent)
         self.assertEqual(transport.requests, 1)
 
+    def test_http_diagnostics_distinguish_edge_and_worker_without_retaining_content(self):
+        cases = [(b'{"error":"identity_denied"}', "application/json", "worker_identity_denied"),
+                 (b'{"error":"test_configuration_invalid"}', "application/json", "worker_configuration_invalid"),
+                 (b"error code: 1010\n", "text/plain", "cloudflare_1010"),
+                 (b"<html>Forbidden" + CLIENT_SECRET.encode() * 1000, "text/html", "access_or_edge"),
+                 (json.dumps({"unexpected": CLIENT_SECRET}).encode(), "application/json", "other_json")]
+        for raw, mime, kind in cases:
+            transport = CloudTestTransport(ORIGIN, CLIENT_ID, CLIENT_SECRET)
+            class Opener:
+                def open(self, req, timeout):
+                    raise HTTPError(req.full_url, 403, CLIENT_SECRET, {"Content-Type": mime}, io.BytesIO(raw))
+            transport.opener = Opener()
+            with self.subTest(kind=kind), self.assertRaisesRegex(SyncError, "^sync_http_403$"):
+                transport.post("status", {})
+            self.assertEqual(transport.last_http_error, {"status": 403, "response_kind": kind, "action": "status"})
+            self.assertNotIn(CLIENT_SECRET, json.dumps(transport.last_http_error))
+            self.assertEqual(transport.requests, 1)
+
     def test_inspect_never_constructs_transport_or_reads_credentials(self):
         with patch("sys.argv", ["sync_cloud_test", "--inspect"]), patch("sys.stdout", new_callable=io.StringIO) as output, \
                 patch("pmid_ledger.prototype.sync_cloud_test.CloudTestTransport", side_effect=AssertionError("No HTTP")):

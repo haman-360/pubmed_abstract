@@ -5,6 +5,7 @@ import argparse
 import json
 import os
 import re
+from http.client import IncompleteRead
 
 from .fixture import fixture
 from .sync_local import JsonSyncTransport, SyncError, fixture_stats, sync_metadata
@@ -26,6 +27,36 @@ class CloudTestTransport(JsonSyncTransport):
         super().__init__(base_url, {"CF-Access-Client-Id": client_id,
                                   "CF-Access-Client-Secret": client_secret,
                                   "User-Agent": "PMIDLedgerTest/1.0"}, attempts=1)
+        self.last_http_error = None
+        self.last_action = None
+
+    def post(self, action, value):
+        if action in ("status", "begin", "chunk", "build", "finish", "read", "publish"):
+            self.last_action = action
+        return super().post(action, value)
+
+    def http_error_reason(self, error):
+        # Never retain/print bodies, headers, credentials, or arbitrary server errors.
+        kind = "unknown"
+        try:
+            raw = error.read(8193)
+            mime = (error.headers or {}).get("Content-Type", "").split(";")[0].strip().lower()
+            if raw.strip() == b"error code: 1010":
+                kind = "cloudflare_1010"
+            elif mime == "application/json" and len(raw) <= 8192:
+                value = json.loads(raw)
+                if value == {"error": "identity_denied"}:
+                    kind = "worker_identity_denied"
+                elif value == {"error": "test_configuration_invalid"}:
+                    kind = "worker_configuration_invalid"
+                else:
+                    kind = "other_json"
+            elif mime in ("text/html", "text/plain"):
+                kind = "access_or_edge"
+        except (OSError, ValueError, IncompleteRead):
+            pass
+        self.last_http_error = {"status": error.code, "response_kind": kind, "action": self.last_action}
+        return super().http_error_reason(error)
 
 
 def main():
