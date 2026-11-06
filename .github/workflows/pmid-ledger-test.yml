@@ -1,0 +1,38 @@
+name: TEST ledger recent copy (read-only source)
+
+on:
+  schedule:
+    - cron: "23 3,12 * * *" # 12:23 / 21:23 JST; existing Saturday delivery is unchanged.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pmid-ledger-test-copy
+  cancel-in-progress: false
+
+jobs:
+  sync-test:
+    # A public repository's standard runner is free. Do not run if visibility changes.
+    if: github.event.repository.private == false && vars.PMID_TEST_SYNC_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 16e1b4b7138c6929a74212ff49871e895557f50a
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --disable-pip-version-check -q -r requirements-automation.txt
+      - name: Read existing ledger and update only the existing TEST
+        env:
+          GOOGLE_AUTHORIZED_USER_JSON: ${{ secrets.GOOGLE_AUTHORIZED_USER_JSON }}
+          PMID_LEDGER_SHEET_ID: ${{ secrets.PMID_LEDGER_SHEET_ID }}
+          PMID_TEST_ACCESS_CLIENT_ID: ${{ secrets.PMID_TEST_ACCESS_CLIENT_ID }}
+          PMID_TEST_ACCESS_CLIENT_SECRET: ${{ secrets.PMID_TEST_ACCESS_CLIENT_SECRET }}
+          PYTHONUNBUFFERED: "1"
+        run: python -m pmid_ledger.prototype.recent_sync --scheduled
+      # No source writes, production/GAS deployment, AI key, artifact, or Actions cache.

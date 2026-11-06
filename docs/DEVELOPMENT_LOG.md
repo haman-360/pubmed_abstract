@@ -170,3 +170,9 @@
 - GitHub設定helperは既存Git credential helperをメモリ内だけで使い、既存Google source secretの名前・GitHub公開鍵だけを読取確認。非表示入力されたTEST同期用2値をPyNaClのsealed boxで暗号化してTEST専用Actions secretへ送る設計。Worker更新用API tokenはGitHubへ保存しない。PyNaCl 1.6.0を公式PyPIからprivate作業領域へ導入した。新しいworkflowは検証済みコードのcommitを固定し、mainへそのworkflowだけを追加する予定で、既存配信workflowは保持する。
 - Node全83件・Python全43件が成功。定期更新中の本人保存、source状態の重複投入、元メモ保持、世代をまたいだbackup復元、原本へのGET限定・version変更検出、無料runner／レビュー済workflowの事前条件と暗号化payloadの範囲を確認。実際のTEST backupをローカル一時D1へ復元し、実データ全件の同期172要求・同一データ再同期16追加要求・31論文状態／4配信状態の完全保持・復元一致も成功した。最初のローカル一時接続はECONNRESETで終了したが、再実行は全段階成功。実データをGitやクラウドartifactへ出力しない。
 - オンラインbundle準備成功（133,963バイト）。現時点ではTEST Worker反映・70配信のクラウド取込み・Actions有効化は未実施。利用者の非表示入力を使って反映・検証する段階。本番GAS・実台帳・既存Pages・既存配信workflow・課金設定は変更なし。clasp push・GAS deployなし。
+
+### 2026-11-06 — TEST定期実行workflowの追加（有効化前）
+
+- GitHubの既存 `AUTOMATION_ENABLED`／`PMID_LEDGER_ENABLED` がどちらもtrueであることを読取確認し、変更しなかった。土曜配信設定の変更は不要。TEST同期の検証済みコードを `16e1b4b7138c6929a74212ff49871e895557f50a` へ固定し、`main` には新規 `.github/workflows/pmid-ledger-test.yml` 1ファイルだけを追加した（`f0793094759687d3c900d58d7b3e962c79ef2c50`）。本番コード・既存workflow全体のmergeは行わない。main commitの差分も新規workflowだけと確認した。
+- TEST専用変数がtrueになるまで新jobは動かない。GitHub APIからmainのworkflowとローカルのレビュー済みファイルが完全一致すること、標準Ubuntu・公開repo限定・artifact／cacheなしを確認。GitHub暗号化公開鍵と必要な既存source secretの名前を確認したが、secret値は取得していない。暗号化ライブラリも架空データの暗号化・復号で確認済み。
+- 現在のTESTを本人認証付きAPIで再バックアップし、2世代・28操作・54論文履歴・4配信履歴を別DB復元・chain一致で保全。現時点のTESTはまだ3配信・30論文。全件反映と定期実行の有効化は、利用者の非表示入力を待つ。同期用2値だけをGitHubのTEST専用Secretsへ暗号化登録し、Worker更新用API tokenは保存しない。課金設定・本番GAS・実台帳・既存Pages・配信設定を変更していない。
