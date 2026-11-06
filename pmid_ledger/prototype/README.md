@@ -358,7 +358,7 @@ POST JSON。閲覧・保存は`Authorization: Bearer local-synthetic-owner`、�
 
 ## Dock／ホーム画面から使うオンラインアプリ
 
-既存TESTの同じ `/api/app/` を端末へ追加する。manifestのstandalone指定に加え、PNGアイコン・Apple touch icon・安定idを整備し、画面末尾に追加手順と起動モードを表示する。現在はローカル試験とbundle準備まで完了し、クラウド反映と実機の追加・起動確認はこれから。
+既存TESTの同じ `/api/app/` を端末へ追加する。manifestのstandalone指定に加え、PNGアイコン・Apple touch icon・安定idを整備し、画面末尾に追加手順と起動モードを表示する。2026-11-06に既存TESTへ反映し、Macの独立ウィンドウとiPadのホーム画面アイコンからの起動で、Googleログイン後の「配信70」「アプリで起動中」を確認済み。Macは「研究台帳 TEST」としてDockへ追加し、終了後の再起動でも独立ウィンドウのログイン画面を確認した。
 
 - **Mac（macOS Sonoma 14以降）**：Safariでオンライン台帳を開き、「ファイル」→「Dockに追加」。名前は「研究台帳 TEST」。追加後はDockまたはSpotlightから起動する。
 - **iPad**：Safariでオンライン台帳を開き、共有→「ホーム画面に追加」。「Webアプリとして開く」があればオンにして追加し、ホーム画面のアイコンから起動する。
