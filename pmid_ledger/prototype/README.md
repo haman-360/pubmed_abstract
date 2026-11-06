@@ -367,3 +367,11 @@ POST JSON。閲覧・保存は`Authorization: Bearer local-synthetic-owner`、�
 SafariのWebアプリ機能を使うためApp Store申請や新しいクラウド資源は不要。オフライン・通知・認証の永続保存は追加していない。[AppleのMac手順](https://support.apple.com/ja-jp/104996)、[WebKitのホーム画面Webアプリ仕様](https://webkit.org/blog/17333/webkit-features-in-safari-26-0/)を参照。
 
 アイコンの再生成は `python3 pmid_ledger/prototype/build-app-icons.py`。Pillow 11.3.0が必要で、このMacではprivateのvendor領域へ配置した。既存SVGと同じ図案の座標を描画し、OSに角を処理させる不透明RGBのPNGを出力する。通常のbundle生成はGit管理済みPNGを読むだけで、Pillowを必要としない。
+
+### 配信の状態表示とアプリ内ログインの再試行
+
+配信のバッヂは、未確認を橙色の「○」、確認中を青色の「◐」、確認済みを濃緑色の「✓」で表示する。右上のTESTバッヂは削除し、データ種別・元台帳へ書き戻さないこと・オンライン専用という案内は、下部の「この台帳について」にまとめた。接続先は従来の既存TESTのまま。
+
+Mac・iPadのSafariから追加したアプリでは、Googleログイン初回にFirebase側が「missing initial state」を表示し、2回目は成功するとの利用者報告がある。これは認証ヘルパーの一時状態を読み出せないという表示で、台帳データの欠落を意味しない。既にFirebaseのポップアップ方式を使用しているため、単純なredirectへの切替は行わない。[Firebase公式のブラウザー保存領域の制約と対処](https://firebase.google.com/docs/auth/web/redirect-best-practices)を確認したが、今回の実機での根本原因は未確定。
+
+エラーが出たログイン画面を閉じ、元の台帳からもう一度Googleログインできる。ボタンが押せない場合は、ログイン画面の「ログイン画面でエラーが出るとき」内の「ログイン画面を開き直す」でページを再初期化する。このボタンは未ログイン時だけ有効で、認証済みの編集や結果不明保存を破棄する用途には使えない。自動再試行・端末保存・Google／Access設定変更は追加しない。ログイン中の一時的な未ログイン通知で二重ポップアップを開かない制御と、認証完了直後の台帳読込み中に操作制限を解除しない修正も含む。これらは操作競合の防止・復帰補助であり、Firebase側の初回エラーの根本解消とは区別する。

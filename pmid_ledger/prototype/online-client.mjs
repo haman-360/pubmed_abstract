@@ -5,10 +5,12 @@ function showLaunchMode(){const label=$('launch-mode');if(label)label.textConten
 showLaunchMode();launchMedia?.addEventListener?.('change',showLaunchMode);
 const statusLabels={unreviewed:'未確認',reviewed_no_fulltext:'原本不要',want_fulltext:'入手希望'},legacyLabels={fulltext_obtained:'原文入手済み未読',read:'読了'};
 const issueLabels={unreviewed:'未確認',in_progress:'確認中',completed:'確認済み'};
-let sdk,auth,user=null,epoch=0,view=0,busy=false,manualSignout=false,key=null,current=null,offset=0,total=0,issueOffset=0,scope='recent',month='';
+const issueClasses={unreviewed:'unreviewed',in_progress:'in-progress',completed:'complete'};
+let sdk,auth,user=null,epoch=0,view=0,busy=false,loginPending=false,manualSignout=false,key=null,current=null,offset=0,total=0,issueOffset=0,scope='recent',month='';
 function message(text,error=false){$('message').textContent=text;$('message').classList.toggle('error',error);}
 function controls(){
-  $('login').disabled=!auth||!!user||busy;$('logout').hidden=!user;$('logout').disabled=false;
+  $('login').disabled=!auth||!!user||busy||loginPending;$('logout').hidden=!user;$('logout').disabled=false;
+  $('restart-login').disabled=!!user;
   for(const el of $('workspace').querySelectorAll('button,input,select,textarea'))el.disabled=busy||!!edits.pending;
   $('retry').hidden=!edits.pending;$('retry').disabled=busy;$('discard').disabled=busy;
   $('previous').disabled=busy||!!edits.pending||offset===0;$('next').disabled=busy||!!edits.pending||offset+(key?50:20)>=total;
@@ -30,13 +32,13 @@ const node=(tag,text,className)=>{const n=document.createElement(tag);if(text!==
 function counters(data){$('summary').replaceChildren(...Object.entries(data).map(([name,count])=>node('span',`${name} ${count}`)));}
 function pagination(data){offset=data.offset;total=data.total;$('page').textContent=total?`${offset+1}–${Math.min(offset+data.page_size,total)} / ${total}件`:'0件';$('previous').hidden=offset===0;$('next').hidden=offset+data.page_size>=total;}
 function renderIssues(data){
-  $('data-source').textContent=['real-copy','recent-copy'].includes(data.data_source)?'TEST · 実データのコピー':'TEST · 架空データ';
+  $('data-source').textContent=['real-copy','recent-copy'].includes(data.data_source)?'試用環境 · 実データのコピー':'試用環境 · 架空データ';
   $('heading').textContent='配信一覧';$('breadcrumb').textContent='研究台帳 / 配信';
   $('description').textContent=data.window.scope==='recent'?`${data.window.from} 〜 ${data.window.through} · 直近2か月`:data.window.scope==='unknown'?'配信日が不明なもの':`${month}の配信`;
   $('list').className='issue-grid';$('list').replaceChildren();counters({'配信':data.total});
   for(const issue of data.items){
     const card=node('article',undefined,'issue-card'),meta=node('div',undefined,'issue-meta');
-    meta.append(node('span',issue.delivered_date||'配信日不明'),node('span',issueLabels[issue.status]??issue.status,'pill'+(issue.status==='completed'?' complete':'')));
+    meta.append(node('span',issue.delivered_date||'配信日不明'),node('span',issueLabels[issue.status]??issue.status,'pill '+(issueClasses[issue.status]??'')));
     const button=node('button','論文を確認する');button.onclick=()=>{key=issue.issue_key;offset=0;$('query').value='';edits.reset();load();};
     card.append(meta,node('h2',issue.topic),node('p',issue.issue_id,'muted'),node('p',`${issue.total}論文 · 未確認 ${issue.unreviewed}`,'counts'),button);$('list').append(card);
   }
@@ -90,7 +92,14 @@ async function submit(kind='save'){
   finally{if(tag===epoch){busy=false;controls();}}
 }
 function clearIdentity(){epoch++;view++;user=null;busy=false;key=null;current=null;offset=0;issueOffset=0;edits.reset();$('list').replaceChildren();$('summary').replaceChildren();$('query').value='';$('workspace').hidden=true;$('welcome').hidden=false;document.body.classList.toggle('editing',false);controls();}
-$('login').onclick=async()=>{busy=true;manualSignout=false;controls();try{const provider=new sdk.GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});await sdk.signInWithPopup(auth,provider);}catch(e){message(describe(e),true);}finally{busy=false;controls();}};
+$('login').onclick=async()=>{
+  if(!auth||user||loginPending)return;
+  loginPending=true;manualSignout=false;controls();message('Googleのログイン画面でアカウントを選んでください。');
+  try{const provider=new sdk.GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});await sdk.signInWithPopup(auth,provider);}
+  catch(e){if(!user&&!manualSignout){$('login-help').open=true;message(describe(e)+'\nログイン画面でエラーが出た場合は、画面を閉じてもう一度ログインしてください。押せない場合は「ログイン画面を開き直す」を使えます。',true);}}
+  finally{loginPending=false;controls();}
+};
+$('restart-login').onclick=()=>{if(user||edits.dirty)return;manualSignout=true;window.location.reload();};
 $('logout').onclick=async()=>{if(!discard())return;manualSignout=true;clearIdentity();message('サインアウトしました。この画面の台帳データと編集を消去しました。');try{await sdk.signOut(auth);}catch{message('サインアウトを完了できませんでした。この画面を閉じてください。',true);}};
 $('back').onclick=()=>{if(discard()){key=null;current=null;offset=issueOffset;$('query').value='';load();}};
 document.querySelector('.brand').onclick=e=>{e.preventDefault();if(user&&discard()){key=null;current=null;offset=issueOffset;load();}};
@@ -106,5 +115,5 @@ addEventListener('offline',()=>message('オフラインです。編集はこの�
 try{
   sdk=await import('./sdk.mjs');const response=await fetch('./config.json',{cache:'no-store',redirect:'error'});if(!response.ok)throw Error('configuration');const config=await response.json();
   auth=sdk.initializeAuth(sdk.initializeApp(config.firebase),{persistence:sdk.inMemoryPersistence,popupRedirectResolver:sdk.browserPopupRedirectResolver});auth.languageCode='ja';
-  sdk.onAuthStateChanged(auth,active=>{if(manualSignout&&active)return;clearIdentity();user=active;controls();if(active){message('本人認証と配信一覧を確認しています…');load();}else if(!manualSignout)message('Googleでログインして、台帳を開いてください。');});
+  sdk.onAuthStateChanged(auth,active=>{if(manualSignout&&active)return;if(!active&&loginPending)return;clearIdentity();user=active;controls();if(active){message('本人認証と配信一覧を確認しています…');load();}else if(!manualSignout)message('Googleでログインして、台帳を開いてください。');});
 }catch{message('ログインの準備ができませんでした。オンライン接続とTEST設定を確認して、再読み込みしてください。',true);}
