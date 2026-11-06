@@ -5,7 +5,7 @@ const source=await fs.readFile(new URL('../cloud-login-client.mjs',import.meta.u
 const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor;
 const settle=()=>new Promise(resolve=>setImmediate(resolve));
 async function client({sdkFails=false,loseFirstSave=false}={}){
-  const elements=Object.fromEntries(['status','login','logout','check','save'].map(id=>[id,{disabled:true,textContent:''}]));
+  const elements=Object.fromEntries(['status','login','logout','check','save','measure','cpu','measurements'].map(id=>[id,{disabled:true,textContent:''}]));
   const operations=new Map(),requests=[];let changed,revision=0,refreshes=0,pending,lost=false;
   const sdk={initializeApp:c=>c,inMemoryPersistence:{},browserPopupRedirectResolver:{},initializeAuth:(_app,options)=>{
     assert.equal(options.persistence,sdk.inMemoryPersistence);assert.equal(options.popupRedirectResolver,sdk.browserPopupRedirectResolver);return {};
@@ -25,7 +25,7 @@ async function client({sdkFails=false,loseFirstSave=false}={}){
     if(!replayed){operations.set(body.operation_id,body);revision++;}
     else assert.deepEqual(operations.get(body.operation_id),body);
     if(loseFirstSave&&!lost){lost=true;throw Error('network unavailable');}
-    return Response.json({value:{saved:true,replayed}});
+    return Response.json({value:{saved:true,replayed,revision:'a'.repeat(64),reviews:[{review:{version:revision,status:'want_fulltext',note:'クラウドTEST保存確認'}}]}});
   };
   await new AsyncFunction('document','fetch','load',source.replace("import('/firebase-sdk.mjs')",'load()'))(
     {getElementById:id=>elements[id]},fetch,async()=>{if(sdkFails)throw Error('offline');return sdk;});
@@ -41,9 +41,19 @@ test('cloud login uses memory-only auth, verifies fixture, saves and replays one
 });
 test('unknown save results retry the identical operation; sign-out rejects late probes and SDK failure stays disabled',async()=>{
   const c=await client({loseFirstSave:true}),e=c.elements;
-  await e.login.onclick();await settle();await e.save.onclick();assert.equal(c.operations.size,1);
-  await e.save.onclick();assert.equal(c.operations.size,1);assert.match(e.status.textContent,/保存・読戻し/);
+  await e.login.onclick();await settle();await e.save.onclick();assert.equal(c.operations.size,1);assert.equal(e.measure.disabled,true);
+  await e.measure.onclick();assert.equal(c.operations.size,1);
+  await e.save.onclick();assert.equal(c.operations.size,1);assert.match(e.status.textContent,/保存・読戻し/);assert.equal(e.measure.disabled,false);
   const late=await client(),release=late.defer();await late.elements.login.onclick();await late.elements.logout.onclick();release();await settle();
   assert.equal(late.elements.save.disabled,true);assert.match(late.elements.status.textContent,/サインアウト/);
   const failed=await client({sdkFails:true});assert.equal(failed.elements.login.disabled,true);assert.match(failed.elements.status.textContent,/準備ができません/);
+});
+test('bounded speed samples save only the fixed paper; CPU capture traffic is read-only and reports omit tokens',async()=>{
+  const c=await client(),e=c.elements;await e.login.onclick();await settle();
+  await e.measure.onclick();assert.equal(c.operations.size,10);
+  const report=JSON.parse(e.measurements.textContent);assert.equal(report.save_readback_verified,true);
+  for(const value of Object.values(report.operations)){assert.equal(value.samples,10);assert(Number.isFinite(value.median_ms));}
+  assert(!e.measurements.textContent.includes('synthetic-owner-token'));
+  const before=c.requests.length;await e.cpu.onclick();assert.equal(c.requests.length-before,80);assert.equal(c.operations.size,10);
+  assert(c.requests.slice(before).every(path=>path==='/api/getPaperDetail'));
 });

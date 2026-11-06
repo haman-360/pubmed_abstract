@@ -5,6 +5,8 @@
 <p id="status" role="status">ログインの準備をしています。</p>
 <button id="login" disabled>Googleでログイン</button><button id="logout" disabled>サインアウト</button>
 <button id="check" disabled>認証を再確認</button><button id="save" disabled>架空論文1件で保存を確認</button>
+<p><button id="measure" disabled>操作別の速度を測る（各10回）</button><button id="cpu" disabled>CPU観測用の読取（30秒以内）</button></p>
+<p>速度計測は一覧・論文一覧・詳細・架空1件保存を各10回行います。CPU観測は読取だけを最大80回行います。失敗時は停止し、自動再送しません。</p><pre id="measurements" style="white-space:pre-wrap;font-size:14px"></pre>
 <p>保存確認は架空論文1件を「入手希望」にし、テスト用メモを記録します。保存後に読戻しと同じ操作の再送を確認します。</p>
 <p>認証情報はこの画面のメモリ内だけで扱います。再読み込み後は再度ログインしてください。</p></main>
 <script type="module" src="/login-client.mjs"></script></html>

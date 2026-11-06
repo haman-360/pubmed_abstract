@@ -20,23 +20,24 @@ export function browseRange(r,now){
 export async function browseIssues(db,r,now=new Date()){
   const range=browseRange(r,now),offset=r.offset??0;
   requireThat(Number.isSafeInteger(offset)&&offset>=0,'invalid_offset');
-  const revision=(await db.prepare('SELECT generation FROM settings WHERE id=1').first()).generation;
-  requireThat(revision,'metadata_not_seeded',409);
   const date="json_extract(info_json,'$.delivered_date')";
   const filter=range.scope==='all'?'1':range.scope==='unknown'?`${date}=''`:`${date}>=? AND ${date}<=?`;
-  const args=[revision,...(['recent','month'].includes(range.scope)?[range.from,range.through]:[])];
-  const {total}=await db.prepare(`SELECT count(*) total FROM issue_lists INDEXED BY issue_lists_date WHERE generation=? AND ${filter}`).bind(...args).first();
-  const start=offset<total?offset:Math.max(0,Math.floor((total-1)/20)*20);
-  // Select indexed keys first; progress aggregation only touches the requested 20 deliveries.
-  const {results}=await db.prepare(`WITH selected AS MATERIALIZED (
-    SELECT issue_key FROM issue_lists INDEXED BY issue_lists_date WHERE generation=? AND ${filter}
-    ORDER BY ${date} DESC,json_extract(info_json,'$.issue_id') DESC,json_extract(info_json,'$.topic') LIMIT 20 OFFSET ?)
-    SELECT v.item_json FROM selected k CROSS JOIN issue_states v ON v.issue_key=k.issue_key AND v.revision=?
-    ORDER BY json_extract(v.item_json,'$.delivered_date') DESC,json_extract(v.item_json,'$.issue_id') DESC,json_extract(v.item_json,'$.topic')`)
-    .bind(...args,start,revision).all();
-  const after=(await db.prepare('SELECT generation FROM settings WHERE id=1').first()).generation;
-  requireThat(after===revision,'metadata_changed_reload',409);
-  return {items:results.map(row=>{const {scores_available,...i}=JSON.parse(row.item_json);return i;}),total,offset:start,page_size:20,revision,window:range};
+  const args=['recent','month'].includes(range.scope)?[range.from,range.through]:[];
+  // One SQL snapshot fixes the generation, count and page together. Only 20 selected keys reach progress aggregation.
+  const row=await db.prepare(`WITH current AS MATERIALIZED (SELECT generation revision FROM settings WHERE id=1),
+    totals AS (SELECT count(*) total FROM issue_lists INDEXED BY issue_lists_date
+      WHERE generation=(SELECT revision FROM current) AND ${filter}),
+    paging AS (SELECT total,CASE WHEN ?<total THEN ? ELSE max(0,CAST((total-1)/20 AS INTEGER)*20) END offset FROM totals),
+    selected AS MATERIALIZED (SELECT issue_key FROM issue_lists INDEXED BY issue_lists_date
+      WHERE generation=(SELECT revision FROM current) AND ${filter}
+      ORDER BY ${date} DESC,json_extract(info_json,'$.issue_id') DESC,json_extract(info_json,'$.topic')
+      LIMIT 20 OFFSET (SELECT offset FROM paging))
+    SELECT current.revision,paging.total,paging.offset,(SELECT json_group_array(json(item_json)) FROM (
+      SELECT v.item_json FROM selected k CROSS JOIN issue_states v ON v.issue_key=k.issue_key AND v.revision=current.revision
+      ORDER BY json_extract(v.item_json,'$.delivered_date') DESC,json_extract(v.item_json,'$.issue_id') DESC,json_extract(v.item_json,'$.topic'))) items
+    FROM current,paging`).bind(...args,offset,offset,...args).first();
+  requireThat(row?.revision,'metadata_not_seeded',409);
+  return {items:JSON.parse(row.items).map(({scores_available,...i})=>i),total:row.total,offset:row.offset,page_size:20,revision:row.revision,window:range};
 }
 export function readLimit(error,now=new Date()){
   // Exact D1 quota phrases only. Generic SQL, CPU, syntax or capacity errors are not a daily limit.

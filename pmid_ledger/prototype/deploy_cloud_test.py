@@ -10,6 +10,7 @@ import re
 import sys
 import uuid
 import os
+import warnings
 from datetime import datetime, timezone
 from email.parser import BytesParser
 from pathlib import Path
@@ -49,7 +50,7 @@ def validate_sync_config(config):
         raise DeployError("invalid_test_sync_identity")
 
 
-def multipart(resources, owner, source, sync_config=None):
+def multipart(resources, owner, source, sync_config=None, *, preserve_bindings=False):
     validate(resources, owner, source)
     if sync_config is not None:
         validate_sync_config(sync_config)
@@ -61,6 +62,11 @@ def multipart(resources, owner, source, sync_config=None):
     bindings.append({"name": "LEDGER_IDENTITY", "type": "secret_text", "text": json.dumps(identity, separators=(",", ":"))})
     metadata = {"main_module": "worker.mjs", "compatibility_date": "2026-07-30", "bindings": bindings,
                 "annotations": {"workers/message": "Authenticated synthetic ledger TEST API"}}
+    if preserve_bindings:
+        if sync_config is not None:
+            raise DeployError("code_only_cannot_change_identity")
+        metadata.pop("bindings")
+        metadata["keep_bindings"] = ["d1", "plain_text", "secret_text"]
     boundary = "ledger-test-" + uuid.uuid4().hex
     body = (f'--{boundary}\r\nContent-Disposition: form-data; name="metadata"\r\nContent-Type: application/json\r\n\r\n'.encode()
             + json.dumps(metadata).encode()
@@ -84,8 +90,27 @@ def downloaded_source(raw, content_type):
     return raw
 
 
-def upload(resources, owner, source, token, opener=None, *, sync_config=None):
-    body, content_type = multipart(resources, owner, source, sync_config)
+def checked_bindings(resources, raw):
+    try:
+        settings = json.loads(raw)
+        entries = settings["result"]["bindings"]
+        bindings = {item["name"]: item for item in entries}
+        expected = {"LEDGER_TEST_ONLY": "synthetic", "LEDGER_ORIGIN": resources["origin"],
+                    "LEDGER_SYNC_ENABLED": "1", "LEDGER_TEST_DIAGNOSTICS": "1"}
+        if not (settings.get("success") is True and len(bindings) == len(entries)
+                and set(bindings) == set(expected) | {"DB", "LEDGER_IDENTITY"}
+                and bindings["DB"]["type"] == "d1" and bindings["DB"]["id"] == resources["databaseId"]
+                and bindings["LEDGER_IDENTITY"]["type"] == "secret_text"
+                and all(bindings[k]["type"] == "plain_text" and bindings[k]["text"] == v for k, v in expected.items())):
+            raise ValueError()
+        return {name: {key: value for key, value in item.items() if key in {"name", "type", "id", "text"} and not (name == "LEDGER_IDENTITY" and key == "text")}
+                for name, item in bindings.items()}
+    except (ValueError, TypeError, KeyError, AttributeError):
+        raise DeployError("test_bindings_not_verified") from None
+
+
+def upload(resources, owner, source, token, opener=None, *, sync_config=None, preserve_bindings=False):
+    body, content_type = multipart(resources, owner, source, sync_config, preserve_bindings=preserve_bindings)
     if not isinstance(token, str) or not re.fullmatch(r"[A-Za-z0-9_-]{20,512}", token):
         raise DeployError("invalid_worker_scoped_token")
     opener = opener or build_opener(ProxyHandler({}), NoRedirect())
@@ -108,6 +133,9 @@ def upload(resources, owner, source, token, opener=None, *, sync_config=None):
         except (URLError, TimeoutError, OSError):
             raise DeployError("upload_or_readback_result_unknown_no_automatic_retry") from None
 
+    if preserve_bindings:
+        raw, _ = request("GET", suffix="/settings")
+        before = checked_bindings(resources, raw)
     raw, _ = request("PUT", body, content_type)
     try:
         if json.loads(raw).get("success") is not True:
@@ -118,8 +146,13 @@ def upload(resources, owner, source, token, opener=None, *, sync_config=None):
     if downloaded_source(raw, mime) != source:
         raise DeployError("upload_completed_but_source_readback_mismatch")
     result = {"uploaded": True, "source_readback_verified": True, "bytes": len(source),
-              "sha256": hashlib.sha256(source).hexdigest(), "metadata_sync_enabled": sync_config is not None}
-    if sync_config is not None:
+              "sha256": hashlib.sha256(source).hexdigest(), "metadata_sync_enabled": sync_config is not None or preserve_bindings}
+    if preserve_bindings:
+        raw, _ = request("GET", suffix="/settings")
+        if checked_bindings(resources, raw) != before:
+            raise DeployError("upload_completed_but_settings_readback_mismatch")
+        result.update(bindings_readback_verified=True, existing_bindings_preserved=True)
+    elif sync_config is not None:
         raw, _ = request("GET", suffix="/settings")
         try:
             settings = json.loads(raw)
@@ -143,21 +176,28 @@ def upload(resources, owner, source, token, opener=None, *, sync_config=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--upload", action="store_true", help="Explicitly upload TEST code; otherwise prepare only without HTTP")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--upload", action="store_true", help="Upload TEST with sync disabled; default is preparation only")
+    mode.add_argument("--update-code-only", action="store_true", help="Update existing TEST code, preserving verified enabled-sync bindings and secrets")
     args = parser.parse_args()
     try:
         resources = json.loads((ROOT / "ledger_private/cloud-test-resources.json").read_text())
         owner = json.loads((ROOT / "ledger_private/cloud-test-owner.json").read_text())
         source = (ROOT / "pmid_ledger/prototype/.cloud-test/worker.mjs").read_bytes()
         validate(resources, owner, source)
-        if not args.upload:
+        if not (args.upload or args.update_code_only):
             result = {"prepared": True, "http": False, "bytes": len(source), "sha256": hashlib.sha256(source).hexdigest()}
         else:
             if not sys.stdin.isatty():
                 raise DeployError("interactive_terminal_required_for_token")
-            token = getpass.getpass("TEST Worker専用のAPIトークン（非表示・保存しません）: ")
+            with warnings.catch_warnings():
+                warnings.simplefilter("error", getpass.GetPassWarning)
+                try:
+                    token = getpass.getpass("TEST Worker専用のAPIトークン（非表示・保存しません）: ")
+                except getpass.GetPassWarning:
+                    raise DeployError("hidden_terminal_input_unavailable") from None
             try:
-                result = upload(resources, owner, source, token)
+                result = upload(resources, owner, source, token, preserve_bindings=args.update_code_only)
             finally:
                 token = None
             report = ROOT / "pmid_ledger/prototype/.cloud-test/deployment-verification.json"

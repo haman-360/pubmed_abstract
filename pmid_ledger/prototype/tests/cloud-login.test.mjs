@@ -35,7 +35,7 @@ test('other users, sync, different papers/notes, bad origins and large bodies ne
   const {local,forwarded}=await setup(t),owner='Bearer '+await token();
   for(const options of [{token:'Bearer '+await token({sub:'other-uid'})},{token:owner,origin:'https://untrusted.invalid'},{}])assert.equal((await call(local.mf,'listIssues',{scope:'all'},options)).status,403);
   assert.equal(forwarded.length,0);
-  for(const [name,body]of [['listIssues',{scope:'recent'}],['listIssuePapers',{issue_key:'["other","感染症"]'}],['getPaperDetail',{pmid:'2',issue_key:ISSUE}],['backupStart',{}],['saveReviews',{changes:null,operation_id:crypto.randomUUID(),revision:'a'.repeat(64)}]])assert.equal((await call(local.mf,name,body,{token:owner})).status,403);
+  for(const [name,body]of [['listIssues',{scope:'month',month:'2026-01'}],['listIssuePapers',{issue_key:'["other","感染症"]'}],['getPaperDetail',{pmid:'2',issue_key:ISSUE}],['backupStart',{}],['saveReviews',{changes:null,operation_id:crypto.randomUUID(),revision:'a'.repeat(64)}]])assert.equal((await call(local.mf,name,body,{token:owner})).status,403);
   assert.equal((await call(local.mf,'saveReviews',{x:'x'.repeat(9000)},{token:owner})).status,413);
   assert.equal((await call(local.mf,'status',{}, {sync:true,token:owner})).status,403);
   assert.equal(forwarded.length,0);

@@ -5,7 +5,7 @@ from email import policy
 from email.parser import BytesParser
 from urllib.error import HTTPError
 
-from pmid_ledger.prototype.deploy_cloud_test import DeployError, downloaded_source, multipart, upload, validate
+from pmid_ledger.prototype.deploy_cloud_test import DeployError, downloaded_source, multipart, upload, validate, checked_bindings
 
 RESOURCES = {"workerName": "pmid-ledger-test", "accountId": "a" * 32,
              "databaseId": "11111111-1111-4111-8111-111111111111",
@@ -24,6 +24,61 @@ class Reply(io.BytesIO):
 
 
 class DeployTests(unittest.TestCase):
+    def test_code_only_update_preserves_existing_bindings_without_transferring_identity(self):
+        body, mime = multipart(RESOURCES, OWNER, SOURCE, SYNC)
+        message = BytesParser(policy=policy.default).parsebytes(b"Content-Type: " + mime.encode() + b"\r\n\r\n" + body)
+        bindings = json.loads(list(message.iter_parts())[0].get_payload(decode=True))["bindings"]
+        bindings[-1].pop("text")
+        settings = json.dumps({"success": True, "result": {"bindings": bindings}}).encode()
+        class Opener:
+            requests = []
+            def open(self, request, timeout):
+                self.requests.append(request)
+                if request.full_url.endswith("/settings"):
+                    return Reply(settings, "application/json")
+                if request.method == "PUT":
+                    message = BytesParser(policy=policy.default).parsebytes(b"Content-Type: " + request.get_header("Content-type").encode() + b"\r\n\r\n" + request.data)
+                    metadata = json.loads(list(message.iter_parts())[0].get_payload(decode=True))
+                    self.metadata = metadata
+                    return Reply(b'{"success":true}', "application/json")
+                return Reply(SOURCE, "application/javascript")
+        opener = Opener()
+        result = upload(RESOURCES, OWNER, SOURCE, TOKEN, opener, preserve_bindings=True)
+        self.assertEqual([r.method for r in opener.requests], ["GET", "PUT", "GET", "GET"])
+        self.assertNotIn("bindings", opener.metadata)
+        self.assertEqual(opener.metadata["keep_bindings"], ["d1", "plain_text", "secret_text"])
+        self.assertTrue(result["existing_bindings_preserved"])
+        self.assertTrue(result["bindings_readback_verified"])
+        self.assertNotIn(OWNER["ownerUid"], json.dumps(opener.metadata))
+        for key, value in [("DB", {"name": "DB", "type": "d1", "id": "wrong"}),
+                           ("LEDGER_SYNC_ENABLED", {"name": "LEDGER_SYNC_ENABLED", "type": "plain_text", "text": "0"})]:
+            damaged = [value if b["name"] == key else b for b in bindings]
+            with self.assertRaises(DeployError):
+                checked_bindings(RESOURCES, json.dumps({"success": True, "result": {"bindings": damaged}}))
+
+    def test_code_only_never_uploads_to_unverified_settings_and_refuses_changed_readback(self):
+        body, mime = multipart(RESOURCES, OWNER, SOURCE, SYNC)
+        message = BytesParser(policy=policy.default).parsebytes(b"Content-Type: " + mime.encode() + b"\r\n\r\n" + body)
+        bindings = json.loads(list(message.iter_parts())[0].get_payload(decode=True))["bindings"]
+        bindings[-1].pop("text")
+        class Opener:
+            def __init__(self, damage_before):
+                self.requests = []
+                self.damage_before = damage_before
+            def open(self, request, timeout):
+                self.requests.append(request)
+                if request.full_url.endswith("/settings"):
+                    entries = json.loads(json.dumps(bindings))
+                    if self.damage_before or len(self.requests) > 1:
+                        entries[0]["id"] = "wrong-database"
+                    return Reply(json.dumps({"success": True, "result": {"bindings": entries}}).encode(), "application/json")
+                return Reply(b'{"success":true}', "application/json") if request.method == "PUT" else Reply(SOURCE, "application/javascript")
+        for before, count in [(True, 1), (False, 4)]:
+            opener = Opener(before)
+            with self.assertRaises(DeployError):
+                upload(RESOURCES, OWNER, SOURCE, TOKEN, opener, preserve_bindings=True)
+            self.assertEqual(len(opener.requests), count)
+
     def test_other_resources_incomplete_owner_and_mock_bundles_refused(self):
         for change in ({"workerName": "existing-app"}, {"accountId": ""}, {"databaseId": ""},
                        {"origin": RESOURCES["origin"] + "/path"}, {"origin": "http://127.0.0.1:8787"}):

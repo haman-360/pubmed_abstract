@@ -28,6 +28,16 @@ async function classify(mf){const loaded=(await call(mf,'listIssuePapers',{issue
   const r={operation_id:crypto.randomUUID(),review_operation_id:crypto.randomUUID(),revision:loaded.revision,issue_key:key,expected_version:0,content_version:loaded.issue.content_version,
     changes:[{pmid:'1',expected_version:0,status:'want_fulltext',note:'snapshot note'}]};assert.equal((await call(mf,'saveAndCompleteIssue',r)).status,200);return r;}
 
+test('batched detail preserves shared appearances, ordered text parts and rejects missing parts',async t=>{
+  const {mf,db}=await setup(t,true);
+  const all=await call(mf,'getPaperDetail',{pmid:'1'});assert.equal(all.status,200);assert.equal(all.value.appearances.length,3);
+  const scoped=await call(mf,'getPaperDetail',{pmid:'1',issue_key:key});assert.equal(scoped.status,200);assert.equal(scoped.value.appearances.length,1);
+  assert.deepEqual(scoped.value.appearances,all.value.appearances.filter(a=>JSON.stringify([a.issue_id,a.topic])===key));
+  assert.equal(scoped.value.appearances[0].text.summary_ja,'架空本文🧪'.repeat(5000));
+  await db.prepare("DELETE FROM metadata_records WHERE table_name='Texts' AND json_extract(row_json,'$[1]')='0'").run();
+  assert.equal((await call(mf,'getPaperDetail',{pmid:'1',issue_key:key})).status,409);
+});
+
 test('chunks remain private until complete and checked; duplicates replay and mismatches are refused',async t=>{
   const {mf,db}=await setup(t),p=await plan();
   assert.equal((await sync(mf,'begin',{synthetic:true,generation:p.generation,manifest:p.manifest})).status,200);

@@ -48,8 +48,8 @@ async function issuePapers(db,r) {
 async function detail(db,r) {
   requireThat(/^[1-9][0-9]{0,8}$/.test(r.pmid??''),'invalid_pmid');
   if(r.issue_key)validKey(r.issue_key);
-  const storage=await db.prepare("SELECT json_extract(g.tables_json,'$.format') format FROM generations g JOIN settings s ON s.generation=g.id").first();
-  if(storage?.format===FORMAT)return chunkedDetail(db,r);
+  const storage=await db.prepare("SELECT g.id revision,json_extract(g.tables_json,'$.format') format FROM generations g JOIN settings s ON s.generation=g.id").first();
+  if(storage?.format===FORMAT)return chunkedDetail(db,r,storage.revision);
   const row=await db.prepare(`WITH g AS (SELECT g.id,g.tables_json FROM generations g JOIN settings s ON s.generation=g.id),
     appearances AS (SELECT a.value FROM g,json_each(g.tables_json,'$.Appearances') a
       WHERE a.key>0 AND json_extract(a.value,'$[1]')=? AND (?='' OR

@@ -181,13 +181,18 @@ export async function rebuildGeneration(db,g){
   for(let offset=0;offset<stored.tables.Issues.count;offset+=5)await buildPage(db,{generation:g,offset});
   await finish(db,{generation:g});
 }
-export async function chunkedDetail(db,r){
-  const revision=(await db.prepare('SELECT generation FROM settings WHERE id=1').first()).generation;
-  const apps=await sourceRows(db,revision,'Appearances',r.pmid);
-  const scoped=apps.filter(a=>!r.issue_key||JSON.stringify([a[2],a[3]])===r.issue_key);
-  requireThat(scoped.length,'paper_missing',404);
+export async function chunkedDetail(db,r,revision){
+  if(revision===undefined)revision=(await db.prepare('SELECT generation FROM settings WHERE id=1').first()).generation;
+  const {results}=await db.prepare(`SELECT a.row_json appearance,
+    (SELECT json_group_array(json(row_json)) FROM (SELECT t.row_json FROM metadata_records t INDEXED BY metadata_entity
+      WHERE t.generation=a.generation AND t.table_name='Texts' AND t.entity_key=json_extract(a.row_json,'$[9]')
+      ORDER BY CAST(json_extract(t.row_json,'$[1]') AS INTEGER))) parts
+    FROM metadata_records a INDEXED BY metadata_entity
+    WHERE a.generation=? AND a.table_name='Appearances' AND a.entity_key=? AND (?='' OR a.parent_key=?)
+    ORDER BY a.row_index`).bind(revision,r.pmid,r.issue_key||'',r.issue_key||'').all();
+  requireThat(results.length,'paper_missing',404);
   const appearances=[];
-  for(const a of scoped){const parts=await sourceRows(db,revision,'Texts',a[9]);parts.sort((a,b)=>Number(a[1])-Number(b[1]));
+  for(const row of results){const a=JSON.parse(row.appearance),parts=JSON.parse(row.parts);
     requireThat(parts.length&&parts.every((p,i)=>Number(p[1])===i),'text_parts_incomplete',409);
     appearances.push({...records([headers.Appearances,a])[0],text:JSON.parse(parts.map(p=>p[2]).join(''))});}
   appearances.sort((a,b)=>b.delivered_date.localeCompare(a.delivered_date)||a.issue_id.localeCompare(b.issue_id));

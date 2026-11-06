@@ -1,5 +1,6 @@
 // Loopback login test only. Forward a fixed fictional review, never arbitrary cloud writes.
 export const CLOUD_TEST_ISSUE='["synthetic-small","感染症"]';
+export const CLOUD_TEST_MAIN='["synthetic-main","感染症"]';
 export const CLOUD_TEST_NOTE='クラウドTEST保存確認';
 export const cloudOwnerPaths=new Set(['/api/listIssues','/api/listIssuePapers','/api/getPaperDetail','/api/saveReviews']);
 export function validateCloudOrigin(value){
@@ -8,8 +9,8 @@ export function validateCloudOrigin(value){
 }
 function allowed(path,body){
   if(!body||typeof body!=='object'||Array.isArray(body))return false;
-  if(path==='/api/listIssues')return Object.keys(body).length===1&&body.scope==='all';
-  if(path==='/api/listIssuePapers')return Object.keys(body).length===1&&body.issue_key===CLOUD_TEST_ISSUE;
+  if(path==='/api/listIssues')return Object.keys(body).length===1&&['all','recent'].includes(body.scope);
+  if(path==='/api/listIssuePapers')return Object.keys(body).length===1&&[CLOUD_TEST_ISSUE,CLOUD_TEST_MAIN].includes(body.issue_key);
   if(path==='/api/getPaperDetail')return Object.keys(body).length===2&&body.issue_key===CLOUD_TEST_ISSUE&&body.pmid==='1';
   if(path!=='/api/saveReviews'||Object.keys(body).sort().join(',')!=='changes,operation_id,revision')return false;
   if(!Array.isArray(body.changes)||body.changes.length!==1)return false;
