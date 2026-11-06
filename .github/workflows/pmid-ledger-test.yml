@@ -1,4 +1,4 @@
-name: TEST ledger unfinished queue (read-only source)
+name: TEST ledger recent copy (read-only source)
 
 on:
   schedule:
@@ -21,7 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # Activate on main only after the existing TEST Worker supports queueState.
           ref: dd7e0c1f6f8248337d3e1fb5b5f9459ae474e1c7
           persist-credentials: false
       - uses: actions/setup-python@v5

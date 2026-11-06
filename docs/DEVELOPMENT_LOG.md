@@ -237,3 +237,12 @@
 - 5,000論文・200配信の架空fixtureで199配信を完了済みにすると、未確認一覧は1配信のみ・DB問い合わせ1回・読取1,017行で本文転送なし。クラウドCPU・実台帳での速度保証ではない。Mac出力のローカル画面200、公開設定だけの応答、不正JWT403、別Origin403も実HTTPで確認し、クラウド要求0・PMIDファイル作成0で終了した。
 - 台帳README・試作READMEへ仕様、上限、TXTの使い方、利用者によるコード反映→mainのTEST同期workflow参照更新→同期→再読み込みの順序を記載。現在のクラウドは従来コードのままで、新機能の実Google出力・Mac／iPad実機・実データ同期は未確認。新規クラウド資源・有料API・課金変更はなく、本番GAS・実台帳・既存Pagesへ書き込んでいない。clasp push不要。利用者指定に従いdeploy・既存TESTコード更新・main workflow更新・クラウド同期は行わず、実装と反映準備までをcommit・現在のremote作業branchへpushする。
 - 実装commitは `dd7e0c1f6f8248337d3e1fb5b5f9459ae474e1c7`（`Queue unfinished deliveries and export wanted PMIDs on Mac`）。作業branchのTEST専用workflowだけ、この検証済みcommitへ固定する準備変更を追加。mainのworkflow・既存スケジュール・有効化変数・Secretsは変更しない。Worker反映後に利用者がmainの参照を更新する順序をREADMEへ明記した。
+
+### 2026-11-06 — 未確認キューの既存TEST反映・初回同期・Macの希望PMID出力確認
+
+- 利用者が一つずつ手動で反映することを希望し、エージェントは手順案内と読取検証を担当。19:43:58 JST、利用者のcode-only更新で177,728バイト・SHA-256 `f6ee019ac3385c3d0c1ac975c9645c2789a66d23fa20f5b1efd6c24b337018f3` の既存TESTコード読戻し、既存binding保持、同期有効をreceiptで確認。公開HTML／JSもHTTP 200かつ準備ファイルと完全一致した。更新用tokenはチャット・ファイル・Gitへ保存しない。
+- 利用者がGitHubでmainのTEST同期workflowのcheckout refだけを `dd7e0c1f6f8248337d3e1fb5b5f9459ae474e1c7` へ更新（main commit `a9a2ff71cabae9354fe2e6b60ae90fd2a655a229`）。既存workflow名、毎日12:23／21:23 JSTの時刻、無料runner、有効化条件、Secretsは変更しない。GitHub接続の読取で反映を確認。作業branchの控えもmainの実ファイルへ揃え、設定helperのバイト一致検証を継続できるようにした。mainへ他のコードをmergeしていない。
+- 利用者が19:46:35 JSTに[初回手動同期](https://github.com/haman-360/pubmed_abstract/actions/runs/42205233733)を起動。完了まで追跡し、19:51:45 JSTにjob全step成功を確認した。集計は100配信・824論文・1,220掲載、271要求、source状態の未作成分21件の初期化、公開前後の全表読戻し一致、元台帳への書込なし。古い未確認28配信は上限付きキューの補充待ちであり、完了扱いにしていない。定期実行の今後の成功や無制限の軽さを保証したという意味にはしない。
+- 利用者がMacの既存アプリを再読込みし、「配信100」を確認。その後Mac用 `希望PMIDを出力.command` を実行し、19:56 JSTの生成TXTを共有した。ローカルファイルを読取のみで検証し、34件・299バイト・数字のみ1行1件・重複なし・数値順・UTF-8/BOMなし・末尾改行・0600を確認した。PMIDの中身は本ログやGitへ転記せず、生成TXTはGit対象外のprivate出力先に保持。原本取得プログラムの実行や入手済みへの状態変更は行わない。
+- 台帳READMEと試作READMEを反映完了へ更新。前段のNode92件・Python50件成功に対し、今回はアプリコードを変更せず、実反映receipt・公開ファイル・Actions結果・Mac表示・実TXTを確認した。mainと作業branchのworkflow一致、設定helperの既存テスト、diff／statusとprivate出力のGit除外を最終確認して、記録をcommit・現在のremote作業branchへpushする。
+- 本番GAS・実台帳・既存Pages・土曜配信・認証／課金設定は変更なし。エージェントによるdeploy、clasp push、mainへの書込は未実施。利用者が既存TESTのコード更新・mainの参照変更・同期起動を手動で実施した。今回の新仕様でのiPad実機再確認、実運用で確認を進めた後の補充、クラウドCPUの継続測定は未確認として残す。

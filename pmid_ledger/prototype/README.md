@@ -2,7 +2,7 @@
 
 **追加費用0円・既存TEST専用。** Workers＋D1を②オンラインアプリの接続先にする方針を選び、既存TESTへ本人専用Web画面を追加した。通常のローカル試作はMiniflare 4のworkerd／D1 bindingで動作し、Cloudflareアカウント・APIキー・Google認証・OpenAI APIは不要。クラウドTESTには既存FirebaseのGoogle本人認証を使う。架空120件の同期と本人保存・読戻し・再送は確認済み。課金設定・本番GAS・実台帳・既存Pagesは変更していない。本番移行は別作業。
 
-> 2026-11-06追加実装：未確認キューとMac用希望PMID出力を準備。以下の新仕様はローカル検証段階で、既存TESTへのコード反映・定期同期workflowの参照更新・実機確認はまだ行っていない。反映手順は「未確認キューと希望PMID出力」を参照。
+> 2026-11-06反映完了：利用者が既存TESTのコードとmainの定期同期参照を更新し、未確認100配信・824論文の同期と全表読戻しが成功。Macで配信100件の表示、希望PMID34件のTXT出力も確認した。詳細は「未確認キューと希望PMID出力」を参照。
 
 ## オンライン版（既存TEST）
 
@@ -385,7 +385,7 @@ Mac・iPadのSafariから追加したアプリでは、Googleログイン初回�
 `deploy_cloud_test.py --update-code-only` は、設定に加えて既存コードを先にGETする。同じコードならPUTを省略し、コード・設定の再読戻し一致で `already_current: true, uploaded: false` を返す。更新中のHTTPエラーには `stage` と `write_attempted` を付ける。`read_existing_settings`／`read_existing_code` かつ `write_attempted: false` ならコード更新前で停止。`upload_code`／`readback_code`／`readback_settings` かつ `write_attempted: true` なら更新が反映された可能性があり、成功とは扱わない。PUTの自動再送は行わず、利用者が同じコマンドを再実行した際にコードを改めて照合する。エラー本文・資格情報・接続IDは表示しない。
 
 
-## 未確認キューと希望PMID出力（2026-11-06追加・未反映）
+## 未確認キューと希望PMID出力（2026-11-06反映済み）
 
 ### ふだんの確認と過去分
 
@@ -411,14 +411,18 @@ TXTはUTF-8・BOMなし・数字のみ1行1件・数値順・重複なし。確�
 
 ### 検証結果
 
-Node全92件・Python全50件成功。5,000論文・200配信のうち199配信を確認済みにしたローカルD1試験では、一覧は1配信のみ、DB問い合わせ1回・読取1,017行。旧配信の補充・空キュー・保存済みメモと希望の保持・backup復元・501件の出力ページング・出力中の状態変更拒否も確認した。Mac出力のローカルHTTP画面・不正認証／Origin拒否は確認済みだが、新しい出力の実Google認証・実クラウドAPI・Mac／iPad実機の確認は反映後に行う。
+Node全92件・Python全50件成功。5,000論文・200配信のうち199配信を確認済みにしたローカルD1試験では、一覧は1配信のみ、DB問い合わせ1回・読取1,017行。旧配信の補充・空キュー・保存済みメモと希望の保持・backup復元・501件の出力ページング・出力中の状態変更拒否も確認した。Mac出力のローカルHTTP画面・不正認証／Origin拒否も確認済み。
+
+2026-11-06 19:43:58 JST、利用者が既存TESTコードを更新し、177,728バイト・SHA-256 `f6ee019ac3385c3d0c1ac975c9645c2789a66d23fa20f5b1efd6c24b337018f3` の読戻しと既存binding保持が成功。公開HTML／JSも準備ファイルと完全一致した。利用者がmainのTEST同期参照を固定コードcommitへ変更し、19:46:35 JSTに[手動同期](https://github.com/haman-360/pubmed_abstract/actions/runs/42205233733)を実行。19:51:45 JSTに全step成功し、100配信・824論文・1,220掲載を271要求で取り込み、公開前後の全表読戻し一致・元台帳への書込なしを確認した。古い未確認28配信は次回以降の補充待ち。利用者がMacのアプリ再読込みで配信100件を確認した。
+
+続いて利用者がMac用 `.command` でTXTを出力し、生成ファイルを共有した。34件・299バイトで、数字のみ1行1件・重複なし・数値順・UTF-8/BOMなし・末尾改行・0600を直接検証した。実Google本人認証からクラウドの希望PMIDを取得してMacへ保存する経路まで確認できた。PMID本文やメモ・認証情報はGitへ保存しない。今回の新仕様についてiPad実機での再確認、実運用での完了後の次回補充、クラウドCPUの継続測定は未実施。
 
 ### 利用者による反映手順
 
-この変更ではdeploy・クラウド同期・main workflow更新を実行していない。既存TESTは従来コードで動作中。順序は次の通り。
+以下の手順は2026-11-06に利用者の手動操作で完了した。エージェントはdeployを実行せず、結果の読取確認だけを行った。再反映時も順序は次の通り。
 
 1. `npm run build:online-test` で準備済みbundleを確認し、利用者が従来の `python3 deploy_cloud_test.py --update-code-only` で既存TESTだけを更新する。新規DBやスキーマ変更は不要。
-2. mainの `.github/workflows/pmid-ledger-test.yml` に、固定コードcommit `dd7e0c1f6f8248337d3e1fb5b5f9459ae474e1c7` へのcheckout参照を反映する。現在のremote作業branchに、このrefを設定したレビュー用workflowを置いた。mainの既存スケジュールは変更していない。**コード反映より先にworkflowを切り替えない。**
+2. mainの `.github/workflows/pmid-ledger-test.yml` に、固定コードcommit `dd7e0c1f6f8248337d3e1fb5b5f9459ae474e1c7` へのcheckout参照を反映する。利用者がmain commit `a9a2ff71cabae9354fe2e6b60ae90fd2a655a229` でrefの1行を更新済み。作業branchの控えもmainの実設定に一致させた。既存スケジュール・workflow名・有効化変数・Secretsは保持。**コード反映より先にworkflowを切り替えない。**
 3. TEST同期workflowを手動実行するか次回定期実行を待つ。成功後、アプリを再読み込みし、過去の未確認が表示されることと保存済みメモを確認する。
 4. Mac用 `.command` で希望PMIDを出力する。
 
