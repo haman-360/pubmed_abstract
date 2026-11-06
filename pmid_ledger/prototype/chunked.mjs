@@ -28,11 +28,11 @@ export async function manifestFor(tables){
 }
 export function validateManifest(m,{historical=false}={}){
   requireThat(m?.format===FORMAT&&m.tables&&Object.keys(m.tables).length===metadataNames.length&&bytes(m)<=CHUNK_BYTES,'invalid_manifest');
-  requireThat(m.data_source===undefined||m.data_source==='real-copy','invalid_data_source');
-  if(m.data_source==='real-copy'){
+  requireThat(m.data_source===undefined||['real-copy','recent-copy'].includes(m.data_source),'invalid_data_source');
+  if(['real-copy','recent-copy'].includes(m.data_source)){
     const w=m.trial_window,recent=browseWindow();
     requireThat(w&&/^\d{4}-\d{2}-\d{2}$/.test(w.from)&&/^\d{4}-\d{2}-\d{2}$/.test(w.through)&&w.from<=w.through&&(historical||(w.from>=recent.from&&w.through<=recent.through)),'recent_trial_window_required');
-    requireThat(m.tables.Papers.count>0&&m.tables.Papers.count<=50&&m.tables.Issues.count>0&&m.tables.Issues.count<=3,'small_trial_required');
+    requireThat(m.tables.Papers.count>0&&m.tables.Papers.count<=(m.data_source==='recent-copy'?5000:50)&&m.tables.Issues.count>0&&m.tables.Issues.count<=(m.data_source==='recent-copy'?500:3),'small_trial_required');
   }
   for(const name of metadataNames){const spec=m.tables[name];
     requireThat(spec&&JSON.stringify(spec.header)===JSON.stringify(headers[name])&&Number.isSafeInteger(spec.count)&&spec.count>=0&&Array.isArray(spec.chunks),'invalid_manifest_table');
@@ -44,7 +44,7 @@ export function validateManifest(m,{historical=false}={}){
   }
 }
 export async function begin(db,body){
-  requireThat(/^[a-f0-9]{64}$/.test(body.generation??'')&&((body.synthetic===true&&body.real_copy===undefined&&body.manifest?.data_source===undefined)||(body.real_copy===true&&body.synthetic===undefined&&body.manifest?.data_source==='real-copy')),'explicit_test_data_source_required');
+  requireThat(/^[a-f0-9]{64}$/.test(body.generation??'')&&((body.synthetic===true&&body.real_copy===undefined&&body.recent_copy===undefined&&body.manifest?.data_source===undefined)||(body.real_copy===true&&body.synthetic===undefined&&body.recent_copy===undefined&&body.manifest?.data_source==='real-copy')||(body.recent_copy===true&&body.synthetic===undefined&&body.real_copy===undefined&&body.manifest?.data_source==='recent-copy')),'explicit_test_data_source_required');
   validateManifest(body.manifest);const digest=await hash(body.manifest);
   await db.batch([
     db.prepare('INSERT INTO generations VALUES(?,?,?) ON CONFLICT(id) DO NOTHING').bind(body.generation,digest,JSON.stringify(body.manifest)),
@@ -155,12 +155,12 @@ export async function finish(db,body){
     (SELECT count(DISTINCT entity_key) FROM metadata_records WHERE generation=? AND table_name='Texts') texts,
     (SELECT count(DISTINCT parent_key) FROM metadata_records WHERE generation=? AND table_name='IssueCandidates') candidate_groups`).bind(g,g,g,g).first();
   requireThat(!indexes.bad_text&&!indexes.bad_candidates&&indexes.texts===manifest.tables.TextRows.count&&indexes.candidate_groups===manifest.tables.IssueCandidateRows.count,'metadata_indexes_incomplete',409);
-  if(manifest.data_source==='real-copy'){
+  if(['real-copy','recent-copy'].includes(manifest.data_source)){
     const safety=await db.prepare(`SELECT
-      EXISTS(SELECT 1 FROM papers a JOIN papers b ON a.pmid=b.pmid WHERE a.generation=? AND b.generation<>a.generation) paper_collision,
-      EXISTS(SELECT 1 FROM issues a JOIN issues b ON a.issue_key=b.issue_key WHERE a.generation=? AND b.generation<>a.generation) issue_collision,
+      EXISTS(SELECT 1 FROM papers a JOIN papers b ON a.pmid=b.pmid JOIN generations z ON z.id=b.generation WHERE a.generation=? AND b.generation<>a.generation AND ((?='real-copy' AND json_extract(z.tables_json,'$.data_source') IS NOT 'recent-copy') OR json_extract(z.tables_json,'$.data_source') IS NULL)) paper_collision,
+      EXISTS(SELECT 1 FROM issues a JOIN issues b ON a.issue_key=b.issue_key JOIN generations z ON z.id=b.generation WHERE a.generation=? AND b.generation<>a.generation AND ((?='real-copy' AND json_extract(z.tables_json,'$.data_source') IS NOT 'recent-copy') OR json_extract(z.tables_json,'$.data_source') IS NULL)) issue_collision,
       EXISTS(SELECT 1 FROM metadata_records WHERE generation=? AND table_name='Issues' AND
-        (json_extract(row_json,'$[3]')<? OR json_extract(row_json,'$[3]')>?)) outside_window`).bind(g,g,g,manifest.trial_window.from,manifest.trial_window.through).first();
+        (json_extract(row_json,'$[3]')<? OR json_extract(row_json,'$[3]')>?)) outside_window`).bind(g,manifest.data_source,g,manifest.data_source,g,manifest.trial_window.from,manifest.trial_window.through).first();
     requireThat(!safety.paper_collision&&!safety.issue_collision&&!safety.outside_window,'trial_collision_or_date_mismatch',409);
   }
   await db.prepare('INSERT INTO generation_ready VALUES(?,?) ON CONFLICT(generation) DO NOTHING').bind(g,root).run();

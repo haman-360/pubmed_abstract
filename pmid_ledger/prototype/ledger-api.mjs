@@ -1,4 +1,5 @@
 // Shared D1 operations. Entrypoints must authenticate before calling runLedgerAction.
+import {seedMissing,recentStatus} from './recent-seeds.mjs';
 import {exportBackup} from './backup-data.mjs';
 import {metadataNames,requireThat,hash,records,validKey,projectionStatements} from './metadata.mjs';
 import {operationRequest,statuses} from './operations.mjs';
@@ -97,12 +98,13 @@ async function publish(db, body) {
   requireThat(typeof body.generation === 'string' && (body.expected_revision === null || typeof body.expected_revision === 'string'), 'invalid_publish');
   const sources=(await db.prepare(`SELECT id,json_extract(tables_json,'$.data_source') source FROM generations
     WHERE id=? OR id=(SELECT generation FROM settings WHERE id=1)`).bind(body.generation).all()).results;
-  const guarded=sources.some(r=>r.source==='real-copy');
+  const recent=sources.length>0&&sources.every(r=>r.source==='recent-copy');
+  const guarded=!recent&&sources.some(r=>['real-copy','recent-copy'].includes(r.source));
   requireThat(!guarded||(typeof body.expected_revision==='string'&&Number.isSafeInteger(body.backup_cutoff)&&body.backup_cutoff>=0),'verified_backup_boundary_required',409);
   await db.batch([
-    db.prepare(`INSERT INTO publish_guard VALUES((SELECT CASE WHEN (generation IS ? OR generation=?) AND (NOT EXISTS(SELECT 1 FROM generations z WHERE (z.id=settings.generation OR z.id=?) AND json_extract(z.tables_json,'$.data_source')='real-copy') OR (SELECT COALESCE(max(rowid),0) FROM operations)=?) AND EXISTS(
+    db.prepare(`INSERT INTO publish_guard VALUES((SELECT CASE WHEN (generation IS ? OR generation=?) AND (NOT EXISTS(SELECT 1 FROM generations z WHERE (z.id=settings.generation OR z.id=?) AND json_extract(z.tables_json,'$.data_source') IN ('real-copy','recent-copy')) OR NOT EXISTS(SELECT 1 FROM generations z WHERE (z.id=settings.generation OR z.id=?) AND json_extract(z.tables_json,'$.data_source') IS NOT 'recent-copy') OR (SELECT COALESCE(max(rowid),0) FROM operations)=?) AND EXISTS(
       SELECT 1 FROM generations g WHERE id=? AND (json_extract(g.tables_json,'$.format') IS NOT 'LOCAL_D1_CHUNKS_V2'
-      OR EXISTS(SELECT 1 FROM generation_ready r WHERE r.generation=g.id AND r.manifest_hash=g.payload_hash))) THEN 1 ELSE 0 END FROM settings WHERE id=1))`).bind(body.expected_revision, body.generation,body.generation,Number.isSafeInteger(body.backup_cutoff)&&body.backup_cutoff>=0?body.backup_cutoff:null, body.generation),
+      OR EXISTS(SELECT 1 FROM generation_ready r WHERE r.generation=g.id AND r.manifest_hash=g.payload_hash))) THEN 1 ELSE 0 END FROM settings WHERE id=1))`).bind(body.expected_revision, body.generation,body.generation,body.generation,Number.isSafeInteger(body.backup_cutoff)&&body.backup_cutoff>=0?body.backup_cutoff:null, body.generation),
     db.prepare('UPDATE settings SET generation=? WHERE id=1').bind(body.generation),
     db.prepare('DELETE FROM publish_guard')
   ]);
@@ -138,6 +140,9 @@ export async function runLedgerAction(db,path,body,{now=new Date()}={}) {
     value={revision:row.revision,payload_hash:row.payload_hash,tables:stored?.format===FORMAT?null:stored,
       ...(stored?.format===FORMAT?{manifest:stored}:{})};
   }
+  else if(path==='/sync/recentStatus')value=await recentStatus(db);
+  else if(path==='/sync/seedReviews')value=await seedMissing(db,body,'reviews');
+  else if(path==='/sync/seedIssues')value=await seedMissing(db,body,'issue');
   else if(path==='/sync/begin')value=await begin(db,body);
   else if(path==='/sync/chunk')value=await upload(db,body);
   else if(path==='/sync/build')value=await buildPage(db,body);

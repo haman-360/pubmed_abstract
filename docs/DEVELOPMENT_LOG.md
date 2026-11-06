@@ -158,3 +158,15 @@
 - コピー・Mac保存後のTESTも追加バックアップ。354,742バイト、2完了世代・14チャンク・メタデータ554行・操作28件・操作ID29件・論文履歴54件・配信履歴4件を別ローカルD1へ復元・再出力し、chain一致を確認。元の事前バックアップと旧架空世代も保持。前後archiveの0600とファイルSHA-256を再確認。planのbaseline_backupから元バックアップを参照できる。集計記録もGit対象外private内に保存し、実データ・token・本人UIDをGitに含めない。
 - 更新後の静的アプリGETは200、本人APIの未認証・偽Bearerは403 identity_denied、Accessなし同期APIは403を確認。保守画面はサインアウトして閉じ、今回の8791サーバーだけを停止。オンラインのMacタブは利用用に残し、以前からの診断サーバー等は維持した。
 - 今回は検証済み実装の運用・実データ確認・記録更新だけ。前段のNode82件・Python39件は成功済みで、実装変更がないため再実行しない。diff／statusとGit除外を確認して記録をcommit・pushする。追加費用0円、本番GAS・実台帳・既存Pages・配信workflow・課金設定の変更なし。clasp push・GAS deployは未実施。公開反映は承認済みの既存TEST Workerのみ。通常の自動同期・本番移行・オフラインは今回の対象外。
+
+
+### 2026-11-06 — 直近2か月の全件取込み・TEST定期同期の実装準備
+
+- 利用者から直近2か月の全配信／全論文の取込みと、TESTメモ・確認状態を保持する定期同期を指示された。実台帳をGoogle Drive／Sheetsの読取だけで再確認し、9月6日〜11月6日の70配信・486論文・537掲載を抽出。秘密設定を含むSettingsは読まず、実データとplanはGit対象外0600に保存した。
+- 既存の土曜配信は土曜05:00 JST、台帳更新は毎時43分に設定されていることを確認。既存workflow・配信処理・GASは変更しない。別のTEST専用workflowを毎日12:23／21:23 JSTに実行する方針。処理完了後に実台帳へ現れたデータを次の実行で取得する。公開repoの標準Ubuntu runnerのみを使い、private化された場合はjobを開始しない。artifact・Actions cacheは追加しない。
+- `recent_data.py`／`recent_source.py`／`recent_sync.py` を追加。Googleの既存認証で指定実台帳のGETだけを使い、読取前後のDrive versionが違えば停止。配信日から暦で2か月の配信全体を選び、全7表を再構築。最大500配信・5,000論文・1回30,000見積書込・既存メタデータ込み64MBの停止ガードを設ける。今回の見積は18,953書込、32KiBを目安とする46チャンク。上限を超えても課金や履歴削除へ切り替えない。
+- `recent-copy` の明示入口を追加し、元の少量コピーと重複するPMID／配信キーを継承できるようにした。初回移行は復元検証済みbackupの世代／cutoffが必須。以降の同モード定期更新は世代CASで公開し、途中の本人保存はそのまま保持する。公開前後の全表読戻しが必要。データが同一なら世代を増やさない。通常の架空syncが実コピーへ混ざる経路は引き続き拒否する。
+- 同期署名専用 `seedReviews`／`seedIssues` を追加。元台帳の状態はTESTにまだ現在状態がない場合だけ、新しいTEST履歴として初期化する。SQL内の不存在条件と期待版0で既存メモ／状態を上書きしない。未確認が残れば元台帳の確認済み状態で強制完了しない。元台帳への書戻しや新しいAI／PubMed処理はない。
+- GitHub設定helperは既存Git credential helperをメモリ内だけで使い、既存Google source secretの名前・GitHub公開鍵だけを読取確認。非表示入力されたTEST同期用2値をPyNaClのsealed boxで暗号化してTEST専用Actions secretへ送る設計。Worker更新用API tokenはGitHubへ保存しない。PyNaCl 1.6.0を公式PyPIからprivate作業領域へ導入した。新しいworkflowは検証済みコードのcommitを固定し、mainへそのworkflowだけを追加する予定で、既存配信workflowは保持する。
+- Node全83件・Python全43件が成功。定期更新中の本人保存、source状態の重複投入、元メモ保持、世代をまたいだbackup復元、原本へのGET限定・version変更検出、無料runner／レビュー済workflowの事前条件と暗号化payloadの範囲を確認。実際のTEST backupをローカル一時D1へ復元し、実データ全件の同期172要求・同一データ再同期16追加要求・31論文状態／4配信状態の完全保持・復元一致も成功した。最初のローカル一時接続はECONNRESETで終了したが、再実行は全段階成功。実データをGitやクラウドartifactへ出力しない。
+- オンラインbundle準備成功（133,963バイト）。現時点ではTEST Worker反映・70配信のクラウド取込み・Actions有効化は未実施。利用者の非表示入力を使って反映・検証する段階。本番GAS・実台帳・既存Pages・既存配信workflow・課金設定は変更なし。clasp push・GAS deployなし。

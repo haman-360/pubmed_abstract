@@ -44,7 +44,7 @@ class JsonSyncTransport:
         return "sync_http_" + str(error.code)
 
     def post(self, action, value):
-        if action not in ("status", "begin", "chunk", "build", "finish", "read", "publish"):
+        if action not in ("status", "begin", "chunk", "build", "finish", "read", "publish", "recentStatus", "seedReviews", "seedIssues"):
             raise SyncError("Metadata sync action required")
         body = canonical(value).encode("utf-8")
         if len(body) > MAX_BYTES:
@@ -97,7 +97,7 @@ def check_fixture(value):
     return from_tables(value["tables"])
 
 
-def chunk_plan(tables):
+def chunk_plan(tables, chunk_bytes=CHUNK_BYTES):
     manifest = {"format": FORMAT, "tables": {}}
     chunks = []
     for name, table in tables.items():
@@ -117,7 +117,7 @@ def chunk_plan(tables):
             length = len(canonical(row).encode("utf-8"))
             if length > ROW_BYTES:
                 raise SyncError("metadata_row_too_large")
-            if rows and size + length + 1 > CHUNK_BYTES:
+            if rows and size + length + 1 > chunk_bytes:
                 flush()
             rows.append(row)
             size += length + (1 if len(rows) > 1 else 0)
@@ -176,7 +176,7 @@ def sync_metadata(incoming, transport, stop_after_stage=False, write_budget=DEFA
     payload = check_fixture(incoming)
     initial_manifest, _ = chunk_plan(incoming["tables"])
     current = transport.post("status", {})
-    if current.get("manifest", {}).get("data_source") == "real-copy":
+    if current.get("manifest", {}).get("data_source") in ("real-copy", "recent-copy"):
         raise SyncError("real_trial_active_synthetic_merge_forbidden")
     expected = current["revision"]
     def result(changed):

@@ -32,7 +32,7 @@ export async function exportBackup(db,{format='LOCAL_SYNTHETIC_D1_BACKUP_V2'}={}
   const selects=selected.map(n=>`(SELECT json_group_array(json_array(${backupColumns[n].join(',')})) FROM ${n}) AS ${n}`);
   const row=await db.prepare(`SELECT generation AS active_revision,${selects.join(',')} FROM settings WHERE id=1`).first();
   const tables=Object.fromEntries(selected.map(n=>[n,JSON.parse(row[n]).map(r=>[stable(r),r]).sort((a,b)=>a[0]<b[0]?-1:a[0]>b[0]?1:0).map(x=>x[1])]));
-  const real=tables.generations.some(g=>JSON.parse(g[2]).data_source==='real-copy');
+  const real=tables.generations.some(g=>['real-copy','recent-copy'].includes(JSON.parse(g[2]).data_source));
   const payload={format,synthetic:!real,...(real?{test_only:true}:{}),active_revision:row.active_revision,tables};
   return {payload,sha256:await digestBackup(payload)};
 }

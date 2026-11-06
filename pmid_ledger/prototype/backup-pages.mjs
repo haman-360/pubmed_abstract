@@ -14,7 +14,7 @@ export function validateSnapshot(s){
   requireThat(s.counts&&Object.keys(sourceColumns).every(n=>Number.isSafeInteger(s.counts[n])&&s.counts[n]>=0),'invalid_backup_counts');
 }
 export async function startBackup(db){
-  const row=await db.prepare(`SELECT s.generation active_revision,(SELECT count(*) FROM generations WHERE json_extract(tables_json,'$.data_source')='real-copy') real_copies,(SELECT COALESCE(max(rowid),0) FROM operations) cutoff,
+  const row=await db.prepare(`SELECT s.generation active_revision,(SELECT count(*) FROM generations WHERE json_extract(tables_json,'$.data_source') IN ('real-copy','recent-copy')) real_copies,(SELECT COALESCE(max(rowid),0) FROM operations) cutoff,
     (SELECT json_group_array(id) FROM (SELECT g.id FROM generations g WHERE json_extract(g.tables_json,'$.format') IS NOT 'LOCAL_D1_CHUNKS_V2'
     OR EXISTS(SELECT 1 FROM generation_ready r WHERE r.generation=g.id AND r.manifest_hash=g.payload_hash) ORDER BY g.id)) generations FROM settings s WHERE id=1`).first();
   const s={format:STREAM_FORMAT,synthetic:row.real_copies===0,...(row.real_copies?{test_only:true}:{}),active_revision:row.active_revision,cutoff:row.cutoff,generations:JSON.parse(row.generations),columns:sourceColumns,counts:{}};

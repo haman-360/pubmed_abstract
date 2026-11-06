@@ -336,3 +336,17 @@ POST JSON。閲覧・保存は`Authorization: Bearer local-synthetic-owner`、�
 保守画面はlocalhost固定・Host/Origin検証・署名済Google本人UID一致が必須。tokenはリクエスト中のメモリ内のみ。原本のバックアップ、実コピー、plan、検証記録、復旧bundleは全てGit対象外のprivate内に置く。バックアップ後に実コピーを含む場合は `synthetic: false, test_only: true` と明示し、従来の架空バックアップも復元できる。新しいクラウド資源・課金設定・Access・Firebase設定・GAS・Pages・既存配信workflowは変更しない。
 
 今回の対象は「読み忘れ候補」3分冊。この配信種別の元データにはAI評価30件と配信文書リンク30件がある一方、`summary_ja` は空である。画面でも本文未登録を表示し、「配信文書を開く」への導線を保持する。本文の補完・AI生成は行わない。確認用の手動メモはTEST側の先頭論文だけに追加し、元台帳へ書き戻していない。確認後は保守画面をサインアウトし、8791サーバーを終了。オンライン台帳のMacタブは利用用に残す。
+
+## 直近2か月全件の定期同期
+
+3配信の少量試験から、配信日が直近2か月に入る全配信へ広げる実装を追加した。2026-11-06の対象は70配信・486論文・537掲載。現時点ではローカル検証済み・クラウド反映前。実台帳を読取だけで参照し、Google Drive versionが読取中に変われば停止する。既存の土曜05:00 JSTの配信と毎時の実台帳更新は変更しない。
+
+`recent_sync.py` の専用経路でTESTへ不変世代を追加し、全7表の公開前後の読戻し後に切り替える。既存TESTのメモ・確認状態・履歴は保持し、元台帳の状態はTESTに状態がない論文／配信だけ初期化する。初回移行は復元検証済みbackupが必須。定期更新時は本人の同時保存を保持し、古い画面の未保存編集には再取得を求める。実台帳への書戻し・原本の変更は行わない。同一メタデータなら新世代やメタデータ書込を増やさない。
+
+上限は500配信・5,000論文・1回30,000見積書込、保存済みメタデータと今回入力を合わせ64MB。今回は18,953見積書込・46チャンク。過去の履歴や世代を勝手に削除せず、無料枠・安全上限・資格情報の期限・通信エラーでは停止する。既存の同期用資格情報の期限は延長しない。これらの上限はアカウント全体の無料残枠を保証するものではない。
+
+定期実行は独立した `pmid-ledger-test.yml` を毎日12:23／21:23 JST（UTC 03:23／12:23）に設定する。実際の起動にはGitHub側の遅延があり、配信完了後に実台帳へ載ったデータを次回実行で取得する。`main` にはこの新しいworkflowだけを追加し、取得するコードは検証済みcommitへ固定する。既存workflowや本番コードをまとめてmergeしない。新しいTEST有効化変数がtrueになるまではjobを起動しない。
+
+導入用CLIは `python3 pmid_ledger/prototype/recent_sync.py --update-and-sync --configure-actions`。更新用API token、同期用Client ID、同じSecretを非表示入力する。更新用API tokenは保存しない。同期用2値だけをGitHub公開鍵で暗号化して `PMID_TEST_ACCESS_CLIENT_ID`／`PMID_TEST_ACCESS_CLIENT_SECRET` に登録し、既存 `GOOGLE_AUTHORIZED_USER_JSON`／`PMID_LEDGER_SHEET_ID` はそのまま参照する。TEST専用有効化変数を設定し、手動の初回Actionsも要求する。GitHubの既存認証はGit credential helper経由でメモリ内だけに取り込み、チャット・ログ・ファイルへ出力しない。
+
+公開repoの標準Ubuntu runnerだけを許可し、private化されるとjobを停止する。大きなrunner、Actions artifact、Actions cache、AI APIを使わない。[GitHubの標準runner料金](https://docs.github.com/en/billing/concepts/product-billing/github-actions)、[scheduleの条件](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)、[D1無料枠](https://developers.cloudflare.com/d1/platform/pricing/)を確認した。課金設定は変更しない。
