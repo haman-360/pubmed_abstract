@@ -1,6 +1,6 @@
 # Workers＋D1 ローカル試作
 
-**追加費用0円・架空データ専用。** Miniflare 4のworkerd／D1 bindingで動作する。通常の試作ではCloudflareアカウント・APIキー・Google認証・OpenAI APIは不要。別途、本人のFirebase無料プロジェクトを使うログイン専用試験と、未公開の[クラウドTEST用API](#クラウドtest用apiの準備)を追加した。クラウドへの作成・公開・課金は行っていない。
+**追加費用0円・架空データ専用。** Miniflare 4のworkerd／D1 bindingで動作する。通常の試作ではCloudflareアカウント・APIキー・Google認証・OpenAI APIは不要。別途、既存Firebase無料プロジェクトと認証付き[クラウドTEST用API](#クラウドtest用apiの準備)を使う試験もある。既存TESTへ架空120件を同期し、本人Google認証で保存・読戻し・再送を確認済み。課金設定・本番GAS・実台帳・既存Pagesは変更していない。方式採用はまだ未決定。
 
 ## 起動
 
@@ -142,7 +142,7 @@ python3 -m unittest pmid_ledger.prototype.tests.test_sync_local pmid_ledger.prot
 
 クラウド接続は、TEST公開・Access設定後に対象URLを明示し、`LEDGER_TEST_ACCESS_CLIENT_ID`／`LEDGER_TEST_ACCESS_CLIENT_SECRET`をプロセス環境から渡す。実値をコマンド履歴・Git・ログ・チャットへ貼らない。既定の動作は同期状態の読取のみ。`--sync-synthetic`と、管理画面で確認した残枠以内の`--write-budget`（64〜80,000）の両方を指定した時だけ転送する。これは1回の見積予算で、日次累積や他用途の消費を自動管理しない。redirect・proxy・自動再送はなく、429／応答不明では停止する。中断後は残枠を再確認してから同じfixtureで再開する。
 
-2026-11-06職場Macでの実接続：台帳APIのアップロード・コード読戻し一致を確認。既存Worker全体のService Authを残し、TEST本番ホストの`/api/*`だけをホスト名AccessアプリのBypassでWorkerのFirebase本人認証へ委ねた。本人APIは未認証・偽token・二重ヘッダーで`identity_denied`、`/sync/status`・ルート・`/api`境界は既存Accessで403になることを確認。同期は有効化・設定読戻し済みで、実Access署名付きstatus読取も成功。本人の実Google tokenによるクラウド保存・架空120件のクラウド同期は未実施。プレビューも既存Worker全体の保護対象のまま。
+2026-11-06職場Macでの実接続：台帳APIのアップロード・コード読戻し一致を確認。既存Worker全体のService Authを残し、TEST本番ホストの`/api/*`だけをホスト名AccessアプリのBypassでWorkerのFirebase本人認証へ委ねた。本人APIは未認証・偽token・二重ヘッダーで`identity_denied`、`/sync/status`・ルート・`/api`境界は既存Accessで403になることを確認。実Access署名付き同期で120件・6配信・141掲載・7チャンクを転送し、全チャンク読戻しが成功。実Google本人認証で架空1件の保存・読戻し・再送、認証の再確認・サインアウトも成功した。プレビューも既存Worker全体の保護対象のまま。CPUの上位集計値には10msを超えるものがあり、無料プラン成立の確定とiPad実機往復は今後の検証。
 
 `workers.dev`はPython標準`urllib`のUser-AgentをCloudflareの`1010`で拒否する場合があるため、同期CLIは自身を`PMIDLedgerTest/1.0`と明示する。実TESTでこの識別子による本人API到達と未認証拒否を確認した。ブラウザーを偽装せず、Browser Integrity Checkも変更しない。403だけでAccess認証の検証成功と判断せず、WorkerのJSONエラーとCloudflare側の拒否を区別する。[公式の1010説明](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1010/)
 
@@ -178,7 +178,22 @@ python3 pmid_ledger/prototype/cloud_test_session.py --use-existing-worker --sync
 
 読取だけの結果は`.cloud-test/sync-diagnostic.json`へ0600で保存する。HTTPエラー時はステータス・固定分類（`worker_identity_denied`、`worker_configuration_invalid`、`access_or_edge`、`cloudflare_1010`、`other_json`、`unknown`）・失敗action・要求数だけを追加し、応答本文・ヘッダー・資格情報を出力しない。分類は403の発生箇所を切り分ける手掛かりで、署名拒否の詳細原因を特定した証拠ではない。認証条件の緩和や自動再送は行わない。
 
-追加7件を含むNode.js 65件とPython専用13件が成功。クラウド用bundleをworkerd＋一時D1で動かし、本人役の保存・再送、同期役の分割公開・手動履歴保持、他UID・偽認証・期限・二重ヘッダー・Origin・容量超過の拒否を確認した。公開鍵は架空応答に差し替え、実Accessへの接続はしていない。クラウド用ログイン画面、実token保存、FreeのCPU、Mac／iPad往復はこれから。外部公開前に、新規TESTの対象と認証・公開設定を確定する。
+### Google本人認証でクラウドTESTの保存を確認する
+
+職場Macでは既存Firebaseの公開Web設定と固定済み本人UIDを`ledger_private/firebase-web.json`へ0600で復元済み。新しいFirebaseプロジェクト・サービスアカウント秘密鍵・API tokenは不要。resources／owner設定とのproject・UID一致、および架空120件の全チャンク読戻し記録が起動条件になる。
+
+```bash
+cd pmid_ledger/prototype
+npm run login:cloud-test
+```
+
+同じMacの`http://localhost:8789/`でGoogleログインする。通常の8787／8788番や保存DBは変更せず、8789番はlocalhost限定・永続化しない一時DBで起動し、台帳の操作先だけを既存のクラウドTESTへ限定する。ローカルとクラウドの両方で署名・発行元・期限・固定本人UIDを検証する。最初のログイン者を登録せず、別UIDや同期経路を許可しない。認証情報はメモリだけで扱い、ページ再読込やサインアウトで消去する。
+
+「架空論文1件で保存を確認」は固定fixtureのPMID 1を入手希望にし、固定のテスト用メモを保存する。同じ操作IDを再送して履歴を増やさず、版数・状態・メモを読み戻し、本文取得も確かめる。応答不明時は同じ画面で同じ操作を再確認でき、自動再送はしない。proxyは4つの本人API・固定の配信／論文／メモだけを許可し、他の論文・任意メモ・他host・redirect・同期・登録経路は拒否する。通常のローカル仮認証へ置き換えてクラウドへ送る処理はない。
+
+実試験ではクラウドの6配信取得、保存＋読戻し＋再送＋本文取得が成功し、D1の保存操作1・論文履歴1・版数1を確認した。画面の確認全体は2.78秒（1回、CPU時間やGASとの同条件比較ではない）。認証の強制更新後の取得とサインアウトも確認済み。画面はサインアウト状態で残してある。iPadからの直接利用やアプリ化は別の段階で、今回の画面はMac内の検証専用。
+
+クラウドAPI準備時はNode.js 65件とPython専用13件が成功し、公開鍵を架空応答に差し替えたworkerd＋一時D1で権限分離と保存を確認した。現在はNode.js 71件まで拡充し、上記の実Access同期・実Google本人保存も確認済み。FreeのCPU適合とiPad実機往復は未確認で、方式採用は保留している。
 
 ## Python同期と負荷試験
 

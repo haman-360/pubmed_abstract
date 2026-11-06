@@ -2,6 +2,7 @@
 import {createOwnerVerifier} from './identity.mjs';
 import {createOwnerKeySource} from './identity-keys.mjs';
 import ledger from './worker.mjs';
+import {cloudLoginForward} from './cloud-login-proxy.mjs';
 const ownerKeys=createOwnerKeySource();
 const jsonHeaders={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};
 const json=(value,status=200)=>new Response(JSON.stringify(value),{status,headers:jsonHeaders});
@@ -28,6 +29,7 @@ export default {
     }
     if(settings.ownerUid===null)return json({error:'owner_not_configured'},403);
     try{await verifier.verify(token);}catch{return json({error:'identity_denied'},403);}
+    if(env.LOCAL_CLOUD_ORIGIN)return cloudLoginForward(request,env.LOCAL_CLOUD_ORIGIN);
     const headers=new Headers(request.headers);headers.set('Authorization','Bearer local-synthetic-owner');headers.delete('X-Local-Fault');
     return ledger.fetch(new Request(request,{headers}),env);
   }
