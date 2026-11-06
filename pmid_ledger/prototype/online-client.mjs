@@ -6,7 +6,7 @@ showLaunchMode();launchMedia?.addEventListener?.('change',showLaunchMode);
 const statusLabels={unreviewed:'未確認',reviewed_no_fulltext:'原本不要',want_fulltext:'入手希望'},legacyLabels={fulltext_obtained:'原文入手済み未読',read:'読了'};
 const issueLabels={unreviewed:'未確認',in_progress:'確認中',completed:'確認済み'};
 const issueClasses={unreviewed:'unreviewed',in_progress:'in-progress',completed:'complete'};
-let sdk,auth,user=null,epoch=0,view=0,busy=false,loginPending=false,manualSignout=false,key=null,current=null,offset=0,total=0,issueOffset=0,scope='recent',month='';
+let sdk,auth,user=null,epoch=0,view=0,busy=false,loginPending=false,manualSignout=false,key=null,current=null,offset=0,total=0,issueOffset=0;
 function message(text,error=false){$('message').textContent=text;$('message').classList.toggle('error',error);}
 function controls(){
   $('login').disabled=!auth||!!user||busy||loginPending;$('logout').hidden=!user;$('logout').disabled=false;
@@ -34,7 +34,7 @@ function pagination(data){offset=data.offset;total=data.total;$('page').textCont
 function renderIssues(data){
   $('data-source').textContent=['real-copy','recent-copy'].includes(data.data_source)?'試用環境 · 実データのコピー':'試用環境 · 架空データ';
   $('heading').textContent='配信一覧';$('breadcrumb').textContent='研究台帳 / 配信';
-  $('description').textContent=data.window.scope==='recent'?`${data.window.from} 〜 ${data.window.through} · 直近2か月`:data.window.scope==='unknown'?'配信日が不明なもの':`${month}の配信`;
+  $('description').textContent='未確認・確認中（全期間）を新しい順に表示します。'+(data.deferred_issues?' 確認が進むと、さらに過去の未確認が次回の定期同期で追加されます。':'');
   $('list').className='issue-grid';$('list').replaceChildren();counters({'配信':data.total});
   for(const issue of data.items){
     const card=node('article',undefined,'issue-card'),meta=node('div',undefined,'issue-meta');
@@ -42,7 +42,7 @@ function renderIssues(data){
     const button=node('button','論文を確認する');button.onclick=()=>{key=issue.issue_key;offset=0;$('query').value='';edits.reset();load();};
     card.append(meta,node('h2',issue.topic),node('p',issue.issue_id,'muted'),node('p',`${issue.total}論文 · 未確認 ${issue.unreviewed}`,'counts'),button);$('list').append(card);
   }
-  if(!data.items.length)$('list').append(node('p','この期間に配信はありません。過去の月を指定して確認できます。','empty'));
+  if(!data.items.length)$('list').append(node('p',data.deferred_issues?'表示中の配信は確認済みです。次回の定期同期で過去の未確認が追加されます。':'取り込み済みの配信に未確認・確認中はありません。','empty'));
 }
 function renderPapers(data){
   edits.observe(data);current=data;$('heading').textContent=data.issue.topic;$('breadcrumb').textContent='研究台帳 / 論文';$('description').textContent=`${data.issue.delivered_date||'配信日不明'} · ${data.issue.issue_id}`;
@@ -75,9 +75,9 @@ function renderPapers(data){
 async function load(){
   const tag=epoch,serial=++view;busy=true;controls();
   try{
-    const data=await rpc(key?'listIssuePapers':'listIssues',key?{issue_key:key,offset,query:$('query').value}:{scope,month,offset:issueOffset});
+    const data=await rpc(key?'listIssuePapers':'listIssues',key?{issue_key:key,offset,query:$('query').value}:{scope:'pending',offset:issueOffset});
     if(tag!==epoch||serial!==view)return;
-    $('workspace').hidden=false;$('welcome').hidden=true;$('back').hidden=!key;$('search').hidden=!key;$('period').hidden=!!key;$('savebar').hidden=!key;
+    $('workspace').hidden=false;$('welcome').hidden=true;$('back').hidden=!key;$('search').hidden=!key;$('savebar').hidden=!key;
     if(key)renderPapers(data);else{renderIssues(data);issueOffset=data.offset;current=null;}pagination(data);document.body.classList.toggle('editing',!!key);window.scrollTo({top:0,behavior:'auto'});message('');return true;
   }catch(e){if(tag===epoch&&e.message!=='stale')message(describe(e),true);return false;}
   finally{if(tag===epoch){busy=false;controls();}}
@@ -87,7 +87,7 @@ async function submit(kind='save'){
   const tag=epoch;let request;
   try{request=edits.request(kind);if(!request){message('変更はありません。');return;}}catch(e){message(describe(e),true);return;}
   busy=true;controls();message('保存結果を確認しています…');
-  try{const result=await rpc(request.name,request.body);if(tag!==epoch)return;edits.acknowledge(result);const loaded=await load();if(tag===epoch)message(loaded?(result.completed?'保存し、配信を確認済みにしました。':'保存を確認しました。'):'保存は完了しましたが、一覧を再取得できません。接続後に再読み込みしてください。',!loaded);}
+  try{const result=await rpc(request.name,request.body);if(tag!==epoch)return;edits.acknowledge(result);if(result.completed){key=null;current=null;issueOffset=0;offset=0;edits.reset();}const loaded=await load();if(tag===epoch)message(loaded?(result.completed?'保存し、配信を確認済みにしました。':'保存を確認しました。'):'保存は完了しましたが、一覧を再取得できません。接続後に再読み込みしてください。',!loaded);}
   catch(e){if(tag===epoch&&e.message!=='stale')message(`保存結果を確認できません。${describe(e)}\n編集を固定しています。「同じ操作を再確認」で同じ操作ID・内容を送れます。`,true);}
   finally{if(tag===epoch){busy=false;controls();}}
 }
@@ -106,8 +106,6 @@ document.querySelector('.brand').onclick=e=>{e.preventDefault();if(user&&discard
 $('reload').onclick=()=>{if(discard())load();};$('discard').onclick=()=>{if(discard())load();};
 $('previous').onclick=()=>{offset=Math.max(0,offset-(key?50:20));if(!key)issueOffset=offset;load();};
 $('next').onclick=()=>{offset+=key?50:20;if(!key)issueOffset=offset;load();};
-$('scope').onchange=()=>{$('month-label').hidden=$('scope').value!=='month';};
-$('period').onsubmit=e=>{e.preventDefault();if(!discard())return;if($('scope').value==='month'&&!/^\d{4}-(0[1-9]|1[0-2])$/.test($('month').value)){message('対象月を選んでください。',true);return;}scope=$('scope').value;month=$('month').value;issueOffset=0;offset=0;load();};
 $('search').onsubmit=e=>{e.preventDefault();offset=0;load();};$('clear').onclick=()=>{$('query').value='';offset=0;load();};
 $('save').onclick=()=>submit();$('complete').onclick=()=>submit('complete');$('reopen').onclick=()=>{if(confirm('配信を未確認に戻しますか？ 論文の状態とメモは保持します。'))submit('reopen');};$('retry').onclick=()=>submit();
 addEventListener('beforeunload',e=>{if(edits.dirty){e.preventDefault();e.returnValue='';}});

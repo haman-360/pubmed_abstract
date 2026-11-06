@@ -54,7 +54,9 @@ test('cloud denies fake credentials, wrong UID, expired tokens and cross-role re
     ['/api/saveReviews',{'Cf-Access-Jwt-Assertion':service}],['/sync/begin',{Authorization:'Bearer '+valid}],
     ['/sync/begin',{'CF-Access-Client-Id':'synthetic-sync.access','CF-Access-Client-Secret':'synthetic-not-an-assertion'}],
     ['/api/listIssues',{Authorization:'Bearer '+valid,'Cf-Access-Jwt-Assertion':service}],
-    ['/identity/probe',{Authorization:'Bearer '+valid}]]){
+    ['/identity/probe',{Authorization:'Bearer '+valid}],
+    ['/api/wantedPmids',{}],['/api/wantedPmids',{'Cf-Access-Jwt-Assertion':service}],
+    ['/sync/queueState',{Authorization:'Bearer '+valid}]]){
     assert.equal((await call(mf,path,{},headers)).status,403);
   }
   for(const table of ['generations','operations','review_events','issue_events'])assert.equal((await db.prepare('SELECT count(*) n FROM '+table).first()).n,0);

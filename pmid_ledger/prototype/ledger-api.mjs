@@ -6,6 +6,7 @@ import {operationRequest,statuses} from './operations.mjs';
 import {FORMAT,begin,upload,buildPage,finish,readChunk,chunkedDetail,buildIssue} from './chunked.mjs';
 import {startBackup,backupPage} from './backup-pages.mjs';
 import {browseIssues} from './browse.mjs';
+import {wantedPage,queueStatePage} from './wanted.mjs';
 
 export async function backfillLists(db) {
   const {results}=await db.prepare(`SELECT g.id,g.tables_json FROM generations g WHERE EXISTS(
@@ -141,6 +142,7 @@ export async function runLedgerAction(db,path,body,{now=new Date()}={}) {
       ...(stored?.format===FORMAT?{manifest:stored}:{})};
   }
   else if(path==='/sync/recentStatus')value=await recentStatus(db);
+  else if(path==='/sync/queueState')value=await queueStatePage(db,body);
   else if(path==='/sync/seedReviews')value=await seedMissing(db,body,'reviews');
   else if(path==='/sync/seedIssues')value=await seedMissing(db,body,'issue');
   else if(path==='/sync/begin')value=await begin(db,body);
@@ -157,6 +159,7 @@ export async function runLedgerAction(db,path,body,{now=new Date()}={}) {
   else if(path==='/api/backupStart')value=await startBackup(db);
   else if(path==='/api/backupPage')value=await backupPage(db,body);
   else if(path==='/api/listIssues') value=await browseIssues(db,body,now);
+  else if(path==='/api/wantedPmids') value=await wantedPage(db,body);
   else if(path==='/api/listIssuePapers') value=await issuePapers(db,body);
   else if(path==='/api/getPaperDetail') value=await detail(db,body);
   else throw Object.assign(new Error('unknown_endpoint'),{status:404});

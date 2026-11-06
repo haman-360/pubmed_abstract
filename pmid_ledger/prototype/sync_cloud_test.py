@@ -31,7 +31,7 @@ class CloudTestTransport(JsonSyncTransport):
         self.last_action = None
 
     def post(self, action, value):
-        if action in ("status", "begin", "chunk", "build", "finish", "read", "publish", "recentStatus", "seedReviews", "seedIssues"):
+        if action in ("status", "begin", "chunk", "build", "finish", "read", "publish", "recentStatus", "seedReviews", "seedIssues", "queueState"):
             self.last_action = action
         return super().post(action, value)
 

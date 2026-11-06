@@ -44,7 +44,7 @@ class JsonSyncTransport:
         return "sync_http_" + str(error.code)
 
     def post(self, action, value):
-        if action not in ("status", "begin", "chunk", "build", "finish", "read", "publish", "recentStatus", "seedReviews", "seedIssues"):
+        if action not in ("status", "begin", "chunk", "build", "finish", "read", "publish", "recentStatus", "seedReviews", "seedIssues", "queueState"):
             raise SyncError("Metadata sync action required")
         body = canonical(value).encode("utf-8")
         if len(body) > MAX_BYTES:

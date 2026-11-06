@@ -8,7 +8,8 @@ export function browseWindow(now=new Date()){
   return {from:target.toISOString().slice(0,10),through:today};
 }
 export function browseRange(r,now){
-  const scope=r.scope??'recent',recent=browseWindow(now);
+  const scope=r.scope??'pending',recent=browseWindow(now);
+  if(scope==='pending')return {scope};
   if(scope==='recent')return {scope,...recent};
   if(scope==='month'){
     requireThat(typeof r.month==='string'&&/^\d{4}-(0[1-9]|1[0-2])$/.test(r.month),'invalid_archive_month');
@@ -21,7 +22,12 @@ export async function browseIssues(db,r,now=new Date()){
   const range=browseRange(r,now),offset=r.offset??0;
   requireThat(Number.isSafeInteger(offset)&&offset>=0,'invalid_offset');
   const date="json_extract(info_json,'$.delivered_date')";
-  const filter=range.scope==='all'?'1':range.scope==='unknown'?`${date}=''`:`${date}>=? AND ${date}<=?`;
+  // Filter by the saved completion and content version before paging or calculating progress.
+  // No paper membership, body or memo is read for completed issues.
+  const filter=range.scope==='pending'?`NOT EXISTS(SELECT 1 FROM issue_current c
+    WHERE c.issue_key=issue_lists.issue_key AND c.status='completed'
+    AND rtrim(c.content_version,'=')=rtrim(json_extract(info_json,'$.content_version'),'='))`:
+    range.scope==='all'?'1':range.scope==='unknown'?`${date}=''`:`${date}>=? AND ${date}<=?`;
   const args=['recent','month'].includes(range.scope)?[range.from,range.through]:[];
   // One SQL snapshot fixes the generation, count and page together. Only 20 selected keys reach progress aggregation.
   const row=await db.prepare(`WITH current AS MATERIALIZED (SELECT generation revision FROM settings WHERE id=1),
@@ -32,12 +38,14 @@ export async function browseIssues(db,r,now=new Date()){
       WHERE generation=(SELECT revision FROM current) AND ${filter}
       ORDER BY ${date} DESC,json_extract(info_json,'$.issue_id') DESC,json_extract(info_json,'$.topic')
       LIMIT 20 OFFSET (SELECT offset FROM paging))
-    SELECT current.revision,(SELECT CASE WHEN json_valid(tables_json) THEN COALESCE(json_extract(tables_json,'$.data_source'),'synthetic') ELSE 'unknown' END FROM generations WHERE id=current.revision) data_source,paging.total,paging.offset,(SELECT json_group_array(json(item_json)) FROM (
+    SELECT current.revision,(SELECT CASE WHEN json_valid(tables_json) THEN COALESCE(json_extract(tables_json,'$.data_source'),'synthetic') ELSE 'unknown' END FROM generations WHERE id=current.revision) data_source,
+    (SELECT CASE WHEN json_valid(tables_json) THEN json_extract(tables_json,'$.pending_queue.deferred_issues') END FROM generations WHERE id=current.revision) deferred_issues,
+    paging.total,paging.offset,(SELECT json_group_array(json(item_json)) FROM (
       SELECT v.item_json FROM selected k CROSS JOIN issue_states v ON v.issue_key=k.issue_key AND v.revision=current.revision
       ORDER BY json_extract(v.item_json,'$.delivered_date') DESC,json_extract(v.item_json,'$.issue_id') DESC,json_extract(v.item_json,'$.topic'))) items
     FROM current,paging`).bind(...args,offset,offset,...args).first();
   requireThat(row?.revision,'metadata_not_seeded',409);
-  return {items:JSON.parse(row.items).map(({scores_available,...i})=>i),total:row.total,offset:row.offset,page_size:20,revision:row.revision,data_source:row.data_source,window:range};
+  return {items:JSON.parse(row.items).map(({scores_available,...i})=>i),total:row.total,offset:row.offset,page_size:20,revision:row.revision,data_source:row.data_source,window:range,deferred_issues:row.deferred_issues??0};
 }
 export function readLimit(error,now=new Date()){
   // Exact D1 quota phrases only. Generic SQL, CPU, syntax or capacity errors are not a daily limit.

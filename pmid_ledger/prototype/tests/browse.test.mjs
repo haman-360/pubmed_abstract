@@ -27,7 +27,7 @@ test('daily D1 read/write limits have a 24-hour retry hint; other errors do not'
 
 test('recent empty lists, historical months, unknown dates and quota responses preserve stored data',async t=>{
   const rt=await runtime({now});t.after(()=>rt.mf.dispose());await seed(rt.mf);
-  const recent=await call(rt.mf,'listIssues');assert.equal(recent.status,200);assert.equal(recent.value.total,0);assert.deepEqual(recent.value.items,[]);
+  const recent=await call(rt.mf,'listIssues',{scope:'recent'});assert.equal(recent.status,200);assert.equal(recent.value.total,0);assert.deepEqual(recent.value.items,[]);
   const past=await call(rt.mf,'listIssues',{scope:'month',month:'2026-08'});assert.equal(past.value.total,3);
   assert.equal((await call(rt.mf,'listIssues',{scope:'unknown'})).value.total,1);
   assert.equal((await call(rt.mf,'listIssues',{scope:'all'})).value.total,6);
@@ -41,7 +41,7 @@ test('recent empty lists, historical months, unknown dates and quota responses p
 test('5000-paper browse reads indexed recent keys before progress and pages old months without deleting them',async t=>{
   const data=JSON.parse(execFileSync('python3',['-m','pmid_ledger.prototype.fixture','--scale','--browse'],{cwd:fileURLToPath(new URL('../../../',import.meta.url)),encoding:'utf8',maxBuffer:30000000}));
   const rt=await runtime({now});t.after(()=>rt.mf.dispose());await seed(rt.mf,data);
-  const recent=await call(rt.mf,'listIssues',{}, {profile:true});assert.equal(recent.status,200);assert.equal(recent.value.total,20);assert.equal(recent.value.items.length,20);
+  const recent=await call(rt.mf,'listIssues',{scope:'recent'}, {profile:true});assert.equal(recent.status,200);assert.equal(recent.value.total,20);assert.equal(recent.value.items.length,20);
   assert(recent.value.items.every(i=>i.delivered_date>='2026-09-05'));assert(recent.profile.rows_read<10000,`${recent.profile.rows_read} recent reads`);
   const old=await call(rt.mf,'listIssues',{scope:'month',month:'2025-01'},{profile:true});assert.equal(old.value.total,180);assert.equal(old.value.items.length,20);
   const next=await call(rt.mf,'listIssues',{scope:'month',month:'2025-01',offset:20});assert.equal(next.value.items.length,20);

@@ -33,7 +33,7 @@ def sync_recent(plan, transport, backup=None):
         raise SyncError('test_storage_safety_limit_stop_without_deleting_history')
     expected, generation = current['revision'], plan['generation']
     is_recent = current.get('manifest',{}).get('data_source') == 'recent-copy'
-    unchanged = is_recent and current['manifest'].get('source_hash') == manifest['source_hash']
+    unchanged = is_recent and current['manifest'].get('source_hash') == manifest['source_hash'] and current['manifest'].get('pending_queue') == manifest.get('pending_queue')
     if unchanged:
         if digest(current['manifest']) != current['payload_hash']: raise SyncError('current_manifest_hash_mismatch')
         generation = expected
@@ -44,6 +44,7 @@ def sync_recent(plan, transport, backup=None):
                 raise SyncError('verified_current_backup_required')
         generated, chunks = chunk_plan(plan['tables'], chunk_bytes=32768)
         generated.update(data_source='recent-copy',trial_window=manifest['trial_window'],source_hash=manifest['source_hash'])
+        if 'pending_queue' in manifest: generated['pending_queue']=manifest['pending_queue']
         if generated != manifest: raise SyncError('recent_manifest_mismatch')
         transport.post('begin',{'recent_copy':True,'generation':generation,'manifest':manifest})
         for c in chunks: transport.post('chunk',{'generation':generation,**c})
@@ -67,7 +68,30 @@ def sync_recent(plan, transport, backup=None):
     return {'changed':not unchanged or state_changed,'metadata_changed':not unchanged,'source_states_initialized':state_changed,'verified':True,'full_readback_verified':not unchanged,
             'papers':len(plan['tables']['Papers'])-1,'issues':len(plan['tables']['Issues'])-1,
             'appearances':len(plan['tables']['Appearances'])-1,'source_states_checked':len(plan['review_seeds']),
-            'source_issue_states_checked':len(plan['issue_seeds']),'requests':transport.requests,'source_modified':False}
+            'source_issue_states_checked':len(plan['issue_seeds']),'requests':transport.requests,'source_modified':False,
+            'deferred_issues':manifest.get('pending_queue',{}).get('deferred_issues',0)}
+
+
+def read_queue_state(transport):
+    state = {}
+    for kind in ['issues','reviews']:
+        items,after = [],''
+        while True:
+            part=transport.post('queueState',{'kind':kind,'after':after})
+            items.extend(part['items'])
+            if len(items)>100000: raise SyncError('queue_state_above_safety_limit')
+            if part['done']: break
+            if not part['after'] or part['after']<=after: raise SyncError('queue_state_cursor_invalid')
+            after=part['after']
+        state[kind]=items if kind=='issues' else [r['pmid'] for r in items]
+        if kind=='reviews': state['review_statuses']={r['pmid']:r['status'] for r in items}
+    return state
+
+
+def sync_pending(sheet_id, auth_json, transport, backup=None):
+    state=read_queue_state(transport)
+    source=read_source(sheet_id,auth_json,queue_state=state)
+    return sync_recent(plan_recent(source,queue_state=state),transport,backup)
 
 
 def write_report(path,value):
@@ -82,6 +106,8 @@ def main():
     mode.add_argument('--sync',action='store_true')
     mode.add_argument('--scheduled',action='store_true')
     parser.add_argument('--configure-actions',action='store_true')
+    parser.add_argument('--sheet-id',default=os.environ.get('PMID_LEDGER_SHEET_ID',''))
+    parser.add_argument('--auth-file',type=Path,default=ROOT/'google_authorized_user.json')
     args=parser.parse_args()
     try:
         if args.configure_actions:
@@ -92,8 +118,7 @@ def main():
         if args.scheduled:
             if args.configure_actions or os.environ.get('GITHUB_ACTIONS')!='true' or os.environ.get('GITHUB_REPOSITORY')!='haman-360/pubmed_abstract':
                 raise SyncError('fixed_github_workflow_required')
-            plan=plan_recent(read_source(os.environ['PMID_LEDGER_SHEET_ID'],os.environ['GOOGLE_AUTHORIZED_USER_JSON']))
-            result=sync_recent(plan,CloudTestTransport(ORIGIN,os.environ['PMID_TEST_ACCESS_CLIENT_ID'],os.environ['PMID_TEST_ACCESS_CLIENT_SECRET']))
+            result=sync_pending(os.environ['PMID_LEDGER_SHEET_ID'],os.environ['GOOGLE_AUTHORIZED_USER_JSON'],CloudTestTransport(ORIGIN,os.environ['PMID_TEST_ACCESS_CLIENT_ID'],os.environ['PMID_TEST_ACCESS_CLIENT_SECRET']))
         else:
             if not sys.stdin.isatty():raise SyncError('hidden_interactive_input_required')
             resources=private_json(ROOT/'ledger_private/cloud-test-resources.json')
@@ -101,8 +126,8 @@ def main():
             source=(ROOT/'pmid_ledger/prototype/.cloud-test/worker.mjs').read_bytes()
             validate(resources,owner,source)
             if resources['origin']!=ORIGIN:raise SyncError('fixed_existing_test_required')
-            raw=private_json(FOLDER/'source.json')
-            plan=plan_recent({**raw['tables'],'Reviews':raw['reviews'],'IssueReviews':raw['issue_reviews']})
+            if not args.sheet_id: raise SyncError('source_sheet_id_required')
+            auth_json=json.dumps(private_json(args.auth_file))
             backup=private_json(ROOT/'ledger_private/real-trial/backup-receipt.json')
             archive=Path(backup['file'])
             if archive.stat().st_mode&0o077 or hashlib.sha256(archive.read_bytes()).hexdigest()!=backup['sha256']:
@@ -120,7 +145,7 @@ def main():
                 if args.update_and_sync:
                     d=upload(resources,owner,source,token,preserve_bindings=True)
                     write_report(ROOT/'pmid_ledger/prototype/.cloud-test/deployment-verification.json',{**d,'verified_at':datetime.now(timezone.utc).isoformat()})
-                result=sync_recent(plan,transport,backup)
+                result=sync_pending(args.sheet_id,auth_json,transport,backup)
                 write_report(FOLDER/'sync-verification.json',{**result,'verified_at':datetime.now(timezone.utc).isoformat()})
                 if args.configure_actions:
                     from pmid_ledger.prototype.recent_actions_setup import configure

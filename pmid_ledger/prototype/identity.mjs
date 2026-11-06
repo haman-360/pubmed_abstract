@@ -40,8 +40,8 @@ export function createIdentityVerifier(config,{ownerKeys,syncKeys,now=()=>new Da
     deny(p.type==='app'&&p.sub===''&&p.common_name===config.syncClientId);return {role:'sync'};
   }};
 }
-const ownerRoutes=new Set(['listIssues','listIssuePapers','getPaperDetail','saveReviews','saveAndCompleteIssue','saveIssueReview','backup','backupStart','backupPage'].map(n=>'/api/'+n));
-const syncRoutes=new Set(['status','begin','chunk','build','finish','read','stage','publish','recentStatus','seedReviews','seedIssues'].map(n=>'/sync/'+n));
+const ownerRoutes=new Set(['listIssues','listIssuePapers','getPaperDetail','saveReviews','saveAndCompleteIssue','saveIssueReview','backup','backupStart','backupPage','wantedPmids'].map(n=>'/api/'+n));
+const syncRoutes=new Set(['status','begin','chunk','build','finish','read','stage','publish','recentStatus','seedReviews','seedIssues','queueState'].map(n=>'/sync/'+n));
 export async function verifyIdentityRequest(request,verifier){
   const path=new URL(request.url).pathname,authorization=request.headers.get('Authorization'),access=request.headers.get('Cf-Access-Jwt-Assertion');
   if(ownerRoutes.has(path)){

@@ -13,23 +13,23 @@ async function setup({loseSave=false,readFailsAfterSave=false,loginFailsOnce=fal
   const ids=['data-source','login','login-help','restart-login','logout','welcome','workspace','message','back','reload','period','scope','month-label','month','search','query','clear','summary','list','heading','breadcrumb','description','previous','next','page','savebar','draft-status','save','discard','complete','reopen','retry'];
   const elements=Object.fromEntries(ids.map(id=>[id,new Element(['login','logout','back','reload','clear','previous','next','save','discard','complete','reopen','retry'].includes(id)?'button':'div')]));
   elements.workspace.append(...ids.filter(id=>!['login','logout','welcome','workspace','message'].includes(id)).map(id=>elements[id]));
-  const events={},requests=[],operations=new Map(),key='["synthetic-small","感染症"]',revision='a'.repeat(64);let version=0,status='unreviewed',note='',changed,lost=false,pendingRead,popupCalls=0,releasePopup,reloads=0;
-  const issue=()=>({issue_key:key,issue_id:'synthetic-small',topic:'感染症',status:'unreviewed',unreviewed:status==='unreviewed'?1:0,total:1,version:0,content_version:'content',delivered_date:'2026-11-06'});
+  const events={},requests=[],operations=new Map(),key='["synthetic-small","感染症"]',revision='a'.repeat(64);let version=0,status='unreviewed',note='',changed,lost=false,completed=false,pendingRead,popupCalls=0,releasePopup,reloads=0;
+  const issue=()=>({issue_key:key,issue_id:'synthetic-small',topic:'感染症',status:completed?'completed':'unreviewed',unreviewed:status==='unreviewed'?1:0,total:1,version:0,content_version:'content',delivered_date:'2026-11-06'});
   const sdk={initializeApp:x=>x,inMemoryPersistence:{},browserPopupRedirectResolver:{},initializeAuth:(_a,options)=>{assert.equal(options.persistence,sdk.inMemoryPersistence);return {};},GoogleAuthProvider:class{setCustomParameters(){}},onAuthStateChanged:(_a,fn)=>{changed=fn;fn(null);},signInWithPopup:async()=>{popupCalls++;if(loginFailsOnce&&popupCalls===1)throw {code:'auth/popup-closed-by-user'};if(holdLogin)await new Promise(resolve=>{releasePopup=resolve;});changed({getIdToken:async()=>'synthetic-token'});},signOut:async()=>changed(null)};
   const fetch=async(path,options)=>{
     if(path==='./config.json')return Response.json({firebase:{projectId:'synthetic'}});
     requests.push({path,body:JSON.parse(options.body)});assert.equal(options.headers.Authorization,'Bearer synthetic-token');assert.equal(options.redirect,'error');assert(options.signal);
     if(pendingRead&&path==='/api/listIssues')await pendingRead;
-    if(path==='/api/listIssues')return Response.json({value:{items:[issue()],total:1,offset:0,page_size:20,revision,window:{scope:'recent',from:'2026-09-06',through:'2026-11-06'}}});
+    if(path==='/api/listIssues')return Response.json({value:{items:completed?[]:[issue()],total:completed?0:1,offset:0,page_size:20,revision,window:{scope:'pending'}}});
     if(path==='/api/listIssuePapers'){
       if(readFailsAfterSave&&operations.size)throw Error('offline');
       return Response.json({value:{issue:issue(),items:[{pmid:'1',title:'架空論文',review:{version,status,note}}],total:1,offset:0,page_size:50,revision}});
     }
-    assert.equal(path,'/api/saveReviews');const body=JSON.parse(options.body),replayed=operations.has(body.operation_id);
+    assert(['/api/saveReviews','/api/saveAndCompleteIssue'].includes(path));const body=JSON.parse(options.body),replayed=operations.has(body.operation_id);
     if(replayed)assert.deepEqual(operations.get(body.operation_id),body);
     else{operations.set(body.operation_id,body);version++;status=body.changes[0].status;note=body.changes[0].note;}
     if(loseSave&&!lost){lost=true;throw Error('response lost');}
-    return Response.json({value:{saved:true,replayed}});
+    completed=path==='/api/saveAndCompleteIssue';return Response.json({value:{saved:true,replayed,completed}});
   };
   await new AsyncFunction('OnlineEdits','document','fetch','loadSdk','addEventListener','confirm','window',source)(OnlineEdits,{body:new Element(),getElementById:id=>elements[id],createElement:tag=>new Element(tag),querySelector:()=>new Element('a')},fetch,async()=>sdk,(event,fn)=>{events[event]=fn;},()=>true,{scrollTo(){},location:{reload(){reloads++;}}});
   const login=async()=>{await elements.login.onclick();await settle();};
@@ -38,7 +38,7 @@ async function setup({loseSave=false,readFailsAfterSave=false,loginFailsOnce=fal
   return {elements,requests,operations,login,open,edit,changed:()=>changed,popupCalls:()=>popupCalls,releasePopup:()=>releasePopup(),reloads:()=>reloads,deferRead:()=>{let release;pendingRead=new Promise(resolve=>{release=resolve;});return release;}};
 }
 test('online client keeps an unknown save fixed, replays once, and clears data on signout',async()=>{
-  const c=await setup({loseSave:true}),e=c.elements;await c.login();assert.equal(c.requests[0].body.scope,'recent');await c.open();assert.equal(e.complete.disabled,true);c.edit();assert.equal(e.complete.disabled,false);
+  const c=await setup({loseSave:true}),e=c.elements;await c.login();assert.equal(c.requests[0].body.scope,'pending');await c.open();assert.equal(e.complete.disabled,true);c.edit();assert.equal(e.complete.disabled,false);
   await e.save.onclick();assert.equal(c.operations.size,1);assert.equal(e.retry.hidden,false);assert.equal(e.save.disabled,true);
   await e.retry.onclick();assert.equal(c.operations.size,1);assert.equal(e.retry.hidden,true);assert.match(e.message.textContent,/保存を確認/);
   await e.logout.onclick();assert.equal(e.workspace.hidden,true);assert.equal(e.list.children.length,0);assert.equal(e.login.disabled,false);
@@ -67,4 +67,10 @@ test('a pending popup stays locked through a null auth callback; manual reset ig
 test('popup completion does not unlock the workspace while the initial ledger read is pending',async()=>{
   const c=await setup(),e=c.elements,release=c.deferRead();await c.login();
   assert.equal(e.reload.disabled,true);release();await settle();assert.equal(e.reload.disabled,false);
+});
+
+test('completion returns to the pending list and does not fetch the completed delivery again',async()=>{
+  const c=await setup(),e=c.elements;await c.login();await c.open();c.edit();await e.complete.onclick();
+  assert.equal(c.requests.at(-1).path,'/api/listIssues');assert.equal(c.requests.at(-1).body.scope,'pending');
+  assert.equal(e.savebar.hidden,true);assert.match(e.message.textContent,/確認済み/);assert.equal(c.operations.size,1);
 });

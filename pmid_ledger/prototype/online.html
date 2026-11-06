@@ -5,8 +5,8 @@
 <section id="welcome" class="welcome"><p class="eyebrow">読む・選ぶ・記録する</p><h1>論文の確認を、<br>ひとつの台帳に。</h1><p>配信された論文を確認し、入手希望やメモを記録できます。</p><button id="login" class="primary" disabled>Googleでログイン</button><p class="hint">本人専用</p><details id="login-help"><summary>ログイン画面でエラーが出るとき</summary><p>「missing initial state」などの画面が出た場合は、そのログイン画面を閉じて台帳へ戻り、もう一度「Googleでログイン」を押してください。</p><p>ボタンが押せないままの場合は、下のボタンで台帳のログイン画面を開き直せます。アプリを終了する必要はありません。</p><button id="restart-login" type="button">ログイン画面を開き直す</button></details></section>
 <p id="message" role="status" aria-live="polite">ログインの準備をしています。</p>
 <section id="workspace" hidden>
-<div class="section-heading"><div><p class="eyebrow" id="breadcrumb">研究台帳 / 配信</p><h1 id="heading" tabindex="-1">配信一覧</h1><p id="description" class="muted"></p></div><div class="toolbar"><button id="back" hidden>配信一覧へ</button><button id="reload">再読み込み</button></div></div>
-<form id="period" class="filterbar"><label>表示期間<select id="scope"><option value="recent">直近2か月</option><option value="month">過去の月を指定</option><option value="unknown">配信日不明</option></select></label><label id="month-label" hidden>対象月<input id="month" type="month" min="1900-01" max="9998-12"></label><button type="submit">表示する</button></form>
+<div class="section-heading"><div><p class="eyebrow" id="breadcrumb">研究台帳 / 配信</p><h1 id="heading" tabindex="-1">配信一覧</h1><p id="description" class="muted">未確認・確認中（全期間）</p></div><div class="toolbar"><button id="back" hidden>配信一覧へ</button><button id="reload">再読み込み</button></div></div>
+
 <form id="search" class="filterbar" hidden><label class="search-label">PMID・タイトル検索<input id="query" type="search" maxlength="300" placeholder="PMID またはタイトルの一部"></label><button type="submit">検索</button><button id="clear" type="button" class="quiet">解除</button></form>
 <div id="summary" class="summary"></div><div id="list" class="issue-grid"></div>
 <div class="pagination"><button id="previous">前のページ</button><span id="page"></span><button id="next">次のページ</button></div>
