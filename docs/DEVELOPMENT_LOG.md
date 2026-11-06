@@ -68,3 +68,12 @@
 - クラウドHTTPエラーの本文を最大8KiB＋1バイトだけ読み、既知のWorker JSONエラー・Access／edge・1010などの固定分類、status、action、要求数だけを保持・出力する。応答本文・ヘッダー・資格情報は保存・出力しない。既存の`sync_http_403`等のエラー名、ローカル同期の動作、redirect／proxy／自動再送なしは維持。失敗結果もGit対象外の診断ファイルへ0600で保存する。
 - 検証：Python35件、workerd＋一時D1の同期Node.js10件が成功。既存Workerモードが2値だけを要求し更新しないこと、古いbundle検証結果の拒否、エラー分類で秘密値を出さないこと、資格情報の参照破棄、既存の中断・再送・予算・リダイレクト拒否を確認。HTTPなし準備確認、非TTY拒否、構文・差分検査も成功。試作READMEへ診断・再開コマンドを追記した。
 - 次は利用者の2値の非表示入力で読取専用診断を1回行い、HTTP応答元を確認する。診断を理由に署名・claims・Access保護を緩めず、架空データ転送やWorker再更新を先に繰り返さない。追加費用0円、本番GAS・実台帳・既存Pages・課金設定は変更なし。`clasp push` 不要、GAS deploy未実施。この診断準備ではWorkerの再アップロードを行っていない。
+
+## 2026-11-06 JST：実Access署名付き同期statusの読取に成功
+
+- 利用者が `--use-existing-worker` を実行し、読取診断の成功結果を通知。Git対象外 `sync-diagnostic.json` を直接読み、2026-11-06 11:27:16 JST、`session_verified: true`、`signed_access_verified: true`、`sync_enabled: true`、`path_separation_verified_after_sync: true` を確認した。実Accessによる同期JWTの検証を通り、D1のstatusを1要求で読み取った。
+- `published: false` は公開された台帳メタデータ世代がまだないという正常な状態。`writes_requested: false`、`worker_updated: false` で、架空データ転送・Worker再更新を行っていない。診断処理の経過は0.916秒で、CPU時間ではない。結果ファイルは0600。既存のコード・binding検証結果と手元のbundleハッシュも引き続き一致した。
+- 前回の403の最終原因は現時点では断定しない。今回は認証条件・Access保護・Workerコードを緩めたり変更したりせず、同じ既存設定の読取が成功したことを確認した。トークン値はチャット・ログへ出していない。
+- 次の転送前にD1一覧の日次表示を再確認。November 6・UTC午前0時起点、DB1/10、読取120/500万行、書込0/10万行、ストレージ167.94kB/5GB。固定fixtureの初回書込見積2,167行に対し、今回の実行予算を10,000行として、再更新なしで架空120件・全7チャンクの転送／読戻しへ進む。
+- 試作READMEの現在地を、同期無効から「有効化・設定読戻し・実署名付きstatus成功」へ更新した。コード変更なしのため自動試験は重複実行せず、結果ファイルの値・0600・ハッシュ一致・残枠・差分を確認した。
+- 現時点では架空120件のクラウド転送、実Google本人tokenでのクラウド保存、CPU・Mac／iPad往復は未実施。追加費用0円、本番GAS・実台帳・既存Pages・課金設定は変更なし。`clasp push` 不要、GAS deploy未実施。

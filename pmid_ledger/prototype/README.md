@@ -142,7 +142,7 @@ python3 -m unittest pmid_ledger.prototype.tests.test_sync_local pmid_ledger.prot
 
 クラウド接続は、TEST公開・Access設定後に対象URLを明示し、`LEDGER_TEST_ACCESS_CLIENT_ID`／`LEDGER_TEST_ACCESS_CLIENT_SECRET`をプロセス環境から渡す。実値をコマンド履歴・Git・ログ・チャットへ貼らない。既定の動作は同期状態の読取のみ。`--sync-synthetic`と、管理画面で確認した残枠以内の`--write-budget`（64〜80,000）の両方を指定した時だけ転送する。これは1回の見積予算で、日次累積や他用途の消費を自動管理しない。redirect・proxy・自動再送はなく、429／応答不明では停止する。中断後は残枠を再確認してから同じfixtureで再開する。
 
-2026-11-06職場Macでの実接続：台帳APIのアップロード・コード読戻し一致を確認。既存Worker全体のService Authを残し、TEST本番ホストの`/api/*`だけをホスト名AccessアプリのBypassでWorkerのFirebase本人認証へ委ねた。本人APIは未認証・偽token・二重ヘッダーで`identity_denied`、`/sync/status`・ルート・`/api`境界は既存Accessで403になることを確認。同期はまだ無効で、本人の実token保存・架空120件のクラウド同期は未実施。プレビューも既存Worker全体の保護対象のまま。
+2026-11-06職場Macでの実接続：台帳APIのアップロード・コード読戻し一致を確認。既存Worker全体のService Authを残し、TEST本番ホストの`/api/*`だけをホスト名AccessアプリのBypassでWorkerのFirebase本人認証へ委ねた。本人APIは未認証・偽token・二重ヘッダーで`identity_denied`、`/sync/status`・ルート・`/api`境界は既存Accessで403になることを確認。同期は有効化・設定読戻し済みで、実Access署名付きstatus読取も成功。本人の実Google tokenによるクラウド保存・架空120件のクラウド同期は未実施。プレビューも既存Worker全体の保護対象のまま。
 
 `workers.dev`はPython標準`urllib`のUser-AgentをCloudflareの`1010`で拒否する場合があるため、同期CLIは自身を`PMIDLedgerTest/1.0`と明示する。実TESTでこの識別子による本人API到達と未認証拒否を確認した。ブラウザーを偽装せず、Browser Integrity Checkも変更しない。403だけでAccess認証の検証成功と判断せず、WorkerのJSONエラーとCloudflare側の拒否を区別する。[公式の1010説明](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1010/)
 
