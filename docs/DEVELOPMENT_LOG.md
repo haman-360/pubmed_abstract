@@ -253,3 +253,11 @@
 - 利用者がMacの既存アプリを再読込みし、「配信100」を確認。その後Mac用 `希望PMIDを出力.command` を実行し、19:56 JSTの生成TXTを共有した。ローカルファイルを読取のみで検証し、34件・299バイト・数字のみ1行1件・重複なし・数値順・UTF-8/BOMなし・末尾改行・0600を確認した。PMIDの中身は本ログやGitへ転記せず、生成TXTはGit対象外のprivate出力先に保持。原本取得プログラムの実行や入手済みへの状態変更は行わない。
 - 台帳READMEと試作READMEを反映完了へ更新。前段のNode92件・Python50件成功に対し、今回はアプリコードを変更せず、実反映receipt・公開ファイル・Actions結果・Mac表示・実TXTを確認した。mainと作業branchのworkflow一致、設定helperの既存テスト、diff／statusとprivate出力のGit除外を最終確認して、記録をcommit・現在のremote作業branchへpushする。
 - 本番GAS・実台帳・既存Pages・土曜配信・認証／課金設定は変更なし。エージェントによるdeploy、clasp push、mainへの書込は未実施。利用者が既存TESTのコード更新・mainの参照変更・同期起動を手動で実施した。今回の新仕様でのiPad実機再確認、実運用で確認を進めた後の補充、クラウドCPUの継続測定は未確認として残す。
+
+
+### 2026-11-10 — 直リンク対応Workerの反映・公開ファイル照合
+
+- 利用者が8:01:33 JSTに既存TESTの `--update-code-only` を実行。185,020バイト・SHA-256 `d438d5b1cae45c3c44002ddc4007b8908407a6dce27642749218e5ee611a7fed` のコード読戻し、既存binding保持、同期有効設定の読戻しが成功。ローカルreceiptとbundleのhashも一致した。
+- 公開HTML・app.mjs・state.mjs・links.mjsをGETし、全てHTTP 200・準備済みassetsと完全一致。これは公開コードの照合であり、本人APIによる実配信の取得成功とは分ける。
+- 配信側だけをmainからの専用branchへ抽出し、7ファイル・38追加／8削除の [PR #12](https://github.com/haman-360/pubmed_abstract/pull/12) をdraftで作成。commit `3f7ee01`、Python70件成功。アプリを含む作業branchの実装commit `9b375b9` ともpush済み。main統合は未実施。
+- 実Google本人のアカウント選択を自動承認レビューが拒否したため、利用者の手動選択待ち。直リンク確認画面は11月7日ワクチン・PMID 42922148を対象とし、保存を行わない。GAS同期・deployment・既存Docs書換え・配信実行は行っていない。
