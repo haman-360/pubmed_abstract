@@ -12,7 +12,7 @@
 
 確認済みなどで現在の作業用キューから外れた配信は、保存操作が証明する公開済みデータから閲覧のみで開く。状態・メモは最新の保存値を表示し、過去版への編集・確認完了・再開は許可しない。未公開の転送途中データは参照しない。新しいDB表や索引、同期対象の拡大は不要。まだ取り込まれていない新着や参照可能な履歴がないリンクは、未取得の案内を表示する。
 
-反映順は、既存TEST Workerを下記 `--update-code-only` で更新し、本人ログイン後の配信／PMID直リンクを確認してから、配信側の専用PRをmainへ統合する。定期同期の固定commit、GAS、Access・本人設定、Secretsの変更は不要。旧 `PMID_LEDGER_WEB_URL` Secretは削除せず、今後の配信処理からの参照だけを止める。
+2026-11-10に既存TEST Workerのコード更新・読戻し・本人ログイン後の実PMID表示を確認し、利用者の明示承認後に配信側 [PR #12](https://github.com/haman-360/pubmed_abstract/pull/12) をmainへ統合した（`aa5ba77`）。今後新しく生成されるDocsから切り替わる。定期同期の固定commit、GAS、Access・本人設定、Secretsの変更は不要。旧 `PMID_LEDGER_WEB_URL` Secretは削除せず、今後の配信処理からの参照だけを止める。
 
 [短い実装計画](../ONLINE_APP_PLAN.md)に沿ったMac・iPad向けWebアプリ。既存TEST Workerの `https://<既存TESTホスト>/api/app/` を開き「Googleでログイン」する。同じWorkerの本人APIへ接続し、DBの作り直しや既存Pagesへの追加は行わない。表示するシェルとFirebaseの公開Web設定4項目だけはGET可能で、台帳の取得・保存は毎回サーバーで署名・固定本人UIDを検証する。Worker全体のService Authと `/api/*` の既存経路分離を維持する。
 
