@@ -2,28 +2,34 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {OnlineEdits} from '../online-state.mjs';
-const source=(await fs.readFile(new URL('../online-client.mjs',import.meta.url),'utf8')).replace("import {OnlineEdits} from './state.mjs';",'').replace("import('./sdk.mjs')",'loadSdk()');
+import {readLink} from '../online-links.mjs';
+const source=(await fs.readFile(new URL('../online-client.mjs',import.meta.url),'utf8')).replace("import {OnlineEdits} from './state.mjs';",'').replace("import {readLink} from './links.mjs';",'').replace("import('./sdk.mjs')",'loadSdk()');
 const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor,settle=()=>new Promise(resolve=>setImmediate(resolve));
 class Element{
   constructor(tag='div'){this.tag=tag;this.children=[];this.attributes={};this.hidden=false;this.disabled=false;this.value='';this.textContent='';this.classList={toggle(){}};}
   append(...nodes){this.children.push(...nodes);}replaceChildren(...nodes){this.children=nodes;}setAttribute(k,v){this.attributes[k]=v;}replaceWith(){}
   querySelectorAll(selector){const names=selector.split(',');return this.children.flatMap(n=>typeof n==='object'?[...(names.includes(n.tag)?[n]:[]),...n.querySelectorAll(selector)]:[]);}
 }
-async function setup({loseSave=false,readFailsAfterSave=false,loginFailsOnce=false,holdLogin=false}={}){
+async function setup({loseSave=false,readFailsAfterSave=false,loginFailsOnce=false,holdLogin=false,hash='',archive=false,linkMissing=false,holdLink=false}={}){
   const ids=['data-source','login','login-help','restart-login','logout','welcome','workspace','message','back','reload','period','scope','month-label','month','search','query','clear','summary','list','heading','breadcrumb','description','previous','next','page','savebar','draft-status','save','discard','complete','reopen','retry'];
   const elements=Object.fromEntries(ids.map(id=>[id,new Element(['login','logout','back','reload','clear','previous','next','save','discard','complete','reopen','retry'].includes(id)?'button':'div')]));
   elements.workspace.append(...ids.filter(id=>!['login','logout','welcome','workspace','message'].includes(id)).map(id=>elements[id]));
-  const events={},requests=[],operations=new Map(),key='["synthetic-small","感染症"]',revision='a'.repeat(64);let version=0,status='unreviewed',note='',changed,lost=false,completed=false,pendingRead,popupCalls=0,releasePopup,reloads=0;
+  const events={},requests=[],operations=new Map(),key='["synthetic-small","感染症"]',revision='a'.repeat(64);let version=0,status='unreviewed',note='',changed,lost=false,completed=false,pendingRead,popupCalls=0,releasePopup,reloads=0,releaseLink;
   const issue=()=>({issue_key:key,issue_id:'synthetic-small',topic:'感染症',status:completed?'completed':'unreviewed',unreviewed:status==='unreviewed'?1:0,total:1,version:0,content_version:'content',delivered_date:'2026-11-06'});
   const sdk={initializeApp:x=>x,inMemoryPersistence:{},browserPopupRedirectResolver:{},initializeAuth:(_a,options)=>{assert.equal(options.persistence,sdk.inMemoryPersistence);return {};},GoogleAuthProvider:class{setCustomParameters(){}},onAuthStateChanged:(_a,fn)=>{changed=fn;fn(null);},signInWithPopup:async()=>{popupCalls++;if(loginFailsOnce&&popupCalls===1)throw {code:'auth/popup-closed-by-user'};if(holdLogin)await new Promise(resolve=>{releasePopup=resolve;});changed({getIdToken:async()=>'synthetic-token'});},signOut:async()=>changed(null)};
   const fetch=async(path,options)=>{
     if(path==='./config.json')return Response.json({firebase:{projectId:'synthetic'}});
     requests.push({path,body:JSON.parse(options.body)});assert.equal(options.headers.Authorization,'Bearer synthetic-token');assert.equal(options.redirect,'error');assert(options.signal);
+    if(path==='/api/resolveLink'){
+      if(holdLink)await new Promise(resolve=>{releaseLink=resolve;});
+      if(linkMissing)return Response.json({error:'linked_item_unavailable'},{status:404});
+      return Response.json({value:{issue_key:key,revision,read_only:archive,...(JSON.parse(options.body).pmid?{pmid:'1'}:{})}});
+    }
     if(pendingRead&&path==='/api/listIssues')await pendingRead;
     if(path==='/api/listIssues')return Response.json({value:{items:completed?[]:[issue()],total:completed?0:1,offset:0,page_size:20,revision,window:{scope:'pending'}}});
     if(path==='/api/listIssuePapers'){
       if(readFailsAfterSave&&operations.size)throw Error('offline');
-      return Response.json({value:{issue:issue(),items:[{pmid:'1',title:'架空論文',review:{version,status,note}}],total:1,offset:0,page_size:50,revision}});
+      return Response.json({value:{issue:issue(),items:[{pmid:'1',title:'架空論文',review:{version,status,note}}],total:1,offset:0,page_size:50,revision,read_only:archive}});
     }
     assert(['/api/saveReviews','/api/saveAndCompleteIssue'].includes(path));const body=JSON.parse(options.body),replayed=operations.has(body.operation_id);
     if(replayed)assert.deepEqual(operations.get(body.operation_id),body);
@@ -31,11 +37,12 @@ async function setup({loseSave=false,readFailsAfterSave=false,loginFailsOnce=fal
     if(loseSave&&!lost){lost=true;throw Error('response lost');}
     completed=path==='/api/saveAndCompleteIssue';return Response.json({value:{saved:true,replayed,completed}});
   };
-  await new AsyncFunction('OnlineEdits','document','fetch','loadSdk','addEventListener','confirm','window',source)(OnlineEdits,{body:new Element(),getElementById:id=>elements[id],createElement:tag=>new Element(tag),querySelector:()=>new Element('a')},fetch,async()=>sdk,(event,fn)=>{events[event]=fn;},()=>true,{scrollTo(){},location:{reload(){reloads++;}}});
+  const location={hash,pathname:'/api/app/',reload(){reloads++;}};
+  await new AsyncFunction('OnlineEdits','readLink','document','fetch','loadSdk','addEventListener','confirm','window',source)(OnlineEdits,readLink,{body:new Element(),getElementById:id=>elements[id],createElement:tag=>new Element(tag),querySelector:()=>new Element('a')},fetch,async()=>sdk,(event,fn)=>{events[event]=fn;},()=>true,{scrollTo(){},location,history:{replaceState(){location.hash='';}}});
   const login=async()=>{await elements.login.onclick();await settle();};
   const open=async()=>{elements.list.querySelectorAll('button')[0].onclick();await settle();};
   const edit=()=>{const select=elements.list.querySelectorAll('select')[0],textarea=elements.list.querySelectorAll('textarea')[0];select.value='want_fulltext';select.onchange();textarea.value='架空の画面メモ';textarea.oninput();};
-  return {elements,requests,operations,login,open,edit,changed:()=>changed,popupCalls:()=>popupCalls,releasePopup:()=>releasePopup(),reloads:()=>reloads,deferRead:()=>{let release;pendingRead=new Promise(resolve=>{release=resolve;});return release;}};
+  return {elements,requests,operations,login,open,edit,location,releaseLink:()=>releaseLink(),changed:()=>changed,popupCalls:()=>popupCalls,releasePopup:()=>releasePopup(),reloads:()=>reloads,deferRead:()=>{let release;pendingRead=new Promise(resolve=>{release=resolve;});return release;}};
 }
 test('online client keeps an unknown save fixed, replays once, and clears data on signout',async()=>{
   const c=await setup({loseSave:true}),e=c.elements;await c.login();assert.equal(c.requests[0].body.scope,'pending');await c.open();assert.equal(e.complete.disabled,true);c.edit();assert.equal(e.complete.disabled,false);
@@ -73,4 +80,22 @@ test('completion returns to the pending list and does not fetch the completed de
   const c=await setup(),e=c.elements;await c.login();await c.open();c.edit();await e.complete.onclick();
   assert.equal(c.requests.at(-1).path,'/api/listIssues');assert.equal(c.requests.at(-1).body.scope,'pending');
   assert.equal(e.savebar.hidden,true);assert.match(e.message.textContent,/確認済み/);assert.equal(c.operations.size,1);
+});
+
+test('document links open their exact paper after login; back clears the target and writes nothing',async()=>{
+  const c=await setup({hash:'#issue='+encodeURIComponent('["synthetic-small","感染症"]')+'&pmid=1'});assert.equal(c.requests.length,0);
+  await c.login();assert.equal(c.requests[0].path,'/api/resolveLink');assert.equal(c.requests[1].path,'/api/listIssuePapers');
+  assert.equal(c.requests[1].body.pmid,'1');assert.equal(c.elements.query.value,'1');assert.equal(c.operations.size,0);
+  c.elements.back.onclick();await settle();assert.equal(c.requests.at(-1).path,'/api/listIssues');assert.equal(c.location.hash,'');
+});
+test('archived targets disable edits and completion; missing targets explain sync delay without changing states',async()=>{
+  const c=await setup({hash:'#pmid=1',archive:true});await c.login();assert.equal(c.requests[1].body.revision,'a'.repeat(64));
+  assert.equal(c.elements.list.querySelectorAll('select')[0].disabled,true);assert.equal(c.elements.complete.disabled,true);
+  await c.elements.save.onclick();assert.equal(c.operations.size,0);assert.match(c.elements.description.textContent,/閲覧のみ/);
+  const missing=await setup({hash:'#pmid=1',linkMissing:true});await missing.login();
+  assert.equal(missing.requests.at(-1).path,'/api/listIssues');assert.match(missing.elements.message.textContent,/次回の定期同期/);assert.equal(missing.operations.size,0);
+});
+test('signout during link resolution cannot open a late target',async()=>{
+  const c=await setup({hash:'#pmid=1',holdLink:true});await c.login();await c.elements.logout.onclick();c.releaseLink();await settle();
+  assert.equal(c.elements.workspace.hidden,true);assert.equal(c.requests.length,1);
 });

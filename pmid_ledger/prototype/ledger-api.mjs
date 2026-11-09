@@ -7,6 +7,7 @@ import {FORMAT,begin,upload,buildPage,finish,readChunk,chunkedDetail,buildIssue}
 import {startBackup,backupPage} from './backup-pages.mjs';
 import {browseIssues} from './browse.mjs';
 import {wantedPage,queueStatePage} from './wanted.mjs';
+import {resolveLink,linkedRevision} from './links.mjs';
 
 export async function backfillLists(db) {
   const {results}=await db.prepare(`SELECT g.id,g.tables_json FROM generations g WHERE EXISTS(
@@ -24,35 +25,45 @@ export async function backfillLists(db) {
 }
 async function issuePapers(db,r) {
   validKey(r.issue_key);
+  const archived=r.revision?await linkedRevision(db,r):false;
+  if(r.pmid!==undefined)requireThat(/^[1-9][0-9]{0,8}$/.test(r.pmid),'invalid_pmid');
   const query=String(r.query??'').trim().toLowerCase(), offset=r.offset??0;
   requireThat(query.length<=300&&(!r.status||statuses.has(r.status))&&Number.isSafeInteger(offset)&&offset>=0,'invalid_filter');
+  const selection=archived?`SELECT l.generation revision,json_patch(l.info_json,json_object(
+      'unreviewed',(SELECT count(*) FROM members m LEFT JOIN review_current c ON c.pmid=m.pmid
+        WHERE m.generation=l.generation AND m.issue_key=l.issue_key AND COALESCE(c.status,'unreviewed')='unreviewed'),
+      'status',COALESCE(c.status,'unreviewed'),'version',COALESCE(c.version,0),'updated_at',COALESCE(c.updated_at,''))) item_json,l.items_json
+    FROM issue_lists l LEFT JOIN issue_current c ON c.issue_key=l.issue_key WHERE l.issue_key=? AND l.generation=?`:
+    `SELECT v.revision,v.item_json,l.items_json FROM issue_states v JOIN issue_lists l
+    ON l.generation=v.revision AND l.issue_key=v.issue_key WHERE v.issue_key=?`;
   const result=await db.prepare(`WITH selected AS (
-    SELECT v.revision,v.item_json,l.items_json FROM issue_states v JOIN issue_lists l
-    ON l.generation=v.revision AND l.issue_key=v.issue_key WHERE v.issue_key=?),
+    ${selection}),
     filtered AS (SELECT CAST(p.key AS INTEGER) position,json_extract(p.value,'$.pmid') pmid,
       json_extract(p.value,'$.title') title,json_extract(p.value,'$.score') score,
       COALESCE(c.version,0) version,COALESCE(c.status,'unreviewed') status,COALESCE(c.note,'') note,
       COALESCE(c.status_updated_at,'') status_updated_at,COALESCE(c.updated_at,'') updated_at
       FROM selected s,json_each(s.items_json) p LEFT JOIN review_current c ON c.pmid=json_extract(p.value,'$.pmid')
       WHERE (?='' OR instr(json_extract(p.value,'$.pmid'),?)>0 OR instr(json_extract(p.value,'$.search_title'),?)>0)
-      AND (?='' OR COALESCE(c.status,'unreviewed')=?)),
+      AND (?='' OR json_extract(p.value,'$.pmid')=?) AND (?='' OR COALESCE(c.status,'unreviewed')=?)),
     totals AS (SELECT count(*) total FROM filtered),
     paging AS (SELECT total,CASE WHEN ?<total THEN ? ELSE max(0,CAST((total-1)/50 AS INTEGER)*50) END offset FROM totals)
     SELECT s.revision,s.item_json,p.total,p.offset,(SELECT json_group_array(json(item)) FROM (
       SELECT json_object('pmid',pmid,'title',title,'score',json(score),'review',json_object(
         'version',version,'status',status,'note',note,'status_updated_at',status_updated_at,'updated_at',updated_at)) item
       FROM filtered ORDER BY position LIMIT 50 OFFSET (SELECT offset FROM paging))) items
-    FROM selected s,paging p`).bind(r.issue_key,query,query,query,r.status||'',r.status||'',offset,offset).first();
+    FROM selected s,paging p`).bind(r.issue_key,...(archived?[r.revision]:[]),query,query,query,r.pmid||'',r.pmid||'',r.status||'',r.status||'',offset,offset).first();
   requireThat(result,'issue_missing',404);
   const {scores_available,...issue}=JSON.parse(result.item_json);
-  return {items:JSON.parse(result.items),total:result.total,offset:result.offset,page_size:50,issue,scores_available,revision:result.revision};
+  return {items:JSON.parse(result.items),total:result.total,offset:result.offset,page_size:50,issue,scores_available,revision:result.revision,read_only:archived};
 }
 async function detail(db,r) {
   requireThat(/^[1-9][0-9]{0,8}$/.test(r.pmid??''),'invalid_pmid');
   if(r.issue_key)validKey(r.issue_key);
-  const storage=await db.prepare("SELECT g.id revision,json_extract(g.tables_json,'$.format') format FROM generations g JOIN settings s ON s.generation=g.id").first();
+  if(r.revision)await linkedRevision(db,r);
+  const storage=await db.prepare("SELECT g.id revision,json_extract(g.tables_json,'$.format') format FROM generations g WHERE g.id=COALESCE(?,(SELECT generation FROM settings WHERE id=1))").bind(r.revision||null).first();
+  requireThat(storage,'metadata_not_seeded',409);
   if(storage?.format===FORMAT)return chunkedDetail(db,r,storage.revision);
-  const row=await db.prepare(`WITH g AS (SELECT g.id,g.tables_json FROM generations g JOIN settings s ON s.generation=g.id),
+  const row=await db.prepare(`WITH g AS (SELECT g.id,g.tables_json FROM generations g WHERE g.id=?),
     appearances AS (SELECT a.value FROM g,json_each(g.tables_json,'$.Appearances') a
       WHERE a.key>0 AND json_extract(a.value,'$[1]')=? AND (?='' OR
         json_array(json_extract(a.value,'$[2]'),json_extract(a.value,'$[3]'))=?))
@@ -60,7 +71,7 @@ async function detail(db,r) {
       (SELECT group_concat(body,'') FROM (SELECT json_extract(t.value,'$[2]') body
         FROM json_each(g.tables_json,'$.Texts') t WHERE t.key>0
         AND json_extract(t.value,'$[0]')=json_extract(a.value,'$[9]') ORDER BY CAST(json_extract(t.value,'$[1]') AS INTEGER)))))
-      FROM appearances a) items FROM g`).bind(r.pmid,r.issue_key||'',r.issue_key||'').first();
+      FROM appearances a) items FROM g`).bind(storage.revision,r.pmid,r.issue_key||'',r.issue_key||'').first();
   requireThat(row,'metadata_not_seeded',409);
   const names=['snapshot_id','pmid','issue_id','topic','delivered_date','title_at_delivery','selection','current_doc_url','source','text_id'];
   const appearances=JSON.parse(row.items).map(a=>({...Object.fromEntries(names.map((n,i)=>[n,a.row[i]])),text:JSON.parse(a.body)}))
@@ -159,6 +170,7 @@ export async function runLedgerAction(db,path,body,{now=new Date()}={}) {
   else if(path==='/api/backupStart')value=await startBackup(db);
   else if(path==='/api/backupPage')value=await backupPage(db,body);
   else if(path==='/api/listIssues') value=await browseIssues(db,body,now);
+  else if(path==='/api/resolveLink') value=await resolveLink(db,body);
   else if(path==='/api/wantedPmids') value=await wantedPage(db,body);
   else if(path==='/api/listIssuePapers') value=await issuePapers(db,body);
   else if(path==='/api/getPaperDetail') value=await detail(db,body);

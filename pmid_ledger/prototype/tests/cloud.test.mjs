@@ -56,6 +56,7 @@ test('cloud denies fake credentials, wrong UID, expired tokens and cross-role re
     ['/api/listIssues',{Authorization:'Bearer '+valid,'Cf-Access-Jwt-Assertion':service}],
     ['/identity/probe',{Authorization:'Bearer '+valid}],
     ['/api/wantedPmids',{}],['/api/wantedPmids',{'Cf-Access-Jwt-Assertion':service}],
+    ['/api/resolveLink',{}],['/api/resolveLink',{'Cf-Access-Jwt-Assertion':service}],
     ['/sync/queueState',{Authorization:'Bearer '+valid}]]){
     assert.equal((await call(mf,path,{},headers)).status,403);
   }
