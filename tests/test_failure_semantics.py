@@ -502,6 +502,9 @@ class IntegratedDocumentTests(unittest.TestCase):
         self.assertIn("【第2部：英語Abstract】", uploaded_text)
         self.assertIn("FULL ABSTRACT", uploaded_text)
         self.assertIn("【第3部：候補論文スコア一覧】", uploaded_text)
+        self.assertIn("https://pmid-ledger-test.tempter-carrel-5e.workers.dev/api/app/#issue=", uploaded_text)
+        self.assertIn("&pmid=1", uploaded_text)
+        self.assertNotIn("script.google.com", uploaded_text)
 
 
 if __name__ == "__main__":

@@ -16,6 +16,7 @@ from candidate_scores import SCORE_TABLE_HEADERS, candidate_score_rows
 
 
 TERMINAL_RUN_STATES = {"COMPLETED", "COMPLETED_WITH_WARNINGS", "FAILED"}
+RESEARCH_LEDGER_WEB_URL = "https://pmid-ledger-test.tempter-carrel-5e.workers.dev/api/app/"
 SCREEN_RESCUE_TYPES = {
     "guideline",
     "practice guideline",
@@ -469,12 +470,14 @@ def render_notebook_doc(
         ])
 
     # Only future documents receive these links. Merely opening them never changes state.
-    if re.fullmatch(r"https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec", ledger_url):
+    if ledger_url == RESEARCH_LEDGER_WEB_URL or re.fullmatch(r"https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec", ledger_url):
         issue_key = json.dumps([run_id, theme], ensure_ascii=False, separators=(",", ":"))
-        lines.extend(["---", "", "【この配信の確認状況】", f"この配信を確認する：{ledger_url}?issue={quote(issue_key, safe='')}", "",
+        issue_link = ledger_url + ("#" if ledger_url == RESEARCH_LEDGER_WEB_URL else "?") + "issue=" + quote(issue_key, safe='')
+        lines.extend(["---", "", "【この配信の確認状況】", f"この配信を確認する：{issue_link}", "",
                       "【台帳で確認・原文入手希望に追加】", ""])
         for article in articles:
-            lines.append(f"PMID {article['pmid']}：{ledger_url}?pmid={article['pmid']}")
+            paper_link = f"{issue_link}&pmid={article['pmid']}" if ledger_url == RESEARCH_LEDGER_WEB_URL else f"{ledger_url}?pmid={article['pmid']}"
+            lines.append(f"PMID {article['pmid']}：{paper_link}")
         lines.append("")
 
     lines.extend([

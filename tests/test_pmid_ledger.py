@@ -190,6 +190,30 @@ Do not mix this abstract with the Japanese summary.
         self.assertEqual(link['range']['startIndex'],len('😀 日本語\n'.encode('utf-16-le'))//2+1)
         self.assertEqual(link['textStyle']['link']['url'],url+'?pmid=123')
 
+    def test_research_ledger_doc_links_preserve_delivery_context_and_clickable_utf16_ranges(self):
+        from automation_core import RESEARCH_LEDGER_WEB_URL, render_notebook_doc
+        from automation_services import GoogleWorkspaceClient, split_score_table
+        from urllib.parse import urlsplit, parse_qs
+        text = render_notebook_doc('ワクチン', 'scheduled-2026-11-14:ped_vaccine_update',
+                                   [{'pmid':'123','title':'😀 Test'}], [], {'selected':[]}, ledger_url=RESEARCH_LEDGER_WEB_URL)
+        self.assertNotIn('script.google.com', text)
+        urls = [line.split('：',1)[1] for line in text.splitlines() if line.startswith(('この配信を確認する：','PMID 123：'))]
+        self.assertEqual(len(urls),2)
+        for url in urls:
+            self.assertEqual(urlsplit(url).query,'')
+            self.assertEqual(parse_qs(urlsplit(url).fragment)['issue'],['["scheduled-2026-11-14:ped_vaccine_update","ワクチン"]'])
+        self.assertEqual(parse_qs(urlsplit(urls[1]).fragment)['pmid'],['123'])
+        client=GoogleWorkspaceClient.__new__(GoogleWorkspaceClient);client.docs=MagicMock()
+        client.docs.documents.return_value.get.return_value.execute.return_value={'body':{'content':[]}}
+        body='😀 日本語\n'+'\n'.join(urls)+'\n'
+        client.replace_doc_text('new-test-doc',body)
+        requests=client.docs.documents.return_value.batchUpdate.call_args.kwargs['body']['requests']
+        links=[r['updateTextStyle'] for r in requests if 'updateTextStyle' in r]
+        self.assertEqual([r['textStyle']['link']['url'] for r in links],urls)
+        for link,url in zip(links,urls):
+            self.assertEqual(link['range']['startIndex'],len(body[:body.index(url)].encode('utf-16-le'))//2+1)
+            self.assertEqual(link['range']['endIndex']-link['range']['startIndex'],len(url))
+
 
 if __name__=='__main__':
     unittest.main()

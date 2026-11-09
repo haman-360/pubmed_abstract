@@ -15,6 +15,7 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 from automation_core import (
+    RESEARCH_LEDGER_WEB_URL,
     TERMINAL_RUN_STATES,
     assert_lightweight_ledger,
     canonical_json,
@@ -753,7 +754,7 @@ def create_documents(
     folders = store.document_folders(manifest["topic"])
     notebook_text = render_notebook_doc(
         manifest["display_name"], manifest["run_id"], raw["articles"], scores, final,
-        ledger_url=os.environ.get("PMID_LEDGER_WEB_URL", ""),
+        ledger_url=RESEARCH_LEDGER_WEB_URL,
         include_all=manifest.get("delivery_mode") == "all",
     )
 
@@ -835,7 +836,7 @@ def retry_current_if_needed(
     scores = store.load_json(manifest["artifacts"]["screen_evaluations"]["file_id"])
     text = render_notebook_doc(
         manifest["display_name"], manifest["run_id"], raw["articles"], scores, final,
-        ledger_url=os.environ.get("PMID_LEDGER_WEB_URL", ""),
+        ledger_url=RESEARCH_LEDGER_WEB_URL,
         include_all=manifest.get("delivery_mode") == "all",
     )
     topic_ledger = ledger["topics"][manifest["topic"]]
