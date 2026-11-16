@@ -87,6 +87,31 @@ class ScreeningComparisonTest(unittest.TestCase):
             experiment.read_with_retry(operation, 'batch')
         self.assertEqual(operation.call_count, 4)
 
+    def test_snapshot_cannot_submit_missing_batches(self):
+        config = load_config('automation_config.json')
+        articles = [{'pmid': '1'}]
+        report = {'configs': experiment.arms(config), 'topics': {'topic': {
+            'articles': articles, 'input_hash': experiment.content_hash(articles),
+            'arms': {'luna': {}, 'terra': {}}}}}
+        client = Mock()
+        with tempfile.TemporaryDirectory() as folder:
+            self.assertFalse(experiment.advance(client, Path(folder) / 'report.json', report, allow_submit=False))
+        client.upload_jsonl.assert_not_called()
+        client.create_batch.assert_not_called()
+
+    def test_snapshot_discovery_matches_metadata_and_rejects_ambiguity(self):
+        report = {'experiment': 'experiment', 'topics': {'topic': {'arms': {'luna': {}}}}}
+        batch = {'id': 'final1', 'metadata': {'purpose': 'experiment', 'stage': 'final',
+                 'topic': 'topic', 'arm': 'luna'}}
+        client = Mock()
+        client._request.return_value = {'data': [batch], 'has_more': False}
+        experiment.discover_existing_finals(client, report)
+        self.assertEqual(report['topics']['topic']['arms']['luna']['final']['batch_id'], 'final1')
+        client._request.assert_called_once_with('GET', '/batches?limit=100')
+        client._request.return_value['data'].append({**batch, 'id': 'final2'})
+        with self.assertRaisesRegex(ValueError, 'Multiple'):
+            experiment.discover_existing_finals(client, report)
+
     def test_partial_screen_cannot_proceed_to_final(self):
         with self.assertRaisesRegex(ValueError, 'Incomplete screening'):
             experiment.screen_results({'expected': 2, 'output': [], 'errors': []}, {'1', '2'})

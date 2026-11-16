@@ -8,6 +8,10 @@ on:
         type: choice
         options: [legacy, luna-terra]
         default: legacy
+      snapshot_only:
+        description: Read existing Batch results only (requires resume_run_id; never submits)
+        type: boolean
+        default: false
       resume_run_id:
         description: Previous Luna/Terra run artifact to resume without new screen requests
         type: string
@@ -39,10 +43,12 @@ jobs:
         if: inputs.experiment == 'luna-terra'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SNAPSHOT_ONLY: ${{ inputs.snapshot_only }}
           RESUME_RUN_ID: ${{ inputs.resume_run_id }}
         run: |
           args=()
           if [[ -n "$RESUME_RUN_ID" ]]; then args+=(--resume); fi
+          if [[ "$SNAPSHOT_ONLY" == "true" ]]; then args+=(--snapshot-only); fi
           python scripts/screening_comparison_test.py "${args[@]}"
       - name: Compare old and new models on the same PubMed abstracts
         if: inputs.experiment != 'luna-terra'

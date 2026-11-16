@@ -123,7 +123,7 @@ def screen_results(state, expected_pmids):
     return scores, metrics
 
 
-def advance(client, path, report):
+def advance(client, path, report, allow_submit=True):
     finished = True
     for topic, data in report["topics"].items():
         if content_hash(data["articles"]) != data["input_hash"]:
@@ -132,6 +132,9 @@ def advance(client, path, report):
             config = report["configs"][label]
             screen = result.setdefault("screen", {})
             if not screen.get("batch_id"):
+                if not allow_submit:
+                    finished = False
+                    continue
                 submit_once(client, path, report, screen,
                     screen_batch_lines(f"test-{topic}-{label}", data["articles"], config), topic, label, "screen")
             poll(client, screen)
@@ -153,6 +156,9 @@ def advance(client, path, report):
                 continue
             final = result.setdefault("final", {})
             if not final.get("batch_id"):
+                if not allow_submit:
+                    finished = False
+                    continue
                 candidates = choose_final_candidates(result["scores"], config)
                 line = final_batch_line(f"test-{topic}-{label}", config["topics"][topic]["display_name"],
                                         candidates, data["articles"], config)
@@ -181,12 +187,44 @@ def advance(client, path, report):
     return finished
 
 
+def discover_existing_finals(client, report):
+    """Read-only snapshot: find final IDs saved by another running TEST job."""
+    found = {}
+    endpoint = "/batches?limit=100"
+    for _ in range(20):
+        page = read_with_retry(client._request, "GET", endpoint)
+        for batch in page.get("data", []):
+            metadata = batch.get("metadata") or {}
+            if metadata.get("purpose") != report["experiment"] or metadata.get("stage") != "final":
+                continue
+            key = (metadata.get("topic"), metadata.get("arm"))
+            if key in found and found[key]["id"] != batch["id"]:
+                raise ValueError("Multiple final Batches match; refusing ambiguous snapshot")
+            found[key] = batch
+        if not page.get("has_more"):
+            break
+        endpoint = f"/batches?limit=100&after={page['last_id']}"
+    else:
+        raise ValueError("Batch discovery pagination limit reached")
+    for (topic, label), batch in found.items():
+        if topic not in report["topics"] or label not in report["topics"][topic]["arms"]:
+            continue
+        result = report["topics"][topic]["arms"][label]
+        final = result.setdefault("final", {})
+        if final.get("batch_id") and final["batch_id"] != batch["id"]:
+            raise ValueError("Final Batch identity changed")
+        final.update(batch_id=batch["id"], expected=1, submission_started=True)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="screening_comparison_test.json")
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--snapshot-only", action="store_true")
     parser.add_argument("--max-wait-minutes", type=int, default=325)
     args = parser.parse_args()
+    if args.snapshot_only and not args.resume:
+        parser.error("--snapshot-only requires --resume")
     path = Path(args.output)
     if args.resume:
         report = json.loads(path.read_text())
@@ -198,6 +236,11 @@ def main():
         report = prepare(load_config(Path(__file__).resolve().parents[1] / "automation_config.json"))
         save(path, report)
     client = OpenAIBatchClient()
+    if args.snapshot_only:
+        discover_existing_finals(client, report)
+        advance(client, path, report, allow_submit=False)
+        print(f"Read-only snapshot: {report['status']}", flush=True)
+        return 0
     deadline = time.monotonic() + args.max_wait_minutes * 60
     while True:
         if advance(client, path, report):

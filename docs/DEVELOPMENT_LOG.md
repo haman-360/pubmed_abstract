@@ -6,6 +6,7 @@
 
 - 初回Actions `43884200885` はBatch状態GETのHTTP 504で中断。一次6 BatchとプライマリケアLuna最終1 BatchのID、同一入力と途中結果はartifactに保存されていた。
 - TEST内のGETだけ、一時的なHTTP／通信エラーを最大3回再試行する。認証エラーとPOSTは再試行しない。既存artifactから再開し、投入済みBatchの重複送信を避ける。本番設定は変更しない。
+- 再開Actions `43967231002` の完了待ちが長いため、既存Batchの状態・結果だけを読む `snapshot_only` を追加。metadataによる最終Batch ID照合と重複拒否、POST禁止を検証。snapshotは実行中のジョブを変更せず、追加推論を送らない。Python計78件成功。
 - Python 76件成功。GET一時障害・認証エラー・再試行上限、および既存の不明POST再送防止を確認。
 
 ## 2026-11-16 JST：Luna／Terraの一次スクリーニング比較TEST（実行準備）
