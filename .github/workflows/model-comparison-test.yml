@@ -2,9 +2,20 @@ name: PubMed model comparison TEST
 
 on:
   workflow_dispatch:
+    inputs:
+      experiment:
+        description: Comparison to run (production is never changed)
+        type: choice
+        options: [legacy, luna-terra]
+        default: legacy
+      resume_run_id:
+        description: Previous Luna/Terra run artifact to resume without new screen requests
+        type: string
+        required: false
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   compare:
@@ -15,7 +26,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Restore saved Luna/Terra experiment
+        if: inputs.experiment == 'luna-terra' && inputs.resume_run_id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESUME_RUN_ID: ${{ inputs.resume_run_id }}
+        run: |
+          [[ "$RESUME_RUN_ID" =~ ^[0-9]+$ ]]
+          gh run download "$RESUME_RUN_ID" --name model-comparison-test --dir restored
+          cp restored/screening_comparison_test.json screening_comparison_test.json
+      - name: Compare Luna and Terra on three identical PubMed datasets
+        if: inputs.experiment == 'luna-terra'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          RESUME_RUN_ID: ${{ inputs.resume_run_id }}
+        run: |
+          args=()
+          if [[ -n "$RESUME_RUN_ID" ]]; then args+=(--resume); fi
+          python scripts/screening_comparison_test.py "${args[@]}"
       - name: Compare old and new models on the same PubMed abstracts
+        if: inputs.experiment != 'luna-terra'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: >-
@@ -27,5 +57,7 @@ jobs:
         if: always()
         with:
           name: model-comparison-test
-          path: model_comparison_test.json
+          path: |
+            model_comparison_test.json
+            screening_comparison_test.json
           if-no-files-found: warn

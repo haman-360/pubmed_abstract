@@ -2,6 +2,12 @@
 
 今後の開発記録の正本。過去の台帳開発・調査記録は [pmid_ledger/DEVELOPMENT_LOG.md](../pmid_ledger/DEVELOPMENT_LOG.md) に保持し、書き換えない。
 
+## 2026-11-16 JST：Luna／Terraの一次スクリーニング比較TEST（実行準備）
+
+- 利用者の依頼で、一次 `gpt-6-luna / low` と `gpt-6.1-terra / low` を比較し、最終は双方 `gpt-6-sol / medium` に固定する。2026-10-19〜11-15の小児喘息48本・小児腎臓63本・プライマリケア45本を事前検索で確認。実行時の全抄録をartifactへ保存し、両群で共有する。
+- 独立したTESTスクリプトと既存比較workflowの選択入力を追加。Batch ID、入力hash、usage、生出力を逐次保存し、時間切れはartifactから再開できる。送信結果が不明なPOSTは自動再送せず、一次の欠損・重複・PMID不一致は最終評価を止める。
+- Python 75件成功（比較専用8件を含む）、diffチェック成功。本番モデル設定・配信workflow・Drive台帳・GASは変更しない。実Batchの結果は完了後に追記する。
+
 ## 2026-11-10 JST：今後のDocsを研究台帳へ向け、配信・PMID直リンクを実装（反映待ち）
 
 - 利用者の依頼で、今後生成する配信Docsのリンクを既存の研究台帳へ変更する。配信キーをfragmentへ保持し、PMIDリンクは同じ配信内の1件を完全一致で開く。Google Docsの明示的なハイパーリンクとUTF-16範囲指定も対応。過去Docsの再生成・一括書換え・配信実行はしていない。
