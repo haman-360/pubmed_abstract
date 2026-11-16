@@ -7,6 +7,7 @@ import copy
 import json
 import sys
 import time
+import urllib.error
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -71,15 +72,31 @@ def submit_once(client, path, report, state, lines, topic, label, stage):
     print(f"{topic}/{label}/{stage}: {batch['id']}", flush=True)
 
 
+def read_with_retry(operation, *args):
+    """Retry transient GET failures only; paid submissions must never use this."""
+    for attempt in range(4):
+        try:
+            return operation(*args)
+        except (RuntimeError, urllib.error.URLError, TimeoutError) as exc:
+            cause = exc.__cause__ or exc
+            transient = (cause.code in {408, 429, 500, 502, 503, 504}
+                         if isinstance(cause, urllib.error.HTTPError)
+                         else isinstance(cause, (urllib.error.URLError, TimeoutError)))
+            if not transient or attempt == 3:
+                raise
+            print(f"Transient read failure; retry {attempt + 1}/3", flush=True)
+            time.sleep(5 * (attempt + 1))
+
+
 def poll(client, state):
     if state.get("collected"):
         return
-    batch = client.retrieve_batch(state["batch_id"])
+    batch = read_with_retry(client.retrieve_batch, state["batch_id"])
     state["status"] = batch["status"]
     if batch["status"] not in TERMINAL:
         return
-    state["output"] = parse_jsonl(client.download_file(batch["output_file_id"]).decode()) if batch.get("output_file_id") else []
-    state["errors"] = parse_jsonl(client.download_file(batch["error_file_id"]).decode()) if batch.get("error_file_id") else []
+    state["output"] = parse_jsonl(read_with_retry(client.download_file, batch["output_file_id"]).decode()) if batch.get("output_file_id") else []
+    state["errors"] = parse_jsonl(read_with_retry(client.download_file, batch["error_file_id"]).decode()) if batch.get("error_file_id") else []
     state["batch_errors"] = batch.get("errors")
     state["collected"] = True
 

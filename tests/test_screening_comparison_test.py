@@ -2,7 +2,7 @@ import copy
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 from automation_core import load_config
 from scripts import screening_comparison_test as experiment
@@ -67,6 +67,25 @@ class ScreeningComparisonTest(unittest.TestCase):
         state['output'].append(copy.deepcopy(line))
         with self.assertRaisesRegex(ValueError, 'Duplicate'):
             experiment.screen_results(state, {'1'})
+
+    @patch.object(experiment.time, 'sleep')
+    def test_transient_get_retries_but_auth_error_does_not(self, sleep):
+        import urllib.error
+        transient = RuntimeError('HTTP 504')
+        transient.__cause__ = urllib.error.HTTPError('url', 504, 'timeout', {}, None)
+        operation = Mock(side_effect=[transient, {'status': 'completed'}])
+        self.assertEqual(experiment.read_with_retry(operation, 'batch'), {'status': 'completed'})
+        self.assertEqual(operation.call_count, 2)
+        permanent = RuntimeError('HTTP 401')
+        permanent.__cause__ = urllib.error.HTTPError('url', 401, 'auth', {}, None)
+        operation = Mock(side_effect=permanent)
+        with self.assertRaises(RuntimeError):
+            experiment.read_with_retry(operation, 'batch')
+        self.assertEqual(operation.call_count, 1)
+        operation = Mock(side_effect=transient)
+        with self.assertRaises(RuntimeError):
+            experiment.read_with_retry(operation, 'batch')
+        self.assertEqual(operation.call_count, 4)
 
     def test_partial_screen_cannot_proceed_to_final(self):
         with self.assertRaisesRegex(ValueError, 'Incomplete screening'):

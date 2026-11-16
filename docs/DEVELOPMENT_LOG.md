@@ -2,6 +2,12 @@
 
 今後の開発記録の正本。過去の台帳開発・調査記録は [pmid_ledger/DEVELOPMENT_LOG.md](../pmid_ledger/DEVELOPMENT_LOG.md) に保持し、書き換えない。
 
+## 2026-11-17 JST：比較TESTの結果取得を再開
+
+- 初回Actions `43884200885` はBatch状態GETのHTTP 504で中断。一次6 BatchとプライマリケアLuna最終1 BatchのID、同一入力と途中結果はartifactに保存されていた。
+- TEST内のGETだけ、一時的なHTTP／通信エラーを最大3回再試行する。認証エラーとPOSTは再試行しない。既存artifactから再開し、投入済みBatchの重複送信を避ける。本番設定は変更しない。
+- Python 76件成功。GET一時障害・認証エラー・再試行上限、および既存の不明POST再送防止を確認。
+
 ## 2026-11-16 JST：Luna／Terraの一次スクリーニング比較TEST（実行準備）
 
 - 利用者の依頼で、一次 `gpt-6-luna / low` と `gpt-6.1-terra / low` を比較し、最終は双方 `gpt-6-sol / medium` に固定する。2026-10-19〜11-15の小児喘息48本・小児腎臓63本・プライマリケア45本を事前検索で確認。実行時の全抄録をartifactへ保存し、両群で共有する。
