@@ -121,3 +121,27 @@ test('D1 daily limit response retains 24-hour retry advice without a public faul
   assert.equal(response.status,429);assert.equal(calls,1);assert.equal(response.headers.get('Retry-After'),'86400');
   assert.equal((await response.json()).retry_after_seconds,86400);
 });
+
+test('GraRec queues a saved snapshot, redelivers until acknowledged, and rotates the receiving Mac',async t=>{
+  const {db,mf}=await setup(t);
+  const auth={Authorization:'Bearer '+await owner()};
+  const key=crypto.randomUUID().replaceAll('-','').repeat(2);
+  const fingerprint=Buffer.from(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(key))).toString('hex');
+  const mac={Authorization:'Bearer '+key};
+  const inbox=(body={},headers=mac)=>call(mf,'/api/grarecInbox',body,headers);
+  assert.equal((await call(mf,'/api/sendGrarec',{},mac)).status,403);
+  assert.equal((await call(mf,'/api/pairGrarec',{fingerprint},mac)).status,403);
+  await db.prepare("INSERT INTO review_current VALUES ('1',1,'want_fulltext','','',''),('2',1,'unreviewed','','','')").run();
+  assert.deepEqual((await call(mf,'/api/sendGrarec',{},auth)).value,{added:1,pending:1});
+  assert.deepEqual((await call(mf,'/api/sendGrarec',{},auth)).value,{added:0,pending:1});
+  assert.equal((await call(mf,'/api/pairGrarec',{fingerprint},auth)).status,200);
+  assert.equal((await inbox({received:['1']},{Authorization:'Bearer '+'0'.repeat(64)})).status,403);
+  await db.prepare("UPDATE review_current SET status='want_fulltext' WHERE pmid='2'").run();
+  assert.deepEqual((await inbox()).value.pmids,['1']);
+  assert.deepEqual((await inbox()).value.pmids,['1']);
+  assert.deepEqual((await inbox({received:['1']})).value.pmids,[]);
+  assert.deepEqual((await call(mf,'/api/sendGrarec',{},auth)).value,{added:1,pending:1});
+  assert.deepEqual((await inbox({received:['1']})).value.pmids,['2']);
+  await call(mf,'/api/pairGrarec',{fingerprint:'0'.repeat(64)},auth);
+  assert.equal((await inbox({received:['2']})).status,403);
+});

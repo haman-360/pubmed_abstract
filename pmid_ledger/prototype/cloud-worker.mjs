@@ -4,6 +4,7 @@ import {createPublicKeySources,createOwnerKeySource} from './identity-keys.mjs';
 import {runLedgerAction} from './ledger-api.mjs';
 import {newProfile,profiledDatabase} from './profile.mjs';
 import {requireThat} from './metadata.mjs';
+import {receiveGrarec} from './grarec.mjs';
 import {readLimit} from './browse.mjs';
 import {onlineResponse} from './online-static.mjs';
 
@@ -50,7 +51,12 @@ export default {
       if(request.method==='GET'&&url.pathname.startsWith('/api/app/'))return onlineResponse(url.pathname,JSON.parse(env.LEDGER_IDENTITY).projectId);
       requireThat(request.method==='POST','post_required',405);
       requireThat(request.headers.get('Content-Type')?.split(';')[0].trim().toLowerCase()==='application/json','json_required',415);
-      // Only signature-verified identities reach D1. Client ID/Secret alone never grants permission.
+      if(url.pathname==='/api/grarecInbox'){
+        requireThat(!request.headers.has('Origin')&&!request.headers.has('Cf-Access-Jwt-Assertion'),'mac_client_required',403);
+        requireThat(/^Bearer [a-f0-9]{64}$/.test(request.headers.get('Authorization')??''),'mac_pairing_required',403);
+        return json({value:await receiveGrarec(env.DB,request.headers.get('Authorization'),await bodyJson(request))});
+      }
+      // All other API routes retain their existing owner/sync identity checks.
       try{await verifyIdentityRequest(request,verifier);}catch{return json({error:'identity_denied'},403);}
       const body=await bodyJson(request),profile=env.LEDGER_TEST_DIAGNOSTICS==='1'?newProfile():null;
       const value=await runLedgerAction(profile?profiledDatabase(env.DB,profile):env.DB,url.pathname,body);

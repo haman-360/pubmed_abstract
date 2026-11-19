@@ -6,6 +6,7 @@ import {operationRequest,statuses} from './operations.mjs';
 import {FORMAT,begin,upload,buildPage,finish,readChunk,chunkedDetail,buildIssue} from './chunked.mjs';
 import {startBackup,backupPage} from './backup-pages.mjs';
 import {browseIssues} from './browse.mjs';
+import {updateGrarec} from './grarec.mjs';
 import {wantedPage,queueStatePage} from './wanted.mjs';
 import {resolveLink,linkedRevision} from './links.mjs';
 
@@ -171,6 +172,8 @@ export async function runLedgerAction(db,path,body,{now=new Date()}={}) {
   else if(path==='/api/backupPage')value=await backupPage(db,body);
   else if(path==='/api/listIssues') value=await browseIssues(db,body,now);
   else if(path==='/api/resolveLink') value=await resolveLink(db,body);
+  else if(path==='/api/sendGrarec') value=await updateGrarec(db,'send',body);
+  else if(path==='/api/pairGrarec') value=await updateGrarec(db,'pair',body);
   else if(path==='/api/wantedPmids') value=await wantedPage(db,body);
   else if(path==='/api/listIssuePapers') value=await issuePapers(db,body);
   else if(path==='/api/getPaperDetail') value=await detail(db,body);

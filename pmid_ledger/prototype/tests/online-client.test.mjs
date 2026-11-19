@@ -11,7 +11,7 @@ class Element{
   querySelectorAll(selector){const names=selector.split(',');return this.children.flatMap(n=>typeof n==='object'?[...(names.includes(n.tag)?[n]:[]),...n.querySelectorAll(selector)]:[]);}
 }
 async function setup({loseSave=false,readFailsAfterSave=false,loginFailsOnce=false,holdLogin=false,hash='',archive=false,linkMissing=false,holdLink=false}={}){
-  const ids=['data-source','login','login-help','restart-login','logout','welcome','workspace','message','back','reload','period','scope','month-label','month','search','query','clear','summary','list','heading','breadcrumb','description','previous','next','page','savebar','draft-status','save','discard','complete','reopen','retry'];
+  const ids=['grarec-send','grarec-pair','grarec-code','data-source','login','login-help','restart-login','logout','welcome','workspace','message','back','reload','period','scope','month-label','month','search','query','clear','summary','list','heading','breadcrumb','description','previous','next','page','savebar','draft-status','save','discard','complete','reopen','retry'];
   const elements=Object.fromEntries(ids.map(id=>[id,new Element(['login','logout','back','reload','clear','previous','next','save','discard','complete','reopen','retry'].includes(id)?'button':'div')]));
   elements.workspace.append(...ids.filter(id=>!['login','logout','welcome','workspace','message'].includes(id)).map(id=>elements[id]));
   const events={},requests=[],operations=new Map(),key='["synthetic-small","感染症"]',revision='a'.repeat(64);let version=0,status='unreviewed',note='',changed,lost=false,completed=false,pendingRead,popupCalls=0,releasePopup,reloads=0,releaseLink;
@@ -20,6 +20,7 @@ async function setup({loseSave=false,readFailsAfterSave=false,loginFailsOnce=fal
   const fetch=async(path,options)=>{
     if(path==='./config.json')return Response.json({firebase:{projectId:'synthetic'}});
     requests.push({path,body:JSON.parse(options.body)});assert.equal(options.headers.Authorization,'Bearer synthetic-token');assert.equal(options.redirect,'error');assert(options.signal);
+    if(path==='/api/sendGrarec')return Response.json({value:{added:2,pending:3}});
     if(path==='/api/resolveLink'){
       if(holdLink)await new Promise(resolve=>{releaseLink=resolve;});
       if(linkMissing)return Response.json({error:'linked_item_unavailable'},{status:404});
@@ -98,4 +99,12 @@ test('archived targets disable edits and completion; missing targets explain syn
 test('signout during link resolution cannot open a late target',async()=>{
   const c=await setup({hash:'#pmid=1',holdLink:true});await c.login();await c.elements.logout.onclick();c.releaseLink();await settle();
   assert.equal(c.elements.workspace.hidden,true);assert.equal(c.requests.length,1);
+});
+
+test('GraRec button sends saved wishes and explains how to save pending edits',async()=>{
+  const c=await setup();await c.login();await c.elements['grarec-send'].onclick();
+  assert.match(c.elements.message.textContent,/新規2件.*計3件/);
+  await c.open();c.edit();await c.elements['grarec-send'].onclick();
+  assert.match(c.elements.message.textContent,/途中まで保存/);
+  assert.equal(c.requests.filter(r=>r.path==='/api/sendGrarec').length,1);
 });

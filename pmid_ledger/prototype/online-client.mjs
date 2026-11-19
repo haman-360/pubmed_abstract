@@ -14,6 +14,7 @@ function controls(){
   $('restart-login').disabled=!!user;
   for(const el of $('workspace').querySelectorAll('button,input,select,textarea'))el.disabled=busy||!!edits.pending;
   if(current?.read_only)for(const el of $('list').querySelectorAll('select,textarea'))el.disabled=true;
+  $('grarec-send').title=edits.dirty?'先に「途中まで保存」を押してください。':'保存済みの入手希望を全期間から送ります。';
   $('retry').hidden=!edits.pending;$('retry').disabled=busy;$('discard').disabled=busy;
   $('previous').disabled=busy||!!edits.pending||offset===0;$('next').disabled=busy||!!edits.pending||offset+(key?50:20)>=total;
   $('save').disabled=busy||!!edits.pending||current?.read_only||!edits.drafts.size;
@@ -96,7 +97,7 @@ async function submit(kind='save'){
   catch(e){if(tag===epoch&&e.message!=='stale')message(`保存結果を確認できません。${describe(e)}\n編集を固定しています。「同じ操作を再確認」で同じ操作ID・内容を送れます。`,true);}
   finally{if(tag===epoch){busy=false;controls();}}
 }
-function clearIdentity(){epoch++;view++;user=null;busy=false;key=null;current=null;linked=null;offset=0;issueOffset=0;edits.reset();$('list').replaceChildren();$('summary').replaceChildren();$('query').value='';$('workspace').hidden=true;$('welcome').hidden=false;document.body.classList.toggle('editing',false);controls();}
+function clearIdentity(){$('grarec-code').value='';epoch++;view++;user=null;busy=false;key=null;current=null;linked=null;offset=0;issueOffset=0;edits.reset();$('list').replaceChildren();$('summary').replaceChildren();$('query').value='';$('workspace').hidden=true;$('welcome').hidden=false;document.body.classList.toggle('editing',false);controls();}
 async function startView(){
   const tag=epoch;busy=true;controls();
   try{
@@ -115,6 +116,23 @@ $('login').onclick=async()=>{
 };
 $('restart-login').onclick=()=>{if(user||edits.dirty)return;manualSignout=true;window.location.reload();};
 $('logout').onclick=async()=>{if(!discard())return;manualSignout=true;clearIdentity();message('サインアウトしました。この画面の台帳データと編集を消去しました。');try{await sdk.signOut(auth);}catch{message('サインアウトを完了できませんでした。この画面を閉じてください。',true);}};
+async function grarec(pair) {
+  if(busy||!user)return;
+  if(!pair && edits.dirty){message('先に「途中まで保存」を押してから送信してください。');return;}
+  const fingerprint=$('grarec-code').value.trim();
+  if(pair && !/^[a-f0-9]{64}$/.test(fingerprint)){message('Macでコピーした接続コードを貼り付けてください。',true);return;}
+  const tag=epoch;
+  busy=true;controls();
+  try{
+    const result=await rpc(pair?'pairGrarec':'sendGrarec',pair?{fingerprint}:{});
+    if(tag!==epoch)return;
+    if(pair)$('grarec-code').value='';
+    message(pair?'受信Macを設定しました。':`グラレコの受信待ちに新規${result.added}件を追加しました（受信待ち計${result.pending}件）。`);
+  }catch(e){if(tag===epoch)message(describe(e),true);}
+  finally{if(tag===epoch){busy=false;controls();}}
+}
+$('grarec-send').onclick=()=>grarec(false);
+$('grarec-pair').onclick=()=>grarec(true);
 $('back').onclick=()=>{if(discard()){leaveLink();key=null;current=null;offset=issueOffset;$('query').value='';load();}};
 document.querySelector('.brand').onclick=e=>{e.preventDefault();if(user&&discard()){leaveLink();key=null;current=null;offset=issueOffset;load();}};
 $('reload').onclick=()=>{if(discard())load();};$('discard').onclick=()=>{if(discard())load();};
